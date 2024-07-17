@@ -1,3 +1,5 @@
+import proxyAtlassianV3 from "./api-atlassianV3.ts";
+import type { AtlassianV3 } from "./api-atlassianV3.ts";
 import type { ApiParamsType, ApiRequestable } from "./common.ts";
 
 /**
@@ -5,10 +7,18 @@ import type { ApiParamsType, ApiRequestable } from "./common.ts";
  * 
  * This Library have a tiny footprint, it's only 1.5KB
  * 
+ * usage:
+ * ```ts
+ * const client = new ApiCallerAtlassian("yourdomain", { user, token });
+ * const api = client.root.api[3];
+ * const banner = await api.announcementBanner.$get();
+ * console.log(banner);
+ * ```
  * @module
  */
 export class ApiCallerAtlassian implements ApiRequestable {
   private base: string;
+
   constructor(
     domain: string,
     private opt: { user: string; token: string },
@@ -16,11 +26,32 @@ export class ApiCallerAtlassian implements ApiRequestable {
     this.base = `https://${domain}.atlassian.net/rest`;
   }
 
-  public get auth(): string {
+  /**
+   * private auth builder
+   */
+  private get auth(): string {
     return `Basic ${btoa(`${this.opt.user}:${this.opt.token}`)}`;
   }
 
-  async doRequest<T>(
+  /**
+   * get REST API typed root entry point
+   */
+  public get root(): AtlassianV3 {
+    const proxy = proxyAtlassianV3(this);
+    return proxy;
+  }
+
+  /**
+   * this is the main function to call the API, you can use it directly, but you will lose the type checking
+   * use the .root proxy instead to access the API
+   * 
+   * @param httpMethod get | post | put | delete
+   * @param path path to the API
+   * @param _pathTemplate path with placeholders
+   * @param params params to send
+   * @returns API response
+   */
+  public async doRequest<T>(
     httpMethod: string,
     path: string,
     _pathTemplate: string,
@@ -52,13 +83,10 @@ export class ApiCallerAtlassian implements ApiRequestable {
         url += `?${new URLSearchParams(params).toString()}`;
       }
     }
-    // console.log(`doRequest ${httpMethod} ${url}`); // , JSON.stringify(option, null, 2)
-    // console.log(`doRequest ${url} params: ${JSON.stringify(params)}`);
     const req = await fetch(url, option);
     const { status } = req;
     if (status < 200 || status >= 300) {
-      const error = await req.text();
-      //  {"errorMessages":["The custom field doesn't support options."],"errors":{}}
+      const error = await req.text(); // {errorMessages:string[], errors:{}}
       throw Error(
         `Request ${httpMethod} ${url} failed: ${status} ${req.statusText}\n ${error}`,
       );
