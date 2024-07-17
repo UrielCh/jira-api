@@ -1,4 +1,4 @@
-import { ApiRequestable } from './common.ts';
+import type { ApiRequestable } from './common.ts';
 import { buildProxy } from './engine.ts';
 
 /** MODEL ActorInputBean */

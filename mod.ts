@@ -2,6 +2,9 @@ import proxyAtlassianV3 from "./api-atlassianV3.ts";
 import type { AtlassianV3 } from "./api-atlassianV3.ts";
 import type { ApiParamsType, ApiRequestable } from "./common.ts";
 
+// export type { AtlassianV3 } from "./api-atlassianV3.ts"; 
+export type * from "./api-atlassianV3.ts"; 
+
 /**
  * This class is used to call Atlassian API
  * 
@@ -16,7 +19,7 @@ import type { ApiParamsType, ApiRequestable } from "./common.ts";
  * ```
  * @module
  */
-export class ApiCallerAtlassian implements ApiRequestable {
+export default class ApiCallerAtlassian implements ApiRequestable {
   private base: string;
 
   constructor(
