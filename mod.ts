@@ -4,9 +4,9 @@ import type { ApiParamsType } from "./common.ts";
 export type * from "./api-atlassianV3.ts";
 
 /**
- * This class is used to call Atlassian API
- *
  * This Library have a tiny footprint, it's only 1.5KB
+ * 
+ * [![JSR](https://jsr.io/badges/@u4/midjourney)](https://jsr.io/@u4/jira)
  *
  * usage:
  * ```ts
@@ -19,6 +19,9 @@ export type * from "./api-atlassianV3.ts";
  * console.log("dashboards", dashboards);
  * ```
  * @module
+ */
+/**
+ * This class is used to call Atlassian API
  */
 export default class JiraClient {
   /**

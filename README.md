@@ -2,6 +2,8 @@
 
 a compact JIRA REST API
 
+[![JSR](https://jsr.io/badges/@u4/midjourney)](https://jsr.io/@u4/jira)
+
 ## Why not using jira.js
 
 jira.js is huge, 8.91MB containing more than 10,000 files, and relies on axios.
