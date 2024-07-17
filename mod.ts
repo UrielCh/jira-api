@@ -16,7 +16,7 @@ export class ApiCallerAtlassian implements ApiRequestable {
     this.base = `https://${domain}.atlassian.net/rest`;
   }
 
-  public get auth() {
+  public get auth(): string {
     return `Basic ${btoa(`${this.opt.user}:${this.opt.token}`)}`;
   }
 

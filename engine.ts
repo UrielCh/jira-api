@@ -1,5 +1,5 @@
 // deno-lint-ignore-file no-explicit-any
-import { ApiParamsType, ApiRequestable } from "./common.ts";
+import type { ApiParamsType, ApiRequestable } from "./common.ts";
 
 /**
  * handler for all proxy level except the root one
