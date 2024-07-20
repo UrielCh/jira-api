@@ -1,4 +1,4 @@
-import JiraClient from "../mod.ts";
+import JiraClient from "@u4/jira";
 import { addWorklog } from "./utils/addWorklog.ts";
 import { createIssue } from "./utils/createIssue.ts";
 import { apiToken, email, host } from "./credentials.ts";
