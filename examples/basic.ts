@@ -31,7 +31,7 @@ async function main() {
     const issue = await client.issue.$(id).$get();
     const fields = issue.fields!; //  as { summary: string };
     console.log(
-      `Issue '${fields.summary}' was successfully added to '${project.name}' project.`,
+      `Issue '${fields.summary}' was successfully added to '${project.name}' project as ${issue.key}`,
     );
   } else {
     const myself = await client.myself.$get();

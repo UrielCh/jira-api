@@ -130,8 +130,12 @@ class GenericProxyApi {
     this._path = path;
     this._model = model;
   }
+  /**
+   * Override toString to give a better debug information
+   * @returns the current URI path
+   */
   toString(): string {
-    return "current path:" + this._path;
+    return `REST API to ${this._path}`;
   }
 }
 

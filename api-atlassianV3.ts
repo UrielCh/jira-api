@@ -883,7 +883,7 @@ export interface BulkIssuePropertyUpdateRequest {
   /**
    * The value of the property. The value must be a [valid](https://tools.ietf.org/html/rfc4627), non-empty JSON blob. The maximum length is 32768 characters.
    */
-  value?: string;
+  value?: any /* 122 */;
 }
 /** MODEL BulkOperationErrorResponse */
 export interface BulkOperationErrorResponse {
@@ -1155,7 +1155,7 @@ export interface Comment {
   /**
    * The comment text in [Atlassian Document Format](https://developer.atlassian.com/cloud/jira/platform/apis/document/structure/).
    */
-  body?: string;
+  body?: any /* 122 */;
   /**
    * The date and time at which the comment was created.
    * @format: "date-time"
@@ -1504,7 +1504,7 @@ export interface ContextualConfiguration {
   /**
    * The field configuration.
    */
-  configuration?: string;
+  configuration?: any /* 122 */;
   /**
    * The ID of the field context the configuration is associated with.
    */
@@ -1516,7 +1516,7 @@ export interface ContextualConfiguration {
   /**
    * The field value schema.
    */
-  schema?: string;
+  schema?: any /* 122 */;
 }
 /** MODEL ConvertedJQLQueries */
 export interface ConvertedJQLQueries {
@@ -2533,7 +2533,7 @@ export interface CustomFieldValueUpdate {
    *
    * A list of appropriate values must be provided if the field is of the `list` [collection type](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field/#collection-types).
    */
-  value: string;
+  value: any /* 122 */;
 }
 /** MODEL CustomFieldValueUpdateDetails */
 export interface CustomFieldValueUpdateDetails {
@@ -2878,7 +2878,7 @@ export interface EntityProperty {
   /**
    * The value of the property. Required on create and update.
    */
-  value?: string;
+  value?: any /* 122 */;
 }
 /** MODEL EntityPropertyDetails */
 export interface EntityPropertyDetails {
@@ -3301,7 +3301,7 @@ export interface FieldCreateMetadata {
   /**
    * The default value of the field.
    */
-  defaultValue?: string;
+  defaultValue?: any /* 125 */;
   /**
    * The field id.
    */
@@ -3407,7 +3407,7 @@ export interface FieldMetadata {
   /**
    * The default value of the field.
    */
-  defaultValue?: string;
+  defaultValue?: any /* 125 */;
   /**
    * Whether the field has a default value.
    */
@@ -3485,23 +3485,23 @@ export interface FieldUpdateOperation {
   /**
    * The value to add to the field.
    */
-  add?: string;
+  add?: any /* 125 */;
   /**
    * The field value to copy from another issue.
    */
-  copy?: string;
+  copy?: any /* 125 */;
   /**
    * The value to edit in the field.
    */
-  edit?: string;
+  edit?: any /* 125 */;
   /**
    * The value to removed from the field.
    */
-  remove?: string;
+  remove?: any /* 125 */;
   /**
    * The value to set in the field.
    */
-  set?: string;
+  set?: any /* 125 */;
 }
 /** MODEL FieldValueClause */
 export interface FieldValueClause {
@@ -4392,7 +4392,7 @@ export interface IssueFilterForBulkPropertyDelete {
   /**
    * The value of properties to perform the bulk operation on.
    */
-  currentValue?: string;
+  currentValue?: any /* 122 */;
   /**
    * List of issues to perform the bulk delete operation on.
    */
@@ -4403,7 +4403,7 @@ export interface IssueFilterForBulkPropertySet {
   /**
    * The value of properties to perform the bulk operation on.
    */
-  currentValue?: string;
+  currentValue?: any /* 122 */;
   /**
    * List of issues to perform the bulk operation on.
    */
@@ -5385,7 +5385,7 @@ export interface JiraExpressionResult {
   /**
    * The value of the evaluated expression. It may be a primitive JSON value or a Jira REST API object. (Some expressions do not produce any meaningful results—for example, an expression that returns a lambda function—if that's the case a simple string representation is returned. These string representations should not be relied upon and may change without notice.)
    */
-  value: string;
+  value: any /* 122 */;
 }
 /** MODEL JiraExpressionValidationError */
 export interface JiraExpressionValidationError {
@@ -6356,7 +6356,7 @@ export interface MultipleCustomFieldValuesUpdate {
    *
    * A list of appropriate values must be provided if the field is of the `list` [collection type](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field/#collection-types).
    */
-  value: string;
+  value: any /* 122 */;
 }
 /** MODEL MultipleCustomFieldValuesUpdateDetails */
 export interface MultipleCustomFieldValuesUpdateDetails {
@@ -11469,7 +11469,7 @@ export interface TaskProgressBeanObject {
   /**
    * The result of the task execution.
    */
-  result?: string;
+  result?: any /* 122 */;
   /**
    * The URL of the task.
    * @format: "uri"
@@ -13574,7 +13574,7 @@ export interface WorkflowTransitionRule {
   /**
    * EXPERIMENTAL. The configuration of the transition rule.
    */
-  configuration?: string;
+  configuration?: any /* 122 */;
   /**
    * The type of the transition rule.
    */
@@ -13846,7 +13846,7 @@ export interface Worklog {
   /**
    * A comment about the worklog in [Atlassian Document Format](https://developer.atlassian.com/cloud/jira/platform/apis/document/structure/). Optional when creating or updating a worklog.
    */
-  comment?: string;
+  comment?: any /* 122 */;
   /**
    * The datetime on which the worklog was created.
    * @format: "date-time"
