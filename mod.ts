@@ -5,13 +5,13 @@ export type * from "./api-atlassianV3.ts";
 
 /**
  * This Library have a tiny footprint, it's only 1.5KB
- * 
+ *
  * [![JSR](https://jsr.io/badges/@u4/midjourney)](https://jsr.io/@u4/jira)
  *
  * usage:
  * ```ts
  * import JiraClient from "@u4/jira";
- * 
+ *
  * const client = new JiraClient("yourdomain", { user, token });
  * // get api V3
  * const api = client.root.api[3];
@@ -23,7 +23,7 @@ export type * from "./api-atlassianV3.ts";
 /**
  * This class is used to call Atlassian API
  */
-export default class JiraClient {
+export class JiraClient {
   /**
    * base URL for the API like https://yourdomain.atlassian.net/rest
    */
@@ -47,7 +47,7 @@ export default class JiraClient {
    * get REST API typed root entry point
    */
   public get root(): AtlassianV3 {
-    const {baseUrl, auth} = this;
+    const { baseUrl, auth } = this;
     /**
      * this is the main function to call the API, you can use it directly, but you will lose the type checking
      * use the .root proxy instead to access the API
@@ -113,3 +113,5 @@ export default class JiraClient {
     return proxy;
   }
 }
+
+export default JiraClient;
