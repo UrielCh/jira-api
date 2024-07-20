@@ -2,6 +2,6 @@
   "lock": false,
   "imports": {
     "@std/dotenv": "jsr:@std/dotenv@^0.225.0",
-    "@u4/jira": "jsr:@u4/jira@^0.1.3"
+    "@u4/jira": "jsr:@u4/jira@^0.1.4"
   }
 }
