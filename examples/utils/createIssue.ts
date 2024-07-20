@@ -1,4 +1,4 @@
-import type { AtlassianV3, SecurityLevel } from "../../api-atlassianV3.ts";
+import type { AtlassianV3, SecurityLevel } from "@u4/jira";
 
 export async function createIssue(
   client: AtlassianV3["api"][3],

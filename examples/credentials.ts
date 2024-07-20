@@ -1,4 +1,4 @@
-import { load } from "jsr:@std/dotenv/";
+import { load } from "@std/dotenv";
 
 const env = await load();
 export const host = env.JRA_DOMAIN as string;

@@ -1,5 +1,4 @@
-import type { AtlassianV3 } from "../../api-atlassianV3.ts";
-import type { Worklog } from "../../mod.ts";
+import type { AtlassianV3, Worklog } from "@u4/jira";
 
 export const addWorklog = async (
   client: AtlassianV3["api"][3],
