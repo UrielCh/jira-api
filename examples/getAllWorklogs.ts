@@ -46,5 +46,5 @@ async function getAllWorklogs() {
 getAllWorklogs().catch((e) => {
   console.error(e);
 
-  throw new Error(e.errorMessages.join(" "));
+  throw new Error(e.errorMessages);
 });

@@ -37,12 +37,7 @@ async function addWorklog() {
     //  "identifier": "276f955c-63d7-42c8-9520-92d01dca0625",
     //  "type": "group"
     //}
-  } as any);
-  //    comment: "My first worklog", // Not requited
-  //    started: "2024-07-19T10:00:00.000+0000",
-  //    timeSpent: "1h",
-  //     timeSpentSeconds: 60, // Required one of `timeSpentSeconds` or `timeSpent`
-  //);
+  });
   console.log(`Worklog successfully added for Issue Id: ${worklog.issueId}`);
 }
 

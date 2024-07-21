@@ -7,6 +7,9 @@ export const addWorklog = async (
   if (!issue.id) {
     throw new Error("Issue id is required");
   }
+  console.log(`Adding commet:`,  issue.comment);
+  console.log(`Adding timeSpentSeconds:`,  issue.timeSpentSeconds);
+
   await client.issue.$(issue.id).worklog.$post({
     comment: issue.comment,
     timeSpentSeconds: issue.timeSpentSeconds,
