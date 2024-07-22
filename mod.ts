@@ -106,6 +106,11 @@ export class JiraClient {
         const resp = await req.json();
         return resp;
       }
+
+      if (contentType === "text/html" || contentType === "text/html;charset=UTF-8") {
+        return await req.text() as unknown as T;
+      }
+      
       throw Error(`return type ${contentType} not implemented yet`);
     }
 
