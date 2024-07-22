@@ -1,10 +1,8 @@
-import JiraClient from "@u4/jira";
 import { createIssue } from "./utils/createIssue.ts";
-import { apiToken, email, host } from "./credentials.ts";
+import { createJiraClient } from "./credentials.ts";
 
 async function addFixVersion() {
-  const client =
-    new JiraClient(host, { user: email, token: apiToken }).root.api[3];
+  const client = createJiraClient();
 
   const { id } = await createIssue(client);
   if (!id) {

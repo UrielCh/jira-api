@@ -1,10 +1,8 @@
-import JiraClient from "@u4/jira";
+import { createJiraClient } from "./credentials.ts";
 import { createIssue } from "./utils/createIssue.ts";
-import { apiToken, email, host } from "./credentials.ts";
 
 async function addWorklog() {
-  const client =
-    new JiraClient(host, { user: email, token: apiToken }).root.api[3];
+  const client = createJiraClient();
 
   // Used to reduce the amount of code that is not directly related to creating a worklog
   const newIssue = await createIssue(client);

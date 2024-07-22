@@ -1,9 +1,7 @@
-import JiraClient from "@u4/jira";
 
-import { apiToken, email, host } from "./credentials.ts";
+import { createJiraClient } from "./credentials.ts";
 
-const client =
-  new JiraClient(host, { user: email, token: apiToken }).root.api[3];
+const client = createJiraClient();
 
 async function main() {
   const projects = await client.project.$get();
