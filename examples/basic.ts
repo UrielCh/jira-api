@@ -1,4 +1,4 @@
-import { CacheSilotDenoKV } from "../CacheSilotDenoKV.ts";
+import { CacheSilotDenoKV } from "@u4/jira";
 import { createJiraClient } from "./credentials.ts";
 
 const client = createJiraClient();

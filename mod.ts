@@ -4,6 +4,7 @@ export { CacheSilotDenoKV } from "./CacheSilotDenoKV.ts";
 export { CacheSilotMemory } from "./CacheSilotMemory.ts";
 export { JiraClient } from "./JiraClient.ts";
 export { JiraClient as default } from "./JiraClient.ts";
+export type * from "./api-atlassianV3.ts";
 
 /**
  * This Library have a tiny footprint, it's only 1.5KB
