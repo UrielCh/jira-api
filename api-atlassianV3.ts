@@ -1,4 +1,4 @@
-import type { ApiRequestable } from "./common.ts";
+import type { ApiRequestable, CacheAction, ICacheOptions } from "./common.ts";
 import { buildProxy } from "./engine.ts";
 
 /** MODEL ActorInputBean */
@@ -14021,6 +14021,10 @@ export interface AtlassianV3 {
         $put(
           body: AnnouncementBannerConfigurationUpdate,
         ): Promise<unknown /* other */>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
       };
       /* Endpoint path: /rest/api/3/app */
       app: {
@@ -14101,6 +14105,10 @@ export interface AtlassianV3 {
                 $put(
                   body: CustomFieldConfigurations,
                 ): Promise<unknown /* other */>;
+                /**
+                 * Controle cache
+                 */
+                $cache(param?: ICacheOptions | CacheAction): void;
               };
             };
             /* Endpoint path: /rest/api/3/app/field/{fieldIdOrKey}/value */
@@ -14144,6 +14152,10 @@ export interface AtlassianV3 {
         $get(
           args?: { key?: string; permissionLevel?: string; keyFilter?: string },
         ): Promise<Array<ApplicationProperty>>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/application-properties/advanced-settings */
         "advanced-settings": {
           /**
@@ -14158,6 +14170,10 @@ export interface AtlassianV3 {
            * 403: Returned if the user is not an administrator.
            */
           $get(): Promise<Array<ApplicationProperty>>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/application-properties/{id} */
         "$"(id: string): {
@@ -14239,6 +14255,10 @@ export interface AtlassianV3 {
          * 403: Returned if the user is not an administrator.
          */
         $get(): Promise<Array<ApplicationRole>>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/applicationrole/{key} */
         "$"(key: string): {
           /**
@@ -14254,6 +14274,10 @@ export interface AtlassianV3 {
            * 404: Returned if the role is not found.
            */
           $get(): Promise<ApplicationRole>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/attachment */
@@ -14291,6 +14315,10 @@ export interface AtlassianV3 {
             $get(
               args?: { redirect?: boolean },
             ): Promise<Array<unknown /* 105 */>>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
         /* Endpoint path: /rest/api/3/attachment/meta */
@@ -14310,6 +14338,10 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
           $get(): Promise<AttachmentSettings>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/attachment/thumbnail */
         thumbnail: {
@@ -14348,6 +14380,10 @@ export interface AtlassianV3 {
                 height?: number;
               },
             ): Promise<Array<unknown /* 105 */>>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
         /* Endpoint path: /rest/api/3/attachment/{id} */
@@ -14393,6 +14429,10 @@ export interface AtlassianV3 {
            *  *  attachments are disabled in the Jira settings.
            */
           $delete(): Promise<unknown /* no content */>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/attachment/{id}/expand */
           expand: {
             /* Endpoint path: /rest/api/3/attachment/{id}/expand/human */
@@ -14421,6 +14461,10 @@ export interface AtlassianV3 {
                * 409: Returned if the attachment is an archive, but not a supported archive format.
                */
               $get(): Promise<AttachmentArchiveMetadataReadable>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
             /* Endpoint path: /rest/api/3/attachment/{id}/expand/raw */
             raw: {
@@ -14448,6 +14492,10 @@ export interface AtlassianV3 {
                * 409: Returned if the attachment is an archive, but not a supported archive format.
                */
               $get(): Promise<AttachmentArchiveImpl>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
           };
         };
@@ -14495,6 +14543,10 @@ export interface AtlassianV3 {
               to?: string;
             },
           ): Promise<AuditRecords>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/avatar */
@@ -14517,6 +14569,10 @@ export interface AtlassianV3 {
              * 500: Returned if an error occurs while retrieving the list of avatars.
              */
             $get(): Promise<SystemAvatars>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
       };
@@ -14567,6 +14623,10 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              */
             $post(body: IssueBulkEditPayload): Promise<SubmittedBulkOperation>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/bulk/issues/move */
           move: {
@@ -14636,6 +14696,10 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              */
             $get(): Promise<BulkOperationProgress>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
       };
@@ -14654,6 +14718,10 @@ export interface AtlassianV3 {
         $get(
           args?: { status?: Array<string>; orderBy?: string },
         ): Promise<DataClassificationLevelsBean>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
       };
       /* Endpoint path: /rest/api/3/comment */
       comment: {
@@ -14701,6 +14769,10 @@ export interface AtlassianV3 {
              * 404: Returned if the comment is not found.
              */
             $get(): Promise<PropertyKeys>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/comment/{commentId}/properties/{propertyKey} */
             "$"(propertyKey: string): {
               /**
@@ -14764,6 +14836,10 @@ export interface AtlassianV3 {
                * 404: Returned if the comment is not found.
                */
               $put(body: unknown /* 264 */): Promise<unknown /* other */>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
           };
         };
@@ -14814,6 +14890,10 @@ export interface AtlassianV3 {
          * 404: Returned if the project is not found or the user does not have permission to browse the project containing the component.
          */
         $post(body: ProjectComponent): Promise<ProjectComponent>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/component/{id} */
         "$"(id: string): {
           /**
@@ -14871,6 +14951,10 @@ export interface AtlassianV3 {
            * 404: Returned if the component is not found or the user does not have permission to browse the project containing the component.
            */
           $put(body: ProjectComponent): Promise<ProjectComponent>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/component/{id}/relatedIssueCounts */
           relatedIssueCounts: {
             /**
@@ -14892,6 +14976,10 @@ export interface AtlassianV3 {
              * 404: Returned if the component is not found.
              */
             $get(): Promise<ComponentIssuesCount>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
       };
@@ -14908,6 +14996,10 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          */
         $get(): Promise<Configuration>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/configuration/timetracking */
         timetracking: {
           /**
@@ -14936,6 +15028,10 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permission.
            */
           $put(body: TimeTrackingProvider): Promise<unknown /* other */>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/configuration/timetracking/list */
           list: {
             /**
@@ -14950,6 +15046,10 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              */
             $get(): Promise<Array<TimeTrackingProvider>>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/configuration/timetracking/options */
           options: {
@@ -14980,6 +15080,10 @@ export interface AtlassianV3 {
             $put(
               body: TimeTrackingConfiguration,
             ): Promise<TimeTrackingConfiguration>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
       };
@@ -15009,6 +15113,10 @@ export interface AtlassianV3 {
            *  *  the user does not have permission to view the custom field.
            */
           $get(): Promise<CustomFieldOption>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/dashboard */
@@ -15041,6 +15149,10 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          */
         $post(body: DashboardDetails): Promise<Dashboard>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/dashboard/bulk */
         bulk: {
           /* Endpoint path: /rest/api/3/dashboard/bulk/edit */
@@ -15077,6 +15189,10 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
           $get(): Promise<AvailableDashboardGadgetsResponse>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/dashboard/search */
         search: {
@@ -15119,6 +15235,10 @@ export interface AtlassianV3 {
               expand?: string;
             },
           ): Promise<PageBeanDashboard>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/dashboard/{dashboardId} */
         "$"(dashboardId: string): {
@@ -15164,6 +15284,10 @@ export interface AtlassianV3 {
              * 404: Returned if the dashboard is not found.
              */
             $post(body: DashboardGadgetSettings): Promise<DashboardGadget>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/dashboard/{dashboardId}/gadget/{gadgetId} */
             "$"(gadgetId: string): {
               /**
@@ -15217,6 +15341,10 @@ export interface AtlassianV3 {
                  * 404: Returned if the dashboard or dashboard item is not found, or the dashboard is not owned by or shared with the user.
                  */
                 $get(): Promise<PropertyKeys>;
+                /**
+                 * Controle cache
+                 */
+                $cache(param?: ICacheOptions | CacheAction): void;
                 /* Endpoint path: /rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey} */
                 "$"(propertyKey: string): {
                   /**
@@ -15287,6 +15415,10 @@ export interface AtlassianV3 {
                    * 404: Returned if the dashboard item is not found or the dashboard is not shared with the user.
                    */
                   $put(body: unknown /* 264 */): Promise<unknown /* other */>;
+                  /**
+                   * Controle cache
+                   */
+                  $cache(param?: ICacheOptions | CacheAction): void;
                 };
               };
             };
@@ -15340,6 +15472,10 @@ export interface AtlassianV3 {
            * 404: Returned if the dashboard is not found or the dashboard is not owned by the user.
            */
           $put(body: DashboardDetails): Promise<Dashboard>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/dashboard/{id}/copy */
           copy: {
             /**
@@ -15372,6 +15508,10 @@ export interface AtlassianV3 {
          * 403: Returned if the client is not authorized to make the request.
          */
         $get(): Promise<WorkspaceDataPolicy>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/data-policy/project */
         project: {
           /**
@@ -15385,6 +15525,10 @@ export interface AtlassianV3 {
            * 403: Returned if the client is not authorized to make the request.
            */
           $get(args?: { ids?: string }): Promise<ProjectDataPolicies>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/events */
@@ -15401,6 +15545,10 @@ export interface AtlassianV3 {
          * 403: Returned if the user does not have permission to complete this request.
          */
         $get(): Promise<Array<IssueEvent>>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
       };
       /* Endpoint path: /rest/api/3/expression */
       expression: {
@@ -15511,6 +15659,10 @@ export interface AtlassianV3 {
          *  *  any of the request object properties have invalid or missing values.
          */
         $post(body: CustomFieldDefinitionJsonBean): Promise<FieldDetails>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/field/search */
         search: {
           /**
@@ -15543,6 +15695,10 @@ export interface AtlassianV3 {
               expand?: string;
             },
           ): Promise<PageBeanField>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/field/search/trashed */
           trashed: {
             /**
@@ -15569,6 +15725,10 @@ export interface AtlassianV3 {
                 orderBy?: string;
               },
             ): Promise<PageBeanField>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
         /* Endpoint path: /rest/api/3/field/{fieldId} */
@@ -15633,6 +15793,10 @@ export interface AtlassianV3 {
             $post(
               body: CreateCustomFieldContext,
             ): Promise<CreateCustomFieldContext>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/field/{fieldId}/context/defaultValue */
             defaultValue: {
               /**
@@ -15735,6 +15899,10 @@ export interface AtlassianV3 {
               $put(
                 body: CustomFieldContextDefaultValueUpdate,
               ): Promise<unknown /* other */>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
             /* Endpoint path: /rest/api/3/field/{fieldId}/context/issuetypemapping */
             issuetypemapping: {
@@ -15756,6 +15924,10 @@ export interface AtlassianV3 {
                   maxResults?: number;
                 },
               ): Promise<PageBeanIssueTypeToContextMapping>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
             /* Endpoint path: /rest/api/3/field/{fieldId}/context/mapping */
             mapping: {
@@ -15803,6 +15975,10 @@ export interface AtlassianV3 {
                   maxResults?: number;
                 },
               ): Promise<PageBeanCustomFieldContextProjectMapping>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
             /* Endpoint path: /rest/api/3/field/{fieldId}/context/{contextId} */
             "$"(contextId: string): {
@@ -15942,6 +16118,10 @@ export interface AtlassianV3 {
                 $put(
                   body: BulkCustomFieldOptionUpdateRequest,
                 ): Promise<CustomFieldUpdatedContextOptionsList>;
+                /**
+                 * Controle cache
+                 */
+                $cache(param?: ICacheOptions | CacheAction): void;
                 /* Endpoint path: /rest/api/3/field/{fieldId}/context/{contextId}/option/move */
                 move: {
                   /**
@@ -16063,6 +16243,10 @@ export interface AtlassianV3 {
             $get(
               args?: { startAt?: number; maxResults?: number },
             ): Promise<PageBeanContext>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/field/{fieldId}/screens */
           screens: {
@@ -16080,6 +16264,10 @@ export interface AtlassianV3 {
             $get(
               args?: { startAt?: number; maxResults?: number; expand?: string },
             ): Promise<PageBeanScreenWithTab>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
         /* Endpoint path: /rest/api/3/field/{fieldKey} */
@@ -16119,6 +16307,10 @@ export interface AtlassianV3 {
              * 404: Returned if the field is not found or does not support options.
              */
             $post(body: IssueFieldOptionCreateBean): Promise<IssueFieldOption>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/field/{fieldKey}/option/suggestions */
             suggestions: {
               /* Endpoint path: /rest/api/3/field/{fieldKey}/option/suggestions/edit */
@@ -16143,6 +16335,10 @@ export interface AtlassianV3 {
                     projectId?: number;
                   },
                 ): Promise<PageBeanIssueFieldOption>;
+                /**
+                 * Controle cache
+                 */
+                $cache(param?: ICacheOptions | CacheAction): void;
               };
               /* Endpoint path: /rest/api/3/field/{fieldKey}/option/suggestions/search */
               search: {
@@ -16166,6 +16362,10 @@ export interface AtlassianV3 {
                     projectId?: number;
                   },
                 ): Promise<PageBeanIssueFieldOption>;
+                /**
+                 * Controle cache
+                 */
+                $cache(param?: ICacheOptions | CacheAction): void;
               };
             };
             /* Endpoint path: /rest/api/3/field/{fieldKey}/option/{optionId} */
@@ -16215,6 +16415,10 @@ export interface AtlassianV3 {
                * 404: Returned if field is not found.
                */
               $put(body: IssueFieldOption): Promise<IssueFieldOption>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
               /* Endpoint path: /rest/api/3/field/{fieldKey}/option/{optionId}/issue */
               issue: {
                 /**
@@ -16349,6 +16553,10 @@ export interface AtlassianV3 {
          * 403: Returned if the user does not have the necessary permission.
          */
         $post(body: FieldConfigurationDetails): Promise<FieldConfiguration>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/fieldconfiguration/{id} */
         "$"(id: string): {
           /**
@@ -16422,6 +16630,10 @@ export interface AtlassianV3 {
             $put(
               body: FieldConfigurationItemsDetails,
             ): Promise<unknown /* other */>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
       };
@@ -16461,6 +16673,10 @@ export interface AtlassianV3 {
         $post(
           body: UpdateFieldConfigurationSchemeDetails,
         ): Promise<FieldConfigurationScheme>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/fieldconfigurationscheme/mapping */
         mapping: {
           /**
@@ -16485,6 +16701,10 @@ export interface AtlassianV3 {
               fieldConfigurationSchemeId?: Array<number>;
             },
           ): Promise<PageBeanFieldConfigurationIssueTypeItem>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/fieldconfigurationscheme/project */
         project: {
@@ -16529,6 +16749,10 @@ export interface AtlassianV3 {
           $put(
             body: FieldConfigurationSchemeProjectAssociation,
           ): Promise<unknown /* other */>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/fieldconfigurationscheme/{id} */
         "$"(id: string): {
@@ -16647,6 +16871,10 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
           $put(body: DefaultShareScope): Promise<DefaultShareScope>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/filter/favourite */
         favourite: {
@@ -16671,6 +16899,10 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
           $get(args?: { expand?: string }): Promise<Array<Filter>>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/filter/my */
         my: {
@@ -16695,6 +16927,10 @@ export interface AtlassianV3 {
           $get(
             args?: { expand?: string; includeFavourites?: boolean },
           ): Promise<Array<Filter>>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/filter/search */
         search: {
@@ -16741,6 +16977,10 @@ export interface AtlassianV3 {
               overrideSharePermissions?: boolean;
             },
           ): Promise<PageBeanFilterDetails>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/filter/{id} */
         "$"(id: string): {
@@ -16790,6 +17030,10 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
           $put(body: Filter): Promise<Filter>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/filter/{id}/columns */
           columns: {
             /**
@@ -16859,6 +17103,10 @@ export interface AtlassianV3 {
              * 403: Returned if the requesting user is not an owner of the filter.
              */
             $put(body: ColumnRequestBody): Promise<unknown /* other */>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/filter/{id}/favourite */
           favourite: {
@@ -16965,6 +17213,10 @@ export interface AtlassianV3 {
             $post(
               body: SharePermissionInputBean,
             ): Promise<Array<SharePermission>>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/filter/{id}/permission/{permissionId} */
             "$"(permissionId: string): {
               /**
@@ -17006,6 +17258,10 @@ export interface AtlassianV3 {
                *  *  the user does not own the filter.
                */
               $delete(): Promise<unknown /* no content */>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
           };
         };
@@ -17067,6 +17323,10 @@ export interface AtlassianV3 {
          * 403: Returned if the user does not have the necessary permission.
          */
         $post(body: AddGroupBean): Promise<Group>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/group/bulk */
         bulk: {
           /**
@@ -17092,6 +17352,10 @@ export interface AtlassianV3 {
               applicationKey?: string;
             },
           ): Promise<PageBeanGroupDetails>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/group/member */
         member: {
@@ -17122,6 +17386,10 @@ export interface AtlassianV3 {
               maxResults?: number;
             },
           ): Promise<PageBeanUserDetails>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/group/user */
         user: {
@@ -17200,6 +17468,10 @@ export interface AtlassianV3 {
               userName?: string;
             },
           ): Promise<FoundGroups>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/groupuserpicker */
@@ -17250,6 +17522,10 @@ export interface AtlassianV3 {
             excludeConnectAddons?: boolean;
           },
         ): Promise<FoundUsersAndGroups>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
       };
       /* Endpoint path: /rest/api/3/instance */
       instance: {
@@ -17266,6 +17542,10 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
           $get(): Promise<License>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/issue */
@@ -17428,6 +17708,10 @@ export interface AtlassianV3 {
               expand?: string;
             },
           ): Promise<IssueCreateMetadata>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/issue/createmeta/{projectIdOrKey} */
           "$"(projectIdOrKey: string): {
             /* Endpoint path: /rest/api/3/issue/createmeta/{projectIdOrKey}/issuetypes */
@@ -17448,6 +17732,10 @@ export interface AtlassianV3 {
               $get(
                 args?: { startAt?: number; maxResults?: number },
               ): Promise<PageOfCreateMetaIssueTypes>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
               /* Endpoint path: /rest/api/3/issue/createmeta/{projectIdOrKey}/issuetypes/{issueTypeId} */
               "$"(issueTypeId: string): {
                 /**
@@ -17466,6 +17754,10 @@ export interface AtlassianV3 {
                 $get(
                   args?: { startAt?: number; maxResults?: number },
                 ): Promise<PageOfCreateMetaIssueTypeWithField>;
+                /**
+                 * Controle cache
+                 */
+                $cache(param?: ICacheOptions | CacheAction): void;
               };
             };
           };
@@ -17495,6 +17787,10 @@ export interface AtlassianV3 {
             $get(
               args?: { isReturningKeys?: boolean },
             ): Promise<IssueLimitReportResponseBean>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
         /* Endpoint path: /rest/api/3/issue/picker */
@@ -17526,6 +17822,10 @@ export interface AtlassianV3 {
               showSubTaskParent?: boolean;
             },
           ): Promise<IssuePickerSuggestions>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/issue/properties */
         properties: {
@@ -17793,6 +18093,10 @@ export interface AtlassianV3 {
            * 422: Returned if a configuration problem prevents the issue being updated. (refer to the [changelog](https://developer.atlassian.com/changelog/#CHANGE-1364) *for more details.*
            */
           $put(body: IssueUpdateDetails): Promise<unknown /* other */>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/issue/{issueIdOrKey}/assignee */
           assignee: {
             /**
@@ -18014,6 +18318,10 @@ export interface AtlassianV3 {
             $get(
               args?: { startAt?: number; maxResults?: number },
             ): Promise<PageBeanChangelog>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/issue/{issueIdOrKey}/changelog/list */
             list: {
               /**
@@ -18085,6 +18393,10 @@ export interface AtlassianV3 {
              *  *  attachments
              */
             $post(body: Comment): Promise<Comment>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/issue/{issueIdOrKey}/comment/{id} */
             "$"(id: string): {
               /**
@@ -18144,6 +18456,10 @@ export interface AtlassianV3 {
                * 404: Returned if the issue or comment is not found or the user does not have permission to view the issue or comment.
                */
               $put(body: Comment): Promise<Comment>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
           };
           /* Endpoint path: /rest/api/3/issue/{issueIdOrKey}/editmeta */
@@ -18192,6 +18508,10 @@ export interface AtlassianV3 {
                 overrideEditableFlag?: boolean;
               },
             ): Promise<IssueUpdateMetadata>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/issue/{issueIdOrKey}/notify */
           notify: {
@@ -18237,6 +18557,10 @@ export interface AtlassianV3 {
              * 404: Returned if the issue is not found or the user does not have permissions to view the issue.
              */
             $get(): Promise<PropertyKeys>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey} */
             "$"(propertyKey: string): {
               /**
@@ -18295,6 +18619,10 @@ export interface AtlassianV3 {
                * 404: Returned if the issue is not found or the user does not have permission to view the issue.
                */
               $put(body: unknown /* 264 */): Promise<unknown /* other */>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
           };
           /* Endpoint path: /rest/api/3/issue/{issueIdOrKey}/remotelink */
@@ -18370,6 +18698,10 @@ export interface AtlassianV3 {
             $post(
               body: RemoteIssueLinkRequest,
             ): Promise<RemoteIssueLinkIdentifies>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId} */
             "$"(linkId: string): {
               /**
@@ -18441,6 +18773,10 @@ export interface AtlassianV3 {
                * 404: Returned if the issue or remote issue link is not found or the user does not have permission to view the issue.
                */
               $put(body: RemoteIssueLinkRequest): Promise<unknown /* other */>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
           };
           /* Endpoint path: /rest/api/3/issue/{issueIdOrKey}/transitions */
@@ -18509,6 +18845,10 @@ export interface AtlassianV3 {
              * 422: Returned if a configuration problem prevents the creation of the issue. (refer to the [changelog](https://developer.atlassian.com/changelog/#CHANGE-1364) *for more details.*
              */
             $post(body: IssueUpdateDetails): Promise<unknown /* other */>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/issue/{issueIdOrKey}/votes */
           votes: {
@@ -18579,6 +18919,10 @@ export interface AtlassianV3 {
              *  *  the issue is not found.
              */
             $post(): Promise<unknown /* other */>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/issue/{issueIdOrKey}/watchers */
           watchers: {
@@ -18644,6 +18988,10 @@ export interface AtlassianV3 {
              * 404: Returned if the issue or the user is not found or the user does not have permission to view the issue.
              */
             $post(body: string): Promise<unknown /* other */>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/issue/{issueIdOrKey}/worklog */
           worklog: {
@@ -18708,6 +19056,10 @@ export interface AtlassianV3 {
              *  *  attachments
              */
             $post(body: Worklog): Promise<Worklog>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/issue/{issueIdOrKey}/worklog/{id} */
             "$"(id: string): {
               /**
@@ -18804,6 +19156,10 @@ export interface AtlassianV3 {
                *  *  time tracking is disabled.
                */
               $put(body: Worklog): Promise<Worklog>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
             /* Endpoint path: /rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId} */
             "$"(worklogId: string): {
@@ -18831,6 +19187,10 @@ export interface AtlassianV3 {
                  *  *  the user does not have permission to view the issue or worklog.
                  */
                 $get(): Promise<PropertyKeys>;
+                /**
+                 * Controle cache
+                 */
+                $cache(param?: ICacheOptions | CacheAction): void;
                 /* Endpoint path: /rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey} */
                 "$"(propertyKey: string): {
                   /**
@@ -18905,6 +19265,10 @@ export interface AtlassianV3 {
                    *  *  the user does not have permission to view the issue or worklog.
                    */
                   $put(body: unknown /* 264 */): Promise<unknown /* other */>;
+                  /**
+                   * Controle cache
+                   */
+                  $cache(param?: ICacheOptions | CacheAction): void;
                 };
               };
             };
@@ -18992,6 +19356,10 @@ export interface AtlassianV3 {
            *  *  the user doesn't have the required permissions.
            */
           $delete(): Promise<unknown /* no content */>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/issueLinkType */
@@ -19031,6 +19399,10 @@ export interface AtlassianV3 {
          *  *  the user does not have the required permissions.
          */
         $post(body: IssueLinkType): Promise<IssueLinkType>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/issueLinkType/{issueLinkTypeId} */
         "$"(issueLinkTypeId: string): {
           /**
@@ -19092,6 +19464,10 @@ export interface AtlassianV3 {
            *  *  the user does not have the required permissions.
            */
           $put(body: IssueLinkType): Promise<IssueLinkType>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/issues */
@@ -19160,6 +19536,10 @@ export interface AtlassianV3 {
         $post(
           body: CreateIssueSecuritySchemeDetails,
         ): Promise<SecuritySchemeId>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/issuesecurityschemes/level */
         level: {
           /**
@@ -19187,6 +19567,10 @@ export interface AtlassianV3 {
               onlyDefault?: boolean;
             },
           ): Promise<PageBeanSecurityLevel>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/issuesecurityschemes/level/default */
           default: {
             /**
@@ -19232,6 +19616,10 @@ export interface AtlassianV3 {
                 expand?: string;
               },
             ): Promise<PageBeanSecurityLevelMember>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
         /* Endpoint path: /rest/api/3/issuesecurityschemes/project */
@@ -19273,6 +19661,10 @@ export interface AtlassianV3 {
           $put(
             body: AssociateSecuritySchemeWithProjectDetails,
           ): Promise<unknown /* default */>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/issuesecurityschemes/search */
         search: {
@@ -19299,6 +19691,10 @@ export interface AtlassianV3 {
               projectId?: Array<string>;
             },
           ): Promise<PageBeanSecuritySchemeWithProjects>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/issuesecurityschemes/{id} */
         "$"(id: string): {
@@ -19333,6 +19729,10 @@ export interface AtlassianV3 {
           $put(
             body: UpdateIssueSecuritySchemeRequestBean,
           ): Promise<unknown /* other */>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/issuesecurityschemes/{issueSecuritySchemeId} */
         "$"(issueSecuritySchemeId: string): {
@@ -19361,6 +19761,10 @@ export interface AtlassianV3 {
                 expand?: string;
               },
             ): Promise<PageBeanIssueSecurityLevelMember>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
         /* Endpoint path: /rest/api/3/issuesecurityschemes/{schemeId} */
@@ -19508,6 +19912,10 @@ export interface AtlassianV3 {
          * 409: Returned if the issue type name is in use.
          */
         $post(body: IssueTypeCreateBean): Promise<IssueTypeDetails>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/issuetype/project */
         project: {
           /**
@@ -19530,6 +19938,10 @@ export interface AtlassianV3 {
           $get(
             args: { projectId: number; level?: number },
           ): Promise<Array<IssueTypeDetails>>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/issuetype/{id} */
         "$"(id: string): {
@@ -19593,6 +20005,10 @@ export interface AtlassianV3 {
            * 409: Returned if the issue type name is in use.
            */
           $put(body: IssueTypeUpdateBean): Promise<IssueTypeDetails>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/issuetype/{id}/alternatives */
           alternatives: {
             /**
@@ -19612,6 +20028,10 @@ export interface AtlassianV3 {
              *  *  the user does not have the required permissions.
              */
             $get(): Promise<Array<IssueTypeDetails>>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/issuetype/{id}/avatar2 */
           avatar2: {
@@ -19675,6 +20095,10 @@ export interface AtlassianV3 {
              *  *  the user does not have the required permissions.
              */
             $get(): Promise<PropertyKeys>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey} */
             "$"(propertyKey: string): {
               /**
@@ -19733,6 +20157,10 @@ export interface AtlassianV3 {
                *  *  the user does not have the permission view the issue type.
                */
               $put(body: unknown /* 264 */): Promise<unknown /* other */>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
           };
         };
@@ -19777,6 +20205,10 @@ export interface AtlassianV3 {
          * 409: Returned if the scheme name is used by another scheme.
          */
         $post(body: IssueTypeSchemeDetails): Promise<IssueTypeSchemeID>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/issuetypescheme/mapping */
         mapping: {
           /**
@@ -19800,6 +20232,10 @@ export interface AtlassianV3 {
               issueTypeSchemeId?: Array<number>;
             },
           ): Promise<PageBeanIssueTypeSchemeMapping>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/issuetypescheme/project */
         project: {
@@ -19844,6 +20280,10 @@ export interface AtlassianV3 {
           $put(
             body: IssueTypeSchemeProjectAssociation,
           ): Promise<unknown /* other */>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/issuetypescheme/{issueTypeSchemeId} */
         "$"(issueTypeSchemeId: string): {
@@ -19993,6 +20433,10 @@ export interface AtlassianV3 {
         $post(
           body: IssueTypeScreenSchemeDetails,
         ): Promise<IssueTypeScreenSchemeId>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/issuetypescreenscheme/mapping */
         mapping: {
           /**
@@ -20016,6 +20460,10 @@ export interface AtlassianV3 {
               issueTypeScreenSchemeId?: Array<number>;
             },
           ): Promise<PageBeanIssueTypeScreenSchemeItem>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/issuetypescreenscheme/project */
         project: {
@@ -20062,6 +20510,10 @@ export interface AtlassianV3 {
           $put(
             body: IssueTypeScreenSchemeProjectAssociation,
           ): Promise<unknown /* other */>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/issuetypescreenscheme/{issueTypeScreenSchemeId} */
         "$"(issueTypeScreenSchemeId: string): {
@@ -20170,6 +20622,10 @@ export interface AtlassianV3 {
             $get(
               args?: { startAt?: number; maxResults?: number; query?: string },
             ): Promise<PageBeanProjectDetails>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
       };
@@ -20208,6 +20664,10 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect.
            */
           $post(body: SearchAutoCompleteFilter): Promise<JQLReferenceData>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/jql/autocompletedata/suggestions */
           suggestions: {
             /**
@@ -20238,6 +20698,10 @@ export interface AtlassianV3 {
                 predicateValue?: string;
               },
             ): Promise<AutoCompleteSuggestions>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
         /* Endpoint path: /rest/api/3/jql/function */
@@ -20280,6 +20744,10 @@ export interface AtlassianV3 {
             $post(
               body: JqlFunctionPrecomputationUpdateRequestBean,
             ): Promise<unknown /* other */>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
         /* Endpoint path: /rest/api/3/jql/match */
@@ -20372,6 +20840,10 @@ export interface AtlassianV3 {
         $get(
           args?: { startAt?: number; maxResults?: number },
         ): Promise<PageBeanString>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
       };
       /* Endpoint path: /rest/api/3/license */
       license: {
@@ -20389,6 +20861,10 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have permission to complete this request.
            */
           $get(): Promise<LicenseMetric>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/license/approximateLicenseCount/product */
           product: {
             /* Endpoint path: /rest/api/3/license/approximateLicenseCount/product/{applicationKey} */
@@ -20405,6 +20881,10 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have permission to complete this request.
                */
               $get(): Promise<LicenseMetric>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
           };
         };
@@ -20450,6 +20930,10 @@ export interface AtlassianV3 {
             commentId?: string;
           },
         ): Promise<Permissions>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
       };
       /* Endpoint path: /rest/api/3/mypreferences */
       mypreferences: {
@@ -20530,6 +21014,10 @@ export interface AtlassianV3 {
          * 404: Returned if the key or value is not provided or invalid.
          */
         $put(body: string): Promise<unknown /* other */>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/mypreferences/locale */
         locale: {
           /**
@@ -20574,6 +21062,10 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
           $put(body: Locale): Promise<unknown /* other */>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/myself */
@@ -20589,6 +21081,10 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          */
         $get(args?: { expand?: string }): Promise<User>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
       };
       /* Endpoint path: /rest/api/3/notificationscheme */
       notificationscheme: {
@@ -20630,6 +21126,10 @@ export interface AtlassianV3 {
         $post(
           body: CreateNotificationSchemeDetails,
         ): Promise<NotificationSchemeId>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/notificationscheme/project */
         project: {
           /**
@@ -20651,6 +21151,10 @@ export interface AtlassianV3 {
               projectId?: Array<string>;
             },
           ): Promise<PageBeanNotificationSchemeAndProjectMappingJsonBean>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/notificationscheme/{id} */
         "$"(id: string): {
@@ -20683,6 +21187,10 @@ export interface AtlassianV3 {
           $put(
             body: UpdateNotificationSchemeDetails,
           ): Promise<unknown /* other */>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/notificationscheme/{id}/notification */
           notification: {
             /**
@@ -20761,6 +21269,10 @@ export interface AtlassianV3 {
          * 403: Returned if the user does not have the necessary permission.
          */
         $get(): Promise<Permissions>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/permissions/check */
         check: {
           /**
@@ -20931,6 +21443,10 @@ export interface AtlassianV3 {
          * 403: Returned if the user does not have the necessary permission or the feature is not available in the Jira plan.
          */
         $post(body: PermissionScheme): Promise<PermissionScheme>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/permissionscheme/{schemeId} */
         "$"(schemeId: string): {
           /**
@@ -20982,6 +21498,10 @@ export interface AtlassianV3 {
            * 404: Returned if the permission scheme is not found.
            */
           $put(body: PermissionScheme): Promise<PermissionScheme>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/permissionscheme/{schemeId}/permission */
           permission: {
             /**
@@ -21009,6 +21529,10 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              */
             $post(body: PermissionGrant): Promise<PermissionGrant>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/permissionscheme/{schemeId}/permission/{permissionId} */
             "$"(permissionId: string): {
               /**
@@ -21036,6 +21560,10 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the necessary permission.
                */
               $delete(): Promise<unknown /* no content */>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
           };
         };
@@ -21066,6 +21594,10 @@ export interface AtlassianV3 {
          * 403: Returned if the user doesn't have the necessary permission.
          */
         $post(body: CreatePriorityDetails): Promise<PriorityId>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/priority/default */
         default: {
           /**
@@ -21127,6 +21659,10 @@ export interface AtlassianV3 {
               expand?: string;
             },
           ): Promise<PageBeanPriority>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/priority/{id} */
         "$"(id: string): {
@@ -21173,6 +21709,10 @@ export interface AtlassianV3 {
            * 404: Returned if the issue priority isn't found.
            */
           $put(body: UpdatePriorityDetails): Promise<unknown /* other */>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/priorityscheme */
@@ -21215,6 +21755,10 @@ export interface AtlassianV3 {
          * 409: Returned if an action with this priority scheme is still in progress.
          */
         $post(body: CreatePrioritySchemeDetails): Promise<PrioritySchemeId>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/priorityscheme/mappings */
         mappings: {
           /**
@@ -21256,6 +21800,10 @@ export interface AtlassianV3 {
                 exclude?: Array<string>;
               },
             ): Promise<PageBeanPriorityWithSequence>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
         /* Endpoint path: /rest/api/3/priorityscheme/{schemeId} */
@@ -21307,6 +21855,10 @@ export interface AtlassianV3 {
             $get(
               args?: { startAt?: string; maxResults?: string },
             ): Promise<PageBeanPriorityWithSequence>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/priorityscheme/{schemeId}/projects */
           projects: {
@@ -21329,6 +21881,10 @@ export interface AtlassianV3 {
                 query?: string;
               },
             ): Promise<PageBeanProject>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
       };
@@ -21379,6 +21935,10 @@ export interface AtlassianV3 {
          * 403: Returned if the user does not have permission to create projects.
          */
         $post(body: CreateProjectDetails): Promise<ProjectIdentifiers>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/project/recent */
         recent: {
           /**
@@ -21401,6 +21961,10 @@ export interface AtlassianV3 {
           $get(
             args?: { expand?: string; properties?: Array<StringList> },
           ): Promise<Array<Project>>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/project/search */
         search: {
@@ -21439,6 +22003,10 @@ export interface AtlassianV3 {
               propertyQuery?: string;
             },
           ): Promise<PageBeanProject>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/project/type */
         type: {
@@ -21455,6 +22023,10 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect.
            */
           $get(): Promise<Array<ProjectType>>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/project/type/accessible */
           accessible: {
             /**
@@ -21465,6 +22037,10 @@ export interface AtlassianV3 {
              * 200: Returned if the request is successful.
              */
             $get(): Promise<Array<ProjectType>>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/project/type/{projectTypeKey} */
           "$"(projectTypeKey: string): {
@@ -21482,6 +22058,10 @@ export interface AtlassianV3 {
              * 404: Returned if the project type is not found.
              */
             $get(): Promise<ProjectType>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/project/type/{projectTypeKey}/accessible */
             accessible: {
               /**
@@ -21496,6 +22076,10 @@ export interface AtlassianV3 {
                * 404: Returned if the project type is not accessible to the user.
                */
               $get(): Promise<ProjectType>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
           };
         };
@@ -21552,6 +22136,10 @@ export interface AtlassianV3 {
            * 404: Returned if the project is not found.
            */
           $put(body: UpdateProjectDetails): Promise<Project>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/project/{projectIdOrKey}/archive */
           archive: {
             /**
@@ -21664,6 +22252,10 @@ export interface AtlassianV3 {
              * 404: Returned if the project is not found or the user does not have permission to view the project.
              */
             $get(): Promise<ProjectAvatars>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/project/{projectIdOrKey}/classification-level */
           "classification-level": {
@@ -21719,6 +22311,10 @@ export interface AtlassianV3 {
               $put(
                 body: UpdateDefaultProjectClassificationBean,
               ): Promise<unknown /* other */>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
           };
           /* Endpoint path: /rest/api/3/project/{projectIdOrKey}/component */
@@ -21747,6 +22343,10 @@ export interface AtlassianV3 {
                 query?: string;
               },
             ): Promise<PageBeanComponentWithIssueCount>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/project/{projectIdOrKey}/components */
           components: {
@@ -21768,6 +22368,10 @@ export interface AtlassianV3 {
             $get(
               args?: { componentSource?: string },
             ): Promise<Array<ProjectComponent>>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/project/{projectIdOrKey}/delete */
           delete: {
@@ -21804,6 +22408,10 @@ export interface AtlassianV3 {
              * 404: Returned if the project is not found.
              */
             $get(): Promise<ContainerForProjectFeatures>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/project/{projectIdOrKey}/features/{featureKey} */
             "$"(featureKey: string): {
               /**
@@ -21840,6 +22448,10 @@ export interface AtlassianV3 {
              * 404: Returned if the project is not found.
              */
             $get(): Promise<PropertyKeys>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/project/{projectIdOrKey}/properties/{propertyKey} */
             "$"(propertyKey: string): {
               /**
@@ -21893,6 +22505,10 @@ export interface AtlassianV3 {
                * 404: Returned if the project is not found.
                */
               $put(body: unknown /* 264 */): Promise<unknown /* other */>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
           };
           /* Endpoint path: /rest/api/3/project/{projectIdOrKey}/restore */
@@ -21932,6 +22548,10 @@ export interface AtlassianV3 {
              * 404: Returned if the project is not found or or if the user does not have administrative permissions for the project.
              */
             $get(): Promise<object>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/project/{projectIdOrKey}/role/{id} */
             "$"(id: string): {
               /**
@@ -22019,6 +22639,10 @@ export interface AtlassianV3 {
                *  *  a group or user is not active.
                */
               $put(body: ProjectRoleActorsUpdateBean): Promise<ProjectRole>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
           };
           /* Endpoint path: /rest/api/3/project/{projectIdOrKey}/roledetails */
@@ -22042,6 +22666,10 @@ export interface AtlassianV3 {
                 excludeConnectAddons?: boolean;
               },
             ): Promise<Array<ProjectRoleDetails>>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/project/{projectIdOrKey}/statuses */
           statuses: {
@@ -22059,6 +22687,10 @@ export interface AtlassianV3 {
              * 404: Returned if the project is not found or the user does not have permission to view it.
              */
             $get(): Promise<Array<IssueTypeWithStatus>>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/project/{projectIdOrKey}/version */
           version: {
@@ -22084,6 +22716,10 @@ export interface AtlassianV3 {
                 expand?: string;
               },
             ): Promise<PageBeanVersion>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/project/{projectIdOrKey}/versions */
           versions: {
@@ -22100,6 +22736,10 @@ export interface AtlassianV3 {
              * 404: Returned if the project is not found or the user does not have permission to view it.
              */
             $get(args?: { expand?: string }): Promise<Array<Version>>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
         /* Endpoint path: /rest/api/3/project/{projectId} */
@@ -22135,6 +22775,10 @@ export interface AtlassianV3 {
              * 404: Returned if the project is not found.
              */
             $put(body: ProjectEmailAddress): Promise<unknown /* other */>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/project/{projectId}/hierarchy */
           hierarchy: {
@@ -22157,6 +22801,10 @@ export interface AtlassianV3 {
              * 404: Returned if the project is not found or the user does not have the necessary permission.
              */
             $get(): Promise<ProjectIssueTypeHierarchy>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
         /* Endpoint path: /rest/api/3/project/{projectKeyOrId} */
@@ -22177,6 +22825,10 @@ export interface AtlassianV3 {
              * 404: Returned if the project is not found or the user does not have permission to view it.
              */
             $get(): Promise<SecurityScheme>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/project/{projectKeyOrId}/notificationscheme */
           notificationscheme: {
@@ -22193,6 +22845,10 @@ export interface AtlassianV3 {
              * 404: Returned if the project is not found or the user is not an administrator.
              */
             $get(args?: { expand?: string }): Promise<NotificationScheme>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/project/{projectKeyOrId}/permissionscheme */
           permissionscheme: {
@@ -22225,6 +22881,10 @@ export interface AtlassianV3 {
              * 404: Returned if the project or permission scheme is not found.
              */
             $put(body: IdBean): Promise<PermissionScheme>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/project/{projectKeyOrId}/securitylevel */
           securitylevel: {
@@ -22241,6 +22901,10 @@ export interface AtlassianV3 {
              * 404: Returned if the project is not found or the user does not have permission to view it.
              */
             $get(): Promise<ProjectIssueSecurityLevels>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
       };
@@ -22274,6 +22938,10 @@ export interface AtlassianV3 {
          * 409: Returned if the project category name is in use.
          */
         $post(body: ProjectCategory): Promise<ProjectCategory>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/projectCategory/{id} */
         "$"(id: string): {
           /**
@@ -22318,6 +22986,10 @@ export interface AtlassianV3 {
            * 404: Returned if the project category is not found.
            */
           $put(body: ProjectCategory): Promise<UpdatedProjectCategory>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/projectvalidate */
@@ -22335,6 +23007,10 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect.
            */
           $get(args?: { key?: string }): Promise<ErrorCollection>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/projectvalidate/validProjectKey */
         validProjectKey: {
@@ -22349,6 +23025,10 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect.
            */
           $get(args?: { key?: string }): Promise<string>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/projectvalidate/validProjectName */
         validProjectName: {
@@ -22365,6 +23045,10 @@ export interface AtlassianV3 {
            * 404: Returned if a valid project name cannot be generated.
            */
           $get(args: { name: string }): Promise<string>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/resolution */
@@ -22393,6 +23077,10 @@ export interface AtlassianV3 {
          * 403: Returned if the user doesn't have the necessary permission.
          */
         $post(body: CreateResolutionDetails): Promise<ResolutionId>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/resolution/default */
         default: {
           /**
@@ -22452,6 +23140,10 @@ export interface AtlassianV3 {
               onlyDefault?: boolean;
             },
           ): Promise<PageBeanResolutionJsonBean>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/resolution/{id} */
         "$"(id: string): {
@@ -22498,6 +23190,10 @@ export interface AtlassianV3 {
            * 404: Returned if the issue resolution isn't found.
            */
           $put(body: UpdateResolutionDetails): Promise<unknown /* other */>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/role */
@@ -22545,6 +23241,10 @@ export interface AtlassianV3 {
          * 409: Returned if a project role with the provided name already exists.
          */
         $post(body: CreateUpdateRoleRequestBean): Promise<ProjectRole>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/role/{id} */
         "$"(id: string): {
           /**
@@ -22605,6 +23305,10 @@ export interface AtlassianV3 {
            * 404: Returned if the project role is not found.
            */
           $put(body: CreateUpdateRoleRequestBean): Promise<ProjectRole>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/role/{id}/actors */
           actors: {
             /**
@@ -22655,6 +23359,10 @@ export interface AtlassianV3 {
              * 404: Returned if the project role is not found.
              */
             $post(body: ActorInputBean): Promise<ProjectRole>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
       };
@@ -22694,6 +23402,10 @@ export interface AtlassianV3 {
          * 403: Returned if the user does not have the required permissions.
          */
         $post(body: ScreenDetails): Promise<Screen>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/screens/addToDefault */
         addToDefault: {
           /* Endpoint path: /rest/api/3/screens/addToDefault/{fieldId} */
@@ -22738,6 +23450,10 @@ export interface AtlassianV3 {
               maxResult?: number;
             },
           ): Promise<unknown /* no schema 81 */>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/screens/{screenId} */
         "$"(screenId: string): {
@@ -22784,6 +23500,10 @@ export interface AtlassianV3 {
              * 404: Returned if the screen is not found.
              */
             $get(): Promise<Array<ScreenableField>>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/screens/{screenId}/tabs */
           tabs: {
@@ -22818,6 +23538,10 @@ export interface AtlassianV3 {
              * 404: Returned if the screen is not found.
              */
             $post(body: ScreenableTab): Promise<ScreenableTab>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/screens/{screenId}/tabs/{tabId} */
             "$"(tabId: string): {
               /**
@@ -22881,6 +23605,10 @@ export interface AtlassianV3 {
                  * 404: Returned if the screen, screen tab, or field is not found.
                  */
                 $post(body: AddFieldBean): Promise<ScreenableField>;
+                /**
+                 * Controle cache
+                 */
+                $cache(param?: ICacheOptions | CacheAction): void;
                 /* Endpoint path: /rest/api/3/screens/{screenId}/tabs/{tabId}/fields/{id} */
                 "$"(id: string): {
                   /**
@@ -22981,6 +23709,10 @@ export interface AtlassianV3 {
          * 404: Returned if a screen used as one of the screen types in the screen scheme is not found.
          */
         $post(body: ScreenSchemeDetails): Promise<ScreenSchemeId>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/screenscheme/{screenSchemeId} */
         "$"(screenSchemeId: string): {
           /**
@@ -23067,6 +23799,10 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          */
         $post(body: SearchRequestBean): Promise<SearchResults>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/search/id */
         id: {
           /**
@@ -23110,6 +23846,10 @@ export interface AtlassianV3 {
            * 404: Returned if the issue security level is not found.
            */
           $get(): Promise<SecurityLevel>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/serverInfo */
@@ -23127,6 +23867,10 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect.
          */
         $get(): Promise<ServerInformation>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
       };
       /* Endpoint path: /rest/api/3/settings */
       settings: {
@@ -23166,6 +23910,10 @@ export interface AtlassianV3 {
            * 404: Returned if a navigable field value is not found.
            */
           $put(): Promise<unknown /* no content */>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/status */
@@ -23183,6 +23931,10 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          */
         $get(): Promise<Array<StatusDetails>>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/status/{idOrName} */
         "$"(idOrName: string): {
           /**
@@ -23205,6 +23957,10 @@ export interface AtlassianV3 {
            *  *  the user does not have the required permissions.
            */
           $get(): Promise<StatusDetails>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/statuscategory */
@@ -23220,6 +23976,10 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          */
         $get(): Promise<Array<StatusCategory>>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/statuscategory/{idOrKey} */
         "$"(idOrKey: string): {
           /**
@@ -23234,6 +23994,10 @@ export interface AtlassianV3 {
            * 404: Returned if the status category is not found.
            */
           $get(): Promise<StatusCategory>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/statuses */
@@ -23302,6 +24066,10 @@ export interface AtlassianV3 {
          * 409: Returned if another workflow configuration update task is ongoing.
          */
         $put(body: StatusUpdateRequest): Promise<unknown /* other */>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/statuses/search */
         search: {
           /**
@@ -23328,6 +24096,10 @@ export interface AtlassianV3 {
               statusCategory?: string;
             },
           ): Promise<PageOfStatuses>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/task */
@@ -23356,6 +24128,10 @@ export interface AtlassianV3 {
            * 404: Returned if the task is not found.
            */
           $get(): Promise<TaskProgressBeanObject>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/task/{taskId}/cancel */
           cancel: {
             /**
@@ -23416,6 +24192,10 @@ export interface AtlassianV3 {
         $post(
           body: CreateUiModificationDetails,
         ): Promise<UiModificationIdentifiers>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/uiModifications/{uiModificationId} */
         "$"(uiModificationId: string): {
           /**
@@ -23525,6 +24305,10 @@ export interface AtlassianV3 {
                  * 404: Returned if the avatar type is invalid, the associated item ID is missing, or the item is not found.
                  */
                 $post(): Promise<Avatar>;
+                /**
+                 * Controle cache
+                 */
+                $cache(param?: ICacheOptions | CacheAction): void;
               };
               /* Endpoint path: /rest/api/3/universal_avatar/type/{type}/owner/{owningObjectId} */
               "$"(owningObjectId: string): {
@@ -23574,6 +24358,10 @@ export interface AtlassianV3 {
               $get(
                 args?: { size?: string; format?: string },
               ): Promise<StreamingResponseBody>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
               /* Endpoint path: /rest/api/3/universal_avatar/view/type/{type}/avatar */
               avatar: {
                 /* Endpoint path: /rest/api/3/universal_avatar/view/type/{type}/avatar/{id} */
@@ -23600,6 +24388,10 @@ export interface AtlassianV3 {
                   $get(
                     args?: { size?: string; format?: string },
                   ): Promise<StreamingResponseBody>;
+                  /**
+                   * Controle cache
+                   */
+                  $cache(param?: ICacheOptions | CacheAction): void;
                 };
               };
               /* Endpoint path: /rest/api/3/universal_avatar/view/type/{type}/owner */
@@ -23628,6 +24420,10 @@ export interface AtlassianV3 {
                   $get(
                     args?: { size?: string; format?: string },
                   ): Promise<StreamingResponseBody>;
+                  /**
+                   * Controle cache
+                   */
+                  $cache(param?: ICacheOptions | CacheAction): void;
                 };
               };
             };
@@ -23689,6 +24485,10 @@ export interface AtlassianV3 {
          * 403: Returned if the user does not have the necessary permission.
          */
         $post(body: NewUserDetails): Promise<User>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/user/assignable */
         assignable: {
           /* Endpoint path: /rest/api/3/user/assignable/multiProjectSearch */
@@ -23726,6 +24526,10 @@ export interface AtlassianV3 {
                 maxResults?: number;
               },
             ): Promise<Array<User>>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/user/assignable/search */
           search: {
@@ -23770,6 +24574,10 @@ export interface AtlassianV3 {
                 recommend?: boolean;
               },
             ): Promise<Array<User>>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
         /* Endpoint path: /rest/api/3/user/bulk */
@@ -23794,6 +24602,10 @@ export interface AtlassianV3 {
               accountId: Array<string>;
             },
           ): Promise<PageBeanUser>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/user/bulk/migration */
           migration: {
             /**
@@ -23815,6 +24627,10 @@ export interface AtlassianV3 {
                 key?: Array<string>;
               },
             ): Promise<Array<UserMigrationBean>>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
         /* Endpoint path: /rest/api/3/user/columns */
@@ -23876,6 +24692,10 @@ export interface AtlassianV3 {
            * 500: Returned if an invalid issue table column ID is sent.
            */
           $put(): Promise<unknown /* other */>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/user/email */
         email: {
@@ -23891,6 +24711,10 @@ export interface AtlassianV3 {
            * 503: Indicates the API is not currently enabled
            */
           $get(args: { accountId: string }): Promise<UnrestrictedUserEmail>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/user/email/bulk */
           bulk: {
             /**
@@ -23906,6 +24730,10 @@ export interface AtlassianV3 {
             $get(
               args: { accountId: Array<string> },
             ): Promise<UnrestrictedUserEmail>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
         /* Endpoint path: /rest/api/3/user/groups */
@@ -23925,6 +24753,10 @@ export interface AtlassianV3 {
           $get(
             args: { accountId: string; username?: string; key?: string },
           ): Promise<Array<GroupName>>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/user/permission */
         permission: {
@@ -23975,6 +24807,10 @@ export interface AtlassianV3 {
                 maxResults?: number;
               },
             ): Promise<Array<User>>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
         /* Endpoint path: /rest/api/3/user/picker */
@@ -24008,6 +24844,10 @@ export interface AtlassianV3 {
               excludeConnectUsers?: boolean;
             },
           ): Promise<FoundUsers>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/user/properties */
         properties: {
@@ -24032,6 +24872,10 @@ export interface AtlassianV3 {
           $get(
             args?: { accountId?: string; userKey?: string; username?: string },
           ): Promise<PropertyKeys>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/user/properties/{propertyKey} */
           "$"(propertyKey: string): {
             /**
@@ -24105,6 +24949,10 @@ export interface AtlassianV3 {
              * 405: Returned if the property key is not specified.
              */
             $put(body: unknown /* 264 */): Promise<unknown /* other */>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
         /* Endpoint path: /rest/api/3/user/search */
@@ -24141,6 +24989,10 @@ export interface AtlassianV3 {
               property?: string;
             },
           ): Promise<Array<User>>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/user/search/query */
           query: {
             /**
@@ -24176,6 +25028,10 @@ export interface AtlassianV3 {
             $get(
               args: { query: string; startAt?: number; maxResults?: number },
             ): Promise<PageBeanUser>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/user/search/query/key */
             key: {
               /**
@@ -24211,6 +25067,10 @@ export interface AtlassianV3 {
               $get(
                 args: { query: string; startAt?: number; maxResult?: number },
               ): Promise<PageBeanUserKey>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
           };
         };
@@ -24260,6 +25120,10 @@ export interface AtlassianV3 {
                 maxResults?: number;
               },
             ): Promise<Array<User>>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
       };
@@ -24282,6 +25146,10 @@ export interface AtlassianV3 {
         $get(
           args?: { startAt?: number; maxResults?: number },
         ): Promise<Array<User>>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/users/search */
         search: {
           /**
@@ -24301,6 +25169,10 @@ export interface AtlassianV3 {
           $get(
             args?: { startAt?: number; maxResults?: number },
           ): Promise<Array<User>>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
       /* Endpoint path: /rest/api/3/version */
@@ -24381,6 +25253,10 @@ export interface AtlassianV3 {
            * 404: Returned if the version is not found.
            */
           $put(body: Version): Promise<Version>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/version/{id}/mergeto */
           mergeto: {
             /* Endpoint path: /rest/api/3/version/{id}/mergeto/{moveIssuesTo} */
@@ -24455,6 +25331,10 @@ export interface AtlassianV3 {
              *  *  the user does not have the required permissions.
              */
             $get(): Promise<VersionIssueCounts>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/version/{id}/relatedwork */
           relatedwork: {
@@ -24505,6 +25385,10 @@ export interface AtlassianV3 {
              * 404: Returned if the version or the related work is not found.
              */
             $put(body: VersionRelatedWork): Promise<VersionRelatedWork>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/version/{id}/removeAndSwap */
           removeAndSwap: {
@@ -24550,6 +25434,10 @@ export interface AtlassianV3 {
              *  *  the user does not have the required permissions.
              */
             $get(): Promise<VersionUnresolvedIssuesCount>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
         /* Endpoint path: /rest/api/3/version/{versionId} */
@@ -24624,6 +25512,10 @@ export interface AtlassianV3 {
         $post(
           body: WebhookRegistrationDetails,
         ): Promise<ContainerForRegisteredWebhooks>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/webhook/failed */
         failed: {
           /**
@@ -24646,6 +25538,10 @@ export interface AtlassianV3 {
           $get(
             args?: { maxResults?: number; after?: number },
           ): Promise<FailedWebhooks>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/webhook/refresh */
         refresh: {
@@ -25424,6 +26320,10 @@ export interface AtlassianV3 {
          * 404: Returned if one or more statuses is not found.
          */
         $post(body: CreateWorkflowDetails): Promise<WorkflowIDs>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/workflow/rule */
         rule: {
           /* Endpoint path: /rest/api/3/workflow/rule/config */
@@ -25488,6 +26388,10 @@ export interface AtlassianV3 {
             $put(
               body: WorkflowTransitionRulesUpdate,
             ): Promise<WorkflowTransitionRulesUpdateErrors>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/workflow/rule/config/delete */
             delete: {
               /**
@@ -25539,6 +26443,10 @@ export interface AtlassianV3 {
               isActive?: boolean;
             },
           ): Promise<PageBeanWorkflow>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/workflow/transitions */
         transitions: {
@@ -25621,6 +26529,10 @@ export interface AtlassianV3 {
               $put(
                 body: WorkflowTransitionProperty,
               ): Promise<WorkflowTransitionProperty>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
           };
         };
@@ -26214,6 +27126,10 @@ export interface AtlassianV3 {
               issueTypeId?: string;
             },
           ): Promise<WorkflowCapabilities>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/workflows/create */
         create: {
@@ -26321,6 +27237,10 @@ export interface AtlassianV3 {
          * 403: Returned if the user does not have the necessary permission.
          */
         $post(body: WorkflowScheme): Promise<WorkflowScheme>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
         /* Endpoint path: /rest/api/3/workflowscheme/project */
         project: {
           /**
@@ -26358,6 +27278,10 @@ export interface AtlassianV3 {
           $put(
             body: WorkflowSchemeProjectAssociation,
           ): Promise<unknown /* other */>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/workflowscheme/read */
         read: {
@@ -26465,6 +27389,10 @@ export interface AtlassianV3 {
            * 404: Returned if the workflow scheme is not found.
            */
           $put(body: WorkflowScheme): Promise<WorkflowScheme>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
           /* Endpoint path: /rest/api/3/workflowscheme/{id}/createdraft */
           createdraft: {
             /**
@@ -26532,6 +27460,10 @@ export interface AtlassianV3 {
              * 404: Returned if the workflow scheme is not found.
              */
             $put(body: DefaultWorkflow): Promise<WorkflowScheme>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
           /* Endpoint path: /rest/api/3/workflowscheme/{id}/draft */
           draft: {
@@ -26588,6 +27520,10 @@ export interface AtlassianV3 {
              *  *  the original active workflow scheme does not have a draft.
              */
             $put(body: WorkflowScheme): Promise<WorkflowScheme>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/api/3/workflowscheme/{id}/draft/default */
             default: {
               /**
@@ -26639,6 +27575,10 @@ export interface AtlassianV3 {
                *  *  The workflow scheme does not have a draft.
                */
               $put(body: DefaultWorkflow): Promise<WorkflowScheme>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
             /* Endpoint path: /rest/api/3/workflowscheme/{id}/draft/issuetype */
             issuetype: {
@@ -26684,6 +27624,10 @@ export interface AtlassianV3 {
                  * 404: Returned if the workflow scheme or issue type is not found.
                  */
                 $put(body: IssueTypeWorkflowMapping): Promise<WorkflowScheme>;
+                /**
+                 * Controle cache
+                 */
+                $cache(param?: ICacheOptions | CacheAction): void;
               };
             };
             /* Endpoint path: /rest/api/3/workflowscheme/{id}/draft/publish */
@@ -26770,6 +27714,10 @@ export interface AtlassianV3 {
                *  *  The workflow is not specified.
                */
               $put(body: IssueTypesWorkflowMapping): Promise<WorkflowScheme>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
           };
           /* Endpoint path: /rest/api/3/workflowscheme/{id}/issuetype */
@@ -26825,6 +27773,10 @@ export interface AtlassianV3 {
                * 404: Returned if the workflow scheme or issue type is not found.
                */
               $put(body: IssueTypeWorkflowMapping): Promise<WorkflowScheme>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
           };
           /* Endpoint path: /rest/api/3/workflowscheme/{id}/workflow */
@@ -26886,6 +27838,10 @@ export interface AtlassianV3 {
              *  *  The workflow is not specified.
              */
             $put(body: IssueTypesWorkflowMapping): Promise<WorkflowScheme>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
       };
@@ -26908,6 +27864,10 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
           $get(args?: { since?: number }): Promise<ChangedWorklogs>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
         /* Endpoint path: /rest/api/3/worklog/list */
         list: {
@@ -26951,6 +27911,10 @@ export interface AtlassianV3 {
           $get(
             args?: { since?: number; expand?: string },
           ): Promise<ChangedWorklogs>;
+          /**
+           * Controle cache
+           */
+          $cache(param?: ICacheOptions | CacheAction): void;
         };
       };
     };
@@ -26977,6 +27941,10 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              */
             $get(): Promise<PropertyKeys>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
             /* Endpoint path: /rest/atlassian-connect/1/addons/{addonKey}/properties/{propertyKey} */
             "$"(propertyKey: string): {
               /**
@@ -27026,6 +27994,10 @@ export interface AtlassianV3 {
                * 401: Returned if the authentication credentials are incorrect or missing.
                */
               $put(body: unknown /* 264 */): Promise<OperationMessage>;
+              /**
+               * Controle cache
+               */
+              $cache(param?: ICacheOptions | CacheAction): void;
             };
           };
         };
@@ -27076,6 +28048,10 @@ export interface AtlassianV3 {
              * 401: Returned if the call is not from a Connect app.
              */
             $post(body: ConnectModules): Promise<unknown /* no content */>;
+            /**
+             * Controle cache
+             */
+            $cache(param?: ICacheOptions | CacheAction): void;
           };
         };
       };
@@ -27159,6 +28135,10 @@ export interface AtlassianV3 {
         $get(
           args: { serviceIds: Array<string> },
         ): Promise<Array<ServiceRegistry>>;
+        /**
+         * Controle cache
+         */
+        $cache(param?: ICacheOptions | CacheAction): void;
       };
     };
   };

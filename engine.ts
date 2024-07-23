@@ -47,6 +47,12 @@ const commonGet = (key: string, target: GenericProxyApi) => {
       };
     }
     switch (key) {
+      case "$cache": {
+        const fnc = (params: ApiParamsType) => {
+          return target._apiEngine.cache(target._model, params);
+        };
+        return fnc.bind(target._apiEngine);
+      }
       case "$get":
       case "$post":
       case "$delete":
@@ -107,10 +113,33 @@ const handlerRoot: ProxyHandler<GenericProxyApi> = {
     }
     const key = p.toString();
     switch (key) {
+      // object
       case "toString":
       case "valueOf":
       case "toLocaleString":
+        // hasOwnProperty
+        // isPrototypeOf
+        // propertyIsEnumerable
+        // constructor
         return target[p as "toString" | "valueOf" | "toLocaleString"];
+        // // EventEmitter if engine implement EventEmitter
+        // case 'addListener':
+        // case 'on':
+        // case 'once':
+        // case 'prependListener':
+        // case 'prependOnceListener':
+        // case 'removeListener':
+        // case 'off':
+        // case 'removeAllListeners':
+        // case 'setMaxListeners':
+        // case 'getMaxListeners':
+        // case 'listeners':
+        // case 'rawListeners':
+        // case 'emit':
+        // case 'eventNames':
+        // case 'listenerCount':
+        //     return (target as any)[p as 'addListener' | 'on' | 'once' | 'prependListener' | 'prependOnceListener' | 'removeListener' | 'off' | 'removeAllListeners' | 'setMaxListeners' | 'getMaxListeners' | 'listeners' | 'rawListeners' | 'emit' | 'eventNames' | 'listenerCount'];
+        // legacy method only in root level
     }
     return commonGet(key, target);
   },
@@ -130,12 +159,8 @@ class GenericProxyApi {
     this._path = path;
     this._model = model;
   }
-  /**
-   * Override toString to give a better debug information
-   * @returns the current URI path
-   */
   toString(): string {
-    return `REST API to ${this._path}`;
+    return "current path:" + this._path;
   }
 }
 
