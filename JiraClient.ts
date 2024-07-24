@@ -75,6 +75,12 @@ export class JiraClient {
         headers,
       };
       if (typeof params === "object" && Object.keys(params).length > 0) {
+        for (const [key, value] of Object.entries(params)) {
+          if (key === "Atlassian-Transfer-Id") { // special case for file upload
+            delete params[key];
+            headers.push([key, value]);
+          }
+        }
         if (method === "PUT" || method === "POST") {
           // Escape unicode
           const reqBody = JSON.stringify(params).replace(

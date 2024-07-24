@@ -1,5 +1,6 @@
-// deno-lint-ignore-file no-explicit-any
 import type { ApiParamsType, ApiRequestable } from "./common.ts";
+
+type ObjectKeys = "toString" | "valueOf" | "toLocaleString";
 
 /**
  * handler for all proxy level except the root one
@@ -10,17 +11,17 @@ import type { ApiParamsType, ApiRequestable } from "./common.ts";
  * - path navigation
  */
 const handlerChild: ProxyHandler<GenericProxyApi> = {
-  get(target: GenericProxyApi, p: PropertyKey, _receiver: any) {
+  get(target: GenericProxyApi, p: PropertyKey, _receiver: unknown) {
     if (typeof p === "symbol") {
       // symbol can not be part of API
-      return (target as any)[p];
+      return (target as unknown as Record<symbol, unknown>)[p];
     }
     const key = p.toString();
     switch (key) {
       case "toString":
       case "valueOf":
       case "toLocaleString":
-        return (target as any)[p];
+        return target[p as ObjectKeys];
     }
     return commonGet(key, target);
   },
@@ -106,10 +107,10 @@ const commonGet = (key: string, target: GenericProxyApi) => {
  * - path navigation
  */
 const handlerRoot: ProxyHandler<GenericProxyApi> = {
-  get(target: GenericProxyApi, p: PropertyKey, _receiver: any) {
+  get(target: GenericProxyApi, p: PropertyKey, _receiver: unknown) {
     if (typeof p === "symbol") {
       // symbol can not be part of API
-      return (target as any)[p];
+      return (target as unknown as Record<symbol, unknown>)[p];
     }
     const key = p.toString();
     switch (key) {
@@ -121,7 +122,7 @@ const handlerRoot: ProxyHandler<GenericProxyApi> = {
         // isPrototypeOf
         // propertyIsEnumerable
         // constructor
-        return target[p as "toString" | "valueOf" | "toLocaleString"];
+        return target[p as ObjectKeys];
         // // EventEmitter if engine implement EventEmitter
         // case 'addListener':
         // case 'on':

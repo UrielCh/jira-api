@@ -8,7 +8,9 @@ a compact JIRA REST API
 
 jira.js is huge, 8.91MB containing more than 10,000 files, and relies on axios.
 This library has fewer than 10 files, and once bundled it is less than 1KB, and
-uses fetch.
+it only use fetch.
+
+`@u4/jira` also include a builtin cache, you can use to improve your script speed.
 
 ## samples
 
@@ -29,7 +31,6 @@ const domain = process.env.JRA_DOMAIN;
 const user = process.env.JRA_USER;
 const token = process.env.JRA_TOKEN;
 const jira = new JiraClient(domain, { user, token });
-console.log(jira);
 const apiV3 = jira.root.api[3];
 const dashboards = await apiV3.dashboard.$get();
 for (const dashboard of dashboards.dashboards) {
