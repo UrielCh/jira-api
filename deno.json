@@ -1,6 +1,6 @@
 {
   "name": "@u4/jira",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "exports": "./mod.ts",
   "lock": false,
   "unstable": [
@@ -8,6 +8,7 @@
   ],
   "publish": {
     "exclude": [
+      "*_test.ts",
       "examples",
       "benchmarks",
       ".vscode",

@@ -21,7 +21,7 @@ export class JiraClient {
   /**
    * base URL for the API like https://yourdomain.atlassian.net/rest
    */
-  private baseUrl: string;
+  public readonly baseUrl: string;
   /**
    * caching object
    */
@@ -52,7 +52,7 @@ export class JiraClient {
       domain += ".atlassian.net";
     }
     if (!domain.startsWith("https://")) {
-      domain += "https://" + domain;
+      domain = "https://" + domain;
     }
     this.baseUrl = `${domain}/rest`;
   }
