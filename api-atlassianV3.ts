@@ -1,5 +1,5 @@
-import type { ApiRequestable, CacheAction, ICacheOptions } from './common.ts';
-import { buildProxy } from './engine.ts';
+import type { ApiRequestable, CacheAction, ICacheOptions } from "./common.ts";
+import { buildProxy } from "./engine.ts";
 
 /**
  * MODEL ActorInputBean
@@ -17,7 +17,7 @@ export type ActorInputBean = {
    * The account IDs of the users to add as default actors. This parameter accepts a comma-separated list. For example, `"user":["5b10a2844c20165700ede21g", "5b109f2e9729b51b54dc274d"]`.
    */
   user?: string[];
-}
+};
 /**
  * MODEL ActorsMap
  */
@@ -34,7 +34,7 @@ export type ActorsMap = {
    * The user account ID of the user to add.
    */
   user?: string[];
-}
+};
 /**
  * MODEL AddFieldBean
  */
@@ -43,7 +43,7 @@ export type AddFieldBean = {
    * The ID of the field to add.
    */
   fieldId: string;
-}
+};
 /**
  * MODEL AddGroupBean
  * accept additional properties
@@ -53,7 +53,7 @@ export type AddGroupBean = {
    * The name of the group.
    */
   name: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details of notifications which should be added to the notification scheme.
  * accept additional properties
@@ -63,7 +63,7 @@ export type AddNotificationsDetails = {
    * The list of notifications which should be added to the notification scheme.
    */
   notificationSchemeEvents: Array<NotificationSchemeEventDetails>;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * MODEL AddSecuritySchemeLevelsRequestBean
  */
@@ -72,7 +72,7 @@ export type AddSecuritySchemeLevelsRequestBean = {
    * The list of scheme levels which should be added to the security scheme.
    */
   levels?: Array<SecuritySchemeLevelBean>;
-}
+};
 /**
  * Announcement banner configuration.
  */
@@ -80,24 +80,24 @@ export type AnnouncementBannerConfiguration = {
   /**
    * Hash of the banner data. The client detects updates by comparing hash IDs.
    */
-  hashId: string;
+  hashId?: string;
   /**
    * Flag indicating if the announcement banner can be dismissed by the user.
    */
-  isDismissible: boolean;
+  isDismissible?: boolean;
   /**
    * Flag indicating if the announcement banner is enabled or not.
    */
-  isEnabled: boolean;
+  isEnabled?: boolean;
   /**
    * The text on the announcement banner.
    */
-  message: string;
+  message?: string;
   /**
    * Visibility of the announcement banner.
    */
-  visibility: string;
-}
+  visibility?: string;
+};
 /**
  * Configuration of the announcement banner.
  */
@@ -118,7 +118,7 @@ export type AnnouncementBannerConfigurationUpdate = {
    * Visibility of the announcement banner. Can be public or private.
    */
   visibility?: string;
-}
+};
 /**
  * A workflow transition rule.
  */
@@ -135,8 +135,8 @@ export type AppWorkflowTransitionRule = {
    * The key of the rule, as defined in the Connect or the Forge app descriptor.
    */
   key: string;
-  transition: WorkflowTransition;
-}
+  transition?: WorkflowTransition;
+};
 /**
  * The application the linked item is in.
  * accept additional properties
@@ -150,7 +150,7 @@ export type Application = {
    * The name-spaced type of the application, used by registered rendering apps.
    */
   type?: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details of an application property.
  */
@@ -188,7 +188,7 @@ export type ApplicationProperty = {
    * The new value.
    */
   value?: string;
-}
+};
 /**
  * Details of an application role.
  */
@@ -249,13 +249,13 @@ export type ApplicationRole = {
    * The [type of users](https://confluence.atlassian.com/x/lRW3Ng) being counted against your license.
    */
   userCountDescription?: string;
-}
+};
 /**
  * MODEL ArchiveIssueAsyncRequest
  */
 export type ArchiveIssueAsyncRequest = {
   jql?: string;
-}
+};
 /**
  * Details of a filter for exporting archived issues.
  * accept additional properties
@@ -281,7 +281,7 @@ export type ArchivedIssuesFilterRequest = {
    * List archived issues where the reporter is a specified account ID.
    */
   reporters?: string[];
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details of a field configuration to issue type mappings.
  */
@@ -290,7 +290,7 @@ export type AssociateFieldConfigurationsWithIssueTypesRequest = {
    * Field configuration to issue type mappings.
    */
   mappings: Array<FieldConfigurationToIssueTypeMapping>;
-}
+};
 /**
  * Issue security scheme, project, and remapping details.
  */
@@ -307,7 +307,7 @@ export type AssociateSecuritySchemeWithProjectDetails = {
    * The ID of the issue security scheme. Providing null will clear the association with the issue security scheme.
    */
   schemeId: string;
-}
+};
 /**
  * Details of an item associated with the changed record.
  */
@@ -315,24 +315,24 @@ export type AssociatedItemBean = {
   /**
    * The ID of the associated record.
    */
-  id: string;
+  id?: string;
   /**
    * The name of the associated record.
    */
-  name: string;
+  name?: string;
   /**
    * The ID of the associated parent record.
    */
-  parentId: string;
+  parentId?: string;
   /**
    * The name of the associated parent record.
    */
-  parentName: string;
+  parentName?: string;
   /**
    * The type of the associated record.
    */
-  typeName: string;
-}
+  typeName?: string;
+};
 /**
  * Details about an attachment.
  * accept additional properties
@@ -341,42 +341,42 @@ export type Attachment = {
   /**
    * Details of the user who added the attachment.
    */
-  author: UserDetails;
+  author?: UserDetails;
   /**
    * The content of the attachment.
    */
-  content: string;
+  content?: string;
   /**
    * The datetime the attachment was created.
    * @format: "date-time"
    */
-  created: string;
+  created?: string;
   /**
    * The file name of the attachment.
    */
-  filename: string;
+  filename?: string;
   /**
    * The ID of the attachment.
    */
-  id: string;
+  id?: string;
   /**
    * The MIME type of the attachment.
    */
-  mimeType: string;
+  mimeType?: string;
   /**
    * The URL of the attachment details response.
    */
-  self: string;
+  self?: string;
   /**
    * The size of the attachment.
    * @format: "int64"
    */
-  size: number;
+  size?: number;
   /**
    * The URL of a thumbnail representing the attachment.
    */
-  thumbnail: string;
-} & Record<string, any>
+  thumbnail?: string;
+} & Record<string, any>;
 /**
  * MODEL AttachmentArchive
  */
@@ -391,7 +391,7 @@ export type AttachmentArchive = {
    * @format: "int32"
    */
   totalNumberOfEntriesAvailable?: number;
-}
+};
 /**
  * MODEL AttachmentArchiveEntry
  */
@@ -407,7 +407,7 @@ export type AttachmentArchiveEntry = {
    * @format: "int64"
    */
   size?: number;
-}
+};
 /**
  * MODEL AttachmentArchiveImpl
  */
@@ -421,7 +421,7 @@ export type AttachmentArchiveImpl = {
    * @format: "int32"
    */
   totalEntryCount?: number;
-}
+};
 /**
  * Metadata for an item in an attachment archive.
  */
@@ -430,24 +430,24 @@ export type AttachmentArchiveItemReadable = {
    * The position of the item within the archive.
    * @format: "int64"
    */
-  index: number;
+  index?: number;
   /**
    * The label for the archive item.
    */
-  label: string;
+  label?: string;
   /**
    * The MIME type of the archive item.
    */
-  mediaType: string;
+  mediaType?: string;
   /**
    * The path of the archive item.
    */
-  path: string;
+  path?: string;
   /**
    * The size of the archive item.
    */
-  size: string;
-}
+  size?: string;
+};
 /**
  * Metadata for an archive (for example a zip) and its contents.
  */
@@ -455,26 +455,26 @@ export type AttachmentArchiveMetadataReadable = {
   /**
    * The list of the items included in the archive.
    */
-  entries: Array<AttachmentArchiveItemReadable>;
+  entries?: Array<AttachmentArchiveItemReadable>;
   /**
    * The ID of the attachment.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The MIME type of the attachment.
    */
-  mediaType: string;
+  mediaType?: string;
   /**
    * The name of the archive file.
    */
-  name: string;
+  name?: string;
   /**
    * The number of items included in the archive.
    * @format: "int64"
    */
-  totalEntryCount: number;
-}
+  totalEntryCount?: number;
+};
 /**
  * Metadata for an issue attachment.
  */
@@ -482,48 +482,48 @@ export type AttachmentMetadata = {
   /**
    * Details of the user who attached the file.
    */
-  author: User;
+  author?: User;
   /**
    * The URL of the attachment.
    */
-  content: string;
+  content?: string;
   /**
    * The datetime the attachment was created.
    * @format: "date-time"
    */
-  created: string;
+  created?: string;
   /**
    * The name of the attachment file.
    */
-  filename: string;
+  filename?: string;
   /**
    * The ID of the attachment.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The MIME type of the attachment.
    */
-  mimeType: string;
+  mimeType?: string;
   /**
    * Additional properties of the attachment.
    */
-  properties: Record<string, unknown>;
+  properties?: Record<string, unknown>;
   /**
    * The URL of the attachment metadata details.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The size of the attachment.
    * @format: "int64"
    */
-  size: number;
+  size?: number;
   /**
    * The URL of a thumbnail representing the attachment.
    */
-  thumbnail: string;
-}
+  thumbnail?: string;
+};
 /**
  * Details of the instance's attachment settings.
  */
@@ -531,13 +531,13 @@ export type AttachmentSettings = {
   /**
    * Whether the ability to add attachments is enabled.
    */
-  enabled: boolean;
+  enabled?: boolean;
   /**
    * The maximum size of attachments permitted, in bytes.
    * @format: "int64"
    */
-  uploadLimit: number;
-}
+  uploadLimit?: number;
+};
 /**
  * An audit record.
  */
@@ -545,37 +545,37 @@ export type AuditRecordBean = {
   /**
    * The list of items associated with the changed record.
    */
-  associatedItems: Array<AssociatedItemBean>;
+  associatedItems?: Array<AssociatedItemBean>;
   /**
    * Deprecated, use `authorAccountId` instead. The key of the user who created the audit record.
    */
-  authorKey: string;
+  authorKey?: string;
   /**
    * The category of the audit record. For a list of these categories, see the help article [Auditing in Jira applications](https://confluence.atlassian.com/x/noXKM).
    */
-  category: string;
+  category?: string;
   /**
    * The list of values changed in the record event.
    */
-  changedValues: Array<ChangedValueBean>;
+  changedValues?: Array<ChangedValueBean>;
   /**
    * The date and time on which the audit record was created.
    * @format: "date-time"
    */
-  created: string;
+  created?: string;
   /**
    * The description of the audit record.
    */
-  description: string;
+  description?: string;
   /**
    * The event the audit record originated from.
    */
-  eventSource: string;
+  eventSource?: string;
   /**
    * The ID of the audit record.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * Ref: #/components/schemas/AssociatedItemBean
    */
@@ -583,12 +583,12 @@ export type AuditRecordBean = {
   /**
    * The URL of the computer where the creation of the audit record was initiated.
    */
-  remoteAddress: string;
+  remoteAddress?: string;
   /**
    * The summary of the audit record.
    */
-  summary: string;
-}
+  summary?: string;
+};
 /**
  * Container for a list of audit records.
  */
@@ -597,22 +597,22 @@ export type AuditRecords = {
    * The requested or default limit on the number of audit items to be returned.
    * @format: "int32"
    */
-  limit: number;
+  limit?: number;
   /**
    * The number of audit items skipped before the first item in this list.
    * @format: "int32"
    */
-  offset: number;
+  offset?: number;
   /**
    * The list of audit items.
    */
-  records: Array<AuditRecordBean>;
+  records?: Array<AuditRecordBean>;
   /**
    * The total number of audit items returned.
    * @format: "int64"
    */
-  total: number;
-}
+  total?: number;
+};
 /**
  * A field auto-complete suggestion.
  */
@@ -625,7 +625,7 @@ export type AutoCompleteSuggestion = {
    * The value of a suggested item.
    */
   value?: string;
-}
+};
 /**
  * The results from a JQL query.
  */
@@ -634,7 +634,7 @@ export type AutoCompleteSuggestions = {
    * The list of suggested item.
    */
   results?: Array<AutoCompleteSuggestion>;
-}
+};
 /**
  * The details of the available dashboard gadget.
  */
@@ -642,7 +642,7 @@ export type AvailableDashboardGadget = {
   /**
    * The module key of the gadget type.
    */
-  moduleKey: string;
+  moduleKey?: string;
   /**
    * The title of the gadget.
    */
@@ -650,8 +650,8 @@ export type AvailableDashboardGadget = {
   /**
    * The URI of the gadget type.
    */
-  uri: string;
-}
+  uri?: string;
+};
 /**
  * The list of available gadgets.
  */
@@ -660,7 +660,7 @@ export type AvailableDashboardGadgetsResponse = {
    * The list of available gadgets.
    */
   gadgets: Array<AvailableDashboardGadget>;
-}
+};
 /**
  * The Connect provided ecosystem rules available.
  */
@@ -701,7 +701,7 @@ export type AvailableWorkflowConnectRule = {
    * The URL view path segment defined in the Connect module.
    */
   viewUrl?: string;
-}
+};
 /**
  * The Forge provided ecosystem rules available.
  */
@@ -726,7 +726,7 @@ export type AvailableWorkflowForgeRule = {
    * The rule type.
    */
   ruleType?: string;
-}
+};
 /**
  * The Atlassian provided system rules available.
  */
@@ -759,7 +759,7 @@ export type AvailableWorkflowSystemRule = {
    * The rule type.
    */
   ruleType: string;
-}
+};
 /**
  * The list of available trigger types.
  */
@@ -776,7 +776,7 @@ export type AvailableWorkflowTriggerTypes = {
    * The type identifier of trigger rule.
    */
   type?: string;
-}
+};
 /**
  * The trigger rules available.
  */
@@ -789,7 +789,7 @@ export type AvailableWorkflowTriggers = {
    * The rule key of the rule.
    */
   ruleKey: string;
-}
+};
 /**
  * Details of an avatar.
  * accept additional properties
@@ -798,7 +798,7 @@ export type Avatar = {
   /**
    * The file name of the avatar icon. Returned for system avatars.
    */
-  fileName: string;
+  fileName?: string;
   /**
    * The ID of the avatar.
    */
@@ -806,24 +806,24 @@ export type Avatar = {
   /**
    * Whether the avatar can be deleted.
    */
-  isDeletable: boolean;
+  isDeletable?: boolean;
   /**
    * Whether the avatar is used in Jira. For example, shown as a project's avatar.
    */
-  isSelected: boolean;
+  isSelected?: boolean;
   /**
    * Whether the avatar is a system avatar.
    */
-  isSystemAvatar: boolean;
+  isSystemAvatar?: boolean;
   /**
    * The owner of the avatar. For a system avatar the owner is null (and nothing is returned). For non-system avatars this is the appropriate identifier, such as the ID for a project or the account ID for a user.
    */
-  owner: string;
+  owner?: string;
   /**
    * The list of avatar icon URLs.
    */
-  urls: Record<string, unknown>;
-} & Record<string, any>
+  urls?: Record<string, unknown>;
+} & Record<string, any>;
 /**
  * MODEL AvatarUrlsBean
  */
@@ -848,7 +848,7 @@ export type AvatarUrlsBean = {
    * @format: "uri"
    */
   "48x48"?: string;
-}
+};
 /**
  * Details about system and custom avatars.
  */
@@ -856,12 +856,12 @@ export type Avatars = {
   /**
    * Custom avatars list.
    */
-  custom: Array<Avatar>;
+  custom?: Array<Avatar>;
   /**
    * System avatars list.
    */
-  system: Array<Avatar>;
-}
+  system?: Array<Avatar>;
+};
 /**
  * Details for changing owners of shareable entities
  */
@@ -874,7 +874,7 @@ export type BulkChangeOwnerDetails = {
    * The account id of the new owner.
    */
   newOwner: string;
-}
+};
 /**
  * Details of the options to create for a custom field.
  */
@@ -883,7 +883,7 @@ export type BulkCustomFieldOptionCreateRequest = {
    * Details of options to create.
    */
   options?: Array<CustomFieldOptionCreate>;
-}
+};
 /**
  * Details of the options to update for a custom field.
  */
@@ -892,7 +892,7 @@ export type BulkCustomFieldOptionUpdateRequest = {
    * Details of the options to update.
    */
   options?: Array<CustomFieldOptionUpdate>;
-}
+};
 /**
  * Errors of bulk edit action.
  */
@@ -905,7 +905,7 @@ export type BulkEditActionError = {
    * The errors.
    */
   errors: Record<string, unknown>;
-}
+};
 /**
  * Bulk Edit Get Fields Response.
  */
@@ -913,16 +913,16 @@ export type BulkEditGetFields = {
   /**
    * The end cursor for use in pagination.
    */
-  endingBefore: string;
+  endingBefore?: string;
   /**
    * List of all the fields
    */
-  fields: Array<IssueBulkEditField>;
+  fields?: Array<IssueBulkEditField>;
   /**
    * The start cursor for use in pagination.
    */
-  startingAfter: string;
-}
+  startingAfter?: string;
+};
 /**
  * Details of a request to bulk edit shareable entity.
  */
@@ -947,7 +947,7 @@ export type BulkEditShareableEntityRequest = {
    * The permission details to be changed.
    */
   permissionDetails?: PermissionDetails;
-}
+};
 /**
  * Details of a request to bulk edit shareable entity.
  */
@@ -960,7 +960,7 @@ export type BulkEditShareableEntityResponse = {
    * The mapping dashboard id to errors if any.
    */
   entityErrors?: Record<string, unknown>;
-}
+};
 /**
  * A container for the watch status of a list of issues.
  */
@@ -968,8 +968,8 @@ export type BulkIssueIsWatching = {
   /**
    * The map of issue ID to boolean watch status.
    */
-  issuesIsWatching: Record<string, unknown>;
-}
+  issuesIsWatching?: Record<string, unknown>;
+};
 /**
  * Bulk issue property update request details.
  */
@@ -986,13 +986,13 @@ export type BulkIssuePropertyUpdateRequest = {
    * The value of the property. The value must be a [valid](https://tools.ietf.org/html/rfc4627), non-empty JSON blob. The maximum length is 32768 characters.
    */
   value?: any /* 122 */;
-}
+};
 /**
  * MODEL BulkOperationErrorResponse
  */
 export type BulkOperationErrorResponse = {
   errors?: Array<ErrorMessage>;
-}
+};
 /**
  * MODEL BulkOperationErrorResult
  */
@@ -1009,7 +1009,7 @@ export type BulkOperationErrorResult = {
    * @format: "int32"
    */
   status?: number;
-}
+};
 /**
  * MODEL BulkOperationProgress
  */
@@ -1053,7 +1053,7 @@ export type BulkOperationProgress = {
   /**
    * The ID of the task.
    */
-  taskId: string;
+  taskId?: string;
   /**
    * The number of issues that the bulk operation was attempted on.
    * @format: "int32"
@@ -1064,7 +1064,7 @@ export type BulkOperationProgress = {
    * @format: "date-time"
    */
   updated?: string;
-}
+};
 /**
  * Details of global and project permissions granted to the user.
  */
@@ -1077,7 +1077,7 @@ export type BulkPermissionGrants = {
    * List of project permissions and the projects and issues those permissions provide access to.
    */
   projectPermissions: Array<BulkProjectPermissionGrants>;
-}
+};
 /**
  * Details of global permissions to look up and project permissions with associated projects and issues to look up.
  */
@@ -1094,7 +1094,7 @@ export type BulkPermissionsRequestBean = {
    * Project permissions with associated projects and issues to look up.
    */
   projectPermissions?: Array<BulkProjectPermissions>;
-}
+};
 /**
  * List of project permissions and the projects and issues those permissions grant access to.
  */
@@ -1111,7 +1111,7 @@ export type BulkProjectPermissionGrants = {
    * IDs of the projects the user has the permission for.
    */
   projects: string[];
-}
+};
 /**
  * Details of project permissions and associated issues and projects to look up.
  */
@@ -1128,7 +1128,7 @@ export type BulkProjectPermissions = {
    * List of project IDs.
    */
   projects?: string[];
-}
+};
 /**
  * A change item.
  */
@@ -1136,28 +1136,28 @@ export type ChangeDetails = {
   /**
    * The name of the field changed.
    */
-  field: string;
+  field?: string;
   /**
    * The ID of the field changed.
    */
-  fieldId: string;
+  fieldId?: string;
   /**
    * The type of the field changed.
    */
-  fieldtype: string;
+  fieldtype?: string;
   /**
    * The details of the original value.
    */
-  from: string;
+  from?: string;
   /**
    * The details of the original value as a string.
    */
-  fromString: string;
+  fromString?: string;
   /**
    * The details of the new value.
    */
-  to: string;
-}
+  to?: string;
+};
 /**
  * The account ID of the new owner.
  */
@@ -1166,7 +1166,7 @@ export type ChangeFilterOwner = {
    * The account ID of the new owner.
    */
   accountId: string;
-}
+};
 /**
  * Details of names changed in the record event.
  */
@@ -1174,16 +1174,16 @@ export type ChangedValueBean = {
   /**
    * The value of the field before the change.
    */
-  changedFrom: string;
+  changedFrom?: string;
   /**
    * The value of the field after the change.
    */
-  changedTo: string;
+  changedTo?: string;
   /**
    * The name of the field changed.
    */
-  fieldName: string;
-}
+  fieldName?: string;
+};
 /**
  * Details of a changed worklog.
  */
@@ -1191,18 +1191,18 @@ export type ChangedWorklog = {
   /**
    * Details of properties associated with the change.
    */
-  properties: Array<EntityProperty>;
+  properties?: Array<EntityProperty>;
   /**
    * The datetime of the change.
    * @format: "int64"
    */
-  updatedTime: number;
+  updatedTime?: number;
   /**
    * The ID of the worklog.
    * @format: "int64"
    */
-  worklogId: number;
-}
+  worklogId?: number;
+};
 /**
  * List of changed worklogs.
  */
@@ -1212,27 +1212,27 @@ export type ChangedWorklogs = {
    * The URL of the next list of changed worklogs.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of this changed worklogs list.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The datetime of the first worklog item in the list.
    * @format: "int64"
    */
-  since: number;
+  since?: number;
   /**
    * The datetime of the last worklog item in the list.
    * @format: "int64"
    */
-  until: number;
+  until?: number;
   /**
    * Changed worklog list.
    */
-  values: Array<ChangedWorklog>;
-}
+  values?: Array<ChangedWorklog>;
+};
 /**
  * A log of changes made to issue fields. Changelogs related to workflow associations are currently being deprecated.
  */
@@ -1240,25 +1240,25 @@ export type Changelog = {
   /**
    * The user who made the change.
    */
-  author: UserDetails;
+  author?: UserDetails;
   /**
    * The date on which the change took place.
    * @format: "date-time"
    */
-  created: string;
+  created?: string;
   /**
    * The history metadata associated with the changed.
    */
-  historyMetadata: HistoryMetadata;
+  historyMetadata?: HistoryMetadata;
   /**
    * The ID of the changelog.
    */
-  id: string;
+  id?: string;
   /**
    * The list of items changed.
    */
-  items: Array<ChangeDetails>;
-}
+  items?: Array<ChangeDetails>;
+};
 /**
  * Details of an issue navigator column item.
  */
@@ -1271,13 +1271,13 @@ export type ColumnItem = {
    * The issue navigator column value.
    */
   value?: string;
-}
+};
 /**
  * MODEL ColumnRequestBody
  */
 export type ColumnRequestBody = {
   columns?: string[];
-}
+};
 /**
  * A comment.
  * accept additional properties
@@ -1286,7 +1286,7 @@ export type Comment = {
   /**
    * The ID of the user who created the comment.
    */
-  author: UserDetails;
+  author?: UserDetails;
   /**
    * The comment text in [Atlassian Document Format](https://developer.atlassian.com/cloud/jira/platform/apis/document/structure/).
    */
@@ -1295,19 +1295,19 @@ export type Comment = {
    * The date and time at which the comment was created.
    * @format: "date-time"
    */
-  created: string;
+  created?: string;
   /**
    * The ID of the comment.
    */
-  id: string;
+  id?: string;
   /**
    * Whether the comment was added from an email sent by a person who is not part of the issue. See [Allow external emails to be added as comments on issues](https://support.atlassian.com/jira-service-management-cloud/docs/allow-external-emails-to-be-added-as-comments-on-issues/)for information on setting up this feature.
    */
-  jsdAuthorCanSeeRequest: boolean;
+  jsdAuthorCanSeeRequest?: boolean;
   /**
    * Whether the comment is visible in Jira Service Desk. Defaults to true when comments are created in the Jira Cloud Platform. This includes when the site doesn't use Jira Service Desk or the project isn't a Jira Service Desk project and, therefore, there is no Jira Service Desk for the issue to be visible on. To create a comment with its visibility in Jira Service Desk set to false, use the Jira Service Desk REST API [Create request comment](https://developer.atlassian.com/cloud/jira/service-desk/rest/#api-rest-servicedeskapi-request-issueIdOrKey-comment-post) operation.
    */
-  jsdPublic: boolean;
+  jsdPublic?: boolean;
   /**
    * A list of comment properties. Optional on create and update.
    */
@@ -1315,25 +1315,25 @@ export type Comment = {
   /**
    * The rendered version of the comment.
    */
-  renderedBody: string;
+  renderedBody?: string;
   /**
    * The URL of the comment.
    */
-  self: string;
+  self?: string;
   /**
    * The ID of the user who updated the comment last.
    */
-  updateAuthor: UserDetails;
+  updateAuthor?: UserDetails;
   /**
    * The date and time at which the comment was updated last.
    * @format: "date-time"
    */
-  updated: string;
+  updated?: string;
   /**
    * The group or role to which this comment is visible. Optional on create and update.
    */
   visibility?: Visibility;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Count of issues assigned to a component.
  */
@@ -1342,13 +1342,13 @@ export type ComponentIssuesCount = {
    * The count of issues assigned to a component.
    * @format: "int64"
    */
-  issueCount: number;
+  issueCount?: number;
   /**
    * The URL for this count of issues for a component.
    * @format: "uri"
    */
-  self: string;
-}
+  self?: string;
+};
 /**
  * MODEL ComponentJsonBean
  * accept additional properties
@@ -1360,7 +1360,7 @@ export type ComponentJsonBean = {
   metadata?: Record<string, unknown>;
   name?: string;
   self?: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details about a component with a count of the issues it contains.
  */
@@ -1377,24 +1377,24 @@ export type ComponentWithIssueCount = {
    *  *  `UNASSIGNED` an assignee is not set for issues created with this component.
    *  *  `PROJECT_DEFAULT` the assignee to any issues created with this component is nominally the default assignee for the project that the component is in.
    */
-  assigneeType: string;
+  assigneeType?: string;
   /**
    * The description for the component.
    */
-  description: string;
+  description?: string;
   /**
    * The unique identifier for the component.
    */
-  id: string;
+  id?: string;
   /**
    * Whether a user is associated with `assigneeType`. For example, if the `assigneeType` is set to `COMPONENT_LEAD` but the component lead is not set, then `false` is returned.
    */
-  isAssigneeTypeValid: boolean;
+  isAssigneeTypeValid?: boolean;
   /**
    * Count of issues for the component.
    * @format: "int64"
    */
-  issueCount: number;
+  issueCount?: number;
   /**
    * The user details for the component's lead user.
    */
@@ -1402,16 +1402,16 @@ export type ComponentWithIssueCount = {
   /**
    * The name for the component.
    */
-  name: string;
+  name?: string;
   /**
    * The key of the project to which the component is assigned.
    */
-  project: string;
+  project?: string;
   /**
    * Not used.
    * @format: "int64"
    */
-  projectId: number;
+  projectId?: number;
   /**
    * The user assigned to issues created with this component, when `assigneeType` does not identify a valid assignee.
    */
@@ -1424,13 +1424,13 @@ export type ComponentWithIssueCount = {
    *  *  `UNASSIGNED` when `assigneeType` is `UNASSIGNED` and Jira is configured to allow unassigned issues.
    *  *  `PROJECT_DEFAULT` when none of the preceding cases are true.
    */
-  realAssigneeType: string;
+  realAssigneeType?: string;
   /**
    * The URL for this count of the issues contained in the component.
    * @format: "uri"
    */
-  self: string;
-}
+  self?: string;
+};
 /**
  * A JQL query clause that consists of nested clauses. For example, `(labels in (urgent, blocker) OR lastCommentedBy = currentUser()). Note that, where nesting is not defined, the parser nests JQL clauses based on the operator precedence. For example, "A OR B AND C" is parsed as "(A OR B) AND C". See Setting the precedence of operators for more information about precedence in JQL queries.`
  */
@@ -1443,7 +1443,7 @@ export type CompoundClause = {
    * The operator between the clauses.
    */
   operator: string;
-}
+};
 /**
  * The conditions group associated with the transition.
  */
@@ -1460,7 +1460,7 @@ export type ConditionGroupConfiguration = {
    * Determines how the conditions in the group are evaluated. Accepts either `ANY` or `ALL`. If `ANY` is used, at least one condition in the group must be true for the group to evaluate to true. If `ALL` is used, all conditions in the group must be true for the group to evaluate to true.
    */
   operation?: string;
-}
+};
 /**
  * The conditions group associated with the transition.
  */
@@ -1477,7 +1477,7 @@ export type ConditionGroupUpdate = {
    * Determines how the conditions in the group are evaluated. Accepts either `ANY` or `ALL`. If `ANY` is used, at least one condition in the group must be true for the group to evaluate to true. If `ALL` is used, all conditions in the group must be true for the group to evaluate to true.
    */
   operation: string;
-}
+};
 /**
  * Details about the configuration of Jira.
  */
@@ -1485,36 +1485,36 @@ export type Configuration = {
   /**
    * Whether the ability to add attachments to issues is enabled.
    */
-  attachmentsEnabled: boolean;
+  attachmentsEnabled?: boolean;
   /**
    * Whether the ability to link issues is enabled.
    */
-  issueLinkingEnabled: boolean;
+  issueLinkingEnabled?: boolean;
   /**
    * Whether the ability to create subtasks for issues is enabled.
    */
-  subTasksEnabled: boolean;
+  subTasksEnabled?: boolean;
   /**
    * The configuration of time tracking.
    */
-  timeTrackingConfiguration: TimeTrackingConfiguration;
+  timeTrackingConfiguration?: TimeTrackingConfiguration;
   /**
    * Whether the ability to track time is enabled. This property is deprecated.
    */
-  timeTrackingEnabled: boolean;
+  timeTrackingEnabled?: boolean;
   /**
    * Whether the ability to create unassigned issues is enabled. See [Configuring Jira application options](https://confluence.atlassian.com/x/uYXKM) for details.
    */
-  unassignedIssuesAllowed: boolean;
+  unassignedIssuesAllowed?: boolean;
   /**
    * Whether the ability for users to vote on issues is enabled. See [Configuring Jira application options](https://confluence.atlassian.com/x/uYXKM) for details.
    */
-  votingEnabled: boolean;
+  votingEnabled?: boolean;
   /**
    * Whether the ability for users to watch issues is enabled. See [Configuring Jira application options](https://confluence.atlassian.com/x/uYXKM) for details.
    */
-  watchingEnabled: boolean;
-}
+  watchingEnabled?: boolean;
+};
 /**
  * A list of custom field details.
  */
@@ -1551,7 +1551,7 @@ export type ConnectCustomFieldValue = {
    * The value of of text custom field type when `_type` is `TextIssueField`.
    */
   text?: string;
-}
+};
 /**
  * Details of updates for a custom field.
  */
@@ -1560,14 +1560,13 @@ export type ConnectCustomFieldValues = {
    * The list of custom field update details.
    */
   updateValueList?: Array<ConnectCustomFieldValue>;
-}
+};
 /**
  * A [Connect module](https://developer.atlassian.com/cloud/jira/platform/about-jira-modules/) in the same format as in the
 [app descriptor](https://developer.atlassian.com/cloud/jira/platform/app-descriptor/).
  */
 // deno-lint-ignore no-empty-interface
-export type ConnectModule = {
-}
+export type ConnectModule = {};
 /**
  * MODEL ConnectModules
  */
@@ -1577,7 +1576,7 @@ export type ConnectModules = {
    * [app descriptor](https://developer.atlassian.com/cloud/jira/platform/app-descriptor/).
    */
   modules: Array<ConnectModule>;
-}
+};
 /**
  * A workflow transition rule.
  */
@@ -1600,7 +1599,7 @@ export type ConnectWorkflowTransitionRule = {
    * Ref: #/components/schemas/WorkflowTransition
    */
   transition?: WorkflowTransition;
-}
+};
 /**
  * The list of features on a project.
  */
@@ -1609,7 +1608,7 @@ export type ContainerForProjectFeatures = {
    * The project features.
    */
   features?: Array<ProjectFeature>;
-}
+};
 /**
  * Container for a list of registered webhooks. Webhook details are returned in the same order as the request.
  */
@@ -1618,7 +1617,7 @@ export type ContainerForRegisteredWebhooks = {
    * A list of registered webhooks.
    */
   webhookRegistrationResult?: Array<RegisteredWebhook>;
-}
+};
 /**
  * Container for a list of webhook IDs.
  */
@@ -1627,7 +1626,7 @@ export type ContainerForWebhookIDs = {
    * A list of webhook IDs.
    */
   webhookIds: string[];
-}
+};
 /**
  * A container for a list of workflow schemes together with the projects they are associated with.
  */
@@ -1636,7 +1635,7 @@ export type ContainerOfWorkflowSchemeAssociations = {
    * A list of workflow schemes together with projects they are associated with.
    */
   values: Array<WorkflowSchemeAssociations>;
-}
+};
 /**
  * A context.
  */
@@ -1645,16 +1644,16 @@ export type Context = {
    * The ID of the context.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The name of the context.
    */
-  name: string;
+  name?: string;
   /**
    * The scope of the context.
    */
   scope?: Scope;
-}
+};
 /**
  * The project and issue type mapping with a matching custom field context.
  */
@@ -1671,7 +1670,7 @@ export type ContextForProjectAndIssueType = {
    * The ID of the project.
    */
   projectId: string;
-}
+};
 /**
  * Details of the contextual configuration for a custom field.
  */
@@ -1692,7 +1691,7 @@ export type ContextualConfiguration = {
    * The field value schema.
    */
   schema?: any /* 122 */;
-}
+};
 /**
  * The converted JQL queries.
  */
@@ -1705,7 +1704,7 @@ export type ConvertedJQLQueries = {
    * The list of converted query strings with account IDs in place of user identifiers.
    */
   queryStrings?: string[];
-}
+};
 /**
  * The details of a created custom field context.
  */
@@ -1717,7 +1716,7 @@ export type CreateCustomFieldContext = {
   /**
    * The ID of the context.
    */
-  id: string;
+  id?: string;
   /**
    * The list of issue types IDs for the context. If the list is empty, the context refers to all issue types.
    */
@@ -1730,7 +1729,7 @@ export type CreateCustomFieldContext = {
    * The list of project IDs associated with the context. If the list is empty, the context is global.
    */
   projectIds?: string[];
-}
+};
 /**
  * Issue security scheme and it's details
  * accept additional properties
@@ -1748,7 +1747,7 @@ export type CreateIssueSecuritySchemeDetails = {
    * The name of the issue security scheme. Must be unique (case-insensitive).
    */
   name: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details of an notification scheme.
  * accept additional properties
@@ -1766,7 +1765,7 @@ export type CreateNotificationSchemeDetails = {
    * The list of notifications which should be added to the notification scheme.
    */
   notificationSchemeEvents?: Array<NotificationSchemeEventDetails>;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details of an issue priority.
  * accept additional properties
@@ -1788,7 +1787,7 @@ export type CreatePriorityDetails = {
    * The status color of the priority in 3-digit or 6-digit hexadecimal format.
    */
   statusColor: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details of a new priority scheme
  */
@@ -1818,7 +1817,7 @@ export type CreatePrioritySchemeDetails = {
    * The IDs of projects that will use the priority scheme.
    */
   projectIds?: string[];
-}
+};
 /**
  * Details about the project.
  */
@@ -1904,7 +1903,7 @@ export type CreateProjectDetails = {
    * @format: "int64"
    */
   workflowScheme?: number;
-}
+};
 /**
  * Details of an issue resolution.
  * accept additional properties
@@ -1918,7 +1917,7 @@ export type CreateResolutionDetails = {
    * The name of the resolution. Must be unique (case-insensitive).
    */
   name: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * The details of a UI modification.
  */
@@ -1939,7 +1938,7 @@ export type CreateUiModificationDetails = {
    * The name of the UI modification. The maximum length is 255 characters.
    */
   name: string;
-}
+};
 /**
  * MODEL CreateUpdateRoleRequestBean
  */
@@ -1952,7 +1951,7 @@ export type CreateUpdateRoleRequestBean = {
    * The name of the project role. Must be unique. Cannot begin or end with whitespace. The maximum length is 255 characters. Required when creating a project role. Optional when partially updating a project role.
    */
   name?: string;
-}
+};
 /**
  * A workflow transition condition.
  */
@@ -1973,7 +1972,7 @@ export type CreateWorkflowCondition = {
    * The type of the transition rule.
    */
   type?: string;
-}
+};
 /**
  * The details of a workflow.
  */
@@ -2004,7 +2003,7 @@ export type CreateWorkflowDetails = {
    * All the transition statuses must be included in `statuses`.
    */
   transitions: Array<CreateWorkflowTransitionDetails>;
-}
+};
 /**
  * The details of a transition status.
  */
@@ -2017,7 +2016,7 @@ export type CreateWorkflowStatusDetails = {
    * The properties of the status.
    */
   properties?: Record<string, unknown>;
-}
+};
 /**
  * The details of a workflow transition.
  */
@@ -2054,7 +2053,7 @@ export type CreateWorkflowTransitionDetails = {
    * The type of the transition.
    */
   type: string;
-}
+};
 /**
  * A workflow transition rule.
  */
@@ -2067,7 +2066,7 @@ export type CreateWorkflowTransitionRule = {
    * The type of the transition rule.
    */
   type: string;
-}
+};
 /**
  * The details of a workflow transition rules.
  */
@@ -2141,7 +2140,7 @@ export type CreateWorkflowTransitionRulesDetails = {
    *     ]
    */
   validators?: Array<CreateWorkflowTransitionRule>;
-}
+};
 /**
  * The details of a transition screen.
  */
@@ -2150,7 +2149,7 @@ export type CreateWorkflowTransitionScreenDetails = {
    * The ID of the screen.
    */
   id: string;
-}
+};
 /**
  * Details about a created issue or subtask.
  */
@@ -2158,24 +2157,24 @@ export type CreatedIssue = {
   /**
    * The ID of the created issue or subtask.
    */
-  id: string;
+  id?: string;
   /**
    * The key of the created issue or subtask.
    */
-  key: string;
+  key?: string;
   /**
    * The URL of the created issue or subtask.
    */
-  self: string;
+  self?: string;
   /**
    * The response code and messages related to any requested transition.
    */
-  transition: NestedResponse;
+  transition?: NestedResponse;
   /**
    * The response code and messages related to any requested watchers.
    */
-  watchers: NestedResponse;
-}
+  watchers?: NestedResponse;
+};
 /**
  * Details about the issues created and the errors for requests that failed.
  */
@@ -2183,12 +2182,12 @@ export type CreatedIssues = {
   /**
    * Error details for failed issue creation requests.
    */
-  errors: Array<BulkOperationErrorResult>;
+  errors?: Array<BulkOperationErrorResult>;
   /**
    * Details of the issues created.
    */
-  issues: Array<CreatedIssue>;
-}
+  issues?: Array<CreatedIssue>;
+};
 /**
  * MODEL CustomContextVariable
  */
@@ -2197,7 +2196,7 @@ export type CustomContextVariable = {
    * Type of custom context variable.
    */
   type: string;
-}
+};
 /**
  * Details of configurations for a custom field.
  */
@@ -2206,7 +2205,7 @@ export type CustomFieldConfigurations = {
    * The list of custom field configuration details.
    */
   configurations: Array<ContextualConfiguration>;
-}
+};
 /**
  * The details of a custom field context.
  */
@@ -2231,13 +2230,12 @@ export type CustomFieldContext = {
    * The name of the context.
    */
   name: string;
-}
+};
 /**
  * MODEL CustomFieldContextDefaultValue
  */
 // deno-lint-ignore no-empty-interface
-export type CustomFieldContextDefaultValue = {
-}
+export type CustomFieldContextDefaultValue = {};
 /**
  * The default value for a cascading select custom field.
  */
@@ -2255,7 +2253,7 @@ export type CustomFieldContextDefaultValueCascadingOption = {
    */
   optionId: string;
   type: string;
-}
+};
 /**
  * The default value for a Date custom field.
  */
@@ -2270,7 +2268,7 @@ export type CustomFieldContextDefaultValueDate = {
    * default Value false
    */
   useCurrent?: boolean;
-}
+};
 /**
  * The default value for a date time custom field.
  */
@@ -2285,7 +2283,7 @@ export type CustomFieldContextDefaultValueDateTime = {
    * default Value false
    */
   useCurrent?: boolean;
-}
+};
 /**
  * Default value for a float (number) custom field.
  */
@@ -2296,7 +2294,7 @@ export type CustomFieldContextDefaultValueFloat = {
    */
   number: number;
   type: string;
-}
+};
 /**
  * The default value for a Forge date time custom field.
  */
@@ -2315,7 +2313,7 @@ export type CustomFieldContextDefaultValueForgeDateTimeField = {
    * default Value false
    */
   useCurrent?: boolean;
-}
+};
 /**
  * The default value for a Forge group custom field.
  */
@@ -2329,7 +2327,7 @@ export type CustomFieldContextDefaultValueForgeGroupField = {
    */
   groupId: string;
   type: string;
-}
+};
 /**
  * The default value for a Forge collection of groups custom field.
  */
@@ -2343,7 +2341,7 @@ export type CustomFieldContextDefaultValueForgeMultiGroupField = {
    */
   groupIds: string[];
   type: string;
-}
+};
 /**
  * The default text for a Forge collection of strings custom field.
  */
@@ -2353,7 +2351,7 @@ export type CustomFieldContextDefaultValueForgeMultiStringField = {
    * List of string values. The maximum length for a value is 254 characters.
    */
   values?: string[];
-}
+};
 /**
  * Defaults for a Forge collection of users custom field.
  */
@@ -2367,7 +2365,7 @@ export type CustomFieldContextDefaultValueForgeMultiUserField = {
    */
   contextId: string;
   type: string;
-}
+};
 /**
  * Default value for a Forge number custom field.
  */
@@ -2382,7 +2380,7 @@ export type CustomFieldContextDefaultValueForgeNumberField = {
    */
   number: number;
   type: string;
-}
+};
 /**
  * The default value for a Forge object custom field.
  */
@@ -2392,7 +2390,7 @@ export type CustomFieldContextDefaultValueForgeObjectField = {
    */
   object?: Record<string, unknown>;
   type: string;
-}
+};
 /**
  * The default text for a Forge string custom field.
  */
@@ -2406,7 +2404,7 @@ export type CustomFieldContextDefaultValueForgeStringField = {
    */
   text?: string;
   type: string;
-}
+};
 /**
  * Defaults for a Forge user custom field.
  */
@@ -2424,7 +2422,7 @@ export type CustomFieldContextDefaultValueForgeUserField = {
    * Ref: #/components/schemas/UserFilter
    */
   userFilter: UserFilter;
-}
+};
 /**
  * Default value for a labels custom field.
  */
@@ -2434,7 +2432,7 @@ export type CustomFieldContextDefaultValueLabels = {
    */
   labels: string[];
   type: string;
-}
+};
 /**
  * The default value for a User Picker (multiple) custom field.
  */
@@ -2448,7 +2446,7 @@ export type CustomFieldContextDefaultValueMultiUserPicker = {
    */
   contextId: string;
   type: string;
-}
+};
 /**
  * The default value for a multiple group picker custom field.
  */
@@ -2462,7 +2460,7 @@ export type CustomFieldContextDefaultValueMultipleGroupPicker = {
    */
   groupIds: string[];
   type: string;
-}
+};
 /**
  * The default value for a multi-select custom field.
  */
@@ -2476,7 +2474,7 @@ export type CustomFieldContextDefaultValueMultipleOption = {
    */
   optionIds: string[];
   type: string;
-}
+};
 /**
  * The default value for a multiple version picker custom field.
  */
@@ -2490,7 +2488,7 @@ export type CustomFieldContextDefaultValueMultipleVersionPicker = {
    * The order the pickable versions are displayed in. If not provided, the released-first order is used. Available version orders are `"releasedFirst"` and `"unreleasedFirst"`.
    */
   versionOrder?: string;
-}
+};
 /**
  * The default value for a project custom field.
  */
@@ -2504,7 +2502,7 @@ export type CustomFieldContextDefaultValueProject = {
    */
   projectId: string;
   type: string;
-}
+};
 /**
  * The default text for a read only custom field.
  */
@@ -2514,7 +2512,7 @@ export type CustomFieldContextDefaultValueReadOnly = {
    */
   text?: string;
   type: string;
-}
+};
 /**
  * The default value for a group picker custom field.
  */
@@ -2528,7 +2526,7 @@ export type CustomFieldContextDefaultValueSingleGroupPicker = {
    */
   groupId: string;
   type: string;
-}
+};
 /**
  * The default value for a single select custom field.
  */
@@ -2542,7 +2540,7 @@ export type CustomFieldContextDefaultValueSingleOption = {
    */
   optionId: string;
   type: string;
-}
+};
 /**
  * The default value for a version picker custom field.
  */
@@ -2556,7 +2554,7 @@ export type CustomFieldContextDefaultValueSingleVersionPicker = {
    * The order the pickable versions are displayed in. If not provided, the released-first order is used. Available version orders are `"releasedFirst"` and `"unreleasedFirst"`.
    */
   versionOrder?: string;
-}
+};
 /**
  * The default text for a text area custom field.
  */
@@ -2566,7 +2564,7 @@ export type CustomFieldContextDefaultValueTextArea = {
    */
   text?: string;
   type: string;
-}
+};
 /**
  * The default text for a text custom field.
  */
@@ -2576,7 +2574,7 @@ export type CustomFieldContextDefaultValueTextField = {
    */
   text?: string;
   type: string;
-}
+};
 /**
  * The default value for a URL custom field.
  */
@@ -2590,13 +2588,13 @@ export type CustomFieldContextDefaultValueURL = {
    * The default URL.
    */
   url: string;
-}
+};
 /**
  * Default values to update.
  */
 export type CustomFieldContextDefaultValueUpdate = {
   defaultValues?: Array<CustomFieldContextDefaultValue>;
-}
+};
 /**
  * Details of the custom field options for a context.
  */
@@ -2617,7 +2615,7 @@ export type CustomFieldContextOption = {
    * The value of the custom field option.
    */
   value: string;
-}
+};
 /**
  * Details of a context to project association.
  */
@@ -2629,12 +2627,12 @@ export type CustomFieldContextProjectMapping = {
   /**
    * Whether context is global.
    */
-  isGlobalContext: boolean;
+  isGlobalContext?: boolean;
   /**
    * The ID of the project.
    */
-  projectId: string;
-}
+  projectId?: string;
+};
 /**
  * Defaults for a User Picker (single) custom field.
  */
@@ -2652,7 +2650,7 @@ export type CustomFieldContextSingleUserPickerDefaults = {
    * Ref: #/components/schemas/UserFilter
    */
   userFilter: UserFilter;
-}
+};
 /**
  * Details of a custom field context.
  */
@@ -2665,7 +2663,7 @@ export type CustomFieldContextUpdateDetails = {
    * The name of the custom field context. The name must be unique. The maximum length is 255 characters.
    */
   name?: string;
-}
+};
 /**
  * A list of custom field options for a context.
  */
@@ -2674,7 +2672,7 @@ export type CustomFieldCreatedContextOptionsList = {
    * The created custom field options.
    */
   options?: Array<CustomFieldContextOption>;
-}
+};
 /**
  * MODEL CustomFieldDefinitionJsonBean
  */
@@ -2744,7 +2742,7 @@ export type CustomFieldDefinitionJsonBean = {
    * To create a field based on a [Forge custom field type](https://developer.atlassian.com/platform/forge/manifest-reference/modules/#jira-custom-field-type--beta-), use the ID of the Forge custom field type as the value. For example, `ari:cloud:ecosystem::extension/e62f20a2-4b61-4dbe-bfb9-9a88b5e3ac84/548c5df1-24aa-4f7c-bbbb-3038d947cb05/static/my-cf-type-key`.
    */
   type: string;
-}
+};
 /**
  * Details of a custom option for a field.
  */
@@ -2753,12 +2751,12 @@ export type CustomFieldOption = {
    * The URL of these custom field option details.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The value of the custom field option.
    */
-  value: string;
-}
+  value?: string;
+};
 /**
  * Details of a custom field option to create.
  */
@@ -2775,7 +2773,7 @@ export type CustomFieldOptionCreate = {
    * The value of the custom field option.
    */
   value: string;
-}
+};
 /**
  * Details of a custom field option for a context.
  */
@@ -2792,7 +2790,7 @@ export type CustomFieldOptionUpdate = {
    * The value of the custom field option.
    */
   value?: string;
-}
+};
 /**
  * Details about the replacement for a deleted version.
  */
@@ -2807,7 +2805,7 @@ export type CustomFieldReplacement = {
    * @format: "int64"
    */
   moveTo?: number;
-}
+};
 /**
  * A list of custom field options for a context.
  */
@@ -2816,7 +2814,7 @@ export type CustomFieldUpdatedContextOptionsList = {
    * The updated custom field options.
    */
   options?: Array<CustomFieldOptionUpdate>;
-}
+};
 /**
  * A list of issue IDs and the value to update a custom field to.
  */
@@ -2837,7 +2835,7 @@ export type CustomFieldValueUpdate = {
    * A list of appropriate values must be provided if the field is of the `list` [collection type](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field/#collection-types).
    */
   value: any /* 122 */;
-}
+};
 /**
  * Details of updates for a custom field.
  */
@@ -2846,7 +2844,7 @@ export type CustomFieldValueUpdateDetails = {
    * The list of custom field update details.
    */
   updates?: Array<CustomFieldValueUpdate>;
-}
+};
 /**
  * Details of a dashboard.
  */
@@ -2855,60 +2853,60 @@ export type Dashboard = {
    * The automatic refresh interval for the dashboard in milliseconds.
    * @format: "int32"
    */
-  automaticRefreshMs: number;
+  automaticRefreshMs?: number;
   description?: string;
   /**
    * The details of any edit share permissions for the dashboard.
    */
-  editPermissions: Array<SharePermission>;
+  editPermissions?: Array<SharePermission>;
   /**
    * The ID of the dashboard.
    */
-  id: string;
+  id?: string;
   /**
    * Whether the dashboard is selected as a favorite by the user.
    */
-  isFavourite: boolean;
+  isFavourite?: boolean;
   /**
    * Whether the current user has permission to edit the dashboard.
    */
-  isWritable: boolean;
+  isWritable?: boolean;
   /**
    * The name of the dashboard.
    */
-  name: string;
+  name?: string;
   /**
    * The owner of the dashboard.
    */
-  owner: UserBean;
+  owner?: UserBean;
   /**
    * The number of users who have this dashboard as a favorite.
    * @format: "int64"
    */
-  popularity: number;
+  popularity?: number;
   /**
    * The rank of this dashboard.
    * @format: "int32"
    */
-  rank: number;
+  rank?: number;
   /**
    * The URL of these dashboard details.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The details of any view share permissions for the dashboard.
    */
-  sharePermissions: Array<SharePermission>;
+  sharePermissions?: Array<SharePermission>;
   /**
    * Whether the current dashboard is system dashboard.
    */
-  systemDashboard: boolean;
+  systemDashboard?: boolean;
   /**
    * The URL of the dashboard.
    */
-  view: string;
-}
+  view?: string;
+};
 /**
  * Details of a dashboard.
  */
@@ -2929,7 +2927,7 @@ export type DashboardDetails = {
    * The share permissions for the dashboard.
    */
   sharePermissions: Array<SharePermission>;
-}
+};
 /**
  * Details of a gadget.
  */
@@ -2946,7 +2944,7 @@ export type DashboardGadget = {
   /**
    * The module key of the gadget type.
    */
-  moduleKey: string;
+  moduleKey?: string;
   /**
    * The position of the gadget.
    */
@@ -2958,8 +2956,8 @@ export type DashboardGadget = {
   /**
    * The URI of the gadget type.
    */
-  uri: string;
-}
+  uri?: string;
+};
 /**
  * Details of a gadget position.
  */
@@ -2972,7 +2970,7 @@ export type DashboardGadgetPosition = {
    * @format: "int32"
    */
   "The row position of the gadget.": number;
-}
+};
 /**
  * The list of gadgets on the dashboard.
  */
@@ -2981,7 +2979,7 @@ export type DashboardGadgetResponse = {
    * The list of gadgets.
    */
   gadgets: Array<DashboardGadget>;
-}
+};
 /**
  * Details of the settings for a dashboard gadget.
  */
@@ -3010,7 +3008,7 @@ export type DashboardGadgetSettings = {
    * The URI of the gadget type. Can't be provided with `moduleKey`.
    */
   uri?: string;
-}
+};
 /**
  * The details of the gadget to update.
  */
@@ -3027,7 +3025,7 @@ export type DashboardGadgetUpdateRequest = {
    * The title of the gadget.
    */
   title?: string;
-}
+};
 /**
  * The data classification.
  */
@@ -3036,7 +3034,7 @@ export type DataClassificationLevelsBean = {
    * The data classifications.
    */
   classifications?: Array<DataClassificationTagBean>;
-}
+};
 /**
  * The data classification.
  */
@@ -3070,7 +3068,7 @@ export type DataClassificationTagBean = {
    * The status of the data classification object.
    */
   status: string;
-}
+};
 /**
  * List issues archived within a specified date range.
  */
@@ -3083,7 +3081,7 @@ export type DateRangeFilterRequest = {
    * List issues archived before a specified date provided in the YYYY-MM-DD format.
    */
   dateBefore: string;
-}
+};
 /**
  * Details of scheme and new default level.
  * accept additional properties
@@ -3097,7 +3095,7 @@ export type DefaultLevelValue = {
    * The ID of the issue security scheme to set default level for.
    */
   issueSecuritySchemeId: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details of the scope of the default sharing for new filters and dashboards.
  */
@@ -3110,7 +3108,7 @@ export type DefaultShareScope = {
    *  *  `PRIVATE` Not shared with any users.
    */
   scope: string;
-}
+};
 /**
  * Details about the default workflow.
  */
@@ -3123,7 +3121,7 @@ export type DefaultWorkflow = {
    * The name of the workflow to set as the default workflow.
    */
   workflow: string;
-}
+};
 /**
  * MODEL DeleteAndReplaceVersionBean
  */
@@ -3142,7 +3140,7 @@ export type DeleteAndReplaceVersionBean = {
    * @format: "int64"
    */
   moveFixIssuesTo?: number;
-}
+};
 /**
  * Details about a workflow.
  */
@@ -3151,33 +3149,33 @@ export type DeprecatedWorkflow = {
   /**
    * The description of the workflow.
    */
-  description: string;
+  description?: string;
   /**
    * The datetime the workflow was last modified.
    */
-  lastModifiedDate: string;
+  lastModifiedDate?: string;
   /**
    * This property is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
    */
-  lastModifiedUser: string;
+  lastModifiedUser?: string;
   /**
    * The account ID of the user that last modified the workflow.
    */
-  lastModifiedUserAccountId: string;
+  lastModifiedUserAccountId?: string;
   /**
    * The name of the workflow.
    */
-  name: string;
+  name?: string;
   /**
    * The scope where this workflow applies
    */
-  scope: Scope;
+  scope?: Scope;
   /**
    * The number of steps included in the workflow.
    * @format: "int32"
    */
-  steps: number;
-}
+  steps?: number;
+};
 /**
  * MODEL DetailedErrorCollection
  */
@@ -3194,7 +3192,7 @@ export type DetailedErrorCollection = {
    * The list of errors by parameter returned by the operation. For example,"projectKey": "Project keys must start with an uppercase letter, followed by one or more uppercase alphanumeric characters."
    */
   errors?: Record<string, unknown>;
-}
+};
 /**
  * The current version details of this workflow scheme.
  */
@@ -3208,7 +3206,7 @@ export type DocumentVersion = {
    * @format: "int64"
    */
   versionNumber: number;
-}
+};
 /**
  * An entity property, for more information see [Entity properties](https://developer.atlassian.com/cloud/jira/platform/jira-entity-properties/).
  */
@@ -3221,7 +3219,7 @@ export type EntityProperty = {
    * The value of the property. Required on create and update.
    */
   value?: any /* 122 */;
-}
+};
 /**
  * MODEL EntityPropertyDetails
  */
@@ -3241,7 +3239,7 @@ export type EntityPropertyDetails = {
    * @example: "newValue"
    */
   value: string;
-}
+};
 /**
  * MODEL Error
  */
@@ -3252,7 +3250,7 @@ export type Error = {
   count?: number;
   issueIdsOrKeys?: string[];
   message?: string;
-}
+};
 /**
  * Error messages from an operation.
  */
@@ -3269,19 +3267,18 @@ export type ErrorCollection = {
    * @format: "int32"
    */
   status?: number;
-}
+};
 /**
  * MODEL ErrorCollections
  */
 // deno-lint-ignore no-empty-interface
-export type ErrorCollections = {
-}
+export type ErrorCollections = {};
 /**
  * MODEL ErrorMessage
  */
 export type ErrorMessage = {
   message?: string;
-}
+};
 /**
  * MODEL Errors
  */
@@ -3302,7 +3299,7 @@ export type Errors = {
    * Ref: #/components/schemas/Error
    */
   issuesNotFound?: Error;
-}
+};
 /**
  * Details about a notification associated with an event.
  */
@@ -3360,7 +3357,7 @@ export type EventNotification = {
    * The specified user.
    */
   user?: UserDetails;
-}
+};
 /**
  * A priority scheme with less fields to be used in for an API expand response.
  */
@@ -3368,16 +3365,16 @@ export type ExpandPrioritySchemeBean = {
   /**
    * The ID of the priority scheme.
    */
-  id: string;
+  id?: string;
   /**
    * The name of the priority scheme.
    */
-  name: string;
+  name?: string;
   /**
    * The URL of the priority scheme.
    */
-  self: string;
-}
+  self?: string;
+};
 /**
  * MODEL ExpandPrioritySchemePage
  * accept additional properties
@@ -3395,7 +3392,7 @@ export type ExpandPrioritySchemePage = {
    * @format: "int64"
    */
   total?: number;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * The response for status request for a running/completed export task.
  */
@@ -3412,7 +3409,7 @@ export type ExportArchivedIssuesTaskProgressResponse = {
    */
   submittedTime?: string;
   taskId?: string;
-}
+};
 /**
  * Details about a failed webhook.
  */
@@ -3434,7 +3431,7 @@ export type FailedWebhook = {
    * The original webhook destination.
    */
   url: string;
-}
+};
 /**
  * A page of failed webhooks.
  */
@@ -3453,7 +3450,7 @@ export type FailedWebhooks = {
    * The list of webhooks.
    */
   values: Array<FailedWebhook>;
-}
+};
 /**
  * Details of a field.
  */
@@ -3513,7 +3510,7 @@ export type Field = {
    * The stable ID of the field.
    */
   stableId?: string;
-}
+};
 /**
  * A clause that asserts whether a field was changed. For example, `status CHANGED AFTER startOfMonth(-1M)`.See [CHANGED](https://confluence.atlassian.com/x/dgiiLQ#Advancedsearching-operatorsreference-CHANGEDCHANGED) for more information about the CHANGED operator.
  */
@@ -3530,7 +3527,7 @@ export type FieldChangedClause = {
    * The list of time predicates.
    */
   predicates: Array<JqlQueryClauseTimePredicate>;
-}
+};
 /**
  * Details of a field configuration.
  */
@@ -3552,7 +3549,7 @@ export type FieldConfiguration = {
    * The name of the field configuration.
    */
   name: string;
-}
+};
 /**
  * Details of a field configuration.
  */
@@ -3565,7 +3562,7 @@ export type FieldConfigurationDetails = {
    * The name of the field configuration. Must be unique.
    */
   name: string;
-}
+};
 /**
  * The field configuration for an issue type.
  */
@@ -3582,7 +3579,7 @@ export type FieldConfigurationIssueTypeItem = {
    * The ID of the issue type or *default*. When set to *default* this field configuration issue type item applies to all issue types without a field configuration.
    */
   issueTypeId: string;
-}
+};
 /**
  * A field within a field configuration.
  */
@@ -3607,7 +3604,7 @@ export type FieldConfigurationItem = {
    * The renderer type for the field within the field configuration.
    */
   renderer?: string;
-}
+};
 /**
  * Details of field configuration items.
  */
@@ -3616,7 +3613,7 @@ export type FieldConfigurationItemsDetails = {
    * Details of fields in a field configuration.
    */
   fieldConfigurationItems: Array<FieldConfigurationItem>;
-}
+};
 /**
  * Details of a field configuration scheme.
  */
@@ -3633,7 +3630,7 @@ export type FieldConfigurationScheme = {
    * The name of the field configuration scheme.
    */
   name: string;
-}
+};
 /**
  * Associated field configuration scheme and project.
  */
@@ -3646,7 +3643,7 @@ export type FieldConfigurationSchemeProjectAssociation = {
    * The ID of the project.
    */
   projectId: string;
-}
+};
 /**
  * Project list with assigned field configuration schema.
  */
@@ -3659,7 +3656,7 @@ export type FieldConfigurationSchemeProjects = {
    * The IDs of projects using the field configuration scheme.
    */
   projectIds: string[];
-}
+};
 /**
  * The field configuration to issue type mapping.
  */
@@ -3672,7 +3669,7 @@ export type FieldConfigurationToIssueTypeMapping = {
    * The ID of the issue type or *default*. When set to *default* this field configuration issue type item applies to all issue types without a field configuration. An issue type can be included only once in a request.
    */
   issueTypeId: string;
-}
+};
 /**
  * The metadata describing an issue field for createmeta.
  */
@@ -3680,19 +3677,19 @@ export type FieldCreateMetadata = {
   /**
    * The list of values allowed in the field.
    */
-  allowedValues: string[];
+  allowedValues?: string[];
   /**
    * The URL that can be used to automatically complete the field.
    */
-  autoCompleteUrl: string;
+  autoCompleteUrl?: string;
   /**
    * The configuration properties.
    */
-  configuration: Record<string, unknown>;
+  configuration?: Record<string, unknown>;
   /**
    * The default value of the field.
    */
-  defaultValue: any /* 125 */;
+  defaultValue?: any /* 125 */;
   /**
    * The field id.
    */
@@ -3700,7 +3697,7 @@ export type FieldCreateMetadata = {
   /**
    * Whether the field has a default value.
    */
-  hasDefaultValue: boolean;
+  hasDefaultValue?: boolean;
   /**
    * The key of the field.
    */
@@ -3721,7 +3718,7 @@ export type FieldCreateMetadata = {
    * The data type of the field.
    */
   schema: JsonTypeBean;
-}
+};
 /**
  * Details about a field.
  */
@@ -3766,7 +3763,7 @@ export type FieldDetails = {
    * Whether the content of the field can be searched.
    */
   searchable?: boolean;
-}
+};
 /**
  * Information about the most recent use of a field.
  */
@@ -3784,7 +3781,7 @@ export type FieldLastUsed = {
    * @format: "date-time"
    */
   value?: string;
-}
+};
 /**
  * The metadata describing an issue field.
  */
@@ -3792,23 +3789,23 @@ export type FieldMetadata = {
   /**
    * The list of values allowed in the field.
    */
-  allowedValues: string[];
+  allowedValues?: string[];
   /**
    * The URL that can be used to automatically complete the field.
    */
-  autoCompleteUrl: string;
+  autoCompleteUrl?: string;
   /**
    * The configuration properties.
    */
-  configuration: Record<string, unknown>;
+  configuration?: Record<string, unknown>;
   /**
    * The default value of the field.
    */
-  defaultValue: any /* 125 */;
+  defaultValue?: any /* 125 */;
   /**
    * Whether the field has a default value.
    */
-  hasDefaultValue: boolean;
+  hasDefaultValue?: boolean;
   /**
    * The key of the field.
    */
@@ -3829,7 +3826,7 @@ export type FieldMetadata = {
    * The data type of the field.
    */
   schema: JsonTypeBean;
-}
+};
 /**
  * Details of a field that can be used in advanced searches.
  */
@@ -3878,7 +3875,7 @@ export type FieldReferenceData = {
    * The field identifier.
    */
   value?: string;
-}
+};
 /**
  * Details of an operation to perform on a field.
  */
@@ -3903,7 +3900,7 @@ export type FieldUpdateOperation = {
    * The value to set in the field.
    */
   set?: any /* 125 */;
-}
+};
 /**
  * A clause that asserts the current value of a field. For example, `summary ~ test`.
  */
@@ -3920,7 +3917,7 @@ export type FieldValueClause = {
    * The operator between the field and operand.
    */
   operator: string;
-}
+};
 /**
  * A clause that asserts a previous value of a field. For example, `status WAS "Resolved" BY currentUser() BEFORE "2019/02/02"`. See [WAS](https://confluence.atlassian.com/x/dgiiLQ#Advancedsearching-operatorsreference-WASWAS) for more information about the WAS operator.
  */
@@ -3941,7 +3938,7 @@ export type FieldWasClause = {
    * The list of time predicates.
    */
   predicates: Array<JqlQueryClauseTimePredicate>;
-}
+};
 /**
  * Key fields from the linked issue.
  */
@@ -3949,11 +3946,11 @@ export type Fields = {
   /**
    * The assignee of the linked issue.
    */
-  assignee: UserDetails;
+  assignee?: UserDetails;
   /**
    * The type of the linked issue.
    */
-  issueType: IssueTypeDetails;
+  issueType?: IssueTypeDetails;
   /**
    * The type of the linked issue.
    * Ref: #/components/schemas/IssueTypeDetails
@@ -3962,20 +3959,20 @@ export type Fields = {
   /**
    * The priority of the linked issue.
    */
-  priority: Priority;
+  priority?: Priority;
   /**
    * The status of the linked issue.
    */
-  status: StatusDetails;
+  status?: StatusDetails;
   /**
    * The summary description of the linked issue.
    */
-  summary: string;
+  summary?: string;
   /**
    * The time tracking of the linked issue.
    */
-  timetracking: TimeTrackingDetails;
-}
+  timetracking?: TimeTrackingDetails;
+};
 /**
  * Details about a filter.
  */
@@ -3984,7 +3981,7 @@ export type Filter = {
    * \[Experimental\] Approximate last used time. Returns the date and time when the filter was last used. Returns `null` if the filter hasn't been used after tracking was enabled. For performance reasons, timestamps aren't updated in real time and therefore may not be exactly accurate.
    * @format: "date-time"
    */
-  approximateLastUsed: string;
+  approximateLastUsed?: string;
   /**
    * A description of the filter.
    */
@@ -4001,11 +3998,11 @@ export type Filter = {
    * The count of how many users have selected this filter as a favorite, including the filter owner.
    * @format: "int64"
    */
-  favouritedCount: number;
+  favouritedCount?: number;
   /**
    * The unique identifier for the filter.
    */
-  id: string;
+  id?: string;
   /**
    * The JQL query for the filter. For example, *project = SSP AND issuetype = Bug*.
    */
@@ -4017,17 +4014,17 @@ export type Filter = {
   /**
    * The user who owns the filter. This is defaulted to the creator of the filter, however Jira administrators can change the owner of a shared filter in the admin settings.
    */
-  owner: User;
+  owner?: User;
   /**
    * A URL to view the filter results in Jira, using the [Search for issues using JQL](#api-rest-api-3-filter-search-get) operation with the filter's JQL string to return the filter results. For example, *https://your-domain.atlassian.net/rest/api/3/search?jql=project+%3D+SSP+AND+issuetype+%3D+Bug*.
    * @format: "uri"
    */
-  searchUrl: string;
+  searchUrl?: string;
   /**
    * The URL of the filter.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The groups and projects that the filter is shared with.
    */
@@ -4035,17 +4032,17 @@ export type Filter = {
   /**
    * A paginated list of the users that the filter is shared with. This includes users that are members of the groups or can browse the projects that the filter is shared with.
    */
-  sharedUsers: UserList;
+  sharedUsers?: UserList;
   /**
    * A paginated list of the users that are subscribed to the filter.
    */
-  subscriptions: FilterSubscriptionsList;
+  subscriptions?: FilterSubscriptionsList;
   /**
    * A URL to view the filter results in Jira, using the ID of the filter. For example, *https://your-domain.atlassian.net/issues/?filter=10100*.
    * @format: "uri"
    */
-  viewUrl: string;
-}
+  viewUrl?: string;
+};
 /**
  * Details of a filter.
  */
@@ -4054,7 +4051,7 @@ export type FilterDetails = {
    * \[Experimental\] Approximate last used time. Returns the date and time when the filter was last used. Returns `null` if the filter hasn't been used after tracking was enabled. For performance reasons, timestamps aren't updated in real time and therefore may not be exactly accurate.
    * @format: "date-time"
    */
-  approximateLastUsed: string;
+  approximateLastUsed?: string;
   /**
    * The description of the filter.
    */
@@ -4066,24 +4063,24 @@ export type FilterDetails = {
   /**
    * Expand options that include additional filter details in the response.
    */
-  expand: string;
+  expand?: string;
   /**
    * Whether the filter is selected as a favorite by any users, not including the filter owner.
    */
-  favourite: boolean;
+  favourite?: boolean;
   /**
    * The count of how many users have selected this filter as a favorite, including the filter owner.
    * @format: "int64"
    */
-  favouritedCount: number;
+  favouritedCount?: number;
   /**
    * The unique identifier for the filter.
    */
-  id: string;
+  id?: string;
   /**
    * The JQL query for the filter. For example, *project = SSP AND issuetype = Bug*.
    */
-  jql: string;
+  jql?: string;
   /**
    * The name of the filter.
    */
@@ -4091,17 +4088,17 @@ export type FilterDetails = {
   /**
    * The user who owns the filter. Defaults to the creator of the filter, however, Jira administrators can change the owner of a shared filter in the admin settings.
    */
-  owner: User;
+  owner?: User;
   /**
    * A URL to view the filter results in Jira, using the [Search for issues using JQL](#api-rest-api-3-filter-search-get) operation with the filter's JQL string to return the filter results. For example, *https://your-domain.atlassian.net/rest/api/3/search?jql=project+%3D+SSP+AND+issuetype+%3D+Bug*.
    * @format: "uri"
    */
-  searchUrl: string;
+  searchUrl?: string;
   /**
    * The URL of the filter.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The groups and projects that the filter is shared with. This can be specified when updating a filter, but not when creating a filter.
    */
@@ -4109,13 +4106,13 @@ export type FilterDetails = {
   /**
    * The users that are subscribed to the filter.
    */
-  subscriptions: Array<FilterSubscription>;
+  subscriptions?: Array<FilterSubscription>;
   /**
    * A URL to view the filter results in Jira, using the ID of the filter. For example, *https://your-domain.atlassian.net/issues/?filter=10100*.
    * @format: "uri"
    */
-  viewUrl: string;
-}
+  viewUrl?: string;
+};
 /**
  * Details of a user or group subscribing to a filter.
  */
@@ -4123,17 +4120,17 @@ export type FilterSubscription = {
   /**
    * The group subscribing to filter.
    */
-  group: GroupName;
+  group?: GroupName;
   /**
    * The ID of the filter subscription.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The user subscribing to filter.
    */
-  user: User;
-}
+  user?: User;
+};
 /**
  * A paginated list of subscriptions to a filter.
  */
@@ -4142,27 +4139,27 @@ export type FilterSubscriptionsList = {
    * The index of the last item returned on the page.
    * @format: "int32"
    */
-  "end-index": number;
+  "end-index"?: number;
   /**
    * The list of items.
    */
-  items: Array<FilterSubscription>;
+  items?: Array<FilterSubscription>;
   /**
    * The maximum number of results that could be on the page.
    * @format: "int32"
    */
-  "max-results": number;
+  "max-results"?: number;
   /**
    * The number of items on the page.
    * @format: "int32"
    */
-  size: number;
+  size?: number;
   /**
    * The index of the first item returned on the page.
    * @format: "int32"
    */
-  "start-index": number;
-}
+  "start-index"?: number;
+};
 /**
  * A group found in a search.
  */
@@ -4180,7 +4177,7 @@ export type FoundGroup = {
    * The name of the group. The name of a group is mutable, to reliably identify a group use ``groupId`.`
    */
   name?: string;
-}
+};
 /**
  * The list of groups found in a search, including header text (Showing X of Y matching groups) and total of matched groups.
  */
@@ -4195,7 +4192,7 @@ export type FoundGroups = {
    * @format: "int32"
    */
   total?: number;
-}
+};
 /**
  * The list of users found in a search, including header text (Showing X of Y matching users) and total of matched users.
  */
@@ -4210,7 +4207,7 @@ export type FoundUsers = {
    */
   total?: number;
   users?: Array<UserPickerUser>;
-}
+};
 /**
  * List of users and groups found in a search.
  */
@@ -4223,7 +4220,7 @@ export type FoundUsersAndGroups = {
    * Ref: #/components/schemas/FoundUsers
    */
   users?: FoundUsers;
-}
+};
 /**
  * An operand that is a function. See [Advanced searching - functions reference](https://confluence.atlassian.com/x/dwiiLQ) for more information about JQL functions.
  */
@@ -4240,7 +4237,7 @@ export type FunctionOperand = {
    * The name of the function.
    */
   function: string;
-}
+};
 /**
  * Details of functions that can be used in advanced searches.
  */
@@ -4265,7 +4262,7 @@ export type FunctionReferenceData = {
    * The function identifier.
    */
   value?: string;
-}
+};
 /**
  * MODEL GlobalScopeBean
  */
@@ -4274,7 +4271,7 @@ export type GlobalScopeBean = {
    * Defines the behavior of the option in the global context.If notSelectable is set, the option cannot be set as the field's value. This is useful for archiving an option that has previously been selected but shouldn't be used anymore.If defaultValue is set, the option is selected by default.
    */
   attributes?: string[];
-}
+};
 /**
  * MODEL Group
  */
@@ -4282,7 +4279,7 @@ export type Group = {
   /**
    * Expand options that include additional group details in the response.
    */
-  expand: string;
+  expand?: string;
   /**
    * The ID of the group, which uniquely identifies the group across all Atlassian products. For example, *952d12c3-5b5b-4d04-bb32-44d383afc4b2*.
    */
@@ -4295,12 +4292,12 @@ export type Group = {
    * The URL for these group details.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * A paginated list of the users that are members of the group. A maximum of 50 users is returned in the list, to access additional users append `[start-index:end-index]` to the expand request. For example, to access the next 50 users, use`?expand=users[51:100]`.
    */
-  users: PagedListUserDetailsApplicationUser;
-}
+  users?: PagedListUserDetailsApplicationUser;
+};
 /**
  * Details about a group.
  */
@@ -4313,7 +4310,7 @@ export type GroupDetails = {
    * The name of the group.
    */
   name?: string;
-}
+};
 /**
  * A group label.
  */
@@ -4330,7 +4327,7 @@ export type GroupLabel = {
    * The type of the group label.
    */
   type?: string;
-}
+};
 /**
  * Details about a group.
  */
@@ -4347,8 +4344,8 @@ export type GroupName = {
    * The URL for these group details.
    * @format: "uri"
    */
-  self: string;
-}
+  self?: string;
+};
 /**
  * Jira instance health check results. Deprecated and no longer returned.
  */
@@ -4365,7 +4362,7 @@ export type HealthCheckResult = {
    * Whether the Jira health check item passed or failed.
    */
   passed?: boolean;
-}
+};
 /**
  * The project issue type hierarchy.
  */
@@ -4378,8 +4375,8 @@ export type Hierarchy = {
   /**
    * Details about the hierarchy level.
    */
-  levels: Array<SimplifiedHierarchyLevel>;
-}
+  levels?: Array<SimplifiedHierarchyLevel>;
+};
 /**
  * Details of issue history metadata.
  * accept additional properties
@@ -4429,7 +4426,7 @@ export type HistoryMetadata = {
    * The type of the history record.
    */
   type?: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details of user or system associated with a issue history metadata item.
  * accept additional properties
@@ -4459,7 +4456,7 @@ export type HistoryMetadataParticipant = {
    * The URL of the user or system associated with a history record.
    */
   url?: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * An icon. If no icon is defined:
 
@@ -4483,7 +4480,7 @@ export type Icon = {
    * The URL of an icon that displays at 16x16 pixel in Jira.
    */
   url16x16?: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * An icon.
  */
@@ -4500,7 +4497,7 @@ export type IconBean = {
    * The URL of a 16x16 pixel icon.
    */
   url16x16?: string;
-}
+};
 /**
  * MODEL IdBean
  */
@@ -4510,7 +4507,7 @@ export type IdBean = {
    * @format: "int64"
    */
   id: number;
-}
+};
 /**
  * MODEL IdOrKeyBean
  */
@@ -4524,7 +4521,7 @@ export type IdOrKeyBean = {
    * The key of the referenced item.
    */
   key?: string;
-}
+};
 /**
  * MODEL IdSearchRequestBean
  */
@@ -4542,7 +4539,7 @@ export type IdSearchRequestBean = {
    * The continuation token to fetch the next page. This token is provided by the response of this endpoint.
    */
   nextPageToken?: string;
-}
+};
 /**
  * Result of your JQL search. Returns a list of issue IDs and a token to fetch the next page if one exists.
  */
@@ -4550,12 +4547,12 @@ export type IdSearchResults = {
   /**
    * The list of issue IDs found by the search.
    */
-  issueIds: string[];
+  issueIds?: string[];
   /**
    * Continuation token to fetch the next page. If this result represents the last or the only page this token will be null.
    */
-  nextPageToken: string;
-}
+  nextPageToken?: string;
+};
 /**
  * MODEL IncludedFields
  */
@@ -4563,19 +4560,19 @@ export type IncludedFields = {
   actuallyIncluded?: string[];
   excluded?: string[];
   included?: string[];
-}
+};
 /**
  * MODEL InputStreamSource
  */
 export type InputStreamSource = {
   inputStream?: Record<string, unknown>;
-}
+};
 /**
  * List of Issue Ids Or Keys that are to be archived or unarchived
  */
 export type IssueArchivalSyncRequest = {
   issueIdsOrKeys?: string[];
-}
+};
 /**
  * Number of archived/unarchived issues and list of errors that occurred during the action, if any.
  */
@@ -4588,7 +4585,7 @@ export type IssueArchivalSyncResponse = {
    * @format: "int64"
    */
   numberOfIssuesUpdated?: number;
-}
+};
 /**
  * Details about an issue.
  */
@@ -4596,15 +4593,15 @@ export type IssueBean = {
   /**
    * Details of changelogs associated with the issue.
    */
-  changelog: PageOfChangelogs;
+  changelog?: PageOfChangelogs;
   /**
    * The metadata for the fields on the issue that can be amended.
    */
-  editmeta: IssueUpdateMetadata;
+  editmeta?: IssueUpdateMetadata;
   /**
    * Expand options that include additional issue details in the response.
    */
-  expand: string;
+  expand?: string;
   fields?: Record<string, unknown>;
   /**
    * Ref: #/components/schemas/IncludedFields
@@ -4613,45 +4610,45 @@ export type IssueBean = {
   /**
    * The ID of the issue.
    */
-  id: string;
+  id?: string;
   /**
    * The key of the issue.
    */
-  key: string;
+  key?: string;
   /**
    * The ID and name of each field present on the issue.
    */
-  names: Record<string, unknown>;
+  names?: Record<string, unknown>;
   /**
    * The operations that can be performed on the issue.
    */
-  operations: Operations;
+  operations?: Operations;
   /**
    * Details of the issue properties identified in the request.
    */
-  properties: Record<string, unknown>;
+  properties?: Record<string, unknown>;
   /**
    * The rendered value of each field present on the issue.
    */
-  renderedFields: Record<string, unknown>;
+  renderedFields?: Record<string, unknown>;
   /**
    * The schema describing each field present on the issue.
    */
-  schema: Record<string, unknown>;
+  schema?: Record<string, unknown>;
   /**
    * The URL of the issue details.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The transitions that can be performed on the issue.
    */
-  transitions: Array<IssueTransition>;
+  transitions?: Array<IssueTransition>;
   /**
    * The versions of each field on the issue.
    */
-  versionedRepresentations: Record<string, unknown>;
-}
+  versionedRepresentations?: Record<string, unknown>;
+};
 /**
  * MODEL IssueBulkEditField
  */
@@ -4692,7 +4689,7 @@ export type IssueBulkEditField = {
    * A message indicating why the field is unavailable for editing.
    */
   unavailableMessage?: string;
-}
+};
 /**
  * Issue Bulk Edit Payload
  */
@@ -4709,7 +4706,7 @@ export type IssueBulkEditPayload = {
    * List of issue IDs or keys which are to be bulk edited. These IDs or keys can be from different projects and issue types.
    */
   selectedIssueIdsOrKeys: string[];
-}
+};
 /**
  * Issue Bulk Move Payload
  */
@@ -4724,13 +4721,12 @@ export type IssueBulkMovePayload = {
    *  *  ***Destination parent ID or key*** (Optional): ID or key of the issue which will become the parent of the issues being moved. Only required when the destination issueType is a subtask.
    */
   targetToSourcesMapping?: Record<string, unknown>;
-}
+};
 /**
  * MODEL IssueBulkOperationsFieldOption
  */
 // deno-lint-ignore no-empty-interface
-export type IssueBulkOperationsFieldOption = {
-}
+export type IssueBulkOperationsFieldOption = {};
 /**
  * A list of changelog IDs.
  */
@@ -4739,7 +4735,7 @@ export type IssueChangelogIds = {
    * The list of changelog IDs.
    */
   changelogIds: string[];
-}
+};
 /**
  * MODEL IssueCommentListRequestBean
  */
@@ -4748,7 +4744,7 @@ export type IssueCommentListRequestBean = {
    * The list of comment IDs. A maximum of 1000 IDs can be specified.
    */
   ids: string[];
-}
+};
 /**
  * An [issue](https://developer.atlassian.com/cloud/jira/platform/jira-expressions-type-reference#issue) specified by ID or key. All the fields of the issue object are available in the Jira expression.
  */
@@ -4766,7 +4762,7 @@ export type IssueContextVariable = {
    * Type of custom context variable.
    */
   type: string;
-}
+};
 /**
  * The wrapper for the issue creation metadata for a list of projects.
  */
@@ -4774,12 +4770,12 @@ export type IssueCreateMetadata = {
   /**
    * Expand options that include additional project details in the response.
    */
-  expand: string;
+  expand?: string;
   /**
    * List of projects and their issue creation metadata.
    */
-  projects: Array<ProjectIssueCreateMetadata>;
-}
+  projects?: Array<ProjectIssueCreateMetadata>;
+};
 /**
  * Lists of issues and entity properties. See [Entity properties](https://developer.atlassian.com/cloud/jira/platform/jira-entity-properties/) for more information.
  */
@@ -4792,7 +4788,7 @@ export type IssueEntityProperties = {
    * A list of entity property keys and values.
    */
   properties?: Record<string, unknown>;
-}
+};
 /**
  * An issue ID with entity property values. See [Entity properties](https://developer.atlassian.com/cloud/jira/platform/jira-entity-properties/) for more information.
  */
@@ -4806,7 +4802,7 @@ export type IssueEntityPropertiesForMultiUpdate = {
    * Entity properties to set on the issue. The maximum length of an issue property value is 32768 characters.
    */
   properties?: Record<string, unknown>;
-}
+};
 /**
  * Details about an issue event.
  */
@@ -4815,12 +4811,12 @@ export type IssueEvent = {
    * The ID of the event.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The name of the event.
    */
-  name: string;
-}
+  name?: string;
+};
 /**
  * Details of the options for a select list issue field.
  */
@@ -4842,7 +4838,7 @@ export type IssueFieldOption = {
    * The option's name, which is displayed in Jira.
    */
   value: string;
-}
+};
 /**
  * Details of the projects the option is available in.
  */
@@ -4855,7 +4851,7 @@ export type IssueFieldOptionConfiguration = {
    * Defines the projects that the option is available in. If the scope is not defined, then the option is available in all projects.
    */
   scope?: IssueFieldOptionScopeBean;
-}
+};
 /**
  * MODEL IssueFieldOptionCreateBean
  * accept additional properties
@@ -4873,7 +4869,7 @@ export type IssueFieldOptionCreateBean = {
    * The option's name, which is displayed in Jira.
    */
   value: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * MODEL IssueFieldOptionScopeBean
  */
@@ -4890,7 +4886,7 @@ export type IssueFieldOptionScopeBean = {
    * Defines the projects in which the option is available and the behavior of the option within each project. Specify one object per project. The behavior of the option in a project context overrides the behavior in the global context.
    */
   projects2?: Array<ProjectScopeBean>;
-}
+};
 /**
  * Bulk operation filter details.
  */
@@ -4903,7 +4899,7 @@ export type IssueFilterForBulkPropertyDelete = {
    * List of issues to perform the bulk delete operation on.
    */
   entityIds?: string[];
-}
+};
 /**
  * Bulk operation filter details.
  */
@@ -4920,7 +4916,7 @@ export type IssueFilterForBulkPropertySet = {
    * Whether the bulk operation occurs only when the property is present on or absent from an issue.
    */
   hasProperty?: boolean;
-}
+};
 /**
  * MODEL IssueLimitReportRequest
  */
@@ -4929,7 +4925,7 @@ export type IssueLimitReportRequest = {
    * A list of fields and their respective approaching limit threshold. Required for querying issues approaching limits. Optional for querying issues breaching limits. Accepted fields are: `comment`, `worklog`, `attachment`, `remoteIssueLinks`, and `issuelinks`. Example: `{"issuesApproachingLimitParams": {"comment": 4500, "attachment": 1800}}`
    */
   issuesApproachingLimitParams?: Record<string, unknown>;
-}
+};
 /**
  * MODEL IssueLimitReportResponseBean
  */
@@ -4946,7 +4942,7 @@ export type IssueLimitReportResponseBean = {
    * The fields and their defined limits
    */
   limits?: Record<string, unknown>;
-}
+};
 /**
  * Details of a link between issues.
  */
@@ -4954,7 +4950,7 @@ export type IssueLink = {
   /**
    * The ID of the issue link.
    */
-  id: string;
+  id?: string;
   /**
    * Provides details about the linked issue. If presenting this link in a user interface, use the `inward` field of the issue link type to label the link.
    */
@@ -4967,12 +4963,12 @@ export type IssueLink = {
    * The URL of the issue link.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The type of link between the issues.
    */
   type: IssueLinkType;
-}
+};
 /**
  * This object is used as follows:
 
@@ -5012,8 +5008,8 @@ export type IssueLinkType = {
    * The URL of the issue link type. Read only.
    * @format: "uri"
    */
-  self: string;
-}
+  self?: string;
+};
 /**
  * A list of issue link type beans.
  */
@@ -5021,8 +5017,8 @@ export type IssueLinkTypes = {
   /**
    * The issue link type bean.
    */
-  issueLinkTypes: Array<IssueLinkType>;
-}
+  issueLinkTypes?: Array<IssueLinkType>;
+};
 /**
  * A list of issue IDs.
  */
@@ -5031,13 +5027,13 @@ export type IssueList = {
    * The list of issue IDs.
    */
   issueIds: string[];
-}
+};
 /**
  * A list of matched issues or errors for each JQL query, in the order the JQL queries were passed.
  */
 export type IssueMatches = {
   matches: Array<IssueMatchesForJQL>;
-}
+};
 /**
  * A list of the issues matched to a JQL query or details of errors encountered during matching.
  */
@@ -5050,7 +5046,7 @@ export type IssueMatchesForJQL = {
    * A list of issue IDs.
    */
   matchedIssues: string[];
-}
+};
 /**
  * A list of issues suggested for use in auto-completion.
  */
@@ -5058,8 +5054,8 @@ export type IssuePickerSuggestions = {
   /**
    * A list of issues for an issue type suggested for use in auto-completion.
    */
-  sections: Array<IssuePickerSuggestionsIssueType>;
-}
+  sections?: Array<IssuePickerSuggestionsIssueType>;
+};
 /**
  * A type of issue suggested for use in auto-completion.
  */
@@ -5067,24 +5063,24 @@ export type IssuePickerSuggestionsIssueType = {
   /**
    * The ID of the type of issues suggested for use in auto-completion.
    */
-  id: string;
+  id?: string;
   /**
    * A list of issues suggested for use in auto-completion.
    */
-  issues: Array<SuggestedIssue>;
+  issues?: Array<SuggestedIssue>;
   /**
    * The label of the type of issues suggested for use in auto-completion.
    */
-  label: string;
+  label?: string;
   /**
    * If no issue suggestions are found, returns a message indicating no suggestions were found,
    */
-  msg: string;
+  msg?: string;
   /**
    * If issue suggestions are found, returns a message indicating the number of issues suggestions found and returned.
    */
-  sub: string;
-}
+  sub?: string;
+};
 /**
  * Issue security level member.
  */
@@ -5104,15 +5100,15 @@ export type IssueSecurityLevelMember = {
    */
   issueSecurityLevelId: number;
   managed?: boolean;
-}
+};
 /**
  * Details about an project using security scheme mapping.
  * accept additional properties
  */
 export type IssueSecuritySchemeToProjectMapping = {
-  issueSecuritySchemeId: string;
-  projectId: string;
-} & Record<string, any>
+  issueSecuritySchemeId?: string;
+  projectId?: string;
+} & Record<string, any>;
 /**
  * Details of an issue transition.
  * accept additional properties
@@ -5121,15 +5117,15 @@ export type IssueTransition = {
   /**
    * Expand options that include additional transition details in the response.
    */
-  expand: string;
+  expand?: string;
   /**
    * Details of the fields associated with the issue transition screen. Use this information to populate `fields` and `update` in a transition request.
    */
-  fields: Record<string, unknown>;
+  fields?: Record<string, unknown>;
   /**
    * Whether there is a screen associated with the issue transition.
    */
-  hasScreen: boolean;
+  hasScreen?: boolean;
   /**
    * The ID of the issue transition. Required when specifying a transition to undertake.
    */
@@ -5137,29 +5133,29 @@ export type IssueTransition = {
   /**
    * Whether the transition is available to be performed.
    */
-  isAvailable: boolean;
+  isAvailable?: boolean;
   /**
    * Whether the issue has to meet criteria before the issue transition is applied.
    */
-  isConditional: boolean;
+  isConditional?: boolean;
   /**
    * Whether the issue transition is global, that is, the transition is applied to issues regardless of their status.
    */
-  isGlobal: boolean;
+  isGlobal?: boolean;
   /**
    * Whether this is the initial issue transition for the workflow.
    */
-  isInitial: boolean;
+  isInitial?: boolean;
   looped?: boolean;
   /**
    * The name of the issue transition.
    */
-  name: string;
+  name?: string;
   /**
    * Details of the issue status after the transition.
    */
-  to: StatusDetails;
-} & Record<string, any>
+  to?: StatusDetails;
+} & Record<string, any>;
 /**
  * MODEL IssueTypeCreateBean
  */
@@ -5188,7 +5184,7 @@ export type IssueTypeCreateBean = {
    * Whether the issue type is `subtype` or `standard`. Defaults to `standard`.
    */
   type?: string;
-}
+};
 /**
  * Details about an issue type.
  */
@@ -5197,46 +5193,46 @@ export type IssueTypeDetails = {
    * The ID of the issue type's avatar.
    * @format: "int64"
    */
-  avatarId: number;
+  avatarId?: number;
   /**
    * The description of the issue type.
    */
-  description: string;
+  description?: string;
   /**
    * Unique ID for next-gen projects.
    * @format: "uuid"
    */
-  entityId: string;
+  entityId?: string;
   /**
    * Hierarchy level of the issue type.
    * @format: "int32"
    */
-  hierarchyLevel: number;
+  hierarchyLevel?: number;
   /**
    * The URL of the issue type's avatar.
    */
-  iconUrl: string;
+  iconUrl?: string;
   /**
    * The ID of the issue type.
    */
-  id: string;
+  id?: string;
   /**
    * The name of the issue type.
    */
-  name: string;
+  name?: string;
   /**
    * Details of the next-gen projects the issue type is available in.
    */
-  scope: Scope;
+  scope?: Scope;
   /**
    * The URL of these issue type details.
    */
-  self: string;
+  self?: string;
   /**
    * Whether this issue type is used to create subtasks.
    */
-  subtask: boolean;
-}
+  subtask?: boolean;
+};
 /**
  * The list of issue type IDs.
  */
@@ -5245,7 +5241,7 @@ export type IssueTypeIds = {
    * The list of issue type IDs.
    */
   issueTypeIds: string[];
-}
+};
 /**
  * The list of issue type IDs to be removed from the field configuration scheme.
  */
@@ -5254,7 +5250,7 @@ export type IssueTypeIdsToRemove = {
    * The list of issue type IDs. Must contain unique values not longer than 255 characters and not be empty. Maximum of 100 IDs.
    */
   issueTypeIds: string[];
-}
+};
 /**
  * Details of an issue type.
  */
@@ -5263,17 +5259,17 @@ export type IssueTypeInfo = {
    * The avatar of the issue type.
    * @format: "int64"
    */
-  avatarId: number;
+  avatarId?: number;
   /**
    * The ID of the issue type.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The name of the issue type.
    */
-  name: string;
-}
+  name?: string;
+};
 /**
  * Details of the issue creation metadata for an issue type.
  */
@@ -5282,54 +5278,54 @@ export type IssueTypeIssueCreateMetadata = {
    * The ID of the issue type's avatar.
    * @format: "int64"
    */
-  avatarId: number;
+  avatarId?: number;
   /**
    * The description of the issue type.
    */
-  description: string;
+  description?: string;
   /**
    * Unique ID for next-gen projects.
    * @format: "uuid"
    */
-  entityId: string;
+  entityId?: string;
   /**
    * Expand options that include additional issue type metadata details in the response.
    */
-  expand: string;
+  expand?: string;
   /**
    * List of the fields available when creating an issue for the issue type.
    */
-  fields: Record<string, unknown>;
+  fields?: Record<string, unknown>;
   /**
    * Hierarchy level of the issue type.
    * @format: "int32"
    */
-  hierarchyLevel: number;
+  hierarchyLevel?: number;
   /**
    * The URL of the issue type's avatar.
    */
-  iconUrl: string;
+  iconUrl?: string;
   /**
    * The ID of the issue type.
    */
-  id: string;
+  id?: string;
   /**
    * The name of the issue type.
    */
-  name: string;
+  name?: string;
   /**
    * Details of the next-gen projects the issue type is available in.
    */
-  scope: Scope;
+  scope?: Scope;
   /**
    * The URL of these issue type details.
    */
-  self: string;
+  self?: string;
   /**
    * Whether this issue type is used to create subtasks.
    */
-  subtask: boolean;
-}
+  subtask?: boolean;
+};
 /**
  * Details of an issue type scheme.
  */
@@ -5354,7 +5350,7 @@ export type IssueTypeScheme = {
    * The name of the issue type scheme.
    */
   name: string;
-}
+};
 /**
  * Details of an issue type scheme and its associated issue types.
  */
@@ -5375,7 +5371,7 @@ export type IssueTypeSchemeDetails = {
    * The name of the issue type scheme. The name must be unique. The maximum length is 255 characters.
    */
   name: string;
-}
+};
 /**
  * The ID of an issue type scheme.
  */
@@ -5384,7 +5380,7 @@ export type IssueTypeSchemeID = {
    * The ID of the issue type scheme.
    */
   issueTypeSchemeId: string;
-}
+};
 /**
  * Issue type scheme item.
  */
@@ -5397,7 +5393,7 @@ export type IssueTypeSchemeMapping = {
    * The ID of the issue type scheme.
    */
   issueTypeSchemeId: string;
-}
+};
 /**
  * Details of the association between an issue type scheme and project.
  */
@@ -5410,7 +5406,7 @@ export type IssueTypeSchemeProjectAssociation = {
    * The ID of the project.
    */
   projectId: string;
-}
+};
 /**
  * Issue type scheme with a list of the projects that use it.
  */
@@ -5423,7 +5419,7 @@ export type IssueTypeSchemeProjects = {
    * The IDs of the projects using the issue type scheme.
    */
   projectIds: string[];
-}
+};
 /**
  * Details of the name, description, and default issue type for an issue type scheme.
  */
@@ -5440,7 +5436,7 @@ export type IssueTypeSchemeUpdateDetails = {
    * The name of the issue type scheme. The name must be unique. The maximum length is 255 characters.
    */
   name?: string;
-}
+};
 /**
  * Details of an issue type screen scheme.
  */
@@ -5457,7 +5453,7 @@ export type IssueTypeScreenScheme = {
    * The name of the issue type screen scheme.
    */
   name: string;
-}
+};
 /**
  * The details of an issue type screen scheme.
  */
@@ -5474,7 +5470,7 @@ export type IssueTypeScreenSchemeDetails = {
    * The name of the issue type screen scheme. The name must be unique. The maximum length is 255 characters.
    */
   name: string;
-}
+};
 /**
  * The ID of an issue type screen scheme.
  */
@@ -5483,7 +5479,7 @@ export type IssueTypeScreenSchemeId = {
    * The ID of the issue type screen scheme.
    */
   id: string;
-}
+};
 /**
  * The screen scheme for an issue type.
  */
@@ -5500,7 +5496,7 @@ export type IssueTypeScreenSchemeItem = {
    * The ID of the screen scheme.
    */
   screenSchemeId: string;
-}
+};
 /**
  * The IDs of the screen schemes for the issue type IDs.
  */
@@ -5513,7 +5509,7 @@ export type IssueTypeScreenSchemeMapping = {
    * The ID of the screen scheme. Only screen schemes used in classic projects are accepted.
    */
   screenSchemeId: string;
-}
+};
 /**
  * A list of issue type screen scheme mappings.
  */
@@ -5522,7 +5518,7 @@ export type IssueTypeScreenSchemeMappingDetails = {
    * The list of issue type to screen scheme mappings. A *default* entry cannot be specified because a default entry is added when an issue type screen scheme is created.
    */
   issueTypeMappings: Array<IssueTypeScreenSchemeMapping>;
-}
+};
 /**
  * Associated issue type screen scheme and project.
  */
@@ -5535,7 +5531,7 @@ export type IssueTypeScreenSchemeProjectAssociation = {
    * The ID of the project.
    */
   projectId?: string;
-}
+};
 /**
  * Details of an issue type screen scheme.
  */
@@ -5548,7 +5544,7 @@ export type IssueTypeScreenSchemeUpdateDetails = {
    * The name of the issue type screen scheme. The name must be unique. The maximum length is 255 characters.
    */
   name?: string;
-}
+};
 /**
  * Issue type screen scheme with a list of the projects that use it.
  */
@@ -5561,7 +5557,7 @@ export type IssueTypeScreenSchemesProjects = {
    * The IDs of the projects using the issue type screen scheme.
    */
   projectIds: string[];
-}
+};
 /**
  * Mapping of an issue type to a context.
  */
@@ -5578,7 +5574,7 @@ export type IssueTypeToContextMapping = {
    * The ID of the issue type.
    */
   issueTypeId?: string;
-}
+};
 /**
  * MODEL IssueTypeUpdateBean
  */
@@ -5596,7 +5592,7 @@ export type IssueTypeUpdateBean = {
    * The unique name for the issue type. The maximum length is 60 characters.
    */
   name?: string;
-}
+};
 /**
  * Status details for an issue type.
  */
@@ -5621,7 +5617,7 @@ export type IssueTypeWithStatus = {
    * Whether this issue type represents subtasks.
    */
   subtask: boolean;
-}
+};
 /**
  * Details about the mapping between an issue type and a workflow.
  */
@@ -5638,7 +5634,7 @@ export type IssueTypeWorkflowMapping = {
    * The name of the workflow.
    */
   workflow?: string;
-}
+};
 /**
  * Details about the mapping between issue types and a workflow.
  */
@@ -5659,7 +5655,7 @@ export type IssueTypesWorkflowMapping = {
    * The name of the workflow. Optional if updating the workflow-issue types mapping.
    */
   workflow?: string;
-}
+};
 /**
  * Details of an issue update request.
  * accept additional properties
@@ -5685,13 +5681,13 @@ export type IssueUpdateDetails = {
    * A Map containing the field field name and a list of operations to perform on the issue screen field. Note that fields included in here cannot be included in `fields`.
    */
   update?: Record<string, unknown>;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * A list of editable field details.
  */
 export type IssueUpdateMetadata = {
-  fields: Record<string, unknown>;
-}
+  fields?: Record<string, unknown>;
+};
 /**
  * List of issues and JQL queries.
  */
@@ -5704,7 +5700,7 @@ export type IssuesAndJQLQueries = {
    * A list of JQL queries.
    */
   jqls: string[];
-}
+};
 /**
  * The description of the page of issues loaded by the provided JQL query.
  */
@@ -5733,7 +5729,7 @@ export type IssuesJqlMetaDataBean = {
    * Any warnings related to the JQL query. Present only if the validation mode was set to `warn`.
    */
   validationWarnings?: string[];
-}
+};
 /**
  * Meta data describing the `issues` context variable.
  */
@@ -5742,14 +5738,14 @@ export type IssuesMetaBean = {
    * Ref: #/components/schemas/IssuesJqlMetaDataBean
    */
   jql?: IssuesJqlMetaDataBean;
-}
+};
 /**
  * MODEL IssuesUpdateBean
  * accept additional properties
  */
 export type IssuesUpdateBean = {
   issueUpdates?: Array<IssueUpdateDetails>;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * The JQL queries to be converted.
  */
@@ -5758,7 +5754,7 @@ export type JQLPersonalDataMigrationRequest = {
    * A list of queries with user identifiers. Maximum of 100 queries.
    */
   queryStrings?: string[];
-}
+};
 /**
  * JQL queries that contained users that could not be found
  */
@@ -5771,7 +5767,7 @@ export type JQLQueryWithUnknownUsers = {
    * The original query, for reference
    */
   originalQuery?: string;
-}
+};
 /**
  * Lists of JQL reference data.
  */
@@ -5788,7 +5784,7 @@ export type JQLReferenceData = {
    * List of functions usable in JQL queries.
    */
   visibleFunctionNames?: Array<FunctionReferenceData>;
-}
+};
 /**
  * The JQL specifying the issues available in the evaluated Jira expression under the `issues` context variable.
  */
@@ -5797,7 +5793,7 @@ export type JexpIssues = {
    * The JQL query that specifies the set of issues available in the Jira expression.
    */
   jql?: JexpJqlIssues;
-}
+};
 /**
  * The JQL specifying the issues available in the evaluated Jira expression under the `issues` context variable. Not all issues returned by the JQL query are loaded, only those described by the `startAt` and `maxResults` properties. To determine whether it is necessary to iterate to ensure all the issues returned by the JQL query are evaluated, inspect `meta.issues.jql.count` in the response.
  */
@@ -5821,7 +5817,7 @@ export type JexpJqlIssues = {
    * default Value "strict"
    */
   validation?: string;
-}
+};
 /**
  * MODEL JiraCascadingSelectField
  */
@@ -5835,7 +5831,7 @@ export type JiraCascadingSelectField = {
    * Ref: #/components/schemas/JiraSelectedOptionField
    */
   parentOptionValue: JiraSelectedOptionField;
-}
+};
 /**
  * MODEL JiraColorField
  */
@@ -5845,13 +5841,13 @@ export type JiraColorField = {
    */
   color: JiraColorInput;
   fieldId: string;
-}
+};
 /**
  * MODEL JiraColorInput
  */
 export type JiraColorInput = {
   name: string;
-}
+};
 /**
  * MODEL JiraComponentField
  */
@@ -5860,7 +5856,7 @@ export type JiraComponentField = {
    * @format: "int64"
    */
   componentId: number;
-}
+};
 /**
  * MODEL JiraDateField
  */
@@ -5870,13 +5866,13 @@ export type JiraDateField = {
    */
   date?: JiraDateInput;
   fieldId: string;
-}
+};
 /**
  * MODEL JiraDateInput
  */
 export type JiraDateInput = {
   formattedDate: string;
-}
+};
 /**
  * MODEL JiraDateTimeField
  */
@@ -5886,13 +5882,13 @@ export type JiraDateTimeField = {
    */
   dateTime: JiraDateTimeInput;
   fieldId: string;
-}
+};
 /**
  * MODEL JiraDateTimeInput
  */
 export type JiraDateTimeInput = {
   formattedDateTime: string;
-}
+};
 /**
  * Details about the analysed Jira expression.
  */
@@ -5917,7 +5913,7 @@ export type JiraExpressionAnalysis = {
    * Whether the expression is valid and the interpreter will evaluate it. Note that the expression may fail at runtime (for example, if it executes too many expensive operations).
    */
   valid: boolean;
-}
+};
 /**
  * Details about the complexity of the analysed Jira expression.
  */
@@ -5933,7 +5929,7 @@ export type JiraExpressionComplexity = {
    * Variables used in the formula, mapped to the parts of the expression they refer to.
    */
   variables?: Record<string, unknown>;
-}
+};
 /**
  * MODEL JiraExpressionEvalContextBean
  */
@@ -5979,7 +5975,7 @@ export type JiraExpressionEvalContextBean = {
    * @format: "int64"
    */
   sprint?: number;
-}
+};
 /**
  * MODEL JiraExpressionEvalRequestBean
  */
@@ -5993,7 +5989,7 @@ export type JiraExpressionEvalRequestBean = {
    * @example: "{ key: issue.key, type: issue.issueType.name, links: issue.links.map(link => link.linkedIssue.id) }"
    */
   expression: string;
-}
+};
 /**
  * MODEL JiraExpressionEvaluationMetaDataBean
  */
@@ -6006,7 +6002,7 @@ export type JiraExpressionEvaluationMetaDataBean = {
    * Contains information about the `issues` variable in the context. For example, is the issues were loaded with JQL, information about the page will be included here.
    */
   issues?: IssuesMetaBean;
-}
+};
 /**
  * Details of Jira expressions for analysis.
  */
@@ -6020,7 +6016,7 @@ export type JiraExpressionForAnalysis = {
    * @example: "issues.map(issue => issue.properties['property_key'])"
    */
   expressions: string[];
-}
+};
 /**
  * The result of evaluating a Jira expression.
  */
@@ -6033,7 +6029,7 @@ export type JiraExpressionResult = {
    * The value of the evaluated expression. It may be a primitive JSON value or a Jira REST API object. (Some expressions do not produce any meaningful results—for example, an expression that returns a lambda function—if that's the case a simple string representation is returned. These string representations should not be relied upon and may change without notice.)
    */
   value: any /* 122 */;
-}
+};
 /**
  * Details about syntax and type errors. The error details apply to the entire expression, unless the object includes:
 
@@ -6064,7 +6060,7 @@ export type JiraExpressionValidationError = {
    * The error type.
    */
   type: string;
-}
+};
 /**
  * Details about the analysed Jira expression.
  */
@@ -6073,7 +6069,7 @@ export type JiraExpressionsAnalysis = {
    * The results of Jira expressions analysis.
    */
   results: Array<JiraExpressionAnalysis>;
-}
+};
 /**
  * MODEL JiraExpressionsComplexityBean
  */
@@ -6094,7 +6090,7 @@ export type JiraExpressionsComplexityBean = {
    * The number of steps it took to evaluate the expression, where a step is a high-level operation performed by the expression. A step is an operation such as arithmetic, accessing a property, accessing a context variable, or calling a function.
    */
   steps: JiraExpressionsComplexityValueBean;
-}
+};
 /**
  * MODEL JiraExpressionsComplexityValueBean
  */
@@ -6109,13 +6105,13 @@ export type JiraExpressionsComplexityValueBean = {
    * @format: "int32"
    */
   value: number;
-}
+};
 /**
  * MODEL JiraGroupInput
  */
 export type JiraGroupInput = {
   groupName: string;
-}
+};
 /**
  * MODEL JiraIssueFields
  */
@@ -6180,7 +6176,9 @@ export type JiraIssueFields = {
    *  *  To assign, provide an array of user `accountId`s.
    *  *  To clear, set `users` to `null`.
    */
-  multipleSelectClearableUserPickerFields?: Array<JiraMultipleSelectUserPickerField>;
+  multipleSelectClearableUserPickerFields?: Array<
+    JiraMultipleSelectUserPickerField
+  >;
   /**
    * Add or clear a multi-select field:
    *
@@ -6236,7 +6234,9 @@ export type JiraIssueFields = {
    *  *  To unassign an issue, set `user` to `null`.
    *  *  For automatic assignment, set `accountId` to `-1`.
    */
-  singleSelectClearableUserPickerFields?: Array<JiraSingleSelectUserPickerField>;
+  singleSelectClearableUserPickerFields?: Array<
+    JiraSingleSelectUserPickerField
+  >;
   /**
    * Add or clear a single select field:
    *
@@ -6258,13 +6258,13 @@ export type JiraIssueFields = {
    *  *  To clear, set `url` to an empty string.
    */
   urlFields?: Array<JiraUrlField>;
-}
+};
 /**
  * MODEL JiraIssueTypeField
  */
 export type JiraIssueTypeField = {
   issueTypeId: string;
-}
+};
 /**
  * MODEL JiraLabelsField
  */
@@ -6272,13 +6272,13 @@ export type JiraLabelsField = {
   bulkEditMultiSelectFieldOption: string;
   fieldId: string;
   labels: Array<JiraLabelsInput>;
-}
+};
 /**
  * MODEL JiraLabelsInput
  */
 export type JiraLabelsInput = {
   name: string;
-}
+};
 /**
  * MODEL JiraMultiSelectComponentField
  */
@@ -6286,28 +6286,28 @@ export type JiraMultiSelectComponentField = {
   bulkEditMultiSelectFieldOption: string;
   components: Array<JiraComponentField>;
   fieldId: string;
-}
+};
 /**
  * MODEL JiraMultipleGroupPickerField
  */
 export type JiraMultipleGroupPickerField = {
   fieldId: string;
   groups: Array<JiraGroupInput>;
-}
+};
 /**
  * MODEL JiraMultipleSelectField
  */
 export type JiraMultipleSelectField = {
   fieldId: string;
   options: Array<JiraSelectedOptionField>;
-}
+};
 /**
  * MODEL JiraMultipleSelectUserPickerField
  */
 export type JiraMultipleSelectUserPickerField = {
   fieldId: string;
   users?: Array<JiraUserField>;
-}
+};
 /**
  * MODEL JiraMultipleVersionPickerField
  */
@@ -6315,7 +6315,7 @@ export type JiraMultipleVersionPickerField = {
   bulkEditMultiSelectFieldOption: string;
   fieldId: string;
   versions: Array<JiraVersionField>;
-}
+};
 /**
  * MODEL JiraNumberField
  */
@@ -6325,13 +6325,13 @@ export type JiraNumberField = {
    * @format: "double"
    */
   value?: number;
-}
+};
 /**
  * MODEL JiraPriorityField
  */
 export type JiraPriorityField = {
   priorityId: string;
-}
+};
 /**
  * MODEL JiraRichTextField
  */
@@ -6341,13 +6341,13 @@ export type JiraRichTextField = {
    * Ref: #/components/schemas/JiraRichTextInput
    */
   richText: JiraRichTextInput;
-}
+};
 /**
  * MODEL JiraRichTextInput
  */
 export type JiraRichTextInput = {
   adfValue?: Record<string, unknown>;
-}
+};
 /**
  * MODEL JiraSelectedOptionField
  */
@@ -6356,7 +6356,7 @@ export type JiraSelectedOptionField = {
    * @format: "int64"
    */
   optionId?: number;
-}
+};
 /**
  * MODEL JiraSingleGroupPickerField
  */
@@ -6366,14 +6366,14 @@ export type JiraSingleGroupPickerField = {
    * Ref: #/components/schemas/JiraGroupInput
    */
   group: JiraGroupInput;
-}
+};
 /**
  * MODEL JiraSingleLineTextField
  */
 export type JiraSingleLineTextField = {
   fieldId: string;
   text: string;
-}
+};
 /**
  * Add or clear a single select field:
 
@@ -6386,7 +6386,7 @@ export type JiraSingleSelectField = {
    * Ref: #/components/schemas/JiraSelectedOptionField
    */
   option: JiraSelectedOptionField;
-}
+};
 /**
  * MODEL JiraSingleSelectUserPickerField
  */
@@ -6396,7 +6396,7 @@ export type JiraSingleSelectUserPickerField = {
    * Ref: #/components/schemas/JiraUserField
    */
   user?: JiraUserField;
-}
+};
 /**
  * MODEL JiraSingleVersionPickerField
  */
@@ -6406,7 +6406,7 @@ export type JiraSingleVersionPickerField = {
    * Ref: #/components/schemas/JiraVersionField
    */
   version: JiraVersionField;
-}
+};
 /**
  * Details of a status.
  */
@@ -6439,26 +6439,26 @@ export type JiraStatus = {
    * The workflows that use this status. Only available if the `workflowUsages` expand is requested.
    */
   workflowUsages?: Array<WorkflowUsages>;
-}
+};
 /**
  * MODEL JiraUrlField
  */
 export type JiraUrlField = {
   fieldId: string;
   url: string;
-}
+};
 /**
  * MODEL JiraUserField
  */
 export type JiraUserField = {
   accountId: string;
-}
+};
 /**
  * MODEL JiraVersionField
  */
 export type JiraVersionField = {
   versionId?: string;
-}
+};
 /**
  * Details of a workflow.
  */
@@ -6507,7 +6507,7 @@ export type JiraWorkflow = {
    * Ref: #/components/schemas/DocumentVersion
    */
   version?: DocumentVersion;
-}
+};
 /**
  * Details of a status.
  */
@@ -6540,7 +6540,7 @@ export type JiraWorkflowStatus = {
    * The `statuses.usages` expand is an optional parameter that can be used when reading and updating statuses in Jira. It provides additional information about the projects and issue types associated with the requested statuses.
    */
   usages?: Array<ProjectIssueTypes>;
-}
+};
 /**
  * Jql function precomputation.
  */
@@ -6548,51 +6548,51 @@ export type JqlFunctionPrecomputationBean = {
   /**
    * The list of arguments function was invoked with.
    */
-  arguments: string[];
+  arguments?: string[];
   /**
    * The timestamp of the precomputation creation.
    * @format: "date-time"
    */
-  created: string;
+  created?: string;
   /**
    * The error message to be displayed to the user.
    */
-  error: string;
+  error?: string;
   /**
    * The field the function was executed against.
    */
-  field: string;
+  field?: string;
   /**
    * The function key.
    */
-  functionKey: string;
+  functionKey?: string;
   /**
    * The name of the function.
    */
-  functionName: string;
+  functionName?: string;
   /**
    * The id of the precomputation.
    */
-  id: string;
+  id?: string;
   /**
    * The operator in context of which function was executed.
    */
-  operator: string;
+  operator?: string;
   /**
    * The timestamp of the precomputation last update.
    * @format: "date-time"
    */
-  updated: string;
+  updated?: string;
   /**
    * The timestamp of the precomputation last usage.
    * @format: "date-time"
    */
-  used: string;
+  used?: string;
   /**
    * The JQL fragment stored as the precomputation.
    */
-  value: string;
-}
+  value?: string;
+};
 /**
  * Precomputation id and its new value.
  */
@@ -6609,13 +6609,13 @@ export type JqlFunctionPrecomputationUpdateBean = {
    * The new value of the precomputation.
    */
   value?: string;
-}
+};
 /**
  * List of pairs (id and value) for precomputation updates.
  */
 export type JqlFunctionPrecomputationUpdateRequestBean = {
   values?: Array<JqlFunctionPrecomputationUpdateBean>;
-}
+};
 /**
  * A list of JQL queries to parse.
  */
@@ -6624,7 +6624,7 @@ export type JqlQueriesToParse = {
    * A list of queries to parse.
    */
   queries: string[];
-}
+};
 /**
  * The list of JQL queries to sanitize for the given account IDs.
  */
@@ -6633,7 +6633,7 @@ export type JqlQueriesToSanitize = {
    * The list of JQL queries to sanitize. Must contain unique values. Maximum of 20 queries.
    */
   queries: Array<JqlQueryToSanitize>;
-}
+};
 /**
  * A parsed JQL query.
  */
@@ -6646,19 +6646,17 @@ export type JqlQuery = {
    * Ref: #/components/schemas/JqlQueryClause
    */
   where?: JqlQueryClause;
-}
+};
 /**
  * A JQL query clause.
  */
 // deno-lint-ignore no-empty-interface
-export type JqlQueryClause = {
-}
+export type JqlQueryClause = {};
 /**
  * Details of an operand in a JQL clause.
  */
 // deno-lint-ignore no-empty-interface
-export type JqlQueryClauseOperand = {
-}
+export type JqlQueryClauseOperand = {};
 /**
  * A time predicate for a temporal JQL clause.
  */
@@ -6671,7 +6669,7 @@ export type JqlQueryClauseTimePredicate = {
    * The operator between the field and the operand.
    */
   operator: string;
-}
+};
 /**
  * A field used in a JQL query. See [Advanced searching - fields reference](https://confluence.atlassian.com/x/dAiiLQ) for more information about fields in JQL queries.
  */
@@ -6688,7 +6686,7 @@ export type JqlQueryField = {
    * When the field refers to a value in an entity property, details of the entity property value.
    */
   property?: Array<JqlQueryFieldEntityProperty>;
-}
+};
 /**
  * Details of an entity property.
  */
@@ -6713,7 +6711,7 @@ export type JqlQueryFieldEntityProperty = {
    * @example: "number"
    */
   type?: string;
-}
+};
 /**
  * Details of the order-by JQL clause.
  */
@@ -6722,7 +6720,7 @@ export type JqlQueryOrderByClause = {
    * The list of order-by clause fields and their ordering directives.
    */
   fields: Array<JqlQueryOrderByClauseElement>;
-}
+};
 /**
  * An element of the order-by JQL clause.
  */
@@ -6735,7 +6733,7 @@ export type JqlQueryOrderByClauseElement = {
    * Ref: #/components/schemas/JqlQueryField
    */
   field: JqlQueryField;
-}
+};
 /**
  * The JQL query to sanitize for the account ID. If the account ID is null, sanitizing is performed for an anonymous user.
  */
@@ -6748,13 +6746,12 @@ export type JqlQueryToSanitize = {
    * The query to sanitize.
    */
   query: string;
-}
+};
 /**
  * An operand that can be part of a list operand.
  */
 // deno-lint-ignore no-empty-interface
-export type JqlQueryUnitaryOperand = {
-}
+export type JqlQueryUnitaryOperand = {};
 /**
  * A JSON object with custom content.
  */
@@ -6767,7 +6764,7 @@ export type JsonContextVariable = {
    * A JSON object containing custom content.
    */
   value?: Record<string, unknown>;
-}
+};
 /**
  * MODEL JsonNode
  */
@@ -6826,7 +6823,7 @@ export type JsonNode = {
   valueAsLong?: number;
   valueAsText?: string;
   valueNode?: boolean;
-}
+};
 /**
  * The schema of a field.
  */
@@ -6834,29 +6831,29 @@ export type JsonTypeBean = {
   /**
    * If the field is a custom field, the configuration of the field.
    */
-  configuration: Record<string, unknown>;
+  configuration?: Record<string, unknown>;
   /**
    * If the field is a custom field, the URI of the field.
    */
-  custom: string;
+  custom?: string;
   /**
    * If the field is a custom field, the custom ID of the field.
    * @format: "int64"
    */
-  customId: number;
+  customId?: number;
   /**
    * When the data type is an array, the name of the field items within the array.
    */
-  items: string;
+  items?: string;
   /**
    * If the field is a system field, the name of the field.
    */
-  system: string;
+  system?: string;
   /**
    * The data type of the field.
    */
   type: string;
-}
+};
 /**
  * An operand that is a JQL keyword. See [Advanced searching - keywords reference](https://confluence.atlassian.com/jiracorecloud/advanced-searching-keywords-reference-765593717.html#Advancedsearching-keywordsreference-EMPTYEMPTY) for more information about operand keywords.
  */
@@ -6865,49 +6862,60 @@ export type KeywordOperand = {
    * The keyword that is the operand value.
    */
   keyword: string;
-}
+};
 /**
  * MODEL LegacyJackson1ListAttachment
  */
-Array<Attachment>/**
+Array<Attachment>; /**
  * MODEL LegacyJackson1ListColumnItem
  */
-Array<ColumnItem>/**
+
+Array<ColumnItem>; /**
  * MODEL LegacyJackson1ListIssueEvent
  */
-Array<IssueEvent>/**
+
+Array<IssueEvent>; /**
  * MODEL LegacyJackson1ListIssueTypeWithStatus
  */
-Array<IssueTypeWithStatus>/**
+
+Array<IssueTypeWithStatus>; /**
  * MODEL LegacyJackson1ListProject
  */
-Array<Project>/**
+
+Array<Project>; /**
  * MODEL LegacyJackson1ListProjectComponent
  */
-Array<ProjectComponent>/**
+
+Array<ProjectComponent>; /**
  * MODEL LegacyJackson1ListProjectRoleDetails
  */
-Array<ProjectRoleDetails>/**
+
+Array<ProjectRoleDetails>; /**
  * MODEL LegacyJackson1ListProjectType
  */
-Array<ProjectType>/**
+
+Array<ProjectType>; /**
  * MODEL LegacyJackson1ListUserMigrationBean
  */
-Array<UserMigrationBean>/**
+
+Array<UserMigrationBean>; /**
  * MODEL LegacyJackson1ListVersion
  */
-Array<Version>/**
+
+Array<Version>; /**
  * MODEL LegacyJackson1ListWorklog
  */
-Array<Worklog>/**
+
+Array<Worklog>; /**
  * Details about a license for the Jira instance.
  */
+
 export type License = {
   /**
    * The applications under this license.
    */
   applications: Array<LicensedApplication>;
-}
+};
 /**
  * A metric that provides insight into the active licence details
  */
@@ -6920,7 +6928,7 @@ export type LicenseMetric = {
    * The calculated value of a licence metric linked to the key. An example licence metric is the approximate number of user accounts.
    */
   value?: string;
-}
+};
 /**
  * Details about a licensed Jira application.
  */
@@ -6933,7 +6941,7 @@ export type LicensedApplication = {
    * The licensing plan.
    */
   plan: string;
-}
+};
 /**
  * Details a link group, which defines issue operations.
  */
@@ -6950,7 +6958,7 @@ export type LinkGroup = {
    * @format: "int32"
    */
   weight?: number;
-}
+};
 /**
  * MODEL LinkIssueRequestJsonBean
  */
@@ -6971,7 +6979,7 @@ export type LinkIssueRequestJsonBean = {
    * Ref: #/components/schemas/IssueLinkType
    */
   type: IssueLinkType;
-}
+};
 /**
  * The ID or key of a linked issue.
  */
@@ -6979,7 +6987,7 @@ export type LinkedIssue = {
   /**
    * The fields associated with the issue.
    */
-  fields: Fields;
+  fields?: Fields;
   /**
    * The ID of an issue. Required if `key` isn't provided.
    */
@@ -6992,8 +7000,8 @@ export type LinkedIssue = {
    * The URL of the issue.
    * @format: "uri"
    */
-  self: string;
-}
+  self?: string;
+};
 /**
  * An operand that is a list of values.
  */
@@ -7006,19 +7014,17 @@ export type ListOperand = {
    * The list of operand values.
    */
   values: Array<JqlQueryUnitaryOperand>;
-}
+};
 /**
  * MODEL ListWrapperCallbackApplicationRole
  */
 // deno-lint-ignore no-empty-interface
-export type ListWrapperCallbackApplicationRole = {
-}
+export type ListWrapperCallbackApplicationRole = {};
 /**
  * MODEL ListWrapperCallbackGroupName
  */
 // deno-lint-ignore no-empty-interface
-export type ListWrapperCallbackGroupName = {
-}
+export type ListWrapperCallbackGroupName = {};
 /**
  * Details of a locale.
  */
@@ -7027,7 +7033,7 @@ export type Locale = {
    * The locale code. The Java the locale format is used: a two character language code (ISO 639), an underscore, and two letter country code (ISO 3166). For example, en\_US represents a locale of English (United States). Required on create.
    */
   locale?: string;
-}
+};
 /**
  * List of string of inputs
  */
@@ -7046,7 +7052,7 @@ export type MandatoryFieldValue = {
    * Value for each field. Provide a `list of strings` for non-ADF fields.
    */
   value: string[];
-}
+};
 /**
  * An object notation input
  */
@@ -7065,7 +7071,7 @@ export type MandatoryFieldValueForADF = {
    * Value for each field. Accepts Atlassian Document Format (ADF) for rich text fields like `description`, `environments`. For ADF format details, refer to: [Atlassian Document Format](https://developer.atlassian.com/cloud/jira/platform/apis/document/structure)
    */
   value: Record<string, unknown>;
-}
+};
 /**
  * Overrides, for the selected issue types, any status mappings provided in `statusMappingsByWorkflows`. Status mappings are required when the new workflow for an issue type doesn't contain all statuses that the old workflow has. Status mappings can be provided by a combination of `statusMappingsByWorkflows` and `statusMappingsByIssueTypeOverride`.
  */
@@ -7078,7 +7084,7 @@ export type MappingsByIssueTypeOverride = {
    * The list of status mappings.
    */
   statusMappings: Array<WorkflowAssociationStatusMapping>;
-}
+};
 /**
  * The status mappings by workflows. Status mappings are required when the new workflow for an issue type doesn't contain all statuses that the old workflow has. Status mappings can be provided by a combination of `statusMappingsByWorkflows` and `statusMappingsByIssueTypeOverride`.
  */
@@ -7095,7 +7101,7 @@ export type MappingsByWorkflow = {
    * The list of status mappings.
    */
   statusMappings: Array<WorkflowAssociationStatusMapping>;
-}
+};
 /**
  * MODEL MoveFieldBean
  */
@@ -7109,7 +7115,7 @@ export type MoveFieldBean = {
    * The named position to which the screen tab field should be moved. Required if `after` isn't provided.
    */
   position?: string;
-}
+};
 /**
  * A list of issues and their respective properties to set or update. See [Entity properties](https://developer.atlassian.com/cloud/jira/platform/jira-entity-properties/) for more information.
  */
@@ -7118,7 +7124,7 @@ export type MultiIssueEntityProperties = {
    * A list of issue IDs and their respective properties.
    */
   issues?: Array<IssueEntityPropertiesForMultiUpdate>;
-}
+};
 /**
  * MODEL MultipartFile
  */
@@ -7137,7 +7143,7 @@ export type MultipartFile = {
    * @format: "int64"
    */
   size?: number;
-}
+};
 /**
  * A custom field and its new value with a list of issue to update.
  */
@@ -7162,13 +7168,13 @@ export type MultipleCustomFieldValuesUpdate = {
    * A list of appropriate values must be provided if the field is of the `list` [collection type](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field/#collection-types).
    */
   value: any /* 122 */;
-}
+};
 /**
  * List of updates for a custom fields.
  */
 export type MultipleCustomFieldValuesUpdateDetails = {
   updates?: Array<MultipleCustomFieldValuesUpdate>;
-}
+};
 /**
  * MODEL NestedResponse
  */
@@ -7185,7 +7191,7 @@ export type NestedResponse = {
    * Ref: #/components/schemas/WarningCollection
    */
   warningCollection?: WarningCollection;
-}
+};
 /**
  * The user details.
  * accept additional properties
@@ -7222,8 +7228,8 @@ export type NewUserDetails = {
   /**
    * The URL of the user.
    */
-  self: string;
-} & Record<string, any>
+  self?: string;
+} & Record<string, any>;
 /**
  * Details about a notification.
  * accept additional properties
@@ -7249,7 +7255,7 @@ export type Notification = {
    * The recipients of the email notification for the issue.
    */
   to?: NotificationRecipients;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details about a notification event.
  */
@@ -7271,7 +7277,7 @@ export type NotificationEvent = {
    * The template of the event. Only custom events configured by Jira administrators have template.
    */
   templateEvent?: NotificationEvent;
-}
+};
 /**
  * Details of the users and groups to receive the notification.
  * accept additional properties
@@ -7305,7 +7311,7 @@ export type NotificationRecipients = {
    * Whether the notification should be sent to the issue's watchers.
    */
   watchers?: boolean;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details of the group membership or permissions needed to receive the notification.
  */
@@ -7322,7 +7328,7 @@ export type NotificationRecipientsRestrictions = {
    * List of permissions required to receive the notification.
    */
   permissions?: Array<RestrictedPermission>;
-}
+};
 /**
  * Details about a notification scheme.
  */
@@ -7357,14 +7363,14 @@ export type NotificationScheme = {
    */
   scope?: Scope;
   self?: string;
-}
+};
 /**
  * MODEL NotificationSchemeAndProjectMappingJsonBean
  */
 export type NotificationSchemeAndProjectMappingJsonBean = {
   notificationSchemeId?: string;
   projectId?: string;
-}
+};
 /**
  * Details about a notification scheme event.
  */
@@ -7374,7 +7380,7 @@ export type NotificationSchemeEvent = {
    */
   event?: NotificationEvent;
   notifications?: Array<EventNotification>;
-}
+};
 /**
  * Details of a notification scheme event.
  * accept additional properties
@@ -7388,7 +7394,7 @@ export type NotificationSchemeEventDetails = {
    * The list of notifications mapped to a specified event.
    */
   notifications: Array<NotificationSchemeNotificationDetails>;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * The ID of an event that is being mapped to notifications.
  * accept additional properties
@@ -7398,7 +7404,7 @@ export type NotificationSchemeEventTypeId = {
    * The ID of the notification scheme event.
    */
   id: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * The ID of a notification scheme.
  * accept additional properties
@@ -7408,7 +7414,7 @@ export type NotificationSchemeId = {
    * The ID of a notification scheme.
    */
   id: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details of a notification within a notification scheme.
  * accept additional properties
@@ -7422,7 +7428,7 @@ export type NotificationSchemeNotificationDetails = {
    * The value corresponding to the specified notification type.
    */
   parameter?: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * MODEL OldToNewSecurityLevelMappingsBean
  */
@@ -7435,7 +7441,7 @@ export type OldToNewSecurityLevelMappingsBean = {
    * The old issue security level ID. Providing null will remap all issues without any assigned levels.
    */
   oldLevelId: string;
-}
+};
 /**
  * MODEL OperationMessage
  */
@@ -7448,7 +7454,7 @@ export type OperationMessage = {
    * The status code of the response.
    */
   statusCode: number;
-}
+};
 /**
  * Details of the operations that can be performed on the issue.
  * accept additional properties
@@ -7457,8 +7463,8 @@ export type Operations = {
   /**
    * Details of the link groups defining issue operations.
    */
-  linkGroups: Array<LinkGroup>;
-} & Record<string, any>
+  linkGroups?: Array<LinkGroup>;
+} & Record<string, any>;
 /**
  * An ordered list of custom field option IDs and information on where to move them.
  */
@@ -7475,7 +7481,7 @@ export type OrderOfCustomFieldOptions = {
    * The position the custom field options should be moved to. Required if `after` isn't provided.
    */
   position?: string;
-}
+};
 /**
  * An ordered list of issue type IDs and information about where to move them.
  */
@@ -7492,7 +7498,7 @@ export type OrderOfIssueTypes = {
    * The position the issue types should be moved to. Required if `after` isn't provided.
    */
   position?: string;
-}
+};
 /**
  * A page of items.
  */
@@ -7500,37 +7506,37 @@ export type PageBean2ComponentJsonBean = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<ComponentJsonBean>;
-}
+  values?: Array<ComponentJsonBean>;
+};
 /**
  * A page of items.
  */
@@ -7538,37 +7544,37 @@ export type PageBeanChangelog = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<Changelog>;
-}
+  values?: Array<Changelog>;
+};
 /**
  * A page of items.
  */
@@ -7576,37 +7582,37 @@ export type PageBeanComment = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<Comment>;
-}
+  values?: Array<Comment>;
+};
 /**
  * A page of items.
  */
@@ -7614,37 +7620,37 @@ export type PageBeanComponentWithIssueCount = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<ComponentWithIssueCount>;
-}
+  values?: Array<ComponentWithIssueCount>;
+};
 /**
  * A page of items.
  */
@@ -7652,37 +7658,37 @@ export type PageBeanContext = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<Context>;
-}
+  values?: Array<Context>;
+};
 /**
  * A page of items.
  */
@@ -7690,37 +7696,37 @@ export type PageBeanContextForProjectAndIssueType = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<ContextForProjectAndIssueType>;
-}
+  values?: Array<ContextForProjectAndIssueType>;
+};
 /**
  * A page of items.
  */
@@ -7728,37 +7734,37 @@ export type PageBeanContextualConfiguration = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<ContextualConfiguration>;
-}
+  values?: Array<ContextualConfiguration>;
+};
 /**
  * A page of items.
  */
@@ -7766,37 +7772,37 @@ export type PageBeanCustomFieldContext = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<CustomFieldContext>;
-}
+  values?: Array<CustomFieldContext>;
+};
 /**
  * A page of items.
  */
@@ -7804,37 +7810,37 @@ export type PageBeanCustomFieldContextDefaultValue = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<CustomFieldContextDefaultValue>;
-}
+  values?: Array<CustomFieldContextDefaultValue>;
+};
 /**
  * A page of items.
  */
@@ -7842,37 +7848,37 @@ export type PageBeanCustomFieldContextOption = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<CustomFieldContextOption>;
-}
+  values?: Array<CustomFieldContextOption>;
+};
 /**
  * A page of items.
  */
@@ -7880,37 +7886,37 @@ export type PageBeanCustomFieldContextProjectMapping = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<CustomFieldContextProjectMapping>;
-}
+  values?: Array<CustomFieldContextProjectMapping>;
+};
 /**
  * A page of items.
  */
@@ -7918,37 +7924,37 @@ export type PageBeanDashboard = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<Dashboard>;
-}
+  values?: Array<Dashboard>;
+};
 /**
  * A page of items.
  */
@@ -7956,37 +7962,37 @@ export type PageBeanField = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<Field>;
-}
+  values?: Array<Field>;
+};
 /**
  * A page of items.
  */
@@ -7994,37 +8000,37 @@ export type PageBeanFieldConfigurationDetails = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<FieldConfigurationDetails>;
-}
+  values?: Array<FieldConfigurationDetails>;
+};
 /**
  * A page of items.
  */
@@ -8032,37 +8038,37 @@ export type PageBeanFieldConfigurationIssueTypeItem = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<FieldConfigurationIssueTypeItem>;
-}
+  values?: Array<FieldConfigurationIssueTypeItem>;
+};
 /**
  * A page of items.
  */
@@ -8070,37 +8076,37 @@ export type PageBeanFieldConfigurationItem = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<FieldConfigurationItem>;
-}
+  values?: Array<FieldConfigurationItem>;
+};
 /**
  * A page of items.
  */
@@ -8108,37 +8114,37 @@ export type PageBeanFieldConfigurationScheme = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<FieldConfigurationScheme>;
-}
+  values?: Array<FieldConfigurationScheme>;
+};
 /**
  * A page of items.
  */
@@ -8146,37 +8152,37 @@ export type PageBeanFieldConfigurationSchemeProjects = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<FieldConfigurationSchemeProjects>;
-}
+  values?: Array<FieldConfigurationSchemeProjects>;
+};
 /**
  * A page of items.
  */
@@ -8184,37 +8190,37 @@ export type PageBeanFilterDetails = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<FilterDetails>;
-}
+  values?: Array<FilterDetails>;
+};
 /**
  * A page of items.
  */
@@ -8222,37 +8228,37 @@ export type PageBeanGroupDetails = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<GroupDetails>;
-}
+  values?: Array<GroupDetails>;
+};
 /**
  * A page of items.
  */
@@ -8260,37 +8266,37 @@ export type PageBeanIssueFieldOption = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<IssueFieldOption>;
-}
+  values?: Array<IssueFieldOption>;
+};
 /**
  * A page of items.
  */
@@ -8298,37 +8304,37 @@ export type PageBeanIssueSecurityLevelMember = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<IssueSecurityLevelMember>;
-}
+  values?: Array<IssueSecurityLevelMember>;
+};
 /**
  * A page of items.
  */
@@ -8336,37 +8342,37 @@ export type PageBeanIssueSecuritySchemeToProjectMapping = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<IssueSecuritySchemeToProjectMapping>;
-}
+  values?: Array<IssueSecuritySchemeToProjectMapping>;
+};
 /**
  * A page of items.
  */
@@ -8374,37 +8380,37 @@ export type PageBeanIssueTypeScheme = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<IssueTypeScheme>;
-}
+  values?: Array<IssueTypeScheme>;
+};
 /**
  * A page of items.
  */
@@ -8412,37 +8418,37 @@ export type PageBeanIssueTypeSchemeMapping = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<IssueTypeSchemeMapping>;
-}
+  values?: Array<IssueTypeSchemeMapping>;
+};
 /**
  * A page of items.
  */
@@ -8450,37 +8456,37 @@ export type PageBeanIssueTypeSchemeProjects = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<IssueTypeSchemeProjects>;
-}
+  values?: Array<IssueTypeSchemeProjects>;
+};
 /**
  * A page of items.
  */
@@ -8488,37 +8494,37 @@ export type PageBeanIssueTypeScreenScheme = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<IssueTypeScreenScheme>;
-}
+  values?: Array<IssueTypeScreenScheme>;
+};
 /**
  * A page of items.
  */
@@ -8526,37 +8532,37 @@ export type PageBeanIssueTypeScreenSchemeItem = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<IssueTypeScreenSchemeItem>;
-}
+  values?: Array<IssueTypeScreenSchemeItem>;
+};
 /**
  * A page of items.
  */
@@ -8564,37 +8570,37 @@ export type PageBeanIssueTypeScreenSchemesProjects = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<IssueTypeScreenSchemesProjects>;
-}
+  values?: Array<IssueTypeScreenSchemesProjects>;
+};
 /**
  * A page of items.
  */
@@ -8602,37 +8608,37 @@ export type PageBeanIssueTypeToContextMapping = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<IssueTypeToContextMapping>;
-}
+  values?: Array<IssueTypeToContextMapping>;
+};
 /**
  * A page of items.
  */
@@ -8640,37 +8646,37 @@ export type PageBeanJqlFunctionPrecomputationBean = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<JqlFunctionPrecomputationBean>;
-}
+  values?: Array<JqlFunctionPrecomputationBean>;
+};
 /**
  * A page of items.
  */
@@ -8678,37 +8684,37 @@ export type PageBeanNotificationScheme = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<NotificationScheme>;
-}
+  values?: Array<NotificationScheme>;
+};
 /**
  * A page of items.
  */
@@ -8716,37 +8722,37 @@ export type PageBeanNotificationSchemeAndProjectMappingJsonBean = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<NotificationSchemeAndProjectMappingJsonBean>;
-}
+  values?: Array<NotificationSchemeAndProjectMappingJsonBean>;
+};
 /**
  * A page of items.
  */
@@ -8754,37 +8760,37 @@ export type PageBeanPriority = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<Priority>;
-}
+  values?: Array<Priority>;
+};
 /**
  * A page of items.
  */
@@ -8792,37 +8798,37 @@ export type PageBeanPrioritySchemeWithPaginatedPrioritiesAndProjects = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<PrioritySchemeWithPaginatedPrioritiesAndProjects>;
-}
+  values?: Array<PrioritySchemeWithPaginatedPrioritiesAndProjects>;
+};
 /**
  * A page of items.
  */
@@ -8830,37 +8836,37 @@ export type PageBeanPriorityWithSequence = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<PriorityWithSequence>;
-}
+  values?: Array<PriorityWithSequence>;
+};
 /**
  * A page of items.
  */
@@ -8868,37 +8874,37 @@ export type PageBeanProject = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<Project>;
-}
+  values?: Array<Project>;
+};
 /**
  * A page of items.
  */
@@ -8906,37 +8912,37 @@ export type PageBeanProjectDetails = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<ProjectDetails>;
-}
+  values?: Array<ProjectDetails>;
+};
 /**
  * A page of items.
  */
@@ -8944,37 +8950,37 @@ export type PageBeanResolutionJsonBean = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<ResolutionJsonBean>;
-}
+  values?: Array<ResolutionJsonBean>;
+};
 /**
  * A page of items.
  */
@@ -8982,37 +8988,37 @@ export type PageBeanScreen = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<Screen>;
-}
+  values?: Array<Screen>;
+};
 /**
  * A page of items.
  */
@@ -9020,37 +9026,37 @@ export type PageBeanScreenScheme = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<ScreenScheme>;
-}
+  values?: Array<ScreenScheme>;
+};
 /**
  * A page of items.
  */
@@ -9058,37 +9064,37 @@ export type PageBeanScreenWithTab = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<ScreenWithTab>;
-}
+  values?: Array<ScreenWithTab>;
+};
 /**
  * A page of items.
  */
@@ -9096,37 +9102,37 @@ export type PageBeanSecurityLevel = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<SecurityLevel>;
-}
+  values?: Array<SecurityLevel>;
+};
 /**
  * A page of items.
  */
@@ -9134,37 +9140,37 @@ export type PageBeanSecurityLevelMember = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<SecurityLevelMember>;
-}
+  values?: Array<SecurityLevelMember>;
+};
 /**
  * A page of items.
  */
@@ -9172,37 +9178,37 @@ export type PageBeanSecuritySchemeWithProjects = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<SecuritySchemeWithProjects>;
-}
+  values?: Array<SecuritySchemeWithProjects>;
+};
 /**
  * A page of items.
  */
@@ -9210,37 +9216,37 @@ export type PageBeanString = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: string[];
-}
+  values?: string[];
+};
 /**
  * A page of items.
  */
@@ -9248,37 +9254,37 @@ export type PageBeanUiModificationDetails = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<UiModificationDetails>;
-}
+  values?: Array<UiModificationDetails>;
+};
 /**
  * A page of items.
  */
@@ -9286,37 +9292,37 @@ export type PageBeanUser = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<User>;
-}
+  values?: Array<User>;
+};
 /**
  * A page of items.
  */
@@ -9324,37 +9330,37 @@ export type PageBeanUserDetails = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<UserDetails>;
-}
+  values?: Array<UserDetails>;
+};
 /**
  * A page of items.
  */
@@ -9362,37 +9368,37 @@ export type PageBeanUserKey = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<UserKey>;
-}
+  values?: Array<UserKey>;
+};
 /**
  * A page of items.
  */
@@ -9400,37 +9406,37 @@ export type PageBeanVersion = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<Version>;
-}
+  values?: Array<Version>;
+};
 /**
  * A page of items.
  */
@@ -9438,37 +9444,37 @@ export type PageBeanWebhook = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<Webhook>;
-}
+  values?: Array<Webhook>;
+};
 /**
  * A page of items.
  */
@@ -9476,37 +9482,37 @@ export type PageBeanWorkflow = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<Workflow>;
-}
+  values?: Array<Workflow>;
+};
 /**
  * A page of items.
  */
@@ -9514,37 +9520,37 @@ export type PageBeanWorkflowScheme = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<WorkflowScheme>;
-}
+  values?: Array<WorkflowScheme>;
+};
 /**
  * A page of items.
  */
@@ -9552,37 +9558,37 @@ export type PageBeanWorkflowTransitionRules = {
   /**
    * Whether this is the last page.
    */
-  isLast: boolean;
+  isLast?: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage: string;
+  nextPage?: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
+  total?: number;
   /**
    * The list of items.
    */
-  values: Array<WorkflowTransitionRules>;
-}
+  values?: Array<WorkflowTransitionRules>;
+};
 /**
  * A page of changelogs.
  */
@@ -9590,23 +9596,23 @@ export type PageOfChangelogs = {
   /**
    * The list of changelogs.
    */
-  histories: Array<Changelog>;
+  histories?: Array<Changelog>;
   /**
    * The maximum number of results that could be on the page.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * The index of the first item returned on the page.
    * @format: "int32"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of results on the page.
    * @format: "int32"
    */
-  total: number;
-}
+  total?: number;
+};
 /**
  * A page of comments.
  * accept additional properties
@@ -9615,23 +9621,23 @@ export type PageOfComments = {
   /**
    * The list of comments.
    */
-  comments: Array<Comment>;
+  comments?: Array<Comment>;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total: number;
-} & Record<string, any>
+  total?: number;
+} & Record<string, any>;
 /**
  * A page of CreateMetaIssueType with Field.
  * accept additional properties
@@ -9640,24 +9646,24 @@ export type PageOfCreateMetaIssueTypeWithField = {
   /**
    * The collection of FieldCreateMetaBeans.
    */
-  fields: Array<FieldCreateMetadata>;
+  fields?: Array<FieldCreateMetadata>;
   /**
    * The maximum number of items to return per page.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   results?: Array<FieldCreateMetadata>;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The total number of items in all pages.
    * @format: "int64"
    */
-  total: number;
-} & Record<string, any>
+  total?: number;
+} & Record<string, any>;
 /**
  * A page of CreateMetaIssueTypes.
  * accept additional properties
@@ -9667,23 +9673,23 @@ export type PageOfCreateMetaIssueTypes = {
   /**
    * The list of CreateMetaIssueType.
    */
-  issueTypes: Array<IssueTypeIssueCreateMetadata>;
+  issueTypes?: Array<IssueTypeIssueCreateMetadata>;
   /**
    * The maximum number of items to return per page.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The total number of items in all pages.
    * @format: "int64"
    */
-  total: number;
-} & Record<string, any>
+  total?: number;
+} & Record<string, any>;
 /**
  * A page containing dashboard details.
  */
@@ -9691,31 +9697,31 @@ export type PageOfDashboards = {
   /**
    * List of dashboards.
    */
-  dashboards: Array<Dashboard>;
+  dashboards?: Array<Dashboard>;
   /**
    * The maximum number of results that could be on the page.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * The URL of the next page of results, if any.
    */
-  next: string;
+  next?: string;
   /**
    * The URL of the previous page of results, if any.
    */
-  prev: string;
+  prev?: string;
   /**
    * The index of the first item returned on the page.
    * @format: "int32"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of results on the page.
    * @format: "int32"
    */
-  total: number;
-}
+  total?: number;
+};
 /**
  * MODEL PageOfStatuses
  */
@@ -9751,7 +9757,7 @@ export type PageOfStatuses = {
    * The list of items.
    */
   values?: Array<JiraStatus>;
-}
+};
 /**
  * Paginated list of worklog details
  * accept additional properties
@@ -9761,22 +9767,22 @@ export type PageOfWorklogs = {
    * The maximum number of results that could be on the page.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * The index of the first item returned on the page.
    * @format: "int32"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of results on the page.
    * @format: "int32"
    */
-  total: number;
+  total?: number;
   /**
    * List of worklogs.
    */
-  worklogs: Array<Worklog>;
-} & Record<string, any>
+  worklogs?: Array<Worklog>;
+} & Record<string, any>;
 /**
  * A paged list. To access additional details append `[start-index:end-index]` to the expand request. For example, `?expand=sharedUsers[10:40]` returns a list starting at item 10 and finishing at item 40.
  */
@@ -9785,27 +9791,27 @@ export type PagedListUserDetailsApplicationUser = {
    * The index of the last item returned on the page.
    * @format: "int32"
    */
-  "end-index": number;
+  "end-index"?: number;
   /**
    * The list of items.
    */
-  items: Array<UserDetails>;
+  items?: Array<UserDetails>;
   /**
    * The maximum number of results that could be on the page.
    * @format: "int32"
    */
-  "max-results": number;
+  "max-results"?: number;
   /**
    * The number of items on the page.
    * @format: "int32"
    */
-  size: number;
+  size?: number;
   /**
    * The index of the first item returned on the page.
    * @format: "int32"
    */
-  "start-index": number;
-}
+  "start-index"?: number;
+};
 /**
  * MODEL PaginatedResponseComment
  */
@@ -9823,7 +9829,7 @@ export type PaginatedResponseComment = {
    * @format: "int64"
    */
   total?: number;
-}
+};
 /**
  * MODEL PaginatedResponseFieldCreateMetadata
  */
@@ -9841,7 +9847,7 @@ export type PaginatedResponseFieldCreateMetadata = {
    * @format: "int64"
    */
   total?: number;
-}
+};
 /**
  * MODEL PaginatedResponseIssueTypeIssueCreateMetadata
  */
@@ -9859,7 +9865,7 @@ export type PaginatedResponseIssueTypeIssueCreateMetadata = {
    * @format: "int64"
    */
   total?: number;
-}
+};
 /**
  * A list of parsed JQL queries.
  */
@@ -9868,7 +9874,7 @@ export type ParsedJqlQueries = {
    * A list of parsed JQL queries.
    */
   queries: Array<ParsedJqlQuery>;
-}
+};
 /**
  * Details of a parsed JQL query.
  */
@@ -9885,7 +9891,7 @@ export type ParsedJqlQuery = {
    * The syntax tree of the query. Empty if the query was invalid.
    */
   structure?: JqlQuery;
-}
+};
 /**
  * Details for permissions of shareable entities
  */
@@ -9898,7 +9904,7 @@ export type PermissionDetails = {
    * The share permissions for the shareable entities.
    */
   sharePermissions: Array<SharePermission>;
-}
+};
 /**
  * Details about a permission granted to a user or group.
  * accept additional properties
@@ -9912,7 +9918,7 @@ export type PermissionGrant = {
    * The ID of the permission granted details.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The permission to grant. This permission can be one of the built-in permissions or a custom permission added by an app. See [Built-in permissions](../api-group-permission-schemes/#built-in-permissions) in *Get all permission schemes* for more information about the built-in permissions. See the [project permission](https://developer.atlassian.com/cloud/jira/platform/modules/project-permission/) and [global permission](https://developer.atlassian.com/cloud/jira/platform/modules/global-permission/) module documentation for more information about custom permissions.
    */
@@ -9921,8 +9927,8 @@ export type PermissionGrant = {
    * The URL of the permission granted details.
    * @format: "uri"
    */
-  self: string;
-} & Record<string, any>
+  self?: string;
+} & Record<string, any>;
 /**
  * List of permission grants.
  */
@@ -9930,12 +9936,12 @@ export type PermissionGrants = {
   /**
    * Expand options that include additional permission grant details in the response.
    */
-  expand: string;
+  expand?: string;
   /**
    * Permission grants list.
    */
-  permissions: Array<PermissionGrant>;
-}
+  permissions?: Array<PermissionGrant>;
+};
 /**
  * Details of a user, group, field, or project role that holds a permission. See [Holder object](../api-group-permission-schemes/#holder-object) in *Get all permission schemes* for more information.
  */
@@ -9943,7 +9949,7 @@ export type PermissionHolder = {
   /**
    * Expand options that include additional permission holder details in the response.
    */
-  expand: string;
+  expand?: string;
   /**
    * As a group's name can change, use of `value` is recommended. The identifier associated withthe `type` value that defines the holder of the permission.
    */
@@ -9956,7 +9962,7 @@ export type PermissionHolder = {
    * The identifier associated with the `type` value that defines the holder of the permission.
    */
   value?: string;
-}
+};
 /**
  * Details of a permission scheme.
  * accept additional properties
@@ -9969,12 +9975,12 @@ export type PermissionScheme = {
   /**
    * The expand options available for the permission scheme.
    */
-  expand: string;
+  expand?: string;
   /**
    * The ID of the permission scheme.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The name of the permission scheme. Must be unique.
    */
@@ -9991,8 +9997,8 @@ export type PermissionScheme = {
    * The URL of the permission scheme.
    * @format: "uri"
    */
-  self: string;
-} & Record<string, any>
+  self?: string;
+} & Record<string, any>;
 /**
  * List of all permission schemes.
  */
@@ -10000,8 +10006,8 @@ export type PermissionSchemes = {
   /**
    * Permission schemes list.
    */
-  permissionSchemes: Array<PermissionScheme>;
-}
+  permissionSchemes?: Array<PermissionScheme>;
+};
 /**
  * Details about permissions.
  */
@@ -10009,8 +10015,8 @@ export type Permissions = {
   /**
    * List of permissions.
    */
-  permissions: Record<string, unknown>;
-}
+  permissions?: Record<string, unknown>;
+};
 /**
  * MODEL PermissionsKeysBean
  */
@@ -10019,7 +10025,7 @@ export type PermissionsKeysBean = {
    * A list of permission keys.
    */
   permissions: string[];
-}
+};
 /**
  * A list of projects in which a user is granted permissions.
  */
@@ -10027,8 +10033,8 @@ export type PermittedProjects = {
   /**
    * A list of projects.
    */
-  projects: Array<ProjectIdentifierBean>;
-}
+  projects?: Array<ProjectIdentifierBean>;
+};
 /**
  * An issue priority.
  * accept additional properties
@@ -10066,7 +10072,7 @@ export type Priority = {
    * The color used to indicate the issue priority.
    */
   statusColor?: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * The ID of an issue priority.
  * accept additional properties
@@ -10076,7 +10082,7 @@ export type PriorityId = {
    * The ID of the issue priority.
    */
   id: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Mapping of issue priorities for changes in priority schemes.
  */
@@ -10089,7 +10095,7 @@ export type PriorityMapping = {
    * The mapping of priorities for issues being migrated **out of** this priority scheme. Key is the old priority ID (must exist in this priority scheme), value is the new priority ID (must exist in the default priority scheme). Required for updating an existing priority scheme. Not used when creating a new priority scheme.
    */
   out?: Record<string, unknown>;
-}
+};
 /**
  * MODEL PrioritySchemeChangesWithMappings
  */
@@ -10102,7 +10108,7 @@ export type PrioritySchemeChangesWithMappings = {
    * Instructions to migrate issues.
    */
   mappings?: Array<PriorityMapping>;
-}
+};
 /**
  * MODEL PrioritySchemeChangesWithoutMappings
  */
@@ -10111,7 +10117,7 @@ export type PrioritySchemeChangesWithoutMappings = {
    * Affected entity ids.
    */
   ids: string[];
-}
+};
 /**
  * The ID of a priority scheme.
  */
@@ -10119,12 +10125,12 @@ export type PrioritySchemeId = {
   /**
    * The ID of the priority scheme.
    */
-  id: string;
+  id?: string;
   /**
    * The in-progress issue migration task.
    */
-  task: TaskProgressBeanJsonNode;
-}
+  task?: TaskProgressBeanJsonNode;
+};
 /**
  * A priority scheme with paginated priorities and projects.
  * accept additional properties
@@ -10160,7 +10166,7 @@ export type PrioritySchemeWithPaginatedPrioritiesAndProjects = {
    * The URL of the priority scheme.
    */
   self?: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * An issue priority with sequence information.
  */
@@ -10197,7 +10203,7 @@ export type PriorityWithSequence = {
    * The color used to indicate the issue priority.
    */
   statusColor?: string;
-}
+};
 /**
  * Details about a project.
  */
@@ -10205,45 +10211,45 @@ export type Project = {
   /**
    * Whether the project is archived.
    */
-  archived: boolean;
+  archived?: boolean;
   /**
    * The user who archived the project.
    */
-  archivedBy: User;
+  archivedBy?: User;
   /**
    * The date when the project was archived.
    * @format: "date-time"
    */
-  archivedDate: string;
+  archivedDate?: string;
   /**
    * The default assignee when creating issues for this project.
    */
-  assigneeType: string;
+  assigneeType?: string;
   /**
    * The URLs of the project's avatars.
    */
-  avatarUrls: AvatarUrlsBean;
+  avatarUrls?: AvatarUrlsBean;
   /**
    * List of the components contained in the project.
    */
-  components: Array<ProjectComponent>;
+  components?: Array<ProjectComponent>;
   /**
    * Whether the project is marked as deleted.
    */
-  deleted: boolean;
+  deleted?: boolean;
   /**
    * The user who marked the project as deleted.
    */
-  deletedBy: User;
+  deletedBy?: User;
   /**
    * The date when the project was marked as deleted.
    * @format: "date-time"
    */
-  deletedDate: string;
+  deletedDate?: string;
   /**
    * A brief description of the project.
    */
-  description: string;
+  description?: string;
   /**
    * An email address associated with the project.
    */
@@ -10251,7 +10257,7 @@ export type Project = {
   /**
    * Expand options that include additional project details in the response.
    */
-  expand: string;
+  expand?: string;
   /**
    * Whether the project is selected as a favorite.
    */
@@ -10263,87 +10269,87 @@ export type Project = {
   /**
    * Insights about the project.
    */
-  insight: ProjectInsight;
+  insight?: ProjectInsight;
   /**
    * Whether the project is private from the user's perspective. This means the user can't see the project or any associated issues.
    */
-  isPrivate: boolean;
+  isPrivate?: boolean;
   /**
    * The issue type hierarchy for the project.
    */
-  issueTypeHierarchy: Hierarchy;
+  issueTypeHierarchy?: Hierarchy;
   /**
    * List of the issue types available in the project.
    */
-  issueTypes: Array<IssueTypeDetails>;
+  issueTypes?: Array<IssueTypeDetails>;
   /**
    * The key of the project.
    */
-  key: string;
+  key?: string;
   /**
    * The project landing page info.
    */
-  landingPageInfo: ProjectLandingPageInfo;
+  landingPageInfo?: ProjectLandingPageInfo;
   /**
    * The username of the project lead.
    */
-  lead: User;
+  lead?: User;
   /**
    * The name of the project.
    */
-  name: string;
+  name?: string;
   /**
    * User permissions on the project
    */
-  permissions: ProjectPermissions;
+  permissions?: ProjectPermissions;
   /**
    * The category the project belongs to.
    */
-  projectCategory: ProjectCategory;
+  projectCategory?: ProjectCategory;
   /**
    * The [project type](https://confluence.atlassian.com/x/GwiiLQ#Jiraapplicationsoverview-Productfeaturesandprojecttypes) of the project.
    */
-  projectTypeKey: string;
+  projectTypeKey?: string;
   /**
    * Map of project properties
    */
-  properties: Record<string, unknown>;
+  properties?: Record<string, unknown>;
   /**
    * The date when the project is deleted permanently.
    * @format: "date-time"
    */
-  retentionTillDate: string;
+  retentionTillDate?: string;
   /**
    * The name and self URL for each role defined in the project. For more information, see [Create project role](#api-rest-api-3-role-post).
    */
-  roles: Record<string, unknown>;
+  roles?: Record<string, unknown>;
   /**
    * The URL of the project details.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * Whether the project is simplified.
    */
-  simplified: boolean;
+  simplified?: boolean;
   /**
    * The type of the project.
    */
-  style: string;
+  style?: string;
   /**
    * A link to information about this project, such as project documentation.
    */
-  url: string;
+  url?: string;
   /**
    * Unique ID for next-gen projects.
    * @format: "uuid"
    */
-  uuid: string;
+  uuid?: string;
   /**
    * The versions defined in the project. For more information, see [Create version](#api-rest-api-3-version-post).
    */
-  versions: Array<Version>;
-}
+  versions?: Array<Version>;
+};
 /**
  * A project and issueType ID pair that identifies a status mapping.
  */
@@ -10356,7 +10362,7 @@ export type ProjectAndIssueTypePair = {
    * The ID of the project.
    */
   projectId: string;
-}
+};
 /**
  * List of project avatars.
  */
@@ -10364,12 +10370,12 @@ export type ProjectAvatars = {
   /**
    * List of avatars added to Jira. These avatars may be deleted.
    */
-  custom: Array<Avatar>;
+  custom?: Array<Avatar>;
   /**
    * List of avatars included with Jira. These avatars cannot be deleted.
    */
-  system: Array<Avatar>;
-}
+  system?: Array<Avatar>;
+};
 /**
  * A project category.
  */
@@ -10381,7 +10387,7 @@ export type ProjectCategory = {
   /**
    * The ID of the project category.
    */
-  id: string;
+  id?: string;
   /**
    * The name of the project category. Required on create, optional on update.
    */
@@ -10390,8 +10396,8 @@ export type ProjectCategory = {
    * The URL of the project category.
    * @format: "uri"
    */
-  self: string;
-}
+  self?: string;
+};
 /**
  * Details about a project component.
  */
@@ -10399,11 +10405,11 @@ export type ProjectComponent = {
   /**
    * Compass component's ID. Can't be updated. Not required for creating a Project Component.
    */
-  ari: string;
+  ari?: string;
   /**
    * The details of the user associated with `assigneeType`, if any. See `realAssignee` for details of the user assigned to issues created with this component.
    */
-  assignee: User;
+  assignee?: User;
   /**
    * The nominal user type used to determine the assignee for issues created with this component. See `realAssigneeType` for details on how the type of the user, and hence the user, assigned to issues is determined. Can take the following values:
    *
@@ -10423,15 +10429,15 @@ export type ProjectComponent = {
   /**
    * The unique identifier for the component.
    */
-  id: string;
+  id?: string;
   /**
    * Whether a user is associated with `assigneeType`. For example, if the `assigneeType` is set to `COMPONENT_LEAD` but the component lead is not set, then `false` is returned.
    */
-  isAssigneeTypeValid: boolean;
+  isAssigneeTypeValid?: boolean;
   /**
    * The user details for the component's lead user.
    */
-  lead: User;
+  lead?: User;
   /**
    * The accountId of the component's lead user. The accountId uniquely identifies the user across all Atlassian products. For example, *5b10ac8d82e05b22cc7d4ef5*.
    */
@@ -10443,7 +10449,7 @@ export type ProjectComponent = {
   /**
    * Compass component's metadata. Can't be updated. Not required for creating a Project Component.
    */
-  metadata: Record<string, unknown>;
+  metadata?: Record<string, unknown>;
   /**
    * The unique name for the component in the project. Required when creating a component. Optional when updating a component. The maximum length is 255 characters.
    */
@@ -10456,11 +10462,11 @@ export type ProjectComponent = {
    * The ID of the project the component is assigned to.
    * @format: "int64"
    */
-  projectId: number;
+  projectId?: number;
   /**
    * The user assigned to issues created with this component, when `assigneeType` does not identify a valid assignee.
    */
-  realAssignee: User;
+  realAssignee?: User;
   /**
    * The type of the assignee that is assigned to issues created with this component, when an assignee cannot be set from the `assigneeType`. For example, `assigneeType` is set to `COMPONENT_LEAD` but no component lead is set. This property is set to one of the following values:
    *
@@ -10469,13 +10475,13 @@ export type ProjectComponent = {
    *  *  `UNASSIGNED` when `assigneeType` is `UNASSIGNED` and Jira is configured to allow unassigned issues.
    *  *  `PROJECT_DEFAULT` when none of the preceding cases are true.
    */
-  realAssigneeType: string;
+  realAssigneeType?: string;
   /**
    * The URL of the component.
    * @format: "uri"
    */
-  self: string;
-}
+  self?: string;
+};
 /**
  * Details about data policies for a list of projects.
  */
@@ -10483,8 +10489,8 @@ export type ProjectDataPolicies = {
   /**
    * List of projects with data policies.
    */
-  projectDataPolicies: Array<ProjectWithDataPolicy>;
-}
+  projectDataPolicies?: Array<ProjectWithDataPolicy>;
+};
 /**
  * Details about data policy.
  */
@@ -10492,8 +10498,8 @@ export type ProjectDataPolicy = {
   /**
    * Whether the project contains any content inaccessible to the requesting application.
    */
-  anyContentBlocked: boolean;
-}
+  anyContentBlocked?: boolean;
+};
 /**
  * Details about a project.
  */
@@ -10501,7 +10507,7 @@ export type ProjectDetails = {
   /**
    * The URLs of the project's avatars.
    */
-  avatarUrls: AvatarUrlsBean;
+  avatarUrls?: AvatarUrlsBean;
   /**
    * The ID of the project.
    */
@@ -10509,28 +10515,28 @@ export type ProjectDetails = {
   /**
    * The key of the project.
    */
-  key: string;
+  key?: string;
   /**
    * The name of the project.
    */
-  name: string;
+  name?: string;
   /**
    * The category the project belongs to.
    */
-  projectCategory: UpdatedProjectCategory;
+  projectCategory?: UpdatedProjectCategory;
   /**
    * The [project type](https://confluence.atlassian.com/x/GwiiLQ#Jiraapplicationsoverview-Productfeaturesandprojecttypes) of the project.
    */
-  projectTypeKey: string;
+  projectTypeKey?: string;
   /**
    * The URL of the project details.
    */
-  self: string;
+  self?: string;
   /**
    * Whether or not the project is simplified.
    */
-  simplified: boolean;
-}
+  simplified?: boolean;
+};
 /**
  * A project's sender email address.
  */
@@ -10543,7 +10549,7 @@ export type ProjectEmailAddress = {
    * When using a custom domain, the status of the email address.
    */
   emailAddressStatus?: string[];
-}
+};
 /**
  * Details of a project feature.
  */
@@ -10581,7 +10587,7 @@ export type ProjectFeature = {
    * Whether the state of the feature can be updated.
    */
   toggleLocked?: boolean;
-}
+};
 /**
  * Details of the feature state.
  */
@@ -10590,7 +10596,7 @@ export type ProjectFeatureState = {
    * The feature state.
    */
   state?: string;
-}
+};
 /**
  * Project ID details.
  */
@@ -10599,7 +10605,7 @@ export type ProjectId = {
    * The ID of the project.
    */
   id: string;
-}
+};
 /**
  * The identifiers for a project.
  */
@@ -10608,12 +10614,12 @@ export type ProjectIdentifierBean = {
    * The ID of the project.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The key of the project.
    */
-  key: string;
-}
+  key?: string;
+};
 /**
  * Identifiers for a project.
  */
@@ -10632,7 +10638,7 @@ export type ProjectIdentifiers = {
    * @format: "uri"
    */
   self: string;
-}
+};
 /**
  * A list of project IDs.
  */
@@ -10641,7 +10647,7 @@ export type ProjectIds = {
    * The IDs of projects.
    */
   projectIds: string[];
-}
+};
 /**
  * Additional details about a project.
  */
@@ -10650,13 +10656,13 @@ export type ProjectInsight = {
    * The last issue update time.
    * @format: "date-time"
    */
-  lastIssueUpdateTime: string;
+  lastIssueUpdateTime?: string;
   /**
    * Total issue count.
    * @format: "int64"
    */
-  totalIssueCount: number;
-}
+  totalIssueCount?: number;
+};
 /**
  * Details of the issue creation metadata for a project.
  */
@@ -10664,32 +10670,32 @@ export type ProjectIssueCreateMetadata = {
   /**
    * List of the project's avatars, returning the avatar size and associated URL.
    */
-  avatarUrls: AvatarUrlsBean;
+  avatarUrls?: AvatarUrlsBean;
   /**
    * Expand options that include additional project issue create metadata details in the response.
    */
-  expand: string;
+  expand?: string;
   /**
    * The ID of the project.
    */
-  id: string;
+  id?: string;
   /**
    * List of the issue types supported by the project.
    */
-  issuetypes: Array<IssueTypeIssueCreateMetadata>;
+  issuetypes?: Array<IssueTypeIssueCreateMetadata>;
   /**
    * The key of the project.
    */
-  key: string;
+  key?: string;
   /**
    * The name of the project.
    */
-  name: string;
+  name?: string;
   /**
    * The URL of the project.
    */
-  self: string;
-}
+  self?: string;
+};
 /**
  * List of issue level security items in a project.
  */
@@ -10698,7 +10704,7 @@ export type ProjectIssueSecurityLevels = {
    * Issue level security items list.
    */
   levels: Array<SecurityLevel>;
-}
+};
 /**
  * The hierarchy of issue types within a project.
  */
@@ -10706,13 +10712,13 @@ export type ProjectIssueTypeHierarchy = {
   /**
    * Details of an issue type hierarchy level.
    */
-  hierarchy: Array<ProjectIssueTypesHierarchyLevel>;
+  hierarchy?: Array<ProjectIssueTypesHierarchyLevel>;
   /**
    * The ID of the project.
    * @format: "int64"
    */
-  projectId: number;
-}
+  projectId?: number;
+};
 /**
  * The project and issue type mapping.
  */
@@ -10725,7 +10731,7 @@ export type ProjectIssueTypeMapping = {
    * The ID of the project.
    */
   projectId: string;
-}
+};
 /**
  * The project and issue type mappings.
  */
@@ -10734,7 +10740,7 @@ export type ProjectIssueTypeMappings = {
    * The project and issue type mappings.
    */
   mappings: Array<ProjectIssueTypeMapping>;
-}
+};
 /**
  * Use the optional `workflows.usages` expand to get additional information about the projects and issue types associated with the requested workflows.
  */
@@ -10747,7 +10753,7 @@ export type ProjectIssueTypes = {
    * Ref: #/components/schemas/ProjectId
    */
   project?: ProjectId;
-}
+};
 /**
  * Details of an issue type hierarchy level.
  */
@@ -10756,21 +10762,21 @@ export type ProjectIssueTypesHierarchyLevel = {
    * The ID of the issue type hierarchy level. This property is deprecated, see [Change notice: Removing hierarchy level IDs from next-gen APIs](https://developer.atlassian.com/cloud/jira/platform/change-notice-removing-hierarchy-level-ids-from-next-gen-apis/).
    * @format: "uuid"
    */
-  entityId: string;
+  entityId?: string;
   /**
    * The list of issue types in the hierarchy level.
    */
-  issueTypes: Array<IssueTypeInfo>;
+  issueTypes?: Array<IssueTypeInfo>;
   /**
    * The level of the issue type hierarchy level.
    * @format: "int32"
    */
-  level: number;
+  level?: number;
   /**
    * The name of the issue type hierarchy level.
    */
-  name: string;
-}
+  name?: string;
+};
 /**
  * MODEL ProjectLandingPageInfo
  */
@@ -10792,7 +10798,7 @@ export type ProjectLandingPageInfo = {
   simpleBoard?: boolean;
   simplified?: boolean;
   url?: string;
-}
+};
 /**
  * Permissions which a user has on a project.
  */
@@ -10800,8 +10806,8 @@ export type ProjectPermissions = {
   /**
    * Whether the logged user can edit the project.
    */
-  canEdit: boolean;
-}
+  canEdit?: boolean;
+};
 /**
  * Details about the roles in a project.
  */
@@ -10809,11 +10815,11 @@ export type ProjectRole = {
   /**
    * The list of users who act in this role.
    */
-  actors: Array<RoleActor>;
+  actors?: Array<RoleActor>;
   /**
    * Whether this role is the admin role for the project.
    */
-  admin: boolean;
+  admin?: boolean;
   /**
    * Whether the calling user is part of this role.
    */
@@ -10821,16 +10827,16 @@ export type ProjectRole = {
   /**
    * Whether this role is the default role for the project
    */
-  default: boolean;
+  default?: boolean;
   /**
    * The description of the project role.
    */
-  description: string;
+  description?: string;
   /**
    * The ID of the project role.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The name of the project role.
    */
@@ -10838,21 +10844,21 @@ export type ProjectRole = {
   /**
    * Whether the roles are configurable for this project.
    */
-  roleConfigurable: boolean;
+  roleConfigurable?: boolean;
   /**
    * The scope of the role. Indicated for roles associated with [next-gen projects](https://confluence.atlassian.com/x/loMyO).
    */
-  scope: Scope;
+  scope?: Scope;
   /**
    * The URL the project role details.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The translated name of the project role.
    */
   translatedName?: string;
-}
+};
 /**
  * MODEL ProjectRoleActorsUpdateBean
  */
@@ -10874,8 +10880,8 @@ export type ProjectRoleActorsUpdateBean = {
    * The ID of the project role. Use [Get all project roles](#api-rest-api-3-role-get) to get a list of project role IDs.
    * @format: "int64"
    */
-  id: number;
-}
+  id?: number;
+};
 /**
  * Details about a project role.
  */
@@ -10883,20 +10889,20 @@ export type ProjectRoleDetails = {
   /**
    * Whether this role is the admin role for the project.
    */
-  admin: boolean;
+  admin?: boolean;
   /**
    * Whether this role is the default role for the project.
    */
-  default: boolean;
+  default?: boolean;
   /**
    * The description of the project role.
    */
-  description: string;
+  description?: string;
   /**
    * The ID of the project role.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The name of the project role.
    */
@@ -10904,21 +10910,21 @@ export type ProjectRoleDetails = {
   /**
    * Whether the roles are configurable for this project.
    */
-  roleConfigurable: boolean;
+  roleConfigurable?: boolean;
   /**
    * The scope of the role. Indicated for roles associated with [next-gen projects](https://confluence.atlassian.com/x/loMyO).
    */
-  scope: Scope;
+  scope?: Scope;
   /**
    * The URL the project role details.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The translated name of the project role.
    */
   translatedName?: string;
-}
+};
 /**
  * Details of the group associated with the role.
  */
@@ -10935,7 +10941,7 @@ export type ProjectRoleGroup = {
    * The name of the group. As a group's name can change, use of `groupId` is recommended to identify the group.
    */
   name?: string;
-}
+};
 /**
  * Details of the user associated with the role.
  */
@@ -10943,8 +10949,8 @@ export type ProjectRoleUser = {
   /**
    * The account ID of the user, which uniquely identifies the user across all Atlassian products. For example, *5b10ac8d82e05b22cc7d4ef5*. Returns *unknown* if the record is deleted and corrupted, for example, as the result of a server import.
    */
-  accountId: string;
-}
+  accountId?: string;
+};
 /**
  * MODEL ProjectScopeBean
  */
@@ -10958,7 +10964,7 @@ export type ProjectScopeBean = {
    * @format: "int64"
    */
   id?: number;
-}
+};
 /**
  * Details about a project type.
  */
@@ -10966,24 +10972,24 @@ export type ProjectType = {
   /**
    * The color of the project type.
    */
-  color: string;
+  color?: string;
   /**
    * The key of the project type's description.
    */
-  descriptionI18nKey: string;
+  descriptionI18nKey?: string;
   /**
    * The formatted key of the project type.
    */
-  formattedKey: string;
+  formattedKey?: string;
   /**
    * The icon of the project type.
    */
-  icon: string;
+  icon?: string;
   /**
    * The key of the project type.
    */
-  key: string;
-}
+  key?: string;
+};
 /**
  * Details about data policies for a project.
  */
@@ -10991,13 +10997,13 @@ export type ProjectWithDataPolicy = {
   /**
    * Data policy.
    */
-  dataPolicy: ProjectDataPolicy;
+  dataPolicy?: ProjectDataPolicy;
   /**
    * The project ID.
    * @format: "int64"
    */
-  id: number;
-}
+  id?: number;
+};
 /**
  * Property key details.
  */
@@ -11005,12 +11011,12 @@ export type PropertyKey = {
   /**
    * The key of the property.
    */
-  key: string;
+  key?: string;
   /**
    * The URL of the property.
    */
-  self: string;
-}
+  self?: string;
+};
 /**
  * List of property keys.
  */
@@ -11018,8 +11024,8 @@ export type PropertyKeys = {
   /**
    * Property key details.
    */
-  keys: Array<PropertyKey>;
-}
+  keys?: Array<PropertyKey>;
+};
 /**
  * Details about the status mappings for publishing a draft workflow scheme.
  */
@@ -11028,7 +11034,7 @@ export type PublishDraftWorkflowScheme = {
    * Mappings of statuses to new statuses for issue types.
    */
   statusMappings?: Array<StatusMapping>;
-}
+};
 /**
  * Properties that identify a published workflow.
  */
@@ -11041,7 +11047,7 @@ export type PublishedWorkflowId = {
    * The name of the workflow.
    */
   name: string;
-}
+};
 /**
  * ID of a registered webhook or error messages explaining why a webhook wasn't registered.
  */
@@ -11055,7 +11061,7 @@ export type RegisteredWebhook = {
    * Error messages specifying why the webhook creation failed.
    */
   errors?: string[];
-}
+};
 /**
  * Details of an issue remote link.
  */
@@ -11086,7 +11092,7 @@ export type RemoteIssueLink = {
    * @format: "uri"
    */
   self?: string;
-}
+};
 /**
  * Details of the identifiers for a created or updated remote issue link.
  */
@@ -11095,12 +11101,12 @@ export type RemoteIssueLinkIdentifies = {
    * The ID of the remote issue link, such as the ID of the item on the remote system.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The URL of the remote issue link.
    */
-  self: string;
-}
+  self?: string;
+};
 /**
  * Details of a remote issue link.
  * accept additional properties
@@ -11126,7 +11132,7 @@ export type RemoteIssueLinkRequest = {
    * Description of the relationship between the issue and the linked item. If not set, the relationship description "links to" is used in Jira.
    */
   relationship?: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * The linked item.
  * accept additional properties
@@ -11152,7 +11158,7 @@ export type RemoteObject = {
    * The URL of the item.
    */
   url: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * MODEL RemoveOptionFromIssuesResult
  */
@@ -11169,7 +11175,7 @@ export type RemoveOptionFromIssuesResult = {
    * The IDs of the unchanged issues, those issues where errors prevent modification.
    */
   unmodifiedIssues?: string[];
-}
+};
 /**
  * Change the order of issue priorities.
  */
@@ -11186,7 +11192,7 @@ export type ReorderIssuePriorities = {
    * The position for issue priorities to be moved to. Required if `after` isn't provided.
    */
   position?: string;
-}
+};
 /**
  * Change the order of issue resolutions.
  */
@@ -11203,7 +11209,7 @@ export type ReorderIssueResolutionsRequest = {
    * The position for issue resolutions to be moved to. Required if `after` isn't provided.
    */
   position?: string;
-}
+};
 /**
  * The list of required status mappings by issue type.
  */
@@ -11216,7 +11222,7 @@ export type RequiredMappingByIssueType = {
    * The status IDs requiring mapping.
    */
   statusIds?: string[];
-}
+};
 /**
  * The list of required status mappings by workflow.
  */
@@ -11233,7 +11239,7 @@ export type RequiredMappingByWorkflows = {
    * The ID of the target workflow.
    */
   targetWorkflowId?: string;
-}
+};
 /**
  * Details of an issue resolution.
  */
@@ -11255,7 +11261,7 @@ export type Resolution = {
    * @format: "uri"
    */
   self?: string;
-}
+};
 /**
  * The ID of an issue resolution.
  * accept additional properties
@@ -11265,7 +11271,7 @@ export type ResolutionId = {
    * The ID of the issue resolution.
    */
   id: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * MODEL ResolutionJsonBean
  */
@@ -11276,7 +11282,7 @@ export type ResolutionJsonBean = {
   id?: string;
   name?: string;
   self?: string;
-}
+};
 /**
  * MODEL Resource
  */
@@ -11298,7 +11304,7 @@ export type Resource = {
    * @format: "url"
    */
   url?: string;
-}
+};
 /**
  * Details of the permission.
  * accept additional properties
@@ -11312,7 +11318,7 @@ export type RestrictedPermission = {
    * The key of the permission. Either `id` or `key` must be specified. Use [Get all permissions](#api-rest-api-3-permissions-get) to get the list of permissions.
    */
   key?: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * MODEL RichText
  */
@@ -11321,36 +11327,36 @@ export type RichText = {
   emptyAdf?: boolean;
   finalised?: boolean;
   valueSet?: boolean;
-}
+};
 /**
  * Details about a user assigned to a project role.
  */
 export type RoleActor = {
-  actorGroup: ProjectRoleGroup;
-  actorUser: ProjectRoleUser;
+  actorGroup?: ProjectRoleGroup;
+  actorUser?: ProjectRoleUser;
   /**
    * The avatar of the role actor.
    * @format: "uri"
    */
-  avatarUrl: string;
+  avatarUrl?: string;
   /**
    * The display name of the role actor. For users, depending on the user’s privacy setting, this may return an alternative value for the user's name.
    */
-  displayName: string;
+  displayName?: string;
   /**
    * The ID of the role actor.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * This property is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
    */
-  name: string;
+  name?: string;
   /**
    * The type of role actor.
    */
-  type: string;
-}
+  type?: string;
+};
 /**
  * A rule configuration.
  */
@@ -11368,7 +11374,7 @@ export type RuleConfiguration = {
    * Configuration of the rule, as it is stored by the Connect or the Forge app on the rule configuration page.
    */
   value: string;
-}
+};
 /**
  * The sanitized JQL queries for the given account IDs.
  */
@@ -11377,7 +11383,7 @@ export type SanitizedJqlQueries = {
    * The list of sanitized JQL queries.
    */
   queries?: Array<SanitizedJqlQuery>;
-}
+};
 /**
  * Details of the sanitized JQL query.
  */
@@ -11398,7 +11404,7 @@ export type SanitizedJqlQuery = {
    * The sanitized query, if there were no errors.
    */
   sanitizedQuery?: string;
-}
+};
 /**
  * The projects the item is associated with. Indicated for items associated with [next-gen projects](https://confluence.atlassian.com/x/loMyO).
  * accept additional properties
@@ -11407,12 +11413,12 @@ export type Scope = {
   /**
    * The project the item has scope in.
    */
-  project: ProjectDetails;
+  project?: ProjectDetails;
   /**
    * The type of scope.
    */
-  type: string;
-} & Record<string, any>
+  type?: string;
+} & Record<string, any>;
 /**
  * A screen.
  */
@@ -11420,21 +11426,21 @@ export type Screen = {
   /**
    * The description of the screen.
    */
-  description: string;
+  description?: string;
   /**
    * The ID of the screen.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The name of the screen.
    */
-  name: string;
+  name?: string;
   /**
    * The scope of the screen.
    */
   scope?: Scope;
-}
+};
 /**
  * Details of a screen.
  */
@@ -11447,7 +11453,7 @@ export type ScreenDetails = {
    * The name of the screen. The name must be unique. The maximum length is 255 characters.
    */
   name: string;
-}
+};
 /**
  * A screen scheme.
  */
@@ -11473,7 +11479,7 @@ export type ScreenScheme = {
    * The IDs of the screens for the screen types of the screen scheme.
    */
   screens?: ScreenTypes;
-}
+};
 /**
  * Details of a screen scheme.
  */
@@ -11490,7 +11496,7 @@ export type ScreenSchemeDetails = {
    * The IDs of the screens for the screen types of the screen scheme. Only screens used in classic projects are accepted.
    */
   screens: ScreenTypes;
-}
+};
 /**
  * The ID of a screen scheme.
  */
@@ -11500,7 +11506,7 @@ export type ScreenSchemeId = {
    * @format: "int64"
    */
   id: number;
-}
+};
 /**
  * The IDs of the screens for the screen types of the screen scheme.
  */
@@ -11525,7 +11531,7 @@ export type ScreenTypes = {
    * @format: "int64"
    */
   view?: number;
-}
+};
 /**
  * A screen with tab details.
  */
@@ -11533,16 +11539,16 @@ export type ScreenWithTab = {
   /**
    * The description of the screen.
    */
-  description: string;
+  description?: string;
   /**
    * The ID of the screen.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The name of the screen.
    */
-  name: string;
+  name?: string;
   /**
    * The scope of the screen.
    */
@@ -11551,7 +11557,7 @@ export type ScreenWithTab = {
    * The tab for the screen.
    */
   tab?: ScreenableTab;
-}
+};
 /**
  * A screen tab field.
  */
@@ -11559,12 +11565,12 @@ export type ScreenableField = {
   /**
    * The ID of the screen tab field.
    */
-  id: string;
+  id?: string;
   /**
    * The name of the screen tab field. Required on create and update. The maximum length is 255 characters.
    */
   name?: string;
-}
+};
 /**
  * A screen tab.
  */
@@ -11573,12 +11579,12 @@ export type ScreenableTab = {
    * The ID of the screen tab.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The name of the screen tab. The maximum length is 255 characters.
    */
   name: string;
-}
+};
 /**
  * Details of how to filter and list search auto complete information.
  */
@@ -11592,7 +11598,7 @@ export type SearchAutoCompleteFilter = {
    * List of project IDs used to filter the visible field details returned.
    */
   projectIds?: string[];
-}
+};
 /**
  * MODEL SearchRequestBean
  */
@@ -11666,7 +11672,7 @@ export type SearchRequestBean = {
    * Note: If the JQL is not correctly formed a 400 response code is returned, regardless of the `validateQuery` value.
    */
   validateQuery?: string;
-}
+};
 /**
  * The result of a JQL search.
  */
@@ -11674,39 +11680,39 @@ export type SearchResults = {
   /**
    * Expand options that include additional search result details in the response.
    */
-  expand: string;
+  expand?: string;
   /**
    * The list of issues found by the search.
    */
-  issues: Array<IssueBean>;
+  issues?: Array<IssueBean>;
   /**
    * The maximum number of results that could be on the page.
    * @format: "int32"
    */
-  maxResults: number;
+  maxResults?: number;
   /**
    * The ID and name of each field in the search results.
    */
-  names: Record<string, unknown>;
+  names?: Record<string, unknown>;
   /**
    * The schema describing the field types in the search results.
    */
-  schema: Record<string, unknown>;
+  schema?: Record<string, unknown>;
   /**
    * The index of the first item returned on the page.
    * @format: "int32"
    */
-  startAt: number;
+  startAt?: number;
   /**
    * The number of results on the page.
    * @format: "int32"
    */
-  total: number;
+  total?: number;
   /**
    * Any warnings related to the JQL query.
    */
-  warningMessages: string[];
-}
+  warningMessages?: string[];
+};
 /**
  * Details of an issue level security item.
  */
@@ -11714,28 +11720,28 @@ export type SecurityLevel = {
   /**
    * The description of the issue level security item.
    */
-  description: string;
+  description?: string;
   /**
    * The ID of the issue level security item.
    */
-  id: string;
+  id?: string;
   /**
    * Whether the issue level security item is the default.
    */
-  isDefault: boolean;
+  isDefault?: boolean;
   /**
    * The ID of the issue level security scheme.
    */
-  issueSecuritySchemeId: string;
+  issueSecuritySchemeId?: string;
   /**
    * The name of the issue level security item.
    */
-  name: string;
+  name?: string;
   /**
    * The URL of the issue level security item.
    */
-  self: string;
-}
+  self?: string;
+};
 /**
  * Issue security level member.
  * accept additional properties
@@ -11758,7 +11764,7 @@ export type SecurityLevelMember = {
    */
   issueSecuritySchemeId: string;
   managed?: boolean;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details about a security scheme.
  */
@@ -11767,26 +11773,26 @@ export type SecurityScheme = {
    * The ID of the default security level.
    * @format: "int64"
    */
-  defaultSecurityLevelId: number;
+  defaultSecurityLevelId?: number;
   /**
    * The description of the issue security scheme.
    */
-  description: string;
+  description?: string;
   /**
    * The ID of the issue security scheme.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   levels?: Array<SecurityLevel>;
   /**
    * The name of the issue security scheme.
    */
-  name: string;
+  name?: string;
   /**
    * The URL of the issue security scheme.
    */
-  self: string;
-}
+  self?: string;
+};
 /**
  * The ID of the issue security scheme.
  * accept additional properties
@@ -11796,7 +11802,7 @@ export type SecuritySchemeId = {
    * The ID of the issue security scheme.
    */
   id: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * MODEL SecuritySchemeLevelBean
  */
@@ -11817,7 +11823,7 @@ export type SecuritySchemeLevelBean = {
    * The name of the issue security scheme level. Must be unique.
    */
   name: string;
-}
+};
 /**
  * MODEL SecuritySchemeLevelMemberBean
  */
@@ -11830,7 +11836,7 @@ export type SecuritySchemeLevelMemberBean = {
    * The issue security level member type, e.g `reporter`, `group`, `user`.
    */
   type: string;
-}
+};
 /**
  * Details of issue security scheme level new members.
  */
@@ -11839,7 +11845,7 @@ export type SecuritySchemeMembersRequest = {
    * The list of level members which should be added to the issue security scheme level.
    */
   members?: Array<SecuritySchemeLevelMemberBean>;
-}
+};
 /**
  * Details about an issue security scheme.
  * accept additional properties
@@ -11849,11 +11855,11 @@ export type SecuritySchemeWithProjects = {
    * The default level ID of the issue security scheme.
    * @format: "int64"
    */
-  defaultLevel: number;
+  defaultLevel?: number;
   /**
    * The description of the issue security scheme.
    */
-  description: string;
+  description?: string;
   /**
    * The ID of the issue security scheme.
    * @format: "int64"
@@ -11866,12 +11872,12 @@ export type SecuritySchemeWithProjects = {
   /**
    * The list of project IDs associated with the issue security scheme.
    */
-  projectIds: string[];
+  projectIds?: string[];
   /**
    * The URL of the issue security scheme.
    */
   self: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * List of security schemes.
  */
@@ -11879,8 +11885,8 @@ export type SecuritySchemes = {
   /**
    * List of security schemes.
    */
-  issueSecuritySchemes: Array<SecurityScheme>;
-}
+  issueSecuritySchemes?: Array<SecurityScheme>;
+};
 /**
  * Details about the Jira instance.
  */
@@ -11940,7 +11946,7 @@ export type ServerInformation = {
    * The major, minor, and revision version numbers of the Jira version.
    */
   versionNumbers?: string[];
-}
+};
 /**
  * MODEL ServiceManagementNavigationInfo
  */
@@ -11951,7 +11957,7 @@ export type ServiceManagementNavigationInfo = {
    */
   queueId?: number;
   queueName?: string;
-}
+};
 /**
  * MODEL ServiceRegistry
  */
@@ -11981,7 +11987,7 @@ export type ServiceRegistry = {
    * Ref: #/components/schemas/ServiceRegistryTier
    */
   serviceTier?: ServiceRegistryTier;
-}
+};
 /**
  * MODEL ServiceRegistryTier
  */
@@ -12008,7 +12014,7 @@ export type ServiceRegistryTier = {
    * @example: "service-registry.tier1.name"
    */
   nameKey?: string;
-}
+};
 /**
  * Details of new default levels.
  * accept additional properties
@@ -12018,7 +12024,7 @@ export type SetDefaultLevelsRequest = {
    * List of objects with issue security scheme ID and new default level ID.
    */
   defaultValues: Array<DefaultLevelValue>;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * The new default issue priority.
  */
@@ -12027,7 +12033,7 @@ export type SetDefaultPriorityRequest = {
    * The ID of the new default issue priority. Must be an existing ID or null. Setting this to null erases the default priority setting.
    */
   id: string;
-}
+};
 /**
  * The new default issue resolution.
  */
@@ -12036,7 +12042,7 @@ export type SetDefaultResolutionRequest = {
    * The ID of the new default issue resolution. Must be an existing ID or null. Setting this to null erases the default resolution setting.
    */
   id: string;
-}
+};
 /**
  * Details of a share permission for the filter.
  */
@@ -12049,7 +12055,7 @@ export type SharePermission = {
    * The unique identifier of the share permission.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The project that the filter is shared with. This is similar to the project object returned by [Get project](#api-rest-api-3-project-projectIdOrKey-get) but it contains a subset of the properties, which are: `self`, `id`, `key`, `assigneeType`, `name`, `roles`, `avatarUrls`, `projectType`, `simplified`.
    * For a request, specify the `id` for the project.
@@ -12076,7 +12082,7 @@ export type SharePermission = {
    * The user account ID that the filter is shared with. For a request, specify the `accountId` property for the user.
    */
   user?: UserBean;
-}
+};
 /**
  * MODEL SharePermissionInputBean
  */
@@ -12117,7 +12123,7 @@ export type SharePermissionInputBean = {
    *  *  `authenticated` Share with all logged-in users. This shows as `loggedin` in the response. If set, this type overrides all existing share permissions and must be deleted before any non-global share permissions is set.
    */
   type: string;
-}
+};
 /**
  * MODEL SimpleApplicationPropertyBean
  */
@@ -12130,7 +12136,7 @@ export type SimpleApplicationPropertyBean = {
    * The new value.
    */
   value?: string;
-}
+};
 /**
  * MODEL SimpleErrorCollection
  */
@@ -12147,7 +12153,7 @@ export type SimpleErrorCollection = {
    * @format: "int32"
    */
   httpStatusCode?: number;
-}
+};
 /**
  * Details about the operations available in this version.
  */
@@ -12162,7 +12168,7 @@ export type SimpleLink = {
    * @format: "int32"
    */
   weight?: number;
-}
+};
 /**
  * MODEL SimpleListWrapperApplicationRole
  */
@@ -12184,7 +12190,7 @@ export type SimpleListWrapperApplicationRole = {
    * @format: "int32"
    */
   size?: number;
-}
+};
 /**
  * MODEL SimpleListWrapperGroupName
  */
@@ -12206,7 +12212,7 @@ export type SimpleListWrapperGroupName = {
    * @format: "int32"
    */
   size?: number;
-}
+};
 /**
  * Represents a usage of an entity by a project ID and related issue type IDs.
  */
@@ -12219,7 +12225,7 @@ export type SimpleUsage = {
    * The project ID for the usage.
    */
   projectId: string;
-}
+};
 /**
  * MODEL SimplifiedHierarchyLevel
  */
@@ -12266,7 +12272,7 @@ export type SimplifiedHierarchyLevel = {
    * @format: "int64"
    */
   projectConfigurationId?: number;
-}
+};
 /**
  * MODEL SoftwareNavigationInfo
  */
@@ -12281,7 +12287,7 @@ export type SoftwareNavigationInfo = {
    * @format: "int64"
    */
   totalBoardsInProject?: number;
-}
+};
 /**
  * The status of the item.
  * accept additional properties
@@ -12295,7 +12301,7 @@ export type Status = {
    * Whether the item is resolved. If set to "true", the link to the issue is displayed in a strikethrough font, otherwise the link displays in normal font.
    */
   resolved?: boolean;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * A status category.
  * accept additional properties
@@ -12304,25 +12310,25 @@ export type StatusCategory = {
   /**
    * The name of the color used to represent the status category.
    */
-  colorName: string;
+  colorName?: string;
   /**
    * The ID of the status category.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The key of the status category.
    */
-  key: string;
+  key?: string;
   /**
    * The name of the status category.
    */
-  name: string;
+  name?: string;
   /**
    * The URL of the status category.
    */
-  self: string;
-} & Record<string, any>
+  self?: string;
+} & Record<string, any>;
 /**
  * Details of the status being created.
  */
@@ -12339,7 +12345,7 @@ export type StatusCreate = {
    * The category of the status.
    */
   statusCategory: string;
-}
+};
 /**
  * Details of the statuses being created and their scope.
  */
@@ -12352,7 +12358,7 @@ export type StatusCreateRequest = {
    * Details of the statuses being created.
    */
   statuses: Array<StatusCreate>;
-}
+};
 /**
  * A status.
  * accept additional properties
@@ -12361,32 +12367,32 @@ export type StatusDetails = {
   /**
    * The description of the status.
    */
-  description: string;
+  description?: string;
   /**
    * The URL of the icon used to represent the status.
    */
-  iconUrl: string;
+  iconUrl?: string;
   /**
    * The ID of the status.
    */
-  id: string;
+  id?: string;
   /**
    * The name of the status.
    */
-  name: string;
+  name?: string;
   /**
    * The scope of the field.
    */
-  scope: Scope;
+  scope?: Scope;
   /**
    * The URL of the status.
    */
-  self: string;
+  self?: string;
   /**
    * The category assigned to the status.
    */
-  statusCategory: StatusCategory;
-} & Record<string, any>
+  statusCategory?: StatusCategory;
+} & Record<string, any>;
 /**
  * The statuses associated with this workflow.
  * accept additional properties
@@ -12404,7 +12410,7 @@ export type StatusLayoutUpdate = {
    * A unique ID which the status will use to refer to this layout configuration.
    */
   statusReference: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details about the mapping from a status to a new status for an issue type.
  */
@@ -12421,7 +12427,7 @@ export type StatusMapping = {
    * The ID of the status.
    */
   statusId: string;
-}
+};
 /**
  * The mapping of old to new status ID for a specific project and issue type.
  * accept additional properties
@@ -12439,7 +12445,7 @@ export type StatusMappingDTO = {
    * The list of old and new status ID mappings for the specified project and issue type.
    */
   statusMigrations: Array<StatusMigration>;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * The details of the statuses in the associated workflows.
  */
@@ -12456,7 +12462,7 @@ export type StatusMetadata = {
    * The name of the status.
    */
   name?: string;
-}
+};
 /**
  * The mapping of old to new status ID.
  * accept additional properties
@@ -12470,7 +12476,7 @@ export type StatusMigration = {
    * The old status ID.
    */
   oldStatusReference: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * The status reference and port that a transition is connected to.
  */
@@ -12484,7 +12490,7 @@ export type StatusReferenceAndPort = {
    * The reference of this status.
    */
   statusReference: string;
-}
+};
 /**
  * The scope of the status.
  */
@@ -12497,7 +12503,7 @@ export type StatusScope = {
    * The scope of the status. `GLOBAL` for company-managed projects and `PROJECT` for team-managed projects.
    */
   type: string;
-}
+};
 /**
  * Details of the status being updated.
  * accept additional properties
@@ -12519,7 +12525,7 @@ export type StatusUpdate = {
    * The category of the status.
    */
   statusCategory: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * The list of statuses that will be updated.
  */
@@ -12528,7 +12534,7 @@ export type StatusUpdateRequest = {
    * The list of statuses that will be updated.
    */
   statuses: Array<StatusUpdate>;
-}
+};
 /**
  * The statuses associated with each workflow.
  */
@@ -12545,25 +12551,23 @@ export type StatusesPerWorkflow = {
    * The ID of the workflow.
    */
   workflowId?: string;
-}
+};
 /**
  * MODEL StreamingResponseBody
  */
 // deno-lint-ignore no-empty-interface
-export type StreamingResponseBody = {
-}
+export type StreamingResponseBody = {};
 /**
  * MODEL StringList
  */
 // deno-lint-ignore no-empty-interface
-export type StringList = {
-}
+export type StringList = {};
 /**
  * MODEL SubmittedBulkOperation
  */
 export type SubmittedBulkOperation = {
   taskId?: string;
-}
+};
 /**
  * An issue suggested for use in the issue picker auto-completion.
  */
@@ -12572,28 +12576,28 @@ export type SuggestedIssue = {
    * The ID of the issue.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The URL of the issue type's avatar.
    */
-  img: string;
+  img?: string;
   /**
    * The key of the issue.
    */
-  key: string;
+  key?: string;
   /**
    * The key of the issue in HTML format.
    */
-  keyHtml: string;
+  keyHtml?: string;
   /**
    * The phrase containing the query string in HTML format, with the string highlighted with HTML bold tags.
    */
-  summary: string;
+  summary?: string;
   /**
    * The phrase containing the query string, as plain text.
    */
-  summaryText: string;
-}
+  summaryText?: string;
+};
 /**
  * Details of changes to a priority scheme's priorities that require suggested priority mappings.
  */
@@ -12606,7 +12610,7 @@ export type SuggestedMappingsForPrioritiesRequestBean = {
    * The ids of priorities being removed from the scheme.
    */
   remove?: string[];
-}
+};
 /**
  * Details of changes to a priority scheme's projects that require suggested priority mappings.
  */
@@ -12615,7 +12619,7 @@ export type SuggestedMappingsForProjectsRequestBean = {
    * The ids of projects being added to the scheme.
    */
   add?: string[];
-}
+};
 /**
  * Details of changes to a priority scheme that require suggested priority mappings.
  */
@@ -12643,7 +12647,7 @@ export type SuggestedMappingsRequestBean = {
    * @format: "int64"
    */
   startAt?: number;
-}
+};
 /**
  * List of system avatars.
  */
@@ -12651,8 +12655,8 @@ export type SystemAvatars = {
   /**
    * A list of avatar details.
    */
-  system: Array<Avatar>;
-}
+  system?: Array<Avatar>;
+};
 /**
  * Details about a task.
  */
@@ -12717,7 +12721,7 @@ export type TaskProgressBeanJsonNode = {
    * @format: "int64"
    */
   submittedBy: number;
-}
+};
 /**
  * Details about a task.
  */
@@ -12782,7 +12786,7 @@ export type TaskProgressBeanObject = {
    * @format: "int64"
    */
   submittedBy: number;
-}
+};
 /**
  * Details about a task.
  */
@@ -12847,7 +12851,7 @@ export type TaskProgressBeanRemoveOptionFromIssuesResult = {
    * @format: "int64"
    */
   submittedBy: number;
-}
+};
 /**
  * Details of the time tracking configuration.
  */
@@ -12870,7 +12874,7 @@ export type TimeTrackingConfiguration = {
    * @format: "double"
    */
   workingHoursPerDay: number;
-}
+};
 /**
  * Time tracking details.
  */
@@ -12878,31 +12882,31 @@ export type TimeTrackingDetails = {
   /**
    * The original estimate of time needed for this issue in readable format.
    */
-  originalEstimate: string;
+  originalEstimate?: string;
   /**
    * The original estimate of time needed for this issue in seconds.
    * @format: "int64"
    */
-  originalEstimateSeconds: number;
+  originalEstimateSeconds?: number;
   /**
    * The remaining estimate of time needed for this issue in readable format.
    */
-  remainingEstimate: string;
+  remainingEstimate?: string;
   /**
    * The remaining estimate of time needed for this issue in seconds.
    * @format: "int64"
    */
-  remainingEstimateSeconds: number;
+  remainingEstimateSeconds?: number;
   /**
    * Time worked on this issue in readable format.
    */
-  timeSpent: string;
+  timeSpent?: string;
   /**
    * Time worked on this issue in seconds.
    * @format: "int64"
    */
-  timeSpentSeconds: number;
-}
+  timeSpentSeconds?: number;
+};
 /**
  * Details about the time tracking provider.
  */
@@ -12918,8 +12922,8 @@ export type TimeTrackingProvider = {
   /**
    * The URL of the configuration page for the time tracking provider app. For example, * /example/config/url*. This property is only returned if the `adminPageKey` property is set in the module descriptor of the time tracking provider app.
    */
-  url: string;
-}
+  url?: string;
+};
 /**
  * Details of a workflow transition.
  */
@@ -12960,7 +12964,7 @@ export type Transition = {
    * The type of the transition.
    */
   type: string;
-}
+};
 /**
  * The details of a transition screen.
  */
@@ -12973,7 +12977,7 @@ export type TransitionScreenDetails = {
    * The name of the screen.
    */
   name?: string;
-}
+};
 /**
  * The transition update data. Note that a transition can have either the deprecated `to`/`from` fields or the `toStatusReference`/`links` fields, but never both nor a combination.
  * accept additional properties
@@ -13039,7 +13043,7 @@ export type TransitionUpdateDTO = {
    * The validators of the transition.
    */
   validators?: Array<WorkflowRuleConfiguration>;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * List of issue transitions.
  */
@@ -13047,12 +13051,12 @@ export type Transitions = {
   /**
    * Expand options that include additional transitions details in the response.
    */
-  expand: string;
+  expand?: string;
   /**
    * List of issue transitions.
    */
-  transitions: Array<IssueTransition>;
-}
+  transitions?: Array<IssueTransition>;
+};
 /**
  * The details of a UI modification's context, which define where to activate the UI modification.
  */
@@ -13060,11 +13064,11 @@ export type UiModificationContextDetails = {
   /**
    * The ID of the UI modification context.
    */
-  id: string;
+  id?: string;
   /**
    * Whether a context is available. For example, when a project is deleted the context becomes unavailable.
    */
-  isAvailable: boolean;
+  isAvailable?: boolean;
   /**
    * The issue type ID of the context. Null is treated as a wildcard, meaning the UI modification will be applied to all issue types. Each UI modification context can have a maximum of one wildcard.
    */
@@ -13077,7 +13081,7 @@ export type UiModificationContextDetails = {
    * The view type of the context. Only `GIC`(Global Issue Create) and `IssueView` are supported. Null is treated as a wildcard, meaning the UI modification will be applied to all view types. Each UI modification context can have a maximum of one wildcard.
    */
   viewType?: string;
-}
+};
 /**
  * The details of a UI modification.
  */
@@ -13085,15 +13089,15 @@ export type UiModificationDetails = {
   /**
    * List of contexts of the UI modification. The maximum number of contexts is 1000.
    */
-  contexts: Array<UiModificationContextDetails>;
+  contexts?: Array<UiModificationContextDetails>;
   /**
    * The data of the UI modification. The maximum size of the data is 50000 characters.
    */
-  data: string;
+  data?: string;
   /**
    * The description of the UI modification. The maximum length is 255 characters.
    */
-  description: string;
+  description?: string;
   /**
    * The ID of the UI modification.
    */
@@ -13106,7 +13110,7 @@ export type UiModificationDetails = {
    * The URL of the UI modification.
    */
   self: string;
-}
+};
 /**
  * Identifiers for a UI modification.
  */
@@ -13119,7 +13123,7 @@ export type UiModificationIdentifiers = {
    * The URL of the UI modification.
    */
   self: string;
-}
+};
 /**
  * MODEL UnrestrictedUserEmail
  * accept additional properties
@@ -13133,7 +13137,7 @@ export type UnrestrictedUserEmail = {
    * The email of the user
    */
   email?: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details of a custom field.
  */
@@ -13172,7 +13176,7 @@ export type UpdateCustomFieldDetails = {
    *  *  `version`: `versionsearcher`
    */
   searcherKey?: string;
-}
+};
 /**
  * The request for updating the default project classification level.
  */
@@ -13181,7 +13185,7 @@ export type UpdateDefaultProjectClassificationBean = {
    * The ID of the project classification.
    */
   id: string;
-}
+};
 /**
  * The ID of a screen scheme.
  */
@@ -13190,7 +13194,7 @@ export type UpdateDefaultScreenScheme = {
    * The ID of the screen scheme.
    */
   screenSchemeId: string;
-}
+};
 /**
  * The details of the field configuration scheme.
  */
@@ -13203,7 +13207,7 @@ export type UpdateFieldConfigurationSchemeDetails = {
    * The name of the field configuration scheme. The name must be unique.
    */
   name: string;
-}
+};
 /**
  * Details of issue security scheme level.
  * accept additional properties
@@ -13217,7 +13221,7 @@ export type UpdateIssueSecurityLevelDetails = {
    * The name of the issue security scheme level. Must be unique.
    */
   name?: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * MODEL UpdateIssueSecuritySchemeRequestBean
  */
@@ -13230,7 +13234,7 @@ export type UpdateIssueSecuritySchemeRequestBean = {
    * The name of the security scheme scheme. Must be unique.
    */
   name?: string;
-}
+};
 /**
  * Details of a notification scheme.
  * accept additional properties
@@ -13244,7 +13248,7 @@ export type UpdateNotificationSchemeDetails = {
    * The name of the notification scheme. Must be unique.
    */
   name?: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Update priorities in a scheme
  * accept additional properties
@@ -13258,7 +13262,7 @@ export type UpdatePrioritiesInSchemeRequestBean = {
    * Priorities to remove from a scheme
    */
   remove?: PrioritySchemeChangesWithMappings;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details of an issue priority.
  * accept additional properties
@@ -13280,7 +13284,7 @@ export type UpdatePriorityDetails = {
    * The status color of the priority in 3-digit or 6-digit hexadecimal format.
    */
   statusColor?: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details of a priority scheme.
  */
@@ -13310,7 +13314,7 @@ export type UpdatePrioritySchemeRequestBean = {
    * The projects in the scheme.
    */
   projects?: UpdateProjectsInSchemeRequestBean;
-}
+};
 /**
  * Details of the updated priority scheme.
  * accept additional properties
@@ -13323,8 +13327,8 @@ export type UpdatePrioritySchemeResponseBean = {
   /**
    * The in-progress issue migration task.
    */
-  task: TaskProgressBeanJsonNode;
-} & Record<string, any>
+  task?: TaskProgressBeanJsonNode;
+} & Record<string, any>;
 /**
  * Details about the project.
  */
@@ -13382,7 +13386,7 @@ export type UpdateProjectDetails = {
    * A link to information about this project, such as project documentation
    */
   url?: string;
-}
+};
 /**
  * Update projects in a scheme
  * accept additional properties
@@ -13396,7 +13400,7 @@ export type UpdateProjectsInSchemeRequestBean = {
    * Projects to remove from a scheme
    */
   remove?: PrioritySchemeChangesWithoutMappings;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details of an issue resolution.
  * accept additional properties
@@ -13410,7 +13414,7 @@ export type UpdateResolutionDetails = {
    * The name of the resolution. Must be unique.
    */
   name: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * Details of a screen.
  */
@@ -13423,7 +13427,7 @@ export type UpdateScreenDetails = {
    * The name of the screen. The name must be unique. The maximum length is 255 characters.
    */
   name?: string;
-}
+};
 /**
  * Details of a screen scheme.
  */
@@ -13440,7 +13444,7 @@ export type UpdateScreenSchemeDetails = {
    * The IDs of the screens for the screen types of the screen scheme. Only screens used in classic projects are accepted.
    */
   screens?: UpdateScreenTypes;
-}
+};
 /**
  * The IDs of the screens for the screen types of the screen scheme.
  */
@@ -13461,7 +13465,7 @@ export type UpdateScreenTypes = {
    * The ID of the view screen. To remove the screen association, pass a null.
    */
   view?: string;
-}
+};
 /**
  * The details of a UI modification.
  */
@@ -13482,7 +13486,7 @@ export type UpdateUiModificationDetails = {
    * The name of the UI modification. The maximum length is 255 characters.
    */
   name?: string;
-}
+};
 /**
  * MODEL UpdateUserToGroupBean
  * accept additional properties
@@ -13496,7 +13500,7 @@ export type UpdateUserToGroupBean = {
    * This property is no longer available. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
    */
   name?: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * A project category.
  */
@@ -13504,20 +13508,20 @@ export type UpdatedProjectCategory = {
   /**
    * The name of the project category.
    */
-  description: string;
+  description?: string;
   /**
    * The ID of the project category.
    */
-  id: string;
+  id?: string;
   /**
    * The description of the project category.
    */
-  name: string;
+  name?: string;
   /**
    * The URL of the project category.
    */
-  self: string;
-}
+  self?: string;
+};
 /**
  * A user with details as permitted by the user's Atlassian Account privacy settings. However, be aware of these exceptions:
 
@@ -13537,35 +13541,35 @@ export type User = {
    *  *  `app` system account used for Connect applications and OAuth to represent external systems
    *  *  `customer` Jira Service Desk account representing an external service desk
    */
-  accountType: string;
+  accountType?: string;
   /**
    * Whether the user is active.
    */
-  active: boolean;
+  active?: boolean;
   /**
    * The application roles the user is assigned to.
    */
-  applicationRoles: SimpleListWrapperApplicationRole;
+  applicationRoles?: SimpleListWrapperApplicationRole;
   /**
    * The avatars of the user.
    */
-  avatarUrls: AvatarUrlsBean;
+  avatarUrls?: AvatarUrlsBean;
   /**
    * The display name of the user. Depending on the user’s privacy setting, this may return an alternative value.
    */
-  displayName: string;
+  displayName?: string;
   /**
    * The email address of the user. Depending on the user’s privacy setting, this may be returned as null.
    */
-  emailAddress: string;
+  emailAddress?: string;
   /**
    * Expand options that include additional user details in the response.
    */
-  expand: string;
+  expand?: string;
   /**
    * The groups that the user belongs to.
    */
-  groups: SimpleListWrapperGroupName;
+  groups?: SimpleListWrapperGroupName;
   /**
    * This property is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
    */
@@ -13573,7 +13577,7 @@ export type User = {
   /**
    * The locale of the user. Depending on the user’s privacy setting, this may be returned as null.
    */
-  locale: string;
+  locale?: string;
   /**
    * This property is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
    */
@@ -13582,12 +13586,12 @@ export type User = {
    * The URL of the user.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The time zone specified in the user's profile. Depending on the user’s privacy setting, this may be returned as null.
    */
-  timeZone: string;
-}
+  timeZone?: string;
+};
 /**
  * MODEL UserBean
  */
@@ -13623,7 +13627,7 @@ export type UserBean = {
    * @format: "uri"
    */
   self?: string;
-}
+};
 /**
  * MODEL UserBeanAvatarUrls
  */
@@ -13648,13 +13652,13 @@ export type UserBeanAvatarUrls = {
    * @format: "uri"
    */
   "48x48"?: string;
-}
+};
 /**
  * MODEL UserColumnRequestBody
  */
 export type UserColumnRequestBody = {
   columns?: string[];
-}
+};
 /**
  * A [user](https://developer.atlassian.com/cloud/jira/platform/jira-expressions-type-reference#user) specified as an Atlassian account ID.
  */
@@ -13667,7 +13671,7 @@ export type UserContextVariable = {
    * Type of custom context variable.
    */
   type: string;
-}
+};
 /**
  * User details permitted by the user's Atlassian Account privacy settings. However, be aware of these exceptions:
 
@@ -13683,40 +13687,40 @@ export type UserDetails = {
   /**
    * The type of account represented by this user. This will be one of 'atlassian' (normal users), 'app' (application user) or 'customer' (Jira Service Desk customer user)
    */
-  accountType: string;
+  accountType?: string;
   /**
    * Whether the user is active.
    */
-  active: boolean;
+  active?: boolean;
   /**
    * The avatars of the user.
    */
-  avatarUrls: AvatarUrlsBean;
+  avatarUrls?: AvatarUrlsBean;
   /**
    * The display name of the user. Depending on the user’s privacy settings, this may return an alternative value.
    */
-  displayName: string;
+  displayName?: string;
   /**
    * The email address of the user. Depending on the user’s privacy settings, this may be returned as null.
    */
-  emailAddress: string;
+  emailAddress?: string;
   /**
    * This property is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
    */
-  key: string;
+  key?: string;
   /**
    * This property is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
    */
-  name: string;
+  name?: string;
   /**
    * The URL of the user.
    */
-  self: string;
+  self?: string;
   /**
    * The time zone specified in the user's profile. Depending on the user’s privacy settings, this may be returned as null.
    */
-  timeZone: string;
-}
+  timeZone?: string;
+};
 /**
  * Filter for a User Picker (single) custom field.
  */
@@ -13733,7 +13737,7 @@ export type UserFilter = {
    * Roles that autocomplete suggestion users must belong to. If not provided, the default values are used. A maximum of 10 roles can be provided.
    */
   roleIds?: string[];
-}
+};
 /**
  * List of user account IDs.
  */
@@ -13746,7 +13750,7 @@ export type UserKey = {
    * This property is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
    */
   key?: string;
-}
+};
 /**
  * A paginated list of users sharing the filter. This includes users that are members of the groups or can browse the projects that the filter is shared with.
  */
@@ -13755,27 +13759,27 @@ export type UserList = {
    * The index of the last item returned on the page.
    * @format: "int32"
    */
-  "end-index": number;
+  "end-index"?: number;
   /**
    * The list of items.
    */
-  items: Array<User>;
+  items?: Array<User>;
   /**
    * The maximum number of results that could be on the page.
    * @format: "int32"
    */
-  "max-results": number;
+  "max-results"?: number;
   /**
    * The number of items on the page.
    * @format: "int32"
    */
-  size: number;
+  size?: number;
   /**
    * The index of the first item returned on the page.
    * @format: "int32"
    */
-  "start-index": number;
-}
+  "start-index"?: number;
+};
 /**
  * MODEL UserMigrationBean
  */
@@ -13783,7 +13787,7 @@ export type UserMigrationBean = {
   accountId?: string;
   key?: string;
   username?: string;
-}
+};
 /**
  * Details of a permission and its availability to a user.
  * accept additional properties
@@ -13817,7 +13821,7 @@ export type UserPermission = {
    * The type of the permission.
    */
   type?: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * A user found in a search.
  */
@@ -13847,19 +13851,19 @@ export type UserPickerUser = {
    * This property is no longer available . See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
    */
   name?: string;
-}
+};
 /**
  * The level of validation to return from the API. If no values are provided, the default would return `WARNING` and `ERROR` level validation results.
  */
 export type ValidationOptionsForCreate = {
   levels?: string[];
-}
+};
 /**
  * The level of validation to return from the API. If no values are provided, the default would return `WARNING` and `ERROR` level validation results.
  */
 export type ValidationOptionsForUpdate = {
   levels?: string[];
-}
+};
 /**
  * An operand that is a user-provided value.
  */
@@ -13872,7 +13876,7 @@ export type ValueOperand = {
    * The operand value.
    */
   value: string;
-}
+};
 /**
  * Details about a project version.
  */
@@ -13880,7 +13884,7 @@ export type Version = {
   /**
    * If the expand option `approvers` is used, returns a list containing the approvers for this version.
    */
-  approvers: Array<VersionApprover>;
+  approvers?: Array<VersionApprover>;
   /**
    * Indicates that the version is archived. Optional when creating or updating a version.
    */
@@ -13892,7 +13896,7 @@ export type Version = {
   /**
    * If the expand option `driver` is used, returns the Atlassian account ID of the driver.
    */
-  driver: string;
+  driver?: string;
   /**
    * Use [expand](em>#expansion) to include additional information about version in the response. This parameter accepts a comma-separated list. Expand options include:
    *
@@ -13907,11 +13911,11 @@ export type Version = {
   /**
    * The ID of the version.
    */
-  id: string;
+  id?: string;
   /**
    * If the expand option `issuesstatus` is used, returns the count of issues in this version for each of the status categories *to do*, *in progress*, *done*, and *unmapped*. The *unmapped* property contains a count of issues with a status other than *to do*, *in progress*, and *done*.
    */
-  issuesStatusForFixVersion: VersionIssuesStatus;
+  issuesStatusForFixVersion?: VersionIssuesStatus;
   /**
    * The URL of the self link to the version to which all unfixed issues are moved when a version is released. Not applicable when creating a version. Optional when updating a version.
    * @format: "uri"
@@ -13924,11 +13928,11 @@ export type Version = {
   /**
    * If the expand option `operations` is used, returns the list of operations available for this version.
    */
-  operations: Array<SimpleLink>;
+  operations?: Array<SimpleLink>;
   /**
    * Indicates that the version is overdue.
    */
-  overdue: boolean;
+  overdue?: boolean;
   /**
    * Deprecated. Use `projectId`.
    */
@@ -13951,7 +13955,7 @@ export type Version = {
    * The URL of the version.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The start date of the version. Expressed in ISO 8601 format (yyyy-mm-dd). Optional when creating or updating a version.
    * @format: "date"
@@ -13960,12 +13964,12 @@ export type Version = {
   /**
    * The date on which work on this version is expected to finish, expressed in the instance's *Day/Month/Year Format* date format.
    */
-  userReleaseDate: string;
+  userReleaseDate?: string;
   /**
    * The date on which work on this version is expected to start, expressed in the instance's *Day/Month/Year Format* date format.
    */
-  userStartDate: string;
-}
+  userStartDate?: string;
+};
 /**
  * Contains details about a version approver.
  * accept additional properties
@@ -13974,20 +13978,20 @@ export type VersionApprover = {
   /**
    * The Atlassian account ID of the approver.
    */
-  accountId: string;
+  accountId?: string;
   /**
    * A description of why the user is declining the approval.
    */
-  declineReason: string;
+  declineReason?: string;
   /**
    * A description of what the user is approving within the specified version.
    */
-  description: string;
+  description?: string;
   /**
    * The status of the approval, which can be *PENDING*, *APPROVED*, or *DECLINED*
    */
-  status: string;
-} & Record<string, any>
+  status?: string;
+} & Record<string, any>;
 /**
  * Various counts of issues within a version.
  */
@@ -13995,28 +13999,28 @@ export type VersionIssueCounts = {
   /**
    * List of custom fields using the version.
    */
-  customFieldUsage: Array<VersionUsageInCustomField>;
+  customFieldUsage?: Array<VersionUsageInCustomField>;
   /**
    * Count of issues where a version custom field is set to the version.
    * @format: "int64"
    */
-  issueCountWithCustomFieldsShowingVersion: number;
+  issueCountWithCustomFieldsShowingVersion?: number;
   /**
    * Count of issues where the `affectedVersion` is set to the version.
    * @format: "int64"
    */
-  issuesAffectedCount: number;
+  issuesAffectedCount?: number;
   /**
    * Count of issues where the `fixVersion` is set to the version.
    * @format: "int64"
    */
-  issuesFixedCount: number;
+  issuesFixedCount?: number;
   /**
    * The URL of these count details.
    * @format: "uri"
    */
-  self: string;
-}
+  self?: string;
+};
 /**
  * Counts of the number of issues in various statuses.
  * accept additional properties
@@ -14026,23 +14030,23 @@ export type VersionIssuesStatus = {
    * Count of issues with status *done*.
    * @format: "int64"
    */
-  done: number;
+  done?: number;
   /**
    * Count of issues with status *in progress*.
    * @format: "int64"
    */
-  inProgress: number;
+  inProgress?: number;
   /**
    * Count of issues with status *to do*.
    * @format: "int64"
    */
-  toDo: number;
+  toDo?: number;
   /**
    * Count of issues with a status other than *to do*, *in progress*, and *done*.
    * @format: "int64"
    */
-  unmapped: number;
-} & Record<string, any>
+  unmapped?: number;
+} & Record<string, any>;
 /**
  * MODEL VersionMoveBean
  */
@@ -14056,7 +14060,7 @@ export type VersionMoveBean = {
    * An absolute position in which to place the moved version. Cannot be used with `after`.
    */
   position?: string;
-}
+};
 /**
  * Associated related work to a version
  */
@@ -14069,11 +14073,11 @@ export type VersionRelatedWork = {
    * The ID of the issue associated with the related work (if there is one). Cannot be updated via the Rest API.
    * @format: "int64"
    */
-  issueId: number;
+  issueId?: number;
   /**
    * The id of the related work. For the native release note related work item, this will be null, and Rest API does not support updating it.
    */
-  relatedWorkId: string;
+  relatedWorkId?: string;
   /**
    * The title of the related work
    */
@@ -14083,7 +14087,7 @@ export type VersionRelatedWork = {
    * @format: "uri"
    */
   url?: string;
-}
+};
 /**
  * Count of a version's unresolved issues.
  */
@@ -14092,18 +14096,18 @@ export type VersionUnresolvedIssuesCount = {
    * Count of issues.
    * @format: "int64"
    */
-  issuesCount: number;
+  issuesCount?: number;
   /**
    * Count of unresolved issues.
    * @format: "int64"
    */
-  issuesUnresolvedCount: number;
+  issuesUnresolvedCount?: number;
   /**
    * The URL of these count details.
    * @format: "uri"
    */
-  self: string;
-}
+  self?: string;
+};
 /**
  * List of custom fields using the version.
  */
@@ -14112,17 +14116,17 @@ export type VersionUsageInCustomField = {
    * The ID of the custom field.
    * @format: "int64"
    */
-  customFieldId: number;
+  customFieldId?: number;
   /**
    * The name of the custom field.
    */
-  fieldName: string;
+  fieldName?: string;
   /**
    * Count of the issues where the custom field contains the version.
    * @format: "int64"
    */
-  issueCountWithVersionInCustomField: number;
-}
+  issueCountWithVersionInCustomField?: number;
+};
 /**
  * The group or role to which this item is visible.
  * accept additional properties
@@ -14140,7 +14144,7 @@ export type Visibility = {
    * The name of the group or role that visibility of this item is restricted to. Please note that the name of a group is mutable, to reliably identify a group use `identifier`.
    */
   value?: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * The details of votes on an issue.
  */
@@ -14148,28 +14152,28 @@ export type Votes = {
   /**
    * Whether the user making this request has voted on the issue.
    */
-  hasVoted: boolean;
+  hasVoted?: boolean;
   /**
    * The URL of these issue vote details.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * List of the users who have voted on this issue. An empty list is returned when the calling user doesn't have the *View voters and watchers* project permission.
    */
-  voters: Array<User>;
+  voters?: Array<User>;
   /**
    * The number of votes on the issue.
    * @format: "int64"
    */
-  votes: number;
-}
+  votes?: number;
+};
 /**
  * MODEL WarningCollection
  */
 export type WarningCollection = {
   warnings?: string[];
-}
+};
 /**
  * The details of watchers on an issue.
  */
@@ -14177,21 +14181,21 @@ export type Watchers = {
   /**
    * Whether the calling user is watching this issue.
    */
-  isWatching: boolean;
+  isWatching?: boolean;
   /**
    * The URL of these issue watcher details.
    */
-  self: string;
+  self?: string;
   /**
    * The number of users watching this issue.
    * @format: "int32"
    */
-  watchCount: number;
+  watchCount?: number;
   /**
    * Details of the users watching this issue.
    */
-  watchers: Array<UserDetails>;
-}
+  watchers?: Array<UserDetails>;
+};
 /**
  * A webhook.
  */
@@ -14204,7 +14208,7 @@ export type Webhook = {
    * The date after which the webhook is no longer sent. Use [Extend webhook life](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-webhooks/#api-rest-api-3-webhook-refresh-put) to extend the date.
    * @format: "int64"
    */
-  expirationDate: number;
+  expirationDate?: number;
   /**
    * A list of field IDs. When the issue changelog contains any of the fields, the webhook `jira:issue_updated` is sent. If this parameter is not present, the app is notified about all field updates.
    */
@@ -14222,7 +14226,7 @@ export type Webhook = {
    * The JQL filter that specifies which issues the webhook is sent for.
    */
   jqlFilter: string;
-}
+};
 /**
  * A list of webhooks.
  */
@@ -14246,7 +14250,7 @@ export type WebhookDetails = {
    *  *  Operators: `=`, `!=`, `IN`, and `NOT IN`.
    */
   jqlFilter: string;
-}
+};
 /**
  * Details of webhooks to register.
  */
@@ -14259,7 +14263,7 @@ export type WebhookRegistrationDetails = {
    * A list of webhooks.
    */
   webhooks: Array<WebhookDetails>;
-}
+};
 /**
  * The date the refreshed webhooks expire.
  */
@@ -14269,13 +14273,13 @@ export type WebhooksExpirationDate = {
    * @format: "int64"
    */
   expirationDate: number;
-}
+};
 /**
  * MODEL WorkManagementNavigationInfo
  */
 export type WorkManagementNavigationInfo = {
   boardName?: string;
-}
+};
 /**
  * Details about a workflow.
  */
@@ -14326,7 +14330,7 @@ export type Workflow = {
    * @format: "date-time"
    */
   updated?: string;
-}
+};
 /**
  * The list of status mappings.
  */
@@ -14339,7 +14343,7 @@ export type WorkflowAssociationStatusMapping = {
    * The ID of the status in the old workflow that isn't present in the new workflow.
    */
   oldStatusId: string;
-}
+};
 /**
  * MODEL WorkflowCapabilities
  */
@@ -14368,7 +14372,7 @@ export type WorkflowCapabilities = {
    * The trigger rules available.
    */
   triggerRules?: Array<AvailableWorkflowTriggers>;
-}
+};
 /**
  * A compound workflow transition rule condition. This object returns `nodeType` as `compound`.
  */
@@ -14382,13 +14386,12 @@ export type WorkflowCompoundCondition = {
    * The compound condition operator.
    */
   operator: string;
-}
+};
 /**
  * The workflow transition rule conditions tree.
  */
 // deno-lint-ignore no-empty-interface
-export type WorkflowCondition = {
-}
+export type WorkflowCondition = {};
 /**
  * The details of the workflows to create.
  */
@@ -14413,7 +14416,7 @@ export type WorkflowCreate = {
    * The transitions of this workflow.
    */
   transitions: Array<TransitionUpdateDTO>;
-}
+};
 /**
  * The create workflows payload.
  */
@@ -14430,7 +14433,7 @@ export type WorkflowCreateRequest = {
    * The details of the workflows to create.
    */
   workflows: Array<WorkflowCreate>;
-}
+};
 /**
  * Details of the created workflows and statuses.
  */
@@ -14443,7 +14446,7 @@ export type WorkflowCreateResponse = {
    * List of created workflows.
    */
   workflows?: Array<JiraWorkflow>;
-}
+};
 /**
  * MODEL WorkflowCreateValidateRequest
  */
@@ -14456,7 +14459,7 @@ export type WorkflowCreateValidateRequest = {
    * Ref: #/components/schemas/ValidationOptionsForCreate
    */
   validationOptions?: ValidationOptionsForCreate;
-}
+};
 /**
  * A reference to the location of the error. This will be null if the error does not refer to a specific element.
  */
@@ -14481,7 +14484,7 @@ export type WorkflowElementReference = {
    * A transition ID.
    */
   transitionId?: string;
-}
+};
 /**
  * The classic workflow identifiers.
  */
@@ -14494,7 +14497,7 @@ export type WorkflowIDs = {
    * The name of the workflow.
    */
   name: string;
-}
+};
 /**
  * Properties that identify a workflow.
  */
@@ -14507,7 +14510,7 @@ export type WorkflowId = {
    * The name of the workflow.
    */
   name: string;
-}
+};
 /**
  * The starting point for the statuses in the workflow.
  */
@@ -14522,7 +14525,7 @@ export type WorkflowLayout = {
    * @format: "double"
    */
   y?: number;
-}
+};
 /**
  * The workflow metadata and issue type IDs which use this workflow.
  */
@@ -14535,7 +14538,7 @@ export type WorkflowMetadataAndIssueTypeRestModel = {
    * Ref: #/components/schemas/WorkflowMetadataRestModel
    */
   workflow: WorkflowMetadataRestModel;
-}
+};
 /**
  * Workflow metadata and usage detail.
  */
@@ -14560,7 +14563,7 @@ export type WorkflowMetadataRestModel = {
    * Ref: #/components/schemas/DocumentVersion
    */
   version: DocumentVersion;
-}
+};
 /**
  * Operations allowed on a workflow
  */
@@ -14573,7 +14576,7 @@ export type WorkflowOperations = {
    * Whether the workflow can be updated.
    */
   canEdit: boolean;
-}
+};
 /**
  * MODEL WorkflowReadRequest
  */
@@ -14590,7 +14593,7 @@ export type WorkflowReadRequest = {
    * The list of workflow names to query.
    */
   workflowNames?: string[];
-}
+};
 /**
  * Details of workflows and related statuses.
  */
@@ -14603,7 +14606,7 @@ export type WorkflowReadResponse = {
    * List of workflows.
    */
   workflows?: Array<JiraWorkflow>;
-}
+};
 /**
  * The statuses referenced in the workflow.
  */
@@ -14624,7 +14627,7 @@ export type WorkflowReferenceStatus = {
    * The reference of the status.
    */
   statusReference?: string;
-}
+};
 /**
  * The configuration of the rule.
  */
@@ -14641,7 +14644,7 @@ export type WorkflowRuleConfiguration = {
    * The rule key of the rule.
    */
   ruleKey: string;
-}
+};
 /**
  * A collection of transition rules.
  */
@@ -14658,7 +14661,7 @@ export type WorkflowRules = {
    * The workflow validators.
    */
   validators?: Array<WorkflowTransitionRule>;
-}
+};
 /**
  * Details of the workflow and its transition rules.
  */
@@ -14678,7 +14681,7 @@ export type WorkflowRulesSearch = {
    * @format: "uuid"
    */
   workflowEntityId: string;
-}
+};
 /**
  * Details of workflow transition rules.
  */
@@ -14697,7 +14700,7 @@ export type WorkflowRulesSearchDetails = {
    * @format: "uuid"
    */
   workflowEntityId?: string;
-}
+};
 /**
  * Details about a workflow scheme.
  */
@@ -14713,12 +14716,12 @@ export type WorkflowScheme = {
   /**
    * Whether the workflow scheme is a draft or not.
    */
-  draft: boolean;
+  draft?: boolean;
   /**
    * The ID of the workflow scheme.
    * @format: "int64"
    */
-  id: number;
+  id?: number;
   /**
    * The issue type to workflow mappings, where each mapping is an issue type ID and workflow name pair. Note that an issue type can only be mapped to one workflow in a workflow scheme.
    */
@@ -14726,15 +14729,15 @@ export type WorkflowScheme = {
   /**
    * The issue types available in Jira.
    */
-  issueTypes: Record<string, unknown>;
+  issueTypes?: Record<string, unknown>;
   /**
    * The date-time that the draft workflow scheme was last modified. A modification is a change to the issue type-project mappings only. This property does not apply to non-draft workflows.
    */
-  lastModified: string;
+  lastModified?: string;
   /**
    * The user that last modified the draft workflow scheme. A modification is a change to the issue type-project mappings only. This property does not apply to non-draft workflows.
    */
-  lastModifiedUser: User;
+  lastModifiedUser?: User;
   /**
    * The name of the workflow scheme. The name must be unique. The maximum length is 255 characters. Required when creating a workflow scheme.
    */
@@ -14742,15 +14745,15 @@ export type WorkflowScheme = {
   /**
    * For draft workflow schemes, this property is the name of the default workflow for the original workflow scheme. The default workflow has *All Unassigned Issue Types* assigned to it in Jira.
    */
-  originalDefaultWorkflow: string;
+  originalDefaultWorkflow?: string;
   /**
    * For draft workflow schemes, this property is the issue type to workflow mappings for the original workflow scheme, where each mapping is an issue type ID and workflow name pair. Note that an issue type can only be mapped to one workflow in a workflow scheme.
    */
-  originalIssueTypeMappings: Record<string, unknown>;
+  originalIssueTypeMappings?: Record<string, unknown>;
   /**
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * Whether to create or update a draft workflow scheme when updating an active workflow scheme. An active workflow scheme is a workflow scheme that is used by at least one project. The following examples show how this property works:
    *
@@ -14761,7 +14764,7 @@ export type WorkflowScheme = {
    * Defaults to `false`.
    */
   updateDraftIfNeeded?: boolean;
-}
+};
 /**
  * The explicit association between issue types and a workflow in a workflow scheme.
  */
@@ -14774,7 +14777,7 @@ export type WorkflowSchemeAssociation = {
    * The ID of the workflow.
    */
   workflowId: string;
-}
+};
 /**
  * A workflow scheme along with a list of projects that use it.
  */
@@ -14787,7 +14790,7 @@ export type WorkflowSchemeAssociations = {
    * The workflow scheme.
    */
   workflowScheme: WorkflowScheme;
-}
+};
 /**
  * The ID and the name of the workflow scheme.
  */
@@ -14800,7 +14803,7 @@ export type WorkflowSchemeIdName = {
    * The name of the workflow scheme.
    */
   name: string;
-}
+};
 /**
  * An associated workflow scheme and project.
  */
@@ -14813,7 +14816,7 @@ export type WorkflowSchemeProjectAssociation = {
    * The ID of the workflow scheme. If the workflow scheme ID is `null`, the operation assigns the default workflow scheme.
    */
   workflowSchemeId?: string;
-}
+};
 /**
  * The workflow scheme read request body.
  */
@@ -14826,7 +14829,7 @@ export type WorkflowSchemeReadRequest = {
    * The list of workflow scheme IDs to query.
    */
   workflowSchemeIds?: string[];
-}
+};
 /**
  * MODEL WorkflowSchemeReadResponse
  */
@@ -14867,7 +14870,7 @@ export type WorkflowSchemeReadResponse = {
    * Mappings from workflows to issue types.
    */
   workflowsForIssueTypes: Array<WorkflowMetadataAndIssueTypeRestModel>;
-}
+};
 /**
  * The update workflow scheme payload.
  * accept additional properties
@@ -14905,7 +14908,7 @@ export type WorkflowSchemeUpdateRequest = {
    * Mappings from workflows to issue types.
    */
   workflowsForIssueTypes?: Array<WorkflowSchemeAssociation>;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * The request payload to get the required mappings for updating a workflow scheme.
  */
@@ -14922,7 +14925,7 @@ export type WorkflowSchemeUpdateRequiredMappingsRequest = {
    * The new workflow to issue type mappings for this workflow scheme.
    */
   workflowsForIssueTypes: Array<WorkflowSchemeAssociation>;
-}
+};
 /**
  * MODEL WorkflowSchemeUpdateRequiredMappingsResponse
  */
@@ -14943,7 +14946,7 @@ export type WorkflowSchemeUpdateRequiredMappingsResponse = {
    * The statuses associated with each workflow.
    */
   statusesPerWorkflow?: Array<StatusesPerWorkflow>;
-}
+};
 /**
  * The scope of the workflow.
  */
@@ -14956,7 +14959,7 @@ export type WorkflowScope = {
    * The scope of the workflow. `GLOBAL` for company-managed projects and `PROJECT` for team-managed projects.
    */
   type: string;
-}
+};
 /**
  * A workflow transition rule condition. This object returns `nodeType` as `simple`.
  */
@@ -14970,7 +14973,7 @@ export type WorkflowSimpleCondition = {
    * The type of the transition rule.
    */
   type: string;
-}
+};
 /**
  * Details of a workflow status.
  */
@@ -14987,7 +14990,7 @@ export type WorkflowStatus = {
    * Additional properties that modify the behavior of issues in this status. Supports the properties `jira.issue.editable` and `issueEditable` (deprecated) that indicate whether issues are editable.
    */
   properties?: Record<string, unknown>;
-}
+};
 /**
  * The status reference and port that a transition is connected to.
  */
@@ -15001,7 +15004,7 @@ export type WorkflowStatusAndPort = {
    * The reference of this status.
    */
   statusReference?: string;
-}
+};
 /**
  * The x and y location of the status in the workflow.
  */
@@ -15016,7 +15019,7 @@ export type WorkflowStatusLayout = {
    * @format: "double"
    */
   y?: number;
-}
+};
 /**
  * Details of the status being updated.
  * accept additional properties
@@ -15042,7 +15045,7 @@ export type WorkflowStatusUpdate = {
    * The reference of the status.
    */
   statusReference: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * A workflow transition.
  */
@@ -15056,7 +15059,7 @@ export type WorkflowTransition = {
    * The transition name.
    */
   name: string;
-}
+};
 /**
  * The statuses the transition can start from, and the mapping of ports between the statuses.
  */
@@ -15075,7 +15078,7 @@ export type WorkflowTransitionLinks = {
    * @format: "int32"
    */
   toPort?: number;
-}
+};
 /**
  * Details about the server Jira is running on.
  * accept additional properties
@@ -15084,16 +15087,16 @@ export type WorkflowTransitionProperty = {
   /**
    * The ID of the transition property.
    */
-  id: string;
+  id?: string;
   /**
    * The key of the transition property. Also known as the name of the transition property.
    */
-  key: string;
+  key?: string;
   /**
    * The value of the transition property.
    */
   value: string;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * A workflow transition rule.
  */
@@ -15106,7 +15109,7 @@ export type WorkflowTransitionRule = {
    * The type of the transition rule.
    */
   type: string;
-}
+};
 /**
  * A workflow with transition rules.
  */
@@ -15127,7 +15130,7 @@ export type WorkflowTransitionRules = {
    * Ref: #/components/schemas/WorkflowId
    */
   workflowId: WorkflowId;
-}
+};
 /**
  * Details about a workflow configuration update request.
  */
@@ -15140,7 +15143,7 @@ export type WorkflowTransitionRulesDetails = {
    * The list of connect workflow rule IDs.
    */
   workflowRuleIds: string[];
-}
+};
 /**
  * Details about a workflow configuration update request.
  */
@@ -15149,7 +15152,7 @@ export type WorkflowTransitionRulesUpdate = {
    * The list of workflows with transition rules to update.
    */
   workflows: Array<WorkflowTransitionRules>;
-}
+};
 /**
  * Details of any errors encountered while updating workflow transition rules for a workflow.
  */
@@ -15166,7 +15169,7 @@ export type WorkflowTransitionRulesUpdateErrorDetails = {
    * Ref: #/components/schemas/WorkflowId
    */
   workflowId: WorkflowId;
-}
+};
 /**
  * Details of any errors encountered while updating workflow transition rules.
  */
@@ -15175,7 +15178,7 @@ export type WorkflowTransitionRulesUpdateErrors = {
    * A list of workflows.
    */
   updateResults: Array<WorkflowTransitionRulesUpdateErrorDetails>;
-}
+};
 /**
  * The transitions of the workflow. Note that a transition can have either the deprecated `to`/`from` fields or the `toStatusReference`/`links` fields, but never both nor a combination.
  */
@@ -15240,7 +15243,7 @@ export type WorkflowTransitions = {
    * The validators of the transition.
    */
   validators?: Array<WorkflowRuleConfiguration>;
-}
+};
 /**
  * The trigger configuration associated with a workflow.
  */
@@ -15257,7 +15260,7 @@ export type WorkflowTrigger = {
    * The rule key of the trigger.
    */
   ruleKey: string;
-}
+};
 /**
  * The details of the workflows to update.
  * accept additional properties
@@ -15295,7 +15298,7 @@ export type WorkflowUpdate = {
    * Ref: #/components/schemas/DocumentVersion
    */
   version: DocumentVersion;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * The update workflows payload.
  */
@@ -15308,7 +15311,7 @@ export type WorkflowUpdateRequest = {
    * The details of the workflows to update.
    */
   workflows: Array<WorkflowUpdate>;
-}
+};
 /**
  * MODEL WorkflowUpdateResponse
  */
@@ -15325,7 +15328,7 @@ export type WorkflowUpdateResponse = {
    * List of updated workflows.
    */
   workflows?: Array<JiraWorkflow>;
-}
+};
 /**
  * MODEL WorkflowUpdateValidateRequestBean
  */
@@ -15338,7 +15341,7 @@ export type WorkflowUpdateValidateRequestBean = {
    * Ref: #/components/schemas/ValidationOptionsForUpdate
    */
   validationOptions?: ValidationOptionsForUpdate;
-}
+};
 /**
  * The workflows that use this status. Only available if the `workflowUsages` expand is requested.
  */
@@ -15351,7 +15354,7 @@ export type WorkflowUsages = {
    * Workflow name.
    */
   workflowName?: string;
-}
+};
 /**
  * The details about a workflow validation error.
  */
@@ -15376,7 +15379,7 @@ export type WorkflowValidationError = {
    * The type of element the error or warning references.
    */
   type?: string;
-}
+};
 /**
  * MODEL WorkflowValidationErrorList
  */
@@ -15385,7 +15388,7 @@ export type WorkflowValidationErrorList = {
    * The list of validation errors.
    */
   errors?: Array<WorkflowValidationError>;
-}
+};
 /**
  * Details of workflows and their transition rules to delete.
  */
@@ -15394,7 +15397,7 @@ export type WorkflowsWithTransitionRulesDetails = {
    * The list of workflows with transition rules to delete.
    */
   workflows: Array<WorkflowTransitionRulesDetails>;
-}
+};
 /**
  * Details of a worklog.
  * accept additional properties
@@ -15403,7 +15406,7 @@ export type Worklog = {
   /**
    * Details of the user who created the worklog.
    */
-  author: UserDetails;
+  author?: UserDetails;
   /**
    * A comment about the worklog in [Atlassian Document Format](https://developer.atlassian.com/cloud/jira/platform/apis/document/structure/). Optional when creating or updating a worklog.
    */
@@ -15412,15 +15415,15 @@ export type Worklog = {
    * The datetime on which the worklog was created.
    * @format: "date-time"
    */
-  created: string;
+  created?: string;
   /**
    * The ID of the worklog record.
    */
-  id: string;
+  id?: string;
   /**
    * The ID of the issue this worklog is for.
    */
-  issueId: string;
+  issueId?: string;
   /**
    * Details of properties for the worklog. Optional when creating or updating a worklog.
    */
@@ -15429,7 +15432,7 @@ export type Worklog = {
    * The URL of the worklog item.
    * @format: "uri"
    */
-  self: string;
+  self?: string;
   /**
    * The datetime on which the worklog effort was started. Required when creating a worklog. Optional when updating a worklog.
    * @format: "date-time"
@@ -15447,17 +15450,17 @@ export type Worklog = {
   /**
    * Details of the user who last updated the worklog.
    */
-  updateAuthor: UserDetails;
+  updateAuthor?: UserDetails;
   /**
    * The datetime on which the worklog was last updated.
    * @format: "date-time"
    */
-  updated: string;
+  updated?: string;
   /**
    * Details about any restrictions in the visibility of the worklog. Optional when creating or updating a worklog.
    */
   visibility?: Visibility;
-} & Record<string, any>
+} & Record<string, any>;
 /**
  * MODEL WorklogIdsRequestBean
  */
@@ -15466,7 +15469,7 @@ export type WorklogIdsRequestBean = {
    * A list of worklog IDs.
    */
   ids: string[];
-}
+};
 /**
  * Details about data policy.
  */
@@ -15474,8 +15477,8 @@ export type WorkspaceDataPolicy = {
   /**
    * Whether the workspace contains any content inaccessible to the requesting application.
    */
-  anyContentBlocked: boolean;
-}
+  anyContentBlocked?: boolean;
+};
 /**
  * Can contain multiple field values of following types depending on `type` key
  */
@@ -15487,7 +15490,7 @@ export type fields = {
   retain?: boolean;
   type?: string;
   value?: Record<string, unknown>;
-}
+};
 /**
  * Field mapping for mandatory fields in target
  */
@@ -15496,7 +15499,7 @@ export type targetMandatoryFields = {
    * Contains the value of mandatory fields
    */
   fields: Record<string, unknown>;
-}
+};
 /**
  * Status mapping for statuses in source workflow to respective target status in target workflow.
  */
@@ -15505,7 +15508,7 @@ export type targetStatus = {
    * An object with the key as the ID of the target status and value with the list of the IDs of the current source statuses.
    */
   statuses: Record<string, unknown>;
-}
+};
 /**
  * An object representing the mapping of issues and data related to destination entities, like fields and statuses, that are required during a bulk move.
  */
@@ -15558,7 +15561,7 @@ export type targetToSourcesMapping = {
    * **You should only define this property when `inferStatusDefaults` is `false`.**
    */
   targetStatus?: Array<targetStatus>;
-}
+};
 
 export interface AtlassianV3 {
   /* Endpoint path: /rest/api */
@@ -15591,7 +15594,9 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the user does not have the necessary permission.
          */
-        $put(body: AnnouncementBannerConfigurationUpdate): Promise<unknown /* other */>;
+        $put(
+          body: AnnouncementBannerConfigurationUpdate,
+        ): Promise<unknown /* other */>;
         /**
          * Controle cache
          */
@@ -15617,7 +15622,9 @@ export interface AtlassianV3 {
              * 403: Returned if the request is not authenticated as the app that provided all the fields.
              * 404: Returned if any field is not found.
              */
-            $post(body: MultipleCustomFieldValuesUpdateDetails): Promise<unknown /* other */>;
+            $post(
+              body: MultipleCustomFieldValuesUpdateDetails,
+            ): Promise<unknown /* other */>;
           };
           /* Endpoint path: /rest/api/3/app/field/{fieldIdOrKey} */
           "$"(fieldIdOrKey: string): {
@@ -15647,7 +15654,15 @@ export interface AtlassianV3 {
                  * 403: Returned if the user is not a Jira admin or the request is not authenticated as from the app that provided the field.
                  * 404: Returned if the custom field is not found.
                  */
-                $get(args?: {id?: Array<number>, fieldContextId?: Array<number>, issueId?: number, projectKeyOrId?: string, issueTypeId?: string, startAt?: number, maxResults?: number}): Promise<PageBeanContextualConfiguration>;
+                $get(args?: {
+                  id?: Array<number>;
+                  fieldContextId?: Array<number>;
+                  issueId?: number;
+                  projectKeyOrId?: string;
+                  issueTypeId?: string;
+                  startAt?: number;
+                  maxResults?: number;
+                }): Promise<PageBeanContextualConfiguration>;
                 /**
                  * Method: put /rest/api/3/app/field/{fieldIdOrKey}/context/configuration
                  * operationId: updateCustomFieldConfiguration
@@ -15661,7 +15676,9 @@ export interface AtlassianV3 {
                  * 403: Returned if the user is not a Jira admin or the request is not authenticated as from the app that provided the field.
                  * 404: Returned if the custom field is not found.
                  */
-                $put(body: CustomFieldConfigurations): Promise<unknown /* other */>;
+                $put(
+                  body: CustomFieldConfigurations,
+                ): Promise<unknown /* other */>;
                 /**
                  * Controle cache
                  */
@@ -15684,7 +15701,9 @@ export interface AtlassianV3 {
                * 403: Returned if the request is not authenticated as the app that provided the field.
                * 404: Returned if the field is not found.
                */
-              $put(body: CustomFieldValueUpdateDetails): Promise<unknown /* other */>;
+              $put(
+                body: CustomFieldValueUpdateDetails,
+              ): Promise<unknown /* other */>;
             };
           };
         };
@@ -15704,7 +15723,11 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 404: Returned if the application property is not found or the user does not have permission to view it.
          */
-        $get(args?: {key?: string, permissionLevel?: string, keyFilter?: string}): Promise<Array<ApplicationProperty>>;
+        $get(args?: {
+          key?: string;
+          permissionLevel?: string;
+          keyFilter?: string;
+        }): Promise<Array<ApplicationProperty>>;
         /**
          * Controle cache
          */
@@ -15752,7 +15775,6 @@ export interface AtlassianV3 {
            * | `jira.comment.collapsing.minimum.hidden` | The minimum number of comments required for comment collapsing to occur. A value of `0` disables comment collapsing. | `4` |
            * | `jira.newsletter.tip.delay.days` | The number of days before a prompt to sign up to the Jira Insiders newsletter is shown. A value of `-1` disables this feature. | `7` |
            *
-           *
            * #### Look and feel ####
            *
            * The settings listed below adjust the [look and feel](https://confluence.atlassian.com/x/VwCLLg).
@@ -15775,13 +15797,11 @@ export interface AtlassianV3 {
            * | `jira.option.globalsharing` | Whether filters and dashboards can be shared with anyone signed into Jira. | `true` |
            * | `xflow.product.suggestions.enabled` | Whether to expose product suggestions for other Atlassian products within Jira. | `true` |
            *
-           *
            * #### Other settings ####
            *
            * | Key | Description | Default value |
            * | -- | -- | -- |
            * | `jira.issuenav.criteria.autoupdate` | Whether instant updates to search criteria is active. | `true` |
-           *
            *
            * *Note: Be careful when changing [application properties and advanced settings](https://confluence.atlassian.com/x/vYXKM).*
            *
@@ -15792,7 +15812,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have permission to edit the property.
            * 404: Returned if the property is not found or the user does not have permission to view it.
            */
-          $put(body: SimpleApplicationPropertyBean): Promise<ApplicationProperty>;
+          $put(
+            body: SimpleApplicationPropertyBean,
+          ): Promise<ApplicationProperty>;
         };
       };
       /* Endpoint path: /rest/api/3/applicationrole */
@@ -15866,7 +15888,9 @@ export interface AtlassianV3 {
              *  *  attachments are disabled in the Jira settings.
              * 416: Returned if the server is unable to satisfy the range of bytes provided.
              */
-            $get(args?: {redirect?: boolean}): Promise<Array<unknown/* 105 */>>;
+            $get(args?: {
+              redirect?: boolean;
+            }): Promise<Array<unknown /* 105 */>>;
             /**
              * Controle cache
              */
@@ -15924,7 +15948,12 @@ export interface AtlassianV3 {
              *  *  attachments are disabled in the Jira settings.
              *  *  `fallbackToDefault` is `false` and the request thumbnail cannot be downloaded.
              */
-            $get(args?: {redirect?: boolean, fallbackToDefault?: boolean, width?: number, height?: number}): Promise<Array<unknown/* 105 */>>;
+            $get(args?: {
+              redirect?: boolean;
+              fallbackToDefault?: boolean;
+              width?: number;
+              height?: number;
+            }): Promise<Array<unknown /* 105 */>>;
             /**
              * Controle cache
              */
@@ -16079,7 +16108,13 @@ export interface AtlassianV3 {
            *  *  the user does not have the required permissions.
            *  *  all Jira products are on free plans. Audit logs are available when at least one Jira product is on a paid plan.
            */
-          $get(args?: {offset?: number, limit?: number, filter?: string, from?: string, to?: string}): Promise<AuditRecords>;
+          $get(args?: {
+            offset?: number;
+            limit?: number;
+            filter?: string;
+            from?: string;
+            to?: string;
+          }): Promise<AuditRecords>;
           /**
            * Controle cache
            */
@@ -16137,7 +16172,12 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if no editable fields are found for the provided issue IDs.
              */
-            $get(args: {issueIdsOrKeys: string, searchText?: string, endingBefore?: string, startingAfter?: string}): Promise<BulkEditGetFields>;
+            $get(args: {
+              issueIdsOrKeys: string;
+              searchText?: string;
+              endingBefore?: string;
+              startingAfter?: string;
+            }): Promise<BulkEditGetFields>;
             /**
              * Method: post /rest/api/3/bulk/issues/fields
              * operationId: submitBulkEdit
@@ -16245,7 +16285,10 @@ export interface AtlassianV3 {
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
          */
-        $get(args?: {status?: Array<string>, orderBy?: string}): Promise<DataClassificationLevelsBean>;
+        $get(args?: {
+          status?: Array<string>;
+          orderBy?: string;
+        }): Promise<DataClassificationLevelsBean>;
         /**
          * Controle cache
          */
@@ -16387,7 +16430,13 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 404: Returned if the project is not found or the user does not have permission to view it.
          */
-        $get(args?: {projectIdsOrKeys?: Array<string>, startAt?: number, maxResults?: number, orderBy?: string, query?: string}): Promise<PageBean2ComponentJsonBean>;
+        $get(args?: {
+          projectIdsOrKeys?: Array<string>;
+          startAt?: number;
+          maxResults?: number;
+          orderBy?: string;
+          query?: string;
+        }): Promise<PageBean2ComponentJsonBean>;
         /**
          * Method: post /rest/api/3/component
          * operationId: createComponent
@@ -16448,7 +16497,9 @@ export interface AtlassianV3 {
            *  *  the replacement component is not found.
            *  *  the user does not have permission to browse the project containing the component.
            */
-          $delete(args?: {moveIssuesTo?: string}): Promise<unknown /* no content */>;
+          $delete(args?: {
+            moveIssuesTo?: string;
+          }): Promise<unknown /* no content */>;
           /**
            * Method: put /rest/api/3/component/{id}
            * operationId: updateComponent
@@ -16595,7 +16646,9 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if the user does not have the necessary permission.
              */
-            $put(body: TimeTrackingConfiguration): Promise<TimeTrackingConfiguration>;
+            $put(
+              body: TimeTrackingConfiguration,
+            ): Promise<TimeTrackingConfiguration>;
             /**
              * Controle cache
              */
@@ -16650,7 +16703,11 @@ export interface AtlassianV3 {
          * 400: Returned if the request is invalid.
          * 401: Returned if the authentication credentials are incorrect or missing.
          */
-        $get(args?: {filter?: string, startAt?: number, maxResults?: number}): Promise<PageOfDashboards>;
+        $get(args?: {
+          filter?: string;
+          startAt?: number;
+          maxResults?: number;
+        }): Promise<PageOfDashboards>;
         /**
          * Method: post /rest/api/3/dashboard
          * operationId: createDashboard
@@ -16684,7 +16741,9 @@ export interface AtlassianV3 {
              * 400: Returned if the request is not valid.
              * 401: Returned if the authentication credentials are incorrect or missing.
              */
-            $put(body: BulkEditShareableEntityRequest): Promise<BulkEditShareableEntityResponse>;
+            $put(
+              body: BulkEditShareableEntityRequest,
+            ): Promise<BulkEditShareableEntityResponse>;
           };
         };
         /* Endpoint path: /rest/api/3/dashboard/gadgets */
@@ -16732,7 +16791,19 @@ export interface AtlassianV3 {
            *  *  `groupname` and `groupId` are provided.
            * 401: 401 response
            */
-          $get(args?: {dashboardName?: string, accountId?: string, owner?: string, groupname?: string, groupId?: string, projectId?: number, orderBy?: string, startAt?: number, maxResults?: number, status?: string, expand?: string}): Promise<PageBeanDashboard>;
+          $get(args?: {
+            dashboardName?: string;
+            accountId?: string;
+            owner?: string;
+            groupname?: string;
+            groupId?: string;
+            projectId?: number;
+            orderBy?: string;
+            startAt?: number;
+            maxResults?: number;
+            status?: string;
+            expand?: string;
+          }): Promise<PageBeanDashboard>;
           /**
            * Controle cache
            */
@@ -16762,7 +16833,11 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect.
              * 404: Returned if the dashboard is not found.
              */
-            $get(args?: {moduleKey?: Array<string>, uri?: Array<string>, gadgetId?: Array<number>}): Promise<DashboardGadgetResponse>;
+            $get(args?: {
+              moduleKey?: Array<string>;
+              uri?: Array<string>;
+              gadgetId?: Array<number>;
+            }): Promise<DashboardGadgetResponse>;
             /**
              * Method: post /rest/api/3/dashboard/{dashboardId}/gadget
              * operationId: addGadget
@@ -16808,7 +16883,9 @@ export interface AtlassianV3 {
                * 401: Returned if the authentication credentials are incorrect.
                * 404: Returned if the gadget or the dashboard is not found.
                */
-              $put(body: DashboardGadgetUpdateRequest): Promise<unknown /* other */>;
+              $put(
+                body: DashboardGadgetUpdateRequest,
+              ): Promise<unknown /* other */>;
             };
           };
           /* Endpoint path: /rest/api/3/dashboard/{dashboardId}/items */
@@ -17014,7 +17091,7 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the client is not authorized to make the request.
            */
-          $get(args?: {ids?: string}): Promise<ProjectDataPolicies>;
+          $get(args?: { ids?: string }): Promise<ProjectDataPolicies>;
           /**
            * Controle cache
            */
@@ -17060,7 +17137,9 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: 404 response
            */
-          $post(body: JiraExpressionForAnalysis): Promise<JiraExpressionsAnalysis>;
+          $post(
+            body: JiraExpressionForAnalysis,
+          ): Promise<JiraExpressionsAnalysis>;
         };
         /* Endpoint path: /rest/api/3/expression/eval */
         eval: {
@@ -17108,7 +17187,9 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if any object provided in the request context is not found or the user does not have permission to view it.
            */
-          $post(body: JiraExpressionEvalRequestBean): Promise<JiraExpressionResult>;
+          $post(
+            body: JiraExpressionEvalRequestBean,
+          ): Promise<JiraExpressionResult>;
         };
       };
       /* Endpoint path: /rest/api/3/field */
@@ -17170,7 +17251,15 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the necessary permission.
            */
-          $get(args?: {startAt?: number, maxResults?: number, type?: Array<string>, id?: Array<string>, query?: string, orderBy?: string, expand?: string}): Promise<PageBeanField>;
+          $get(args?: {
+            startAt?: number;
+            maxResults?: number;
+            type?: Array<string>;
+            id?: Array<string>;
+            query?: string;
+            orderBy?: string;
+            expand?: string;
+          }): Promise<PageBeanField>;
           /**
            * Controle cache
            */
@@ -17191,7 +17280,14 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if the user does not have the necessary permission.
              */
-            $get(args?: {startAt?: number, maxResults?: number, id?: Array<string>, query?: string, expand?: string, orderBy?: string}): Promise<PageBeanField>;
+            $get(args?: {
+              startAt?: number;
+              maxResults?: number;
+              id?: Array<string>;
+              query?: string;
+              expand?: string;
+              orderBy?: string;
+            }): Promise<PageBeanField>;
             /**
              * Controle cache
              */
@@ -17233,7 +17329,13 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the required permissions.
              * 404: Returned if the custom field was not found.
              */
-            $get(args?: {isAnyIssueType?: boolean, isGlobalContext?: boolean, contextId?: Array<number>, startAt?: number, maxResults?: number}): Promise<PageBeanCustomFieldContext>;
+            $get(args?: {
+              isAnyIssueType?: boolean;
+              isGlobalContext?: boolean;
+              contextId?: Array<number>;
+              startAt?: number;
+              maxResults?: number;
+            }): Promise<PageBeanCustomFieldContext>;
             /**
              * Method: post /rest/api/3/field/{fieldId}/context
              * operationId: createCustomFieldContext
@@ -17249,7 +17351,9 @@ export interface AtlassianV3 {
              * 404: Returned if the field, project, or issue type is not found.
              * 409: Returned if the issue type is a sub-task, but sub-tasks are disabled in Jira settings.
              */
-            $post(body: CreateCustomFieldContext): Promise<CreateCustomFieldContext>;
+            $post(
+              body: CreateCustomFieldContext,
+            ): Promise<CreateCustomFieldContext>;
             /**
              * Controle cache
              */
@@ -17300,7 +17404,11 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the required permissions.
                * 404: Returned if the custom field is not found.
                */
-              $get(args?: {contextId?: Array<number>, startAt?: number, maxResults?: number}): Promise<PageBeanCustomFieldContextDefaultValue>;
+              $get(args?: {
+                contextId?: Array<number>;
+                startAt?: number;
+                maxResults?: number;
+              }): Promise<PageBeanCustomFieldContextDefaultValue>;
               /**
                * Method: put /rest/api/3/field/{fieldId}/context/defaultValue
                * operationId: setDefaultValues
@@ -17347,7 +17455,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the required permissions.
                * 404: Returned if the custom field, a context, an option, or a cascading option is not found.
                */
-              $put(body: CustomFieldContextDefaultValueUpdate): Promise<unknown /* other */>;
+              $put(
+                body: CustomFieldContextDefaultValueUpdate,
+              ): Promise<unknown /* other */>;
               /**
                * Controle cache
                */
@@ -17366,7 +17476,11 @@ export interface AtlassianV3 {
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 403: Returned if the user does not have the required permissions.
                */
-              $get(args?: {contextId?: Array<number>, startAt?: number, maxResults?: number}): Promise<PageBeanIssueTypeToContextMapping>;
+              $get(args?: {
+                contextId?: Array<number>;
+                startAt?: number;
+                maxResults?: number;
+              }): Promise<PageBeanIssueTypeToContextMapping>;
               /**
                * Controle cache
                */
@@ -17393,7 +17507,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the required permissions.
                * 404: Returned if the custom field, project, or issue type is not found.
                */
-              $post(body: ProjectIssueTypeMappings): Promise<PageBeanContextForProjectAndIssueType>;
+              $post(
+                body: ProjectIssueTypeMappings,
+              ): Promise<PageBeanContextForProjectAndIssueType>;
             };
             /* Endpoint path: /rest/api/3/field/{fieldId}/context/projectmapping */
             projectmapping: {
@@ -17409,7 +17525,11 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the required permissions.
                * 404: Returned if the custom field is not found.
                */
-              $get(args?: {contextId?: Array<number>, startAt?: number, maxResults?: number}): Promise<PageBeanCustomFieldContextProjectMapping>;
+              $get(args?: {
+                contextId?: Array<number>;
+                startAt?: number;
+                maxResults?: number;
+              }): Promise<PageBeanCustomFieldContextProjectMapping>;
               /**
                * Controle cache
                */
@@ -17444,7 +17564,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the required permissions.
                * 404: Returned if the custom field or the context is not found.
                */
-              $put(body: CustomFieldContextUpdateDetails): Promise<unknown /* other */>;
+              $put(
+                body: CustomFieldContextUpdateDetails,
+              ): Promise<unknown /* other */>;
               /* Endpoint path: /rest/api/3/field/{fieldId}/context/{contextId}/issuetype */
               issuetype: {
                 /**
@@ -17503,7 +17625,12 @@ export interface AtlassianV3 {
                  * 403: Returned if the user does not have the necessary permission.
                  * 404: Returned if the custom field is not found or the context doesn't match the custom field.
                  */
-                $get(args?: {optionId?: number, onlyOptions?: boolean, startAt?: number, maxResults?: number}): Promise<PageBeanCustomFieldContextOption>;
+                $get(args?: {
+                  optionId?: number;
+                  onlyOptions?: boolean;
+                  startAt?: number;
+                  maxResults?: number;
+                }): Promise<PageBeanCustomFieldContextOption>;
                 /**
                  * Method: post /rest/api/3/field/{fieldId}/context/{contextId}/option
                  * operationId: createCustomFieldOption
@@ -17521,7 +17648,9 @@ export interface AtlassianV3 {
                  * 403: Returned if the user does not have the necessary permission.
                  * 404: Returned if the custom field is not found or the context doesn't match the custom field.
                  */
-                $post(body: BulkCustomFieldOptionCreateRequest): Promise<CustomFieldCreatedContextOptionsList>;
+                $post(
+                  body: BulkCustomFieldOptionCreateRequest,
+                ): Promise<CustomFieldCreatedContextOptionsList>;
                 /**
                  * Method: put /rest/api/3/field/{fieldId}/context/{contextId}/option
                  * operationId: updateCustomFieldOption
@@ -17539,7 +17668,9 @@ export interface AtlassianV3 {
                  * 403: Returned if the user does not have the necessary permission.
                  * 404: Returned if the field, context, or one or more options is not found.
                  */
-                $put(body: BulkCustomFieldOptionUpdateRequest): Promise<CustomFieldUpdatedContextOptionsList>;
+                $put(
+                  body: BulkCustomFieldOptionUpdateRequest,
+                ): Promise<CustomFieldUpdatedContextOptionsList>;
                 /**
                  * Controle cache
                  */
@@ -17561,7 +17692,9 @@ export interface AtlassianV3 {
                    * 403: Returned if the user does not have the necessary permission.
                    * 404: Returned if the field, the context, or one or more of the options is not found..
                    */
-                  $put(body: OrderOfCustomFieldOptions): Promise<unknown /* other */>;
+                  $put(
+                    body: OrderOfCustomFieldOptions,
+                  ): Promise<unknown /* other */>;
                 };
                 /* Endpoint path: /rest/api/3/field/{fieldId}/context/{contextId}/option/{optionId} */
                 "$"(optionId: string): {
@@ -17599,7 +17732,10 @@ export interface AtlassianV3 {
                      * 403: Returned if the user does not have the necessary permission.
                      * 404: Returned if the field is not found or does not support options, or the options to be replaced are not found.
                      */
-                    $delete(args?: {replaceWith?: number, jql?: string}): Promise<void>;
+                    $delete(args?: {
+                      replaceWith?: number;
+                      jql?: string;
+                    }): Promise<void>;
                   };
                 };
               };
@@ -17658,7 +17794,10 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if the user does not have the necessary permission.
              */
-            $get(args?: {startAt?: number, maxResults?: number}): Promise<PageBeanContext>;
+            $get(args?: {
+              startAt?: number;
+              maxResults?: number;
+            }): Promise<PageBeanContext>;
             /**
              * Controle cache
              */
@@ -17677,7 +17816,11 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if the user does not have the necessary permission.
              */
-            $get(args?: {startAt?: number, maxResults?: number, expand?: string}): Promise<PageBeanScreenWithTab>;
+            $get(args?: {
+              startAt?: number;
+              maxResults?: number;
+              expand?: string;
+            }): Promise<PageBeanScreenWithTab>;
             /**
              * Controle cache
              */
@@ -17701,7 +17844,10 @@ export interface AtlassianV3 {
              * 400: Returned if the field is not found or does not support options.
              * 403: Returned if the request is not authenticated as a Jira administrator or the app that provided the field.
              */
-            $get(args?: {startAt?: number, maxResults?: number}): Promise<PageBeanIssueFieldOption>;
+            $get(args?: {
+              startAt?: number;
+              maxResults?: number;
+            }): Promise<PageBeanIssueFieldOption>;
             /**
              * Method: post /rest/api/3/field/{fieldKey}/option
              * operationId: createIssueFieldOption
@@ -17740,7 +17886,11 @@ export interface AtlassianV3 {
                  * 401: Returned if the authentication credentials are incorrect or missing.
                  * 404: Returned if the field is not found or does not support options.
                  */
-                $get(args?: {startAt?: number, maxResults?: number, projectId?: number}): Promise<PageBeanIssueFieldOption>;
+                $get(args?: {
+                  startAt?: number;
+                  maxResults?: number;
+                  projectId?: number;
+                }): Promise<PageBeanIssueFieldOption>;
                 /**
                  * Controle cache
                  */
@@ -17761,7 +17911,11 @@ export interface AtlassianV3 {
                  * 401: Returned if the authentication credentials are incorrect or missing.
                  * 404: Returned if the field is not found or does not support options.
                  */
-                $get(args?: {startAt?: number, maxResults?: number, projectId?: number}): Promise<PageBeanIssueFieldOption>;
+                $get(args?: {
+                  startAt?: number;
+                  maxResults?: number;
+                  projectId?: number;
+                }): Promise<PageBeanIssueFieldOption>;
                 /**
                  * Controle cache
                  */
@@ -17839,7 +17993,12 @@ export interface AtlassianV3 {
                  * 403: Returned if the user does not have the necessary permission.
                  * 404: Returned if the field is not found or does not support options, or the options to be replaced are not found.
                  */
-                $delete(args?: {replaceWith?: number, jql?: string, overrideScreenSecurity?: boolean, overrideEditableFlag?: boolean}): Promise<void>;
+                $delete(args?: {
+                  replaceWith?: number;
+                  jql?: string;
+                  overrideScreenSecurity?: boolean;
+                  overrideEditableFlag?: boolean;
+                }): Promise<void>;
               };
             };
           };
@@ -17922,7 +18081,13 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the user does not have the necessary permission.
          */
-        $get(args?: {startAt?: number, maxResults?: number, id?: Array<number>, isDefault?: boolean, query?: string}): Promise<PageBeanFieldConfigurationDetails>;
+        $get(args?: {
+          startAt?: number;
+          maxResults?: number;
+          id?: Array<number>;
+          isDefault?: boolean;
+          query?: string;
+        }): Promise<PageBeanFieldConfigurationDetails>;
         /**
          * Method: post /rest/api/3/fieldconfiguration
          * operationId: createFieldConfiguration
@@ -17992,7 +18157,10 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if the field configuration is not found.
              */
-            $get(args?: {startAt?: number, maxResults?: number}): Promise<PageBeanFieldConfigurationItem>;
+            $get(args?: {
+              startAt?: number;
+              maxResults?: number;
+            }): Promise<PageBeanFieldConfigurationItem>;
             /**
              * Method: put /rest/api/3/fieldconfiguration/{id}/fields
              * operationId: updateFieldConfigurationItems
@@ -18010,7 +18178,9 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if the field configuration is not found.
              */
-            $put(body: FieldConfigurationItemsDetails): Promise<unknown /* other */>;
+            $put(
+              body: FieldConfigurationItemsDetails,
+            ): Promise<unknown /* other */>;
             /**
              * Controle cache
              */
@@ -18034,7 +18204,11 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the user does not have the necessary permissions.
          */
-        $get(args?: {startAt?: number, maxResults?: number, id?: Array<number>}): Promise<PageBeanFieldConfigurationScheme>;
+        $get(args?: {
+          startAt?: number;
+          maxResults?: number;
+          id?: Array<number>;
+        }): Promise<PageBeanFieldConfigurationScheme>;
         /**
          * Method: post /rest/api/3/fieldconfigurationscheme
          * operationId: createFieldConfigurationScheme
@@ -18049,7 +18223,9 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the user does not have the necessary permissions.
          */
-        $post(body: UpdateFieldConfigurationSchemeDetails): Promise<FieldConfigurationScheme>;
+        $post(
+          body: UpdateFieldConfigurationSchemeDetails,
+        ): Promise<FieldConfigurationScheme>;
         /**
          * Controle cache
          */
@@ -18071,7 +18247,11 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permission.
            * 404: Returned if no field configuration schemes are found.
            */
-          $get(args?: {startAt?: number, maxResults?: number, fieldConfigurationSchemeId?: Array<number>}): Promise<PageBeanFieldConfigurationIssueTypeItem>;
+          $get(args?: {
+            startAt?: number;
+            maxResults?: number;
+            fieldConfigurationSchemeId?: Array<number>;
+          }): Promise<PageBeanFieldConfigurationIssueTypeItem>;
           /**
            * Controle cache
            */
@@ -18095,7 +18275,11 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the necessary permission.
            */
-          $get(args: {startAt?: number, maxResults?: number, projectId: Array<number>}): Promise<PageBeanFieldConfigurationSchemeProjects>;
+          $get(args: {
+            startAt?: number;
+            maxResults?: number;
+            projectId: Array<number>;
+          }): Promise<PageBeanFieldConfigurationSchemeProjects>;
           /**
            * Method: put /rest/api/3/fieldconfigurationscheme/project
            * operationId: assignFieldConfigurationSchemeToProject
@@ -18111,7 +18295,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permissions.
            * 404: Returned if the project is missing.
            */
-          $put(body: FieldConfigurationSchemeProjectAssociation): Promise<unknown /* other */>;
+          $put(
+            body: FieldConfigurationSchemeProjectAssociation,
+          ): Promise<unknown /* other */>;
           /**
            * Controle cache
            */
@@ -18150,7 +18336,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permissions.
            * 404: Returned if the field configuration scheme is not found.
            */
-          $put(body: UpdateFieldConfigurationSchemeDetails): Promise<unknown /* other */>;
+          $put(
+            body: UpdateFieldConfigurationSchemeDetails,
+          ): Promise<unknown /* other */>;
           /* Endpoint path: /rest/api/3/fieldconfigurationscheme/{id}/mapping */
           mapping: {
             /**
@@ -18168,7 +18356,9 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if the field configuration scheme, the field configuration, or the issue type is not found.
              */
-            $put(body: AssociateFieldConfigurationsWithIssueTypesRequest): Promise<unknown /* other */>;
+            $put(
+              body: AssociateFieldConfigurationsWithIssueTypesRequest,
+            ): Promise<unknown /* other */>;
             /* Endpoint path: /rest/api/3/fieldconfigurationscheme/{id}/mapping/delete */
             delete: {
               /**
@@ -18257,7 +18447,7 @@ export interface AtlassianV3 {
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {expand?: string}): Promise<Array<Filter>>;
+          $get(args?: { expand?: string }): Promise<Array<Filter>>;
           /**
            * Controle cache
            */
@@ -18283,7 +18473,10 @@ export interface AtlassianV3 {
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {expand?: string, includeFavourites?: boolean}): Promise<Array<Filter>>;
+          $get(args?: {
+            expand?: string;
+            includeFavourites?: boolean;
+          }): Promise<Array<Filter>>;
           /**
            * Controle cache
            */
@@ -18318,7 +18511,20 @@ export interface AtlassianV3 {
            *  *  `id` identifies more than 200 filter IDs.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {filterName?: string, accountId?: string, owner?: string, groupname?: string, groupId?: string, projectId?: number, id?: Array<number>, orderBy?: string, startAt?: number, maxResults?: number, expand?: string, overrideSharePermissions?: boolean}): Promise<PageBeanFilterDetails>;
+          $get(args?: {
+            filterName?: string;
+            accountId?: string;
+            owner?: string;
+            groupname?: string;
+            groupId?: string;
+            projectId?: number;
+            id?: Array<number>;
+            orderBy?: string;
+            startAt?: number;
+            maxResults?: number;
+            expand?: string;
+            overrideSharePermissions?: boolean;
+          }): Promise<PageBeanFilterDetails>;
           /**
            * Controle cache
            */
@@ -18345,7 +18551,10 @@ export interface AtlassianV3 {
            * 400: Returned if the filter is not found or the user does not have permission to view it.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {expand?: string, overrideSharePermissions?: boolean}): Promise<Filter>;
+          $get(args?: {
+            expand?: string;
+            overrideSharePermissions?: boolean;
+          }): Promise<Filter>;
           /**
            * Method: delete /rest/api/3/filter/{id}
            * operationId: deleteFilter
@@ -18463,7 +18672,7 @@ export interface AtlassianV3 {
              *  *  the filter is not found.
              *  *  the user does not have permission to view the filter.
              */
-            $delete(args?: {expand?: string}): Promise<Filter>;
+            $delete(args?: { expand?: string }): Promise<Filter>;
             /**
              * Method: put /rest/api/3/filter/{id}/favourite
              * operationId: setFavouriteForFilter
@@ -18550,7 +18759,9 @@ export interface AtlassianV3 {
              *  *  the filter is not found.
              *  *  the user does not have permission to view the filter.
              */
-            $post(body: SharePermissionInputBean): Promise<Array<SharePermission>>;
+            $post(
+              body: SharePermissionInputBean,
+            ): Promise<Array<SharePermission>>;
             /**
              * Controle cache
              */
@@ -18624,7 +18835,11 @@ export interface AtlassianV3 {
          * 403: Returned if the calling user does not have the Administer Jira global permission.
          * 404: Returned if the group is not found.
          */
-        $get(args?: {groupname?: string, groupId?: string, expand?: string}): Promise<Group>;
+        $get(args?: {
+          groupname?: string;
+          groupId?: string;
+          expand?: string;
+        }): Promise<Group>;
         /**
          * Method: delete /rest/api/3/group
          * operationId: removeGroup
@@ -18638,7 +18853,12 @@ export interface AtlassianV3 {
          * 403: Returned if the user does not have the necessary permission.
          * 404: Returned if the group is not found.
          */
-        $delete(args?: {groupname?: string, groupId?: string, swapGroup?: string, swapGroupId?: string}): Promise<unknown /* no content */>;
+        $delete(args?: {
+          groupname?: string;
+          groupId?: string;
+          swapGroup?: string;
+          swapGroupId?: string;
+        }): Promise<unknown /* no content */>;
         /**
          * Method: post /rest/api/3/group
          * operationId: createGroup
@@ -18671,7 +18891,14 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permission.
            * 500: Returned if the group with the given access level can't be retrieved.
            */
-          $get(args?: {startAt?: number, maxResults?: number, groupId?: Array<string>, groupName?: Array<string>, accessType?: string, applicationKey?: string}): Promise<PageBeanGroupDetails>;
+          $get(args?: {
+            startAt?: number;
+            maxResults?: number;
+            groupId?: Array<string>;
+            groupName?: Array<string>;
+            accessType?: string;
+            applicationKey?: string;
+          }): Promise<PageBeanGroupDetails>;
           /**
            * Controle cache
            */
@@ -18697,7 +18924,13 @@ export interface AtlassianV3 {
            * 403: Returned if the calling user does not have the Administer Jira global permission.
            * 404: Returned if the group is not found.
            */
-          $get(args?: {groupname?: string, groupId?: string, includeInactiveUsers?: boolean, startAt?: number, maxResults?: number}): Promise<PageBeanUserDetails>;
+          $get(args?: {
+            groupname?: string;
+            groupId?: string;
+            includeInactiveUsers?: boolean;
+            startAt?: number;
+            maxResults?: number;
+          }): Promise<PageBeanUserDetails>;
           /**
            * Controle cache
            */
@@ -18721,7 +18954,12 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permission.
            * 404: Returned if the group or user are not found.
            */
-          $delete(args: {groupname?: string, groupId?: string, username?: string, accountId: string}): Promise<unknown /* no content */>;
+          $delete(args: {
+            groupname?: string;
+            groupId?: string;
+            username?: string;
+            accountId: string;
+          }): Promise<unknown /* no content */>;
           /**
            * Method: post /rest/api/3/group/user
            * operationId: addUserToGroup
@@ -18762,7 +19000,15 @@ export interface AtlassianV3 {
            * *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg). Without this permission, calls where query is not an exact match to an existing group will return an empty list.
            * 200: Returned if the request is successful.
            */
-          $get(args?: {accountId?: string, query?: string, exclude?: Array<string>, excludeId?: Array<string>, maxResults?: number, caseInsensitive?: boolean, userName?: string}): Promise<FoundGroups>;
+          $get(args?: {
+            accountId?: string;
+            query?: string;
+            exclude?: Array<string>;
+            excludeId?: Array<string>;
+            maxResults?: number;
+            caseInsensitive?: boolean;
+            userName?: string;
+          }): Promise<FoundGroups>;
           /**
            * Controle cache
            */
@@ -18804,7 +19050,17 @@ export interface AtlassianV3 {
          * 403: Returned if the user does not have the necessary permission.
          * 429: Returned if the rate limit is exceeded. User search endpoints share a collective rate limit for the tenant, in addition to Jira's normal rate limiting you may receive a rate limit for user search. Please respect the Retry-After header.
          */
-        $get(args: {query: string, maxResults?: number, showAvatar?: boolean, fieldId?: string, projectId?: Array<string>, issueTypeId?: Array<string>, avatarSize?: string, caseInsensitive?: boolean, excludeConnectAddons?: boolean}): Promise<FoundUsersAndGroups>;
+        $get(args: {
+          query: string;
+          maxResults?: number;
+          showAvatar?: boolean;
+          fieldId?: string;
+          projectId?: Array<string>;
+          issueTypeId?: Array<string>;
+          avatarSize?: string;
+          caseInsensitive?: boolean;
+          excludeConnectAddons?: boolean;
+        }): Promise<FoundUsersAndGroups>;
         /**
          * Controle cache
          */
@@ -18887,8 +19143,6 @@ export interface AtlassianV3 {
            *
            * **Rate limiting:** Only a single request per jira instance can be active at any given time.
            *
-           *
-           *
            * 202: Returns the URL to check the status of the submitted request.
            * 400: Returned if no issues were archived due to a bad request, for example an invalid JQL query.
            * 401: Returned if no issues were archived because the provided authentication credentials are either missing or invalid.
@@ -18913,8 +19167,6 @@ export interface AtlassianV3 {
            *
            * **Signed-in users only:** This API can't be accessed anonymously.
            *
-           *
-           *
            * 200: Returned if there is at least one valid issue to archive in the request. The return message will include the count of archived issues and subtasks, as well as error details for issues which failed to get archived.
            * 400: Returned if none of the issues in the request can be archived. Possible reasons:
            *
@@ -18926,7 +19178,9 @@ export interface AtlassianV3 {
            * 403: Returned if no issues were archived because the user lacks the required Jira admin or site admin permissions.
            * 412: Returned if one or more issues were successfully archived, but the operation was incomplete because the number of issue IDs or keys provided exceeds 1000.
            */
-          $put(body: IssueArchivalSyncRequest): Promise<IssueArchivalSyncResponse>;
+          $put(
+            body: IssueArchivalSyncRequest,
+          ): Promise<IssueArchivalSyncResponse>;
         };
         /* Endpoint path: /rest/api/3/issue/bulk */
         bulk: {
@@ -18984,7 +19238,13 @@ export interface AtlassianV3 {
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {projectIds?: Array<string>, projectKeys?: Array<string>, issuetypeIds?: Array<string>, issuetypeNames?: Array<string>, expand?: string}): Promise<IssueCreateMetadata>;
+          $get(args?: {
+            projectIds?: Array<string>;
+            projectKeys?: Array<string>;
+            issuetypeIds?: Array<string>;
+            issuetypeNames?: Array<string>;
+            expand?: string;
+          }): Promise<IssueCreateMetadata>;
           /**
            * Controle cache
            */
@@ -19006,7 +19266,10 @@ export interface AtlassianV3 {
                * 400: Returned if the request is invalid.
                * 401: Returned if the authentication credentials are incorrect or missing.
                */
-              $get(args?: {startAt?: number, maxResults?: number}): Promise<PageOfCreateMetaIssueTypes>;
+              $get(args?: {
+                startAt?: number;
+                maxResults?: number;
+              }): Promise<PageOfCreateMetaIssueTypes>;
               /**
                * Controle cache
                */
@@ -19026,7 +19289,10 @@ export interface AtlassianV3 {
                  * 400: Returned if the request is invalid.
                  * 401: Returned if the authentication credentials are incorrect or missing.
                  */
-                $get(args?: {startAt?: number, maxResults?: number}): Promise<PageOfCreateMetaIssueTypeWithField>;
+                $get(args?: {
+                  startAt?: number;
+                  maxResults?: number;
+                }): Promise<PageOfCreateMetaIssueTypeWithField>;
                 /**
                  * Controle cache
                  */
@@ -19057,7 +19323,9 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if the user does not have permission to complete this request.
              */
-            $get(args?: {isReturningKeys?: boolean}): Promise<IssueLimitReportResponseBean>;
+            $get(args?: {
+              isReturningKeys?: boolean;
+            }): Promise<IssueLimitReportResponseBean>;
             /**
              * Controle cache
              */
@@ -19083,7 +19351,14 @@ export interface AtlassianV3 {
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {query?: string, currentJQL?: string, currentIssueKey?: string, currentProjectId?: string, showSubTasks?: boolean, showSubTaskParent?: boolean}): Promise<IssuePickerSuggestions>;
+          $get(args?: {
+            query?: string;
+            currentJQL?: string;
+            currentIssueKey?: string;
+            currentProjectId?: string;
+            showSubTasks?: boolean;
+            showSubTaskParent?: boolean;
+          }): Promise<IssuePickerSuggestions>;
           /**
            * Controle cache
            */
@@ -19137,7 +19412,9 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect.
              * 403: Return if the user does not have the necessary permission.
              */
-            $post(body: MultiIssueEntityProperties): Promise<unknown /* default */>;
+            $post(
+              body: MultiIssueEntityProperties,
+            ): Promise<unknown /* default */>;
           };
           /* Endpoint path: /rest/api/3/issue/properties/{propertyKey} */
           "$"(propertyKey: string): {
@@ -19210,7 +19487,9 @@ export interface AtlassianV3 {
              * 400: Returned if the request is invalid.
              * 401: Returned if the authentication credentials are incorrect or missing.
              */
-            $put(body: BulkIssuePropertyUpdateRequest): Promise<unknown /* default */>;
+            $put(
+              body: BulkIssuePropertyUpdateRequest,
+            ): Promise<unknown /* default */>;
           };
         };
         /* Endpoint path: /rest/api/3/issue/unarchive */
@@ -19232,8 +19511,6 @@ export interface AtlassianV3 {
            *
            * **Signed-in users only:** This API can't be accessed anonymously.
            *
-           *
-           *
            * 200: Returned if there is at least one valid issue to unarchive in the request. It will return the count of unarchived issues, which also includes the count of the subtasks unarchived, and it will show the detailed errors for those issues which are not unarchived.
            * 400: Returned if none of the issues in the request are eligible to be unarchived. Possible reasons:
            *
@@ -19244,7 +19521,9 @@ export interface AtlassianV3 {
            * 403: Returned if no issues were unarchived because the user lacks the required Jira admin or site admin permissions.
            * 412: Returned if one or more issues were successfully unarchived, but the operation was incomplete because the number of issue IDs or keys provided exceeds 1000.
            */
-          $put(body: IssueArchivalSyncRequest): Promise<IssueArchivalSyncResponse>;
+          $put(
+            body: IssueArchivalSyncRequest,
+          ): Promise<IssueArchivalSyncResponse>;
         };
         /* Endpoint path: /rest/api/3/issue/watching */
         watching: {
@@ -19285,7 +19564,14 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if the issue is not found or the user does not have permission to view it.
            */
-          $get(args?: {fields?: Array<string>, fieldsByKeys?: boolean, expand?: string, properties?: Array<string>, updateHistory?: boolean, failFast?: boolean}): Promise<IssueBean>;
+          $get(args?: {
+            fields?: Array<string>;
+            fieldsByKeys?: boolean;
+            expand?: string;
+            properties?: Array<string>;
+            updateHistory?: boolean;
+            failFast?: boolean;
+          }): Promise<IssueBean>;
           /**
            * Method: delete /rest/api/3/issue/{issueIdOrKey}
            * operationId: deleteIssue
@@ -19306,7 +19592,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have permission to delete the issue.
            * 404: Returned if the issue is not found or the user does not have permission to view the issue.
            */
-          $delete(args?: {deleteSubtasks?: string}): Promise<unknown /* no content */>;
+          $delete(args?: {
+            deleteSubtasks?: string;
+          }): Promise<unknown /* no content */>;
           /**
            * Method: put /rest/api/3/issue/{issueIdOrKey}
            * operationId: editIssue
@@ -19562,7 +19850,10 @@ export interface AtlassianV3 {
              * 200: Returned if the request is successful.
              * 404: Returned if the issue is not found or the user does not have permission to view it.
              */
-            $get(args?: {startAt?: number, maxResults?: number}): Promise<PageBeanChangelog>;
+            $get(args?: {
+              startAt?: number;
+              maxResults?: number;
+            }): Promise<PageBeanChangelog>;
             /**
              * Controle cache
              */
@@ -19608,7 +19899,12 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if the issue is not found or the user does not have permission to view it.
              */
-            $get(args?: {startAt?: number, maxResults?: number, orderBy?: string, expand?: string}): Promise<PageOfComments>;
+            $get(args?: {
+              startAt?: number;
+              maxResults?: number;
+              orderBy?: string;
+              expand?: string;
+            }): Promise<PageOfComments>;
             /**
              * Method: post /rest/api/3/issue/{issueIdOrKey}/comment
              * operationId: addComment
@@ -19654,7 +19950,7 @@ export interface AtlassianV3 {
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 404: Returned if the issue or comment is not found or the user does not have permission to view the issue or comment.
                */
-              $get(args?: {expand?: string}): Promise<Comment>;
+              $get(args?: { expand?: string }): Promise<Comment>;
               /**
                * Method: delete /rest/api/3/issue/{issueIdOrKey}/comment/{id}
                * operationId: deleteComment
@@ -19740,7 +20036,10 @@ export interface AtlassianV3 {
              * 403: Returned if the user uses an override parameter but doesn't have permission to do so.
              * 404: Returned if the issue is not found or the user does not have permission to view it.
              */
-            $get(args?: {overrideScreenSecurity?: boolean, overrideEditableFlag?: boolean}): Promise<IssueUpdateMetadata>;
+            $get(args?: {
+              overrideScreenSecurity?: boolean;
+              overrideEditableFlag?: boolean;
+            }): Promise<IssueUpdateMetadata>;
             /**
              * Controle cache
              */
@@ -19881,7 +20180,7 @@ export interface AtlassianV3 {
              * 404: Returned if the issue or remote issue link is not found or the user does not have permission to view the issue.
              * 413: Returned if the per-issue limit for remote links has been breached.
              */
-            $get(args?: {globalId?: string}): Promise<RemoteIssueLink>;
+            $get(args?: { globalId?: string }): Promise<RemoteIssueLink>;
             /**
              * Method: delete /rest/api/3/issue/{issueIdOrKey}/remotelink
              * operationId: deleteRemoteIssueLinkByGlobalId
@@ -19902,7 +20201,9 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have permission to link issues.
              * 404: Returned if the issue or remote issue link is not found or the user does not have permission to view the issue.
              */
-            $delete(args: {globalId: string}): Promise<unknown /* no content */>;
+            $delete(args: {
+              globalId: string;
+            }): Promise<unknown /* no content */>;
             /**
              * Method: post /rest/api/3/issue/{issueIdOrKey}/remotelink
              * operationId: createOrUpdateRemoteIssueLink
@@ -19926,7 +20227,9 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have permission to link issues.
              * 404: Returned if the issue is not found or the user does not have permission to view the issue.
              */
-            $post(body: RemoteIssueLinkRequest): Promise<RemoteIssueLinkIdentifies>;
+            $post(
+              body: RemoteIssueLinkRequest,
+            ): Promise<RemoteIssueLinkIdentifies>;
             /**
              * Controle cache
              */
@@ -20030,7 +20333,13 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if the issue is not found or the user does not have permission to view it.
              */
-            $get(args?: {expand?: string, transitionId?: string, skipRemoteOnlyCondition?: boolean, includeUnavailableTransitions?: boolean, sortByOpsBarAndStatus?: boolean}): Promise<Transitions>;
+            $get(args?: {
+              expand?: string;
+              transitionId?: string;
+              skipRemoteOnlyCondition?: boolean;
+              includeUnavailableTransitions?: boolean;
+              sortByOpsBarAndStatus?: boolean;
+            }): Promise<Transitions>;
             /**
              * Method: post /rest/api/3/issue/{issueIdOrKey}/transitions
              * operationId: doTransition
@@ -20186,7 +20495,10 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the permission to manage the watcher list.
              * 404: Returned if the issue or the user is not found or the user does not have permission to view the issue.
              */
-            $delete(args?: {username?: string, accountId?: string}): Promise<unknown /* no content */>;
+            $delete(args?: {
+              username?: string;
+              accountId?: string;
+            }): Promise<unknown /* no content */>;
             /**
              * Method: post /rest/api/3/issue/{issueIdOrKey}/watchers
              * operationId: addWatcher
@@ -20237,7 +20549,13 @@ export interface AtlassianV3 {
              *  *  `startAt` or `maxResults` has non-numeric values.
              *  *  time tracking is disabled.
              */
-            $get(args?: {startAt?: number, maxResults?: number, startedAfter?: number, startedBefore?: number, expand?: string}): Promise<PageOfWorklogs>;
+            $get(args?: {
+              startAt?: number;
+              maxResults?: number;
+              startedAfter?: number;
+              startedBefore?: number;
+              expand?: string;
+            }): Promise<PageOfWorklogs>;
             /**
              * Method: post /rest/api/3/issue/{issueIdOrKey}/worklog
              * operationId: addWorklog
@@ -20298,7 +20616,7 @@ export interface AtlassianV3 {
                *
                * .
                */
-              $get(args?: {expand?: string}): Promise<Worklog>;
+              $get(args?: { expand?: string }): Promise<Worklog>;
               /**
                * Method: delete /rest/api/3/issue/{issueIdOrKey}/worklog/{id}
                * operationId: deleteWorklog
@@ -20328,7 +20646,13 @@ export interface AtlassianV3 {
                *  *  the worklog is not found or the user does not have permission to view it.
                *  *  time tracking is disabled.
                */
-              $delete(args?: {notifyUsers?: boolean, adjustEstimate?: string, newEstimate?: string, increaseBy?: string, overrideEditableFlag?: boolean}): Promise<unknown /* no content */>;
+              $delete(args?: {
+                notifyUsers?: boolean;
+                adjustEstimate?: string;
+                newEstimate?: string;
+                increaseBy?: string;
+                overrideEditableFlag?: boolean;
+              }): Promise<unknown /* no content */>;
               /**
                * Method: put /rest/api/3/issue/{issueIdOrKey}/worklog/{id}
                * operationId: updateWorklog
@@ -20695,8 +21019,6 @@ export interface AtlassianV3 {
              *
              * **Rate limiting:** Only a single request can be active at any given time.
              *
-             *
-             *
              * 202: Returns the details of your export task. You can use the [get task](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-tasks/#api-rest-api-3-task-taskid-get) API to view the progress of your request.
              * 400: Returned when:
              *
@@ -20706,7 +21028,9 @@ export interface AtlassianV3 {
              * 403: Returned if no issues were unarchived because the user lacks the required Jira admin or site admin permissions.
              * 412: Returned if a request to export archived issues is already running.
              */
-            $put(body: ArchivedIssuesFilterRequest): Promise<ExportArchivedIssuesTaskProgressResponse>;
+            $put(
+              body: ArchivedIssuesFilterRequest,
+            ): Promise<ExportArchivedIssuesTaskProgressResponse>;
           };
         };
       };
@@ -20736,7 +21060,9 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the user doesn't have the necessary permission.
          */
-        $post(body: CreateIssueSecuritySchemeDetails): Promise<SecuritySchemeId>;
+        $post(
+          body: CreateIssueSecuritySchemeDetails,
+        ): Promise<SecuritySchemeId>;
         /**
          * Controle cache
          */
@@ -20759,7 +21085,13 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user doesn't have the necessary permission.
            */
-          $get(args?: {startAt?: string, maxResults?: string, id?: Array<string>, schemeId?: Array<string>, onlyDefault?: boolean}): Promise<PageBeanSecurityLevel>;
+          $get(args?: {
+            startAt?: string;
+            maxResults?: string;
+            id?: Array<string>;
+            schemeId?: Array<string>;
+            onlyDefault?: boolean;
+          }): Promise<PageBeanSecurityLevel>;
           /**
            * Controle cache
            */
@@ -20799,7 +21131,14 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if the user doesn't have the necessary permission.
              */
-            $get(args?: {startAt?: string, maxResults?: string, id?: Array<string>, schemeId?: Array<string>, levelId?: Array<string>, expand?: string}): Promise<PageBeanSecurityLevelMember>;
+            $get(args?: {
+              startAt?: string;
+              maxResults?: string;
+              id?: Array<string>;
+              schemeId?: Array<string>;
+              levelId?: Array<string>;
+              expand?: string;
+            }): Promise<PageBeanSecurityLevelMember>;
             /**
              * Controle cache
              */
@@ -20818,7 +21157,12 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user doesn't have the necessary permission.
            */
-          $get(args?: {startAt?: string, maxResults?: string, issueSecuritySchemeId?: Array<string>, projectId?: Array<string>}): Promise<PageBeanIssueSecuritySchemeToProjectMapping>;
+          $get(args?: {
+            startAt?: string;
+            maxResults?: string;
+            issueSecuritySchemeId?: Array<string>;
+            projectId?: Array<string>;
+          }): Promise<PageBeanIssueSecuritySchemeToProjectMapping>;
           /**
            * Method: put /rest/api/3/issuesecurityschemes/project
            * operationId: associateSchemesToProjects
@@ -20835,7 +21179,9 @@ export interface AtlassianV3 {
            * 404: Returned if the security scheme isn't found.
            * 409: Returned if a task to remove the issue security level is already running.
            */
-          $put(body: AssociateSecuritySchemeWithProjectDetails): Promise<unknown /* default */>;
+          $put(
+            body: AssociateSecuritySchemeWithProjectDetails,
+          ): Promise<unknown /* default */>;
           /**
            * Controle cache
            */
@@ -20858,7 +21204,12 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user doesn't have the necessary permission.
            */
-          $get(args?: {startAt?: string, maxResults?: string, id?: Array<string>, projectId?: Array<string>}): Promise<PageBeanSecuritySchemeWithProjects>;
+          $get(args?: {
+            startAt?: string;
+            maxResults?: string;
+            id?: Array<string>;
+            projectId?: Array<string>;
+          }): Promise<PageBeanSecuritySchemeWithProjects>;
           /**
            * Controle cache
            */
@@ -20894,7 +21245,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user doesn't have the necessary permission.
            * 404: Returned if the issue security scheme isn't found.
            */
-          $put(body: UpdateIssueSecuritySchemeRequestBean): Promise<unknown /* other */>;
+          $put(
+            body: UpdateIssueSecuritySchemeRequestBean,
+          ): Promise<unknown /* other */>;
           /**
            * Controle cache
            */
@@ -20919,7 +21272,12 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if no issue security level members are found.
              */
-            $get(args?: {startAt?: number, maxResults?: number, issueSecurityLevelId?: Array<string>, expand?: string}): Promise<PageBeanIssueSecurityLevelMember>;
+            $get(args?: {
+              startAt?: number;
+              maxResults?: number;
+              issueSecurityLevelId?: Array<string>;
+              expand?: string;
+            }): Promise<PageBeanIssueSecurityLevelMember>;
             /**
              * Controle cache
              */
@@ -20957,7 +21315,9 @@ export interface AtlassianV3 {
              * 403: Returned if the user doesn't have the necessary permission.
              * 404: Returned if the security scheme isn't found.
              */
-            $put(body: AddSecuritySchemeLevelsRequestBean): Promise<unknown /* other */>;
+            $put(
+              body: AddSecuritySchemeLevelsRequestBean,
+            ): Promise<unknown /* other */>;
             /* Endpoint path: /rest/api/3/issuesecurityschemes/{schemeId}/level/{levelId} */
             "$"(levelId: string): {
               /**
@@ -20976,7 +21336,7 @@ export interface AtlassianV3 {
                * 404: Returned if the issue security level isn't found.
                * 409: Returned if a task to remove the issue security level is already running.
                */
-              $delete(args?: {replaceWith?: string}): Promise<void>;
+              $delete(args?: { replaceWith?: string }): Promise<void>;
               /**
                * Method: put /rest/api/3/issuesecurityschemes/{schemeId}/level/{levelId}
                * operationId: updateSecurityLevel
@@ -20990,7 +21350,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user doesn't have the necessary permission.
                * 404: Returned if the issue security level isn't found.
                */
-              $put(body: UpdateIssueSecurityLevelDetails): Promise<unknown /* other */>;
+              $put(
+                body: UpdateIssueSecurityLevelDetails,
+              ): Promise<unknown /* other */>;
               /* Endpoint path: /rest/api/3/issuesecurityschemes/{schemeId}/level/{levelId}/member */
               member: {
                 /**
@@ -21006,7 +21368,9 @@ export interface AtlassianV3 {
                  * 403: Returned if the user doesn't have the necessary permission.
                  * 404: Returned if the security scheme isn't found.
                  */
-                $put(body: SecuritySchemeMembersRequest): Promise<unknown /* other */>;
+                $put(
+                  body: SecuritySchemeMembersRequest,
+                ): Promise<unknown /* other */>;
                 /* Endpoint path: /rest/api/3/issuesecurityschemes/{schemeId}/level/{levelId}/member/{memberId} */
                 "$"(memberId: string): {
                   /**
@@ -21088,7 +21452,10 @@ export interface AtlassianV3 {
            *  *  the project is not found.
            *  *  the user does not have the necessary permission.
            */
-          $get(args: {projectId: number, level?: number}): Promise<Array<IssueTypeDetails>>;
+          $get(args: {
+            projectId: number;
+            level?: number;
+          }): Promise<Array<IssueTypeDetails>>;
           /**
            * Controle cache
            */
@@ -21134,7 +21501,9 @@ export interface AtlassianV3 {
            *  *  also specified as the alternative issue type.
            *  *  is a *standard* issue type and the alternative issue type is a *subtask*.
            */
-          $delete(args?: {alternativeIssueTypeId?: string}): Promise<unknown /* no content */>;
+          $delete(args?: {
+            alternativeIssueTypeId?: string;
+          }): Promise<unknown /* no content */>;
           /**
            * Method: put /rest/api/3/issuetype/{id}
            * operationId: updateIssueType
@@ -21330,7 +21699,14 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the user does not have the required permissions.
          */
-        $get(args?: {startAt?: number, maxResults?: number, id?: Array<number>, orderBy?: string, expand?: string, queryString?: string}): Promise<PageBeanIssueTypeScheme>;
+        $get(args?: {
+          startAt?: number;
+          maxResults?: number;
+          id?: Array<number>;
+          orderBy?: string;
+          expand?: string;
+          queryString?: string;
+        }): Promise<PageBeanIssueTypeScheme>;
         /**
          * Method: post /rest/api/3/issuetypescheme
          * operationId: createIssueTypeScheme
@@ -21365,7 +21741,11 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the required permissions.
            */
-          $get(args?: {startAt?: number, maxResults?: number, issueTypeSchemeId?: Array<number>}): Promise<PageBeanIssueTypeSchemeMapping>;
+          $get(args?: {
+            startAt?: number;
+            maxResults?: number;
+            issueTypeSchemeId?: Array<number>;
+          }): Promise<PageBeanIssueTypeSchemeMapping>;
           /**
            * Controle cache
            */
@@ -21387,7 +21767,11 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the required permissions.
            */
-          $get(args: {startAt?: number, maxResults?: number, projectId: Array<number>}): Promise<PageBeanIssueTypeSchemeProjects>;
+          $get(args: {
+            startAt?: number;
+            maxResults?: number;
+            projectId: Array<number>;
+          }): Promise<PageBeanIssueTypeSchemeProjects>;
           /**
            * Method: put /rest/api/3/issuetypescheme/project
            * operationId: assignIssueTypeSchemeToProject
@@ -21405,7 +21789,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the required permissions.
            * 404: Returned if the issue type scheme or the project is not found.
            */
-          $put(body: IssueTypeSchemeProjectAssociation): Promise<unknown /* other */>;
+          $put(
+            body: IssueTypeSchemeProjectAssociation,
+          ): Promise<unknown /* other */>;
           /**
            * Controle cache
            */
@@ -21444,7 +21830,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the required permissions.
            * 404: Returned if the issue type scheme is not found.
            */
-          $put(body: IssueTypeSchemeUpdateDetails): Promise<unknown /* other */>;
+          $put(
+            body: IssueTypeSchemeUpdateDetails,
+          ): Promise<unknown /* other */>;
           /* Endpoint path: /rest/api/3/issuetypescheme/{issueTypeSchemeId}/issuetype */
           issuetype: {
             /**
@@ -21530,7 +21918,14 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the user does not have the required permissions.
          */
-        $get(args?: {startAt?: number, maxResults?: number, id?: Array<number>, queryString?: string, orderBy?: string, expand?: string}): Promise<PageBeanIssueTypeScreenScheme>;
+        $get(args?: {
+          startAt?: number;
+          maxResults?: number;
+          id?: Array<number>;
+          queryString?: string;
+          orderBy?: string;
+          expand?: string;
+        }): Promise<PageBeanIssueTypeScreenScheme>;
         /**
          * Method: post /rest/api/3/issuetypescreenscheme
          * operationId: createIssueTypeScreenScheme
@@ -21545,7 +21940,9 @@ export interface AtlassianV3 {
          * 404: Returned if the issue type or screen scheme is not found.
          * 409: Returned if the issue type is a sub-task, but sub-tasks are disabled in Jira settings.
          */
-        $post(body: IssueTypeScreenSchemeDetails): Promise<IssueTypeScreenSchemeId>;
+        $post(
+          body: IssueTypeScreenSchemeDetails,
+        ): Promise<IssueTypeScreenSchemeId>;
         /**
          * Controle cache
          */
@@ -21566,7 +21963,11 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the required permissions.
            */
-          $get(args?: {startAt?: number, maxResults?: number, issueTypeScreenSchemeId?: Array<number>}): Promise<PageBeanIssueTypeScreenSchemeItem>;
+          $get(args?: {
+            startAt?: number;
+            maxResults?: number;
+            issueTypeScreenSchemeId?: Array<number>;
+          }): Promise<PageBeanIssueTypeScreenSchemeItem>;
           /**
            * Controle cache
            */
@@ -21588,7 +21989,11 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the required permissions.
            */
-          $get(args: {startAt?: number, maxResults?: number, projectId: Array<number>}): Promise<PageBeanIssueTypeScreenSchemesProjects>;
+          $get(args: {
+            startAt?: number;
+            maxResults?: number;
+            projectId: Array<number>;
+          }): Promise<PageBeanIssueTypeScreenSchemesProjects>;
           /**
            * Method: put /rest/api/3/issuetypescreenscheme/project
            * operationId: assignIssueTypeScreenSchemeToProject
@@ -21608,7 +22013,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the required permissions.
            * 404: Returned if the issue type screen scheme or the project are missing.
            */
-          $put(body: IssueTypeScreenSchemeProjectAssociation): Promise<unknown /* other */>;
+          $put(
+            body: IssueTypeScreenSchemeProjectAssociation,
+          ): Promise<unknown /* other */>;
           /**
            * Controle cache
            */
@@ -21643,7 +22050,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the required permissions.
            * 404: Returned if the issue type screen scheme is not found.
            */
-          $put(body: IssueTypeScreenSchemeUpdateDetails): Promise<unknown /* other */>;
+          $put(
+            body: IssueTypeScreenSchemeUpdateDetails,
+          ): Promise<unknown /* other */>;
           /* Endpoint path: /rest/api/3/issuetypescreenscheme/{issueTypeScreenSchemeId}/mapping */
           mapping: {
             /**
@@ -21660,7 +22069,9 @@ export interface AtlassianV3 {
              * 404: Returned if the issue type screen scheme, issue type, or screen scheme is not found.
              * 409: Returned if the issue type is a sub-task, but sub-tasks are disabled in Jira settings.
              */
-            $put(body: IssueTypeScreenSchemeMappingDetails): Promise<unknown /* other */>;
+            $put(
+              body: IssueTypeScreenSchemeMappingDetails,
+            ): Promise<unknown /* other */>;
             /* Endpoint path: /rest/api/3/issuetypescreenscheme/{issueTypeScreenSchemeId}/mapping/default */
             default: {
               /**
@@ -21676,7 +22087,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the required permissions.
                * 404: Returned if the issue type screen scheme or the screen scheme is not found, or the screen scheme isn't used in classic projects.
                */
-              $put(body: UpdateDefaultScreenScheme): Promise<unknown /* other */>;
+              $put(
+                body: UpdateDefaultScreenScheme,
+              ): Promise<unknown /* other */>;
             };
             /* Endpoint path: /rest/api/3/issuetypescreenscheme/{issueTypeScreenSchemeId}/mapping/remove */
             remove: {
@@ -21712,7 +22125,11 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if the user does not have the required permissions.
              */
-            $get(args?: {startAt?: number, maxResults?: number, query?: string}): Promise<PageBeanProjectDetails>;
+            $get(args?: {
+              startAt?: number;
+              maxResults?: number;
+              query?: string;
+            }): Promise<PageBeanProjectDetails>;
             /**
              * Controle cache
              */
@@ -21781,7 +22198,12 @@ export interface AtlassianV3 {
              * 400: Returned if an invalid combination of parameters is passed.
              * 401: Returned if the authentication credentials are incorrect.
              */
-            $get(args?: {fieldName?: string, fieldValue?: string, predicateName?: string, predicateValue?: string}): Promise<AutoCompleteSuggestions>;
+            $get(args?: {
+              fieldName?: string;
+              fieldValue?: string;
+              predicateName?: string;
+              predicateValue?: string;
+            }): Promise<AutoCompleteSuggestions>;
             /**
              * Controle cache
              */
@@ -21805,7 +22227,12 @@ export interface AtlassianV3 {
              * 403: Returned if the request is not authenticated as the app that provided the function.
              * 404: Returned if the function is not found.
              */
-            $get(args?: {functionKey?: Array<string>, startAt?: number, maxResults?: number, orderBy?: string}): Promise<PageBeanJqlFunctionPrecomputationBean>;
+            $get(args?: {
+              functionKey?: Array<string>;
+              startAt?: number;
+              maxResults?: number;
+              orderBy?: string;
+            }): Promise<PageBeanJqlFunctionPrecomputationBean>;
             /**
              * Method: post /rest/api/3/jql/function/computation
              * operationId: updatePrecomputations
@@ -21818,7 +22245,9 @@ export interface AtlassianV3 {
              * 403: Returned if the request is not authenticated as the app that provided the function.
              * 404: Returned if the function is not found.
              */
-            $post(body: JqlFunctionPrecomputationUpdateRequestBean): Promise<unknown /* other */>;
+            $post(
+              body: JqlFunctionPrecomputationUpdateRequestBean,
+            ): Promise<unknown /* other */>;
             /**
              * Controle cache
              */
@@ -21876,7 +22305,9 @@ export interface AtlassianV3 {
            * 400: Returned if at least one of the queries cannot be converted. For example, the JQL has invalid operators or invalid keywords, or the users in the query cannot be found.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $post(body: JQLPersonalDataMigrationRequest): Promise<ConvertedJQLQueries>;
+          $post(
+            body: JQLPersonalDataMigrationRequest,
+          ): Promise<ConvertedJQLQueries>;
         };
         /* Endpoint path: /rest/api/3/jql/sanitize */
         sanitize: {
@@ -21910,7 +22341,10 @@ export interface AtlassianV3 {
          * doc: Returns a [paginated](#pagination) list of labels.
          * 200: Returned if the request is successful.
          */
-        $get(args?: {startAt?: number, maxResults?: number}): Promise<PageBeanString>;
+        $get(args?: {
+          startAt?: number;
+          maxResults?: number;
+        }): Promise<PageBeanString>;
         /**
          * Controle cache
          */
@@ -21989,7 +22423,16 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 404: Returned if the project or issue is not found or the user does not have permission to view the project or issue.
          */
-        $get(args?: {projectKey?: string, projectId?: string, issueKey?: string, issueId?: string, permissions?: string, projectUuid?: string, projectConfigurationUuid?: string, commentId?: string}): Promise<Permissions>;
+        $get(args?: {
+          projectKey?: string;
+          projectId?: string;
+          issueKey?: string;
+          issueId?: string;
+          permissions?: string;
+          projectUuid?: string;
+          projectConfigurationUuid?: string;
+          commentId?: string;
+        }): Promise<Permissions>;
         /**
          * Controle cache
          */
@@ -22022,7 +22465,7 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 404: Returned if the key is not provided or not found.
          */
-        $get(args: {key: string}): Promise<string>;
+        $get(args: { key: string }): Promise<string>;
         /**
          * Method: delete /rest/api/3/mypreferences
          * operationId: removePreference
@@ -22041,7 +22484,7 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 404: Returned if the key is not provided or not found.
          */
-        $delete(args: {key: string}): Promise<unknown /* no content */>;
+        $delete(args: { key: string }): Promise<unknown /* no content */>;
         /**
          * Method: put /rest/api/3/mypreferences
          * operationId: setPreference
@@ -22140,7 +22583,7 @@ export interface AtlassianV3 {
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
          */
-        $get(args?: {expand?: string}): Promise<User>;
+        $get(args?: { expand?: string }): Promise<User>;
         /**
          * Controle cache
          */
@@ -22161,7 +22604,14 @@ export interface AtlassianV3 {
          * 400: Returned if the request isn't valid.
          * 401: Returned if the authentication credentials are incorrect or missing.
          */
-        $get(args?: {startAt?: string, maxResults?: string, id?: Array<string>, projectId?: Array<string>, onlyDefault?: boolean, expand?: string}): Promise<PageBeanNotificationScheme>;
+        $get(args?: {
+          startAt?: string;
+          maxResults?: string;
+          id?: Array<string>;
+          projectId?: Array<string>;
+          onlyDefault?: boolean;
+          expand?: string;
+        }): Promise<PageBeanNotificationScheme>;
         /**
          * Method: post /rest/api/3/notificationscheme
          * operationId: createNotificationScheme
@@ -22174,7 +22624,9 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the user doesn't have the necessary permission.
          */
-        $post(body: CreateNotificationSchemeDetails): Promise<NotificationSchemeId>;
+        $post(
+          body: CreateNotificationSchemeDetails,
+        ): Promise<NotificationSchemeId>;
         /**
          * Controle cache
          */
@@ -22192,7 +22644,12 @@ export interface AtlassianV3 {
            * 400: Returned if search criteria are invalid, strings vs numbers for projectId, notificationSchemeId, startAt and maxResult
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {startAt?: string, maxResults?: string, notificationSchemeId?: Array<string>, projectId?: Array<string>}): Promise<PageBeanNotificationSchemeAndProjectMappingJsonBean>;
+          $get(args?: {
+            startAt?: string;
+            maxResults?: string;
+            notificationSchemeId?: Array<string>;
+            projectId?: Array<string>;
+          }): Promise<PageBeanNotificationSchemeAndProjectMappingJsonBean>;
           /**
            * Controle cache
            */
@@ -22212,7 +22669,7 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if the notification scheme is not found or the user does not have permission to view it.
            */
-          $get(args?: {expand?: string}): Promise<NotificationScheme>;
+          $get(args?: { expand?: string }): Promise<NotificationScheme>;
           /**
            * Method: put /rest/api/3/notificationscheme/{id}
            * operationId: updateNotificationScheme
@@ -22226,7 +22683,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user doesn't have the necessary permission.
            * 404: Returned if the notification scheme isn't found.
            */
-          $put(body: UpdateNotificationSchemeDetails): Promise<unknown /* other */>;
+          $put(
+            body: UpdateNotificationSchemeDetails,
+          ): Promise<unknown /* other */>;
           /**
            * Controle cache
            */
@@ -22351,7 +22810,9 @@ export interface AtlassianV3 {
            *  *  an invalid account ID is provided.
            * 403: Returned if the user does not have the necessary permission.
            */
-          $post(body: BulkPermissionsRequestBean): Promise<BulkPermissionGrants>;
+          $post(
+            body: BulkPermissionsRequestBean,
+          ): Promise<BulkPermissionGrants>;
         };
         /* Endpoint path: /rest/api/3/permissions/project */
         project: {
@@ -22467,7 +22928,7 @@ export interface AtlassianV3 {
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
          */
-        $get(args?: {expand?: string}): Promise<PermissionSchemes>;
+        $get(args?: { expand?: string }): Promise<PermissionSchemes>;
         /**
          * Method: post /rest/api/3/permissionscheme
          * operationId: createPermissionScheme
@@ -22498,7 +22959,7 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if the permission scheme is not found or the user does not have the necessary permission.
            */
-          $get(args?: {expand?: string}): Promise<PermissionScheme>;
+          $get(args?: { expand?: string }): Promise<PermissionScheme>;
           /**
            * Method: delete /rest/api/3/permissionscheme/{schemeId}
            * operationId: deletePermissionScheme
@@ -22553,7 +23014,7 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if the permission schemes is not found or the user does not have the necessary permission.
              */
-            $get(args?: {expand?: string}): Promise<PermissionGrants>;
+            $get(args?: { expand?: string }): Promise<PermissionGrants>;
             /**
              * Method: post /rest/api/3/permissionscheme/{schemeId}/permission
              * operationId: createPermissionGrant
@@ -22584,7 +23045,7 @@ export interface AtlassianV3 {
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 404: Returned if the permission scheme or permission grant is not found or the user does not have the necessary permission.
                */
-              $get(args?: {expand?: string}): Promise<PermissionGrant>;
+              $get(args?: { expand?: string }): Promise<PermissionGrant>;
               /**
                * Method: delete /rest/api/3/permissionscheme/{schemeId}/permission/{permissionId}
                * operationId: deletePermissionSchemeEntity
@@ -22686,7 +23147,15 @@ export interface AtlassianV3 {
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {startAt?: string, maxResults?: string, id?: Array<string>, projectId?: Array<string>, priorityName?: string, onlyDefault?: boolean, expand?: string}): Promise<PageBeanPriority>;
+          $get(args?: {
+            startAt?: string;
+            maxResults?: string;
+            id?: Array<string>;
+            projectId?: Array<string>;
+            priorityName?: string;
+            onlyDefault?: boolean;
+            expand?: string;
+          }): Promise<PageBeanPriority>;
           /**
            * Controle cache
            */
@@ -22756,7 +23225,16 @@ export interface AtlassianV3 {
          * 400: Returned if the request isn't valid.
          * 401: Returned if the authentication credentials are incorrect.
          */
-        $get(args?: {startAt?: string, maxResults?: string, priorityId?: Array<number>, schemeId?: Array<number>, schemeName?: string, onlyDefault?: boolean, orderBy?: string, expand?: string}): Promise<PageBeanPrioritySchemeWithPaginatedPrioritiesAndProjects>;
+        $get(args?: {
+          startAt?: string;
+          maxResults?: string;
+          priorityId?: Array<number>;
+          schemeId?: Array<number>;
+          schemeName?: string;
+          onlyDefault?: boolean;
+          orderBy?: string;
+          expand?: string;
+        }): Promise<PageBeanPrioritySchemeWithPaginatedPrioritiesAndProjects>;
         /**
          * Method: post /rest/api/3/priorityscheme
          * operationId: createPriorityScheme
@@ -22789,7 +23267,9 @@ export interface AtlassianV3 {
            * 400: Returned if the request isn't valid.
            * 401: Returned if the authentication credentials are incorrect.
            */
-          $post(body: SuggestedMappingsRequestBean): Promise<PageBeanPriorityWithSequence>;
+          $post(
+            body: SuggestedMappingsRequestBean,
+          ): Promise<PageBeanPriorityWithSequence>;
         };
         /* Endpoint path: /rest/api/3/priorityscheme/priorities */
         priorities: {
@@ -22806,7 +23286,13 @@ export interface AtlassianV3 {
              * 400: Returned if the request isn't valid.
              * 401: Returned if the authentication credentials are incorrect.
              */
-            $get(args: {startAt?: string, maxResults?: string, query?: string, schemeId: string, exclude?: Array<string>}): Promise<PageBeanPriorityWithSequence>;
+            $get(args: {
+              startAt?: string;
+              maxResults?: string;
+              query?: string;
+              schemeId: string;
+              exclude?: Array<string>;
+            }): Promise<PageBeanPriorityWithSequence>;
             /**
              * Controle cache
              */
@@ -22843,7 +23329,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user doesn't have the necessary permissions.
            * 409: Returned if an action with this priority scheme is still in progress.
            */
-          $put(body: UpdatePrioritySchemeRequestBean): Promise<UpdatePrioritySchemeResponseBean>;
+          $put(
+            body: UpdatePrioritySchemeRequestBean,
+          ): Promise<UpdatePrioritySchemeResponseBean>;
           /* Endpoint path: /rest/api/3/priorityscheme/{schemeId}/priorities */
           priorities: {
             /**
@@ -22857,7 +23345,10 @@ export interface AtlassianV3 {
              * 400: Returned if the request isn't valid.
              * 401: Returned if the authentication credentials are incorrect.
              */
-            $get(args?: {startAt?: string, maxResults?: string}): Promise<PageBeanPriorityWithSequence>;
+            $get(args?: {
+              startAt?: string;
+              maxResults?: string;
+            }): Promise<PageBeanPriorityWithSequence>;
             /**
              * Controle cache
              */
@@ -22876,7 +23367,12 @@ export interface AtlassianV3 {
              * 400: Returned if the request isn't valid.
              * 401: Returned if the authentication credentials are incorrect.
              */
-            $get(args?: {startAt?: string, maxResults?: string, projectId?: Array<number>, query?: string}): Promise<PageBeanProject>;
+            $get(args?: {
+              startAt?: string;
+              maxResults?: string;
+              projectId?: Array<number>;
+              query?: string;
+            }): Promise<PageBeanProject>;
             /**
              * Controle cache
              */
@@ -22898,7 +23394,11 @@ export interface AtlassianV3 {
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
          */
-        $get(args?: {expand?: string, recent?: number, properties?: Array<string>}): Promise<Array<Project>>;
+        $get(args?: {
+          expand?: string;
+          recent?: number;
+          properties?: Array<string>;
+        }): Promise<Array<Project>>;
         /**
          * Method: post /rest/api/3/project
          * operationId: createProject
@@ -22948,7 +23448,10 @@ export interface AtlassianV3 {
            * 400: Returned if the request is not valid.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {expand?: string, properties?: Array<StringList>}): Promise<Array<Project>>;
+          $get(args?: {
+            expand?: string;
+            properties?: Array<StringList>;
+          }): Promise<Array<Project>>;
           /**
            * Controle cache
            */
@@ -22974,7 +23477,21 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if no projects matching the search criteria are found.
            */
-          $get(args?: {startAt?: number, maxResults?: number, orderBy?: string, id?: Array<number>, keys?: Array<string>, query?: string, typeKey?: string, categoryId?: number, action?: string, expand?: string, status?: Array<string>, properties?: Array<StringList>, propertyQuery?: string}): Promise<PageBeanProject>;
+          $get(args?: {
+            startAt?: number;
+            maxResults?: number;
+            orderBy?: string;
+            id?: Array<number>;
+            keys?: Array<string>;
+            query?: string;
+            typeKey?: string;
+            categoryId?: number;
+            action?: string;
+            expand?: string;
+            status?: Array<string>;
+            properties?: Array<StringList>;
+            propertyQuery?: string;
+          }): Promise<PageBeanProject>;
           /**
            * Controle cache
            */
@@ -23070,7 +23587,10 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if the project is not found or the user does not have permission to view it.
            */
-          $get(args?: {expand?: string, properties?: Array<string>}): Promise<Project>;
+          $get(args?: {
+            expand?: string;
+            properties?: Array<string>;
+          }): Promise<Project>;
           /**
            * Method: delete /rest/api/3/project/{projectIdOrKey}
            * operationId: deleteProject
@@ -23084,7 +23604,9 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if the project is not found or the user does not have permission to delete it.
            */
-          $delete(args?: {enableUndo?: boolean}): Promise<unknown /* no content */>;
+          $delete(args?: {
+            enableUndo?: boolean;
+          }): Promise<unknown /* no content */>;
           /**
            * Method: put /rest/api/3/project/{projectIdOrKey}
            * operationId: updateProject
@@ -23276,7 +23798,9 @@ export interface AtlassianV3 {
                * 401: Returned if the user does not have the necessary permission.
                * 404: Returned if the project is not found.
                */
-              $put(body: UpdateDefaultProjectClassificationBean): Promise<unknown /* other */>;
+              $put(
+                body: UpdateDefaultProjectClassificationBean,
+              ): Promise<unknown /* other */>;
               /**
                * Controle cache
                */
@@ -23300,7 +23824,13 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if the project is not found or the user does not have permission to view it.
              */
-            $get(args?: {startAt?: number, maxResults?: number, orderBy?: string, componentSource?: string, query?: string}): Promise<PageBeanComponentWithIssueCount>;
+            $get(args?: {
+              startAt?: number;
+              maxResults?: number;
+              orderBy?: string;
+              componentSource?: string;
+              query?: string;
+            }): Promise<PageBeanComponentWithIssueCount>;
             /**
              * Controle cache
              */
@@ -23323,7 +23853,9 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if the project is not found or the user does not have permission to view it.
              */
-            $get(args?: {componentSource?: string}): Promise<Array<ProjectComponent>>;
+            $get(args?: {
+              componentSource?: string;
+            }): Promise<Array<ProjectComponent>>;
             /**
              * Controle cache
              */
@@ -23381,7 +23913,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the required permissions.
                * 404: Returned if the project or project feature is not found.
                */
-              $put(body: ProjectFeatureState): Promise<ContainerForProjectFeatures>;
+              $put(
+                body: ProjectFeatureState,
+              ): Promise<ContainerForProjectFeatures>;
             };
           };
           /* Endpoint path: /rest/api/3/project/{projectIdOrKey}/properties */
@@ -23527,7 +24061,9 @@ export interface AtlassianV3 {
                *  *  the project or project role is not found.
                *  *  the user does not have administrative permission.
                */
-              $get(args?: {excludeInactiveUsers?: boolean}): Promise<ProjectRole>;
+              $get(args?: {
+                excludeInactiveUsers?: boolean;
+              }): Promise<ProjectRole>;
               /**
                * Method: delete /rest/api/3/project/{projectIdOrKey}/role/{id}
                * operationId: deleteActor
@@ -23546,7 +24082,11 @@ export interface AtlassianV3 {
                *  *  the project or project role is not found.
                *  *  the calling user does not have administrative permission.
                */
-              $delete(args?: {user?: string, group?: string, groupId?: string}): Promise<unknown /* no content */>;
+              $delete(args?: {
+                user?: string;
+                group?: string;
+                groupId?: string;
+              }): Promise<unknown /* no content */>;
               /**
                * Method: post /rest/api/3/project/{projectIdOrKey}/role/{id}
                * operationId: addActorUsers
@@ -23610,7 +24150,10 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if the project is not found or if the user does not have the necessary permissions for the project.
              */
-            $get(args?: {currentMember?: boolean, excludeConnectAddons?: boolean}): Promise<Array<ProjectRoleDetails>>;
+            $get(args?: {
+              currentMember?: boolean;
+              excludeConnectAddons?: boolean;
+            }): Promise<Array<ProjectRoleDetails>>;
             /**
              * Controle cache
              */
@@ -23651,7 +24194,14 @@ export interface AtlassianV3 {
              * 200: Returned if the request is successful.
              * 404: Returned if the project is not found or the user does not have permission to view it.
              */
-            $get(args?: {startAt?: number, maxResults?: number, orderBy?: string, query?: string, status?: string, expand?: string}): Promise<PageBeanVersion>;
+            $get(args?: {
+              startAt?: number;
+              maxResults?: number;
+              orderBy?: string;
+              query?: string;
+              status?: string;
+              expand?: string;
+            }): Promise<PageBeanVersion>;
             /**
              * Controle cache
              */
@@ -23671,7 +24221,7 @@ export interface AtlassianV3 {
              * 200: Returned if the request is successful.
              * 404: Returned if the project is not found or the user does not have permission to view it.
              */
-            $get(args?: {expand?: string}): Promise<Array<Version>>;
+            $get(args?: { expand?: string }): Promise<Array<Version>>;
             /**
              * Controle cache
              */
@@ -23780,7 +24330,7 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if the project is not found or the user is not an administrator.
              */
-            $get(args?: {expand?: string}): Promise<NotificationScheme>;
+            $get(args?: { expand?: string }): Promise<NotificationScheme>;
             /**
              * Controle cache
              */
@@ -23800,7 +24350,7 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have permission to view the project's configuration.
              * 404: Returned if the project is not found or the user does not have permission to view the project.
              */
-            $get(args?: {expand?: string}): Promise<PermissionScheme>;
+            $get(args?: { expand?: string }): Promise<PermissionScheme>;
             /**
              * Method: put /rest/api/3/project/{projectKeyOrId}/permissionscheme
              * operationId: assignPermissionScheme
@@ -23942,7 +24492,7 @@ export interface AtlassianV3 {
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect.
            */
-          $get(args?: {key?: string}): Promise<ErrorCollection>;
+          $get(args?: { key?: string }): Promise<ErrorCollection>;
           /**
            * Controle cache
            */
@@ -23960,7 +24510,7 @@ export interface AtlassianV3 {
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect.
            */
-          $get(args?: {key?: string}): Promise<string>;
+          $get(args?: { key?: string }): Promise<string>;
           /**
            * Controle cache
            */
@@ -23980,7 +24530,7 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect.
            * 404: Returned if a valid project name cannot be generated.
            */
-          $get(args: {name: string}): Promise<string>;
+          $get(args: { name: string }): Promise<string>;
           /**
            * Controle cache
            */
@@ -24049,7 +24599,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user doesn't have the necessary permission.
            * 404: Returned if the issue resolution isn't found.
            */
-          $put(body: ReorderIssueResolutionsRequest): Promise<unknown /* other */>;
+          $put(
+            body: ReorderIssueResolutionsRequest,
+          ): Promise<unknown /* other */>;
         };
         /* Endpoint path: /rest/api/3/resolution/search */
         search: {
@@ -24066,7 +24618,12 @@ export interface AtlassianV3 {
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {startAt?: string, maxResults?: string, id?: Array<string>, onlyDefault?: boolean}): Promise<PageBeanResolutionJsonBean>;
+          $get(args?: {
+            startAt?: string;
+            maxResults?: string;
+            id?: Array<string>;
+            onlyDefault?: boolean;
+          }): Promise<PageBeanResolutionJsonBean>;
           /**
            * Controle cache
            */
@@ -24102,7 +24659,7 @@ export interface AtlassianV3 {
            * 404: Returned if the issue resolution isn't found.
            * 409: Returned if a task to delete the issue resolution is already running.
            */
-          $delete(args: {replaceWith: string}): Promise<void>;
+          $delete(args: { replaceWith: string }): Promise<void>;
           /**
            * Method: put /rest/api/3/resolution/{id}
            * operationId: updateResolution
@@ -24201,7 +24758,7 @@ export interface AtlassianV3 {
            * 404: Returned if the project role being deleted is not found.
            * 409: Returned if the project role being deleted is in use and a replacement project role is not specified in the request.
            */
-          $delete(args?: {swap?: number}): Promise<unknown /* no content */>;
+          $delete(args?: { swap?: number }): Promise<unknown /* no content */>;
           /**
            * Method: post /rest/api/3/role/{id}
            * operationId: partialUpdateProjectRole
@@ -24267,7 +24824,11 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have administrative permissions.
              * 404: Returned if the project role is not found.
              */
-            $delete(args?: {user?: string, groupId?: string, group?: string}): Promise<ProjectRole>;
+            $delete(args?: {
+              user?: string;
+              groupId?: string;
+              group?: string;
+            }): Promise<ProjectRole>;
             /**
              * Method: post /rest/api/3/role/{id}/actors
              * operationId: addProjectRoleActorsToRole
@@ -24304,7 +24865,14 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the user does not have the necessary permission.
          */
-        $get(args?: {startAt?: number, maxResults?: number, id?: Array<number>, queryString?: string, scope?: Array<string>, orderBy?: string}): Promise<PageBeanScreen>;
+        $get(args?: {
+          startAt?: number;
+          maxResults?: number;
+          id?: Array<number>;
+          queryString?: string;
+          scope?: Array<string>;
+          orderBy?: string;
+        }): Promise<PageBeanScreen>;
         /**
          * Method: post /rest/api/3/screens
          * operationId: createScreen
@@ -24358,7 +24926,12 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the necessary permission.
            */
-          $get(args?: {screenId?: Array<number>, tabId?: Array<number>, startAt?: number, maxResult?: number}): Promise<unknown /* no schema 81 */>;
+          $get(args?: {
+            screenId?: Array<number>;
+            tabId?: Array<number>;
+            startAt?: number;
+            maxResult?: number;
+          }): Promise<unknown /* no schema 81 */>;
           /**
            * Controle cache
            */
@@ -24432,7 +25005,7 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if the screen is not found.
              */
-            $get(args?: {projectKey?: string}): Promise<Array<ScreenableTab>>;
+            $get(args?: { projectKey?: string }): Promise<Array<ScreenableTab>>;
             /**
              * Method: post /rest/api/3/screens/{screenId}/tabs
              * operationId: addScreenTab
@@ -24497,7 +25070,9 @@ export interface AtlassianV3 {
                  * 403: Returned if the user does not have the necessary permission.
                  * 404: Returned if the screen or screen tab is not found.
                  */
-                $get(args?: {projectKey?: string}): Promise<Array<ScreenableField>>;
+                $get(args?: {
+                  projectKey?: string;
+                }): Promise<Array<ScreenableField>>;
                 /**
                  * Method: post /rest/api/3/screens/{screenId}/tabs/{tabId}/fields
                  * operationId: addScreenTabField
@@ -24592,7 +25167,14 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the user does not have the necessary permission.
          */
-        $get(args?: {startAt?: number, maxResults?: number, id?: Array<number>, expand?: string, queryString?: string, orderBy?: string}): Promise<PageBeanScreenScheme>;
+        $get(args?: {
+          startAt?: number;
+          maxResults?: number;
+          id?: Array<number>;
+          expand?: string;
+          queryString?: string;
+          orderBy?: string;
+        }): Promise<PageBeanScreenScheme>;
         /**
          * Method: post /rest/api/3/screenscheme
          * operationId: createScreenScheme
@@ -24665,7 +25247,17 @@ export interface AtlassianV3 {
          * 400: Returned if the JQL query is invalid.
          * 401: Returned if the authentication credentials are incorrect or missing.
          */
-        $get(args?: {jql?: string, startAt?: number, maxResults?: number, validateQuery?: string, fields?: Array<string>, expand?: string, properties?: Array<string>, fieldsByKeys?: boolean, failFast?: boolean}): Promise<SearchResults>;
+        $get(args?: {
+          jql?: string;
+          startAt?: number;
+          maxResults?: number;
+          validateQuery?: string;
+          fields?: Array<string>;
+          expand?: string;
+          properties?: Array<string>;
+          fieldsByKeys?: boolean;
+          failFast?: boolean;
+        }): Promise<SearchResults>;
         /**
          * Method: post /rest/api/3/search
          * operationId: searchForIssuesUsingJqlPost
@@ -24902,7 +25494,10 @@ export interface AtlassianV3 {
          * 400: Returned if the request is not valid.
          * 401: Returned if the authentication credentials are incorrect or missing, or the caller doesn't have permissions to perform the operation.
          */
-        $get(args: {expand?: string, id: Array<string>}): Promise<Array<JiraStatus>>;
+        $get(args: {
+          expand?: string;
+          id: Array<string>;
+        }): Promise<Array<JiraStatus>>;
         /**
          * Method: delete /rest/api/3/statuses
          * operationId: deleteStatusesById
@@ -24917,7 +25512,7 @@ export interface AtlassianV3 {
          * 400: Returned if the request is not valid.
          * 401: Returned if the authentication credentials are incorrect or missing, or the caller doesn't have permissions to perform the operation.
          */
-        $delete(args: {id: Array<string>}): Promise<unknown /* other */>;
+        $delete(args: { id: Array<string> }): Promise<unknown /* other */>;
         /**
          * Method: post /rest/api/3/statuses
          * operationId: createStatuses
@@ -24970,7 +25565,14 @@ export interface AtlassianV3 {
            * 400: Returned if the request is not valid.
            * 401: Returned if the authentication credentials are incorrect or missing, or the caller doesn't have permissions to perform the operation.
            */
-          $get(args?: {expand?: string, projectId?: string, startAt?: number, maxResults?: number, searchString?: string, statusCategory?: string}): Promise<PageOfStatuses>;
+          $get(args?: {
+            expand?: string;
+            projectId?: string;
+            startAt?: number;
+            maxResults?: number;
+            searchString?: string;
+            statusCategory?: string;
+          }): Promise<PageOfStatuses>;
           /**
            * Controle cache
            */
@@ -25043,7 +25645,11 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the request is not from a Forge app.
          */
-        $get(args?: {startAt?: number, maxResults?: number, expand?: string}): Promise<PageBeanUiModificationDetails>;
+        $get(args?: {
+          startAt?: number;
+          maxResults?: number;
+          expand?: string;
+        }): Promise<PageBeanUiModificationDetails>;
         /**
          * Method: post /rest/api/3/uiModifications
          * operationId: createUiModification
@@ -25062,7 +25668,9 @@ export interface AtlassianV3 {
          * 403: Returned if the request is not from a Forge app.
          * 404: Returned if a project or an issue type in the context are not found.
          */
-        $post(body: CreateUiModificationDetails): Promise<UiModificationIdentifiers>;
+        $post(
+          body: CreateUiModificationDetails,
+        ): Promise<UiModificationIdentifiers>;
         /**
          * Controle cache
          */
@@ -25226,7 +25834,10 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if an avatar is not found or an avatar matching the requested size is not found.
                */
-              $get(args?: {size?: string, format?: string}): Promise<StreamingResponseBody>;
+              $get(args?: {
+                size?: string;
+                format?: string;
+              }): Promise<StreamingResponseBody>;
               /**
                * Controle cache
                */
@@ -25254,7 +25865,10 @@ export interface AtlassianV3 {
                    * 403: Returned if the user does not have the necessary permission.
                    * 404: Returned if an avatar is not found or an avatar matching the requested size is not found.
                    */
-                  $get(args?: {size?: string, format?: string}): Promise<StreamingResponseBody>;
+                  $get(args?: {
+                    size?: string;
+                    format?: string;
+                  }): Promise<StreamingResponseBody>;
                   /**
                    * Controle cache
                    */
@@ -25284,7 +25898,10 @@ export interface AtlassianV3 {
                    * 403: Returned if the user does not have the necessary permission.
                    * 404: Returned if an avatar is not found or an avatar matching the requested size is not found.
                    */
-                  $get(args?: {size?: string, format?: string}): Promise<StreamingResponseBody>;
+                  $get(args?: {
+                    size?: string;
+                    format?: string;
+                  }): Promise<StreamingResponseBody>;
                   /**
                    * Controle cache
                    */
@@ -25311,7 +25928,12 @@ export interface AtlassianV3 {
          * 403: Returned if the calling user does not have the *Browse users and groups* global permission.
          * 404: Returned if the user is not found.
          */
-        $get(args?: {accountId?: string, username?: string, key?: string, expand?: string}): Promise<User>;
+        $get(args?: {
+          accountId?: string;
+          username?: string;
+          key?: string;
+          expand?: string;
+        }): Promise<User>;
         /**
          * Method: delete /rest/api/3/user
          * operationId: removeUser
@@ -25325,7 +25947,11 @@ export interface AtlassianV3 {
          * 403: Returned if the user does not have the necessary permission.
          * 404: Returned if the user is not found.
          */
-        $delete(args: {accountId: string, username?: string, key?: string}): Promise<unknown /* no content */>;
+        $delete(args: {
+          accountId: string;
+          username?: string;
+          key?: string;
+        }): Promise<unknown /* no content */>;
         /**
          * Method: post /rest/api/3/user
          * operationId: createUser
@@ -25372,7 +25998,14 @@ export interface AtlassianV3 {
              * 404: Returned if one or more of the projects is not found.
              * 429: Returned if the rate limit is exceeded. User search endpoints share a collective rate limit for the tenant, in addition to Jira's normal rate limiting you may receive a rate limit for user search. Please respect the Retry-After header.
              */
-            $get(args: {query?: string, username?: string, accountId?: string, projectKeys: string, startAt?: number, maxResults?: number}): Promise<Array<User>>;
+            $get(args: {
+              query?: string;
+              username?: string;
+              accountId?: string;
+              projectKeys: string;
+              startAt?: number;
+              maxResults?: number;
+            }): Promise<Array<User>>;
             /**
              * Controle cache
              */
@@ -25407,7 +26040,18 @@ export interface AtlassianV3 {
              * 404: Returned if the project, issue, or transition is not found.
              * 429: Returned if the rate limit is exceeded. User search endpoints share a collective rate limit for the tenant, in addition to Jira's normal rate limiting you may receive a rate limit for user search. Please respect the Retry-After header.
              */
-            $get(args?: {query?: string, sessionId?: string, username?: string, accountId?: string, project?: string, issueKey?: string, startAt?: number, maxResults?: number, actionDescriptorId?: number, recommend?: boolean}): Promise<Array<User>>;
+            $get(args?: {
+              query?: string;
+              sessionId?: string;
+              username?: string;
+              accountId?: string;
+              project?: string;
+              issueKey?: string;
+              startAt?: number;
+              maxResults?: number;
+              actionDescriptorId?: number;
+              recommend?: boolean;
+            }): Promise<Array<User>>;
             /**
              * Controle cache
              */
@@ -25427,7 +26071,13 @@ export interface AtlassianV3 {
            * 400: Returned if `accountID` is missing.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args: {startAt?: number, maxResults?: number, username?: Array<string>, key?: Array<string>, accountId: Array<string>}): Promise<PageBeanUser>;
+          $get(args: {
+            startAt?: number;
+            maxResults?: number;
+            username?: Array<string>;
+            key?: Array<string>;
+            accountId: Array<string>;
+          }): Promise<PageBeanUser>;
           /**
            * Controle cache
            */
@@ -25445,7 +26095,12 @@ export interface AtlassianV3 {
              * 400: Returned if `key` or `username`
              * 401: Returned if the authentication credentials are incorrect or missing.
              */
-            $get(args?: {startAt?: number, maxResults?: number, username?: Array<string>, key?: Array<string>}): Promise<Array<UserMigrationBean>>;
+            $get(args?: {
+              startAt?: number;
+              maxResults?: number;
+              username?: Array<string>;
+              key?: Array<string>;
+            }): Promise<Array<UserMigrationBean>>;
             /**
              * Controle cache
              */
@@ -25469,7 +26124,10 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permission or is not accessing their user record.
            * 404: Returned if the requested user is not found.
            */
-          $get(args?: {accountId?: string, username?: string}): Promise<Array<ColumnItem>>;
+          $get(args?: {
+            accountId?: string;
+            username?: string;
+          }): Promise<Array<ColumnItem>>;
           /**
            * Method: delete /rest/api/3/user/columns
            * operationId: resetUserColumns
@@ -25484,7 +26142,10 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the necessary permission or is not accessing their user record.
            */
-          $delete(args?: {accountId?: string, username?: string}): Promise<unknown /* no content */>;
+          $delete(args?: {
+            accountId?: string;
+            username?: string;
+          }): Promise<unknown /* no content */>;
           /**
            * Method: put /rest/api/3/user/columns
            * operationId: setUserColumns
@@ -25525,7 +26186,7 @@ export interface AtlassianV3 {
            * 404: Returned if a user with the given `accountId` doesn't exist
            * 503: Indicates the API is not currently enabled
            */
-          $get(args: {accountId: string}): Promise<UnrestrictedUserEmail>;
+          $get(args: { accountId: string }): Promise<UnrestrictedUserEmail>;
           /**
            * Controle cache
            */
@@ -25542,7 +26203,9 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect, or missing from the request (for example if a user is trying to access this API).
              * 503: Indicates the API is not currently enabled.
              */
-            $get(args: {accountId: Array<string>}): Promise<UnrestrictedUserEmail>;
+            $get(args: {
+              accountId: Array<string>;
+            }): Promise<UnrestrictedUserEmail>;
             /**
              * Controle cache
              */
@@ -25563,7 +26226,11 @@ export interface AtlassianV3 {
            * 403: Returned if the calling user does not have the *Browse users and groups* global permission.
            * 404: Returned if the user is not found.
            */
-          $get(args: {accountId: string, username?: string, key?: string}): Promise<Array<GroupName>>;
+          $get(args: {
+            accountId: string;
+            username?: string;
+            key?: string;
+          }): Promise<Array<GroupName>>;
           /**
            * Controle cache
            */
@@ -25606,7 +26273,16 @@ export interface AtlassianV3 {
              * 404: Returned if the issue or project is not found.
              * 429: Returned if the rate limit is exceeded. User search endpoints share a collective rate limit for the tenant, in addition to Jira's normal rate limiting you may receive a rate limit for user search. Please respect the Retry-After header.
              */
-            $get(args: {query?: string, username?: string, accountId?: string, permissions: string, issueKey?: string, projectKey?: string, startAt?: number, maxResults?: number}): Promise<Array<User>>;
+            $get(args: {
+              query?: string;
+              username?: string;
+              accountId?: string;
+              permissions: string;
+              issueKey?: string;
+              projectKey?: string;
+              startAt?: number;
+              maxResults?: number;
+            }): Promise<Array<User>>;
             /**
              * Controle cache
              */
@@ -25633,7 +26309,15 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 429: Returned if the rate limit is exceeded. User search endpoints share a collective rate limit for the tenant, in addition to Jira's normal rate limiting you may receive a rate limit for user search. Please respect the Retry-After header.
            */
-          $get(args: {query: string, maxResults?: number, showAvatar?: boolean, exclude?: Array<string>, excludeAccountIds?: Array<string>, avatarSize?: string, excludeConnectUsers?: boolean}): Promise<FoundUsers>;
+          $get(args: {
+            query: string;
+            maxResults?: number;
+            showAvatar?: boolean;
+            exclude?: Array<string>;
+            excludeAccountIds?: Array<string>;
+            avatarSize?: string;
+            excludeConnectUsers?: boolean;
+          }): Promise<FoundUsers>;
           /**
            * Controle cache
            */
@@ -25659,7 +26343,11 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permission or is not accessing their user record.
            * 404: Returned if the user is not found.
            */
-          $get(args?: {accountId?: string, userKey?: string, username?: string}): Promise<PropertyKeys>;
+          $get(args?: {
+            accountId?: string;
+            userKey?: string;
+            username?: string;
+          }): Promise<PropertyKeys>;
           /**
            * Controle cache
            */
@@ -25684,7 +26372,11 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission or is not accessing their user record.
              * 404: Returned if the user is not found.
              */
-            $get(args?: {accountId?: string, userKey?: string, username?: string}): Promise<EntityProperty>;
+            $get(args?: {
+              accountId?: string;
+              userKey?: string;
+              username?: string;
+            }): Promise<EntityProperty>;
             /**
              * Method: delete /rest/api/3/user/properties/{propertyKey}
              * operationId: deleteUserProperty
@@ -25703,7 +26395,11 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission or is not accessing their user record.
              * 404: Returned if the user or the property is not found.
              */
-            $delete(args?: {accountId?: string, userKey?: string, username?: string}): Promise<unknown /* no content */>;
+            $delete(args?: {
+              accountId?: string;
+              userKey?: string;
+              username?: string;
+            }): Promise<unknown /* no content */>;
             /**
              * Method: put /rest/api/3/user/properties/{propertyKey}
              * operationId: setUserProperty
@@ -25755,7 +26451,14 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 429: Returned if the rate limit is exceeded. User search endpoints share a collective rate limit for the tenant, in addition to Jira's normal rate limiting you may receive a rate limit for user search. Please respect the Retry-After header.
            */
-          $get(args?: {query?: string, username?: string, accountId?: string, startAt?: number, maxResults?: number, property?: string}): Promise<Array<User>>;
+          $get(args?: {
+            query?: string;
+            username?: string;
+            accountId?: string;
+            startAt?: number;
+            maxResults?: number;
+            property?: string;
+          }): Promise<Array<User>>;
           /**
            * Controle cache
            */
@@ -25792,7 +26495,11 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              * 408: Returned if the search is timed out.
              */
-            $get(args: {query: string, startAt?: number, maxResults?: number}): Promise<PageBeanUser>;
+            $get(args: {
+              query: string;
+              startAt?: number;
+              maxResults?: number;
+            }): Promise<PageBeanUser>;
             /**
              * Controle cache
              */
@@ -25829,7 +26536,11 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the necessary permission.
                * 408: Returned if the search is timed out.
                */
-              $get(args: {query: string, startAt?: number, maxResult?: number}): Promise<PageBeanUserKey>;
+              $get(args: {
+                query: string;
+                startAt?: number;
+                maxResult?: number;
+              }): Promise<PageBeanUserKey>;
               /**
                * Controle cache
                */
@@ -25872,7 +26583,15 @@ export interface AtlassianV3 {
              * 404: Returned if the issue or project is not found.
              * 429: Returned if the rate limit is exceeded. User search endpoints share a collective rate limit for the tenant, in addition to Jira's normal rate limiting you may receive a rate limit for user search. Please respect the Retry-After header.
              */
-            $get(args?: {query?: string, username?: string, accountId?: string, issueKey?: string, projectKey?: string, startAt?: number, maxResults?: number}): Promise<Array<User>>;
+            $get(args?: {
+              query?: string;
+              username?: string;
+              accountId?: string;
+              issueKey?: string;
+              projectKey?: string;
+              startAt?: number;
+              maxResults?: number;
+            }): Promise<Array<User>>;
             /**
              * Controle cache
              */
@@ -25896,7 +26615,10 @@ export interface AtlassianV3 {
          * 403: Returned if the user doesn't have the necessary permission.
          * 409: Returned if the request takes longer than 10 seconds or is interrupted.
          */
-        $get(args?: {startAt?: number, maxResults?: number}): Promise<Array<User>>;
+        $get(args?: {
+          startAt?: number;
+          maxResults?: number;
+        }): Promise<Array<User>>;
         /**
          * Controle cache
          */
@@ -25917,7 +26639,10 @@ export interface AtlassianV3 {
            * 403: Returned if the user doesn't have the necessary permission.
            * 409: Returned if the request takes longer than 10 seconds or is interrupted.
            */
-          $get(args?: {startAt?: number, maxResults?: number}): Promise<Array<User>>;
+          $get(args?: {
+            startAt?: number;
+            maxResults?: number;
+          }): Promise<Array<User>>;
           /**
            * Controle cache
            */
@@ -25959,7 +26684,7 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if the version is not found or the user does not have the necessary permission.
            */
-          $get(args?: {expand?: string}): Promise<Version>;
+          $get(args?: { expand?: string }): Promise<Version>;
           /**
            * Method: delete /rest/api/3/version/{id}
            * operationId: deleteVersion
@@ -25981,7 +26706,10 @@ export interface AtlassianV3 {
            *  *  the user does not have the required permissions.
            * 404: Returned if the version is not found.
            */
-          $delete(args?: {moveFixIssuesTo?: string, moveAffectedIssuesTo?: string}): Promise<unknown /* no content */>;
+          $delete(args?: {
+            moveFixIssuesTo?: string;
+            moveAffectedIssuesTo?: string;
+          }): Promise<unknown /* no content */>;
           /**
            * Method: put /rest/api/3/version/{id}
            * operationId: updateVersion
@@ -26158,7 +26886,9 @@ export interface AtlassianV3 {
              *  *  the version to delete is not found.
              *  *  the user does not have the required permissions.
              */
-            $post(body: DeleteAndReplaceVersionBean): Promise<unknown /* other */>;
+            $post(
+              body: DeleteAndReplaceVersionBean,
+            ): Promise<unknown /* other */>;
           };
           /* Endpoint path: /rest/api/3/version/{id}/unresolvedIssueCount */
           unresolvedIssueCount: {
@@ -26226,7 +26956,10 @@ export interface AtlassianV3 {
          * 400: Returned if the request is invalid.
          * 403: Returned if the caller isn't an app.
          */
-        $get(args?: {startAt?: number, maxResults?: number}): Promise<PageBeanWebhook>;
+        $get(args?: {
+          startAt?: number;
+          maxResults?: number;
+        }): Promise<PageBeanWebhook>;
         /**
          * Method: delete /rest/api/3/webhook
          * operationId: deleteWebhookById
@@ -26252,7 +26985,9 @@ export interface AtlassianV3 {
          * 400: Returned if the request is invalid.
          * 403: Returned if the caller isn't an app.
          */
-        $post(body: WebhookRegistrationDetails): Promise<ContainerForRegisteredWebhooks>;
+        $post(
+          body: WebhookRegistrationDetails,
+        ): Promise<ContainerForRegisteredWebhooks>;
         /**
          * Controle cache
          */
@@ -26276,7 +27011,10 @@ export interface AtlassianV3 {
            * 400: 400 response
            * 403: Returned if the caller is not a Connect app.
            */
-          $get(args?: {maxResults?: number, after?: number}): Promise<FailedWebhooks>;
+          $get(args?: {
+            maxResults?: number;
+            after?: number;
+          }): Promise<FailedWebhooks>;
           /**
            * Controle cache
            */
@@ -26314,7 +27052,9 @@ export interface AtlassianV3 {
          * 200: Returned if the request is successful.
          * 401: Returned if the user does not have the necessary permission.
          */
-        $get(args?: {workflowName?: string}): Promise<Array<DeprecatedWorkflow>>;
+        $get(args?: {
+          workflowName?: string;
+        }): Promise<Array<DeprecatedWorkflow>>;
         /**
          * Method: post /rest/api/3/workflow
          * operationId: createWorkflow
@@ -27085,7 +27825,16 @@ export interface AtlassianV3 {
              * 404: Returned if any transition rule type is not supported.
              * 503: Returned if we encounter a problem while trying to access the required data.
              */
-            $get(args: {startAt?: number, maxResults?: number, types: Array<string>, keys?: Array<string>, workflowNames?: Array<string>, withTags?: Array<string>, draft?: boolean, expand?: string}): Promise<PageBeanWorkflowTransitionRules>;
+            $get(args: {
+              startAt?: number;
+              maxResults?: number;
+              types: Array<string>;
+              keys?: Array<string>;
+              workflowNames?: Array<string>;
+              withTags?: Array<string>;
+              draft?: boolean;
+              expand?: string;
+            }): Promise<PageBeanWorkflowTransitionRules>;
             /**
              * Method: put /rest/api/3/workflow/rule/config
              * operationId: updateWorkflowTransitionRuleConfigurations
@@ -27111,7 +27860,9 @@ export interface AtlassianV3 {
              * 403: Returned if the caller is not a Connect or Forge app.
              * 503: Returned if we encounter a problem while trying to access the required data.
              */
-            $put(body: WorkflowTransitionRulesUpdate): Promise<WorkflowTransitionRulesUpdateErrors>;
+            $put(
+              body: WorkflowTransitionRulesUpdate,
+            ): Promise<WorkflowTransitionRulesUpdateErrors>;
             /**
              * Controle cache
              */
@@ -27135,7 +27886,9 @@ export interface AtlassianV3 {
                * 400: Returned if the request is invalid.
                * 403: Returned if the caller is not a Connect app.
                */
-              $put(body: WorkflowsWithTransitionRulesDetails): Promise<WorkflowTransitionRulesUpdateErrors>;
+              $put(
+                body: WorkflowsWithTransitionRulesDetails,
+              ): Promise<WorkflowTransitionRulesUpdateErrors>;
             };
           };
         };
@@ -27154,7 +27907,15 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the necessary permission.
            */
-          $get(args?: {startAt?: number, maxResults?: number, workflowName?: Array<string>, expand?: string, queryString?: string, orderBy?: string, isActive?: boolean}): Promise<PageBeanWorkflow>;
+          $get(args?: {
+            startAt?: number;
+            maxResults?: number;
+            workflowName?: Array<string>;
+            expand?: string;
+            queryString?: string;
+            orderBy?: string;
+            isActive?: boolean;
+          }): Promise<PageBeanWorkflow>;
           /**
            * Controle cache
            */
@@ -27179,7 +27940,12 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have admin permission
                * 404: Returned if the workflow transition or property is not found.
                */
-              $get(args: {includeReservedKeys?: boolean, key?: string, workflowName: string, workflowMode?: string}): Promise<WorkflowTransitionProperty>;
+              $get(args: {
+                includeReservedKeys?: boolean;
+                key?: string;
+                workflowName: string;
+                workflowMode?: string;
+              }): Promise<WorkflowTransitionProperty>;
               /**
                * Method: delete /rest/api/3/workflow/transitions/{transitionId}/properties
                * operationId: deleteWorkflowTransitionProperty
@@ -27194,7 +27960,11 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if the workflow transition is not found.
                */
-              $delete(args: {key: string, workflowName: string, workflowMode?: string}): Promise<unknown /* no content */>;
+              $delete(args: {
+                key: string;
+                workflowName: string;
+                workflowMode?: string;
+              }): Promise<unknown /* no content */>;
               /**
                * Method: post /rest/api/3/workflow/transitions/{transitionId}/properties
                * operationId: createWorkflowTransitionProperty
@@ -27208,7 +27978,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if the workflow transition is not found.
                */
-              $post(body: WorkflowTransitionProperty): Promise<WorkflowTransitionProperty>;
+              $post(
+                body: WorkflowTransitionProperty,
+              ): Promise<WorkflowTransitionProperty>;
               /**
                * Method: put /rest/api/3/workflow/transitions/{transitionId}/properties
                * operationId: updateWorkflowTransitionProperty
@@ -27223,7 +27995,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if the workflow transition is not found.
                */
-              $put(body: WorkflowTransitionProperty): Promise<WorkflowTransitionProperty>;
+              $put(
+                body: WorkflowTransitionProperty,
+              ): Promise<WorkflowTransitionProperty>;
               /**
                * Controle cache
                */
@@ -27814,7 +28588,11 @@ export interface AtlassianV3 {
            * 400: Returned if the request is not valid.
            * 401: Returned if the authentication credentials are incorrect or missing, or the caller doesn't have permissions to perform the operation.
            */
-          $get(args?: {workflowId?: string, projectId?: string, issueTypeId?: string}): Promise<WorkflowCapabilities>;
+          $get(args?: {
+            workflowId?: string;
+            projectId?: string;
+            issueTypeId?: string;
+          }): Promise<WorkflowCapabilities>;
           /**
            * Controle cache
            */
@@ -27853,7 +28631,9 @@ export interface AtlassianV3 {
              * 400: Returned if the request is not valid.
              * 401: Returned if the authentication credentials are incorrect or missing, or the caller doesn't have permissions to perform the operation.
              */
-            $post(body: WorkflowCreateValidateRequest): Promise<WorkflowValidationErrorList>;
+            $post(
+              body: WorkflowCreateValidateRequest,
+            ): Promise<WorkflowValidationErrorList>;
           };
         };
         /* Endpoint path: /rest/api/3/workflows/update */
@@ -27889,7 +28669,9 @@ export interface AtlassianV3 {
              * 400: Returned if the request is not valid.
              * 401: Returned if the authentication credentials are incorrect or missing, or the caller doesn't have permissions to perform the operation.
              */
-            $post(body: WorkflowUpdateValidateRequestBean): Promise<WorkflowValidationErrorList>;
+            $post(
+              body: WorkflowUpdateValidateRequestBean,
+            ): Promise<WorkflowValidationErrorList>;
           };
         };
       };
@@ -27906,7 +28688,10 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the user does not have the necessary permission.
          */
-        $get(args?: {startAt?: number, maxResults?: number}): Promise<PageBeanWorkflowScheme>;
+        $get(args?: {
+          startAt?: number;
+          maxResults?: number;
+        }): Promise<PageBeanWorkflowScheme>;
         /**
          * Method: post /rest/api/3/workflowscheme
          * operationId: createWorkflowScheme
@@ -27940,7 +28725,9 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the necessary permission.
            */
-          $get(args: {projectId: Array<number>}): Promise<ContainerOfWorkflowSchemeAssociations>;
+          $get(args: {
+            projectId: Array<number>;
+          }): Promise<ContainerOfWorkflowSchemeAssociations>;
           /**
            * Method: put /rest/api/3/workflowscheme/project
            * operationId: assignSchemeToProject
@@ -27956,7 +28743,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the required permissions.
            * 404: Returned if the workflow scheme or the project are not found.
            */
-          $put(body: WorkflowSchemeProjectAssociation): Promise<unknown /* other */>;
+          $put(
+            body: WorkflowSchemeProjectAssociation,
+          ): Promise<unknown /* other */>;
           /**
            * Controle cache
            */
@@ -27978,7 +28767,9 @@ export interface AtlassianV3 {
            * 400: Returned if the request is not valid.
            * 401: Returned if the authentication credentials are incorrect or missing, or the caller doesn't have permissions to perform the operation.
            */
-          $post(body: WorkflowSchemeReadRequest): Promise<Array<WorkflowSchemeReadResponse>>;
+          $post(
+            body: WorkflowSchemeReadRequest,
+          ): Promise<Array<WorkflowSchemeReadResponse>>;
         };
         /* Endpoint path: /rest/api/3/workflowscheme/update */
         update: {
@@ -27997,7 +28788,9 @@ export interface AtlassianV3 {
            * 400: Returned if the request is not valid.
            * 401: Returned if the authentication credentials are incorrect or missing, or the caller doesn't have permissions to perform the operation.
            */
-          $post(body: WorkflowSchemeUpdateRequest): Promise<unknown /* other */>;
+          $post(
+            body: WorkflowSchemeUpdateRequest,
+          ): Promise<unknown /* other */>;
           /* Endpoint path: /rest/api/3/workflowscheme/update/mappings */
           mappings: {
             /**
@@ -28014,7 +28807,9 @@ export interface AtlassianV3 {
              * 400: Returned if the request is not valid.
              * 401: Returned if the authentication credentials are incorrect or missing, or the caller doesn't have permissions to perform the operation.
              */
-            $post(body: WorkflowSchemeUpdateRequiredMappingsRequest): Promise<WorkflowSchemeUpdateRequiredMappingsResponse>;
+            $post(
+              body: WorkflowSchemeUpdateRequiredMappingsRequest,
+            ): Promise<WorkflowSchemeUpdateRequiredMappingsResponse>;
           };
         };
         /* Endpoint path: /rest/api/3/workflowscheme/{id} */
@@ -28031,7 +28826,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permission.
            * 404: Returned if the workflow scheme is not found.
            */
-          $get(args?: {returnDraftIfExists?: boolean}): Promise<WorkflowScheme>;
+          $get(args?: {
+            returnDraftIfExists?: boolean;
+          }): Promise<WorkflowScheme>;
           /**
            * Method: delete /rest/api/3/workflowscheme/{id}
            * operationId: deleteWorkflowScheme
@@ -28094,7 +28891,9 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if the workflow scheme is not found.
              */
-            $get(args?: {returnDraftIfExists?: boolean}): Promise<DefaultWorkflow>;
+            $get(args?: {
+              returnDraftIfExists?: boolean;
+            }): Promise<DefaultWorkflow>;
             /**
              * Method: delete /rest/api/3/workflowscheme/{id}/default
              * operationId: deleteDefaultWorkflow
@@ -28110,7 +28909,9 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if the workflow scheme is not found.
              */
-            $delete(args?: {updateDraftIfNeeded?: boolean}): Promise<WorkflowScheme>;
+            $delete(args?: {
+              updateDraftIfNeeded?: boolean;
+            }): Promise<WorkflowScheme>;
             /**
              * Method: put /rest/api/3/workflowscheme/{id}/default
              * operationId: updateDefaultWorkflow
@@ -28321,7 +29122,9 @@ export interface AtlassianV3 {
                *  *  The workflow scheme does not have a draft.
                *  *  A new status in the draft workflow scheme is not found.
                */
-              $post(body: PublishDraftWorkflowScheme): Promise<unknown /* no content */>;
+              $post(
+                body: PublishDraftWorkflowScheme,
+              ): Promise<unknown /* no content */>;
             };
             /* Endpoint path: /rest/api/3/workflowscheme/{id}/draft/workflow */
             workflow: {
@@ -28337,7 +29140,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if either the workflow scheme or workflow (if specified) is not found. session.
                */
-              $get(args?: {workflowName?: string}): Promise<IssueTypesWorkflowMapping>;
+              $get(args?: {
+                workflowName?: string;
+              }): Promise<IssueTypesWorkflowMapping>;
               /**
                * Method: delete /rest/api/3/workflowscheme/{id}/draft/workflow
                * operationId: deleteDraftWorkflowMapping
@@ -28355,7 +29160,9 @@ export interface AtlassianV3 {
                *  *  The workflow is not found.
                *  *  The workflow is not specified.
                */
-              $delete(args: {workflowName: string}): Promise<unknown /* no content */>;
+              $delete(args: {
+                workflowName: string;
+              }): Promise<unknown /* no content */>;
               /**
                * Method: put /rest/api/3/workflowscheme/{id}/draft/workflow
                * operationId: updateDraftWorkflowMapping
@@ -28397,7 +29204,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if the workflow scheme or issue type is not found.
                */
-              $get(args?: {returnDraftIfExists?: boolean}): Promise<IssueTypeWorkflowMapping>;
+              $get(args?: {
+                returnDraftIfExists?: boolean;
+              }): Promise<IssueTypeWorkflowMapping>;
               /**
                * Method: delete /rest/api/3/workflowscheme/{id}/issuetype/{issueType}
                * operationId: deleteWorkflowSchemeIssueType
@@ -28413,7 +29222,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if the workflow scheme or issue type is not found.
                */
-              $delete(args?: {updateDraftIfNeeded?: boolean}): Promise<WorkflowScheme>;
+              $delete(args?: {
+                updateDraftIfNeeded?: boolean;
+              }): Promise<WorkflowScheme>;
               /**
                * Method: put /rest/api/3/workflowscheme/{id}/issuetype/{issueType}
                * operationId: setWorkflowSchemeIssueType
@@ -28450,7 +29261,10 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if either the workflow scheme or workflow is not found.
              */
-            $get(args?: {workflowName?: string, returnDraftIfExists?: boolean}): Promise<IssueTypesWorkflowMapping>;
+            $get(args?: {
+              workflowName?: string;
+              returnDraftIfExists?: boolean;
+            }): Promise<IssueTypesWorkflowMapping>;
             /**
              * Method: delete /rest/api/3/workflowscheme/{id}/workflow
              * operationId: deleteWorkflowMapping
@@ -28470,7 +29284,10 @@ export interface AtlassianV3 {
              *  *  The workflow is not found.
              *  *  The workflow is not specified.
              */
-            $delete(args: {workflowName: string, updateDraftIfNeeded?: boolean}): Promise<unknown /* no content */>;
+            $delete(args: {
+              workflowName: string;
+              updateDraftIfNeeded?: boolean;
+            }): Promise<unknown /* no content */>;
             /**
              * Method: put /rest/api/3/workflowscheme/{id}/workflow
              * operationId: updateWorkflowMapping
@@ -28516,7 +29333,7 @@ export interface AtlassianV3 {
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {since?: number}): Promise<ChangedWorklogs>;
+          $get(args?: { since?: number }): Promise<ChangedWorklogs>;
           /**
            * Controle cache
            */
@@ -28561,7 +29378,10 @@ export interface AtlassianV3 {
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {since?: number, expand?: string}): Promise<ChangedWorklogs>;
+          $get(args?: {
+            since?: number;
+            expand?: string;
+          }): Promise<ChangedWorklogs>;
           /**
            * Controle cache
            */
@@ -28680,7 +29500,9 @@ export interface AtlassianV3 {
              * 204: Returned if the request is successful.
              * 401: Returned if the call is not from a Connect app.
              */
-            $delete(args?: {moduleKey?: Array<string>}): Promise<unknown /* no content */>;
+            $delete(args?: {
+              moduleKey?: Array<string>;
+            }): Promise<unknown /* no content */>;
             /**
              * Method: post /rest/atlassian-connect/1/app/module/dynamic
              * operationId: DynamicModulesResource.registerModules_post
@@ -28737,7 +29559,9 @@ export interface AtlassianV3 {
              * 400: Returned if the request is not valid.
              * 403: Returned if the authorisation credentials are incorrect or missing.
              */
-            $put(body: Array<EntityPropertyDetails>): Promise<unknown /* no content */>;
+            $put(
+              body: Array<EntityPropertyDetails>,
+            ): Promise<unknown /* no content */>;
           };
         };
         /* Endpoint path: /rest/atlassian-connect/1/migration/workflow */
@@ -28755,7 +29579,9 @@ export interface AtlassianV3 {
                * 400: Returned if the request is not valid.
                * 403: Returned if the authorisation credentials are incorrect or missing.
                */
-              $post(body: WorkflowRulesSearch): Promise<WorkflowRulesSearchDetails>;
+              $post(
+                body: WorkflowRulesSearch,
+              ): Promise<WorkflowRulesSearchDetails>;
             };
           };
         };
@@ -28777,7 +29603,9 @@ export interface AtlassianV3 {
          * 501: The endpoint isn't ready for receiving requests.
          * 504: The upstream service is busy.
          */
-        $get(args: {serviceIds: Array<string>}): Promise<Array<ServiceRegistry>>;
+        $get(args: {
+          serviceIds: Array<string>;
+        }): Promise<Array<ServiceRegistry>>;
         /**
          * Controle cache
          */
@@ -28843,6 +29671,6 @@ export interface AtlassianV3 {
  * END API Models
  */
 export function proxyAtlassianV3(apiEngine: ApiRequestable): AtlassianV3 {
-  return buildProxy(apiEngine, '');
+  return buildProxy(apiEngine, "");
 }
 export default proxyAtlassianV3;

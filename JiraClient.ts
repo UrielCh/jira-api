@@ -6,10 +6,10 @@ import type { CacheAction, ICacheOptions, SlotConstructor } from "./common.ts";
 
 /**
  * Main class is used to call Atlassian API
- * 
+ *
  * example:
  * ```ts
- * const jira = new JiraClient("yourdomain.atlassian.net", { 
+ * const jira = new JiraClient("yourdomain.atlassian.net", {
  *  user: "youruser",
  *  token: "yourtoken"
  * });
@@ -40,7 +40,7 @@ export class JiraClient {
 
   /**
    * JiraClient constructor
-   * 
+   *
    * @param domain your atlassian domain yourdomain.atlassian.net
    * @param opt user and token for basic auth
    */

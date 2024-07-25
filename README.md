@@ -6,15 +6,16 @@ The best JIRA REST API client
 
 ## comparaison to other clients API
 
-`@u4/jira` is built on top of deno, using the fetch API, and no external dependency.
+`@u4/jira` is built on top of deno, using the fetch API, and no external
+dependency.
 
 Compared to other APIs the lib is by far the smallest
 
-| package         | node_modules size| files count  | Api version | extra features |
-|-----------------|-----------------:|-------------:|-------------|----------------|
-|`npm:jira-client`|              37M |      2 728   | V2 only     |                |
-|`npm:jira.js`    |              96M |      20 784  | V2 and V3   |                |
-|`jsr:@u4/jira`   |               2M |          45  | V3 only     | built-in cache |
+| package           | node_modules size | files count | Api version | extra features |
+| ----------------- | ----------------: | ----------: | ----------- | -------------- |
+| `npm:jira-client` |               37M |       2 728 | V2 only     |                |
+| `npm:jira.js`     |               96M |      20 784 | V2 and V3   |                |
+| `jsr:@u4/jira`    |                2M |          45 | V3 only     | built-in cache |
 
 ## Samples
 
@@ -40,12 +41,12 @@ const jira = new JiraClient(domain, { user, token });
 const client = jira.apiV3;
 const issues = await client.search.$get({ jql: "project = MPRJ" });
 console.log(`Issues: `, issues.issues);
-for (const issue of issues.issues) {
-  await client.issue.$(issue.id).$get();
+for (const issue of issues.issues!) {
+  await client.issue.$(issue.id!).$get();
 }
 ```
 
-### using deno
+### Using deno
 
 ```bash
 deno add @u4/jira
@@ -59,4 +60,26 @@ const jira = new JiraClient("yourdomain", { user, token });
 const client = jira.apiV3;
 const dashboards = await client.dashboard.$get({ startAt: 0 });
 console.log("dashboards", dashboards);
+```
+
+### use memory cache
+
+```ts
+// enable default memory cache
+await client.project.$cache();
+const projects = await client.project.$get();
+console.log(`get ${projects.length} projects from API`);
+const projects2 = await client.project.$get();
+console.log(`get ${projects2.length} projects from Memory cache`);
+await client.project.$cache("flush");
+const projects3 = await client.project.$get();
+console.log(`get ${projects3.length} projects from API after flush cache`);
+```
+
+### use KV cache
+
+```ts
+await client.project.$cache({ silotClass: CacheSilotDenoKV });
+const projects = await client.project.$get();
+console.log(`get ${projects.length} projects from API or cache`);
 ```
