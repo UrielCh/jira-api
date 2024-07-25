@@ -15,5 +15,5 @@ if (!host) {
 }
 
 export function createJiraClient(): AtlassianV3["api"][3] {
-  return new JiraClient(host, { user: email, token: apiToken }).root.api[3];
+  return new JiraClient(host, { user: email, token: apiToken }).apiV3;
 }

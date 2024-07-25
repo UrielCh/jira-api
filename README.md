@@ -10,14 +10,13 @@ The best JIRA REST API client
 
 Compared to other APIs the lib is by far the smallest
 
-|----------------|------------------|--------------|-------------|----------------|
-| package        | node_modules size| files count  | Api version | extra features |
-|----------------|------------------|-------------:|-------------|----------------|
-|mpm:jira-client | 37M              | 2 728        | V2 only     |                |
-|mpm:jira.js     | 96M              | 20 784       | V2 and V3   |                |
-| jsr:@u4/jira   | 2.5M             | 45           | V3 only     | built-in cache |
+| package         | node_modules size| files count  | Api version | extra features |
+|-----------------|-----------------:|-------------:|-------------|----------------|
+|`npm:jira-client`|              37M |      2 728   | V2 only     |                |
+|`npm:jira.js`    |              96M |      20 784  | V2 and V3   |                |
+|`jsr:@u4/jira`   |               2M |          45  | V3 only     | built-in cache |
 
-## samples
+## Samples
 
 ### Using Node
 
@@ -35,12 +34,14 @@ import JiraClient from "@u4/jira";
 const domain = process.env.JRA_DOMAIN;
 const user = process.env.JRA_USER;
 const token = process.env.JRA_TOKEN;
+// built the client
 const jira = new JiraClient(domain, { user, token });
-const apiV3 = jira.apiV3;
-const dashboards = await apiV3.dashboard.$get();
-for (const dashboard of dashboards.dashboards) {
-  await apiV3.dashboard.$(dashboard.id).$get();
-  console.log(dashboard);
+// pick the V3 api
+const client = jira.apiV3;
+const issues = await client.search.$get({ jql: "project = MPRJ" });
+console.log(`Issues: `, issues.issues);
+for (const issue of issues.issues) {
+  await client.issue.$(issue.id).$get();
 }
 ```
 
@@ -53,9 +54,9 @@ deno add @u4/jira
 ```ts
 import JiraClient from "@u4/jira";
 
-const client = new JiraClient("yourdomain", { user, token });
+const jira = new JiraClient("yourdomain", { user, token });
 // get api V3
-const api = client.apiV3;
-const dashboards = await api.dashboard.$get({ startAt: 0 });
+const client = jira.apiV3;
+const dashboards = await client.dashboard.$get({ startAt: 0 });
 console.log("dashboards", dashboards);
 ```
