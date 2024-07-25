@@ -13,9 +13,9 @@ Compared to other APIs the lib is by far the smallest
 
 | package           | node_modules size | files count | Api version | extra features |
 | ----------------- | ----------------: | ----------: | ----------- | -------------- |
-| `npm:jira-client` |               37M |       2 728 | V2 only     |                |
-| `npm:jira.js`     |               96M |      20 784 | V2 and V3   |                |
 | `jsr:@u4/jira`    |                2M |          45 | V3 only     | built-in cache |
+| `npm:jira-client` |               40M |       2 728 | V2 only     |                |
+| `npm:jira.js`     |               96M |      20 784 | V2 and V3   |                |
 
 ## Samples
 
@@ -25,7 +25,7 @@ Compared to other APIs the lib is by far the smallest
 npx jsr add @u4/jira
 ```
 
-fill your creadential in env variable like: JRA_DOMAIN, JRA_USER and JRA_TOKEN
+Fill your creadential in env variable like: JRA_DOMAIN, JRA_USER and JRA_TOKEN
 
 run your NodeJS code:
 

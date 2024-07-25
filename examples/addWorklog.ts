@@ -12,7 +12,7 @@ async function addWorklog() {
   // The main part responsible for creating the worklog
   //  /rest/api/3/issue/{issueIdOrKey}/worklog
   // /** MODEL Worklog */
-
+  // const myself = await client.myself.$get();
   const worklog = await client.issue.$(newIssue.id).worklog.$post({
     comment: {
       content: [
