@@ -1,16 +1,21 @@
-# jira-api
+# @u4/jira
 
-a compact JIRA REST API
+The best JIRA REST API client
 
-[![JSR](https://jsr.io/badges/@u4/midjourney)](https://jsr.io/@u4/jira)
+[![JSR](https://jsr.io/badges/@u4/jira)](https://jsr.io/@u4/jira)
 
-## Why not using jira.js
+## comparaison to other clients API
 
-jira.js is huge, 8.91MB containing more than 10,000 files, and relies on axios.
-This library has fewer than 10 files, and once bundled it is less than 1KB, and
-it only use fetch.
+`@u4/jira` is built on top of deno, using the fetch API, and no external dependency.
 
-`@u4/jira` also include a builtin cache, you can use to improve your script speed.
+Compared to other APIs the lib is by far the smallest
+
+|----------------|------------------|--------------|-------------|----------------|
+| package        | node_modules size| files count  | Api version | extra features |
+|----------------|------------------|-------------:|-------------|----------------|
+|mpm:jira-client | 37M              | 2 728        | V2 only     |                |
+|mpm:jira.js     | 96M              | 20 784       | V2 and V3   |                |
+| jsr:@u4/jira   | 2.5M             | 45           | V3 only     | built-in cache |
 
 ## samples
 
@@ -31,7 +36,7 @@ const domain = process.env.JRA_DOMAIN;
 const user = process.env.JRA_USER;
 const token = process.env.JRA_TOKEN;
 const jira = new JiraClient(domain, { user, token });
-const apiV3 = jira.root.api[3];
+const apiV3 = jira.apiV3;
 const dashboards = await apiV3.dashboard.$get();
 for (const dashboard of dashboards.dashboards) {
   await apiV3.dashboard.$(dashboard.id).$get();
@@ -50,7 +55,7 @@ import JiraClient from "@u4/jira";
 
 const client = new JiraClient("yourdomain", { user, token });
 // get api V3
-const api = client.root.api[3];
+const api = client.apiV3;
 const dashboards = await api.dashboard.$get({ startAt: 0 });
 console.log("dashboards", dashboards);
 ```

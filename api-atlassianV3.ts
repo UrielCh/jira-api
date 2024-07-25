@@ -80,23 +80,23 @@ export type AnnouncementBannerConfiguration = {
   /**
    * Hash of the banner data. The client detects updates by comparing hash IDs.
    */
-  hashId?: string;
+  hashId: string;
   /**
    * Flag indicating if the announcement banner can be dismissed by the user.
    */
-  isDismissible?: boolean;
+  isDismissible: boolean;
   /**
    * Flag indicating if the announcement banner is enabled or not.
    */
-  isEnabled?: boolean;
+  isEnabled: boolean;
   /**
    * The text on the announcement banner.
    */
-  message?: string;
+  message: string;
   /**
    * Visibility of the announcement banner.
    */
-  visibility?: string;
+  visibility: string;
 }
 /**
  * Configuration of the announcement banner.
@@ -135,7 +135,7 @@ export type AppWorkflowTransitionRule = {
    * The key of the rule, as defined in the Connect or the Forge app descriptor.
    */
   key: string;
-  transition?: WorkflowTransition;
+  transition: WorkflowTransition;
 }
 /**
  * The application the linked item is in.
@@ -315,23 +315,23 @@ export type AssociatedItemBean = {
   /**
    * The ID of the associated record.
    */
-  id?: string;
+  id: string;
   /**
    * The name of the associated record.
    */
-  name?: string;
+  name: string;
   /**
    * The ID of the associated parent record.
    */
-  parentId?: string;
+  parentId: string;
   /**
    * The name of the associated parent record.
    */
-  parentName?: string;
+  parentName: string;
   /**
    * The type of the associated record.
    */
-  typeName?: string;
+  typeName: string;
 }
 /**
  * Details about an attachment.
@@ -341,41 +341,41 @@ export type Attachment = {
   /**
    * Details of the user who added the attachment.
    */
-  author?: UserDetails;
+  author: UserDetails;
   /**
    * The content of the attachment.
    */
-  content?: string;
+  content: string;
   /**
    * The datetime the attachment was created.
    * @format: "date-time"
    */
-  created?: string;
+  created: string;
   /**
    * The file name of the attachment.
    */
-  filename?: string;
+  filename: string;
   /**
    * The ID of the attachment.
    */
-  id?: string;
+  id: string;
   /**
    * The MIME type of the attachment.
    */
-  mimeType?: string;
+  mimeType: string;
   /**
    * The URL of the attachment details response.
    */
-  self?: string;
+  self: string;
   /**
    * The size of the attachment.
    * @format: "int64"
    */
-  size?: number;
+  size: number;
   /**
    * The URL of a thumbnail representing the attachment.
    */
-  thumbnail?: string;
+  thumbnail: string;
 } & Record<string, any>
 /**
  * MODEL AttachmentArchive
@@ -430,23 +430,23 @@ export type AttachmentArchiveItemReadable = {
    * The position of the item within the archive.
    * @format: "int64"
    */
-  index?: number;
+  index: number;
   /**
    * The label for the archive item.
    */
-  label?: string;
+  label: string;
   /**
    * The MIME type of the archive item.
    */
-  mediaType?: string;
+  mediaType: string;
   /**
    * The path of the archive item.
    */
-  path?: string;
+  path: string;
   /**
    * The size of the archive item.
    */
-  size?: string;
+  size: string;
 }
 /**
  * Metadata for an archive (for example a zip) and its contents.
@@ -455,25 +455,25 @@ export type AttachmentArchiveMetadataReadable = {
   /**
    * The list of the items included in the archive.
    */
-  entries?: Array<AttachmentArchiveItemReadable>;
+  entries: Array<AttachmentArchiveItemReadable>;
   /**
    * The ID of the attachment.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * The MIME type of the attachment.
    */
-  mediaType?: string;
+  mediaType: string;
   /**
    * The name of the archive file.
    */
-  name?: string;
+  name: string;
   /**
    * The number of items included in the archive.
    * @format: "int64"
    */
-  totalEntryCount?: number;
+  totalEntryCount: number;
 }
 /**
  * Metadata for an issue attachment.
@@ -482,47 +482,47 @@ export type AttachmentMetadata = {
   /**
    * Details of the user who attached the file.
    */
-  author?: User;
+  author: User;
   /**
    * The URL of the attachment.
    */
-  content?: string;
+  content: string;
   /**
    * The datetime the attachment was created.
    * @format: "date-time"
    */
-  created?: string;
+  created: string;
   /**
    * The name of the attachment file.
    */
-  filename?: string;
+  filename: string;
   /**
    * The ID of the attachment.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * The MIME type of the attachment.
    */
-  mimeType?: string;
+  mimeType: string;
   /**
    * Additional properties of the attachment.
    */
-  properties?: Record<string, unknown>;
+  properties: Record<string, unknown>;
   /**
    * The URL of the attachment metadata details.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The size of the attachment.
    * @format: "int64"
    */
-  size?: number;
+  size: number;
   /**
    * The URL of a thumbnail representing the attachment.
    */
-  thumbnail?: string;
+  thumbnail: string;
 }
 /**
  * Details of the instance's attachment settings.
@@ -531,12 +531,12 @@ export type AttachmentSettings = {
   /**
    * Whether the ability to add attachments is enabled.
    */
-  enabled?: boolean;
+  enabled: boolean;
   /**
    * The maximum size of attachments permitted, in bytes.
    * @format: "int64"
    */
-  uploadLimit?: number;
+  uploadLimit: number;
 }
 /**
  * An audit record.
@@ -545,37 +545,37 @@ export type AuditRecordBean = {
   /**
    * The list of items associated with the changed record.
    */
-  associatedItems?: Array<AssociatedItemBean>;
+  associatedItems: Array<AssociatedItemBean>;
   /**
    * Deprecated, use `authorAccountId` instead. The key of the user who created the audit record.
    */
-  authorKey?: string;
+  authorKey: string;
   /**
    * The category of the audit record. For a list of these categories, see the help article [Auditing in Jira applications](https://confluence.atlassian.com/x/noXKM).
    */
-  category?: string;
+  category: string;
   /**
    * The list of values changed in the record event.
    */
-  changedValues?: Array<ChangedValueBean>;
+  changedValues: Array<ChangedValueBean>;
   /**
    * The date and time on which the audit record was created.
    * @format: "date-time"
    */
-  created?: string;
+  created: string;
   /**
    * The description of the audit record.
    */
-  description?: string;
+  description: string;
   /**
    * The event the audit record originated from.
    */
-  eventSource?: string;
+  eventSource: string;
   /**
    * The ID of the audit record.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * Ref: #/components/schemas/AssociatedItemBean
    */
@@ -583,11 +583,11 @@ export type AuditRecordBean = {
   /**
    * The URL of the computer where the creation of the audit record was initiated.
    */
-  remoteAddress?: string;
+  remoteAddress: string;
   /**
    * The summary of the audit record.
    */
-  summary?: string;
+  summary: string;
 }
 /**
  * Container for a list of audit records.
@@ -597,21 +597,21 @@ export type AuditRecords = {
    * The requested or default limit on the number of audit items to be returned.
    * @format: "int32"
    */
-  limit?: number;
+  limit: number;
   /**
    * The number of audit items skipped before the first item in this list.
    * @format: "int32"
    */
-  offset?: number;
+  offset: number;
   /**
    * The list of audit items.
    */
-  records?: Array<AuditRecordBean>;
+  records: Array<AuditRecordBean>;
   /**
    * The total number of audit items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
 }
 /**
  * A field auto-complete suggestion.
@@ -642,7 +642,7 @@ export type AvailableDashboardGadget = {
   /**
    * The module key of the gadget type.
    */
-  moduleKey?: string;
+  moduleKey: string;
   /**
    * The title of the gadget.
    */
@@ -650,7 +650,7 @@ export type AvailableDashboardGadget = {
   /**
    * The URI of the gadget type.
    */
-  uri?: string;
+  uri: string;
 }
 /**
  * The list of available gadgets.
@@ -798,7 +798,7 @@ export type Avatar = {
   /**
    * The file name of the avatar icon. Returned for system avatars.
    */
-  fileName?: string;
+  fileName: string;
   /**
    * The ID of the avatar.
    */
@@ -806,23 +806,23 @@ export type Avatar = {
   /**
    * Whether the avatar can be deleted.
    */
-  isDeletable?: boolean;
+  isDeletable: boolean;
   /**
    * Whether the avatar is used in Jira. For example, shown as a project's avatar.
    */
-  isSelected?: boolean;
+  isSelected: boolean;
   /**
    * Whether the avatar is a system avatar.
    */
-  isSystemAvatar?: boolean;
+  isSystemAvatar: boolean;
   /**
    * The owner of the avatar. For a system avatar the owner is null (and nothing is returned). For non-system avatars this is the appropriate identifier, such as the ID for a project or the account ID for a user.
    */
-  owner?: string;
+  owner: string;
   /**
    * The list of avatar icon URLs.
    */
-  urls?: Record<string, unknown>;
+  urls: Record<string, unknown>;
 } & Record<string, any>
 /**
  * MODEL AvatarUrlsBean
@@ -856,11 +856,11 @@ export type Avatars = {
   /**
    * Custom avatars list.
    */
-  custom?: Array<Avatar>;
+  custom: Array<Avatar>;
   /**
    * System avatars list.
    */
-  system?: Array<Avatar>;
+  system: Array<Avatar>;
 }
 /**
  * Details for changing owners of shareable entities
@@ -913,15 +913,15 @@ export type BulkEditGetFields = {
   /**
    * The end cursor for use in pagination.
    */
-  endingBefore?: string;
+  endingBefore: string;
   /**
    * List of all the fields
    */
-  fields?: Array<IssueBulkEditField>;
+  fields: Array<IssueBulkEditField>;
   /**
    * The start cursor for use in pagination.
    */
-  startingAfter?: string;
+  startingAfter: string;
 }
 /**
  * Details of a request to bulk edit shareable entity.
@@ -968,7 +968,7 @@ export type BulkIssueIsWatching = {
   /**
    * The map of issue ID to boolean watch status.
    */
-  issuesIsWatching?: Record<string, unknown>;
+  issuesIsWatching: Record<string, unknown>;
 }
 /**
  * Bulk issue property update request details.
@@ -1053,7 +1053,7 @@ export type BulkOperationProgress = {
   /**
    * The ID of the task.
    */
-  taskId?: string;
+  taskId: string;
   /**
    * The number of issues that the bulk operation was attempted on.
    * @format: "int32"
@@ -1136,27 +1136,27 @@ export type ChangeDetails = {
   /**
    * The name of the field changed.
    */
-  field?: string;
+  field: string;
   /**
    * The ID of the field changed.
    */
-  fieldId?: string;
+  fieldId: string;
   /**
    * The type of the field changed.
    */
-  fieldtype?: string;
+  fieldtype: string;
   /**
    * The details of the original value.
    */
-  from?: string;
+  from: string;
   /**
    * The details of the original value as a string.
    */
-  fromString?: string;
+  fromString: string;
   /**
    * The details of the new value.
    */
-  to?: string;
+  to: string;
 }
 /**
  * The account ID of the new owner.
@@ -1174,15 +1174,15 @@ export type ChangedValueBean = {
   /**
    * The value of the field before the change.
    */
-  changedFrom?: string;
+  changedFrom: string;
   /**
    * The value of the field after the change.
    */
-  changedTo?: string;
+  changedTo: string;
   /**
    * The name of the field changed.
    */
-  fieldName?: string;
+  fieldName: string;
 }
 /**
  * Details of a changed worklog.
@@ -1191,17 +1191,17 @@ export type ChangedWorklog = {
   /**
    * Details of properties associated with the change.
    */
-  properties?: Array<EntityProperty>;
+  properties: Array<EntityProperty>;
   /**
    * The datetime of the change.
    * @format: "int64"
    */
-  updatedTime?: number;
+  updatedTime: number;
   /**
    * The ID of the worklog.
    * @format: "int64"
    */
-  worklogId?: number;
+  worklogId: number;
 }
 /**
  * List of changed worklogs.
@@ -1212,26 +1212,26 @@ export type ChangedWorklogs = {
    * The URL of the next list of changed worklogs.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of this changed worklogs list.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The datetime of the first worklog item in the list.
    * @format: "int64"
    */
-  since?: number;
+  since: number;
   /**
    * The datetime of the last worklog item in the list.
    * @format: "int64"
    */
-  until?: number;
+  until: number;
   /**
    * Changed worklog list.
    */
-  values?: Array<ChangedWorklog>;
+  values: Array<ChangedWorklog>;
 }
 /**
  * A log of changes made to issue fields. Changelogs related to workflow associations are currently being deprecated.
@@ -1240,24 +1240,24 @@ export type Changelog = {
   /**
    * The user who made the change.
    */
-  author?: UserDetails;
+  author: UserDetails;
   /**
    * The date on which the change took place.
    * @format: "date-time"
    */
-  created?: string;
+  created: string;
   /**
    * The history metadata associated with the changed.
    */
-  historyMetadata?: HistoryMetadata;
+  historyMetadata: HistoryMetadata;
   /**
    * The ID of the changelog.
    */
-  id?: string;
+  id: string;
   /**
    * The list of items changed.
    */
-  items?: Array<ChangeDetails>;
+  items: Array<ChangeDetails>;
 }
 /**
  * Details of an issue navigator column item.
@@ -1286,7 +1286,7 @@ export type Comment = {
   /**
    * The ID of the user who created the comment.
    */
-  author?: UserDetails;
+  author: UserDetails;
   /**
    * The comment text in [Atlassian Document Format](https://developer.atlassian.com/cloud/jira/platform/apis/document/structure/).
    */
@@ -1295,19 +1295,19 @@ export type Comment = {
    * The date and time at which the comment was created.
    * @format: "date-time"
    */
-  created?: string;
+  created: string;
   /**
    * The ID of the comment.
    */
-  id?: string;
+  id: string;
   /**
    * Whether the comment was added from an email sent by a person who is not part of the issue. See [Allow external emails to be added as comments on issues](https://support.atlassian.com/jira-service-management-cloud/docs/allow-external-emails-to-be-added-as-comments-on-issues/)for information on setting up this feature.
    */
-  jsdAuthorCanSeeRequest?: boolean;
+  jsdAuthorCanSeeRequest: boolean;
   /**
    * Whether the comment is visible in Jira Service Desk. Defaults to true when comments are created in the Jira Cloud Platform. This includes when the site doesn't use Jira Service Desk or the project isn't a Jira Service Desk project and, therefore, there is no Jira Service Desk for the issue to be visible on. To create a comment with its visibility in Jira Service Desk set to false, use the Jira Service Desk REST API [Create request comment](https://developer.atlassian.com/cloud/jira/service-desk/rest/#api-rest-servicedeskapi-request-issueIdOrKey-comment-post) operation.
    */
-  jsdPublic?: boolean;
+  jsdPublic: boolean;
   /**
    * A list of comment properties. Optional on create and update.
    */
@@ -1315,20 +1315,20 @@ export type Comment = {
   /**
    * The rendered version of the comment.
    */
-  renderedBody?: string;
+  renderedBody: string;
   /**
    * The URL of the comment.
    */
-  self?: string;
+  self: string;
   /**
    * The ID of the user who updated the comment last.
    */
-  updateAuthor?: UserDetails;
+  updateAuthor: UserDetails;
   /**
    * The date and time at which the comment was updated last.
    * @format: "date-time"
    */
-  updated?: string;
+  updated: string;
   /**
    * The group or role to which this comment is visible. Optional on create and update.
    */
@@ -1342,12 +1342,12 @@ export type ComponentIssuesCount = {
    * The count of issues assigned to a component.
    * @format: "int64"
    */
-  issueCount?: number;
+  issueCount: number;
   /**
    * The URL for this count of issues for a component.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
 }
 /**
  * MODEL ComponentJsonBean
@@ -1371,30 +1371,30 @@ export type ComponentWithIssueCount = {
   assignee?: User;
   /**
    * The nominal user type used to determine the assignee for issues created with this component. See `realAssigneeType` for details on how the type of the user, and hence the user, assigned to issues is determined. Takes the following values:
-   * 
+   *
    *  *  `PROJECT_LEAD` the assignee to any issues created with this component is nominally the lead for the project the component is in.
    *  *  `COMPONENT_LEAD` the assignee to any issues created with this component is nominally the lead for the component.
    *  *  `UNASSIGNED` an assignee is not set for issues created with this component.
    *  *  `PROJECT_DEFAULT` the assignee to any issues created with this component is nominally the default assignee for the project that the component is in.
    */
-  assigneeType?: string;
+  assigneeType: string;
   /**
    * The description for the component.
    */
-  description?: string;
+  description: string;
   /**
    * The unique identifier for the component.
    */
-  id?: string;
+  id: string;
   /**
    * Whether a user is associated with `assigneeType`. For example, if the `assigneeType` is set to `COMPONENT_LEAD` but the component lead is not set, then `false` is returned.
    */
-  isAssigneeTypeValid?: boolean;
+  isAssigneeTypeValid: boolean;
   /**
    * Count of issues for the component.
    * @format: "int64"
    */
-  issueCount?: number;
+  issueCount: number;
   /**
    * The user details for the component's lead user.
    */
@@ -1402,34 +1402,34 @@ export type ComponentWithIssueCount = {
   /**
    * The name for the component.
    */
-  name?: string;
+  name: string;
   /**
    * The key of the project to which the component is assigned.
    */
-  project?: string;
+  project: string;
   /**
    * Not used.
    * @format: "int64"
    */
-  projectId?: number;
+  projectId: number;
   /**
    * The user assigned to issues created with this component, when `assigneeType` does not identify a valid assignee.
    */
   realAssignee?: User;
   /**
    * The type of the assignee that is assigned to issues created with this component, when an assignee cannot be set from the `assigneeType`. For example, `assigneeType` is set to `COMPONENT_LEAD` but no component lead is set. This property is set to one of the following values:
-   * 
+   *
    *  *  `PROJECT_LEAD` when `assigneeType` is `PROJECT_LEAD` and the project lead has permission to be assigned issues in the project that the component is in.
    *  *  `COMPONENT_LEAD` when `assignee`Type is `COMPONENT_LEAD` and the component lead has permission to be assigned issues in the project that the component is in.
    *  *  `UNASSIGNED` when `assigneeType` is `UNASSIGNED` and Jira is configured to allow unassigned issues.
    *  *  `PROJECT_DEFAULT` when none of the preceding cases are true.
    */
-  realAssigneeType?: string;
+  realAssigneeType: string;
   /**
    * The URL for this count of the issues contained in the component.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
 }
 /**
  * A JQL query clause that consists of nested clauses. For example, `(labels in (urgent, blocker) OR lastCommentedBy = currentUser()). Note that, where nesting is not defined, the parser nests JQL clauses based on the operator precedence. For example, "A OR B AND C" is parsed as "(A OR B) AND C". See Setting the precedence of operators for more information about precedence in JQL queries.`
@@ -1485,35 +1485,35 @@ export type Configuration = {
   /**
    * Whether the ability to add attachments to issues is enabled.
    */
-  attachmentsEnabled?: boolean;
+  attachmentsEnabled: boolean;
   /**
    * Whether the ability to link issues is enabled.
    */
-  issueLinkingEnabled?: boolean;
+  issueLinkingEnabled: boolean;
   /**
    * Whether the ability to create subtasks for issues is enabled.
    */
-  subTasksEnabled?: boolean;
+  subTasksEnabled: boolean;
   /**
    * The configuration of time tracking.
    */
-  timeTrackingConfiguration?: TimeTrackingConfiguration;
+  timeTrackingConfiguration: TimeTrackingConfiguration;
   /**
    * Whether the ability to track time is enabled. This property is deprecated.
    */
-  timeTrackingEnabled?: boolean;
+  timeTrackingEnabled: boolean;
   /**
    * Whether the ability to create unassigned issues is enabled. See [Configuring Jira application options](https://confluence.atlassian.com/x/uYXKM) for details.
    */
-  unassignedIssuesAllowed?: boolean;
+  unassignedIssuesAllowed: boolean;
   /**
    * Whether the ability for users to vote on issues is enabled. See [Configuring Jira application options](https://confluence.atlassian.com/x/uYXKM) for details.
    */
-  votingEnabled?: boolean;
+  votingEnabled: boolean;
   /**
    * Whether the ability for users to watch issues is enabled. See [Configuring Jira application options](https://confluence.atlassian.com/x/uYXKM) for details.
    */
-  watchingEnabled?: boolean;
+  watchingEnabled: boolean;
 }
 /**
  * A list of custom field details.
@@ -1645,11 +1645,11 @@ export type Context = {
    * The ID of the context.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * The name of the context.
    */
-  name?: string;
+  name: string;
   /**
    * The scope of the context.
    */
@@ -1717,7 +1717,7 @@ export type CreateCustomFieldContext = {
   /**
    * The ID of the context.
    */
-  id?: string;
+  id: string;
   /**
    * The list of issue types IDs for the context. If the list is empty, the context refers to all issue types.
    */
@@ -1992,7 +1992,7 @@ export type CreateWorkflowDetails = {
   statuses: Array<CreateWorkflowStatusDetails>;
   /**
    * The transitions of the workflow. For the request to be valid, these transitions must:
-   * 
+   *
    *  *  include one *initial* transition.
    *  *  not use the same name for a *global* and *directed* transition.
    *  *  have a unique name for each *global* transition.
@@ -2000,7 +2000,7 @@ export type CreateWorkflowDetails = {
    *  *  have unique names for each transition from a status.
    *  *  not have a 'from' status on *initial* and *global* transitions.
    *  *  have a 'from' status on *directed* transitions.
-   * 
+   *
    * All the transition statuses must be included in `statuses`.
    */
   transitions: Array<CreateWorkflowTransitionDetails>;
@@ -2078,9 +2078,9 @@ export type CreateWorkflowTransitionRulesDetails = {
   conditions?: CreateWorkflowCondition;
   /**
    * The workflow post functions.
-   * 
+   *
    * **Note:** The default post functions are always added to the *initial* transition, as in:
-   * 
+   *
    *     "postFunctions": [
    *         {
    *             "type": "IssueCreateFunction"
@@ -2098,9 +2098,9 @@ export type CreateWorkflowTransitionRulesDetails = {
    *             }
    *         }
    *     ]
-   * 
+   *
    * **Note:** The default post functions are always added to the *global* and *directed* transitions, as in:
-   * 
+   *
    *     "postFunctions": [
    *         {
    *             "type": "UpdateIssueStatusFunction"
@@ -2128,9 +2128,9 @@ export type CreateWorkflowTransitionRulesDetails = {
   postFunctions?: Array<CreateWorkflowTransitionRule>;
   /**
    * The workflow validators.
-   * 
+   *
    * **Note:** The default permission validator is always added to the *initial* transition, as in:
-   * 
+   *
    *     "validators": [
    *         {
    *             "type": "PermissionValidator",
@@ -2158,23 +2158,23 @@ export type CreatedIssue = {
   /**
    * The ID of the created issue or subtask.
    */
-  id?: string;
+  id: string;
   /**
    * The key of the created issue or subtask.
    */
-  key?: string;
+  key: string;
   /**
    * The URL of the created issue or subtask.
    */
-  self?: string;
+  self: string;
   /**
    * The response code and messages related to any requested transition.
    */
-  transition?: NestedResponse;
+  transition: NestedResponse;
   /**
    * The response code and messages related to any requested watchers.
    */
-  watchers?: NestedResponse;
+  watchers: NestedResponse;
 }
 /**
  * Details about the issues created and the errors for requests that failed.
@@ -2183,11 +2183,11 @@ export type CreatedIssues = {
   /**
    * Error details for failed issue creation requests.
    */
-  errors?: Array<BulkOperationErrorResult>;
+  errors: Array<BulkOperationErrorResult>;
   /**
    * Details of the issues created.
    */
-  issues?: Array<CreatedIssue>;
+  issues: Array<CreatedIssue>;
 }
 /**
  * MODEL CustomContextVariable
@@ -2629,11 +2629,11 @@ export type CustomFieldContextProjectMapping = {
   /**
    * Whether context is global.
    */
-  isGlobalContext?: boolean;
+  isGlobalContext: boolean;
   /**
    * The ID of the project.
    */
-  projectId?: string;
+  projectId: string;
 }
 /**
  * Defaults for a User Picker (single) custom field.
@@ -2688,9 +2688,9 @@ export type CustomFieldDefinitionJsonBean = {
    */
   name: string;
   /**
-   * The searcher defines the way the field is searched in Jira. For example, *com.atlassian.jira.plugin.system.customfieldtypes:grouppickersearcher*.  
+   * The searcher defines the way the field is searched in Jira. For example, *com.atlassian.jira.plugin.system.customfieldtypes:grouppickersearcher*.
    * The search UI (basic search and JQL search) will display different operations and values for the field, based on the field searcher. You must specify a searcher that is valid for the field type, as listed below (abbreviated values shown):
-   * 
+   *
    *  *  `cascadingselect`: `cascadingselectsearcher`
    *  *  `datepicker`: `daterange`
    *  *  `datetime`: `datetimerange`
@@ -2712,13 +2712,13 @@ export type CustomFieldDefinitionJsonBean = {
    *  *  `url`: `exacttextsearcher`
    *  *  `userpicker`: `userpickergroupsearcher`
    *  *  `version`: `versionsearcher`
-   * 
+   *
    * If no searcher is provided, the field isn't searchable. However, [Forge custom fields](https://developer.atlassian.com/platform/forge/manifest-reference/modules/#jira-custom-field-type--beta-) have a searcher set automatically, so are always searchable.
    */
   searcherKey?: string;
   /**
    * The type of the custom field. These built-in custom field types are available:
-   * 
+   *
    *  *  `cascadingselect`: Enables values to be selected from two levels of select lists (value: `com.atlassian.jira.plugin.system.customfieldtypes:cascadingselect`)
    *  *  `datepicker`: Stores a date using a picker control (value: `com.atlassian.jira.plugin.system.customfieldtypes:datepicker`)
    *  *  `datetime`: Stores a date with a time component (value: `com.atlassian.jira.plugin.system.customfieldtypes:datetime`)
@@ -2740,7 +2740,7 @@ export type CustomFieldDefinitionJsonBean = {
    *  *  `url`: Stores a URL (value: `com.atlassian.jira.plugin.system.customfieldtypes:url`)
    *  *  `userpicker`: Stores a user using a picker control (value: `com.atlassian.jira.plugin.system.customfieldtypes:userpicker`)
    *  *  `version`: Stores a version using a picker control (value: `com.atlassian.jira.plugin.system.customfieldtypes:version`)
-   * 
+   *
    * To create a field based on a [Forge custom field type](https://developer.atlassian.com/platform/forge/manifest-reference/modules/#jira-custom-field-type--beta-), use the ID of the Forge custom field type as the value. For example, `ari:cloud:ecosystem::extension/e62f20a2-4b61-4dbe-bfb9-9a88b5e3ac84/548c5df1-24aa-4f7c-bbbb-3038d947cb05/static/my-cf-type-key`.
    */
   type: string;
@@ -2753,11 +2753,11 @@ export type CustomFieldOption = {
    * The URL of these custom field option details.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The value of the custom field option.
    */
-  value?: string;
+  value: string;
 }
 /**
  * Details of a custom field option to create.
@@ -2827,13 +2827,13 @@ export type CustomFieldValueUpdate = {
   issueIds: string[];
   /**
    * The value for the custom field. The value must be compatible with the [custom field type](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field/#data-types) as follows:
-   * 
+   *
    *  *  `string` the value must be a string.
    *  *  `number` the value must be a number.
    *  *  `datetime` the value must be a string that represents a date in the ISO format or the simplified extended ISO format. For example, `"2023-01-18T12:00:00-03:00"` or `"2023-01-18T12:00:00.000Z"`. However, the milliseconds part is ignored.
    *  *  `user` the value must be an object that contains the `accountId` field.
    *  *  `group` the value must be an object that contains the group `name` or `groupId` field. Because group names can change, we recommend using `groupId`.
-   * 
+   *
    * A list of appropriate values must be provided if the field is of the `list` [collection type](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field/#collection-types).
    */
   value: any /* 122 */;
@@ -2855,59 +2855,59 @@ export type Dashboard = {
    * The automatic refresh interval for the dashboard in milliseconds.
    * @format: "int32"
    */
-  automaticRefreshMs?: number;
+  automaticRefreshMs: number;
   description?: string;
   /**
    * The details of any edit share permissions for the dashboard.
    */
-  editPermissions?: Array<SharePermission>;
+  editPermissions: Array<SharePermission>;
   /**
    * The ID of the dashboard.
    */
-  id?: string;
+  id: string;
   /**
    * Whether the dashboard is selected as a favorite by the user.
    */
-  isFavourite?: boolean;
+  isFavourite: boolean;
   /**
    * Whether the current user has permission to edit the dashboard.
    */
-  isWritable?: boolean;
+  isWritable: boolean;
   /**
    * The name of the dashboard.
    */
-  name?: string;
+  name: string;
   /**
    * The owner of the dashboard.
    */
-  owner?: UserBean;
+  owner: UserBean;
   /**
    * The number of users who have this dashboard as a favorite.
    * @format: "int64"
    */
-  popularity?: number;
+  popularity: number;
   /**
    * The rank of this dashboard.
    * @format: "int32"
    */
-  rank?: number;
+  rank: number;
   /**
    * The URL of these dashboard details.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The details of any view share permissions for the dashboard.
    */
-  sharePermissions?: Array<SharePermission>;
+  sharePermissions: Array<SharePermission>;
   /**
    * Whether the current dashboard is system dashboard.
    */
-  systemDashboard?: boolean;
+  systemDashboard: boolean;
   /**
    * The URL of the dashboard.
    */
-  view?: string;
+  view: string;
 }
 /**
  * Details of a dashboard.
@@ -2946,7 +2946,7 @@ export type DashboardGadget = {
   /**
    * The module key of the gadget type.
    */
-  moduleKey?: string;
+  moduleKey: string;
   /**
    * The position of the gadget.
    */
@@ -2958,7 +2958,7 @@ export type DashboardGadget = {
   /**
    * The URI of the gadget type.
    */
-  uri?: string;
+  uri: string;
 }
 /**
  * Details of a gadget position.
@@ -3104,7 +3104,7 @@ export type DefaultLevelValue = {
 export type DefaultShareScope = {
   /**
    * The scope of the default sharing for new filters and dashboards:
-   * 
+   *
    *  *  `AUTHENTICATED` Shared with all logged-in users.
    *  *  `GLOBAL` Shared with all logged-in users. This shows as `AUTHENTICATED` in the response.
    *  *  `PRIVATE` Not shared with any users.
@@ -3151,32 +3151,32 @@ export type DeprecatedWorkflow = {
   /**
    * The description of the workflow.
    */
-  description?: string;
+  description: string;
   /**
    * The datetime the workflow was last modified.
    */
-  lastModifiedDate?: string;
+  lastModifiedDate: string;
   /**
    * This property is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
    */
-  lastModifiedUser?: string;
+  lastModifiedUser: string;
   /**
    * The account ID of the user that last modified the workflow.
    */
-  lastModifiedUserAccountId?: string;
+  lastModifiedUserAccountId: string;
   /**
    * The name of the workflow.
    */
-  name?: string;
+  name: string;
   /**
    * The scope where this workflow applies
    */
-  scope?: Scope;
+  scope: Scope;
   /**
    * The number of steps included in the workflow.
    * @format: "int32"
    */
-  steps?: number;
+  steps: number;
 }
 /**
  * MODEL DetailedErrorCollection
@@ -3334,7 +3334,7 @@ export type EventNotification = {
   notificationType?: string;
   /**
    * As a group's name can change, use of `recipient` is recommended. The identifier associated with the `notificationType` value that defines the receiver of the notification, where the receiver isn't implied by `notificationType` value. So, when `notificationType` is:
-   * 
+   *
    *  *  `User` The `parameter` is the user account ID.
    *  *  `Group` The `parameter` is the group name.
    *  *  `ProjectRole` The `parameter` is the project role ID.
@@ -3348,7 +3348,7 @@ export type EventNotification = {
   projectRole?: ProjectRole;
   /**
    * The identifier associated with the `notificationType` value that defines the receiver of the notification, where the receiver isn't implied by the `notificationType` value. So, when `notificationType` is:
-   * 
+   *
    *  *  `User`, `recipient` is the user account ID.
    *  *  `Group`, `recipient` is the group ID.
    *  *  `ProjectRole`, `recipient` is the project role ID.
@@ -3368,15 +3368,15 @@ export type ExpandPrioritySchemeBean = {
   /**
    * The ID of the priority scheme.
    */
-  id?: string;
+  id: string;
   /**
    * The name of the priority scheme.
    */
-  name?: string;
+  name: string;
   /**
    * The URL of the priority scheme.
    */
-  self?: string;
+  self: string;
 }
 /**
  * MODEL ExpandPrioritySchemePage
@@ -3680,19 +3680,19 @@ export type FieldCreateMetadata = {
   /**
    * The list of values allowed in the field.
    */
-  allowedValues?: string[];
+  allowedValues: string[];
   /**
    * The URL that can be used to automatically complete the field.
    */
-  autoCompleteUrl?: string;
+  autoCompleteUrl: string;
   /**
    * The configuration properties.
    */
-  configuration?: Record<string, unknown>;
+  configuration: Record<string, unknown>;
   /**
    * The default value of the field.
    */
-  defaultValue?: any /* 125 */;
+  defaultValue: any /* 125 */;
   /**
    * The field id.
    */
@@ -3700,7 +3700,7 @@ export type FieldCreateMetadata = {
   /**
    * Whether the field has a default value.
    */
-  hasDefaultValue?: boolean;
+  hasDefaultValue: boolean;
   /**
    * The key of the field.
    */
@@ -3773,7 +3773,7 @@ export type FieldDetails = {
 export type FieldLastUsed = {
   /**
    * Last used value type:
-   * 
+   *
    *  *  *TRACKED*: field is tracked and a last used date is available.
    *  *  *NOT\_TRACKED*: field is not tracked, last used date is not available.
    *  *  *NO\_INFORMATION*: field is tracked, but no last used date is available.
@@ -3792,23 +3792,23 @@ export type FieldMetadata = {
   /**
    * The list of values allowed in the field.
    */
-  allowedValues?: string[];
+  allowedValues: string[];
   /**
    * The URL that can be used to automatically complete the field.
    */
-  autoCompleteUrl?: string;
+  autoCompleteUrl: string;
   /**
    * The configuration properties.
    */
-  configuration?: Record<string, unknown>;
+  configuration: Record<string, unknown>;
   /**
    * The default value of the field.
    */
-  defaultValue?: any /* 125 */;
+  defaultValue: any /* 125 */;
   /**
    * Whether the field has a default value.
    */
-  hasDefaultValue?: boolean;
+  hasDefaultValue: boolean;
   /**
    * The key of the field.
    */
@@ -3852,7 +3852,7 @@ export type FieldReferenceData = {
   deprecatedSearcherKey?: string;
   /**
    * The display name contains the following:
-   * 
+   *
    *  *  for system fields, the field name. For example, `Summary`.
    *  *  for collapsed custom fields, the field name followed by a hyphen and then the field name and field type. For example, `Component - Component[Dropdown]`.
    *  *  for other custom fields, the field name followed by a hyphen and then the custom field ID. For example, `Component - cf[10061]`.
@@ -3949,11 +3949,11 @@ export type Fields = {
   /**
    * The assignee of the linked issue.
    */
-  assignee?: UserDetails;
+  assignee: UserDetails;
   /**
    * The type of the linked issue.
    */
-  issueType?: IssueTypeDetails;
+  issueType: IssueTypeDetails;
   /**
    * The type of the linked issue.
    * Ref: #/components/schemas/IssueTypeDetails
@@ -3962,19 +3962,19 @@ export type Fields = {
   /**
    * The priority of the linked issue.
    */
-  priority?: Priority;
+  priority: Priority;
   /**
    * The status of the linked issue.
    */
-  status?: StatusDetails;
+  status: StatusDetails;
   /**
    * The summary description of the linked issue.
    */
-  summary?: string;
+  summary: string;
   /**
    * The time tracking of the linked issue.
    */
-  timetracking?: TimeTrackingDetails;
+  timetracking: TimeTrackingDetails;
 }
 /**
  * Details about a filter.
@@ -3984,7 +3984,7 @@ export type Filter = {
    * \[Experimental\] Approximate last used time. Returns the date and time when the filter was last used. Returns `null` if the filter hasn't been used after tracking was enabled. For performance reasons, timestamps aren't updated in real time and therefore may not be exactly accurate.
    * @format: "date-time"
    */
-  approximateLastUsed?: string;
+  approximateLastUsed: string;
   /**
    * A description of the filter.
    */
@@ -4001,11 +4001,11 @@ export type Filter = {
    * The count of how many users have selected this filter as a favorite, including the filter owner.
    * @format: "int64"
    */
-  favouritedCount?: number;
+  favouritedCount: number;
   /**
    * The unique identifier for the filter.
    */
-  id?: string;
+  id: string;
   /**
    * The JQL query for the filter. For example, *project = SSP AND issuetype = Bug*.
    */
@@ -4017,17 +4017,17 @@ export type Filter = {
   /**
    * The user who owns the filter. This is defaulted to the creator of the filter, however Jira administrators can change the owner of a shared filter in the admin settings.
    */
-  owner?: User;
+  owner: User;
   /**
    * A URL to view the filter results in Jira, using the [Search for issues using JQL](#api-rest-api-3-filter-search-get) operation with the filter's JQL string to return the filter results. For example, *https://your-domain.atlassian.net/rest/api/3/search?jql=project+%3D+SSP+AND+issuetype+%3D+Bug*.
    * @format: "uri"
    */
-  searchUrl?: string;
+  searchUrl: string;
   /**
    * The URL of the filter.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The groups and projects that the filter is shared with.
    */
@@ -4035,16 +4035,16 @@ export type Filter = {
   /**
    * A paginated list of the users that the filter is shared with. This includes users that are members of the groups or can browse the projects that the filter is shared with.
    */
-  sharedUsers?: UserList;
+  sharedUsers: UserList;
   /**
    * A paginated list of the users that are subscribed to the filter.
    */
-  subscriptions?: FilterSubscriptionsList;
+  subscriptions: FilterSubscriptionsList;
   /**
    * A URL to view the filter results in Jira, using the ID of the filter. For example, *https://your-domain.atlassian.net/issues/?filter=10100*.
    * @format: "uri"
    */
-  viewUrl?: string;
+  viewUrl: string;
 }
 /**
  * Details of a filter.
@@ -4054,7 +4054,7 @@ export type FilterDetails = {
    * \[Experimental\] Approximate last used time. Returns the date and time when the filter was last used. Returns `null` if the filter hasn't been used after tracking was enabled. For performance reasons, timestamps aren't updated in real time and therefore may not be exactly accurate.
    * @format: "date-time"
    */
-  approximateLastUsed?: string;
+  approximateLastUsed: string;
   /**
    * The description of the filter.
    */
@@ -4066,24 +4066,24 @@ export type FilterDetails = {
   /**
    * Expand options that include additional filter details in the response.
    */
-  expand?: string;
+  expand: string;
   /**
    * Whether the filter is selected as a favorite by any users, not including the filter owner.
    */
-  favourite?: boolean;
+  favourite: boolean;
   /**
    * The count of how many users have selected this filter as a favorite, including the filter owner.
    * @format: "int64"
    */
-  favouritedCount?: number;
+  favouritedCount: number;
   /**
    * The unique identifier for the filter.
    */
-  id?: string;
+  id: string;
   /**
    * The JQL query for the filter. For example, *project = SSP AND issuetype = Bug*.
    */
-  jql?: string;
+  jql: string;
   /**
    * The name of the filter.
    */
@@ -4091,17 +4091,17 @@ export type FilterDetails = {
   /**
    * The user who owns the filter. Defaults to the creator of the filter, however, Jira administrators can change the owner of a shared filter in the admin settings.
    */
-  owner?: User;
+  owner: User;
   /**
    * A URL to view the filter results in Jira, using the [Search for issues using JQL](#api-rest-api-3-filter-search-get) operation with the filter's JQL string to return the filter results. For example, *https://your-domain.atlassian.net/rest/api/3/search?jql=project+%3D+SSP+AND+issuetype+%3D+Bug*.
    * @format: "uri"
    */
-  searchUrl?: string;
+  searchUrl: string;
   /**
    * The URL of the filter.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The groups and projects that the filter is shared with. This can be specified when updating a filter, but not when creating a filter.
    */
@@ -4109,12 +4109,12 @@ export type FilterDetails = {
   /**
    * The users that are subscribed to the filter.
    */
-  subscriptions?: Array<FilterSubscription>;
+  subscriptions: Array<FilterSubscription>;
   /**
    * A URL to view the filter results in Jira, using the ID of the filter. For example, *https://your-domain.atlassian.net/issues/?filter=10100*.
    * @format: "uri"
    */
-  viewUrl?: string;
+  viewUrl: string;
 }
 /**
  * Details of a user or group subscribing to a filter.
@@ -4123,16 +4123,16 @@ export type FilterSubscription = {
   /**
    * The group subscribing to filter.
    */
-  group?: GroupName;
+  group: GroupName;
   /**
    * The ID of the filter subscription.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * The user subscribing to filter.
    */
-  user?: User;
+  user: User;
 }
 /**
  * A paginated list of subscriptions to a filter.
@@ -4142,26 +4142,26 @@ export type FilterSubscriptionsList = {
    * The index of the last item returned on the page.
    * @format: "int32"
    */
-  "end-index"?: number;
+  "end-index": number;
   /**
    * The list of items.
    */
-  items?: Array<FilterSubscription>;
+  items: Array<FilterSubscription>;
   /**
    * The maximum number of results that could be on the page.
    * @format: "int32"
    */
-  "max-results"?: number;
+  "max-results": number;
   /**
    * The number of items on the page.
    * @format: "int32"
    */
-  size?: number;
+  size: number;
   /**
    * The index of the first item returned on the page.
    * @format: "int32"
    */
-  "start-index"?: number;
+  "start-index": number;
 }
 /**
  * A group found in a search.
@@ -4282,7 +4282,7 @@ export type Group = {
   /**
    * Expand options that include additional group details in the response.
    */
-  expand?: string;
+  expand: string;
   /**
    * The ID of the group, which uniquely identifies the group across all Atlassian products. For example, *952d12c3-5b5b-4d04-bb32-44d383afc4b2*.
    */
@@ -4295,11 +4295,11 @@ export type Group = {
    * The URL for these group details.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * A paginated list of the users that are members of the group. A maximum of 50 users is returned in the list, to access additional users append `[start-index:end-index]` to the expand request. For example, to access the next 50 users, use`?expand=users[51:100]`.
    */
-  users?: PagedListUserDetailsApplicationUser;
+  users: PagedListUserDetailsApplicationUser;
 }
 /**
  * Details about a group.
@@ -4347,7 +4347,7 @@ export type GroupName = {
    * The URL for these group details.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
 }
 /**
  * Jira instance health check results. Deprecated and no longer returned.
@@ -4378,7 +4378,7 @@ export type Hierarchy = {
   /**
    * Details about the hierarchy level.
    */
-  levels?: Array<SimplifiedHierarchyLevel>;
+  levels: Array<SimplifiedHierarchyLevel>;
 }
 /**
  * Details of issue history metadata.
@@ -4474,7 +4474,7 @@ export type Icon = {
   link?: string;
   /**
    * The title of the icon. This is used as follows:
-   * 
+   *
    *  *  For a status icon it is used as a tooltip on the icon. If not set, the status icon doesn't display a tooltip in Jira.
    *  *  For the remote object icon it is used in conjunction with the application name to display a tooltip for the link's icon. The tooltip takes the format "\[application name\] icon title". Blank itemsare excluded from the tooltip title. If both items are blank, the icon tooltop displays as "Web Link".
    */
@@ -4550,11 +4550,11 @@ export type IdSearchResults = {
   /**
    * The list of issue IDs found by the search.
    */
-  issueIds?: string[];
+  issueIds: string[];
   /**
    * Continuation token to fetch the next page. If this result represents the last or the only page this token will be null.
    */
-  nextPageToken?: string;
+  nextPageToken: string;
 }
 /**
  * MODEL IncludedFields
@@ -4596,15 +4596,15 @@ export type IssueBean = {
   /**
    * Details of changelogs associated with the issue.
    */
-  changelog?: PageOfChangelogs;
+  changelog: PageOfChangelogs;
   /**
    * The metadata for the fields on the issue that can be amended.
    */
-  editmeta?: IssueUpdateMetadata;
+  editmeta: IssueUpdateMetadata;
   /**
    * Expand options that include additional issue details in the response.
    */
-  expand?: string;
+  expand: string;
   fields?: Record<string, unknown>;
   /**
    * Ref: #/components/schemas/IncludedFields
@@ -4613,44 +4613,44 @@ export type IssueBean = {
   /**
    * The ID of the issue.
    */
-  id?: string;
+  id: string;
   /**
    * The key of the issue.
    */
-  key?: string;
+  key: string;
   /**
    * The ID and name of each field present on the issue.
    */
-  names?: Record<string, unknown>;
+  names: Record<string, unknown>;
   /**
    * The operations that can be performed on the issue.
    */
-  operations?: Operations;
+  operations: Operations;
   /**
    * Details of the issue properties identified in the request.
    */
-  properties?: Record<string, unknown>;
+  properties: Record<string, unknown>;
   /**
    * The rendered value of each field present on the issue.
    */
-  renderedFields?: Record<string, unknown>;
+  renderedFields: Record<string, unknown>;
   /**
    * The schema describing each field present on the issue.
    */
-  schema?: Record<string, unknown>;
+  schema: Record<string, unknown>;
   /**
    * The URL of the issue details.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The transitions that can be performed on the issue.
    */
-  transitions?: Array<IssueTransition>;
+  transitions: Array<IssueTransition>;
   /**
    * The versions of each field on the issue.
    */
-  versionedRepresentations?: Record<string, unknown>;
+  versionedRepresentations: Record<string, unknown>;
 }
 /**
  * MODEL IssueBulkEditField
@@ -4716,9 +4716,9 @@ export type IssueBulkEditPayload = {
 export type IssueBulkMovePayload = {
   /**
    * An object representing the mapping of issues and data related to destination entities, like fields and statuses, that are required during a bulk move.
-   * 
+   *
    * The key is a string that is created by concatenating the following three entities in order, separated by commas. The format is `<project ID or key>,<issueType ID>,<parent ID or key>`. It should be unique across mappings provided in the payload. If you provide multiple mappings for the same key, only one will be processed. However, the operation won't fail, so the error may be hard to track down.
-   * 
+   *
    *  *  ***Destination project*** (Required): ID or key of the project to which the issues are being moved.
    *  *  ***Destination issueType*** (Required): ID of the issueType to which the issues are being moved.
    *  *  ***Destination parent ID or key*** (Optional): ID or key of the issue which will become the parent of the issues being moved. Only required when the destination issueType is a subtask.
@@ -4774,11 +4774,11 @@ export type IssueCreateMetadata = {
   /**
    * Expand options that include additional project details in the response.
    */
-  expand?: string;
+  expand: string;
   /**
    * List of projects and their issue creation metadata.
    */
-  projects?: Array<ProjectIssueCreateMetadata>;
+  projects: Array<ProjectIssueCreateMetadata>;
 }
 /**
  * Lists of issues and entity properties. See [Entity properties](https://developer.atlassian.com/cloud/jira/platform/jira-entity-properties/) for more information.
@@ -4815,11 +4815,11 @@ export type IssueEvent = {
    * The ID of the event.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * The name of the event.
    */
-  name?: string;
+  name: string;
 }
 /**
  * Details of the options for a select list issue field.
@@ -4954,7 +4954,7 @@ export type IssueLink = {
   /**
    * The ID of the issue link.
    */
-  id?: string;
+  id: string;
   /**
    * Provides details about the linked issue. If presenting this link in a user interface, use the `inward` field of the issue link type to label the link.
    */
@@ -4967,7 +4967,7 @@ export type IssueLink = {
    * The URL of the issue link.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The type of link between the issues.
    */
@@ -4982,28 +4982,28 @@ export type IssueLink = {
 export type IssueLinkType = {
   /**
    * The ID of the issue link type and is used as follows:
-   * 
+   *
    *  *  In the [ issueLink](#api-rest-api-3-issueLink-post) resource it is the type of issue link. Required on create when `name` isn't provided. Otherwise, read only.
    *  *  In the [ issueLinkType](#api-rest-api-3-issueLinkType-post) resource it is read only.
    */
   id?: string;
   /**
    * The description of the issue link type inward link and is used as follows:
-   * 
+   *
    *  *  In the [ issueLink](#api-rest-api-3-issueLink-post) resource it is read only.
    *  *  In the [ issueLinkType](#api-rest-api-3-issueLinkType-post) resource it is required on create and optional on update. Otherwise, read only.
    */
   inward?: string;
   /**
    * The name of the issue link type and is used as follows:
-   * 
+   *
    *  *  In the [ issueLink](#api-rest-api-3-issueLink-post) resource it is the type of issue link. Required on create when `id` isn't provided. Otherwise, read only.
    *  *  In the [ issueLinkType](#api-rest-api-3-issueLinkType-post) resource it is required on create and optional on update. Otherwise, read only.
    */
   name?: string;
   /**
    * The description of the issue link type outward link and is used as follows:
-   * 
+   *
    *  *  In the [ issueLink](#api-rest-api-3-issueLink-post) resource it is read only.
    *  *  In the [ issueLinkType](#api-rest-api-3-issueLinkType-post) resource it is required on create and optional on update. Otherwise, read only.
    */
@@ -5012,7 +5012,7 @@ export type IssueLinkType = {
    * The URL of the issue link type. Read only.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
 }
 /**
  * A list of issue link type beans.
@@ -5021,7 +5021,7 @@ export type IssueLinkTypes = {
   /**
    * The issue link type bean.
    */
-  issueLinkTypes?: Array<IssueLinkType>;
+  issueLinkTypes: Array<IssueLinkType>;
 }
 /**
  * A list of issue IDs.
@@ -5058,7 +5058,7 @@ export type IssuePickerSuggestions = {
   /**
    * A list of issues for an issue type suggested for use in auto-completion.
    */
-  sections?: Array<IssuePickerSuggestionsIssueType>;
+  sections: Array<IssuePickerSuggestionsIssueType>;
 }
 /**
  * A type of issue suggested for use in auto-completion.
@@ -5067,23 +5067,23 @@ export type IssuePickerSuggestionsIssueType = {
   /**
    * The ID of the type of issues suggested for use in auto-completion.
    */
-  id?: string;
+  id: string;
   /**
    * A list of issues suggested for use in auto-completion.
    */
-  issues?: Array<SuggestedIssue>;
+  issues: Array<SuggestedIssue>;
   /**
    * The label of the type of issues suggested for use in auto-completion.
    */
-  label?: string;
+  label: string;
   /**
    * If no issue suggestions are found, returns a message indicating no suggestions were found,
    */
-  msg?: string;
+  msg: string;
   /**
    * If issue suggestions are found, returns a message indicating the number of issues suggestions found and returned.
    */
-  sub?: string;
+  sub: string;
 }
 /**
  * Issue security level member.
@@ -5110,8 +5110,8 @@ export type IssueSecurityLevelMember = {
  * accept additional properties
  */
 export type IssueSecuritySchemeToProjectMapping = {
-  issueSecuritySchemeId?: string;
-  projectId?: string;
+  issueSecuritySchemeId: string;
+  projectId: string;
 } & Record<string, any>
 /**
  * Details of an issue transition.
@@ -5121,15 +5121,15 @@ export type IssueTransition = {
   /**
    * Expand options that include additional transition details in the response.
    */
-  expand?: string;
+  expand: string;
   /**
    * Details of the fields associated with the issue transition screen. Use this information to populate `fields` and `update` in a transition request.
    */
-  fields?: Record<string, unknown>;
+  fields: Record<string, unknown>;
   /**
    * Whether there is a screen associated with the issue transition.
    */
-  hasScreen?: boolean;
+  hasScreen: boolean;
   /**
    * The ID of the issue transition. Required when specifying a transition to undertake.
    */
@@ -5137,28 +5137,28 @@ export type IssueTransition = {
   /**
    * Whether the transition is available to be performed.
    */
-  isAvailable?: boolean;
+  isAvailable: boolean;
   /**
    * Whether the issue has to meet criteria before the issue transition is applied.
    */
-  isConditional?: boolean;
+  isConditional: boolean;
   /**
    * Whether the issue transition is global, that is, the transition is applied to issues regardless of their status.
    */
-  isGlobal?: boolean;
+  isGlobal: boolean;
   /**
    * Whether this is the initial issue transition for the workflow.
    */
-  isInitial?: boolean;
+  isInitial: boolean;
   looped?: boolean;
   /**
    * The name of the issue transition.
    */
-  name?: string;
+  name: string;
   /**
    * Details of the issue status after the transition.
    */
-  to?: StatusDetails;
+  to: StatusDetails;
 } & Record<string, any>
 /**
  * MODEL IssueTypeCreateBean
@@ -5170,10 +5170,10 @@ export type IssueTypeCreateBean = {
   description?: string;
   /**
    * The hierarchy level of the issue type. Use:
-   * 
+   *
    *  *  `-1` for Subtask.
    *  *  `0` for Base.
-   * 
+   *
    * Defaults to `0`.
    * @format: "int32"
    */
@@ -5184,7 +5184,7 @@ export type IssueTypeCreateBean = {
   name: string;
   /**
    * Deprecated. Use `hierarchyLevel` instead. See the [deprecation notice](https://community.developer.atlassian.com/t/deprecation-of-the-epic-link-parent-link-and-other-related-fields-in-rest-apis-and-webhooks/54048) for details.
-   * 
+   *
    * Whether the issue type is `subtype` or `standard`. Defaults to `standard`.
    */
   type?: string;
@@ -5197,45 +5197,45 @@ export type IssueTypeDetails = {
    * The ID of the issue type's avatar.
    * @format: "int64"
    */
-  avatarId?: number;
+  avatarId: number;
   /**
    * The description of the issue type.
    */
-  description?: string;
+  description: string;
   /**
    * Unique ID for next-gen projects.
    * @format: "uuid"
    */
-  entityId?: string;
+  entityId: string;
   /**
    * Hierarchy level of the issue type.
    * @format: "int32"
    */
-  hierarchyLevel?: number;
+  hierarchyLevel: number;
   /**
    * The URL of the issue type's avatar.
    */
-  iconUrl?: string;
+  iconUrl: string;
   /**
    * The ID of the issue type.
    */
-  id?: string;
+  id: string;
   /**
    * The name of the issue type.
    */
-  name?: string;
+  name: string;
   /**
    * Details of the next-gen projects the issue type is available in.
    */
-  scope?: Scope;
+  scope: Scope;
   /**
    * The URL of these issue type details.
    */
-  self?: string;
+  self: string;
   /**
    * Whether this issue type is used to create subtasks.
    */
-  subtask?: boolean;
+  subtask: boolean;
 }
 /**
  * The list of issue type IDs.
@@ -5263,16 +5263,16 @@ export type IssueTypeInfo = {
    * The avatar of the issue type.
    * @format: "int64"
    */
-  avatarId?: number;
+  avatarId: number;
   /**
    * The ID of the issue type.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * The name of the issue type.
    */
-  name?: string;
+  name: string;
 }
 /**
  * Details of the issue creation metadata for an issue type.
@@ -5282,53 +5282,53 @@ export type IssueTypeIssueCreateMetadata = {
    * The ID of the issue type's avatar.
    * @format: "int64"
    */
-  avatarId?: number;
+  avatarId: number;
   /**
    * The description of the issue type.
    */
-  description?: string;
+  description: string;
   /**
    * Unique ID for next-gen projects.
    * @format: "uuid"
    */
-  entityId?: string;
+  entityId: string;
   /**
    * Expand options that include additional issue type metadata details in the response.
    */
-  expand?: string;
+  expand: string;
   /**
    * List of the fields available when creating an issue for the issue type.
    */
-  fields?: Record<string, unknown>;
+  fields: Record<string, unknown>;
   /**
    * Hierarchy level of the issue type.
    * @format: "int32"
    */
-  hierarchyLevel?: number;
+  hierarchyLevel: number;
   /**
    * The URL of the issue type's avatar.
    */
-  iconUrl?: string;
+  iconUrl: string;
   /**
    * The ID of the issue type.
    */
-  id?: string;
+  id: string;
   /**
    * The name of the issue type.
    */
-  name?: string;
+  name: string;
   /**
    * Details of the next-gen projects the issue type is available in.
    */
-  scope?: Scope;
+  scope: Scope;
   /**
    * The URL of these issue type details.
    */
-  self?: string;
+  self: string;
   /**
    * Whether this issue type is used to create subtasks.
    */
-  subtask?: boolean;
+  subtask: boolean;
 }
 /**
  * Details of an issue type scheme.
@@ -5690,7 +5690,7 @@ export type IssueUpdateDetails = {
  * A list of editable field details.
  */
 export type IssueUpdateMetadata = {
-  fields?: Record<string, unknown>;
+  fields: Record<string, unknown>;
 }
 /**
  * List of issues and JQL queries.
@@ -5924,7 +5924,7 @@ export type JiraExpressionAnalysis = {
 export type JiraExpressionComplexity = {
   /**
    * Information that can be used to determine how many [expensive operations](https://developer.atlassian.com/cloud/jira/platform/jira-expressions/#expensive-operations) the evaluation of the expression will perform. This information may be a formula or number. For example:
-   * 
+   *
    *  *  `issues.map(i => i.comments)` performs as many expensive operations as there are issues on the issues list. So this parameter returns `N`, where `N` is the size of issue list.
    *  *  `new Issue(10010).comments` gets comments for one issue, so its complexity is `2` (`1` to retrieve issue 10010 from the database plus `1` to get its comments).
    */
@@ -5945,7 +5945,7 @@ export type JiraExpressionEvalContextBean = {
   board?: number;
   /**
    * Custom context variables and their types. These variable types are available for use in a custom context:
-   * 
+   *
    *  *  `user`: A [user](https://developer.atlassian.com/cloud/jira/platform/jira-expressions-type-reference#user) specified as an Atlassian account ID.
    *  *  `issue`: An [issue](https://developer.atlassian.com/cloud/jira/platform/jira-expressions-type-reference#issue) specified by ID or key. All the fields of the issue object are available in the Jira expression.
    *  *  `json`: A JSON object containing custom content.
@@ -6122,7 +6122,7 @@ export type JiraGroupInput = {
 export type JiraIssueFields = {
   /**
    * Add or clear a cascading select field:
-   * 
+   *
    *  *  To add, specify `optionId` for both parent and child.
    *  *  To clear the child, set its `optionId` to null.
    *  *  To clear both, set the parent's `optionId` to null.
@@ -6130,28 +6130,28 @@ export type JiraIssueFields = {
   cascadingSelectFields?: Array<JiraCascadingSelectField>;
   /**
    * Add or clear a number field:
-   * 
+   *
    *  *  To add, specify a numeric `value`.
    *  *  To clear, set `value` to `null`.
    */
   clearableNumberFields?: Array<JiraNumberField>;
   /**
    * Add or clear a color field:
-   * 
+   *
    *  *  To add, specify the color `name`. Available colors are: `purple`, `blue`, `green`, `teal`, `yellow`, `orange`, `grey`, `dark purple`, `dark blue`, `dark green`, `dark teal`, `dark yellow`, `dark orange`, `dark grey`.
    *  *  To clear, set the color `name` to an empty string.
    */
   colorFields?: Array<JiraColorField>;
   /**
    * Add or clear a date picker field:
-   * 
+   *
    *  *  To add, specify the date in `d/mmm/yy` format or ISO format `dd-mm-yyyy`.
    *  *  To clear, set `formattedDate` to an empty string.
    */
   datePickerFields?: Array<JiraDateField>;
   /**
    * Add or clear the planned start date and time:
-   * 
+   *
    *  *  To add, specify the date and time in ISO format for `formattedDateTime`.
    *  *  To clear, provide an empty string for `formattedDateTime`.
    */
@@ -6162,42 +6162,42 @@ export type JiraIssueFields = {
   issueType?: JiraIssueTypeField;
   /**
    * Edit a labels field:
-   * 
+   *
    *  *  Options include `ADD`, `REPLACE`, `REMOVE`, or `REMOVE_ALL` for bulk edits.
    *  *  To clear labels, use the `REMOVE_ALL` option with an empty `labels` array.
    */
   labelsFields?: Array<JiraLabelsField>;
   /**
    * Add or clear a multi-group picker field:
-   * 
+   *
    *  *  To add groups, provide an array of groups with `groupName`s.
    *  *  To clear all groups, use an empty `groups` array.
    */
   multipleGroupPickerFields?: Array<JiraMultipleGroupPickerField>;
   /**
    * Assign or unassign multiple users to/from a field:
-   * 
+   *
    *  *  To assign, provide an array of user `accountId`s.
    *  *  To clear, set `users` to `null`.
    */
   multipleSelectClearableUserPickerFields?: Array<JiraMultipleSelectUserPickerField>;
   /**
    * Add or clear a multi-select field:
-   * 
+   *
    *  *  To add, provide an array of options with `optionId`s.
    *  *  To clear, use an empty `options` array.
    */
   multipleSelectFields?: Array<JiraMultipleSelectField>;
   /**
    * Edit a multi-version picker field like Fix Versions/Affects Versions:
-   * 
+   *
    *  *  Options include `ADD`, `REPLACE`, `REMOVE`, or `REMOVE_ALL` for bulk edits.
    *  *  To clear the field, use the `REMOVE_ALL` option with an empty `versions` array.
    */
   multipleVersionPickerFields?: Array<JiraMultipleVersionPickerField>;
   /**
    * Edit a multi select components field:
-   * 
+   *
    *  *  Options include `ADD`, `REPLACE`, `REMOVE`, or `REMOVE_ALL` for bulk edits.
    *  *  To clear, use the `REMOVE_ALL` option with an empty `components` array.
    */
@@ -6208,30 +6208,30 @@ export type JiraIssueFields = {
   priority?: JiraPriorityField;
   /**
    * Add or clear a rich text field:
-   * 
+   *
    *  *  To add, provide `adfValue`. Note that rich text fields only support ADF values.
    *  *  To clear, use an empty `richText` object.
-   * 
+   *
    * For ADF format details, refer to: [Atlassian Document Format](https://developer.atlassian.com/cloud/jira/platform/apis/document/structure).
    */
   richTextFields?: Array<JiraRichTextField>;
   /**
    * Add or clear a single group picker field:
-   * 
+   *
    *  *  To add, specify the group with `groupName`.
    *  *  To clear, set `groupName` to an empty string.
    */
   singleGroupPickerFields?: Array<JiraSingleGroupPickerField>;
   /**
    * Add or clear a single line text field:
-   * 
+   *
    *  *  To add, provide the `text` value.
    *  *  To clear, set `text` to an empty string.
    */
   singleLineTextFields?: Array<JiraSingleLineTextField>;
   /**
    * Edit assignment for single select user picker fields like Assignee/Reporter:
-   * 
+   *
    *  *  To assign an issue, specify the user's `accountId`.
    *  *  To unassign an issue, set `user` to `null`.
    *  *  For automatic assignment, set `accountId` to `-1`.
@@ -6239,21 +6239,21 @@ export type JiraIssueFields = {
   singleSelectClearableUserPickerFields?: Array<JiraSingleSelectUserPickerField>;
   /**
    * Add or clear a single select field:
-   * 
+   *
    *  *  To add, specify the option with an `optionId`.
    *  *  To clear, pass an option with `optionId` as `-1`.
    */
   singleSelectFields?: Array<JiraSingleSelectField>;
   /**
    * Add or clear a single version picker field:
-   * 
+   *
    *  *  To add, specify the version with a `versionId`.
    *  *  To clear, set `versionId` to `-1`.
    */
   singleVersionPickerFields?: Array<JiraSingleVersionPickerField>;
   /**
    * Add or clear a URL field:
-   * 
+   *
    *  *  To add, provide the `url` with the desired URL value.
    *  *  To clear, set `url` to an empty string.
    */
@@ -6548,50 +6548,50 @@ export type JqlFunctionPrecomputationBean = {
   /**
    * The list of arguments function was invoked with.
    */
-  arguments?: string[];
+  arguments: string[];
   /**
    * The timestamp of the precomputation creation.
    * @format: "date-time"
    */
-  created?: string;
+  created: string;
   /**
    * The error message to be displayed to the user.
    */
-  error?: string;
+  error: string;
   /**
    * The field the function was executed against.
    */
-  field?: string;
+  field: string;
   /**
    * The function key.
    */
-  functionKey?: string;
+  functionKey: string;
   /**
    * The name of the function.
    */
-  functionName?: string;
+  functionName: string;
   /**
    * The id of the precomputation.
    */
-  id?: string;
+  id: string;
   /**
    * The operator in context of which function was executed.
    */
-  operator?: string;
+  operator: string;
   /**
    * The timestamp of the precomputation last update.
    * @format: "date-time"
    */
-  updated?: string;
+  updated: string;
   /**
    * The timestamp of the precomputation last usage.
    * @format: "date-time"
    */
-  used?: string;
+  used: string;
   /**
    * The JQL fragment stored as the precomputation.
    */
-  value?: string;
+  value: string;
 }
 /**
  * Precomputation id and its new value.
@@ -6834,24 +6834,24 @@ export type JsonTypeBean = {
   /**
    * If the field is a custom field, the configuration of the field.
    */
-  configuration?: Record<string, unknown>;
+  configuration: Record<string, unknown>;
   /**
    * If the field is a custom field, the URI of the field.
    */
-  custom?: string;
+  custom: string;
   /**
    * If the field is a custom field, the custom ID of the field.
    * @format: "int64"
    */
-  customId?: number;
+  customId: number;
   /**
    * When the data type is an array, the name of the field items within the array.
    */
-  items?: string;
+  items: string;
   /**
    * If the field is a system field, the name of the field.
    */
-  system?: string;
+  system: string;
   /**
    * The data type of the field.
    */
@@ -6979,7 +6979,7 @@ export type LinkedIssue = {
   /**
    * The fields associated with the issue.
    */
-  fields?: Fields;
+  fields: Fields;
   /**
    * The ID of an issue. Required if `key` isn't provided.
    */
@@ -6992,7 +6992,7 @@ export type LinkedIssue = {
    * The URL of the issue.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
 }
 /**
  * An operand that is a list of values.
@@ -7152,13 +7152,13 @@ export type MultipleCustomFieldValuesUpdate = {
   issueIds: string[];
   /**
    * The value for the custom field. The value must be compatible with the [custom field type](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field/#data-types) as follows:
-   * 
+   *
    *  *  `string` the value must be a string.
    *  *  `number` the value must be a number.
    *  *  `datetime` the value must be a string that represents a date in the ISO format or the simplified extended ISO format. For example, `"2023-01-18T12:00:00-03:00"` or `"2023-01-18T12:00:00.000Z"`. However, the milliseconds part is ignored.
    *  *  `user` the value must be an object that contains the `accountId` field.
    *  *  `group` the value must be an object that contains the group `name` or `groupId` field. Because group names can change, we recommend using `groupId`.
-   * 
+   *
    * A list of appropriate values must be provided if the field is of the `list` [collection type](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field/#collection-types).
    */
   value: any /* 122 */;
@@ -7222,7 +7222,7 @@ export type NewUserDetails = {
   /**
    * The URL of the user.
    */
-  self?: string;
+  self: string;
 } & Record<string, any>
 /**
  * Details about a notification.
@@ -7457,7 +7457,7 @@ export type Operations = {
   /**
    * Details of the link groups defining issue operations.
    */
-  linkGroups?: Array<LinkGroup>;
+  linkGroups: Array<LinkGroup>;
 } & Record<string, any>
 /**
  * An ordered list of custom field option IDs and information on where to move them.
@@ -7500,36 +7500,36 @@ export type PageBean2ComponentJsonBean = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<ComponentJsonBean>;
+  values: Array<ComponentJsonBean>;
 }
 /**
  * A page of items.
@@ -7538,36 +7538,36 @@ export type PageBeanChangelog = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<Changelog>;
+  values: Array<Changelog>;
 }
 /**
  * A page of items.
@@ -7576,36 +7576,36 @@ export type PageBeanComment = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<Comment>;
+  values: Array<Comment>;
 }
 /**
  * A page of items.
@@ -7614,36 +7614,36 @@ export type PageBeanComponentWithIssueCount = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<ComponentWithIssueCount>;
+  values: Array<ComponentWithIssueCount>;
 }
 /**
  * A page of items.
@@ -7652,36 +7652,36 @@ export type PageBeanContext = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<Context>;
+  values: Array<Context>;
 }
 /**
  * A page of items.
@@ -7690,36 +7690,36 @@ export type PageBeanContextForProjectAndIssueType = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<ContextForProjectAndIssueType>;
+  values: Array<ContextForProjectAndIssueType>;
 }
 /**
  * A page of items.
@@ -7728,36 +7728,36 @@ export type PageBeanContextualConfiguration = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<ContextualConfiguration>;
+  values: Array<ContextualConfiguration>;
 }
 /**
  * A page of items.
@@ -7766,36 +7766,36 @@ export type PageBeanCustomFieldContext = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<CustomFieldContext>;
+  values: Array<CustomFieldContext>;
 }
 /**
  * A page of items.
@@ -7804,36 +7804,36 @@ export type PageBeanCustomFieldContextDefaultValue = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<CustomFieldContextDefaultValue>;
+  values: Array<CustomFieldContextDefaultValue>;
 }
 /**
  * A page of items.
@@ -7842,36 +7842,36 @@ export type PageBeanCustomFieldContextOption = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<CustomFieldContextOption>;
+  values: Array<CustomFieldContextOption>;
 }
 /**
  * A page of items.
@@ -7880,36 +7880,36 @@ export type PageBeanCustomFieldContextProjectMapping = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<CustomFieldContextProjectMapping>;
+  values: Array<CustomFieldContextProjectMapping>;
 }
 /**
  * A page of items.
@@ -7918,36 +7918,36 @@ export type PageBeanDashboard = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<Dashboard>;
+  values: Array<Dashboard>;
 }
 /**
  * A page of items.
@@ -7956,36 +7956,36 @@ export type PageBeanField = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<Field>;
+  values: Array<Field>;
 }
 /**
  * A page of items.
@@ -7994,36 +7994,36 @@ export type PageBeanFieldConfigurationDetails = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<FieldConfigurationDetails>;
+  values: Array<FieldConfigurationDetails>;
 }
 /**
  * A page of items.
@@ -8032,36 +8032,36 @@ export type PageBeanFieldConfigurationIssueTypeItem = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<FieldConfigurationIssueTypeItem>;
+  values: Array<FieldConfigurationIssueTypeItem>;
 }
 /**
  * A page of items.
@@ -8070,36 +8070,36 @@ export type PageBeanFieldConfigurationItem = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<FieldConfigurationItem>;
+  values: Array<FieldConfigurationItem>;
 }
 /**
  * A page of items.
@@ -8108,36 +8108,36 @@ export type PageBeanFieldConfigurationScheme = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<FieldConfigurationScheme>;
+  values: Array<FieldConfigurationScheme>;
 }
 /**
  * A page of items.
@@ -8146,36 +8146,36 @@ export type PageBeanFieldConfigurationSchemeProjects = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<FieldConfigurationSchemeProjects>;
+  values: Array<FieldConfigurationSchemeProjects>;
 }
 /**
  * A page of items.
@@ -8184,36 +8184,36 @@ export type PageBeanFilterDetails = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<FilterDetails>;
+  values: Array<FilterDetails>;
 }
 /**
  * A page of items.
@@ -8222,36 +8222,36 @@ export type PageBeanGroupDetails = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<GroupDetails>;
+  values: Array<GroupDetails>;
 }
 /**
  * A page of items.
@@ -8260,36 +8260,36 @@ export type PageBeanIssueFieldOption = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<IssueFieldOption>;
+  values: Array<IssueFieldOption>;
 }
 /**
  * A page of items.
@@ -8298,36 +8298,36 @@ export type PageBeanIssueSecurityLevelMember = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<IssueSecurityLevelMember>;
+  values: Array<IssueSecurityLevelMember>;
 }
 /**
  * A page of items.
@@ -8336,36 +8336,36 @@ export type PageBeanIssueSecuritySchemeToProjectMapping = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<IssueSecuritySchemeToProjectMapping>;
+  values: Array<IssueSecuritySchemeToProjectMapping>;
 }
 /**
  * A page of items.
@@ -8374,36 +8374,36 @@ export type PageBeanIssueTypeScheme = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<IssueTypeScheme>;
+  values: Array<IssueTypeScheme>;
 }
 /**
  * A page of items.
@@ -8412,36 +8412,36 @@ export type PageBeanIssueTypeSchemeMapping = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<IssueTypeSchemeMapping>;
+  values: Array<IssueTypeSchemeMapping>;
 }
 /**
  * A page of items.
@@ -8450,36 +8450,36 @@ export type PageBeanIssueTypeSchemeProjects = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<IssueTypeSchemeProjects>;
+  values: Array<IssueTypeSchemeProjects>;
 }
 /**
  * A page of items.
@@ -8488,36 +8488,36 @@ export type PageBeanIssueTypeScreenScheme = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<IssueTypeScreenScheme>;
+  values: Array<IssueTypeScreenScheme>;
 }
 /**
  * A page of items.
@@ -8526,36 +8526,36 @@ export type PageBeanIssueTypeScreenSchemeItem = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<IssueTypeScreenSchemeItem>;
+  values: Array<IssueTypeScreenSchemeItem>;
 }
 /**
  * A page of items.
@@ -8564,36 +8564,36 @@ export type PageBeanIssueTypeScreenSchemesProjects = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<IssueTypeScreenSchemesProjects>;
+  values: Array<IssueTypeScreenSchemesProjects>;
 }
 /**
  * A page of items.
@@ -8602,36 +8602,36 @@ export type PageBeanIssueTypeToContextMapping = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<IssueTypeToContextMapping>;
+  values: Array<IssueTypeToContextMapping>;
 }
 /**
  * A page of items.
@@ -8640,36 +8640,36 @@ export type PageBeanJqlFunctionPrecomputationBean = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<JqlFunctionPrecomputationBean>;
+  values: Array<JqlFunctionPrecomputationBean>;
 }
 /**
  * A page of items.
@@ -8678,36 +8678,36 @@ export type PageBeanNotificationScheme = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<NotificationScheme>;
+  values: Array<NotificationScheme>;
 }
 /**
  * A page of items.
@@ -8716,36 +8716,36 @@ export type PageBeanNotificationSchemeAndProjectMappingJsonBean = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<NotificationSchemeAndProjectMappingJsonBean>;
+  values: Array<NotificationSchemeAndProjectMappingJsonBean>;
 }
 /**
  * A page of items.
@@ -8754,36 +8754,36 @@ export type PageBeanPriority = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<Priority>;
+  values: Array<Priority>;
 }
 /**
  * A page of items.
@@ -8792,36 +8792,36 @@ export type PageBeanPrioritySchemeWithPaginatedPrioritiesAndProjects = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<PrioritySchemeWithPaginatedPrioritiesAndProjects>;
+  values: Array<PrioritySchemeWithPaginatedPrioritiesAndProjects>;
 }
 /**
  * A page of items.
@@ -8830,36 +8830,36 @@ export type PageBeanPriorityWithSequence = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<PriorityWithSequence>;
+  values: Array<PriorityWithSequence>;
 }
 /**
  * A page of items.
@@ -8868,36 +8868,36 @@ export type PageBeanProject = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<Project>;
+  values: Array<Project>;
 }
 /**
  * A page of items.
@@ -8906,36 +8906,36 @@ export type PageBeanProjectDetails = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<ProjectDetails>;
+  values: Array<ProjectDetails>;
 }
 /**
  * A page of items.
@@ -8944,36 +8944,36 @@ export type PageBeanResolutionJsonBean = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<ResolutionJsonBean>;
+  values: Array<ResolutionJsonBean>;
 }
 /**
  * A page of items.
@@ -8982,36 +8982,36 @@ export type PageBeanScreen = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<Screen>;
+  values: Array<Screen>;
 }
 /**
  * A page of items.
@@ -9020,36 +9020,36 @@ export type PageBeanScreenScheme = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<ScreenScheme>;
+  values: Array<ScreenScheme>;
 }
 /**
  * A page of items.
@@ -9058,36 +9058,36 @@ export type PageBeanScreenWithTab = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<ScreenWithTab>;
+  values: Array<ScreenWithTab>;
 }
 /**
  * A page of items.
@@ -9096,36 +9096,36 @@ export type PageBeanSecurityLevel = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<SecurityLevel>;
+  values: Array<SecurityLevel>;
 }
 /**
  * A page of items.
@@ -9134,36 +9134,36 @@ export type PageBeanSecurityLevelMember = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<SecurityLevelMember>;
+  values: Array<SecurityLevelMember>;
 }
 /**
  * A page of items.
@@ -9172,36 +9172,36 @@ export type PageBeanSecuritySchemeWithProjects = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<SecuritySchemeWithProjects>;
+  values: Array<SecuritySchemeWithProjects>;
 }
 /**
  * A page of items.
@@ -9210,36 +9210,36 @@ export type PageBeanString = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: string[];
+  values: string[];
 }
 /**
  * A page of items.
@@ -9248,36 +9248,36 @@ export type PageBeanUiModificationDetails = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<UiModificationDetails>;
+  values: Array<UiModificationDetails>;
 }
 /**
  * A page of items.
@@ -9286,36 +9286,36 @@ export type PageBeanUser = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<User>;
+  values: Array<User>;
 }
 /**
  * A page of items.
@@ -9324,36 +9324,36 @@ export type PageBeanUserDetails = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<UserDetails>;
+  values: Array<UserDetails>;
 }
 /**
  * A page of items.
@@ -9362,36 +9362,36 @@ export type PageBeanUserKey = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<UserKey>;
+  values: Array<UserKey>;
 }
 /**
  * A page of items.
@@ -9400,36 +9400,36 @@ export type PageBeanVersion = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<Version>;
+  values: Array<Version>;
 }
 /**
  * A page of items.
@@ -9438,36 +9438,36 @@ export type PageBeanWebhook = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<Webhook>;
+  values: Array<Webhook>;
 }
 /**
  * A page of items.
@@ -9476,36 +9476,36 @@ export type PageBeanWorkflow = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<Workflow>;
+  values: Array<Workflow>;
 }
 /**
  * A page of items.
@@ -9514,36 +9514,36 @@ export type PageBeanWorkflowScheme = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<WorkflowScheme>;
+  values: Array<WorkflowScheme>;
 }
 /**
  * A page of items.
@@ -9552,36 +9552,36 @@ export type PageBeanWorkflowTransitionRules = {
   /**
    * Whether this is the last page.
    */
-  isLast?: boolean;
+  isLast: boolean;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * If there is another page of results, the URL of the next page.
    * @format: "uri"
    */
-  nextPage?: string;
+  nextPage: string;
   /**
    * The URL of the page.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
   /**
    * The list of items.
    */
-  values?: Array<WorkflowTransitionRules>;
+  values: Array<WorkflowTransitionRules>;
 }
 /**
  * A page of changelogs.
@@ -9590,22 +9590,22 @@ export type PageOfChangelogs = {
   /**
    * The list of changelogs.
    */
-  histories?: Array<Changelog>;
+  histories: Array<Changelog>;
   /**
    * The maximum number of results that could be on the page.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * The index of the first item returned on the page.
    * @format: "int32"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of results on the page.
    * @format: "int32"
    */
-  total?: number;
+  total: number;
 }
 /**
  * A page of comments.
@@ -9615,22 +9615,22 @@ export type PageOfComments = {
   /**
    * The list of comments.
    */
-  comments?: Array<Comment>;
+  comments: Array<Comment>;
   /**
    * The maximum number of items that could be returned.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of items returned.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
 } & Record<string, any>
 /**
  * A page of CreateMetaIssueType with Field.
@@ -9640,23 +9640,23 @@ export type PageOfCreateMetaIssueTypeWithField = {
   /**
    * The collection of FieldCreateMetaBeans.
    */
-  fields?: Array<FieldCreateMetadata>;
+  fields: Array<FieldCreateMetadata>;
   /**
    * The maximum number of items to return per page.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   results?: Array<FieldCreateMetadata>;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The total number of items in all pages.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
 } & Record<string, any>
 /**
  * A page of CreateMetaIssueTypes.
@@ -9667,22 +9667,22 @@ export type PageOfCreateMetaIssueTypes = {
   /**
    * The list of CreateMetaIssueType.
    */
-  issueTypes?: Array<IssueTypeIssueCreateMetadata>;
+  issueTypes: Array<IssueTypeIssueCreateMetadata>;
   /**
    * The maximum number of items to return per page.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * The index of the first item returned.
    * @format: "int64"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The total number of items in all pages.
    * @format: "int64"
    */
-  total?: number;
+  total: number;
 } & Record<string, any>
 /**
  * A page containing dashboard details.
@@ -9691,30 +9691,30 @@ export type PageOfDashboards = {
   /**
    * List of dashboards.
    */
-  dashboards?: Array<Dashboard>;
+  dashboards: Array<Dashboard>;
   /**
    * The maximum number of results that could be on the page.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * The URL of the next page of results, if any.
    */
-  next?: string;
+  next: string;
   /**
    * The URL of the previous page of results, if any.
    */
-  prev?: string;
+  prev: string;
   /**
    * The index of the first item returned on the page.
    * @format: "int32"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of results on the page.
    * @format: "int32"
    */
-  total?: number;
+  total: number;
 }
 /**
  * MODEL PageOfStatuses
@@ -9761,21 +9761,21 @@ export type PageOfWorklogs = {
    * The maximum number of results that could be on the page.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * The index of the first item returned on the page.
    * @format: "int32"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of results on the page.
    * @format: "int32"
    */
-  total?: number;
+  total: number;
   /**
    * List of worklogs.
    */
-  worklogs?: Array<Worklog>;
+  worklogs: Array<Worklog>;
 } & Record<string, any>
 /**
  * A paged list. To access additional details append `[start-index:end-index]` to the expand request. For example, `?expand=sharedUsers[10:40]` returns a list starting at item 10 and finishing at item 40.
@@ -9785,26 +9785,26 @@ export type PagedListUserDetailsApplicationUser = {
    * The index of the last item returned on the page.
    * @format: "int32"
    */
-  "end-index"?: number;
+  "end-index": number;
   /**
    * The list of items.
    */
-  items?: Array<UserDetails>;
+  items: Array<UserDetails>;
   /**
    * The maximum number of results that could be on the page.
    * @format: "int32"
    */
-  "max-results"?: number;
+  "max-results": number;
   /**
    * The number of items on the page.
    * @format: "int32"
    */
-  size?: number;
+  size: number;
   /**
    * The index of the first item returned on the page.
    * @format: "int32"
    */
-  "start-index"?: number;
+  "start-index": number;
 }
 /**
  * MODEL PaginatedResponseComment
@@ -9912,7 +9912,7 @@ export type PermissionGrant = {
    * The ID of the permission granted details.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * The permission to grant. This permission can be one of the built-in permissions or a custom permission added by an app. See [Built-in permissions](../api-group-permission-schemes/#built-in-permissions) in *Get all permission schemes* for more information about the built-in permissions. See the [project permission](https://developer.atlassian.com/cloud/jira/platform/modules/project-permission/) and [global permission](https://developer.atlassian.com/cloud/jira/platform/modules/global-permission/) module documentation for more information about custom permissions.
    */
@@ -9921,7 +9921,7 @@ export type PermissionGrant = {
    * The URL of the permission granted details.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
 } & Record<string, any>
 /**
  * List of permission grants.
@@ -9930,11 +9930,11 @@ export type PermissionGrants = {
   /**
    * Expand options that include additional permission grant details in the response.
    */
-  expand?: string;
+  expand: string;
   /**
    * Permission grants list.
    */
-  permissions?: Array<PermissionGrant>;
+  permissions: Array<PermissionGrant>;
 }
 /**
  * Details of a user, group, field, or project role that holds a permission. See [Holder object](../api-group-permission-schemes/#holder-object) in *Get all permission schemes* for more information.
@@ -9943,7 +9943,7 @@ export type PermissionHolder = {
   /**
    * Expand options that include additional permission holder details in the response.
    */
-  expand?: string;
+  expand: string;
   /**
    * As a group's name can change, use of `value` is recommended. The identifier associated withthe `type` value that defines the holder of the permission.
    */
@@ -9969,12 +9969,12 @@ export type PermissionScheme = {
   /**
    * The expand options available for the permission scheme.
    */
-  expand?: string;
+  expand: string;
   /**
    * The ID of the permission scheme.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * The name of the permission scheme. Must be unique.
    */
@@ -9991,7 +9991,7 @@ export type PermissionScheme = {
    * The URL of the permission scheme.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
 } & Record<string, any>
 /**
  * List of all permission schemes.
@@ -10000,7 +10000,7 @@ export type PermissionSchemes = {
   /**
    * Permission schemes list.
    */
-  permissionSchemes?: Array<PermissionScheme>;
+  permissionSchemes: Array<PermissionScheme>;
 }
 /**
  * Details about permissions.
@@ -10009,7 +10009,7 @@ export type Permissions = {
   /**
    * List of permissions.
    */
-  permissions?: Record<string, unknown>;
+  permissions: Record<string, unknown>;
 }
 /**
  * MODEL PermissionsKeysBean
@@ -10027,7 +10027,7 @@ export type PermittedProjects = {
   /**
    * A list of projects.
    */
-  projects?: Array<ProjectIdentifierBean>;
+  projects: Array<ProjectIdentifierBean>;
 }
 /**
  * An issue priority.
@@ -10119,11 +10119,11 @@ export type PrioritySchemeId = {
   /**
    * The ID of the priority scheme.
    */
-  id?: string;
+  id: string;
   /**
    * The in-progress issue migration task.
    */
-  task?: TaskProgressBeanJsonNode;
+  task: TaskProgressBeanJsonNode;
 }
 /**
  * A priority scheme with paginated priorities and projects.
@@ -10205,45 +10205,45 @@ export type Project = {
   /**
    * Whether the project is archived.
    */
-  archived?: boolean;
+  archived: boolean;
   /**
    * The user who archived the project.
    */
-  archivedBy?: User;
+  archivedBy: User;
   /**
    * The date when the project was archived.
    * @format: "date-time"
    */
-  archivedDate?: string;
+  archivedDate: string;
   /**
    * The default assignee when creating issues for this project.
    */
-  assigneeType?: string;
+  assigneeType: string;
   /**
    * The URLs of the project's avatars.
    */
-  avatarUrls?: AvatarUrlsBean;
+  avatarUrls: AvatarUrlsBean;
   /**
    * List of the components contained in the project.
    */
-  components?: Array<ProjectComponent>;
+  components: Array<ProjectComponent>;
   /**
    * Whether the project is marked as deleted.
    */
-  deleted?: boolean;
+  deleted: boolean;
   /**
    * The user who marked the project as deleted.
    */
-  deletedBy?: User;
+  deletedBy: User;
   /**
    * The date when the project was marked as deleted.
    * @format: "date-time"
    */
-  deletedDate?: string;
+  deletedDate: string;
   /**
    * A brief description of the project.
    */
-  description?: string;
+  description: string;
   /**
    * An email address associated with the project.
    */
@@ -10251,7 +10251,7 @@ export type Project = {
   /**
    * Expand options that include additional project details in the response.
    */
-  expand?: string;
+  expand: string;
   /**
    * Whether the project is selected as a favorite.
    */
@@ -10263,86 +10263,86 @@ export type Project = {
   /**
    * Insights about the project.
    */
-  insight?: ProjectInsight;
+  insight: ProjectInsight;
   /**
    * Whether the project is private from the user's perspective. This means the user can't see the project or any associated issues.
    */
-  isPrivate?: boolean;
+  isPrivate: boolean;
   /**
    * The issue type hierarchy for the project.
    */
-  issueTypeHierarchy?: Hierarchy;
+  issueTypeHierarchy: Hierarchy;
   /**
    * List of the issue types available in the project.
    */
-  issueTypes?: Array<IssueTypeDetails>;
+  issueTypes: Array<IssueTypeDetails>;
   /**
    * The key of the project.
    */
-  key?: string;
+  key: string;
   /**
    * The project landing page info.
    */
-  landingPageInfo?: ProjectLandingPageInfo;
+  landingPageInfo: ProjectLandingPageInfo;
   /**
    * The username of the project lead.
    */
-  lead?: User;
+  lead: User;
   /**
    * The name of the project.
    */
-  name?: string;
+  name: string;
   /**
    * User permissions on the project
    */
-  permissions?: ProjectPermissions;
+  permissions: ProjectPermissions;
   /**
    * The category the project belongs to.
    */
-  projectCategory?: ProjectCategory;
+  projectCategory: ProjectCategory;
   /**
    * The [project type](https://confluence.atlassian.com/x/GwiiLQ#Jiraapplicationsoverview-Productfeaturesandprojecttypes) of the project.
    */
-  projectTypeKey?: string;
+  projectTypeKey: string;
   /**
    * Map of project properties
    */
-  properties?: Record<string, unknown>;
+  properties: Record<string, unknown>;
   /**
    * The date when the project is deleted permanently.
    * @format: "date-time"
    */
-  retentionTillDate?: string;
+  retentionTillDate: string;
   /**
    * The name and self URL for each role defined in the project. For more information, see [Create project role](#api-rest-api-3-role-post).
    */
-  roles?: Record<string, unknown>;
+  roles: Record<string, unknown>;
   /**
    * The URL of the project details.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * Whether the project is simplified.
    */
-  simplified?: boolean;
+  simplified: boolean;
   /**
    * The type of the project.
    */
-  style?: string;
+  style: string;
   /**
    * A link to information about this project, such as project documentation.
    */
-  url?: string;
+  url: string;
   /**
    * Unique ID for next-gen projects.
    * @format: "uuid"
    */
-  uuid?: string;
+  uuid: string;
   /**
    * The versions defined in the project. For more information, see [Create version](#api-rest-api-3-version-post).
    */
-  versions?: Array<Version>;
+  versions: Array<Version>;
 }
 /**
  * A project and issueType ID pair that identifies a status mapping.
@@ -10364,11 +10364,11 @@ export type ProjectAvatars = {
   /**
    * List of avatars added to Jira. These avatars may be deleted.
    */
-  custom?: Array<Avatar>;
+  custom: Array<Avatar>;
   /**
    * List of avatars included with Jira. These avatars cannot be deleted.
    */
-  system?: Array<Avatar>;
+  system: Array<Avatar>;
 }
 /**
  * A project category.
@@ -10381,7 +10381,7 @@ export type ProjectCategory = {
   /**
    * The ID of the project category.
    */
-  id?: string;
+  id: string;
   /**
    * The name of the project category. Required on create, optional on update.
    */
@@ -10390,7 +10390,7 @@ export type ProjectCategory = {
    * The URL of the project category.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
 }
 /**
  * Details about a project component.
@@ -10399,20 +10399,20 @@ export type ProjectComponent = {
   /**
    * Compass component's ID. Can't be updated. Not required for creating a Project Component.
    */
-  ari?: string;
+  ari: string;
   /**
    * The details of the user associated with `assigneeType`, if any. See `realAssignee` for details of the user assigned to issues created with this component.
    */
-  assignee?: User;
+  assignee: User;
   /**
    * The nominal user type used to determine the assignee for issues created with this component. See `realAssigneeType` for details on how the type of the user, and hence the user, assigned to issues is determined. Can take the following values:
-   * 
+   *
    *  *  `PROJECT_LEAD` the assignee to any issues created with this component is nominally the lead for the project the component is in.
    *  *  `COMPONENT_LEAD` the assignee to any issues created with this component is nominally the lead for the component.
    *  *  `UNASSIGNED` an assignee is not set for issues created with this component.
    *  *  `PROJECT_DEFAULT` the assignee to any issues created with this component is nominally the default assignee for the project that the component is in.
-   * 
-   * Default value: `PROJECT_DEFAULT`.  
+   *
+   * Default value: `PROJECT_DEFAULT`.
    * Optional when creating or updating a component.
    */
   assigneeType?: string;
@@ -10423,15 +10423,15 @@ export type ProjectComponent = {
   /**
    * The unique identifier for the component.
    */
-  id?: string;
+  id: string;
   /**
    * Whether a user is associated with `assigneeType`. For example, if the `assigneeType` is set to `COMPONENT_LEAD` but the component lead is not set, then `false` is returned.
    */
-  isAssigneeTypeValid?: boolean;
+  isAssigneeTypeValid: boolean;
   /**
    * The user details for the component's lead user.
    */
-  lead?: User;
+  lead: User;
   /**
    * The accountId of the component's lead user. The accountId uniquely identifies the user across all Atlassian products. For example, *5b10ac8d82e05b22cc7d4ef5*.
    */
@@ -10443,7 +10443,7 @@ export type ProjectComponent = {
   /**
    * Compass component's metadata. Can't be updated. Not required for creating a Project Component.
    */
-  metadata?: Record<string, unknown>;
+  metadata: Record<string, unknown>;
   /**
    * The unique name for the component in the project. Required when creating a component. Optional when updating a component. The maximum length is 255 characters.
    */
@@ -10456,25 +10456,25 @@ export type ProjectComponent = {
    * The ID of the project the component is assigned to.
    * @format: "int64"
    */
-  projectId?: number;
+  projectId: number;
   /**
    * The user assigned to issues created with this component, when `assigneeType` does not identify a valid assignee.
    */
-  realAssignee?: User;
+  realAssignee: User;
   /**
    * The type of the assignee that is assigned to issues created with this component, when an assignee cannot be set from the `assigneeType`. For example, `assigneeType` is set to `COMPONENT_LEAD` but no component lead is set. This property is set to one of the following values:
-   * 
+   *
    *  *  `PROJECT_LEAD` when `assigneeType` is `PROJECT_LEAD` and the project lead has permission to be assigned issues in the project that the component is in.
    *  *  `COMPONENT_LEAD` when `assignee`Type is `COMPONENT_LEAD` and the component lead has permission to be assigned issues in the project that the component is in.
    *  *  `UNASSIGNED` when `assigneeType` is `UNASSIGNED` and Jira is configured to allow unassigned issues.
    *  *  `PROJECT_DEFAULT` when none of the preceding cases are true.
    */
-  realAssigneeType?: string;
+  realAssigneeType: string;
   /**
    * The URL of the component.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
 }
 /**
  * Details about data policies for a list of projects.
@@ -10483,7 +10483,7 @@ export type ProjectDataPolicies = {
   /**
    * List of projects with data policies.
    */
-  projectDataPolicies?: Array<ProjectWithDataPolicy>;
+  projectDataPolicies: Array<ProjectWithDataPolicy>;
 }
 /**
  * Details about data policy.
@@ -10492,7 +10492,7 @@ export type ProjectDataPolicy = {
   /**
    * Whether the project contains any content inaccessible to the requesting application.
    */
-  anyContentBlocked?: boolean;
+  anyContentBlocked: boolean;
 }
 /**
  * Details about a project.
@@ -10501,7 +10501,7 @@ export type ProjectDetails = {
   /**
    * The URLs of the project's avatars.
    */
-  avatarUrls?: AvatarUrlsBean;
+  avatarUrls: AvatarUrlsBean;
   /**
    * The ID of the project.
    */
@@ -10509,27 +10509,27 @@ export type ProjectDetails = {
   /**
    * The key of the project.
    */
-  key?: string;
+  key: string;
   /**
    * The name of the project.
    */
-  name?: string;
+  name: string;
   /**
    * The category the project belongs to.
    */
-  projectCategory?: UpdatedProjectCategory;
+  projectCategory: UpdatedProjectCategory;
   /**
    * The [project type](https://confluence.atlassian.com/x/GwiiLQ#Jiraapplicationsoverview-Productfeaturesandprojecttypes) of the project.
    */
-  projectTypeKey?: string;
+  projectTypeKey: string;
   /**
    * The URL of the project details.
    */
-  self?: string;
+  self: string;
   /**
    * Whether or not the project is simplified.
    */
-  simplified?: boolean;
+  simplified: boolean;
 }
 /**
  * A project's sender email address.
@@ -10608,11 +10608,11 @@ export type ProjectIdentifierBean = {
    * The ID of the project.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * The key of the project.
    */
-  key?: string;
+  key: string;
 }
 /**
  * Identifiers for a project.
@@ -10650,12 +10650,12 @@ export type ProjectInsight = {
    * The last issue update time.
    * @format: "date-time"
    */
-  lastIssueUpdateTime?: string;
+  lastIssueUpdateTime: string;
   /**
    * Total issue count.
    * @format: "int64"
    */
-  totalIssueCount?: number;
+  totalIssueCount: number;
 }
 /**
  * Details of the issue creation metadata for a project.
@@ -10664,31 +10664,31 @@ export type ProjectIssueCreateMetadata = {
   /**
    * List of the project's avatars, returning the avatar size and associated URL.
    */
-  avatarUrls?: AvatarUrlsBean;
+  avatarUrls: AvatarUrlsBean;
   /**
    * Expand options that include additional project issue create metadata details in the response.
    */
-  expand?: string;
+  expand: string;
   /**
    * The ID of the project.
    */
-  id?: string;
+  id: string;
   /**
    * List of the issue types supported by the project.
    */
-  issuetypes?: Array<IssueTypeIssueCreateMetadata>;
+  issuetypes: Array<IssueTypeIssueCreateMetadata>;
   /**
    * The key of the project.
    */
-  key?: string;
+  key: string;
   /**
    * The name of the project.
    */
-  name?: string;
+  name: string;
   /**
    * The URL of the project.
    */
-  self?: string;
+  self: string;
 }
 /**
  * List of issue level security items in a project.
@@ -10706,12 +10706,12 @@ export type ProjectIssueTypeHierarchy = {
   /**
    * Details of an issue type hierarchy level.
    */
-  hierarchy?: Array<ProjectIssueTypesHierarchyLevel>;
+  hierarchy: Array<ProjectIssueTypesHierarchyLevel>;
   /**
    * The ID of the project.
    * @format: "int64"
    */
-  projectId?: number;
+  projectId: number;
 }
 /**
  * The project and issue type mapping.
@@ -10756,20 +10756,20 @@ export type ProjectIssueTypesHierarchyLevel = {
    * The ID of the issue type hierarchy level. This property is deprecated, see [Change notice: Removing hierarchy level IDs from next-gen APIs](https://developer.atlassian.com/cloud/jira/platform/change-notice-removing-hierarchy-level-ids-from-next-gen-apis/).
    * @format: "uuid"
    */
-  entityId?: string;
+  entityId: string;
   /**
    * The list of issue types in the hierarchy level.
    */
-  issueTypes?: Array<IssueTypeInfo>;
+  issueTypes: Array<IssueTypeInfo>;
   /**
    * The level of the issue type hierarchy level.
    * @format: "int32"
    */
-  level?: number;
+  level: number;
   /**
    * The name of the issue type hierarchy level.
    */
-  name?: string;
+  name: string;
 }
 /**
  * MODEL ProjectLandingPageInfo
@@ -10800,7 +10800,7 @@ export type ProjectPermissions = {
   /**
    * Whether the logged user can edit the project.
    */
-  canEdit?: boolean;
+  canEdit: boolean;
 }
 /**
  * Details about the roles in a project.
@@ -10809,11 +10809,11 @@ export type ProjectRole = {
   /**
    * The list of users who act in this role.
    */
-  actors?: Array<RoleActor>;
+  actors: Array<RoleActor>;
   /**
    * Whether this role is the admin role for the project.
    */
-  admin?: boolean;
+  admin: boolean;
   /**
    * Whether the calling user is part of this role.
    */
@@ -10821,16 +10821,16 @@ export type ProjectRole = {
   /**
    * Whether this role is the default role for the project
    */
-  default?: boolean;
+  default: boolean;
   /**
    * The description of the project role.
    */
-  description?: string;
+  description: string;
   /**
    * The ID of the project role.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * The name of the project role.
    */
@@ -10838,16 +10838,16 @@ export type ProjectRole = {
   /**
    * Whether the roles are configurable for this project.
    */
-  roleConfigurable?: boolean;
+  roleConfigurable: boolean;
   /**
    * The scope of the role. Indicated for roles associated with [next-gen projects](https://confluence.atlassian.com/x/loMyO).
    */
-  scope?: Scope;
+  scope: Scope;
   /**
    * The URL the project role details.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The translated name of the project role.
    */
@@ -10859,14 +10859,14 @@ export type ProjectRole = {
 export type ProjectRoleActorsUpdateBean = {
   /**
    * The actors to add to the project role.
-   * 
+   *
    * Add groups using:
-   * 
+   *
    *  *  `atlassian-group-role-actor` and a list of group names.
    *  *  `atlassian-group-role-actor-id` and a list of group IDs.
-   * 
+   *
    * As a group's name can change, use of `atlassian-group-role-actor-id` is recommended. For example, `"atlassian-group-role-actor-id":["eef79f81-0b89-4fca-a736-4be531a10869","77f6ab39-e755-4570-a6ae-2d7a8df0bcb8"]`.
-   * 
+   *
    * Add users using `atlassian-user-role-actor` and a list of account IDs. For example, `"atlassian-user-role-actor":["12345678-9abc-def1-2345-6789abcdef12", "abcdef12-3456-789a-bcde-f123456789ab"]`.
    */
   categorisedActors?: Record<string, unknown>;
@@ -10874,7 +10874,7 @@ export type ProjectRoleActorsUpdateBean = {
    * The ID of the project role. Use [Get all project roles](#api-rest-api-3-role-get) to get a list of project role IDs.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
 }
 /**
  * Details about a project role.
@@ -10883,20 +10883,20 @@ export type ProjectRoleDetails = {
   /**
    * Whether this role is the admin role for the project.
    */
-  admin?: boolean;
+  admin: boolean;
   /**
    * Whether this role is the default role for the project.
    */
-  default?: boolean;
+  default: boolean;
   /**
    * The description of the project role.
    */
-  description?: string;
+  description: string;
   /**
    * The ID of the project role.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * The name of the project role.
    */
@@ -10904,16 +10904,16 @@ export type ProjectRoleDetails = {
   /**
    * Whether the roles are configurable for this project.
    */
-  roleConfigurable?: boolean;
+  roleConfigurable: boolean;
   /**
    * The scope of the role. Indicated for roles associated with [next-gen projects](https://confluence.atlassian.com/x/loMyO).
    */
-  scope?: Scope;
+  scope: Scope;
   /**
    * The URL the project role details.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The translated name of the project role.
    */
@@ -10943,7 +10943,7 @@ export type ProjectRoleUser = {
   /**
    * The account ID of the user, which uniquely identifies the user across all Atlassian products. For example, *5b10ac8d82e05b22cc7d4ef5*. Returns *unknown* if the record is deleted and corrupted, for example, as the result of a server import.
    */
-  accountId?: string;
+  accountId: string;
 }
 /**
  * MODEL ProjectScopeBean
@@ -10966,23 +10966,23 @@ export type ProjectType = {
   /**
    * The color of the project type.
    */
-  color?: string;
+  color: string;
   /**
    * The key of the project type's description.
    */
-  descriptionI18nKey?: string;
+  descriptionI18nKey: string;
   /**
    * The formatted key of the project type.
    */
-  formattedKey?: string;
+  formattedKey: string;
   /**
    * The icon of the project type.
    */
-  icon?: string;
+  icon: string;
   /**
    * The key of the project type.
    */
-  key?: string;
+  key: string;
 }
 /**
  * Details about data policies for a project.
@@ -10991,12 +10991,12 @@ export type ProjectWithDataPolicy = {
   /**
    * Data policy.
    */
-  dataPolicy?: ProjectDataPolicy;
+  dataPolicy: ProjectDataPolicy;
   /**
    * The project ID.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
 }
 /**
  * Property key details.
@@ -11005,11 +11005,11 @@ export type PropertyKey = {
   /**
    * The key of the property.
    */
-  key?: string;
+  key: string;
   /**
    * The URL of the property.
    */
-  self?: string;
+  self: string;
 }
 /**
  * List of property keys.
@@ -11018,7 +11018,7 @@ export type PropertyKeys = {
   /**
    * Property key details.
    */
-  keys?: Array<PropertyKey>;
+  keys: Array<PropertyKey>;
 }
 /**
  * Details about the status mappings for publishing a draft workflow scheme.
@@ -11095,11 +11095,11 @@ export type RemoteIssueLinkIdentifies = {
    * The ID of the remote issue link, such as the ID of the item on the remote system.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * The URL of the remote issue link.
    */
-  self?: string;
+  self: string;
 }
 /**
  * Details of a remote issue link.
@@ -11112,9 +11112,9 @@ export type RemoteIssueLinkRequest = {
   application?: Application;
   /**
    * An identifier for the remote item in the remote system. For example, the global ID for a remote item in Confluence would consist of the app ID and page ID, like this: `appId=456&pageId=123`.
-   * 
+   *
    * Setting this field enables the remote issue link details to be updated or deleted using remote system and item details as the record identifier, rather than using the record's Jira ID.
-   * 
+   *
    * The maximum length is 255 characters.
    */
   globalId?: string;
@@ -11326,30 +11326,30 @@ export type RichText = {
  * Details about a user assigned to a project role.
  */
 export type RoleActor = {
-  actorGroup?: ProjectRoleGroup;
-  actorUser?: ProjectRoleUser;
+  actorGroup: ProjectRoleGroup;
+  actorUser: ProjectRoleUser;
   /**
    * The avatar of the role actor.
    * @format: "uri"
    */
-  avatarUrl?: string;
+  avatarUrl: string;
   /**
    * The display name of the role actor. For users, depending on the user’s privacy setting, this may return an alternative value for the user's name.
    */
-  displayName?: string;
+  displayName: string;
   /**
    * The ID of the role actor.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * This property is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
    */
-  name?: string;
+  name: string;
   /**
    * The type of role actor.
    */
-  type?: string;
+  type: string;
 }
 /**
  * A rule configuration.
@@ -11407,11 +11407,11 @@ export type Scope = {
   /**
    * The project the item has scope in.
    */
-  project?: ProjectDetails;
+  project: ProjectDetails;
   /**
    * The type of scope.
    */
-  type?: string;
+  type: string;
 } & Record<string, any>
 /**
  * A screen.
@@ -11420,16 +11420,16 @@ export type Screen = {
   /**
    * The description of the screen.
    */
-  description?: string;
+  description: string;
   /**
    * The ID of the screen.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * The name of the screen.
    */
-  name?: string;
+  name: string;
   /**
    * The scope of the screen.
    */
@@ -11533,16 +11533,16 @@ export type ScreenWithTab = {
   /**
    * The description of the screen.
    */
-  description?: string;
+  description: string;
   /**
    * The ID of the screen.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * The name of the screen.
    */
-  name?: string;
+  name: string;
   /**
    * The scope of the screen.
    */
@@ -11559,7 +11559,7 @@ export type ScreenableField = {
   /**
    * The ID of the screen tab field.
    */
-  id?: string;
+  id: string;
   /**
    * The name of the screen tab field. Required on create and update. The maximum length is 255 characters.
    */
@@ -11573,7 +11573,7 @@ export type ScreenableTab = {
    * The ID of the screen tab.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * The name of the screen tab. The maximum length is 255 characters.
    */
@@ -11599,7 +11599,7 @@ export type SearchAutoCompleteFilter = {
 export type SearchRequestBean = {
   /**
    * Use [expand](em>#expansion) to include additional information about issues in the response. Note that, unlike the majority of instances where `expand` is specified, `expand` is defined as a list of values. The expand options are:
-   * 
+   *
    *  *  `renderedFields` Returns field values rendered in HTML format.
    *  *  `names` Returns the display name of each field.
    *  *  `schema` Returns the schema describing a field type.
@@ -11612,21 +11612,21 @@ export type SearchRequestBean = {
   expand?: string[];
   /**
    * A list of fields to return for each issue, use it to retrieve a subset of fields. This parameter accepts a comma-separated list. Expand options include:
-   * 
+   *
    *  *  `*all` Returns all fields.
    *  *  `*navigable` Returns navigable fields.
    *  *  Any issue field, prefixed with a minus to exclude.
-   * 
+   *
    * The default is `*navigable`.
-   * 
+   *
    * Examples:
-   * 
+   *
    *  *  `summary,comment` Returns the summary and comments fields only.
    *  *  `-description` Returns all navigable (default) fields except description.
    *  *  `*all,-comment` Returns all fields except comments.
-   * 
+   *
    * Multiple `fields` parameters can be included in a request.
-   * 
+   *
    * Note: All navigable fields are returned by default. This differs from [GET issue](#api-rest-api-3-issue-issueIdOrKey-get) where the default is all fields.
    */
   fields?: string[];
@@ -11654,15 +11654,15 @@ export type SearchRequestBean = {
   startAt?: number;
   /**
    * Determines how to validate the JQL query and treat the validation results. Supported values:
-   * 
+   *
    *  *  `strict` Returns a 400 response code if any errors are found, along with a list of all errors (and warnings).
    *  *  `warn` Returns all errors as warnings.
    *  *  `none` No validation is performed.
    *  *  `true` *Deprecated* A legacy synonym for `strict`.
    *  *  `false` *Deprecated* A legacy synonym for `warn`.
-   * 
+   *
    * The default is `strict`.
-   * 
+   *
    * Note: If the JQL is not correctly formed a 400 response code is returned, regardless of the `validateQuery` value.
    */
   validateQuery?: string;
@@ -11674,38 +11674,38 @@ export type SearchResults = {
   /**
    * Expand options that include additional search result details in the response.
    */
-  expand?: string;
+  expand: string;
   /**
    * The list of issues found by the search.
    */
-  issues?: Array<IssueBean>;
+  issues: Array<IssueBean>;
   /**
    * The maximum number of results that could be on the page.
    * @format: "int32"
    */
-  maxResults?: number;
+  maxResults: number;
   /**
    * The ID and name of each field in the search results.
    */
-  names?: Record<string, unknown>;
+  names: Record<string, unknown>;
   /**
    * The schema describing the field types in the search results.
    */
-  schema?: Record<string, unknown>;
+  schema: Record<string, unknown>;
   /**
    * The index of the first item returned on the page.
    * @format: "int32"
    */
-  startAt?: number;
+  startAt: number;
   /**
    * The number of results on the page.
    * @format: "int32"
    */
-  total?: number;
+  total: number;
   /**
    * Any warnings related to the JQL query.
    */
-  warningMessages?: string[];
+  warningMessages: string[];
 }
 /**
  * Details of an issue level security item.
@@ -11714,27 +11714,27 @@ export type SecurityLevel = {
   /**
    * The description of the issue level security item.
    */
-  description?: string;
+  description: string;
   /**
    * The ID of the issue level security item.
    */
-  id?: string;
+  id: string;
   /**
    * Whether the issue level security item is the default.
    */
-  isDefault?: boolean;
+  isDefault: boolean;
   /**
    * The ID of the issue level security scheme.
    */
-  issueSecuritySchemeId?: string;
+  issueSecuritySchemeId: string;
   /**
    * The name of the issue level security item.
    */
-  name?: string;
+  name: string;
   /**
    * The URL of the issue level security item.
    */
-  self?: string;
+  self: string;
 }
 /**
  * Issue security level member.
@@ -11767,25 +11767,25 @@ export type SecurityScheme = {
    * The ID of the default security level.
    * @format: "int64"
    */
-  defaultSecurityLevelId?: number;
+  defaultSecurityLevelId: number;
   /**
    * The description of the issue security scheme.
    */
-  description?: string;
+  description: string;
   /**
    * The ID of the issue security scheme.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   levels?: Array<SecurityLevel>;
   /**
    * The name of the issue security scheme.
    */
-  name?: string;
+  name: string;
   /**
    * The URL of the issue security scheme.
    */
-  self?: string;
+  self: string;
 }
 /**
  * The ID of the issue security scheme.
@@ -11849,11 +11849,11 @@ export type SecuritySchemeWithProjects = {
    * The default level ID of the issue security scheme.
    * @format: "int64"
    */
-  defaultLevel?: number;
+  defaultLevel: number;
   /**
    * The description of the issue security scheme.
    */
-  description?: string;
+  description: string;
   /**
    * The ID of the issue security scheme.
    * @format: "int64"
@@ -11866,7 +11866,7 @@ export type SecuritySchemeWithProjects = {
   /**
    * The list of project IDs associated with the issue security scheme.
    */
-  projectIds?: string[];
+  projectIds: string[];
   /**
    * The URL of the issue security scheme.
    */
@@ -11879,7 +11879,7 @@ export type SecuritySchemes = {
   /**
    * List of security schemes.
    */
-  issueSecuritySchemes?: Array<SecurityScheme>;
+  issueSecuritySchemes: Array<SecurityScheme>;
 }
 /**
  * Details about the Jira instance.
@@ -12049,20 +12049,20 @@ export type SharePermission = {
    * The unique identifier of the share permission.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
-   * The project that the filter is shared with. This is similar to the project object returned by [Get project](#api-rest-api-3-project-projectIdOrKey-get) but it contains a subset of the properties, which are: `self`, `id`, `key`, `assigneeType`, `name`, `roles`, `avatarUrls`, `projectType`, `simplified`.  
+   * The project that the filter is shared with. This is similar to the project object returned by [Get project](#api-rest-api-3-project-projectIdOrKey-get) but it contains a subset of the properties, which are: `self`, `id`, `key`, `assigneeType`, `name`, `roles`, `avatarUrls`, `projectType`, `simplified`.
    * For a request, specify the `id` for the project.
    */
   project?: Project;
   /**
-   * The project role that the filter is shared with.  
+   * The project role that the filter is shared with.
    * For a request, specify the `id` for the role. You must also specify the `project` object and `id` for the project that the role is in.
    */
   role?: ProjectRole;
   /**
    * The type of share permission:
-   * 
+   *
    *  *  `user` Shared with a user.
    *  *  `group` Shared with a group. If set in a request, then specify `sharePermission.group` as well.
    *  *  `project` Shared with a project. If set in a request, then specify `sharePermission.project` as well.
@@ -12108,7 +12108,7 @@ export type SharePermissionInputBean = {
   rights?: number;
   /**
    * The type of the share permission.Specify the type as follows:
-   * 
+   *
    *  *  `user` Share with a user.
    *  *  `group` Share with a group. Specify `groupname` as well.
    *  *  `project` Share with a project. Specify `projectId` as well.
@@ -12304,24 +12304,24 @@ export type StatusCategory = {
   /**
    * The name of the color used to represent the status category.
    */
-  colorName?: string;
+  colorName: string;
   /**
    * The ID of the status category.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * The key of the status category.
    */
-  key?: string;
+  key: string;
   /**
    * The name of the status category.
    */
-  name?: string;
+  name: string;
   /**
    * The URL of the status category.
    */
-  self?: string;
+  self: string;
 } & Record<string, any>
 /**
  * Details of the status being created.
@@ -12361,31 +12361,31 @@ export type StatusDetails = {
   /**
    * The description of the status.
    */
-  description?: string;
+  description: string;
   /**
    * The URL of the icon used to represent the status.
    */
-  iconUrl?: string;
+  iconUrl: string;
   /**
    * The ID of the status.
    */
-  id?: string;
+  id: string;
   /**
    * The name of the status.
    */
-  name?: string;
+  name: string;
   /**
    * The scope of the field.
    */
-  scope?: Scope;
+  scope: Scope;
   /**
    * The URL of the status.
    */
-  self?: string;
+  self: string;
   /**
    * The category assigned to the status.
    */
-  statusCategory?: StatusCategory;
+  statusCategory: StatusCategory;
 } & Record<string, any>
 /**
  * The statuses associated with this workflow.
@@ -12572,27 +12572,27 @@ export type SuggestedIssue = {
    * The ID of the issue.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * The URL of the issue type's avatar.
    */
-  img?: string;
+  img: string;
   /**
    * The key of the issue.
    */
-  key?: string;
+  key: string;
   /**
    * The key of the issue in HTML format.
    */
-  keyHtml?: string;
+  keyHtml: string;
   /**
    * The phrase containing the query string in HTML format, with the string highlighted with HTML bold tags.
    */
-  summary?: string;
+  summary: string;
   /**
    * The phrase containing the query string, as plain text.
    */
-  summaryText?: string;
+  summaryText: string;
 }
 /**
  * Details of changes to a priority scheme's priorities that require suggested priority mappings.
@@ -12651,7 +12651,7 @@ export type SystemAvatars = {
   /**
    * A list of avatar details.
    */
-  system?: Array<Avatar>;
+  system: Array<Avatar>;
 }
 /**
  * Details about a task.
@@ -12878,30 +12878,30 @@ export type TimeTrackingDetails = {
   /**
    * The original estimate of time needed for this issue in readable format.
    */
-  originalEstimate?: string;
+  originalEstimate: string;
   /**
    * The original estimate of time needed for this issue in seconds.
    * @format: "int64"
    */
-  originalEstimateSeconds?: number;
+  originalEstimateSeconds: number;
   /**
    * The remaining estimate of time needed for this issue in readable format.
    */
-  remainingEstimate?: string;
+  remainingEstimate: string;
   /**
    * The remaining estimate of time needed for this issue in seconds.
    * @format: "int64"
    */
-  remainingEstimateSeconds?: number;
+  remainingEstimateSeconds: number;
   /**
    * Time worked on this issue in readable format.
    */
-  timeSpent?: string;
+  timeSpent: string;
   /**
    * Time worked on this issue in seconds.
    * @format: "int64"
    */
-  timeSpentSeconds?: number;
+  timeSpentSeconds: number;
 }
 /**
  * Details about the time tracking provider.
@@ -12918,7 +12918,7 @@ export type TimeTrackingProvider = {
   /**
    * The URL of the configuration page for the time tracking provider app. For example, * /example/config/url*. This property is only returned if the `adminPageKey` property is set in the module descriptor of the time tracking provider app.
    */
-  url?: string;
+  url: string;
 }
 /**
  * Details of a workflow transition.
@@ -13047,11 +13047,11 @@ export type Transitions = {
   /**
    * Expand options that include additional transitions details in the response.
    */
-  expand?: string;
+  expand: string;
   /**
    * List of issue transitions.
    */
-  transitions?: Array<IssueTransition>;
+  transitions: Array<IssueTransition>;
 }
 /**
  * The details of a UI modification's context, which define where to activate the UI modification.
@@ -13060,11 +13060,11 @@ export type UiModificationContextDetails = {
   /**
    * The ID of the UI modification context.
    */
-  id?: string;
+  id: string;
   /**
    * Whether a context is available. For example, when a project is deleted the context becomes unavailable.
    */
-  isAvailable?: boolean;
+  isAvailable: boolean;
   /**
    * The issue type ID of the context. Null is treated as a wildcard, meaning the UI modification will be applied to all issue types. Each UI modification context can have a maximum of one wildcard.
    */
@@ -13085,15 +13085,15 @@ export type UiModificationDetails = {
   /**
    * List of contexts of the UI modification. The maximum number of contexts is 1000.
    */
-  contexts?: Array<UiModificationContextDetails>;
+  contexts: Array<UiModificationContextDetails>;
   /**
    * The data of the UI modification. The maximum size of the data is 50000 characters.
    */
-  data?: string;
+  data: string;
   /**
    * The description of the UI modification. The maximum length is 255 characters.
    */
-  description?: string;
+  description: string;
   /**
    * The ID of the UI modification.
    */
@@ -13148,7 +13148,7 @@ export type UpdateCustomFieldDetails = {
   name?: string;
   /**
    * The searcher that defines the way the field is searched in Jira. It can be set to `null`, otherwise you must specify the valid searcher for the field type, as listed below (abbreviated values shown):
-   * 
+   *
    *  *  `cascadingselect`: `cascadingselectsearcher`
    *  *  `datepicker`: `daterange`
    *  *  `datetime`: `datetimerange`
@@ -13323,7 +13323,7 @@ export type UpdatePrioritySchemeResponseBean = {
   /**
    * The in-progress issue migration task.
    */
-  task?: TaskProgressBeanJsonNode;
+  task: TaskProgressBeanJsonNode;
 } & Record<string, any>
 /**
  * Details about the project.
@@ -13504,19 +13504,19 @@ export type UpdatedProjectCategory = {
   /**
    * The name of the project category.
    */
-  description?: string;
+  description: string;
   /**
    * The ID of the project category.
    */
-  id?: string;
+  id: string;
   /**
    * The description of the project category.
    */
-  name?: string;
+  name: string;
   /**
    * The URL of the project category.
    */
-  self?: string;
+  self: string;
 }
 /**
  * A user with details as permitted by the user's Atlassian Account privacy settings. However, be aware of these exceptions:
@@ -13532,40 +13532,40 @@ export type User = {
   accountId?: string;
   /**
    * The user account type. Can take the following values:
-   * 
+   *
    *  *  `atlassian` regular Atlassian user account
    *  *  `app` system account used for Connect applications and OAuth to represent external systems
    *  *  `customer` Jira Service Desk account representing an external service desk
    */
-  accountType?: string;
+  accountType: string;
   /**
    * Whether the user is active.
    */
-  active?: boolean;
+  active: boolean;
   /**
    * The application roles the user is assigned to.
    */
-  applicationRoles?: SimpleListWrapperApplicationRole;
+  applicationRoles: SimpleListWrapperApplicationRole;
   /**
    * The avatars of the user.
    */
-  avatarUrls?: AvatarUrlsBean;
+  avatarUrls: AvatarUrlsBean;
   /**
    * The display name of the user. Depending on the user’s privacy setting, this may return an alternative value.
    */
-  displayName?: string;
+  displayName: string;
   /**
    * The email address of the user. Depending on the user’s privacy setting, this may be returned as null.
    */
-  emailAddress?: string;
+  emailAddress: string;
   /**
    * Expand options that include additional user details in the response.
    */
-  expand?: string;
+  expand: string;
   /**
    * The groups that the user belongs to.
    */
-  groups?: SimpleListWrapperGroupName;
+  groups: SimpleListWrapperGroupName;
   /**
    * This property is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
    */
@@ -13573,7 +13573,7 @@ export type User = {
   /**
    * The locale of the user. Depending on the user’s privacy setting, this may be returned as null.
    */
-  locale?: string;
+  locale: string;
   /**
    * This property is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
    */
@@ -13582,11 +13582,11 @@ export type User = {
    * The URL of the user.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The time zone specified in the user's profile. Depending on the user’s privacy setting, this may be returned as null.
    */
-  timeZone?: string;
+  timeZone: string;
 }
 /**
  * MODEL UserBean
@@ -13609,12 +13609,12 @@ export type UserBean = {
    */
   displayName?: string;
   /**
-   * This property is deprecated in favor of `accountId` because of privacy changes. See the [migration guide](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.  
+   * This property is deprecated in favor of `accountId` because of privacy changes. See the [migration guide](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
    * The key of the user.
    */
   key?: string;
   /**
-   * This property is deprecated in favor of `accountId` because of privacy changes. See the [migration guide](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.  
+   * This property is deprecated in favor of `accountId` because of privacy changes. See the [migration guide](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
    * The username of the user.
    */
   name?: string;
@@ -13683,39 +13683,39 @@ export type UserDetails = {
   /**
    * The type of account represented by this user. This will be one of 'atlassian' (normal users), 'app' (application user) or 'customer' (Jira Service Desk customer user)
    */
-  accountType?: string;
+  accountType: string;
   /**
    * Whether the user is active.
    */
-  active?: boolean;
+  active: boolean;
   /**
    * The avatars of the user.
    */
-  avatarUrls?: AvatarUrlsBean;
+  avatarUrls: AvatarUrlsBean;
   /**
    * The display name of the user. Depending on the user’s privacy settings, this may return an alternative value.
    */
-  displayName?: string;
+  displayName: string;
   /**
    * The email address of the user. Depending on the user’s privacy settings, this may be returned as null.
    */
-  emailAddress?: string;
+  emailAddress: string;
   /**
    * This property is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
    */
-  key?: string;
+  key: string;
   /**
    * This property is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
    */
-  name?: string;
+  name: string;
   /**
    * The URL of the user.
    */
-  self?: string;
+  self: string;
   /**
    * The time zone specified in the user's profile. Depending on the user’s privacy settings, this may be returned as null.
    */
-  timeZone?: string;
+  timeZone: string;
 }
 /**
  * Filter for a User Picker (single) custom field.
@@ -13755,26 +13755,26 @@ export type UserList = {
    * The index of the last item returned on the page.
    * @format: "int32"
    */
-  "end-index"?: number;
+  "end-index": number;
   /**
    * The list of items.
    */
-  items?: Array<User>;
+  items: Array<User>;
   /**
    * The maximum number of results that could be on the page.
    * @format: "int32"
    */
-  "max-results"?: number;
+  "max-results": number;
   /**
    * The number of items on the page.
    * @format: "int32"
    */
-  size?: number;
+  size: number;
   /**
    * The index of the first item returned on the page.
    * @format: "int32"
    */
-  "start-index"?: number;
+  "start-index": number;
 }
 /**
  * MODEL UserMigrationBean
@@ -13880,7 +13880,7 @@ export type Version = {
   /**
    * If the expand option `approvers` is used, returns a list containing the approvers for this version.
    */
-  approvers?: Array<VersionApprover>;
+  approvers: Array<VersionApprover>;
   /**
    * Indicates that the version is archived. Optional when creating or updating a version.
    */
@@ -13892,26 +13892,26 @@ export type Version = {
   /**
    * If the expand option `driver` is used, returns the Atlassian account ID of the driver.
    */
-  driver?: string;
+  driver: string;
   /**
    * Use [expand](em>#expansion) to include additional information about version in the response. This parameter accepts a comma-separated list. Expand options include:
-   * 
+   *
    *  *  `operations` Returns the list of operations available for this version.
    *  *  `issuesstatus` Returns the count of issues in this version for each of the status categories *to do*, *in progress*, *done*, and *unmapped*. The *unmapped* property contains a count of issues with a status other than *to do*, *in progress*, and *done*.
    *  *  `driver` Returns the Atlassian account ID of the version driver.
    *  *  `approvers` Returns a list containing approvers for this version.
-   * 
+   *
    * Optional for create and update.
    */
   expand?: string;
   /**
    * The ID of the version.
    */
-  id?: string;
+  id: string;
   /**
    * If the expand option `issuesstatus` is used, returns the count of issues in this version for each of the status categories *to do*, *in progress*, *done*, and *unmapped*. The *unmapped* property contains a count of issues with a status other than *to do*, *in progress*, and *done*.
    */
-  issuesStatusForFixVersion?: VersionIssuesStatus;
+  issuesStatusForFixVersion: VersionIssuesStatus;
   /**
    * The URL of the self link to the version to which all unfixed issues are moved when a version is released. Not applicable when creating a version. Optional when updating a version.
    * @format: "uri"
@@ -13924,11 +13924,11 @@ export type Version = {
   /**
    * If the expand option `operations` is used, returns the list of operations available for this version.
    */
-  operations?: Array<SimpleLink>;
+  operations: Array<SimpleLink>;
   /**
    * Indicates that the version is overdue.
    */
-  overdue?: boolean;
+  overdue: boolean;
   /**
    * Deprecated. Use `projectId`.
    */
@@ -13951,7 +13951,7 @@ export type Version = {
    * The URL of the version.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The start date of the version. Expressed in ISO 8601 format (yyyy-mm-dd). Optional when creating or updating a version.
    * @format: "date"
@@ -13960,11 +13960,11 @@ export type Version = {
   /**
    * The date on which work on this version is expected to finish, expressed in the instance's *Day/Month/Year Format* date format.
    */
-  userReleaseDate?: string;
+  userReleaseDate: string;
   /**
    * The date on which work on this version is expected to start, expressed in the instance's *Day/Month/Year Format* date format.
    */
-  userStartDate?: string;
+  userStartDate: string;
 }
 /**
  * Contains details about a version approver.
@@ -13974,19 +13974,19 @@ export type VersionApprover = {
   /**
    * The Atlassian account ID of the approver.
    */
-  accountId?: string;
+  accountId: string;
   /**
    * A description of why the user is declining the approval.
    */
-  declineReason?: string;
+  declineReason: string;
   /**
    * A description of what the user is approving within the specified version.
    */
-  description?: string;
+  description: string;
   /**
    * The status of the approval, which can be *PENDING*, *APPROVED*, or *DECLINED*
    */
-  status?: string;
+  status: string;
 } & Record<string, any>
 /**
  * Various counts of issues within a version.
@@ -13995,27 +13995,27 @@ export type VersionIssueCounts = {
   /**
    * List of custom fields using the version.
    */
-  customFieldUsage?: Array<VersionUsageInCustomField>;
+  customFieldUsage: Array<VersionUsageInCustomField>;
   /**
    * Count of issues where a version custom field is set to the version.
    * @format: "int64"
    */
-  issueCountWithCustomFieldsShowingVersion?: number;
+  issueCountWithCustomFieldsShowingVersion: number;
   /**
    * Count of issues where the `affectedVersion` is set to the version.
    * @format: "int64"
    */
-  issuesAffectedCount?: number;
+  issuesAffectedCount: number;
   /**
    * Count of issues where the `fixVersion` is set to the version.
    * @format: "int64"
    */
-  issuesFixedCount?: number;
+  issuesFixedCount: number;
   /**
    * The URL of these count details.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
 }
 /**
  * Counts of the number of issues in various statuses.
@@ -14026,22 +14026,22 @@ export type VersionIssuesStatus = {
    * Count of issues with status *done*.
    * @format: "int64"
    */
-  done?: number;
+  done: number;
   /**
    * Count of issues with status *in progress*.
    * @format: "int64"
    */
-  inProgress?: number;
+  inProgress: number;
   /**
    * Count of issues with status *to do*.
    * @format: "int64"
    */
-  toDo?: number;
+  toDo: number;
   /**
    * Count of issues with a status other than *to do*, *in progress*, and *done*.
    * @format: "int64"
    */
-  unmapped?: number;
+  unmapped: number;
 } & Record<string, any>
 /**
  * MODEL VersionMoveBean
@@ -14069,11 +14069,11 @@ export type VersionRelatedWork = {
    * The ID of the issue associated with the related work (if there is one). Cannot be updated via the Rest API.
    * @format: "int64"
    */
-  issueId?: number;
+  issueId: number;
   /**
    * The id of the related work. For the native release note related work item, this will be null, and Rest API does not support updating it.
    */
-  relatedWorkId?: string;
+  relatedWorkId: string;
   /**
    * The title of the related work
    */
@@ -14092,17 +14092,17 @@ export type VersionUnresolvedIssuesCount = {
    * Count of issues.
    * @format: "int64"
    */
-  issuesCount?: number;
+  issuesCount: number;
   /**
    * Count of unresolved issues.
    * @format: "int64"
    */
-  issuesUnresolvedCount?: number;
+  issuesUnresolvedCount: number;
   /**
    * The URL of these count details.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
 }
 /**
  * List of custom fields using the version.
@@ -14112,16 +14112,16 @@ export type VersionUsageInCustomField = {
    * The ID of the custom field.
    * @format: "int64"
    */
-  customFieldId?: number;
+  customFieldId: number;
   /**
    * The name of the custom field.
    */
-  fieldName?: string;
+  fieldName: string;
   /**
    * Count of the issues where the custom field contains the version.
    * @format: "int64"
    */
-  issueCountWithVersionInCustomField?: number;
+  issueCountWithVersionInCustomField: number;
 }
 /**
  * The group or role to which this item is visible.
@@ -14148,21 +14148,21 @@ export type Votes = {
   /**
    * Whether the user making this request has voted on the issue.
    */
-  hasVoted?: boolean;
+  hasVoted: boolean;
   /**
    * The URL of these issue vote details.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * List of the users who have voted on this issue. An empty list is returned when the calling user doesn't have the *View voters and watchers* project permission.
    */
-  voters?: Array<User>;
+  voters: Array<User>;
   /**
    * The number of votes on the issue.
    * @format: "int64"
    */
-  votes?: number;
+  votes: number;
 }
 /**
  * MODEL WarningCollection
@@ -14177,20 +14177,20 @@ export type Watchers = {
   /**
    * Whether the calling user is watching this issue.
    */
-  isWatching?: boolean;
+  isWatching: boolean;
   /**
    * The URL of these issue watcher details.
    */
-  self?: string;
+  self: string;
   /**
    * The number of users watching this issue.
    * @format: "int32"
    */
-  watchCount?: number;
+  watchCount: number;
   /**
    * Details of the users watching this issue.
    */
-  watchers?: Array<UserDetails>;
+  watchers: Array<UserDetails>;
 }
 /**
  * A webhook.
@@ -14204,7 +14204,7 @@ export type Webhook = {
    * The date after which the webhook is no longer sent. Use [Extend webhook life](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-webhooks/#api-rest-api-3-webhook-refresh-put) to extend the date.
    * @format: "int64"
    */
-  expirationDate?: number;
+  expirationDate: number;
   /**
    * A list of field IDs. When the issue changelog contains any of the fields, the webhook `jira:issue_updated` is sent. If this parameter is not present, the app is notified about all field updates.
    */
@@ -14241,7 +14241,7 @@ export type WebhookDetails = {
   issuePropertyKeysFilter?: string[];
   /**
    * The JQL filter that specifies which issues the webhook is sent for. Only a subset of JQL can be used. The supported elements are:
-   * 
+   *
    *  *  Fields: `issueKey`, `project`, `issuetype`, `status`, `assignee`, `reporter`, `issue.property`, and `cf[id]`. For custom fields (`cf[id]`), only the epic label custom field is supported.".
    *  *  Operators: `=`, `!=`, `IN`, and `NOT IN`.
    */
@@ -14713,12 +14713,12 @@ export type WorkflowScheme = {
   /**
    * Whether the workflow scheme is a draft or not.
    */
-  draft?: boolean;
+  draft: boolean;
   /**
    * The ID of the workflow scheme.
    * @format: "int64"
    */
-  id?: number;
+  id: number;
   /**
    * The issue type to workflow mappings, where each mapping is an issue type ID and workflow name pair. Note that an issue type can only be mapped to one workflow in a workflow scheme.
    */
@@ -14726,15 +14726,15 @@ export type WorkflowScheme = {
   /**
    * The issue types available in Jira.
    */
-  issueTypes?: Record<string, unknown>;
+  issueTypes: Record<string, unknown>;
   /**
    * The date-time that the draft workflow scheme was last modified. A modification is a change to the issue type-project mappings only. This property does not apply to non-draft workflows.
    */
-  lastModified?: string;
+  lastModified: string;
   /**
    * The user that last modified the draft workflow scheme. A modification is a change to the issue type-project mappings only. This property does not apply to non-draft workflows.
    */
-  lastModifiedUser?: User;
+  lastModifiedUser: User;
   /**
    * The name of the workflow scheme. The name must be unique. The maximum length is 255 characters. Required when creating a workflow scheme.
    */
@@ -14742,22 +14742,22 @@ export type WorkflowScheme = {
   /**
    * For draft workflow schemes, this property is the name of the default workflow for the original workflow scheme. The default workflow has *All Unassigned Issue Types* assigned to it in Jira.
    */
-  originalDefaultWorkflow?: string;
+  originalDefaultWorkflow: string;
   /**
    * For draft workflow schemes, this property is the issue type to workflow mappings for the original workflow scheme, where each mapping is an issue type ID and workflow name pair. Note that an issue type can only be mapped to one workflow in a workflow scheme.
    */
-  originalIssueTypeMappings?: Record<string, unknown>;
+  originalIssueTypeMappings: Record<string, unknown>;
   /**
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * Whether to create or update a draft workflow scheme when updating an active workflow scheme. An active workflow scheme is a workflow scheme that is used by at least one project. The following examples show how this property works:
-   * 
+   *
    *  *  Update an active workflow scheme with `updateDraftIfNeeded` set to `true`: If a draft workflow scheme exists, it is updated. Otherwise, a draft workflow scheme is created.
    *  *  Update an active workflow scheme with `updateDraftIfNeeded` set to `false`: An error is returned, as active workflow schemes cannot be updated.
    *  *  Update an inactive workflow scheme with `updateDraftIfNeeded` set to `true`: The workflow scheme is updated, as inactive workflow schemes do not require drafts to update.
-   * 
+   *
    * Defaults to `false`.
    */
   updateDraftIfNeeded?: boolean;
@@ -15084,11 +15084,11 @@ export type WorkflowTransitionProperty = {
   /**
    * The ID of the transition property.
    */
-  id?: string;
+  id: string;
   /**
    * The key of the transition property. Also known as the name of the transition property.
    */
-  key?: string;
+  key: string;
   /**
    * The value of the transition property.
    */
@@ -15403,7 +15403,7 @@ export type Worklog = {
   /**
    * Details of the user who created the worklog.
    */
-  author?: UserDetails;
+  author: UserDetails;
   /**
    * A comment about the worklog in [Atlassian Document Format](https://developer.atlassian.com/cloud/jira/platform/apis/document/structure/). Optional when creating or updating a worklog.
    */
@@ -15412,15 +15412,15 @@ export type Worklog = {
    * The datetime on which the worklog was created.
    * @format: "date-time"
    */
-  created?: string;
+  created: string;
   /**
    * The ID of the worklog record.
    */
-  id?: string;
+  id: string;
   /**
    * The ID of the issue this worklog is for.
    */
-  issueId?: string;
+  issueId: string;
   /**
    * Details of properties for the worklog. Optional when creating or updating a worklog.
    */
@@ -15429,7 +15429,7 @@ export type Worklog = {
    * The URL of the worklog item.
    * @format: "uri"
    */
-  self?: string;
+  self: string;
   /**
    * The datetime on which the worklog effort was started. Required when creating a worklog. Optional when updating a worklog.
    * @format: "date-time"
@@ -15447,12 +15447,12 @@ export type Worklog = {
   /**
    * Details of the user who last updated the worklog.
    */
-  updateAuthor?: UserDetails;
+  updateAuthor: UserDetails;
   /**
    * The datetime on which the worklog was last updated.
    * @format: "date-time"
    */
-  updated?: string;
+  updated: string;
   /**
    * Details about any restrictions in the visibility of the worklog. Optional when creating or updating a worklog.
    */
@@ -15474,7 +15474,7 @@ export type WorkspaceDataPolicy = {
   /**
    * Whether the workspace contains any content inaccessible to the requesting application.
    */
-  anyContentBlocked?: boolean;
+  anyContentBlocked: boolean;
 }
 /**
  * Can contain multiple field values of following types depending on `type` key
@@ -15512,29 +15512,29 @@ export type targetStatus = {
 export type targetToSourcesMapping = {
   /**
    * If `true`, values from the source issues will be retained for the mandatory fields in the field configuration of the destination project. The `targetMandatoryFields` property shouldn't be defined.
-   * 
+   *
    * If `false`, the user is required to set values for mandatory fields present in the field configuration of the destination project. Provide input by defining the `targetMandatoryFields` property
    */
   inferFieldDefaults: boolean;
   /**
    * If `true`, the statuses of issues being moved in this target group that are not present in the target workflow will be changed to the default status of the target workflow (see below). Leave `targetStatus` empty when using this.
-   * 
+   *
    * If `false`, you must provide a `targetStatus` for each status not present in the target workflow.
-   * 
+   *
    * The default status in a workflow is referred to as the "initial status". Each workflow has its own unique initial status. When an issue is created, it is automatically assigned to this initial status. Read more about configuring initial statuses: [Configure the initial status | Atlassian Support.](https://support.atlassian.com/jira-cloud-administration/docs/configure-the-initial-status/)
    */
   inferStatusDefaults: boolean;
   /**
    * When an issue is moved, its subtasks (if there are any) need to be moved with it. `inferSubtaskTypeDefault` helps with moving the subtasks by picking a random subtask type in the target project.
-   * 
+   *
    * If `true`, subtasks will automatically move to the same project as their parent.
-   * 
+   *
    * When they move:
-   * 
+   *
    *  *  Their `issueType` will be set to the default for subtasks in the target project.
    *  *  Values for mandatory fields will be retained from the source issues
    *  *  Specifying separate mapping for implicit subtasks won’t be allowed.
-   * 
+   *
    * If `false`, you must manually move the subtasks. They will retain the parent which they had in the current project after being moved.
    */
   inferSubtaskTypeDefault: boolean;
@@ -15544,17 +15544,17 @@ export type targetToSourcesMapping = {
   issueIdsOrKeys?: string[];
   /**
    * List of objects containing mandatory fields in the target field configuration and new values that need to be set during the bulk move operation.
-   * 
+   *
    * The new values will only be applied if the field is mandatory in the target project and at least one issue from the source has that field empty, or if the field context is different in the target project (e.g. project-scoped version fields).
-   * 
+   *
    * **You should only define this property when `inferFieldDefaults` is `false`.**
    */
   targetMandatoryFields?: Array<targetMandatoryFields>;
   /**
    * List of the objects containing statuses in the source workflow and their new values which need to be set during the bulk move operation.
-   * 
+   *
    * The new values will only be applied if the source status is invalid for the target project and issue type.
-   * 
+   *
    * **You should only define this property when `inferStatusDefaults` is `false`.**
    */
   targetStatus?: Array<targetStatus>;
@@ -15572,7 +15572,7 @@ export interface AtlassianV3 {
          * operationId: getBanner
          * sum: Get announcement banner configuration
          * doc: Returns the current announcement banner configuration.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -15584,7 +15584,7 @@ export interface AtlassianV3 {
          * operationId: setBanner
          * sum: Update announcement banner configuration
          * doc: Updates the announcement banner configuration.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 204: Returned if the request is successful.
          * 400: Returned if an invalid parameter is passed.
@@ -15608,9 +15608,9 @@ export interface AtlassianV3 {
              * operationId: updateMultipleCustomFieldValues
              * sum: Update custom fields
              * doc: Updates the value of one or more custom fields on one or more issues. Combinations of custom field and issue should be unique within the request.
-             * 
+             *
              * Apps can only perform this operation on [custom fields](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field/) and [custom field types](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field-type/) declared in their own manifests.
-             * 
+             *
              * **[Permissions](#permissions) required:** Only the app that owns the custom field or custom field type can update its values with this operation.
              * 204: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -15630,16 +15630,16 @@ export interface AtlassianV3 {
                  * operationId: getCustomFieldConfiguration
                  * sum: Get custom field configurations
                  * doc: Returns a [paginated](#pagination) list of configurations for a custom field of a [type](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field-type/) created by a [Forge app](https://developer.atlassian.com/platform/forge/).
-                 * 
+                 *
                  * The result can be filtered by one of these criteria:
-                 * 
+                 *
                  *  *  `id`.
                  *  *  `fieldContextId`.
                  *  *  `issueId`.
                  *  *  `projectKeyOrId` and `issueTypeId`.
-                 * 
+                 *
                  * Otherwise, all configurations are returned.
-                 * 
+                 *
                  * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). Jira permissions are not required for the Forge app that provided the custom field type.
                  * 200: Returned if the request is successful.
                  * 400: Returned if the request is invalid.
@@ -15653,7 +15653,7 @@ export interface AtlassianV3 {
                  * operationId: updateCustomFieldConfiguration
                  * sum: Update custom field configurations
                  * doc: Update the configuration for contexts of a custom field of a [type](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field-type/) created by a [Forge app](https://developer.atlassian.com/platform/forge/).
-                 * 
+                 *
                  * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). Jira permissions are not required for the Forge app that created the custom field type.
                  * 200: Returned if the request is successful.
                  * 400: Returned if the request is invalid.
@@ -15675,9 +15675,9 @@ export interface AtlassianV3 {
                * operationId: updateCustomFieldValue
                * sum: Update custom field value
                * doc: Updates the value of a custom field on one or more issues.
-               * 
+               *
                * Apps can only perform this operation on [custom fields](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field/) and [custom field types](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field-type/) declared in their own manifests.
-               * 
+               *
                * **[Permissions](#permissions) required:** Only the app that owns the custom field or custom field type can update its values with this operation.
                * 204: Returned if the request is successful.
                * 400: Returned if the request is invalid.
@@ -15696,9 +15696,9 @@ export interface AtlassianV3 {
          * operationId: getApplicationProperty
          * sum: Get application property
          * doc: Returns all application properties or an application property.
-         * 
+         *
          * If you specify a value for the `key` parameter, then an application property is returned as an object (not in an array). Otherwise, an array of all editable application properties is returned. See [Set application property](#api-rest-api-3-application-properties-id-put) for descriptions of editable properties.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -15716,7 +15716,7 @@ export interface AtlassianV3 {
            * operationId: getAdvancedSettings
            * sum: Get advanced settings
            * doc: Returns the application properties that are accessible on the *Advanced Settings* page. To navigate to the *Advanced Settings* page in Jira, choose the Jira icon > **Jira settings** > **System**, **General Configuration** and then click **Advanced Settings** (in the upper right).
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -15735,56 +15735,56 @@ export interface AtlassianV3 {
            * operationId: setApplicationProperty
            * sum: Set application property
            * doc: Changes the value of an application property. For example, you can change the value of the `jira.clone.prefix` from its default value of *CLONE -* to *Clone -* if you prefer sentence case capitalization. Editable properties are described below along with their default values.
-           * 
+           *
            * #### Advanced settings ####
-           * 
+           *
            * The advanced settings below are also accessible in [Jira](https://confluence.atlassian.com/x/vYXKM).
-           * 
-           * | Key | Description | Default value |  
-           * | -- | -- | -- |  
-           * | `jira.clone.prefix` | The string of text prefixed to the title of a cloned issue. | `CLONE -` |  
-           * | `jira.date.picker.java.format` | The date format for the Java (server-side) generated dates. This must be the same as the `jira.date.picker.javascript.format` format setting. | `d/MMM/yy` |  
-           * | `jira.date.picker.javascript.format` | The date format for the JavaScript (client-side) generated dates. This must be the same as the `jira.date.picker.java.format` format setting. | `%e/%b/%y` |  
-           * | `jira.date.time.picker.java.format` | The date format for the Java (server-side) generated date times. This must be the same as the `jira.date.time.picker.javascript.format` format setting. | `dd/MMM/yy h:mm a` |  
-           * | `jira.date.time.picker.javascript.format` | The date format for the JavaScript (client-side) generated date times. This must be the same as the `jira.date.time.picker.java.format` format setting. | `%e/%b/%y %I:%M %p` |  
-           * | `jira.issue.actions.order` | The default order of actions (such as *Comments* or *Change history*) displayed on the issue view. | `asc` |  
-           * | `jira.view.issue.links.sort.order` | The sort order of the list of issue links on the issue view. | `type, status, priority` |  
-           * | `jira.comment.collapsing.minimum.hidden` | The minimum number of comments required for comment collapsing to occur. A value of `0` disables comment collapsing. | `4` |  
-           * | `jira.newsletter.tip.delay.days` | The number of days before a prompt to sign up to the Jira Insiders newsletter is shown. A value of `-1` disables this feature. | `7` |  
-           * 
-           * 
+           *
+           * | Key | Description | Default value |
+           * | -- | -- | -- |
+           * | `jira.clone.prefix` | The string of text prefixed to the title of a cloned issue. | `CLONE -` |
+           * | `jira.date.picker.java.format` | The date format for the Java (server-side) generated dates. This must be the same as the `jira.date.picker.javascript.format` format setting. | `d/MMM/yy` |
+           * | `jira.date.picker.javascript.format` | The date format for the JavaScript (client-side) generated dates. This must be the same as the `jira.date.picker.java.format` format setting. | `%e/%b/%y` |
+           * | `jira.date.time.picker.java.format` | The date format for the Java (server-side) generated date times. This must be the same as the `jira.date.time.picker.javascript.format` format setting. | `dd/MMM/yy h:mm a` |
+           * | `jira.date.time.picker.javascript.format` | The date format for the JavaScript (client-side) generated date times. This must be the same as the `jira.date.time.picker.java.format` format setting. | `%e/%b/%y %I:%M %p` |
+           * | `jira.issue.actions.order` | The default order of actions (such as *Comments* or *Change history*) displayed on the issue view. | `asc` |
+           * | `jira.view.issue.links.sort.order` | The sort order of the list of issue links on the issue view. | `type, status, priority` |
+           * | `jira.comment.collapsing.minimum.hidden` | The minimum number of comments required for comment collapsing to occur. A value of `0` disables comment collapsing. | `4` |
+           * | `jira.newsletter.tip.delay.days` | The number of days before a prompt to sign up to the Jira Insiders newsletter is shown. A value of `-1` disables this feature. | `7` |
+           *
+           *
            * #### Look and feel ####
-           * 
+           *
            * The settings listed below adjust the [look and feel](https://confluence.atlassian.com/x/VwCLLg).
-           * 
-           * | Key | Description | Default value |  
-           * | -- | -- | -- |  
-           * | `jira.lf.date.time` | The [ time format](https://docs.oracle.com/javase/6/docs/api/index.html?java/text/SimpleDateFormat.html). | `h:mm a` |  
-           * | `jira.lf.date.day` | The [ day format](https://docs.oracle.com/javase/6/docs/api/index.html?java/text/SimpleDateFormat.html). | `EEEE h:mm a` |  
-           * | `jira.lf.date.complete` | The [ date and time format](https://docs.oracle.com/javase/6/docs/api/index.html?java/text/SimpleDateFormat.html). | `dd/MMM/yy h:mm a` |  
-           * | `jira.lf.date.dmy` | The [ date format](https://docs.oracle.com/javase/6/docs/api/index.html?java/text/SimpleDateFormat.html). | `dd/MMM/yy` |  
-           * | `jira.date.time.picker.use.iso8061` | When enabled, sets Monday as the first day of the week in the date picker, as specified by the ISO8601 standard. | `false` |  
-           * | `jira.lf.logo.url` | The URL of the logo image file. | `/images/icon-jira-logo.png` |  
-           * | `jira.lf.logo.show.application.title` | Controls the visibility of the application title on the sidebar. | `false` |  
-           * | `jira.lf.favicon.url` | The URL of the favicon. | `/favicon.ico` |  
-           * | `jira.lf.favicon.hires.url` | The URL of the high-resolution favicon. | `/images/64jira.png` |  
-           * | `jira.lf.navigation.bgcolour` | The background color of the sidebar. | `#0747A6` |  
-           * | `jira.lf.navigation.highlightcolour` | The color of the text and logo of the sidebar. | `#DEEBFF` |  
-           * | `jira.lf.hero.button.base.bg.colour` | The background color of the hero button. | `#3b7fc4` |  
-           * | `jira.title` | The text for the application title. The application title can also be set in *General settings*. | `Jira` |  
-           * | `jira.option.globalsharing` | Whether filters and dashboards can be shared with anyone signed into Jira. | `true` |  
-           * | `xflow.product.suggestions.enabled` | Whether to expose product suggestions for other Atlassian products within Jira. | `true` |  
-           * 
-           * 
+           *
+           * | Key | Description | Default value |
+           * | -- | -- | -- |
+           * | `jira.lf.date.time` | The [ time format](https://docs.oracle.com/javase/6/docs/api/index.html?java/text/SimpleDateFormat.html). | `h:mm a` |
+           * | `jira.lf.date.day` | The [ day format](https://docs.oracle.com/javase/6/docs/api/index.html?java/text/SimpleDateFormat.html). | `EEEE h:mm a` |
+           * | `jira.lf.date.complete` | The [ date and time format](https://docs.oracle.com/javase/6/docs/api/index.html?java/text/SimpleDateFormat.html). | `dd/MMM/yy h:mm a` |
+           * | `jira.lf.date.dmy` | The [ date format](https://docs.oracle.com/javase/6/docs/api/index.html?java/text/SimpleDateFormat.html). | `dd/MMM/yy` |
+           * | `jira.date.time.picker.use.iso8061` | When enabled, sets Monday as the first day of the week in the date picker, as specified by the ISO8601 standard. | `false` |
+           * | `jira.lf.logo.url` | The URL of the logo image file. | `/images/icon-jira-logo.png` |
+           * | `jira.lf.logo.show.application.title` | Controls the visibility of the application title on the sidebar. | `false` |
+           * | `jira.lf.favicon.url` | The URL of the favicon. | `/favicon.ico` |
+           * | `jira.lf.favicon.hires.url` | The URL of the high-resolution favicon. | `/images/64jira.png` |
+           * | `jira.lf.navigation.bgcolour` | The background color of the sidebar. | `#0747A6` |
+           * | `jira.lf.navigation.highlightcolour` | The color of the text and logo of the sidebar. | `#DEEBFF` |
+           * | `jira.lf.hero.button.base.bg.colour` | The background color of the hero button. | `#3b7fc4` |
+           * | `jira.title` | The text for the application title. The application title can also be set in *General settings*. | `Jira` |
+           * | `jira.option.globalsharing` | Whether filters and dashboards can be shared with anyone signed into Jira. | `true` |
+           * | `xflow.product.suggestions.enabled` | Whether to expose product suggestions for other Atlassian products within Jira. | `true` |
+           *
+           *
            * #### Other settings ####
-           * 
-           * | Key | Description | Default value |  
-           * | -- | -- | -- |  
-           * | `jira.issuenav.criteria.autoupdate` | Whether instant updates to search criteria is active. | `true` |  
-           * 
-           * 
+           *
+           * | Key | Description | Default value |
+           * | -- | -- | -- |
+           * | `jira.issuenav.criteria.autoupdate` | Whether instant updates to search criteria is active. | `true` |
+           *
+           *
            * *Note: Be careful when changing [application properties and advanced settings](https://confluence.atlassian.com/x/vYXKM).*
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the data type of the `value` does not match the application property's data type. For example, a string is provided instead of an integer.
@@ -15802,7 +15802,7 @@ export interface AtlassianV3 {
          * operationId: getAllApplicationRoles
          * sum: Get all application roles
          * doc: Returns all application roles. In Jira, application roles are managed using the [Application access configuration](https://confluence.atlassian.com/x/3YxjL) page.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -15820,7 +15820,7 @@ export interface AtlassianV3 {
            * operationId: getApplicationRole
            * sum: Get application role
            * doc: Returns an application role.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -15845,13 +15845,13 @@ export interface AtlassianV3 {
              * operationId: getAttachmentContent
              * sum: Get attachment content
              * doc: Returns the contents of an attachment. A `Range` header can be set to define a range of bytes within the attachment to download. See the [HTTP Range header standard](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range) for details.
-             * 
+             *
              * To return a thumbnail of the attachment, use [Get attachment thumbnail](#api-rest-api-3-attachment-thumbnail-id-get).
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** For the issue containing the attachment:
-             * 
+             *
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              * 200: Returned if the request is successful when `redirect` is set to `false`.
@@ -15861,7 +15861,7 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect.
              * 403: The user does not have the necessary permission.
              * 404: Returned if:
-             * 
+             *
              *  *  the attachment is not found.
              *  *  attachments are disabled in the Jira settings.
              * 416: Returned if the server is unable to satisfy the range of bytes provided.
@@ -15880,11 +15880,11 @@ export interface AtlassianV3 {
            * operationId: getAttachmentMeta
            * sum: Get Jira attachment settings
            * doc: Returns the attachment settings, that is, whether attachments are enabled and the maximum attachment size allowed.
-           * 
+           *
            * Note that there are also [project permissions](https://confluence.atlassian.com/x/yodKLg) that restrict whether users can create and delete attachments.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** None.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -15904,13 +15904,13 @@ export interface AtlassianV3 {
              * operationId: getAttachmentThumbnail
              * sum: Get attachment thumbnail
              * doc: Returns the thumbnail of an attachment.
-             * 
+             *
              * To return the attachment contents, use [Get attachment content](#api-rest-api-3-attachment-content-id-get).
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** For the issue containing the attachment:
-             * 
+             *
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              * 200: Returned if the request is successful when `redirect` is set to `false`.
@@ -15919,7 +15919,7 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect.
              * 403: The user does not have the necessary permission.
              * 404: Returned if:
-             * 
+             *
              *  *  the attachment is not found.
              *  *  attachments are disabled in the Jira settings.
              *  *  `fallbackToDefault` is `false` and the request thumbnail cannot be downloaded.
@@ -15938,18 +15938,18 @@ export interface AtlassianV3 {
            * operationId: getAttachment
            * sum: Get attachment metadata
            * doc: Returns the metadata for an attachment. Note that the attachment itself is not returned.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
            *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the necessary permission.
            * 404: Returned if:
-           * 
+           *
            *  *  the attachment is not found.
            *  *  attachments are disabled in the Jira settings.
            */
@@ -15959,17 +15959,17 @@ export interface AtlassianV3 {
            * operationId: removeAttachment
            * sum: Delete attachment
            * doc: Deletes an attachment from an issue.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** For the project holding the issue containing the attachment:
-           * 
+           *
            *  *  *Delete own attachments* [project permission](https://confluence.atlassian.com/x/yodKLg) to delete an attachment created by the calling user.
            *  *  *Delete all attachments* [project permission](https://confluence.atlassian.com/x/yodKLg) to delete an attachment created by any user.
            * 204: Returned if the request is successful.
            * 403: Returned if the user does not have the necessary permission.
            * 404: Returned if:
-           * 
+           *
            *  *  the attachment is not found.
            *  *  attachments are disabled in the Jira settings.
            */
@@ -15987,20 +15987,20 @@ export interface AtlassianV3 {
                * operationId: expandAttachmentForHumans
                * sum: Get all metadata for an expanded attachment
                * doc: Returns the metadata for the contents of an attachment, if it is an archive, and metadata for the attachment itself. For example, if the attachment is a ZIP archive, then information about the files in the archive is returned and metadata for the ZIP archive. Currently, only the ZIP archive format is supported.
-               * 
+               *
                * Use this operation to retrieve data that is presented to the user, as this operation returns the metadata for the attachment itself, such as the attachment's ID and name. Otherwise, use [ Get contents metadata for an expanded attachment](#api-rest-api-3-attachment-id-expand-raw-get), which only returns the metadata for the attachment's contents.
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:** For the issue containing the attachment:
-               * 
+               *
                *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
                *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                * 200: Returned if the request is successful. If an empty list is returned in the response, the attachment is empty, corrupt, or not an archive.
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 403: The user does not have the necessary permission.
                * 404: Returned if:
-               * 
+               *
                *  *  the attachment is not found.
                *  *  attachments are disabled in the Jira settings.
                * 409: Returned if the attachment is an archive, but not a supported archive format.
@@ -16018,20 +16018,20 @@ export interface AtlassianV3 {
                * operationId: expandAttachmentForMachines
                * sum: Get contents metadata for an expanded attachment
                * doc: Returns the metadata for the contents of an attachment, if it is an archive. For example, if the attachment is a ZIP archive, then information about the files in the archive is returned. Currently, only the ZIP archive format is supported.
-               * 
+               *
                * Use this operation if you are processing the data without presenting it to the user, as this operation only returns the metadata for the contents of the attachment. Otherwise, to retrieve data to present to the user, use [ Get all metadata for an expanded attachment](#api-rest-api-3-attachment-id-expand-human-get) which also returns the metadata for the attachment itself, such as the attachment's ID and name.
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:** For the issue containing the attachment:
-               * 
+               *
                *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
                *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                * 200: Returned if the request is successful. If an empty list is returned in the response, the attachment is empty, corrupt, or not an archive.
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 403: The user does not have the necessary permission.
                * 404: Returned if:
-               * 
+               *
                *  *  the attachment is not found.
                *  *  attachments are disabled in the Jira settings.
                * 409: Returned if the attachment is an archive, but not a supported archive format.
@@ -16054,9 +16054,9 @@ export interface AtlassianV3 {
            * operationId: getAuditRecords
            * sum: Get audit records
            * doc: Returns a list of audit records. The list can be filtered to include items:
-           * 
+           *
            *  *  where each item in `filter` has at least one match in any of these fields:
-           *     
+           *
            *      *  `summary`
            *      *  `category`
            *      *  `eventSource`
@@ -16066,16 +16066,16 @@ export interface AtlassianV3 {
            *      *  `changedValues.changedFrom`
            *      *  `changedValues.changedTo`
            *      *  `remoteAddress`
-           *     
+           *
            *     For example, if `filter` contains *man ed*, an audit record containing `summary": "User added to group"` and `"category": "group management"` is returned.
            *  *  created on or after a date and time.
            *  *  created or or before a date and time.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if:
-           * 
+           *
            *  *  the user does not have the required permissions.
            *  *  all Jira products are on free plans. Audit logs are available when at least one Jira product is on a paid plan.
            */
@@ -16097,9 +16097,9 @@ export interface AtlassianV3 {
              * operationId: getAllSystemAvatars
              * sum: Get system avatars by type
              * doc: Returns a list of system avatar details by owner type, where the owner types are issue type, project, or user.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** None.
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -16124,11 +16124,11 @@ export interface AtlassianV3 {
              * operationId: getBulkEditableFields
              * sum: Get bulk editable fields
              * doc: Use this API to get a list of fields visible to the user to perform bulk edit operations. You can pass single or multiple issues in the query to get eligible editable fields. This API uses pagination to return responses, delivering 50 fields at a time.
-             * 
+             *
              * This method is experimental and may change.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  Global bulk change [permission](https://support.atlassian.com/jira-cloud-administration/docs/manage-global-permissions/).
              *  *  Browse [project permission](https://support.atlassian.com/jira-cloud-administration/docs/permissions-for-company-managed-projects/) in all projects that contain the selected issues.
              * 200: Returned if the request is successful.
@@ -16143,9 +16143,9 @@ export interface AtlassianV3 {
              * operationId: submitBulkEdit
              * sum: Bulk edit issues
              * doc: Use this API to submit a bulk edit request and simultaneously edit multiple issues. There are limits applied to the number of issues and fields that can be edited. A single request can accommodate a maximum of 1000 issues (including subtasks) and 200 fields.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  Global bulk change [permission](https://support.atlassian.com/jira-cloud-administration/docs/manage-global-permissions/).
              *  *  Browse [project permission](https://support.atlassian.com/jira-cloud-administration/docs/permissions-for-company-managed-projects/) in all projects that contain the selected issues.
              * 201: Returned if the request is successful.
@@ -16165,27 +16165,27 @@ export interface AtlassianV3 {
              * operationId: submitBulkMove
              * sum: Bulk move issues
              * doc: Use this API to submit a bulk issue move request. You can move multiple issues, but they must all be moved to and from a single project, issue type, and parent. You can't move more than 1000 issues (including subtasks) at once.
-             * 
+             *
              * #### Scenarios: ####
-             * 
+             *
              * This is an early version of the API and it doesn't have full feature parity with the Bulk Move UI experience.
-             * 
+             *
              *  *  Moving issue of type A to issue of type B in the same project or a different project: `SUPPORTED`
              *  *  Moving multiple issues of type A in one project to multiple issues of type B in the same project or a different project: **`SUPPORTED`**
              *  *  Moving a standard parent issue of type A with its multiple subtask issue types in one project to standard issue of type B and multiple subtask issue types in the same project or a different project: `SUPPORTED`
-             *  *  Moving an epic issue with its child issues to a different project without losing their relation: `NOT SUPPORTED`  
+             *  *  Moving an epic issue with its child issues to a different project without losing their relation: `NOT SUPPORTED`
              *     (Workaround: Move them individually and stitch the relationship back with the Bulk Edit API)
-             * 
+             *
              * #### Limits applied to bulk issue moves: ####
-             * 
+             *
              * When using the bulk move, keep in mind that there are limits on the number of issues and fields you can include.
-             * 
+             *
              *  *  You can move up to 1,000 issues in a single operation, including any subtasks.
              *  *  All issues must originate from the same project and share the same issue type and parent.
              *  *  The total combined number of fields across all issues must not exceed 1,500,000. For example, if each issue includes 15,000 fields, then the maximum number of issues that can be moved is 100.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  Global bulk change [permission](https://support.atlassian.com/jira-cloud-administration/docs/manage-global-permissions/).
              *  *  Move [issues permission](https://support.atlassian.com/jira-cloud-administration/docs/permissions-for-company-managed-projects/) in source projects.
              *  *  Create [issues permission](https://support.atlassian.com/jira-cloud-administration/docs/permissions-for-company-managed-projects/) in destination projects.
@@ -16206,20 +16206,20 @@ export interface AtlassianV3 {
              * operationId: getBulkOperationProgress
              * sum: Get bulk issue operation progress
              * doc: Use this to get the progress state for the specified bulk operation `taskId`.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  Global bulk change [permission](https://support.atlassian.com/jira-cloud-administration/docs/manage-global-permissions/).
              *  *  Administer Jira [global permission](https://support.atlassian.com/jira-cloud-administration/docs/manage-global-permissions/), or be the creator of the task.
-             * 
+             *
              * If the task is running, this resource will return:
-             * 
+             *
              *     {"taskId":"10779","status":"RUNNING","progressPercent":65,"submittedBy":{"accountId":"5b10a2844c20165700ede21g"},"created":1690180055963,"started":1690180056206,"updated":169018005829}
-             * 
+             *
              * If the task has completed, then this resource will return:
-             * 
+             *
              *     {"processedAccessibleIssues":[10001,10002],"created":1709189449954,"progressPercent":100,"started":1709189450154,"status":"COMPLETE","submittedBy":{"accountId":"5b10a2844c20165700ede21g"},"invalidOrInaccessibleIssueCount":0,"taskId":"10000","totalIssueCount":2,"updated":1709189450354}
-             * 
+             *
              * **Note:** You can view task progress for up to 14 days from creation.
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -16240,7 +16240,7 @@ export interface AtlassianV3 {
          * operationId: getAllUserDataClassificationLevels
          * sum: Get all classification levels
          * doc: Returns all classification levels.
-         * 
+         *
          * **[Permissions](#permissions) required:** None.
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -16260,11 +16260,11 @@ export interface AtlassianV3 {
            * operationId: getCommentsByIds
            * sum: Get comments by IDs
            * doc: Returns a [paginated](#pagination) list of comments specified by a list of comment IDs.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** Comments are returned where the user:
-           * 
+           *
            *  *  has *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the comment.
            *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
            *  *  If the comment has visibility restrictions, belongs to the group or has the role visibility is restricted to.
@@ -16282,11 +16282,11 @@ export interface AtlassianV3 {
              * operationId: getCommentPropertyKeys
              * sum: Get comment property keys
              * doc: Returns the keys of all the properties of a comment.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              *  *  If the comment has visibility restrictions, belongs to the group or has the role visibility is restricted to.
@@ -16308,11 +16308,11 @@ export interface AtlassianV3 {
                * operationId: getCommentProperty
                * sum: Get comment property
                * doc: Returns the value of a comment property.
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:**
-               * 
+               *
                *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
                *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                *  *  If the comment has visibility restrictions, belongs to the group or has the role visibility is restricted to.
@@ -16328,12 +16328,12 @@ export interface AtlassianV3 {
                * operationId: deleteCommentProperty
                * sum: Delete comment property
                * doc: Deletes a comment property.
-               * 
+               *
                * **[Permissions](#permissions) required:** either of:
-               * 
+               *
                *  *  *Edit All Comments* [project permission](https://confluence.atlassian.com/x/yodKLg) to delete a property from any comment.
                *  *  *Edit Own Comments* [project permission](https://confluence.atlassian.com/x/yodKLg) to delete a property from a comment created by the user.
-               * 
+               *
                * Also, when the visibility of a comment is restricted to a role or group the user must be a member of that role or group.
                * 204: Returned if the request is successful.
                * 400: Returned if the request is invalid.
@@ -16347,14 +16347,14 @@ export interface AtlassianV3 {
                * operationId: setCommentProperty
                * sum: Set comment property
                * doc: Creates or updates the value of a property for a comment. Use this resource to store custom data against a comment.
-               * 
+               *
                * The value of the request body must be a [valid](http://tools.ietf.org/html/rfc4627), non-empty JSON blob. The maximum length is 32768 characters.
-               * 
+               *
                * **[Permissions](#permissions) required:** either of:
-               * 
+               *
                *  *  *Edit All Comments* [project permission](https://confluence.atlassian.com/x/yodKLg) to create or update the value of a property on any comment.
                *  *  *Edit Own Comments* [project permission](https://confluence.atlassian.com/x/yodKLg) to create or update the value of a property on a comment created by the user.
-               * 
+               *
                * Also, when the visibility of a comment is restricted to a role or group the user must be a member of that role or group.
                * 200: Returned if the comment property is updated.
                * 201: Returned if the comment property is created.
@@ -16379,9 +16379,9 @@ export interface AtlassianV3 {
          * operationId: findComponentsForProjects
          * sum: Find components for projects
          * doc: Returns a [paginated](#pagination) list of all components in a project, including global (Compass) components when applicable.
-         * 
+         *
          * This operation can be accessed anonymously.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -16393,13 +16393,13 @@ export interface AtlassianV3 {
          * operationId: createComponent
          * sum: Create component
          * doc: Creates a component. Use components to provide containers for issues within a project. Use components to provide containers for issues within a project.
-         * 
+         *
          * This operation can be accessed anonymously.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project in which the component is created or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the request is successful.
          * 400: Returned if:
-         * 
+         *
          *  *  the user is not found.
          *  *  `name` is not provided.
          *  *  `name` is over 255 characters in length.
@@ -16421,9 +16421,9 @@ export interface AtlassianV3 {
            * operationId: getComponent
            * sum: Get component
            * doc: Returns a component.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for project containing the component.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -16435,15 +16435,15 @@ export interface AtlassianV3 {
            * operationId: deleteComponent
            * sum: Delete component
            * doc: Deletes a component.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the component or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have permission to manage the project containing the component or does not have permission to administer Jira.
            * 404: Returned if:
-           * 
+           *
            *  *  the component is not found.
            *  *  the replacement component is not found.
            *  *  the user does not have permission to browse the project containing the component.
@@ -16454,13 +16454,13 @@ export interface AtlassianV3 {
            * operationId: updateComponent
            * sum: Update component
            * doc: Updates a component. Any fields included in the request are overwritten. If `leadAccountId` is an empty string ("") the component lead is removed.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the component or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if:
-           * 
+           *
            *  *  the user is not found.
            *  *  `assigneeType` is an invalid value.
            *  *  `name` is over 255 characters in length.
@@ -16480,14 +16480,14 @@ export interface AtlassianV3 {
              * operationId: getComponentRelatedIssues
              * sum: Get component issues count
              * doc: Returns the counts of issues assigned to the component.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **Deprecation notice:** The required OAuth 2.0 scopes will be updated on June 15, 2024.
-             * 
+             *
              *  *  **Classic**: `read:jira-work`
              *  *  **Granular**: `read:field:jira`, `read:project.component:jira`
-             * 
+             *
              * **[Permissions](#permissions) required:** None.
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -16508,7 +16508,7 @@ export interface AtlassianV3 {
          * operationId: getConfiguration
          * sum: Get global settings
          * doc: Returns the [global settings](https://confluence.atlassian.com/x/qYXKM) in Jira. These settings determine whether optional features (for example, subtasks, time tracking, and others) are enabled. If time tracking is enabled, this operation also returns the time tracking configuration.
-         * 
+         *
          * **[Permissions](#permissions) required:** Permission to access Jira.
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -16525,7 +16525,7 @@ export interface AtlassianV3 {
            * operationId: getSelectedTimeTrackingImplementation
            * sum: Get selected time tracking provider
            * doc: Returns the time tracking provider that is currently selected. Note that if time tracking is disabled, then a successful but empty response is returned.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful and time tracking is enabled.
            * 204: Returned if the request is successful but time tracking is disabled.
@@ -16538,7 +16538,7 @@ export interface AtlassianV3 {
            * operationId: selectTimeTrackingImplementation
            * sum: Select time tracking provider
            * doc: Selects a time tracking provider.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the time tracking provider is not found.
@@ -16557,7 +16557,7 @@ export interface AtlassianV3 {
              * operationId: getAvailableTimeTrackingImplementations
              * sum: Get all time tracking providers
              * doc: Returns all time tracking providers. By default, Jira only has one time tracking provider: *JIRA provided time tracking*. However, you can install other time tracking providers via apps from the Atlassian Marketplace. For more information on time tracking providers, see the documentation for the [ Time Tracking Provider](https://developer.atlassian.com/cloud/jira/platform/modules/time-tracking-provider/) module.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -16576,7 +16576,7 @@ export interface AtlassianV3 {
              * operationId: getSharedTimeTrackingConfiguration
              * sum: Get time tracking settings
              * doc: Returns the time tracking settings. This includes settings such as the time format, default time unit, and others. For more information, see [Configuring time tracking](https://confluence.atlassian.com/x/qoXKM).
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -16588,7 +16588,7 @@ export interface AtlassianV3 {
              * operationId: setSharedTimeTrackingConfiguration
              * sum: Set time tracking settings
              * doc: Sets the time tracking settings.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the request object is invalid.
@@ -16612,19 +16612,19 @@ export interface AtlassianV3 {
            * operationId: getCustomFieldOption
            * sum: Get custom field option
            * doc: Returns a custom field option. For example, an option in a select list.
-           * 
+           *
            * Note that this operation **only works for issue field select list options created in Jira or using operations from the [Issue custom field options](#api-group-Issue-custom-field-options) resource**, it cannot be used with issue field select list options created by Connect apps.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** The custom field option is returned as follows:
-           * 
+           *
            *  *  if the user has the *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            *  *  if the user has the *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for at least one project the custom field is used in, and the field is visible in at least one layout the user has permission to view.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if:
-           * 
+           *
            *  *  the custom field option is not found.
            *  *  the user does not have permission to view the custom field.
            */
@@ -16642,9 +16642,9 @@ export interface AtlassianV3 {
          * operationId: getAllDashboards
          * sum: Get all dashboards
          * doc: Returns a list of dashboards owned by or shared with the user. The list may be filtered to include only favorite or owned dashboards.
-         * 
+         *
          * This operation can be accessed anonymously.
-         * 
+         *
          * **[Permissions](#permissions) required:** None.
          * 200: Returned if the request is successful.
          * 400: Returned if the request is invalid.
@@ -16656,7 +16656,7 @@ export interface AtlassianV3 {
          * operationId: createDashboard
          * sum: Create dashboard
          * doc: Creates a dashboard.
-         * 
+         *
          * **[Permissions](#permissions) required:** None.
          * 200: Returned if the request is successful.
          * 400: Returned if the request is not valid.
@@ -16676,9 +16676,9 @@ export interface AtlassianV3 {
              * operationId: bulkEditDashboards
              * sum: Bulk edit dashboards
              * doc: Bulk edit dashboards. Maximum number of dashboards to be edited at the same time is 100.
-             * 
+             *
              * **[Permissions](#permissions) required:** None
-             * 
+             *
              * The dashboards to be updated must be owned by the user, or the user must be an administrator.
              * 200: Returned if the request is successful.
              * 400: Returned if the request is not valid.
@@ -16694,7 +16694,7 @@ export interface AtlassianV3 {
            * operationId: getAllAvailableDashboardGadgets
            * sum: Get available gadgets
            * doc: Gets a list of all available gadgets that can be added to all dashboards.
-           * 
+           *
            * **[Permissions](#permissions) required:** None.
            * 200: Returned if the request is successful.
            * 400: 400 response
@@ -16713,11 +16713,11 @@ export interface AtlassianV3 {
            * operationId: getDashboardsPaginated
            * sum: Search for dashboards
            * doc: Returns a [paginated](#pagination) list of dashboards. This operation is similar to [Get dashboards](#api-rest-api-3-dashboard-get) except that the results can be refined to include dashboards that have specific attributes. For example, dashboards with a particular name. When multiple attributes are specified only filters matching all attributes are returned.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** The following dashboards that match the query parameters are returned:
-           * 
+           *
            *  *  Dashboards owned by the user. Not returned for anonymous users.
            *  *  Dashboards shared with a group that the user is a member of. Not returned for anonymous users.
            *  *  Dashboards shared with a private project that the user can browse. Not returned for anonymous users.
@@ -16725,7 +16725,7 @@ export interface AtlassianV3 {
            *  *  Dashboards shared with the public.
            * 200: Returned if the request is successful.
            * 400: Returned if:
-           * 
+           *
            *  *  `orderBy` is invalid.
            *  *  `expand` includes an invalid value.
            *  *  `accountId` and `owner` are provided.
@@ -16747,16 +16747,16 @@ export interface AtlassianV3 {
              * operationId: getAllGadgets
              * sum: Get gadgets
              * doc: Returns a list of dashboard gadgets on a dashboard.
-             * 
+             *
              * This operation returns:
-             * 
+             *
              *  *  Gadgets from a list of IDs, when `id` is set.
              *  *  Gadgets with a module key, when `moduleKey` is set.
              *  *  Gadgets from a list of URIs, when `uri` is set.
              *  *  All gadgets, when no other parameters are set.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** None.
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect.
@@ -16768,7 +16768,7 @@ export interface AtlassianV3 {
              * operationId: addGadget
              * sum: Add gadget to dashboard
              * doc: Adds a gadget to a dashboard.
-             * 
+             *
              * **[Permissions](#permissions) required:** None.
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -16787,9 +16787,9 @@ export interface AtlassianV3 {
                * operationId: removeGadget
                * sum: Remove gadget from dashboard
                * doc: Removes a dashboard gadget from a dashboard.
-               * 
+               *
                * When a gadget is removed from a dashboard, other gadgets in the same column are moved up to fill the emptied position.
-               * 
+               *
                * **[Permissions](#permissions) required:** None.
                * 204: Returned if the request is successful.
                * 401: Returned if the authentication credentials are incorrect or missing.
@@ -16801,7 +16801,7 @@ export interface AtlassianV3 {
                * operationId: updateGadget
                * sum: Update gadget on dashboard
                * doc: Changes the title, position, and color of the gadget on a dashboard.
-               * 
+               *
                * **[Permissions](#permissions) required:** None.
                * 204: Returned if the request is successful.
                * 400: Returned if the request is invalid.
@@ -16822,9 +16822,9 @@ export interface AtlassianV3 {
                  * operationId: getDashboardItemPropertyKeys
                  * sum: Get dashboard item property keys
                  * doc: Returns the keys of all properties for a dashboard item.
-                 * 
+                 *
                  * This operation can be accessed anonymously.
-                 * 
+                 *
                  * **[Permissions](#permissions) required:** The user must be the owner of the dashboard or have the dashboard shared with them. Note, users with the *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) are considered owners of the System dashboard. The System dashboard is considered to be shared with all other users, and is accessible to anonymous users when Jira\\u2019s anonymous access is permitted.
                  * 200: Returned if the request is successful.
                  * 401: Returned if the authentication credentials are incorrect or missing.
@@ -16842,15 +16842,15 @@ export interface AtlassianV3 {
                    * operationId: getDashboardItemProperty
                    * sum: Get dashboard item property
                    * doc: Returns the key and value of a dashboard item property.
-                   * 
+                   *
                    * A dashboard item enables an app to add user-specific information to a user dashboard. Dashboard items are exposed to users as gadgets that users can add to their dashboards. For more information on how users do this, see [Adding and customizing gadgets](https://confluence.atlassian.com/x/7AeiLQ).
-                   * 
+                   *
                    * When an app creates a dashboard item it registers a callback to receive the dashboard item ID. The callback fires whenever the item is rendered or, where the item is configurable, the user edits the item. The app then uses this resource to store the item's content or configuration details. For more information on working with dashboard items, see [ Building a dashboard item for a JIRA Connect add-on](https://developer.atlassian.com/server/jira/platform/guide-building-a-dashboard-item-for-a-jira-connect-add-on-33746254/) and the [Dashboard Item](https://developer.atlassian.com/cloud/jira/platform/modules/dashboard-item/) documentation.
-                   * 
+                   *
                    * There is no resource to set or get dashboard items.
-                   * 
+                   *
                    * This operation can be accessed anonymously.
-                   * 
+                   *
                    * **[Permissions](#permissions) required:** The user must be the owner of the dashboard or have the dashboard shared with them. Note, users with the *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) are considered owners of the System dashboard. The System dashboard is considered to be shared with all other users, and is accessible to anonymous users when Jira\\u2019s anonymous access is permitted.
                    * 200: Returned if the request is successful.
                    * 401: Returned if the authentication credentials are incorrect or missing.
@@ -16862,9 +16862,9 @@ export interface AtlassianV3 {
                    * operationId: deleteDashboardItemProperty
                    * sum: Delete dashboard item property
                    * doc: Deletes a dashboard item property.
-                   * 
+                   *
                    * This operation can be accessed anonymously.
-                   * 
+                   *
                    * **[Permissions](#permissions) required:** The user must be the owner of the dashboard. Note, users with the *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) are considered owners of the System dashboard.
                    * 204: Returned if the dashboard item property is deleted.
                    * 400: Returned if the dashboard or dashboard item ID is invalid.
@@ -16878,25 +16878,25 @@ export interface AtlassianV3 {
                    * operationId: setDashboardItemProperty
                    * sum: Set dashboard item property
                    * doc: Sets the value of a dashboard item property. Use this resource in apps to store custom data against a dashboard item.
-                   * 
+                   *
                    * A dashboard item enables an app to add user-specific information to a user dashboard. Dashboard items are exposed to users as gadgets that users can add to their dashboards. For more information on how users do this, see [Adding and customizing gadgets](https://confluence.atlassian.com/x/7AeiLQ).
-                   * 
+                   *
                    * When an app creates a dashboard item it registers a callback to receive the dashboard item ID. The callback fires whenever the item is rendered or, where the item is configurable, the user edits the item. The app then uses this resource to store the item's content or configuration details. For more information on working with dashboard items, see [ Building a dashboard item for a JIRA Connect add-on](https://developer.atlassian.com/server/jira/platform/guide-building-a-dashboard-item-for-a-jira-connect-add-on-33746254/) and the [Dashboard Item](https://developer.atlassian.com/cloud/jira/platform/modules/dashboard-item/) documentation.
-                   * 
+                   *
                    * There is no resource to set or get dashboard items.
-                   * 
+                   *
                    * The value of the request body must be a [valid](http://tools.ietf.org/html/rfc4627), non-empty JSON blob. The maximum length is 32768 characters.
-                   * 
+                   *
                    * This operation can be accessed anonymously.
-                   * 
+                   *
                    * **[Permissions](#permissions) required:** The user must be the owner of the dashboard. Note, users with the *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) are considered owners of the System dashboard.
                    * 200: Returned if the dashboard item property is updated.
                    * 201: Returned if the dashboard item property is created.
                    * 400: Returned if:
-                   * 
+                   *
                    *  *  Request is invalid
                    *  *  Or if all of these conditions are met in the request:
-                   *     
+                   *
                    *      *  The dashboard item has a spec URI and no complete module key
                    *      *  The value of propertyKey is equal to "config"
                    *      *  The request body contains a JSON object whose keys and values are not strings.
@@ -16921,11 +16921,11 @@ export interface AtlassianV3 {
            * operationId: getDashboard
            * sum: Get dashboard
            * doc: Returns a dashboard.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** None.
-           * 
+           *
            * However, to get a dashboard, the dashboard must be shared with the user or the user must own it. Note, users with the *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) are considered owners of the System dashboard. The System dashboard is considered to be shared with all other users.
            * 200: Returned if the request is successful.
            * 400: 400 response
@@ -16938,9 +16938,9 @@ export interface AtlassianV3 {
            * operationId: deleteDashboard
            * sum: Delete dashboard
            * doc: Deletes a dashboard.
-           * 
+           *
            * **[Permissions](#permissions) required:** None
-           * 
+           *
            * The dashboard to be deleted must be owned by the user.
            * 204: Returned if the dashboard is deleted.
            * 400: 400 response
@@ -16952,9 +16952,9 @@ export interface AtlassianV3 {
            * operationId: updateDashboard
            * sum: Update dashboard
            * doc: Updates a dashboard, replacing all the dashboard details with those provided.
-           * 
+           *
            * **[Permissions](#permissions) required:** None
-           * 
+           *
            * The dashboard to be updated must be owned by the user.
            * 200: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -16973,9 +16973,9 @@ export interface AtlassianV3 {
              * operationId: copyDashboard
              * sum: Copy dashboard
              * doc: Copies a dashboard. Any values provided in the `dashboard` parameter replace those in the copied dashboard.
-             * 
+             *
              * **[Permissions](#permissions) required:** None
-             * 
+             *
              * The dashboard to be copied must be owned by or shared with the user.
              * 200: Returned if the request is successful.
              * 400: Returned if the request is not valid.
@@ -17028,7 +17028,7 @@ export interface AtlassianV3 {
          * operationId: getEvents
          * sum: Get events
          * doc: Returns all issue events.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -17049,11 +17049,11 @@ export interface AtlassianV3 {
            * operationId: analyseExpression
            * sum: Analyse Jira expression
            * doc: Analyses and validates Jira expressions.
-           * 
+           *
            * As an experimental feature, this operation can also attempt to type-check the expressions.
-           * 
+           *
            * Learn more about Jira expressions in the [documentation](https://developer.atlassian.com/cloud/jira/platform/jira-expressions/).
-           * 
+           *
            * **[Permissions](#permissions) required**: None.
            * 200: Returned if the request is successful.
            * 400: 400 response
@@ -17069,13 +17069,13 @@ export interface AtlassianV3 {
            * operationId: evaluateJiraExpression
            * sum: Evaluate Jira expression
            * doc: Evaluates a Jira expression and returns its value.
-           * 
+           *
            * This resource can be used to test Jira expressions that you plan to use elsewhere, or to fetch data in a flexible way. Consult the [Jira expressions documentation](https://developer.atlassian.com/cloud/jira/platform/jira-expressions/) for more details.
-           * 
+           *
            * #### Context variables ####
-           * 
+           *
            * The following context variables are available to Jira expressions evaluated by this resource. Their presence depends on various factors; usually you need to manually request them in the context object sent in the payload, but some of them are added automatically under certain conditions.
-           * 
+           *
            *  *  `user` ([User](https://developer.atlassian.com/cloud/jira/platform/jira-expressions-type-reference#user)): The current user. Always available and equal to `null` if the request is anonymous.
            *  *  `app` ([App](https://developer.atlassian.com/cloud/jira/platform/jira-expressions-type-reference#app)): The [Connect app](https://developer.atlassian.com/cloud/jira/platform/index/#connect-apps) that made the request. Available only for authenticated requests made by Connect Apps (read more here: [Authentication for Connect apps](https://developer.atlassian.com/cloud/jira/platform/security-for-connect-apps/)).
            *  *  `issue` ([Issue](https://developer.atlassian.com/cloud/jira/platform/jira-expressions-type-reference#issue)): The current issue. Available only when the issue is provided in the request context object.
@@ -17085,23 +17085,23 @@ export interface AtlassianV3 {
            *  *  `board` ([Board](https://developer.atlassian.com/cloud/jira/platform/jira-expressions-type-reference#board)): The current board. Available only when the board is provided in the request context object.
            *  *  `serviceDesk` ([ServiceDesk](https://developer.atlassian.com/cloud/jira/platform/jira-expressions-type-reference#servicedesk)): The current service desk. Available only when the service desk is provided in the request context object.
            *  *  `customerRequest` ([CustomerRequest](https://developer.atlassian.com/cloud/jira/platform/jira-expressions-type-reference#customerrequest)): The current customer request. Available only when the customer request is provided in the request context object.
-           * 
+           *
            * Also, custom context variables can be passed in the request with their types. Those variables can be accessed by key in the Jira expression. These variable types are available for use in a custom context:
-           * 
+           *
            *  *  `user`: A [user](https://developer.atlassian.com/cloud/jira/platform/jira-expressions-type-reference#user) specified as an Atlassian account ID.
            *  *  `issue`: An [issue](https://developer.atlassian.com/cloud/jira/platform/jira-expressions-type-reference#issue) specified by ID or key. All the fields of the issue object are available in the Jira expression.
            *  *  `json`: A JSON object containing custom content.
            *  *  `list`: A JSON list of `user`, `issue`, or `json` variable types.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
-           * **[Permissions](#permissions) required**: None. However, an expression may return different results for different users depending on their permissions. For example, different users may see different comments on the same issue.  
+           *
+           * **[Permissions](#permissions) required**: None. However, an expression may return different results for different users depending on their permissions. For example, different users may see different comments on the same issue.
            * Permission to access Jira Software is required to access Jira Software context variables (`board` and `sprint`) or fields (for example, `issue.sprint`).
            * 200: Returned if the evaluation results in a value. The result is a JSON primitive value, list, or object.
            * 400: Returned if:
-           * 
+           *
            *  *  the request is invalid, that is:
-           *     
+           *
            *      *  invalid data is provided, such as a request including issue ID and key.
            *      *  the expression is invalid and can not be parsed.
            *  *  evaluation fails at runtime. This may happen for various reasons. For example, accessing a property on a null object (such as the expression `issue.id` where `issue` is `null`). In this case an error message is provided.
@@ -17118,14 +17118,14 @@ export interface AtlassianV3 {
          * operationId: getFields
          * sum: Get fields
          * doc: Returns system and custom issue fields according to the following rules:
-         * 
+         *
          *  *  Fields that cannot be added to the issue navigator are always returned.
          *  *  Fields that cannot be placed on an issue screen are always returned.
          *  *  Fields that depend on global Jira settings are only returned if the setting is enabled. That is, timetracking fields, subtasks, votes, and watches.
          *  *  For all other fields, this operation only returns the fields that the user has permission to view (that is, the field is used in at least one project that the user has *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for.)
-         * 
+         *
          * This operation can be accessed anonymously.
-         * 
+         *
          * **[Permissions](#permissions) required:** None.
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -17136,11 +17136,11 @@ export interface AtlassianV3 {
          * operationId: createCustomField
          * sum: Create custom field
          * doc: Creates a custom field.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the custom field is created.
          * 400: Returned if:
-         * 
+         *
          *  *  the user does not have permission to create custom fields.
          *  *  any of the request object properties have invalid or missing values.
          */
@@ -17156,14 +17156,14 @@ export interface AtlassianV3 {
            * operationId: getFieldsPaginated
            * sum: Get fields paginated
            * doc: Returns a [paginated](#pagination) list of fields for Classic Jira projects. The list can include:
-           * 
+           *
            *  *  all fields
            *  *  specific fields, by defining `id`
            *  *  fields that contain a string in the field name or description, by defining `query`
            *  *  specific fields that contain a string in the field name or description, by defining `id` and `query`
-           * 
+           *
            * Only custom fields can be queried, `type` must be set to `custom`.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is invalid.
@@ -17182,9 +17182,9 @@ export interface AtlassianV3 {
              * operationId: getTrashedFieldsPaginated
              * sum: Get fields in trash paginated
              * doc: Returns a [paginated](#pagination) list of fields in the trash. The list may be restricted to fields whose field name or description partially match a string.
-             * 
+             *
              * Only custom fields can be queried, `type` must be set to `custom`.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -17205,7 +17205,7 @@ export interface AtlassianV3 {
            * operationId: updateCustomField
            * sum: Update custom field
            * doc: Updates a custom field.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -17221,12 +17221,12 @@ export interface AtlassianV3 {
              * operationId: getContextsForField
              * sum: Get custom field contexts
              * doc: Returns a [paginated](#pagination) list of [ contexts](https://confluence.atlassian.com/adminjiracloud/what-are-custom-field-contexts-991923859.html) for a custom field. Contexts can be returned as follows:
-             * 
+             *
              *  *  With no other parameters set, all contexts.
              *  *  By defining `id` only, all contexts from the list of IDs.
              *  *  By defining `isAnyIssueType`, limit the list of contexts returned to either those that apply to all issue types (true) or those that apply to only a subset of issue types (false)
              *  *  By defining `isGlobalContext`, limit the list of contexts return to either those that apply to all projects (global contexts) (true) or those that apply to only a subset of projects (false).
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -17239,9 +17239,9 @@ export interface AtlassianV3 {
              * operationId: createCustomFieldContext
              * sum: Create custom field context
              * doc: Creates a custom field context.
-             * 
+             *
              * If `projectIds` is empty, a global context is created. A global context is one that applies to all project. If `issueTypeIds` is empty, the context applies to all issue types.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 201: Returned if the custom field context is created.
              * 400: Returned if the request is invalid.
@@ -17260,9 +17260,9 @@ export interface AtlassianV3 {
                * Method: get /rest/api/3/field/{fieldId}/context/defaultValue
                * operationId: getDefaultValues
                * sum: Get custom field contexts default values
-               * doc: Returns a [paginated](#pagination) list of defaults for a custom field. The results can be filtered by `contextId`, otherwise all values are returned. If no defaults are set for a context, nothing is returned.  
+               * doc: Returns a [paginated](#pagination) list of defaults for a custom field. The results can be filtered by `contextId`, otherwise all values are returned. If no defaults are set for a context, nothing is returned.
                * The returned object depends on type of the custom field:
-               * 
+               *
                *  *  `CustomFieldContextDefaultValueDate` (type `datepicker`) for date fields.
                *  *  `CustomFieldContextDefaultValueDateTime` (type `datetimepicker`) for date-time fields.
                *  *  `CustomFieldContextDefaultValueSingleOption` (type `option.single`) for single choice select lists and radio buttons.
@@ -17281,9 +17281,9 @@ export interface AtlassianV3 {
                *  *  `CustomFieldContextDefaultValueReadOnly` (type `readonly`) for read only (text) fields.
                *  *  `CustomFieldContextDefaultValueMultipleVersion` (type `version.multiple`) for single choice version pickers.
                *  *  `CustomFieldContextDefaultValueSingleVersion` (type `version.single`) for multiple choice version pickers.
-               * 
+               *
                * Forge custom fields [types](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field-type/#data-types) are also supported, returning:
-               * 
+               *
                *  *  `CustomFieldContextDefaultValueForgeStringFieldBean` (type `forge.string`) for Forge string fields.
                *  *  `CustomFieldContextDefaultValueForgeMultiStringFieldBean` (type `forge.string.list`) for Forge string collection fields.
                *  *  `CustomFieldContextDefaultValueForgeObjectFieldBean` (type `forge.object`) for Forge object fields.
@@ -17293,7 +17293,7 @@ export interface AtlassianV3 {
                *  *  `CustomFieldContextDefaultValueForgeNumberFieldBean` (type `forge.number`) for Forge number fields.
                *  *  `CustomFieldContextDefaultValueForgeUserFieldBean` (type `forge.user`) for Forge user fields.
                *  *  `CustomFieldContextDefaultValueForgeMultiUserFieldBean` (type `forge.user.list`) for Forge user collection fields.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if the request is successful.
                * 401: Returned if the authentication credentials are incorrect or missing.
@@ -17306,7 +17306,7 @@ export interface AtlassianV3 {
                * operationId: setDefaultValues
                * sum: Set custom field contexts default values
                * doc: Sets default for contexts of a custom field. Default are defined using these objects:
-               * 
+               *
                *  *  `CustomFieldContextDefaultValueDate` (type `datepicker`) for date fields.
                *  *  `CustomFieldContextDefaultValueDateTime` (type `datetimepicker`) for date-time fields.
                *  *  `CustomFieldContextDefaultValueSingleOption` (type `option.single`) for single choice select lists and radio buttons.
@@ -17325,9 +17325,9 @@ export interface AtlassianV3 {
                *  *  `CustomFieldContextDefaultValueReadOnly` (type `readonly`) for read only (text) fields.
                *  *  `CustomFieldContextDefaultValueMultipleVersion` (type `version.multiple`) for single choice version pickers.
                *  *  `CustomFieldContextDefaultValueSingleVersion` (type `version.single`) for multiple choice version pickers.
-               * 
+               *
                * Forge custom fields [types](https://developer.atlassian.com/platform/forge/manifest-reference/modules/jira-custom-field-type/#data-types) are also supported, returning:
-               * 
+               *
                *  *  `CustomFieldContextDefaultValueForgeStringFieldBean` (type `forge.string`) for Forge string fields.
                *  *  `CustomFieldContextDefaultValueForgeMultiStringFieldBean` (type `forge.string.list`) for Forge string collection fields.
                *  *  `CustomFieldContextDefaultValueForgeObjectFieldBean` (type `forge.object`) for Forge object fields.
@@ -17337,9 +17337,9 @@ export interface AtlassianV3 {
                *  *  `CustomFieldContextDefaultValueForgeNumberFieldBean` (type `forge.number`) for Forge number fields.
                *  *  `CustomFieldContextDefaultValueForgeUserFieldBean` (type `forge.user`) for Forge user fields.
                *  *  `CustomFieldContextDefaultValueForgeMultiUserFieldBean` (type `forge.user.list`) for Forge user collection fields.
-               * 
+               *
                * Only one type of default object can be included in a request. To remove a default for a context, set the default parameter to `null`.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 204: Returned if operation is successful.
                * 400: Returned if the request is not valid.
@@ -17360,7 +17360,7 @@ export interface AtlassianV3 {
                * operationId: getIssueTypeMappingsForContexts
                * sum: Get issue types for custom field context
                * doc: Returns a [paginated](#pagination) list of context to issue type mappings for a custom field. Mappings are returned for all contexts or a list of contexts. Mappings are ordered first by context ID and then by issue type ID.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if operation is successful.
                * 401: Returned if the authentication credentials are incorrect or missing.
@@ -17379,13 +17379,13 @@ export interface AtlassianV3 {
                * operationId: getCustomFieldContextsForProjectsAndIssueTypes
                * sum: Get custom field contexts for projects and issue types
                * doc: Returns a [paginated](#pagination) list of project and issue type mappings and, for each mapping, the ID of a [custom field context](https://confluence.atlassian.com/x/k44fOw) that applies to the project and issue type.
-               * 
+               *
                * If there is no custom field context assigned to the project then, if present, the custom field context that applies to all projects is returned if it also applies to the issue type or all issue types. If a custom field context is not found, the returned custom field context ID is `null`.
-               * 
+               *
                * Duplicate project and issue type mappings cannot be provided in the request.
-               * 
+               *
                * The order of the returned values is the same as provided in the request.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if the request is successful.
                * 400: Returned if the request is not valid.
@@ -17402,7 +17402,7 @@ export interface AtlassianV3 {
                * operationId: getProjectContextMapping
                * sum: Get project mappings for custom field context
                * doc: Returns a [paginated](#pagination) list of context to project mappings for a custom field. The result can be filtered by `contextId`. Otherwise, all mappings are returned. Invalid IDs are ignored.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if the request is successful.
                * 401: Returned if the authentication credentials are incorrect or missing.
@@ -17422,7 +17422,7 @@ export interface AtlassianV3 {
                * operationId: deleteCustomFieldContext
                * sum: Delete custom field context
                * doc: Deletes a [ custom field context](https://confluence.atlassian.com/adminjiracloud/what-are-custom-field-contexts-991923859.html).
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 204: Returned if the context is deleted.
                * 400: Returned if the request is not valid.
@@ -17436,7 +17436,7 @@ export interface AtlassianV3 {
                * operationId: updateCustomFieldContext
                * sum: Update custom field context
                * doc: Updates a [ custom field context](https://confluence.atlassian.com/adminjiracloud/what-are-custom-field-contexts-991923859.html).
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 204: Returned if the context is updated.
                * 400: Returned if the request is not valid.
@@ -17452,11 +17452,11 @@ export interface AtlassianV3 {
                  * operationId: addIssueTypesToContext
                  * sum: Add issue types to context
                  * doc: Adds issue types to a custom field context, appending the issue types to the issue types list.
-                 * 
+                 *
                  * A custom field context without any issue types applies to all issue types. Adding issue types to such a custom field context would result in it applying to only the listed issue types.
-                 * 
+                 *
                  * If any of the issue types exists in the custom field context, the operation fails and no issue types are added.
-                 * 
+                 *
                  * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                  * 204: Returned if operation is successful.
                  * 400: Returned if the request is not valid.
@@ -17473,9 +17473,9 @@ export interface AtlassianV3 {
                    * operationId: removeIssueTypesFromContext
                    * sum: Remove issue types from context
                    * doc: Removes issue types from a custom field context.
-                   * 
+                   *
                    * A custom field context without any issue types applies to all issue types.
-                   * 
+                   *
                    * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                    * 204: Returned if operation is successful.
                    * 400: Returned if the request is not valid.
@@ -17493,9 +17493,9 @@ export interface AtlassianV3 {
                  * operationId: getOptionsForContext
                  * sum: Get custom field options (context)
                  * doc: Returns a [paginated](#pagination) list of all custom field option for a context. Options are returned first then cascading options, in the order they display in Jira.
-                 * 
+                 *
                  * This operation works for custom field options created in Jira or the operations from this resource. **To work with issue field select list options created for Connect apps use the [Issue custom field options (apps)](#api-group-issue-custom-field-options--apps-) operations.**
-                 * 
+                 *
                  * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                  * 200: Returned if the request is successful.
                  * 400: Returned if the request is not valid.
@@ -17509,11 +17509,11 @@ export interface AtlassianV3 {
                  * operationId: createCustomFieldOption
                  * sum: Create custom field options (context)
                  * doc: Creates options and, where the custom select field is of the type Select List (cascading), cascading options for a custom select field. The options are added to a context of the field.
-                 * 
+                 *
                  * The maximum number of options that can be created per request is 1000 and each field can have a maximum of 10000 options.
-                 * 
+                 *
                  * This operation works for custom field options created in Jira or the operations from this resource. **To work with issue field select list options created for Connect apps use the [Issue custom field options (apps)](#api-group-issue-custom-field-options--apps-) operations.**
-                 * 
+                 *
                  * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                  * 200: Returned if the request is successful.
                  * 400: Returned if the request is not valid.
@@ -17527,11 +17527,11 @@ export interface AtlassianV3 {
                  * operationId: updateCustomFieldOption
                  * sum: Update custom field options (context)
                  * doc: Updates the options of a custom field.
-                 * 
+                 *
                  * If any of the options are not found, no options are updated. Options where the values in the request match the current values aren't updated and aren't reported in the response.
-                 * 
+                 *
                  * Note that this operation **only works for issue field select list options created in Jira or using operations from the [Issue custom field options](#api-group-Issue-custom-field-options) resource**, it cannot be used with issue field select list options created by Connect apps.
-                 * 
+                 *
                  * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                  * 200: Returned if the request is successful.
                  * 400: Returned if the request is not valid.
@@ -17551,9 +17551,9 @@ export interface AtlassianV3 {
                    * operationId: reorderCustomFieldOptions
                    * sum: Reorder custom field options (context)
                    * doc: Changes the order of custom field options or cascading options in a context.
-                   * 
+                   *
                    * This operation works for custom field options created in Jira or the operations from this resource. **To work with issue field select list options created for Connect apps use the [Issue custom field options (apps)](#api-group-issue-custom-field-options--apps-) operations.**
-                   * 
+                   *
                    * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                    * 204: Returned if options are reordered.
                    * 400: Returned if the request is not valid.
@@ -17570,11 +17570,11 @@ export interface AtlassianV3 {
                    * operationId: deleteCustomFieldOption
                    * sum: Delete custom field options (context)
                    * doc: Deletes a custom field option.
-                   * 
+                   *
                    * Options with cascading options cannot be deleted without deleting the cascading options first.
-                   * 
+                   *
                    * This operation works for custom field options created in Jira or the operations from this resource. **To work with issue field select list options created for Connect apps use the [Issue custom field options (apps)](#api-group-issue-custom-field-options--apps-) operations.**
-                   * 
+                   *
                    * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                    * 204: Returned if the option is deleted.
                    * 400: Returned if the request is not valid.
@@ -17590,9 +17590,9 @@ export interface AtlassianV3 {
                      * operationId: replaceCustomFieldOption
                      * sum: Replace custom field options
                      * doc: Replaces the options of a custom field.
-                     * 
+                     *
                      * Note that this operation **only works for issue field select list options created in Jira or using operations from the [Issue custom field options](#api-group-Issue-custom-field-options) resource**, it cannot be used with issue field select list options created by Connect or Forge apps.
-                     * 
+                     *
                      * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                      * 303: Returned if the long-running task to deselect the option is started.
                      * 400: Returned if the request is not valid.
@@ -17610,9 +17610,9 @@ export interface AtlassianV3 {
                  * operationId: assignProjectsToCustomFieldContext
                  * sum: Assign custom field context to projects
                  * doc: Assigns a custom field context to projects.
-                 * 
+                 *
                  * If any project in the request is assigned to any context of the custom field, the operation fails.
-                 * 
+                 *
                  * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                  * 204: Returned if operation is successful.
                  * 400: Returned if the request is not valid.
@@ -17628,11 +17628,11 @@ export interface AtlassianV3 {
                    * operationId: removeCustomFieldContextFromProjects
                    * sum: Remove custom field context from projects
                    * doc: Removes a custom field context from projects.
-                   * 
+                   *
                    * A custom field context without any projects applies to all projects. Removing all projects from a custom field context would result in it applying to all projects.
-                   * 
+                   *
                    * If any project in the request is not assigned to the context, or the operation would result in two global contexts for the field, the operation fails.
-                   * 
+                   *
                    * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                    * 204: Returned if the custom field context is removed from the projects.
                    * 400: Returned if the request is not valid.
@@ -17652,7 +17652,7 @@ export interface AtlassianV3 {
              * operationId: getContextsForFieldDeprecated
              * sum: Get contexts for a field
              * doc: Returns a [paginated](#pagination) list of the contexts a field is used in. Deprecated, use [ Get custom field contexts](#api-rest-api-3-field-fieldId-context-get).
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -17671,7 +17671,7 @@ export interface AtlassianV3 {
              * operationId: getScreensForField
              * sum: Get screens for a field
              * doc: Returns a [paginated](#pagination) list of the screens a field is used in.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -17693,9 +17693,9 @@ export interface AtlassianV3 {
              * operationId: getAllIssueFieldOptions
              * sum: Get all issue field options
              * doc: Returns a [paginated](#pagination) list of all the options of a select list issue field. A select list issue field is a type of [issue field](https://developer.atlassian.com/cloud/jira/platform/modules/issue-field/) that enables a user to select a value from a list of options.
-             * 
+             *
              * Note that this operation **only works for issue field select list options added by Connect apps**, it cannot be used with issue field select list options created in Jira or using operations from the [Issue custom field options](#api-group-Issue-custom-field-options) resource.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). Jira permissions are not required for the app providing the field.
              * 200: Returned if the request is successful.
              * 400: Returned if the field is not found or does not support options.
@@ -17707,11 +17707,11 @@ export interface AtlassianV3 {
              * operationId: createIssueFieldOption
              * sum: Create issue field option
              * doc: Creates an option for a select list issue field.
-             * 
+             *
              * Note that this operation **only works for issue field select list options added by Connect apps**, it cannot be used with issue field select list options created in Jira or using operations from the [Issue custom field options](#api-group-Issue-custom-field-options) resource.
-             * 
+             *
              * Each field can have a maximum of 10000 options, and each option can have a maximum of 10000 scopes.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). Jira permissions are not required for the app providing the field.
              * 200: Returned if the request is successful.
              * 400: Returned if the option is invalid.
@@ -17732,9 +17732,9 @@ export interface AtlassianV3 {
                  * operationId: getSelectableIssueFieldOptions
                  * sum: Get selectable issue field options
                  * doc: Returns a [paginated](#pagination) list of options for a select list issue field that can be viewed and selected by the user.
-                 * 
+                 *
                  * Note that this operation **only works for issue field select list options added by Connect apps**, it cannot be used with issue field select list options created in Jira or using operations from the [Issue custom field options](#api-group-Issue-custom-field-options) resource.
-                 * 
+                 *
                  * **[Permissions](#permissions) required:** Permission to access Jira.
                  * 200: Returned if the request is successful.
                  * 401: Returned if the authentication credentials are incorrect or missing.
@@ -17753,9 +17753,9 @@ export interface AtlassianV3 {
                  * operationId: getVisibleIssueFieldOptions
                  * sum: Get visible issue field options
                  * doc: Returns a [paginated](#pagination) list of options for a select list issue field that can be viewed by the user.
-                 * 
+                 *
                  * Note that this operation **only works for issue field select list options added by Connect apps**, it cannot be used with issue field select list options created in Jira or using operations from the [Issue custom field options](#api-group-Issue-custom-field-options) resource.
-                 * 
+                 *
                  * **[Permissions](#permissions) required:** Permission to access Jira.
                  * 200: Returned if the request is successful.
                  * 401: Returned if the authentication credentials are incorrect or missing.
@@ -17775,9 +17775,9 @@ export interface AtlassianV3 {
                * operationId: getIssueFieldOption
                * sum: Get issue field option
                * doc: Returns an option from a select list issue field.
-               * 
+               *
                * Note that this operation **only works for issue field select list options added by Connect apps**, it cannot be used with issue field select list options created in Jira or using operations from the [Issue custom field options](#api-group-Issue-custom-field-options) resource.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). Jira permissions are not required for the app providing the field.
                * 200: Returned if the requested option is returned.
                * 400: Returned if the field is not found or does not support options.
@@ -17790,9 +17790,9 @@ export interface AtlassianV3 {
                * operationId: deleteIssueFieldOption
                * sum: Delete issue field option
                * doc: Deletes an option from a select list issue field.
-               * 
+               *
                * Note that this operation **only works for issue field select list options added by Connect apps**, it cannot be used with issue field select list options created in Jira or using operations from the [Issue custom field options](#api-group-Issue-custom-field-options) resource.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). Jira permissions are not required for the app providing the field.
                * 204: Returned if the field option is deleted.
                * 403: Returned if the request is not authenticated as a Jira administrator or the app that provided the field.
@@ -17805,9 +17805,9 @@ export interface AtlassianV3 {
                * operationId: updateIssueFieldOption
                * sum: Update issue field option
                * doc: Updates or creates an option for a select list issue field. This operation requires that the option ID is provided when creating an option, therefore, the option ID needs to be specified as a path and body parameter. The option ID provided in the path and body must be identical.
-               * 
+               *
                * Note that this operation **only works for issue field select list options added by Connect apps**, it cannot be used with issue field select list options created in Jira or using operations from the [Issue custom field options](#api-group-Issue-custom-field-options) resource.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). Jira permissions are not required for the app providing the field.
                * 200: Returned if the option is updated or created.
                * 400: Returned if the option is invalid, or the *ID* in the request object does not match the *optionId* parameter.
@@ -17826,13 +17826,13 @@ export interface AtlassianV3 {
                  * operationId: replaceIssueFieldOption
                  * sum: Replace issue field option
                  * doc: Deselects an issue-field select-list option from all issues where it is selected. A different option can be selected to replace the deselected option. The update can also be limited to a smaller set of issues by using a JQL query.
-                 * 
+                 *
                  * Connect and Forge app users with *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) can override the screen security configuration using `overrideScreenSecurity` and `overrideEditableFlag`.
-                 * 
+                 *
                  * This is an [asynchronous operation](#async). The response object contains a link to the long-running task.
-                 * 
+                 *
                  * Note that this operation **only works for issue field select list options added by Connect apps**, it cannot be used with issue field select list options created in Jira or using operations from the [Issue custom field options](#api-group-Issue-custom-field-options) resource.
-                 * 
+                 *
                  * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). Jira permissions are not required for the app providing the field.
                  * 303: Returned if the long-running task to deselect the option is started.
                  * 400: Returned if the request is not valid.
@@ -17851,13 +17851,13 @@ export interface AtlassianV3 {
            * operationId: deleteCustomField
            * sum: Delete custom field
            * doc: Deletes a custom field. The custom field is deleted whether it is in the trash or not. See [Edit or delete a custom field](https://confluence.atlassian.com/x/Z44fOw) for more information on trashing and deleting custom fields.
-           * 
+           *
            * This operation is [asynchronous](#async). Follow the `location` link in the response to determine the status of the task and use [Get task](#api-rest-api-3-task-taskId-get) to obtain subsequent updates.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 303: Returned if the request is successful.
            * 400: Returned if any of these are true:
-           * 
+           *
            *  *  The custom field is locked.
            *  *  The custom field is used in a issue security scheme or a permission scheme.
            *  *  The custom field ID format is incorrect.
@@ -17874,7 +17874,7 @@ export interface AtlassianV3 {
              * operationId: restoreCustomField
              * sum: Restore custom field from trash
              * doc: Restores a custom field from trash. See [Edit or delete a custom field](https://confluence.atlassian.com/x/Z44fOw) for more information on trashing and deleting custom fields.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -17891,7 +17891,7 @@ export interface AtlassianV3 {
              * operationId: trashCustomField
              * sum: Move custom field to trash
              * doc: Moves a custom field to trash. See [Edit or delete a custom field](https://confluence.atlassian.com/x/Z44fOw) for more information on trashing and deleting custom fields.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -17910,13 +17910,13 @@ export interface AtlassianV3 {
          * operationId: getAllFieldConfigurations
          * sum: Get all field configurations
          * doc: Returns a [paginated](#pagination) list of field configurations. The list can be for all field configurations or a subset determined by any combination of these criteria:
-         * 
+         *
          *  *  a list of field configuration item IDs.
          *  *  whether the field configuration is a default.
          *  *  whether the field configuration name or description contains a query string.
-         * 
+         *
          * Only field configurations used in company-managed (classic) projects are returned.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -17928,9 +17928,9 @@ export interface AtlassianV3 {
          * operationId: createFieldConfiguration
          * sum: Create field configuration
          * doc: Creates a field configuration. The field configuration is created with the same field properties as the default configuration, with all the fields being optional.
-         * 
+         *
          * This operation can only create configurations for use in company-managed (classic) projects.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
          * 400: Returned if the request is not valid.
@@ -17949,9 +17949,9 @@ export interface AtlassianV3 {
            * operationId: deleteFieldConfiguration
            * sum: Delete field configuration
            * doc: Deletes a field configuration.
-           * 
+           *
            * This operation can only delete configurations used in company-managed (classic) projects.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -17965,9 +17965,9 @@ export interface AtlassianV3 {
            * operationId: updateFieldConfiguration
            * sum: Update field configuration
            * doc: Updates a field configuration. The name and the description provided in the request override the existing values.
-           * 
+           *
            * This operation can only update configurations used in company-managed (classic) projects.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -17983,9 +17983,9 @@ export interface AtlassianV3 {
              * operationId: getFieldConfigurationItems
              * sum: Get field configuration items
              * doc: Returns a [paginated](#pagination) list of all fields for a configuration.
-             * 
+             *
              * Only the fields from configurations used in company-managed (classic) projects are returned.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -17998,11 +17998,11 @@ export interface AtlassianV3 {
              * operationId: updateFieldConfigurationItems
              * sum: Update field configuration items
              * doc: Updates fields in a field configuration. The properties of the field configuration fields provided override the existing values.
-             * 
+             *
              * This operation can only update field configurations used in company-managed (classic) projects.
-             * 
+             *
              * The operation can set the renderer for text fields to the default text renderer (`text-renderer`) or wiki style renderer (`wiki-renderer`). However, the renderer cannot be updated for fields using the autocomplete renderer (`autocomplete-renderer`).
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 204: Returned if the request is successful.
              * 400: Returned if the request is not valid.
@@ -18025,9 +18025,9 @@ export interface AtlassianV3 {
          * operationId: getAllFieldConfigurationSchemes
          * sum: Get all field configuration schemes
          * doc: Returns a [paginated](#pagination) list of field configuration schemes.
-         * 
+         *
          * Only field configuration schemes used in classic projects are returned.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
          * 400: Returned if the request is not valid.
@@ -18040,9 +18040,9 @@ export interface AtlassianV3 {
          * operationId: createFieldConfigurationScheme
          * sum: Create field configuration scheme
          * doc: Creates a field configuration scheme.
-         * 
+         *
          * This operation can only create field configuration schemes used in company-managed (classic) projects.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the request is successful.
          * 400: Returned if the request is not valid.
@@ -18061,9 +18061,9 @@ export interface AtlassianV3 {
            * operationId: getFieldConfigurationSchemeMappings
            * sum: Get field configuration issue type items
            * doc: Returns a [paginated](#pagination) list of field configuration issue type items.
-           * 
+           *
            * Only items used in classic projects are returned.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -18084,11 +18084,11 @@ export interface AtlassianV3 {
            * operationId: getFieldConfigurationSchemeProjectMapping
            * sum: Get field configuration schemes for projects
            * doc: Returns a [paginated](#pagination) list of field configuration schemes and, for each scheme, a list of the projects that use it.
-           * 
+           *
            * The list is sorted by field configuration scheme ID. The first item contains the list of project IDs assigned to the default field configuration scheme.
-           * 
+           *
            * Only field configuration schemes used in classic projects are returned.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -18101,9 +18101,9 @@ export interface AtlassianV3 {
            * operationId: assignFieldConfigurationSchemeToProject
            * sum: Assign field configuration scheme to project
            * doc: Assigns a field configuration scheme to a project. If the field configuration scheme ID is `null`, the operation assigns the default field configuration scheme.
-           * 
+           *
            * Field configuration schemes can only be assigned to classic projects.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the project is not a classic project.
@@ -18124,9 +18124,9 @@ export interface AtlassianV3 {
            * operationId: deleteFieldConfigurationScheme
            * sum: Delete field configuration scheme
            * doc: Deletes a field configuration scheme.
-           * 
+           *
            * This operation can only delete field configuration schemes used in company-managed (classic) projects.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -18140,9 +18140,9 @@ export interface AtlassianV3 {
            * operationId: updateFieldConfigurationScheme
            * sum: Update field configuration scheme
            * doc: Updates a field configuration scheme.
-           * 
+           *
            * This operation can only update field configuration schemes used in company-managed (classic) projects.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -18158,9 +18158,9 @@ export interface AtlassianV3 {
              * operationId: setFieldConfigurationSchemeMapping
              * sum: Assign issue types to field configurations
              * doc: Assigns issue types to field configurations on field configuration scheme.
-             * 
+             *
              * This operation can only modify field configuration schemes used in company-managed (classic) projects.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 204: Returned if the request is successful.
              * 400: Returned if the request is not valid.
@@ -18176,9 +18176,9 @@ export interface AtlassianV3 {
                * operationId: removeIssueTypesFromGlobalFieldConfigurationScheme
                * sum: Remove issue types from field configuration scheme
                * doc: Removes issue types from the field configuration scheme.
-               * 
+               *
                * This operation can only modify field configuration schemes used in company-managed (classic) projects.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 204: Returned if the request is successful.
                * 400: Returned if the request is not valid.
@@ -18198,7 +18198,7 @@ export interface AtlassianV3 {
          * operationId: createFilter
          * sum: Create filter
          * doc: Creates a filter. The filter is shared according to the [default share scope](#api-rest-api-3-filter-post). The filter is not selected as a favorite.
-         * 
+         *
          * **[Permissions](#permissions) required:** Permission to access Jira.
          * 200: Returned if the request is successful.
          * 400: Returned if the request object is invalid. For example, the `name` is not unique or the project ID is not specified for a project role share permission.
@@ -18212,7 +18212,7 @@ export interface AtlassianV3 {
            * operationId: getDefaultShareScope
            * sum: Get default share scope
            * doc: Returns the default sharing settings for new filters and dashboards for a user.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -18223,7 +18223,7 @@ export interface AtlassianV3 {
            * operationId: setDefaultShareScope
            * sum: Set default share scope
            * doc: Sets the default sharing for new filters and dashboards for a user.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira.
            * 200: Returned if the request is successful.
            * 400: Returned if an invalid scope is set.
@@ -18242,17 +18242,17 @@ export interface AtlassianV3 {
            * operationId: getFavouriteFilters
            * sum: Get favorite filters
            * doc: Returns the visible favorite filters of the user.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** A favorite filter is only visible to the user where the filter is:
-           * 
+           *
            *  *  owned by the user.
            *  *  shared with a group that the user is a member of.
            *  *  shared with a private project that the user has *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for.
            *  *  shared with a public project.
            *  *  shared with the public.
-           * 
+           *
            * For example, if the user favorites a public filter that is subsequently made private that filter is not returned by this operation.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -18270,15 +18270,15 @@ export interface AtlassianV3 {
            * operationId: getMyFilters
            * sum: Get my filters
            * doc: Returns the filters owned by the user. If `includeFavourites` is `true`, the user's visible favorite filters are also returned.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira, however, a favorite filters is only visible to the user where the filter is:
-           * 
+           *
            *  *  owned by the user.
            *  *  shared with a group that the user is a member of.
            *  *  shared with a private project that the user has *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for.
            *  *  shared with a public project.
            *  *  shared with the public.
-           * 
+           *
            * For example, if the user favorites a public filter that is subsequently made private that filter is not returned by this operation.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -18296,14 +18296,14 @@ export interface AtlassianV3 {
            * operationId: getFiltersPaginated
            * sum: Search for filters
            * doc: Returns a [paginated](#pagination) list of filters. Use this operation to get:
-           * 
+           *
            *  *  specific filters, by defining `id` only.
            *  *  filters that match all of the specified attributes. For example, all filters for a user with a particular word in their name. When multiple attributes are specified only filters matching all attributes are returned.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** None, however, only the following filters that match the query parameters are returned:
-           * 
+           *
            *  *  filters owned by the user.
            *  *  filters shared with a group that the user is a member of.
            *  *  filters shared with a private project that the user has *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for.
@@ -18311,7 +18311,7 @@ export interface AtlassianV3 {
            *  *  filters shared with the public.
            * 200: Returned if the request is successful.
            * 400: Returned if:
-           * 
+           *
            *  *  `owner` and `accountId` are provided.
            *  *  `expand` includes an invalid value.
            *  *  `orderBy` is invalid.
@@ -18331,11 +18331,11 @@ export interface AtlassianV3 {
            * operationId: getFilter
            * sum: Get filter
            * doc: Returns a filter.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** None, however, the filter is only returned where it is:
-           * 
+           *
            *  *  owned by the user.
            *  *  shared with a group that the user is a member of.
            *  *  shared with a private project that the user has *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for.
@@ -18351,7 +18351,7 @@ export interface AtlassianV3 {
            * operationId: deleteFilter
            * sum: Delete filter
            * doc: Delete a filter.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira, however filters can only be deleted by the creator of the filter or a user with *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the filter is not found.
@@ -18363,7 +18363,7 @@ export interface AtlassianV3 {
            * operationId: updateFilter
            * sum: Update filter
            * doc: Updates a filter. Use this operation to update a filter's name, description, JQL, or sharing.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira, however the user must own the filter.
            * 200: Returned if the request is successful.
            * 400: Returned if the request object is invalid. For example, the `name` is not unique or the project ID is not specified for a project role share permission.
@@ -18381,11 +18381,11 @@ export interface AtlassianV3 {
              * operationId: getColumns
              * sum: Get columns
              * doc: Returns the columns configured for a filter. The column configuration is used when the filter's results are viewed in *List View* with the *Columns* set to *Filter*.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** None, however, column details are only returned for:
-             * 
+             *
              *  *  filters owned by the user.
              *  *  filters shared with a group that the user is a member of.
              *  *  filters shared with a private project that the user has *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for.
@@ -18402,9 +18402,9 @@ export interface AtlassianV3 {
              * operationId: resetColumns
              * sum: Reset columns
              * doc: Reset the user's column configuration for the filter to the default.
-             * 
+             *
              * **[Permissions](#permissions) required:** Permission to access Jira, however, columns are only reset for:
-             * 
+             *
              *  *  filters owned by the user.
              *  *  filters shared with a group that the user is a member of.
              *  *  filters shared with a private project that the user has *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for.
@@ -18412,7 +18412,7 @@ export interface AtlassianV3 {
              *  *  filters shared with the public.
              * 204: Returned if the request is successful.
              * 400: Returned if:
-             * 
+             *
              *  *  the filter is not found.
              *  *  the user does not have permission to view the filter.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -18423,13 +18423,13 @@ export interface AtlassianV3 {
              * operationId: setColumns
              * sum: Set columns
              * doc: Sets the columns for a filter. Only navigable fields can be set as columns. Use [Get fields](#api-rest-api-3-field-get) to get the list fields in Jira. A navigable field has `navigable` set to `true`.
-             * 
+             *
              * The parameters for this resource are expressed as HTML form data. For example, in curl:
-             * 
+             *
              * `curl -X PUT -d columns=summary -d columns=description https://your-domain.atlassian.net/rest/api/3/filter/10000/columns`
-             * 
+             *
              * **[Permissions](#permissions) required:** Permission to access Jira, however, columns are only set for:
-             * 
+             *
              *  *  filters owned by the user.
              *  *  filters shared with a group that the user is a member of.
              *  *  filters shared with a private project that the user has *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for.
@@ -18437,7 +18437,7 @@ export interface AtlassianV3 {
              *  *  filters shared with the public.
              * 200: Returned if the request is successful.
              * 400: Returned if:
-             * 
+             *
              *  *  a non-navigable field is set as a column.
              *  *  the user does not have permission to view the filter.
              * 403: Returned if the requesting user is not an owner of the filter.
@@ -18455,11 +18455,11 @@ export interface AtlassianV3 {
              * operationId: deleteFavouriteForFilter
              * sum: Remove filter as favorite
              * doc: Removes a filter as a favorite for the user. Note that this operation only removes filters visible to the user from the user's favorites list. For example, if the user favorites a public filter that is subsequently made private (and is therefore no longer visible on their favorites list) they cannot remove it from their favorites list.
-             * 
+             *
              * **[Permissions](#permissions) required:** Permission to access Jira.
              * 200: Returned if the request is successful.
              * 400: Returned if:
-             * 
+             *
              *  *  the filter is not found.
              *  *  the user does not have permission to view the filter.
              */
@@ -18469,9 +18469,9 @@ export interface AtlassianV3 {
              * operationId: setFavouriteForFilter
              * sum: Add filter as favorite
              * doc: Add a filter as a favorite for the user.
-             * 
+             *
              * **[Permissions](#permissions) required:** Permission to access Jira, however, the user can only favorite:
-             * 
+             *
              *  *  filters owned by the user.
              *  *  filters shared with a group that the user is a member of.
              *  *  filters shared with a private project that the user has *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for.
@@ -18479,7 +18479,7 @@ export interface AtlassianV3 {
              *  *  filters shared with the public.
              * 200: Returned if the request is successful.
              * 400: Returned if:
-             * 
+             *
              *  *  the filter is not found.
              *  *  the user does not have permission to favorite the filter.
              */
@@ -18492,11 +18492,11 @@ export interface AtlassianV3 {
              * operationId: changeFilterOwner
              * sum: Change filter owner
              * doc: Changes the owner of the filter.
-             * 
+             *
              * **[Permissions](#permissions) required:** Permission to access Jira. However, the user must own the filter or have the *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 204: Returned if the request is successful.
              * 400: Returned when:
-             * 
+             *
              *  *  The new owner of the filter owns a filter with the same name.
              *  *  An attempt is made to change owner of the default filter.
              * 403: Returned if the requesting user is not an owner of the filter or does not have *Administer Jira* global permission.
@@ -18511,11 +18511,11 @@ export interface AtlassianV3 {
              * operationId: getSharePermissions
              * sum: Get share permissions
              * doc: Returns the share permissions for a filter. A filter can be shared with groups, projects, all logged-in users, or the public. Sharing with all logged-in users or the public is known as a global share permission.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** None, however, share permissions are only returned for:
-             * 
+             *
              *  *  filters owned by the user.
              *  *  filters shared with a group that the user is a member of.
              *  *  filters shared with a private project that the user has *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for.
@@ -18524,7 +18524,7 @@ export interface AtlassianV3 {
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if:
-             * 
+             *
              *  *  the filter is not found.
              *  *  the user does not have permission to view the filter.
              */
@@ -18534,19 +18534,19 @@ export interface AtlassianV3 {
              * operationId: addSharePermission
              * sum: Add share permission
              * doc: Add a share permissions to a filter. If you add a global share permission (one for all logged-in users or the public) it will overwrite all share permissions for the filter.
-             * 
+             *
              * Be aware that this operation uses different objects for updating share permissions compared to [Update filter](#api-rest-api-3-filter-id-put).
-             * 
+             *
              * **[Permissions](#permissions) required:** *Share dashboards and filters* [global permission](https://confluence.atlassian.com/x/x4dKLg) and the user must own the filter.
              * 201: Returned if the request is successful.
              * 400: Returned if:
-             * 
+             *
              *  *  the request object is invalid. For example, it contains an invalid type, the ID does not match the type, or the project or group is not found.
              *  *  the user does not own the filter.
              *  *  the user does not have the required permissions.
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if:
-             * 
+             *
              *  *  the filter is not found.
              *  *  the user does not have permission to view the filter.
              */
@@ -18562,11 +18562,11 @@ export interface AtlassianV3 {
                * operationId: getSharePermission
                * sum: Get share permission
                * doc: Returns a share permission for a filter. A filter can be shared with groups, projects, all logged-in users, or the public. Sharing with all logged-in users or the public is known as a global share permission.
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:** None, however, a share permission is only returned for:
-               * 
+               *
                *  *  filters owned by the user.
                *  *  filters shared with a group that the user is a member of.
                *  *  filters shared with a private project that the user has *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for.
@@ -18575,7 +18575,7 @@ export interface AtlassianV3 {
                * 200: Returned if the request is successful.
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 404: Returned if:
-               * 
+               *
                *  *  the filter is not found.
                *  *  the permission is not found.
                *  *  the user does not have permission to view the filter.
@@ -18586,12 +18586,12 @@ export interface AtlassianV3 {
                * operationId: deleteSharePermission
                * sum: Delete share permission
                * doc: Deletes a share permission from a filter.
-               * 
+               *
                * **[Permissions](#permissions) required:** Permission to access Jira and the user must own the filter.
                * 204: Returned if the request is successful.
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 404: Returned if:
-               * 
+               *
                *  *  the filter is not found.
                *  *  the user does not own the filter.
                */
@@ -18611,11 +18611,11 @@ export interface AtlassianV3 {
          * operationId: getGroup
          * sum: Get group
          * doc: This operation is deprecated, use [`group/member`](#api-rest-api-3-group-member-get).
-         * 
+         *
          * Returns all users in a group.
-         * 
+         *
          * **[Permissions](#permissions) required:** either of:
-         * 
+         *
          *  *  *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
@@ -18630,7 +18630,7 @@ export interface AtlassianV3 {
          * operationId: removeGroup
          * sum: Remove group
          * doc: Deletes a group.
-         * 
+         *
          * **[Permissions](#permissions) required:** Site administration (that is, member of the *site-admin* strategic [group](https://confluence.atlassian.com/x/24xjL)).
          * 200: Returned if the request is successful.
          * 400: Returned if the group name is not specified.
@@ -18644,7 +18644,7 @@ export interface AtlassianV3 {
          * operationId: createGroup
          * sum: Create group
          * doc: Creates a group.
-         * 
+         *
          * **[Permissions](#permissions) required:** Site administration (that is, member of the *site-admin* [group](https://confluence.atlassian.com/x/24xjL)).
          * 201: Returned if the request is successful.
          * 400: Returned if group name is not specified or the group name is in use.
@@ -18663,7 +18663,7 @@ export interface AtlassianV3 {
            * operationId: bulkGetGroups
            * sum: Bulk get groups
            * doc: Returns a [paginated](#pagination) list of groups.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -18684,11 +18684,11 @@ export interface AtlassianV3 {
            * operationId: getUsersFromGroup
            * sum: Get users from group
            * doc: Returns a [paginated](#pagination) list of all users in a group.
-           * 
+           *
            * Note that users are ordered by username, however the username is not returned in the results due to privacy reasons.
-           * 
+           *
            * **[Permissions](#permissions) required:** either of:
-           * 
+           *
            *  *  *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
@@ -18710,11 +18710,11 @@ export interface AtlassianV3 {
            * operationId: removeUserFromGroup
            * sum: Remove user from group
            * doc: Removes a user from a group.
-           * 
+           *
            * **[Permissions](#permissions) required:** Site administration (that is, member of the *site-admin* [group](https://confluence.atlassian.com/x/24xjL)).
            * 200: Returned if the request is successful.
            * 400: Returned if:
-           * 
+           *
            *  *  `groupName` is missing.
            *  *  `accountId` is missing.
            * 401: Returned if the authentication credentials are incorrect or missing from the request.
@@ -18727,11 +18727,11 @@ export interface AtlassianV3 {
            * operationId: addUserToGroup
            * sum: Add user to group
            * doc: Adds a user to a group.
-           * 
+           *
            * **[Permissions](#permissions) required:** Site administration (that is, member of the *site-admin* [group](https://confluence.atlassian.com/x/24xjL)).
            * 201: Returned if the request is successful.
            * 400: Returned if:
-           * 
+           *
            *  *  `groupname` is not provided.
            *  *  `accountId` is missing.
            * 401: Returned if the authentication credentials are incorrect or missing from the request.
@@ -18750,15 +18750,15 @@ export interface AtlassianV3 {
            * operationId: findGroups
            * sum: Find groups
            * doc: Returns a list of groups whose names contain a query string. A list of group names can be provided to exclude groups from the results.
-           * 
+           *
            * The primary use case for this resource is to populate a group picker suggestions list. To this end, the returned object includes the `html` field where the matched query term is highlighted in the group name with the HTML strong tag. Also, the groups list is wrapped in a response object that contains a header for use in the picker, specifically *Showing X of Y matching groups*.
-           * 
+           *
            * The list returns with the groups sorted. If no groups match the list criteria, an empty list is returned.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg). Anonymous calls and calls by users without the required permission return an empty list.
-           * 
+           *
            * *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg). Without this permission, calls where query is not an exact match to an existing group will return an empty list.
            * 200: Returned if the request is successful.
            */
@@ -18776,27 +18776,27 @@ export interface AtlassianV3 {
          * operationId: findUsersAndGroups
          * sum: Find users and groups
          * doc: Returns a list of users and groups matching a string. The string is used:
-         * 
+         *
          *  *  for users, to find a case-insensitive match with display name and e-mail address. Note that if a user has hidden their email address in their user profile, partial matches of the email address will not find the user. An exact match is required.
          *  *  for groups, to find a case-sensitive match with group name.
-         * 
+         *
          * For example, if the string *tin* is used, records with the display name *Tina*, email address *sarah@tinplatetraining.com*, and the group *accounting* would be returned.
-         * 
+         *
          * Optionally, the search can be refined to:
-         * 
+         *
          *  *  the projects and issue types associated with a custom field, such as a user picker. The search can then be further refined to return only users and groups that have permission to view specific:
-         *     
+         *
          *      *  projects.
          *      *  issue types.
-         *     
+         *
          *     If multiple projects or issue types are specified, they must be a subset of those enabled for the custom field or no results are returned. For example, if a field is enabled for projects A, B, and C then the search could be limited to projects B and C. However, if the search is limited to projects B and D, nothing is returned.
          *  *  not return Connect app users and groups.
          *  *  return groups that have a case-insensitive match with the query.
-         * 
+         *
          * The primary use case for this resource is to populate a picker field suggestion list with users or groups. To this end, the returned object includes an `html` field for each list. This field highlights the matched query term in the item name with the HTML strong tag. Also, each list is wrapped in a response object that contains a header for use in a picker, specifically *Showing X of Y matching groups*.
-         * 
+         *
          * This operation can be accessed anonymously.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Browse users and groups* [global permission](https://confluence.atlassian.com/x/yodKLg).
          * 200: Returned if the request is successful.
          * 400: Returned if the query parameter is not provided.
@@ -18819,7 +18819,7 @@ export interface AtlassianV3 {
            * operationId: getLicense
            * sum: Get license
            * doc: Returns licensing information about the Jira instance.
-           * 
+           *
            * **[Permissions](#permissions) required:** None.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -18838,20 +18838,20 @@ export interface AtlassianV3 {
          * operationId: createIssue
          * sum: Create issue
          * doc: Creates an issue or, where the option to create subtasks is enabled in Jira, a subtask. A transition may be applied, to move the issue or subtask to a workflow step other than the default start step, and issue properties set.
-         * 
+         *
          * The content of the issue or subtask is defined using `update` and `fields`. The fields that can be set in the issue or subtask are determined using the [ Get create issue metadata](#api-rest-api-3-issue-createmeta-get). These are the same fields that appear on the issue's create screen. Note that the `description`, `environment`, and any `textarea` type custom fields (multi-line text fields) take Atlassian Document Format content. Single line custom fields (`textfield`) accept a string and don't handle Atlassian Document Format content.
-         * 
+         *
          * Creating a subtask differs from creating an issue as follows:
-         * 
+         *
          *  *  `issueType` must be set to a subtask issue type (use [ Get create issue metadata](#api-rest-api-3-issue-createmeta-get) to find subtask issue types).
          *  *  `parent` must contain the ID or key of the parent issue.
-         * 
+         *
          * In a next-gen project any issue may be made a child providing that the parent and child are members of the same project.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Browse projects* and *Create issues* [project permissions](https://confluence.atlassian.com/x/yodKLg) for the project in which the issue or subtask is created.
          * 201: Returned if the request is successful.
          * 400: Returned if the request:
-         * 
+         *
          *  *  is missing required fields.
          *  *  contains invalid field values.
          *  *  contains fields that cannot be set for the issue type.
@@ -18871,23 +18871,23 @@ export interface AtlassianV3 {
            * operationId: archiveIssuesAsync
            * sum: Archive issue(s) by JQL
            * doc: Enables admins to archive up to 100,000 issues in a single request using JQL, returning the URL to check the status of the submitted request.
-           * 
+           *
            * You can use the [get task](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-tasks/#api-rest-api-3-task-taskid-get) and [cancel task](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-tasks/#api-rest-api-3-task-taskid-cancel-post) APIs to manage the request.
-           * 
+           *
            * **Note that:**
-           * 
+           *
            *  *  you can't archive subtasks directly, only through their parent issues
            *  *  you can only archive issues from software, service management, and business projects
-           * 
+           *
            * **[Permissions](#permissions) required:** Jira admin or site admin: [global permission](https://confluence.atlassian.com/x/x4dKLg)
-           * 
+           *
            * **License required:** Premium or Enterprise
-           * 
+           *
            * **Signed-in users only:** This API can't be accessed anonymously.
-           * 
+           *
            * **Rate limiting:** Only a single request per jira instance can be active at any given time.
-           * 
-           *   
+           *
+           *
            *
            * 202: Returns the URL to check the status of the submitted request.
            * 400: Returned if no issues were archived due to a bad request, for example an invalid JQL query.
@@ -18901,23 +18901,23 @@ export interface AtlassianV3 {
            * operationId: archiveIssues
            * sum: Archive issue(s) by issue ID/key
            * doc: Enables admins to archive up to 1000 issues in a single request using issue ID/key, returning details of the issue(s) archived in the process and the errors encountered, if any.
-           * 
+           *
            * **Note that:**
-           * 
+           *
            *  *  you can't archive subtasks directly, only through their parent issues
            *  *  you can only archive issues from software, service management, and business projects
-           * 
+           *
            * **[Permissions](#permissions) required:** Jira admin or site admin: [global permission](https://confluence.atlassian.com/x/x4dKLg)
-           * 
+           *
            * **License required:** Premium or Enterprise
-           * 
+           *
            * **Signed-in users only:** This API can't be accessed anonymously.
-           * 
-           *   
+           *
+           *
            *
            * 200: Returned if there is at least one valid issue to archive in the request. The return message will include the count of archived issues and subtasks, as well as error details for issues which failed to get archived.
            * 400: Returned if none of the issues in the request can be archived. Possible reasons:
-           * 
+           *
            *  *  the issues weren't found
            *  *  the issues are subtasks
            *  *  the issues belong to unlicensed projects
@@ -18935,17 +18935,17 @@ export interface AtlassianV3 {
            * operationId: createIssues
            * sum: Bulk create issue
            * doc: Creates upto **50** issues and, where the option to create subtasks is enabled in Jira, subtasks. Transitions may be applied, to move the issues or subtasks to a workflow step other than the default start step, and issue properties set.
-           * 
+           *
            * The content of each issue or subtask is defined using `update` and `fields`. The fields that can be set in the issue or subtask are determined using the [ Get create issue metadata](#api-rest-api-3-issue-createmeta-get). These are the same fields that appear on the issues' create screens. Note that the `description`, `environment`, and any `textarea` type custom fields (multi-line text fields) take Atlassian Document Format content. Single line custom fields (`textfield`) accept a string and don't handle Atlassian Document Format content.
-           * 
+           *
            * Creating a subtask differs from creating an issue as follows:
-           * 
+           *
            *  *  `issueType` must be set to a subtask issue type (use [ Get create issue metadata](#api-rest-api-3-issue-createmeta-get) to find subtask issue types).
            *  *  `parent` the must contain the ID or key of the parent issue.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Browse projects* and *Create issues* [project permissions](https://confluence.atlassian.com/x/yodKLg) for the project in which each issue or subtask is created.
            * 201: Returned if any of the issue or subtask creation requests were successful. A request may be unsuccessful when it:
-           * 
+           *
            *  *  is missing required fields.
            *  *  contains invalid field values.
            *  *  contains fields that cannot be set for the issue type.
@@ -18954,7 +18954,7 @@ export interface AtlassianV3 {
            *  *  is for a subtask when the option to create subtasks is disabled.
            *  *  is invalid for any other reason.
            * 400: Returned if all requests are invalid. Requests may be unsuccessful when they:
-           * 
+           *
            *  *  are missing required fields.
            *  *  contain invalid field values.
            *  *  contain fields that cannot be set for the issue type.
@@ -18973,13 +18973,13 @@ export interface AtlassianV3 {
            * operationId: getCreateIssueMeta
            * sum: Get create issue metadata
            * doc: Returns details of projects, issue types within projects, and, when requested, the create screen fields for each issue type for the user. Use the information to populate the requests in [ Create issue](#api-rest-api-3-issue-post) and [Create issues](#api-rest-api-3-issue-bulk-post).
-           * 
+           *
            * Deprecated, see [Create Issue Meta Endpoint Deprecation Notice](https://developer.atlassian.com/cloud/jira/platform/changelog/#CHANGE-1304).
-           * 
+           *
            * The request can be restricted to specific projects or issue types using the query parameters. The response will contain information for the valid projects, issue types, or project and issue type combinations requested. Note that invalid project, issue type, or project and issue type combinations do not generate errors.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Create issues* [project permission](https://confluence.atlassian.com/x/yodKLg) in the requested projects.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -18998,9 +18998,9 @@ export interface AtlassianV3 {
                * operationId: getCreateIssueMetaIssueTypes
                * sum: Get create metadata issue types for a project
                * doc: Returns a page of issue type metadata for a specified project. Use the information to populate the requests in [ Create issue](#api-rest-api-3-issue-post) and [Create issues](#api-rest-api-3-issue-bulk-post).
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Create issues* [project permission](https://confluence.atlassian.com/x/yodKLg) in the requested projects.
                * 200: Returned if the request is successful.
                * 400: Returned if the request is invalid.
@@ -19018,9 +19018,9 @@ export interface AtlassianV3 {
                  * operationId: getCreateIssueMetaIssueTypeId
                  * sum: Get create field metadata for a project and issue type id
                  * doc: Returns a page of field metadata for a specified project and issuetype id. Use the information to populate the requests in [ Create issue](#api-rest-api-3-issue-post) and [Create issues](#api-rest-api-3-issue-bulk-post).
-                 * 
+                 *
                  * This operation can be accessed anonymously.
-                 * 
+                 *
                  * **[Permissions](#permissions) required:** *Create issues* [project permission](https://confluence.atlassian.com/x/yodKLg) in the requested projects.
                  * 200: Returned if the request is successful.
                  * 400: Returned if the request is invalid.
@@ -19044,14 +19044,14 @@ export interface AtlassianV3 {
              * operationId: getIssueLimitReport
              * sum: Get issue limit report
              * doc: Returns all issues breaching and approaching per-issue limits.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) is required for the project the issues are in. Results may be incomplete otherwise
              *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid. Other possible reasons:
-             * 
+             *
              *  *  the field queried is not supported
              *  *  the threshold is not within the supported range
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -19071,14 +19071,14 @@ export interface AtlassianV3 {
            * operationId: getIssuePickerResource
            * sum: Get issue picker suggestions
            * doc: Returns lists of issues matching a query string. Use this resource to provide auto-completion suggestions when the user is looking for an issue using a word or string.
-           * 
+           *
            * This operation returns two lists:
-           * 
+           *
            *  *  `History Search` which includes issues from the user's history of created, edited, or viewed issues that contain the string in the `query` parameter.
            *  *  `Current Search` which includes issues that match the JQL expression in `currentJQL` and contain the string in the `query` parameter.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** None.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -19096,16 +19096,16 @@ export interface AtlassianV3 {
            * operationId: bulkSetIssuesPropertiesList
            * sum: Bulk set issues properties by list
            * doc: Sets or updates a list of entity property values on issues. A list of up to 10 entity properties can be specified along with up to 10,000 issues on which to set or update that list of entity properties.
-           * 
+           *
            * The value of the request body must be a [valid](http://tools.ietf.org/html/rfc4627), non-empty JSON. The maximum length of single issue property value is 32768 characters. This operation can be accessed anonymously.
-           * 
+           *
            * This operation is:
-           * 
+           *
            *  *  transactional, either all properties are updated in all eligible issues or, when errors occur, no properties are updated.
            *  *  [asynchronous](#async). Follow the `location` link in the response to determine the status of the task and use [Get task](#api-rest-api-3-task-taskId-get) to obtain subsequent updates.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Browse projects* and *Edit issues* [project permissions](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue.
            *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
            * 303: Returned if the operation is successful.
@@ -19120,16 +19120,16 @@ export interface AtlassianV3 {
              * operationId: bulkSetIssuePropertiesByIssue
              * sum: Bulk set issue properties by issue
              * doc: Sets or updates entity property values on issues. Up to 10 entity properties can be specified for each issue and up to 100 issues included in the request.
-             * 
+             *
              * The value of the request body must be a [valid](http://tools.ietf.org/html/rfc4627), non-empty JSON.
-             * 
+             *
              * This operation is:
-             * 
+             *
              *  *  [asynchronous](#async). Follow the `location` link in the response to determine the status of the task and use [Get task](#api-rest-api-3-task-taskId-get) to obtain subsequent updates.
              *  *  non-transactional. Updating some entities may fail. Such information will available in the task result.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* and *Edit issues* [project permissions](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              * 303: Returned if the operation is successful.
@@ -19146,23 +19146,23 @@ export interface AtlassianV3 {
              * operationId: bulkDeleteIssueProperty
              * sum: Bulk delete issue property
              * doc: Deletes a property value from multiple issues. The issues to be updated can be specified by filter criteria.
-             * 
+             *
              * The criteria the filter used to identify eligible issues are:
-             * 
+             *
              *  *  `entityIds` Only issues from this list are eligible.
              *  *  `currentValue` Only issues with the property set to this value are eligible.
-             * 
+             *
              * If both criteria is specified, they are joined with the logical *AND*: only issues that satisfy both criteria are considered eligible.
-             * 
+             *
              * If no filter criteria are specified, all the issues visible to the user and where the user has the EDIT\_ISSUES permission for the issue are considered eligible.
-             * 
+             *
              * This operation is:
-             * 
+             *
              *  *  transactional, either the property is deleted from all eligible issues or, when errors occur, no properties are deleted.
              *  *  [asynchronous](#async). Follow the `location` link in the response to determine the status of the task and use [Get task](#api-rest-api-3-task-taskId-get) to obtain subsequent updates.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* [ project permission](https://confluence.atlassian.com/x/yodKLg) for each project containing issues.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              *  *  *Edit issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for each issue.
@@ -19176,33 +19176,33 @@ export interface AtlassianV3 {
              * operationId: bulkSetIssueProperty
              * sum: Bulk set issue property
              * doc: Sets a property value on multiple issues.
-             * 
+             *
              * The value set can be a constant or determined by a [Jira expression](https://developer.atlassian.com/cloud/jira/platform/jira-expressions/). Expressions must be computable with constant complexity when applied to a set of issues. Expressions must also comply with the [restrictions](https://developer.atlassian.com/cloud/jira/platform/jira-expressions/#restrictions) that apply to all Jira expressions.
-             * 
+             *
              * The issues to be updated can be specified by a filter.
-             * 
+             *
              * The filter identifies issues eligible for update using these criteria:
-             * 
+             *
              *  *  `entityIds` Only issues from this list are eligible.
              *  *  `currentValue` Only issues with the property set to this value are eligible.
              *  *  `hasProperty`:
-             *     
+             *
              *      *  If *true*, only issues with the property are eligible.
              *      *  If *false*, only issues without the property are eligible.
-             * 
+             *
              * If more than one criteria is specified, they are joined with the logical *AND*: only issues that satisfy all criteria are eligible.
-             * 
+             *
              * If an invalid combination of criteria is provided, an error is returned. For example, specifying a `currentValue` and `hasProperty` as *false* would not match any issues (because without the property the property cannot have a value).
-             * 
+             *
              * The filter is optional. Without the filter all the issues visible to the user and where the user has the EDIT\_ISSUES permission for the issue are considered eligible.
-             * 
+             *
              * This operation is:
-             * 
+             *
              *  *  transactional, either all eligible issues are updated or, when errors occur, none are updated.
              *  *  [asynchronous](#async). Follow the `location` link in the response to determine the status of the task and use [Get task](#api-rest-api-3-task-taskId-get) to obtain subsequent updates.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for each project containing issues.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              *  *  *Edit issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for each issue.
@@ -19220,23 +19220,23 @@ export interface AtlassianV3 {
            * operationId: unarchiveIssues
            * sum: Unarchive issue(s) by issue keys/ID
            * doc: Enables admins to unarchive up to 1000 issues in a single request using issue ID/key, returning details of the issue(s) unarchived in the process and the errors encountered, if any.
-           * 
+           *
            * **Note that:**
-           * 
+           *
            *  *  you can't unarchive subtasks directly, only through their parent issues
            *  *  you can only unarchive issues from software, service management, and business projects
-           * 
+           *
            * **[Permissions](#permissions) required:** Jira admin or site admin: [global permission](https://confluence.atlassian.com/x/x4dKLg)
-           * 
+           *
            * **License required:** Premium or Enterprise
-           * 
+           *
            * **Signed-in users only:** This API can't be accessed anonymously.
-           * 
-           *   
+           *
+           *
            *
            * 200: Returned if there is at least one valid issue to unarchive in the request. It will return the count of unarchived issues, which also includes the count of the subtasks unarchived, and it will show the detailed errors for those issues which are not unarchived.
            * 400: Returned if none of the issues in the request are eligible to be unarchived. Possible reasons:
-           * 
+           *
            *  *  the issues weren't found
            *  *  the issues are subtasks
            *  *  the issues belong to archived projects
@@ -19253,11 +19253,11 @@ export interface AtlassianV3 {
            * operationId: getIsWatchingIssueBulk
            * sum: Get is watching issue bulk
            * doc: Returns, for the user, details of the watched status of issues from a list. If an issue ID is invalid, the returned watched status is `false`.
-           * 
+           *
            * This operation requires the **Allow users to watch issues** option to be *ON*. This option is set in General configuration for Jira. See [Configuring Jira application options](https://confluence.atlassian.com/x/uYXKM) for details.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in
            *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
            * 200: Returned if the request is successful
@@ -19272,13 +19272,13 @@ export interface AtlassianV3 {
            * operationId: getIssue
            * sum: Get issue
            * doc: Returns the details for an issue.
-           * 
+           *
            * The issue is identified by its ID or key, however, if the identifier doesn't match an issue, a case-insensitive search and check for moved issues is performed. If a matching issue is found its details are returned, a 302 or other redirect is **not** returned. The issue key returned in the response is the key of the issue found.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
            *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
            * 200: Returned if the request is successful.
@@ -19291,13 +19291,13 @@ export interface AtlassianV3 {
            * operationId: deleteIssue
            * sum: Delete issue
            * doc: Deletes an issue.
-           * 
+           *
            * An issue cannot be deleted if it has one or more subtasks. To delete an issue with subtasks, set `deleteSubtasks`. This causes the issue's subtasks to be deleted with the issue.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Browse projects* and *Delete issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue.
            *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
            * 204: Returned if the request is successful.
@@ -19312,23 +19312,23 @@ export interface AtlassianV3 {
            * operationId: editIssue
            * sum: Edit issue
            * doc: Edits an issue. Issue properties may be updated as part of the edit. Please note that issue transition will be ignored as it is not supported yet.
-           * 
+           *
            * The edits to the issue's fields are defined using `update` and `fields`. The fields that can be edited are determined using [ Get edit issue metadata](#api-rest-api-3-issue-issueIdOrKey-editmeta-get).
-           * 
+           *
            * The parent field may be set by key or ID. For standard issue types, the parent may be removed by setting `update.parent.set.none` to *true*. Note that the `description`, `environment`, and any `textarea` type custom fields (multi-line text fields) take Atlassian Document Format content. Single line custom fields (`textfield`) accept a string and don't handle Atlassian Document Format content.
-           * 
+           *
            * Connect apps having an app user with *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), and Forge apps acting on behalf of users with *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), can override the screen security configuration using `overrideScreenSecurity` and `overrideEditableFlag`.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Browse projects* and *Edit issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
            *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
            * 200: Returned if the request is successful and the `returnIssue` parameter is `true`
            * 204: Returned if the request is successful.
            * 400: Returned if:
-           * 
+           *
            *  *  the request body is missing.
            *  *  the user does not have the necessary permission to edit one or more fields.
            *  *  the request includes one or more fields that are not found or are not associated with the issue's edit screen.
@@ -19351,21 +19351,21 @@ export interface AtlassianV3 {
              * operationId: assignIssue
              * sum: Assign issue
              * doc: Assigns an issue to a user. Use this operation when the calling user does not have the *Edit Issues* permission but has the *Assign issue* permission for the project that the issue is in.
-             * 
+             *
              * If `name` or `accountId` is set to:
-             * 
+             *
              *  *  `"-1"`, the issue is assigned to the default assignee for the project.
              *  *  `null`, the issue is set to unassigned.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse Projects* and *Assign Issues* [ project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              * 204: Returned if the request is successful.
              * 400: Returned if:
-             * 
+             *
              *  *  the user is not found.
              *  *  `name`, `key`, or `accountId` is missing.
              *  *  more than one of `name`, `key`, and `accountId` are provided.
@@ -19381,38 +19381,38 @@ export interface AtlassianV3 {
              * operationId: addAttachment
              * sum: Add attachment
              * doc: Adds one or more attachments to an issue. Attachments are posted as multipart/form-data ([RFC 1867](https://www.ietf.org/rfc/rfc1867.txt)).
-             * 
+             *
              * Note that:
-             * 
+             *
              *  *  The request must have a `X-Atlassian-Token: no-check` header, if not it is blocked. See [Special headers](#special-request-headers) for more information.
              *  *  The name of the multipart/form-data parameter that contains the attachments must be `file`.
-             * 
+             *
              * The following examples upload a file called *myfile.txt* to the issue *TEST-123*:
-             * 
+             *
              * #### curl ####
-             * 
+             *
              *     curl --location --request POST 'https://your-domain.atlassian.net/rest/api/3/issue/TEST-123/attachments'
              *      -u 'email@example.com:<api_token>'
              *      -H 'X-Atlassian-Token: no-check'
              *      --form 'file=@"myfile.txt"'
-             * 
+             *
              * #### Node.js ####
-             * 
+             *
              *     // This code sample uses the 'node-fetch' and 'form-data' libraries:
              *      // https://www.npmjs.com/package/node-fetch
              *      // https://www.npmjs.com/package/form-data
              *      const fetch = require('node-fetch');
              *      const FormData = require('form-data');
              *      const fs = require('fs');
-             *     
+             *
              *      const filePath = 'myfile.txt';
              *      const form = new FormData();
              *      const stats = fs.statSync(filePath);
              *      const fileSizeInBytes = stats.size;
              *      const fileStream = fs.createReadStream(filePath);
-             *     
+             *
              *      form.append('file', fileStream, {knownLength: fileSizeInBytes});
-             *     
+             *
              *      fetch('https://your-domain.atlassian.net/rest/api/3/issue/TEST-123/attachments', {
              *          method: 'POST',
              *          body: form,
@@ -19432,9 +19432,9 @@ export interface AtlassianV3 {
              *          })
              *          .then(text => console.log(text))
              *          .catch(err => console.error(err));
-             * 
+             *
              * #### Java ####
-             * 
+             *
              *     // This code sample uses the  'Unirest' library:
              *      // http://unirest.io/java.html
              *      HttpResponse response = Unirest.post("https://your-domain.atlassian.net/rest/api/2/issue/{issueIdOrKey}/attachments")
@@ -19443,26 +19443,26 @@ export interface AtlassianV3 {
              *              .header("X-Atlassian-Token", "no-check")
              *              .field("file", new File("myfile.txt"))
              *              .asJson();
-             *     
+             *
              *              System.out.println(response.getBody());
-             * 
+             *
              * #### Python ####
-             * 
+             *
              *     # This code sample uses the 'requests' library:
              *      # http://docs.python-requests.org
              *      import requests
              *      from requests.auth import HTTPBasicAuth
              *      import json
-             *     
+             *
              *      url = "https://your-domain.atlassian.net/rest/api/2/issue/{issueIdOrKey}/attachments"
-             *     
+             *
              *      auth = HTTPBasicAuth("email@example.com", "")
-             *     
+             *
              *      headers = {
              *         "Accept": "application/json",
              *         "X-Atlassian-Token": "no-check"
              *      }
-             *     
+             *
              *      response = requests.request(
              *         "POST",
              *         url,
@@ -19472,43 +19472,43 @@ export interface AtlassianV3 {
              *              "file": ("myfile.txt", open("myfile.txt","rb"), "application-type")
              *         }
              *      )
-             *     
+             *
              *      print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": ")))
-             * 
+             *
              * #### PHP ####
-             * 
+             *
              *     // This code sample uses the 'Unirest' library:
              *      // http://unirest.io/php.html
              *      Unirest\Request::auth('email@example.com', '');
-             *     
+             *
              *      $headers = array(
              *        'Accept' => 'application/json',
              *        'X-Atlassian-Token' => 'no-check'
              *      );
-             *     
+             *
              *      $parameters = array(
              *        'file' => File::add('myfile.txt')
              *      );
-             *     
+             *
              *      $response = Unirest\Request::post(
              *        'https://your-domain.atlassian.net/rest/api/2/issue/{issueIdOrKey}/attachments',
              *        $headers,
              *        $parameters
              *      );
-             *     
+             *
              *      var_dump($response)
-             * 
+             *
              * #### Forge ####
-             * 
+             *
              *     // This sample uses Atlassian Forge and the `form-data` library.
              *      // https://developer.atlassian.com/platform/forge/
              *      // https://www.npmjs.com/package/form-data
              *      import api from "@forge/api";
              *      import FormData from "form-data";
-             *     
+             *
              *      const form = new FormData();
              *      form.append('file', fileStream, {knownLength: fileSizeInBytes});
-             *     
+             *
              *      const response = await api.asApp().requestJira('/rest/api/2/issue/{issueIdOrKey}/attachments', {
              *          method: 'POST',
              *          body: form,
@@ -19517,30 +19517,30 @@ export interface AtlassianV3 {
              *              'X-Atlassian-Token': 'no-check'
              *          }
              *      });
-             *     
+             *
              *      console.log(`Response: ${response.status} ${response.statusText}`);
              *      console.log(await response.json());
-             * 
+             *
              * Tip: Use a client library. Many client libraries have classes for handling multipart POST operations. For example, in Java, the Apache HTTP Components library provides a [MultiPartEntity](http://hc.apache.org/httpcomponents-client-ga/httpmime/apidocs/org/apache/http/entity/mime/MultipartEntity.html) class for multipart POST operations.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
-             * **[Permissions](#permissions) required:** 
-             * 
+             *
+             * **[Permissions](#permissions) required:**
+             *
              *  *  *Browse Projects* and *Create attachments* [ project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              * 200: Returned if the request is successful.
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if any of the following is true:
-             * 
+             *
              *  *  the issue is not found.
              *  *  the user does not have permission to view the issue.
              * 413: Returned if any of the following is true:
-             * 
+             *
              *  *  the attachments exceed the maximum attachment size for issues.
              *  *  more than 60 files are requested to be uploaded.
              *  *  the per-issue limit for attachments has been breached.
-             * 
+             *
              * See [Configuring file attachments](https://confluence.atlassian.com/x/wIXKM) for details.
              */
             $post(): Promise<Array<Attachment>>;
@@ -19552,11 +19552,11 @@ export interface AtlassianV3 {
              * operationId: getChangeLogs
              * sum: Get changelogs
              * doc: Returns a [paginated](#pagination) list of all changelogs for an issue sorted by date, starting from the oldest.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              * 200: Returned if the request is successful.
@@ -19574,11 +19574,11 @@ export interface AtlassianV3 {
                * operationId: getChangeLogsByIds
                * sum: Get changelogs by IDs
                * doc: Returns changelogs for an issue specified by a list of changelog IDs.
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:**
-               * 
+               *
                *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
                *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                * 200: Returned if the request is successful.
@@ -19595,11 +19595,11 @@ export interface AtlassianV3 {
              * operationId: getComments
              * sum: Get comments
              * doc: Returns all comments for an issue.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** Comments are included in the response where the user has:
-             * 
+             *
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the comment.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              *  *  If the comment has visibility restrictions, belongs to the group or has the role visibility is role visibility is restricted to.
@@ -19614,11 +19614,11 @@ export interface AtlassianV3 {
              * operationId: addComment
              * sum: Add comment
              * doc: Adds a comment to an issue.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* and *Add comments* [ project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue containing the comment is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              * 201: Returned if the request is successful.
@@ -19626,7 +19626,7 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect.
              * 404: Returned if the issue is not found or the user does not have permission to view it.
              * 413: Returned if the per-issue limit has been breached for one of the following fields:
-             * 
+             *
              *  *  comments
              *  *  attachments
              */
@@ -19642,11 +19642,11 @@ export interface AtlassianV3 {
                * operationId: getComment
                * sum: Get comment
                * doc: Returns a comment.
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:**
-               * 
+               *
                *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the comment.
                *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                *  *  If the comment has visibility restrictions, the user belongs to the group or has the role visibility is restricted to.
@@ -19660,9 +19660,9 @@ export interface AtlassianV3 {
                * operationId: deleteComment
                * sum: Delete comment
                * doc: Deletes a comment.
-               * 
+               *
                * **[Permissions](#permissions) required:**
-               * 
+               *
                *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue containing the comment is in.
                *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                *  *  *Delete all comments*[ project permission](https://confluence.atlassian.com/x/yodKLg) to delete any comment or *Delete own comments* to delete comment created by the user,
@@ -19679,11 +19679,11 @@ export interface AtlassianV3 {
                * operationId: updateComment
                * sum: Update comment
                * doc: Updates a comment.
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:**
-               * 
+               *
                *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue containing the comment is in.
                *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                *  *  *Edit all comments*[ project permission](https://confluence.atlassian.com/x/yodKLg) to update any comment or *Edit own comments* to update comment created by the user.
@@ -19707,9 +19707,9 @@ export interface AtlassianV3 {
              * operationId: getEditIssueMeta
              * sum: Get edit issue metadata
              * doc: Returns the edit screen fields for an issue that are visible to and editable by the user. Use the information to populate the requests in [Edit issue](#api-rest-api-3-issue-issueIdOrKey-put).
-             * 
+             *
              * This endpoint will check for these conditions:
-             * 
+             *
              * 1.  Field is available on a field screen - through screen, screen scheme, issue type screen scheme, and issue type scheme configuration. `overrideScreenSecurity=true` skips this condition.
              * 2.  Field is visible in the [field configuration](https://support.atlassian.com/jira-cloud-administration/docs/change-a-field-configuration/). `overrideScreenSecurity=true` skips this condition.
              * 3.  Field is shown on the issue: each field has different conditions here. For example: Attachment field only shows if attachments are enabled. Assignee only shows if user has permissions to assign the issue.
@@ -19719,21 +19719,21 @@ export interface AtlassianV3 {
              * 7.  The current workflow step is editable. This is true by default, but [can be disabled by setting](https://support.atlassian.com/jira-cloud-administration/docs/use-workflow-properties/) the `jira.issue.editable` property to `false`. `overrideEditableFlag=true` skips this condition.
              * 8.  User has [Edit issues permission](https://support.atlassian.com/jira-cloud-administration/docs/permissions-for-company-managed-projects/).
              * 9.  Workflow permissions allow editing a field. This is true by default but [can be modified](https://support.atlassian.com/jira-cloud-administration/docs/use-workflow-properties/) using `jira.permission.*` workflow properties.
-             * 
+             *
              * Fields hidden using [Issue layout settings page](https://support.atlassian.com/jira-software-cloud/docs/configure-field-layout-in-the-issue-view/) remain editable.
-             * 
+             *
              * Connect apps having an app user with *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), and Forge apps acting on behalf of users with *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), can return additional details using:
-             * 
+             *
              *  *  `overrideScreenSecurity` When this flag is `true`, then this endpoint skips checking if fields are available through screens, and field configuration (conditions 1. and 2. from the list above).
              *  *  `overrideEditableFlag` When this flag is `true`, then this endpoint skips checking if workflow is present and if the current step is editable (conditions 6. and 7. from the list above).
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
-             * 
+             *
              * Note: For any fields to be editable the user must have the *Edit issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for the issue.
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -19753,19 +19753,19 @@ export interface AtlassianV3 {
              * operationId: notify
              * sum: Send notification for issue
              * doc: Creates an email notification for an issue and adds it to the mail queue.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              * 204: Returned if the email is queued for sending.
              * 400: Returned if:
-             * 
+             *
              *  *  the recipient is the same as the calling user.
              *  *  the recipient is invalid. For example, the recipient is set to the assignee, but the issue is unassigned.
              *  *  the request is invalid. For example, required fields are missing or have invalid values.
              * 403: Returned if:
-             * 
+             *
              *  *  outgoing emails are disabled.
              *  *  no SMTP server is configured.
              * 404: Returned if the issue is not found.
@@ -19779,11 +19779,11 @@ export interface AtlassianV3 {
              * operationId: getIssuePropertyKeys
              * sum: Get issue property keys
              * doc: Returns the URLs and keys of an issue's properties.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** Property details are only returned where the user has:
-             * 
+             *
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              * 200: Returned if the request is successful.
@@ -19801,11 +19801,11 @@ export interface AtlassianV3 {
                * operationId: getIssueProperty
                * sum: Get issue property
                * doc: Returns the key and value of an issue's property.
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:**
-               * 
+               *
                *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue.
                *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                * 200: Returned if the request is successful.
@@ -19818,11 +19818,11 @@ export interface AtlassianV3 {
                * operationId: deleteIssueProperty
                * sum: Delete issue property
                * doc: Deletes an issue's property.
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:**
-               * 
+               *
                *  *  *Browse projects* and *Edit issues* [project permissions](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue.
                *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                * 204: Returned if the request is successful.
@@ -19835,13 +19835,13 @@ export interface AtlassianV3 {
                * operationId: setIssueProperty
                * sum: Set issue property
                * doc: Sets the value of an issue's property. Use this resource to store custom data against an issue.
-               * 
+               *
                * The value of the request body must be a [valid](http://tools.ietf.org/html/rfc4627), non-empty JSON blob. The maximum length is 32768 characters.
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:**
-               * 
+               *
                *  *  *Browse projects* and *Edit issues* [project permissions](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue.
                *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                * 200: Returned if the issue property is updated.
@@ -19865,13 +19865,13 @@ export interface AtlassianV3 {
              * operationId: getRemoteIssueLinks
              * sum: Get remote issue links
              * doc: Returns the remote issue links for an issue. When a remote issue link global ID is provided the record with that global ID is returned, otherwise all remote issue links are returned. Where a global ID includes reserved URL characters these must be escaped in the request. For example, pass `system=http://www.mycompany.com/support&id=1` as `system%3Dhttp%3A%2F%2Fwww.mycompany.com%2Fsupport%26id%3D1`.
-             * 
+             *
              * This operation requires [issue linking to be active](https://confluence.atlassian.com/x/yoXKM).
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              * 200: Returned if the request is successful.
@@ -19887,13 +19887,13 @@ export interface AtlassianV3 {
              * operationId: deleteRemoteIssueLinkByGlobalId
              * sum: Delete remote issue link by global ID
              * doc: Deletes the remote issue link from the issue using the link's global ID. Where the global ID includes reserved URL characters these must be escaped in the request. For example, pass `system=http://www.mycompany.com/support&id=1` as `system%3Dhttp%3A%2F%2Fwww.mycompany.com%2Fsupport%26id%3D1`.
-             * 
+             *
              * This operation requires [issue linking to be active](https://confluence.atlassian.com/x/yoXKM).
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* and *Link issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is implemented, issue-level security permission to view the issue.
              * 204: Returned if the request is successful.
@@ -19908,15 +19908,15 @@ export interface AtlassianV3 {
              * operationId: createOrUpdateRemoteIssueLink
              * sum: Create or update remote issue link
              * doc: Creates or updates a remote issue link for an issue.
-             * 
+             *
              * If a `globalId` is provided and a remote issue link with that global ID is found it is updated. Any fields without values in the request are set to null. Otherwise, the remote issue link is created.
-             * 
+             *
              * This operation requires [issue linking to be active](https://confluence.atlassian.com/x/yoXKM).
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* and *Link issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              * 200: Returned if the remote issue link is updated.
@@ -19938,13 +19938,13 @@ export interface AtlassianV3 {
                * operationId: getRemoteIssueLinkById
                * sum: Get remote issue link by ID
                * doc: Returns a remote issue link for an issue.
-               * 
+               *
                * This operation requires [issue linking to be active](https://confluence.atlassian.com/x/yoXKM).
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:**
-               * 
+               *
                *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
                *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                * 200: Returned if the request is successful.
@@ -19959,13 +19959,13 @@ export interface AtlassianV3 {
                * operationId: deleteRemoteIssueLinkById
                * sum: Delete remote issue link by ID
                * doc: Deletes a remote issue link from an issue.
-               * 
+               *
                * This operation requires [issue linking to be active](https://confluence.atlassian.com/x/yoXKM).
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:**
-               * 
+               *
                *  *  *Browse projects*, *Edit issues*, and *Link issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
                *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                * 204: Returned if the request is successful.
@@ -19980,20 +19980,20 @@ export interface AtlassianV3 {
                * operationId: updateRemoteIssueLink
                * sum: Update remote issue link by ID
                * doc: Updates a remote issue link for an issue.
-               * 
+               *
                * Note: Fields without values in the request are set to null.
-               * 
+               *
                * This operation requires [issue linking to be active](https://confluence.atlassian.com/x/yoXKM).
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:**
-               * 
+               *
                *  *  *Browse projects* and *Link issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
                *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                * 204: Returned if the request is successful.
                * 400: Returned if:
-               * 
+               *
                *  *  the link ID is invalid.
                *  *  the remote issue link does not belong to the issue.
                *  *  the request body is invalid.
@@ -20015,16 +20015,16 @@ export interface AtlassianV3 {
              * operationId: getTransitions
              * sum: Get transitions
              * doc: Returns either all transitions or a transition that can be performed by the user on an issue, based on the issue's status.
-             * 
+             *
              * Note, if a request is made for a transition that does not exist or cannot be performed on the issue, given its status, the response will return any empty transitions list.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required: A list or transition is returned only when the user has:**
-             * 
+             *
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
-             * 
+             *
              * However, if the user does not have the *Transition issues* [ project permission](https://confluence.atlassian.com/x/yodKLg) the response will not list any transitions.
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -20036,18 +20036,18 @@ export interface AtlassianV3 {
              * operationId: doTransition
              * sum: Transition issue
              * doc: Performs an issue transition and, if the transition has a screen, updates the fields from the transition screen.
-             * 
+             *
              * sortByCategory To update the fields on the transition screen, specify the fields in the `fields` or `update` parameters in the request body. Get details about the fields using [ Get transitions](#api-rest-api-3-issue-issueIdOrKey-transitions-get) with the `transitions.fields` expand.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* and *Transition issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              * 204: Returned if the request is successful.
              * 400: Returned if:
-             * 
+             *
              *  *  no transition is specified.
              *  *  the user does not have permission to transition the issue.
              *  *  a field that isn't included on the transition screen is defined in `fields` or `update`.
@@ -20057,7 +20057,7 @@ export interface AtlassianV3 {
              * 404: Returned if the issue is not found or the user does not have permission to view it.
              * 409: Returned if the issue could not be updated due to a conflicting update. (refer to the [changelog](https://developer.atlassian.com/changelog/#CHANGE-1364) *for more details.*
              * 413: Returned if a per-issue limit has been breached for one of the following fields:
-             * 
+             *
              *  *  comments
              *  *  worklogs
              *  *  attachments
@@ -20078,21 +20078,21 @@ export interface AtlassianV3 {
              * operationId: getVotes
              * sum: Get votes
              * doc: Returns details about the votes on an issue.
-             * 
+             *
              * This operation requires the **Allow users to vote on issues** option to be *ON*. This option is set in General configuration for Jira. See [Configuring Jira application options](https://confluence.atlassian.com/x/uYXKM) for details.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is ini
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
-             * 
+             *
              * Note that users with the necessary permissions for this operation but without the *View voters and watchers* project permissions are not returned details in the `voters` field.
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if:
-             * 
+             *
              *  *  voting is disabled.
              *  *  the user does not have permission to view the issue.
              *  *  the issue is not found.
@@ -20103,17 +20103,17 @@ export interface AtlassianV3 {
              * operationId: removeVote
              * sum: Delete vote
              * doc: Deletes a user's vote from an issue. This is the equivalent of the user clicking *Unvote* on an issue in Jira.
-             * 
+             *
              * This operation requires the **Allow users to vote on issues** option to be *ON*. This option is set in General configuration for Jira. See [Configuring Jira application options](https://confluence.atlassian.com/x/uYXKM) for details.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              * 204: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if:
-             * 
+             *
              *  *  voting is disabled.
              *  *  the user has not voted on the issue.
              *  *  the issue is not found.
@@ -20124,18 +20124,18 @@ export interface AtlassianV3 {
              * operationId: addVote
              * sum: Add vote
              * doc: Adds the user's vote to an issue. This is the equivalent of the user clicking *Vote* on an issue in Jira.
-             * 
+             *
              * This operation requires the **Allow users to vote on issues** option to be *ON*. This option is set in General configuration for Jira. See [Configuring Jira application options](https://confluence.atlassian.com/x/uYXKM) for details.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              * 204: Returned if the request is successful.
              * 400: Returned if the request is invalid.
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if:
-             * 
+             *
              *  *  voting is disabled.
              *  *  the issue is not found.
              */
@@ -20152,13 +20152,13 @@ export interface AtlassianV3 {
              * operationId: getIssueWatchers
              * sum: Get issue watchers
              * doc: Returns the watchers for an issue.
-             * 
+             *
              * This operation requires the **Allow users to watch issues** option to be *ON*. This option is set in General configuration for Jira. See [Configuring Jira application options](https://confluence.atlassian.com/x/uYXKM) for details.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is ini
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              *  *  To see details of users on the watchlist other than themselves, *View voters and watchers* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
@@ -20172,11 +20172,11 @@ export interface AtlassianV3 {
              * operationId: removeWatcher
              * sum: Delete watcher
              * doc: Deletes a user as a watcher of an issue.
-             * 
+             *
              * This operation requires the **Allow users to watch issues** option to be *ON*. This option is set in General configuration for Jira. See [Configuring Jira application options](https://confluence.atlassian.com/x/uYXKM) for details.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              *  *  To remove users other than themselves from the watchlist, *Manage watcher list* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
@@ -20192,11 +20192,11 @@ export interface AtlassianV3 {
              * operationId: addWatcher
              * sum: Add watcher
              * doc: Adds a user as a watcher of an issue by passing the account ID of the user. For example, `"5b10ac8d82e05b22cc7d4ef5"`. If no user is specified the calling user is added.
-             * 
+             *
              * This operation requires the **Allow users to watch issues** option to be *ON*. This option is set in General configuration for Jira. See [Configuring Jira application options](https://confluence.atlassian.com/x/uYXKM) for details.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              *  *  To add users other than themselves to the watchlist, *Manage watcher list* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
@@ -20219,20 +20219,20 @@ export interface AtlassianV3 {
              * operationId: getIssueWorklog
              * sum: Get issue worklogs
              * doc: Returns worklogs for an issue (ordered by created time), starting from the oldest worklog or from the worklog started on or after a date and time.
-             * 
+             *
              * Time tracking must be enabled in Jira, otherwise this operation returns an error. For more information, see [Configuring time tracking](https://confluence.atlassian.com/x/qoXKM).
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** Workloads are only returned where the user has:
-             * 
+             *
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              *  *  If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to.
              * 200: Returned if the request is successful
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if:
-             * 
+             *
              *  *  the issue is not found or the user does not have permission to view the issue.
              *  *  `startAt` or `maxResults` has non-numeric values.
              *  *  time tracking is disabled.
@@ -20243,18 +20243,18 @@ export interface AtlassianV3 {
              * operationId: addWorklog
              * sum: Add worklog
              * doc: Adds a worklog to an issue.
-             * 
+             *
              * Time tracking must be enabled in Jira, otherwise this operation returns an error. For more information, see [Configuring time tracking](https://confluence.atlassian.com/x/qoXKM).
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Browse projects* and *Work on issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
              *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
              * 201: Returned if the request is successful.
              * 400: Returned if:
-             * 
+             *
              *  *  `adjustEstimate` is set to `new` but `newEstimate` is not provided or is invalid.
              *  *  `adjustEstimate` is set to `manual` but `reduceBy` is not provided or is invalid.
              *  *  the user does not have permission to add the worklog.
@@ -20262,7 +20262,7 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect.
              * 404: Returned if the issue is not found or the user does not have permission to view it.
              * 413: Returned if the per-issue limit has been breached for one of the following fields:
-             * 
+             *
              *  *  worklogs
              *  *  attachments
              */
@@ -20278,24 +20278,24 @@ export interface AtlassianV3 {
                * operationId: getWorklog
                * sum: Get worklog
                * doc: Returns a worklog.
-               * 
+               *
                * Time tracking must be enabled in Jira, otherwise this operation returns an error. For more information, see [Configuring time tracking](https://confluence.atlassian.com/x/qoXKM).
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:**
-               * 
+               *
                *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
                *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                *  *  If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to.
                * 200: Returned if the request is successful.
                * 401: Returned if the authentication credentials are incorrect.
                * 404: Returned if:
-               * 
+               *
                *  *  the issue is not found or the user does not have permission to view it.
                *  *  the worklog is not found or the user does not have permission to view it.
                *  *  time tracking is disabled.
-               * 
+               *
                * .
                */
               $get(args?: {expand?: string}): Promise<Worklog>;
@@ -20304,26 +20304,26 @@ export interface AtlassianV3 {
                * operationId: deleteWorklog
                * sum: Delete worklog
                * doc: Deletes a worklog from an issue.
-               * 
+               *
                * Time tracking must be enabled in Jira, otherwise this operation returns an error. For more information, see [Configuring time tracking](https://confluence.atlassian.com/x/qoXKM).
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:**
-               * 
+               *
                *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
                *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                *  *  *Delete all worklogs*[ project permission](https://confluence.atlassian.com/x/yodKLg) to delete any worklog or *Delete own worklogs* to delete worklogs created by the user,
                *  *  If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to.
                * 204: Returned if the request is successful.
                * 400: Returned if:
-               * 
+               *
                *  *  `adjustEstimate` is set to `new` but `newEstimate` is not provided or is invalid.
                *  *  `adjustEstimate` is set to `manual` but `reduceBy` is not provided or is invalid.
                *  *  the user does not have permission to delete the worklog.
                * 401: Returned if the authentication credentials are incorrect.
                * 404: Returned if:
-               * 
+               *
                *  *  the issue is not found or user does not have permission to view the issue.
                *  *  the worklog is not found or the user does not have permission to view it.
                *  *  time tracking is disabled.
@@ -20334,26 +20334,26 @@ export interface AtlassianV3 {
                * operationId: updateWorklog
                * sum: Update worklog
                * doc: Updates a worklog.
-               * 
+               *
                * Time tracking must be enabled in Jira, otherwise this operation returns an error. For more information, see [Configuring time tracking](https://confluence.atlassian.com/x/qoXKM).
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:**
-               * 
+               *
                *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
                *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                *  *  *Edit all worklogs*[ project permission](https://confluence.atlassian.com/x/yodKLg) to update any worklog or *Edit own worklogs* to update worklogs created by the user.
                *  *  If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to.
                * 200: Returned if the request is successful
                * 400: Returned if:
-               * 
+               *
                *  *  `adjustEstimate` is set to `new` but `newEstimate` is not provided or is invalid.
                *  *  the user does not have permission to update the worklog.
                *  *  the request JSON is malformed.
                * 401: Returned if the authentication credentials are incorrect.
                * 404: Returned if:
-               * 
+               *
                *  *  the issue is not found or user does not have permission to view the issue.
                *  *  the worklog is not found or the user does not have permission to view it.
                *  *  time tracking is disabled.
@@ -20373,11 +20373,11 @@ export interface AtlassianV3 {
                  * operationId: getWorklogPropertyKeys
                  * sum: Get worklog property keys
                  * doc: Returns the keys of all properties for a worklog.
-                 * 
+                 *
                  * This operation can be accessed anonymously.
-                 * 
+                 *
                  * **[Permissions](#permissions) required:**
-                 * 
+                 *
                  *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
                  *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                  *  *  If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to.
@@ -20385,7 +20385,7 @@ export interface AtlassianV3 {
                  * 400: Returned if the worklog ID is invalid.
                  * 401: Returned if the authentication credentials are incorrect or missing.
                  * 404: Returned if:
-                 * 
+                 *
                  *  *  the issue or worklog is not found.
                  *  *  the user does not have permission to view the issue or worklog.
                  */
@@ -20401,11 +20401,11 @@ export interface AtlassianV3 {
                    * operationId: getWorklogProperty
                    * sum: Get worklog property
                    * doc: Returns the value of a worklog property.
-                   * 
+                   *
                    * This operation can be accessed anonymously.
-                   * 
+                   *
                    * **[Permissions](#permissions) required:**
-                   * 
+                   *
                    *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
                    *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                    *  *  If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to.
@@ -20413,7 +20413,7 @@ export interface AtlassianV3 {
                    * 400: Returned if the worklog ID is invalid.
                    * 401: Returned if the authentication credentials are incorrect or missing.
                    * 404: Returned if:
-                   * 
+                   *
                    *  *  the issue, worklog, or property is not found.
                    *  *  the user does not have permission to view the issue or worklog.
                    */
@@ -20423,11 +20423,11 @@ export interface AtlassianV3 {
                    * operationId: deleteWorklogProperty
                    * sum: Delete worklog property
                    * doc: Deletes a worklog property.
-                   * 
+                   *
                    * This operation can be accessed anonymously.
-                   * 
+                   *
                    * **[Permissions](#permissions) required:**
-                   * 
+                   *
                    *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
                    *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                    *  *  If the worklog has visibility restrictions, belongs to the group or has the role visibility is restricted to.
@@ -20436,7 +20436,7 @@ export interface AtlassianV3 {
                    * 401: Returned if the authentication credentials are incorrect or missing.
                    * 403: Returned if the user does not have permission to edit the worklog.
                    * 404: Returned if:
-                   * 
+                   *
                    *  *  the issue, worklog, or property is not found.
                    *  *  the user does not have permission to view the issue or worklog.
                    */
@@ -20446,13 +20446,13 @@ export interface AtlassianV3 {
                    * operationId: setWorklogProperty
                    * sum: Set worklog property
                    * doc: Sets the value of a worklog property. Use this operation to store custom data against the worklog.
-                   * 
+                   *
                    * The value of the request body must be a [valid](http://tools.ietf.org/html/rfc4627), non-empty JSON blob. The maximum length is 32768 characters.
-                   * 
+                   *
                    * This operation can be accessed anonymously.
-                   * 
+                   *
                    * **[Permissions](#permissions) required:**
-                   * 
+                   *
                    *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
                    *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
                    *  *  *Edit all worklogs*[ project permission](https://confluence.atlassian.com/x/yodKLg) to update any worklog or *Edit own worklogs* to update worklogs created by the user.
@@ -20463,7 +20463,7 @@ export interface AtlassianV3 {
                    * 401: Returned if the authentication credentials are incorrect or missing.
                    * 403: Returned if the user does not have permission to edit the worklog.
                    * 404: Returned if:
-                   * 
+                   *
                    *  *  the issue or worklog is not found.
                    *  *  the user does not have permission to view the issue or worklog.
                    */
@@ -20485,15 +20485,15 @@ export interface AtlassianV3 {
          * operationId: linkIssues
          * sum: Create issue link
          * doc: Creates a link between two issues. Use this operation to indicate a relationship between two issues and optionally add a comment to the from (outward) issue. To use this resource the site must have [Issue Linking](https://confluence.atlassian.com/x/yoXKM) enabled.
-         * 
+         *
          * This resource returns nothing on the creation of an issue link. To obtain the ID of the issue link, use `https://your-domain.atlassian.net/rest/api/3/issue/[linked issue key]?fields=issuelinks`.
-         * 
+         *
          * If the link request duplicates a link, the response indicates that the issue link was created. If the request included a comment, the comment is added.
-         * 
+         *
          * This operation can be accessed anonymously.
-         * 
+         *
          * **[Permissions](#permissions) required:**
-         * 
+         *
          *  *  *Browse project* [project permission](https://confluence.atlassian.com/x/yodKLg) for all the projects containing the issues to be linked,
          *  *  *Link issues* [project permission](https://confluence.atlassian.com/x/yodKLg) on the project containing the from (outward) issue,
          *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
@@ -20502,7 +20502,7 @@ export interface AtlassianV3 {
          * 400: Returned if the comment is not created. The response contains an error message indicating why the comment wasn't created. The issue link is also not created.
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 404: Returned if:
-         * 
+         *
          *  *  issue linking is disabled.
          *  *  the user cannot view one or both of the issues. For example, the user doesn't have *Browse project* project permission for a project containing one of the issues.
          *  *  the user does not have *link issues* project permission.
@@ -20518,18 +20518,18 @@ export interface AtlassianV3 {
            * operationId: getIssueLink
            * sum: Get issue link
            * doc: Returns an issue link.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Browse project* [project permission](https://confluence.atlassian.com/x/yodKLg) for all the projects containing the linked issues.
            *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, permission to view both of the issues.
            * 200: Returned if the request is successful.
            * 400: Returned if the issue link ID is invalid.
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if:
-           * 
+           *
            *  *  issue linking is disabled.
            *  *  the issue link is not found.
            *  *  the user doesn't have the required permissions.
@@ -20540,11 +20540,11 @@ export interface AtlassianV3 {
            * operationId: deleteIssueLink
            * sum: Delete issue link
            * doc: Deletes an issue link.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  Browse project [project permission](https://confluence.atlassian.com/x/yodKLg) for all the projects containing the issues in the link.
            *  *  *Link issues* [project permission](https://confluence.atlassian.com/x/yodKLg) for at least one of the projects containing issues in the link.
            *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, permission to view both of the issues.
@@ -20553,7 +20553,7 @@ export interface AtlassianV3 {
            * 400: Returned if the issue link ID is invalid.
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if:
-           * 
+           *
            *  *  issue linking is disabled.
            *  *  the issue link is not found.
            *  *  the user doesn't have the required permissions.
@@ -20572,11 +20572,11 @@ export interface AtlassianV3 {
          * operationId: getIssueLinkTypes
          * sum: Get issue link types
          * doc: Returns a list of all issue link types.
-         * 
+         *
          * To use this operation, the site must have [issue linking](https://confluence.atlassian.com/x/yoXKM) enabled.
-         * 
+         *
          * This operation can be accessed anonymously.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for a project in the site.
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -20588,15 +20588,15 @@ export interface AtlassianV3 {
          * operationId: createIssueLinkType
          * sum: Create issue link type
          * doc: Creates an issue link type. Use this operation to create descriptions of the reasons why issues are linked. The issue link type consists of a name and descriptions for a link's inward and outward relationships.
-         * 
+         *
          * To use this operation, the site must have [issue linking](https://confluence.atlassian.com/x/yoXKM) enabled.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the request is successful.
          * 400: Returned if the request is invalid.
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 404: Returned if:
-         * 
+         *
          *  *  issue linking is disabled.
          *  *  the issue link type name is in use.
          *  *  the user does not have the required permissions.
@@ -20613,17 +20613,17 @@ export interface AtlassianV3 {
            * operationId: getIssueLinkType
            * sum: Get issue link type
            * doc: Returns an issue link type.
-           * 
+           *
            * To use this operation, the site must have [issue linking](https://confluence.atlassian.com/x/yoXKM) enabled.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for a project in the site.
            * 200: Returned if the request is successful.
            * 400: Returned if the issue link type ID is invalid.
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if:
-           * 
+           *
            *  *  issue linking is disabled.
            *  *  the issue link type is not found.
            *  *  the user does not have the required permissions.
@@ -20634,15 +20634,15 @@ export interface AtlassianV3 {
            * operationId: deleteIssueLinkType
            * sum: Delete issue link type
            * doc: Deletes an issue link type.
-           * 
+           *
            * To use this operation, the site must have [issue linking](https://confluence.atlassian.com/x/yoXKM) enabled.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the issue link type ID is invalid.
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if:
-           * 
+           *
            *  *  issue linking is disabled.
            *  *  the issue link type is not found.
            *  *  the user does not have the required permissions.
@@ -20653,15 +20653,15 @@ export interface AtlassianV3 {
            * operationId: updateIssueLinkType
            * sum: Update issue link type
            * doc: Updates an issue link type.
-           * 
+           *
            * To use this operation, the site must have [issue linking](https://confluence.atlassian.com/x/yoXKM) enabled.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the issue link type ID or the request body are invalid.
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if:
-           * 
+           *
            *  *  issue linking is disabled.
            *  *  the issue link type is not found.
            *  *  the user does not have the required permissions.
@@ -20684,22 +20684,22 @@ export interface AtlassianV3 {
              * operationId: exportArchivedIssues
              * sum: Export archived issue(s)
              * doc: Enables admins to retrieve details of all archived issues. Upon a successful request, the admin who submitted it will receive an email with a link to download a CSV file with the issue details.
-             * 
+             *
              * Note that this API only exports the values of system fields and archival-specific fields (`ArchivedBy` and `ArchivedDate`). Custom fields aren't supported.
-             * 
+             *
              * **[Permissions](#permissions) required:** Jira admin or site admin: [global permission](https://confluence.atlassian.com/x/x4dKLg)
-             * 
+             *
              * **License required:** Premium or Enterprise
-             * 
+             *
              * **Signed-in users only:** This API can't be accessed anonymously.
-             * 
+             *
              * **Rate limiting:** Only a single request can be active at any given time.
-             * 
-             *   
+             *
+             *
              *
              * 202: Returns the details of your export task. You can use the [get task](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-tasks/#api-rest-api-3-task-taskid-get) API to view the progress of your request.
              * 400: Returned when:
-             * 
+             *
              *  *  The request is invalid, or the filters provided are incorrect
              *  *  You requested too many issues for export. The limit is one million issues per request
              * 401: Returned if no issues were unarchived because the provided authentication credentials are either missing or invalid.
@@ -20717,7 +20717,7 @@ export interface AtlassianV3 {
          * operationId: getIssueSecuritySchemes
          * sum: Get issue security schemes
          * doc: Returns all [issue security schemes](https://confluence.atlassian.com/x/J4lKLg).
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect.
@@ -20729,7 +20729,7 @@ export interface AtlassianV3 {
          * operationId: createIssueSecurityScheme
          * sum: Create issue security scheme
          * doc: Creates a security scheme with security scheme levels and levels' members. You can create up to 100 security scheme levels and security scheme levels' members per request.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the request is successful.
          * 400: Returned if the request is invalid.
@@ -20748,11 +20748,11 @@ export interface AtlassianV3 {
            * operationId: getSecurityLevels
            * sum: Get issue security levels
            * doc: Returns a [paginated](#pagination) list of issue security levels.
-           * 
+           *
            * Only issue security levels in the context of classic projects are returned.
-           * 
+           *
            * Filtering using IDs is inclusive: if you specify both security scheme IDs and level IDs, the result will include both specified issue security levels and all issue security levels from the specified schemes.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is invalid.
@@ -20771,7 +20771,7 @@ export interface AtlassianV3 {
              * operationId: setDefaultLevels
              * sum: Set default issue security levels
              * doc: Sets default issue security levels for schemes.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 204: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -20788,11 +20788,11 @@ export interface AtlassianV3 {
              * operationId: getSecurityLevelMembers
              * sum: Get issue security level members
              * doc: Returns a [paginated](#pagination) list of issue security level members.
-             * 
+             *
              * Only issue security level members in the context of classic projects are returned.
-             * 
+             *
              * Filtering using parameters is inclusive: if you specify both security scheme IDs and level IDs, the result will include all issue security level members from the specified schemes and levels.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -20824,9 +20824,9 @@ export interface AtlassianV3 {
            * operationId: associateSchemesToProjects
            * sum: Associate security scheme to project
            * doc: Associates an issue security scheme with a project and remaps security levels of issues to the new levels, if provided.
-           * 
+           *
            * This operation is [asynchronous](#async). Follow the `location` link in the response to determine the status of the task and use [Get task](#api-rest-api-3-task-taskId-get) to obtain subsequent updates.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 303: Returned if the request is successful.
            * 400: Returned if the request is invalid.
@@ -20847,11 +20847,11 @@ export interface AtlassianV3 {
            * Method: get /rest/api/3/issuesecurityschemes/search
            * operationId: searchSecuritySchemes
            * sum: Search issue security schemes
-           * doc: Returns a [paginated](#pagination) list of issue security schemes.  
+           * doc: Returns a [paginated](#pagination) list of issue security schemes.
            * If you specify the project ID parameter, the result will contain issue security schemes and related project IDs you filter by. Use \{@link IssueSecuritySchemeResource\#searchProjectsUsingSecuritySchemes(String, String, Set, Set)\} to obtain all projects related to scheme.
-           * 
+           *
            * Only issue security schemes in the context of classic projects are returned.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is invalid.
@@ -20871,9 +20871,9 @@ export interface AtlassianV3 {
            * operationId: getIssueSecurityScheme
            * sum: Get issue security scheme
            * doc: Returns an issue security scheme along with its security levels.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            *  *  *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for a project that uses the requested issue security scheme.
            * 200: Returned if the request is successful.
@@ -20886,7 +20886,7 @@ export interface AtlassianV3 {
            * operationId: updateIssueSecurityScheme
            * sum: Update issue security scheme
            * doc: Updates the issue security scheme.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request is invalid.
@@ -20909,9 +20909,9 @@ export interface AtlassianV3 {
              * operationId: getIssueSecurityLevelMembers
              * sum: Get issue security level members by issue security scheme
              * doc: Returns issue security level members.
-             * 
+             *
              * Only issue security level members in context of classic projects are returned.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the request is not valid.
@@ -20933,7 +20933,7 @@ export interface AtlassianV3 {
            * operationId: deleteSecurityScheme
            * sum: Delete issue security scheme
            * doc: Deletes an issue security scheme.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request is invalid.
@@ -20949,7 +20949,7 @@ export interface AtlassianV3 {
              * operationId: addSecurityLevel
              * sum: Add issue security levels
              * doc: Adds levels and levels' members to the issue security scheme. You can add up to 100 levels per request.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 204: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -20965,9 +20965,9 @@ export interface AtlassianV3 {
                * operationId: removeLevel
                * sum: Remove issue security level
                * doc: Deletes an issue security level.
-               * 
+               *
                * This operation is [asynchronous](#async). Follow the `location` link in the response to determine the status of the task and use [Get task](#api-rest-api-3-task-taskId-get) to obtain subsequent updates.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 303: Returned if the request is successful.
                * 400: Returned if the request isn't valid.
@@ -20982,7 +20982,7 @@ export interface AtlassianV3 {
                * operationId: updateSecurityLevel
                * sum: Update issue security level
                * doc: Updates the issue security level.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 204: Returned if the request is successful.
                * 400: Returned if the request isn't valid.
@@ -20998,7 +20998,7 @@ export interface AtlassianV3 {
                  * operationId: addSecurityLevelMembers
                  * sum: Add issue security level members
                  * doc: Adds members to the issue security level. You can add up to 100 members per request.
-                 * 
+                 *
                  * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                  * 204: Returned if the request is successful.
                  * 400: Returned if the request is invalid.
@@ -21014,7 +21014,7 @@ export interface AtlassianV3 {
                    * operationId: removeMemberFromSecurityLevel
                    * sum: Remove member from issue security level
                    * doc: Removes an issue security level member from an issue security scheme.
-                   * 
+                   *
                    * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                    * 204: Returned if the request is successful.
                    * 400: Returned if the request is invalid.
@@ -21036,11 +21036,11 @@ export interface AtlassianV3 {
          * operationId: getIssueAllTypes
          * sum: Get all issue types for user
          * doc: Returns all issue types.
-         * 
+         *
          * This operation can be accessed anonymously.
-         * 
+         *
          * **[Permissions](#permissions) required:** Issue types are only returned as follows:
-         * 
+         *
          *  *  if the user has the *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), all issue types are returned.
          *  *  if the user has the *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for one or more projects, the issue types associated with the projects the user has permission to browse are returned.
          * 200: Returned if the request is successful.
@@ -21052,11 +21052,11 @@ export interface AtlassianV3 {
          * operationId: createIssueType
          * sum: Create issue type
          * doc: Creates an issue type and adds it to the default issue type scheme.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the request is successful.
          * 400: Returned if the request is invalid because:
-         * 
+         *
          *  *  no content is sent.
          *  *  the issue type name exceeds 60 characters.
          *  *  a subtask issue type is requested on an instance where subtasks are disabled.
@@ -21076,15 +21076,15 @@ export interface AtlassianV3 {
            * operationId: getIssueTypesForProject
            * sum: Get issue types for project
            * doc: Returns issue types for a project.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) in the relevant project or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is not valid.
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if:
-           * 
+           *
            *  *  the project is not found.
            *  *  the user does not have the necessary permission.
            */
@@ -21101,15 +21101,15 @@ export interface AtlassianV3 {
            * operationId: getIssueType
            * sum: Get issue type
            * doc: Returns an issue type.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) in a project the issue type is associated with or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the issue type ID is invalid.
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if:
-           * 
+           *
            *  *  the issue type is not found.
            *  *  the user does not have the required permissions.
            */
@@ -21119,18 +21119,18 @@ export interface AtlassianV3 {
            * operationId: deleteIssueType
            * sum: Delete issue type
            * doc: Deletes the issue type. If the issue type is in use, all uses are updated with the alternative issue type (`alternativeIssueTypeId`). A list of alternative issue types are obtained from the [Get alternative issue types](#api-rest-api-3-issuetype-id-alternatives-get) resource.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if any issues cannot be updated with the alternative issue type.
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the necessary permission.
            * 404: Returned if:
-           * 
+           *
            *  *  the issue type is in use and an alternative issue type is not specified.
            *  *  the issue type or alternative issue type is not found.
            * 409: Returned if the issue type is in use and:
-           * 
+           *
            *  *  also specified as the alternative issue type.
            *  *  is a *standard* issue type and the alternative issue type is a *subtask*.
            */
@@ -21140,11 +21140,11 @@ export interface AtlassianV3 {
            * operationId: updateIssueType
            * sum: Update issue type
            * doc: Updates the issue type.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is invalid because:
-           * 
+           *
            *  *  no content is sent.
            *  *  the issue type name exceeds 60 characters.
            *  *  the avatar is not associated with this issue type.
@@ -21165,14 +21165,14 @@ export interface AtlassianV3 {
              * operationId: getAlternativeIssueTypes
              * sum: Get alternative issue types
              * doc: Returns a list of issue types that can be used to replace the issue type. The alternative issue types are those assigned to the same workflow scheme, field configuration scheme, and screen scheme.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** None.
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if:
-             * 
+             *
              *  *  the issue type is not found.
              *  *  the user does not have the required permissions.
              */
@@ -21189,25 +21189,25 @@ export interface AtlassianV3 {
              * operationId: createIssueTypeAvatar
              * sum: Load issue type avatar
              * doc: Loads an avatar for the issue type.
-             * 
+             *
              * Specify the avatar's local file location in the body of the request. Also, include the following headers:
-             * 
+             *
              *  *  `X-Atlassian-Token: no-check` To prevent XSRF protection blocking the request, for more information see [Special Headers](#special-request-headers).
              *  *  `Content-Type: image/image type` Valid image types are JPEG, GIF, or PNG.
-             * 
-             * For example:  
+             *
+             * For example:
              * `curl --request POST \ --user email@example.com:<api_token> \ --header 'X-Atlassian-Token: no-check' \ --header 'Content-Type: image/< image_type>' \ --data-binary "<@/path/to/file/with/your/avatar>" \ --url 'https://your-domain.atlassian.net/rest/api/3/issuetype/{issueTypeId}'This`
-             * 
+             *
              * The avatar is cropped to a square. If no crop parameters are specified, the square originates at the top left of the image. The length of the square's sides is set to the smaller of the height or width of the image.
-             * 
+             *
              * The cropped image is then used to create avatars of 16x16, 24x24, 32x32, and 48x48 in size.
-             * 
+             *
              * After creating the avatar, use [ Update issue type](#api-rest-api-3-issuetype-id-put) to set it as the issue type's displayed avatar.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 201: Returned if the request is successful.
              * 400: Returned if:
-             * 
+             *
              *  *  an image isn't included in the request.
              *  *  the image type is unsupported.
              *  *  the crop parameters extend the crop area beyond the edge of the image.
@@ -21229,17 +21229,17 @@ export interface AtlassianV3 {
              * operationId: getIssueTypePropertyKeys
              * sum: Get issue type property keys
              * doc: Returns all the [issue type property](https://developer.atlassian.com/cloud/jira/platform/storing-data-without-a-database/#a-id-jira-entity-properties-a-jira-entity-properties) keys of the issue type.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) to get the property keys of any issue type.
              *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) to get the property keys of any issue types associated with the projects the user has permission to browse.
              * 200: Returned if the request is successful.
              * 400: Returned if the issue type ID is invalid.
              * 404: Returned if:
-             * 
+             *
              *  *  the issue type is not found.
              *  *  the user does not have the required permissions.
              */
@@ -21255,11 +21255,11 @@ export interface AtlassianV3 {
                * operationId: getIssueTypeProperty
                * sum: Get issue type property
                * doc: Returns the key and value of the [issue type property](https://developer.atlassian.com/cloud/jira/platform/storing-data-without-a-database/#a-id-jira-entity-properties-a-jira-entity-properties).
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:**
-               * 
+               *
                *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) to get the details of any issue type.
                *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) to get the details of any issue types associated with the projects the user has permission to browse.
                * 200: Returned if the request is successful.
@@ -21273,7 +21273,7 @@ export interface AtlassianV3 {
                * operationId: deleteIssueTypeProperty
                * sum: Delete issue type property
                * doc: Deletes the [issue type property](https://developer.atlassian.com/cloud/jira/platform/storing-data-without-a-database/#a-id-jira-entity-properties-a-jira-entity-properties).
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 204: Returned if the issue type property is deleted.
                * 400: Returned if the issue type ID is invalid.
@@ -21287,21 +21287,21 @@ export interface AtlassianV3 {
                * operationId: setIssueTypeProperty
                * sum: Set issue type property
                * doc: Creates or updates the value of the [issue type property](https://developer.atlassian.com/cloud/jira/platform/storing-data-without-a-database/#a-id-jira-entity-properties-a-jira-entity-properties). Use this resource to store and update data against an issue type.
-               * 
+               *
                * The value of the request body must be a [valid](http://tools.ietf.org/html/rfc4627), non-empty JSON blob. The maximum length is 32768 characters.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if the issue type property is updated.
                * 201: Returned if the issue type property is created.
                * 400: Returned if:
-               * 
+               *
                *  *  the issue type ID is invalid.
                *  *  a property value is not provided.
                *  *  the property value JSON content is invalid.
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 403: Returned if the user does not have permission to modify the issue type.
                * 404: Returned if:
-               * 
+               *
                *  *  the issue type is not found.
                *  *  the user does not have the permission view the issue type.
                */
@@ -21321,9 +21321,9 @@ export interface AtlassianV3 {
          * operationId: getAllIssueTypeSchemes
          * sum: Get all issue type schemes
          * doc: Returns a [paginated](#pagination) list of issue type schemes.
-         * 
+         *
          * Only issue type schemes used in classic projects are returned.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
          * 400: Returned if the request is not valid.
@@ -21336,7 +21336,7 @@ export interface AtlassianV3 {
          * operationId: createIssueTypeScheme
          * sum: Create issue type scheme
          * doc: Creates an issue type scheme.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the request is successful.
          * 400: Returned if the request is not valid.
@@ -21356,9 +21356,9 @@ export interface AtlassianV3 {
            * operationId: getIssueTypeSchemesMapping
            * sum: Get issue type scheme items
            * doc: Returns a [paginated](#pagination) list of issue type scheme items.
-           * 
+           *
            * Only issue type scheme items used in classic projects are returned.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -21378,9 +21378,9 @@ export interface AtlassianV3 {
            * operationId: getIssueTypeSchemeForProjects
            * sum: Get issue type schemes for projects
            * doc: Returns a [paginated](#pagination) list of issue type schemes and, for each issue type scheme, a list of the projects that use it.
-           * 
+           *
            * Only issue type schemes used in classic projects are returned.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -21393,11 +21393,11 @@ export interface AtlassianV3 {
            * operationId: assignIssueTypeSchemeToProject
            * sum: Assign issue type scheme to project
            * doc: Assigns an issue type scheme to a project.
-           * 
+           *
            * If any issues in the project are assigned issue types not present in the new scheme, the operation will fail. To complete the assignment those issues must be updated to use issue types in the new scheme.
-           * 
+           *
            * Issue type schemes can only be assigned to classic projects.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -21418,11 +21418,11 @@ export interface AtlassianV3 {
            * operationId: deleteIssueTypeScheme
            * sum: Delete issue type scheme
            * doc: Deletes an issue type scheme.
-           * 
+           *
            * Only issue type schemes used in classic projects can be deleted.
-           * 
+           *
            * Any projects assigned to the scheme are reassigned to the default issue type scheme.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the issue type scheme is deleted.
            * 400: Returned if the request is to delete the default issue type scheme.
@@ -21436,7 +21436,7 @@ export interface AtlassianV3 {
            * operationId: updateIssueTypeScheme
            * sum: Update issue type scheme
            * doc: Updates an issue type scheme.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -21452,11 +21452,11 @@ export interface AtlassianV3 {
              * operationId: addIssueTypesToIssueTypeScheme
              * sum: Add issue types to issue type scheme
              * doc: Adds issue types to an issue type scheme.
-             * 
+             *
              * The added issue types are appended to the issue types list.
-             * 
+             *
              * If any of the issue types exist in the issue type scheme, the operation fails and no issue types are added.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 204: Returned if the request is successful.
              * 400: Returned if the request is not valid.
@@ -21472,13 +21472,13 @@ export interface AtlassianV3 {
                * operationId: reorderIssueTypesInIssueTypeScheme
                * sum: Change order of issue types
                * doc: Changes the order of issue types in an issue type scheme.
-               * 
+               *
                * The request body parameters must meet the following requirements:
-               * 
+               *
                *  *  all of the issue types must belong to the issue type scheme.
                *  *  either `after` or `position` must be provided.
                *  *  the issue type in `after` must not be in the issue type list.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 204: Returned if the request is successful.
                * 400: Returned if the request is not valid.
@@ -21495,13 +21495,13 @@ export interface AtlassianV3 {
                * operationId: removeIssueTypeFromIssueTypeScheme
                * sum: Remove issue type from issue type scheme
                * doc: Removes an issue type from an issue type scheme.
-               * 
+               *
                * This operation cannot remove:
-               * 
+               *
                *  *  any issue type used by issues.
                *  *  any issue types from the default issue type scheme.
                *  *  the last standard issue type from an issue type scheme.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 204: Returned if the request is successful.
                * 400: Returned if the request is not valid.
@@ -21521,9 +21521,9 @@ export interface AtlassianV3 {
          * operationId: getIssueTypeScreenSchemes
          * sum: Get issue type screen schemes
          * doc: Returns a [paginated](#pagination) list of issue type screen schemes.
-         * 
+         *
          * Only issue type screen schemes used in classic projects are returned.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
          * 400: Returned if the request is not valid.
@@ -21536,7 +21536,7 @@ export interface AtlassianV3 {
          * operationId: createIssueTypeScreenScheme
          * sum: Create issue type screen scheme
          * doc: Creates an issue type screen scheme.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the request is successful.
          * 400: Returned if the request is not valid.
@@ -21557,9 +21557,9 @@ export interface AtlassianV3 {
            * operationId: getIssueTypeScreenSchemeMappings
            * sum: Get issue type screen scheme items
            * doc: Returns a [paginated](#pagination) list of issue type screen scheme items.
-           * 
+           *
            * Only issue type screen schemes used in classic projects are returned.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -21579,9 +21579,9 @@ export interface AtlassianV3 {
            * operationId: getIssueTypeScreenSchemeProjectAssociations
            * sum: Get issue type screen schemes for projects
            * doc: Returns a [paginated](#pagination) list of issue type screen schemes and, for each issue type screen scheme, a list of the projects that use it.
-           * 
+           *
            * Only issue type screen schemes used in classic projects are returned.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -21594,13 +21594,13 @@ export interface AtlassianV3 {
            * operationId: assignIssueTypeScreenSchemeToProject
            * sum: Assign issue type screen scheme to project
            * doc: Assigns an issue type screen scheme to a project.
-           * 
+           *
            * Issue type screen schemes can only be assigned to classic projects.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if:
-           * 
+           *
            *  *  project is not found.
            *  *  issue type screen scheme is not found.
            *  *  the project is not a classic project.
@@ -21621,7 +21621,7 @@ export interface AtlassianV3 {
            * operationId: deleteIssueTypeScreenScheme
            * sum: Delete issue type screen scheme
            * doc: Deletes an issue type screen scheme.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the issue type screen scheme is deleted.
            * 400: Returned if the request is not valid.
@@ -21635,7 +21635,7 @@ export interface AtlassianV3 {
            * operationId: updateIssueTypeScreenScheme
            * sum: Update issue type screen scheme
            * doc: Updates an issue type screen scheme.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -21651,7 +21651,7 @@ export interface AtlassianV3 {
              * operationId: appendMappingsForIssueTypeScreenScheme
              * sum: Append mappings to issue type screen scheme
              * doc: Appends issue type to screen scheme mappings to an issue type screen scheme.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 204: Returned if the request is successful.
              * 400: Returned if the request is not valid.
@@ -21668,7 +21668,7 @@ export interface AtlassianV3 {
                * operationId: updateDefaultScreenScheme
                * sum: Update issue type screen scheme default screen scheme
                * doc: Updates the default screen scheme of an issue type screen scheme. The default screen scheme is used for all unmapped issue types.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 204: Returned if the request is successful.
                * 400: Returned if the request is not valid.
@@ -21685,7 +21685,7 @@ export interface AtlassianV3 {
                * operationId: removeMappingsFromIssueTypeScreenScheme
                * sum: Remove mappings from issue type screen scheme
                * doc: Removes issue type to screen scheme mappings from an issue type screen scheme.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 204: Returned if the screen scheme mappings are removed from the issue type screen scheme.
                * 400: Returned if the request is not valid.
@@ -21703,9 +21703,9 @@ export interface AtlassianV3 {
              * operationId: getProjectsForIssueTypeScreenScheme
              * sum: Get issue type screen scheme projects
              * doc: Returns a [paginated](#pagination) list of projects associated with an issue type screen scheme.
-             * 
+             *
              * Only company-managed projects associated with an issue type screen scheme are returned.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the request is not valid.
@@ -21729,11 +21729,11 @@ export interface AtlassianV3 {
            * operationId: getAutoComplete
            * sum: Get field reference data (GET)
            * doc: Returns reference data for JQL searches. This is a downloadable version of the documentation provided in [Advanced searching - fields reference](https://confluence.atlassian.com/x/gwORLQ) and [Advanced searching - functions reference](https://confluence.atlassian.com/x/hgORLQ), along with a list of JQL-reserved words. Use this information to assist with the programmatic creation of JQL queries or the validation of queries built in a custom query builder.
-           * 
+           *
            * To filter visible field details by project or collapse non-unique fields by field type then [Get field reference data (POST)](#api-rest-api-3-jql-autocompletedata-post) can be used.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** None.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect.
@@ -21744,11 +21744,11 @@ export interface AtlassianV3 {
            * operationId: getAutoCompletePost
            * sum: Get field reference data (POST)
            * doc: Returns reference data for JQL searches. This is a downloadable version of the documentation provided in [Advanced searching - fields reference](https://confluence.atlassian.com/x/gwORLQ) and [Advanced searching - functions reference](https://confluence.atlassian.com/x/hgORLQ), along with a list of JQL-reserved words. Use this information to assist with the programmatic creation of JQL queries or the validation of queries built in a custom query builder.
-           * 
+           *
            * This operation can filter the custom fields returned by project. Invalid project IDs in `projectIds` are ignored. System fields are always returned.
-           * 
+           *
            * It can also return the collapsed field for custom fields. Collapsed fields enable searches to be performed across all fields with the same name and of the same field type. For example, the collapsed field `Component - Component[Dropdown]` enables dropdown fields `Component - cf[10061]` and `Component - cf[10062]` to be searched simultaneously.
-           * 
+           *
            * **[Permissions](#permissions) required:** None.
            * 200: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -21766,16 +21766,16 @@ export interface AtlassianV3 {
              * operationId: getFieldAutoCompleteForQueryString
              * sum: Get field auto complete suggestions
              * doc: Returns the JQL search auto complete suggestions for a field.
-             * 
+             *
              * Suggestions can be obtained by providing:
-             * 
+             *
              *  *  `fieldName` to get a list of all values for the field.
              *  *  `fieldName` and `fieldValue` to get a list of values containing the text in `fieldValue`.
              *  *  `fieldName` and `predicateName` to get a list of all predicate values for the field.
              *  *  `fieldName`, `predicateName`, and `predicateValue` to get a list of predicate values containing the text in `predicateValue`.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** None.
              * 200: Returned if the request is successful.
              * 400: Returned if an invalid combination of parameters is passed.
@@ -21797,7 +21797,7 @@ export interface AtlassianV3 {
              * operationId: getPrecomputations
              * sum: Get precomputations (apps)
              * doc: Returns the list of a function's precomputations along with information about when they were created, updated, and last used. Each precomputation has a `value` \- the JQL fragment to replace the custom function clause with.
-             * 
+             *
              * **[Permissions](#permissions) required:** This API is only accessible to apps and apps can only inspect their own functions.
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -21811,7 +21811,7 @@ export interface AtlassianV3 {
              * operationId: updatePrecomputations
              * sum: Update precomputations (apps)
              * doc: Update the precomputation value of a function created by a Forge/Connect app.
-             * 
+             *
              * **[Permissions](#permissions) required:** An API for apps to update their own precomputations.
              * 204: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -21832,9 +21832,9 @@ export interface AtlassianV3 {
            * operationId: matchIssues
            * sum: Check issues against JQL
            * doc: Checks whether one or more issues would be returned by one or more JQL queries.
-           * 
+           *
            * **[Permissions](#permissions) required:** None, however, issues are only matched against JQL queries where the user has:
-           * 
+           *
            *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in.
            *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
            * 200: Returned if the request is successful.
@@ -21849,11 +21849,11 @@ export interface AtlassianV3 {
            * operationId: parseJqlQueries
            * sum: Parse JQL query
            * doc: Parses and validates JQL queries.
-           * 
+           *
            * Validation is performed in context of the current user.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** None.
            * 200: Returned if the request is successful.
            * 400: Returned if the request is invalid.
@@ -21868,9 +21868,9 @@ export interface AtlassianV3 {
            * operationId: migrateQueries
            * sum: Convert user identifiers to account IDs in JQL queries
            * doc: Converts one or more JQL queries with user identifiers (username or user key) to equivalent JQL queries with account IDs.
-           * 
+           *
            * You may wish to use this operation if your system stores JQL queries and you want to make them GDPR-compliant. For more information about GDPR-related changes, see the [migration guide](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/).
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira.
            * 200: Returned if the request is successful. Note that the JQL queries are returned in the same order that they were passed.
            * 400: Returned if at least one of the queries cannot be converted. For example, the JQL has invalid operators or invalid keywords, or the users in the query cannot be found.
@@ -21885,13 +21885,13 @@ export interface AtlassianV3 {
            * operationId: sanitiseJqlQueries
            * sum: Sanitize JQL queries
            * doc: Sanitizes one or more JQL queries by converting readable details into IDs where a user doesn't have permission to view the entity.
-           * 
+           *
            * For example, if the query contains the clause *project = 'Secret project'*, and a user does not have browse permission for the project "Secret project", the sanitized query replaces the clause with *project = 12345"* (where 12345 is the ID of the project). If a user has the required permission, the clause is not sanitized. If the account ID is null, sanitizing is performed for an anonymous user.
-           * 
+           *
            * Note that sanitization doesn't make the queries GDPR-compliant, because it doesn't remove user identifiers (username or user key). If you need to make queries GDPR-compliant, use [Convert user identifiers to account IDs in JQL queries](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-jql/#api-rest-api-3-jql-sanitize-post).
-           * 
+           *
            * Before sanitization each JQL query is parsed. The queries are returned in the same order that they were passed.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is invalid.
@@ -21925,7 +21925,7 @@ export interface AtlassianV3 {
            * operationId: getApproximateLicenseCount
            * sum: Get approximate license count
            * doc: Returns the approximate number of user accounts across all Jira licenses. Note that this information is cached with a 7-day lifecycle and could be stale at the time of call.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -21945,7 +21945,7 @@ export interface AtlassianV3 {
                * operationId: getApproximateApplicationLicenseCount
                * sum: Get approximate application license count
                * doc: Returns the total approximate number of user accounts for a single Jira license. Note that this information is cached with a 7-day lifecycle and could be stale at the time of call.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if the request is successful.
                * 401: Returned if the authentication credentials are incorrect or missing.
@@ -21967,22 +21967,22 @@ export interface AtlassianV3 {
          * operationId: getMyPermissions
          * sum: Get my permissions
          * doc: Returns a list of permissions indicating which permissions the user has. Details of the user's permissions can be obtained in a global, project, issue or comment context.
-         * 
+         *
          * The user is reported as having a project permission:
-         * 
+         *
          *  *  in the global context, if the user has the project permission in any project.
          *  *  for a project, where the project permission is determined using issue data, if the user meets the permission's criteria for any issue in the project. Otherwise, if the user has the project permission in the project.
          *  *  for an issue, where a project permission is determined using issue data, if the user has the permission in the issue. Otherwise, if the user has the project permission in the project containing the issue.
          *  *  for a comment, where the user has both the permission to browse the comment and the project permission for the comment's parent issue. Only the BROWSE\_PROJECTS permission is supported. If a `commentId` is provided whose `permissions` does not equal BROWSE\_PROJECTS, a 400 error will be returned.
-         * 
+         *
          * This means that users may be shown as having an issue permission (such as EDIT\_ISSUES) in the global context or a project context but may not have the permission for any or all issues. For example, if Reporters have the EDIT\_ISSUES permission a user would be shown as having this permission in the global context or the context of a project, because any user can be a reporter. However, if they are not the user who reported the issue queried they would not have EDIT\_ISSUES permission for that issue.
-         * 
+         *
          * For [Jira Service Management project permissions](https://support.atlassian.com/jira-cloud-administration/docs/customize-jira-service-management-permissions/), this will be evaluated similarly to a user in the customer portal. For example, if the BROWSE\_PROJECTS permission is granted to Service Project Customer - Portal Access, any users with access to the customer portal will have the BROWSE\_PROJECTS permission.
-         * 
+         *
          * Global permissions are unaffected by context.
-         * 
+         *
          * This operation can be accessed anonymously.
-         * 
+         *
          * **[Permissions](#permissions) required:** None.
          * 200: Returned if the request is successful.
          * 400: Returned if `permissions` is empty, contains an invalid key, or does not equal BROWSE\_PROJECTS when commentId is provided.
@@ -22002,21 +22002,21 @@ export interface AtlassianV3 {
          * operationId: getPreference
          * sum: Get preference
          * doc: Returns the value of a preference of the current user.
-         * 
+         *
          * Note that these keys are deprecated:
-         * 
+         *
          *  *  *jira.user.locale* The locale of the user. By default this is not set and the user takes the locale of the instance.
          *  *  *jira.user.timezone* The time zone of the user. By default this is not set and the user takes the timezone of the instance.
-         * 
+         *
          * These system preferences keys will be deprecated by 15/07/2024. You can still retrieve these keys, but it will not have any impact on Notification behaviour.
-         * 
+         *
          *  *  *user.notifications.watcher* Whether the user gets notified when they are watcher.
          *  *  *user.notifications.assignee* Whether the user gets notified when they are assignee.
          *  *  *user.notifications.reporter* Whether the user gets notified when they are reporter.
          *  *  *user.notifications.mentions* Whether the user gets notified when they are mentions.
-         * 
+         *
          * Use [ Update a user profile](https://developer.atlassian.com/cloud/admin/user-management/rest/#api-users-account-id-manage-profile-patch) from the user management REST API to manage timezone and locale instead.
-         * 
+         *
          * **[Permissions](#permissions) required:** Permission to access Jira.
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -22028,14 +22028,14 @@ export interface AtlassianV3 {
          * operationId: removePreference
          * sum: Delete preference
          * doc: Deletes a preference of the user, which restores the default value of system defined settings.
-         * 
+         *
          * Note that these keys are deprecated:
-         * 
+         *
          *  *  *jira.user.locale* The locale of the user. By default, not set. The user takes the instance locale.
          *  *  *jira.user.timezone* The time zone of the user. By default, not set. The user takes the instance timezone.
-         * 
+         *
          * Use [ Update a user profile](https://developer.atlassian.com/cloud/admin/user-management/rest/#api-users-account-id-manage-profile-patch) from the user management REST API to manage timezone and locale instead.
-         * 
+         *
          * **[Permissions](#permissions) required:** Permission to access Jira.
          * 204: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -22047,27 +22047,27 @@ export interface AtlassianV3 {
          * operationId: setPreference
          * sum: Set preference
          * doc: Creates a preference for the user or updates a preference's value by sending a plain text string. For example, `false`. An arbitrary preference can be created with the value containing up to 255 characters. In addition, the following keys define system preferences that can be set or created:
-         * 
+         *
          *  *  *user.notifications.mimetype* The mime type used in notifications sent to the user. Defaults to `html`.
          *  *  *user.default.share.private* Whether new [ filters](https://confluence.atlassian.com/x/eQiiLQ) are set to private. Defaults to `true`.
          *  *  *user.keyboard.shortcuts.disabled* Whether keyboard shortcuts are disabled. Defaults to `false`.
          *  *  *user.autowatch.disabled* Whether the user automatically watches issues they create or add a comment to. By default, not set: the user takes the instance autowatch setting.
          *  *  *user.notifiy.own.changes* Whether the user gets notified of their own changes.
-         * 
+         *
          * Note that these keys are deprecated:
-         * 
+         *
          *  *  *jira.user.locale* The locale of the user. By default, not set. The user takes the instance locale.
          *  *  *jira.user.timezone* The time zone of the user. By default, not set. The user takes the instance timezone.
-         * 
+         *
          * These system preferences keys will be deprecated by 15/07/2024. You can still use these keys to create arbitrary preferences, but it will not have any impact on Notification behaviour.
-         * 
+         *
          *  *  *user.notifications.watcher* Whether the user gets notified when they are watcher.
          *  *  *user.notifications.assignee* Whether the user gets notified when they are assignee.
          *  *  *user.notifications.reporter* Whether the user gets notified when they are reporter.
          *  *  *user.notifications.mentions* Whether the user gets notified when they are mentions.
-         * 
+         *
          * Use [ Update a user profile](https://developer.atlassian.com/cloud/admin/user-management/rest/#api-users-account-id-manage-profile-patch) from the user management REST API to manage timezone and locale instead.
-         * 
+         *
          * **[Permissions](#permissions) required:** Permission to access Jira.
          * 204: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -22085,11 +22085,11 @@ export interface AtlassianV3 {
            * operationId: getLocale
            * sum: Get locale
            * doc: Returns the locale for the user.
-           * 
+           *
            * If the user has no language preference set (which is the default setting) or this resource is accessed anonymous, the browser locale detected by Jira is returned. Jira detects the browser locale using the *Accept-Language* header in the request. However, if this doesn't match a locale available Jira, the site default locale is returned.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** None.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -22100,9 +22100,9 @@ export interface AtlassianV3 {
            * operationId: deleteLocale
            * sum: Delete locale
            * doc: Deprecated, use [ Update a user profile](https://developer.atlassian.com/cloud/admin/user-management/rest/#api-users-account-id-manage-profile-patch) from the user management REST API instead.
-           * 
+           *
            * Deletes the locale of the user, which restores the default setting.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira.
            * 204: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -22113,9 +22113,9 @@ export interface AtlassianV3 {
            * operationId: setLocale
            * sum: Set locale
            * doc: Deprecated, use [ Update a user profile](https://developer.atlassian.com/cloud/admin/user-management/rest/#api-users-account-id-manage-profile-patch) from the user management REST API instead.
-           * 
+           *
            * Sets the locale of the user. The locale must be one supported by the instance of Jira.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira.
            * 204: Returned if the request is successful.
            * 400: Returned if request is invalid.
@@ -22135,7 +22135,7 @@ export interface AtlassianV3 {
          * operationId: getCurrentUser
          * sum: Get current user
          * doc: Returns details for the current user.
-         * 
+         *
          * **[Permissions](#permissions) required:** Permission to access Jira.
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -22153,9 +22153,9 @@ export interface AtlassianV3 {
          * operationId: getNotificationSchemes
          * sum: Get notification schemes paginated
          * doc: Returns a [paginated](#pagination) list of [notification schemes](https://confluence.atlassian.com/x/8YdKLg) ordered by the display name.
-         * 
+         *
          * *Note that you should allow for events without recipients to appear in responses.*
-         * 
+         *
          * **[Permissions](#permissions) required:** Permission to access Jira, however, the user must have permission to administer at least one project associated with a notification scheme for it to be returned.
          * 200: Returned if the request is successful. Only returns notification schemes that the user has permission to access. An empty list is returned if the user lacks permission to access all notification schemes.
          * 400: Returned if the request isn't valid.
@@ -22167,7 +22167,7 @@ export interface AtlassianV3 {
          * operationId: createNotificationScheme
          * sum: Create notification scheme
          * doc: Creates a notification scheme with notifications. You can create up to 1000 notifications per request.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the request is successful.
          * 400: Returned if the request isn't valid.
@@ -22186,7 +22186,7 @@ export interface AtlassianV3 {
            * operationId: getNotificationSchemeToProjectMappings
            * sum: Get projects using notification schemes paginated
            * doc: Returns a [paginated](#pagination) mapping of project that have notification scheme assigned. You can provide either one or multiple notification scheme IDs or project IDs to filter by. If you don't provide any, this will return a list of all mappings. Note that only company-managed (classic) projects are supported. This is because team-managed projects don't have a concept of a default notification scheme. The mappings are ordered by projectId.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira.
            * 200: Returned if the request is successful.
            * 400: Returned if search criteria are invalid, strings vs numbers for projectId, notificationSchemeId, startAt and maxResult
@@ -22205,7 +22205,7 @@ export interface AtlassianV3 {
            * operationId: getNotificationScheme
            * sum: Get notification scheme
            * doc: Returns a [notification scheme](https://confluence.atlassian.com/x/8YdKLg), including the list of events and the recipients who will receive notifications for those events.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira, however, the user must have permission to administer at least one project associated with the notification scheme.
            * 200: Returned if the request is successful.
            * 400: Returned if the request is invalid.
@@ -22218,7 +22218,7 @@ export interface AtlassianV3 {
            * operationId: updateNotificationScheme
            * sum: Update notification scheme
            * doc: Updates a notification scheme.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request isn't valid.
@@ -22238,9 +22238,9 @@ export interface AtlassianV3 {
              * operationId: addNotifications
              * sum: Add notifications to notification scheme
              * doc: Adds notifications to a notification scheme. You can add up to 1000 notifications per request.
-             * 
+             *
              * *Deprecated: The notification type `EmailAddress` is no longer supported in Cloud. Refer to the [changelog](https://developer.atlassian.com/cloud/jira/platform/changelog/#CHANGE-1031) for more details.*
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 204: Returned if the request is successful.
              * 400: Returned if the request isn't valid.
@@ -22258,7 +22258,7 @@ export interface AtlassianV3 {
            * operationId: deleteNotificationScheme
            * sum: Delete notification scheme
            * doc: Deletes a notification scheme.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request isn't valid.
@@ -22276,7 +22276,7 @@ export interface AtlassianV3 {
                * operationId: removeNotificationFromNotificationScheme
                * sum: Remove notification from notification scheme
                * doc: Removes a notification from a notification scheme.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 204: Returned if the request is successful.
                * 400: Returned if the request isn't valid.
@@ -22296,13 +22296,13 @@ export interface AtlassianV3 {
          * operationId: getAllPermissions
          * sum: Get all permissions
          * doc: Returns all permissions, including:
-         * 
+         *
          *  *  global permissions.
          *  *  project permissions.
          *  *  global permissions added by plugins.
-         * 
+         *
          * This operation can be accessed anonymously.
-         * 
+         *
          * **[Permissions](#permissions) required:** None.
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -22320,30 +22320,30 @@ export interface AtlassianV3 {
            * operationId: getBulkPermissions
            * sum: Get bulk permissions
            * doc: Returns:
-           * 
+           *
            *  *  for a list of global permissions, the global permissions granted to a user.
            *  *  for a list of project permissions and lists of projects and issues, for each project permission a list of the projects and issues a user can access or manipulate.
-           * 
+           *
            * If no account ID is provided, the operation returns details for the logged in user.
-           * 
+           *
            * Note that:
-           * 
+           *
            *  *  Invalid project and issue IDs are ignored.
            *  *  A maximum of 1000 projects and 1000 issues can be checked.
            *  *  Null values in `globalPermissions`, `projectPermissions`, `projectPermissions.projects`, and `projectPermissions.issues` are ignored.
            *  *  Empty strings in `projectPermissions.permissions` are ignored.
-           * 
+           *
            * **Deprecation notice:** The required OAuth 2.0 scopes will be updated on June 15, 2024.
-           * 
+           *
            *  *  **Classic**: `read:jira-work`
            *  *  **Granular**: `read:permission:jira`
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) to check the permissions for other users, otherwise none. However, Connect apps can make a call from the app server to the product to obtain permission details for any user, without admin permission. This Connect app ability doesn't apply to calls made using AP.request() in a browser.
            * 200: Returned if the request is successful.
            * 400: Returned if:
-           * 
+           *
            *  *  `projectPermissions` is provided without at least one project permission being provided.
            *  *  an invalid global permission is provided in the global permissions list.
            *  *  an invalid project permission is provided in the project permissions list.
@@ -22360,9 +22360,9 @@ export interface AtlassianV3 {
            * operationId: getPermittedProjects
            * sum: Get permitted projects
            * doc: Returns all the projects where the user is granted a list of project permissions.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** None.
            * 200: Returned if the request is successful.
            * 400: Returned if a project permission is not found.
@@ -22378,23 +22378,23 @@ export interface AtlassianV3 {
          * operationId: getAllPermissionSchemes
          * sum: Get all permission schemes
          * doc: Returns all permission schemes.
-         * 
+         *
          * ### About permission schemes and grants ###
-         * 
+         *
          * A permission scheme is a collection of permission grants. A permission grant consists of a `holder` and a `permission`.
-         * 
+         *
          * #### Holder object ####
-         * 
+         *
          * The `holder` object contains information about the user or group being granted the permission. For example, the *Administer projects* permission is granted to a group named *Teams in space administrators*. In this case, the type is `"type": "group"`, and the parameter is the group name, `"parameter": "Teams in space administrators"` and the value is group ID, `"value": "ca85fac0-d974-40ca-a615-7af99c48d24f"`.
-         * 
+         *
          * The `holder` object is defined by the following properties:
-         * 
+         *
          *  *  `type` Identifies the user or group (see the list of types below).
          *  *  `parameter` As a group's name can change, use of `value` is recommended. The value of this property depends on the `type`. For example, if the `type` is a group, then you need to specify the group name.
          *  *  `value` The value of this property depends on the `type`. If the `type` is a group, then you need to specify the group ID. For other `type` it has the same value as `parameter`
-         * 
+         *
          * The following `types` are available. The expected values for `parameter` and `value` are given in parentheses (some types may not have a `parameter` or `value`):
-         * 
+         *
          *  *  `anyone` Grant for anonymous users.
          *  *  `applicationRole` Grant for users with access to the specified application (application name, application name). See [Update product access settings](https://confluence.atlassian.com/x/3YxjL) for more information.
          *  *  `assignee` Grant for the user currently assigned to an issue.
@@ -22406,22 +22406,22 @@ export interface AtlassianV3 {
          *  *  `sd.customer.portal.only` Jira Service Desk only. Grants customers permission to access the customer portal but not Jira. See [Customizing Jira Service Desk permissions](https://confluence.atlassian.com/x/24dKLg) for more information.
          *  *  `user` Grant for the specified user (`parameter` : user ID - historically this was the userkey but that is deprecated and the account ID should be used, `value` : user ID).
          *  *  `userCustomField` Grant for a user selected in the specified custom field (`parameter` : custom field ID, `value` : custom field ID).
-         * 
+         *
          * #### Built-in permissions ####
-         * 
+         *
          * The [built-in Jira permissions](https://confluence.atlassian.com/x/yodKLg) are listed below. Apps can also define custom permissions. See the [project permission](https://developer.atlassian.com/cloud/jira/platform/modules/project-permission/) and [global permission](https://developer.atlassian.com/cloud/jira/platform/modules/global-permission/) module documentation for more information.
-         * 
+         *
          * **Project permissions**
-         * 
+         *
          *  *  `ADMINISTER_PROJECTS`
          *  *  `BROWSE_PROJECTS`
          *  *  `MANAGE_SPRINTS_PERMISSION` (Jira Software only)
          *  *  `SERVICEDESK_AGENT` (Jira Service Desk only)
          *  *  `VIEW_DEV_TOOLS` (Jira Software only)
          *  *  `VIEW_READONLY_WORKFLOW`
-         * 
+         *
          * **Issue permissions**
-         * 
+         *
          *  *  `ASSIGNABLE_USER`
          *  *  `ASSIGN_ISSUES`
          *  *  `CLOSE_ISSUES`
@@ -22435,34 +22435,34 @@ export interface AtlassianV3 {
          *  *  `SCHEDULE_ISSUES`
          *  *  `SET_ISSUE_SECURITY`
          *  *  `TRANSITION_ISSUES`
-         * 
+         *
          * **Voters and watchers permissions**
-         * 
+         *
          *  *  `MANAGE_WATCHERS`
          *  *  `VIEW_VOTERS_AND_WATCHERS`
-         * 
+         *
          * **Comments permissions**
-         * 
+         *
          *  *  `ADD_COMMENTS`
          *  *  `DELETE_ALL_COMMENTS`
          *  *  `DELETE_OWN_COMMENTS`
          *  *  `EDIT_ALL_COMMENTS`
          *  *  `EDIT_OWN_COMMENTS`
-         * 
+         *
          * **Attachments permissions**
-         * 
+         *
          *  *  `CREATE_ATTACHMENTS`
          *  *  `DELETE_ALL_ATTACHMENTS`
          *  *  `DELETE_OWN_ATTACHMENTS`
-         * 
+         *
          * **Time tracking permissions**
-         * 
+         *
          *  *  `DELETE_ALL_WORKLOGS`
          *  *  `DELETE_OWN_WORKLOGS`
          *  *  `EDIT_ALL_WORKLOGS`
          *  *  `EDIT_OWN_WORKLOGS`
          *  *  `WORK_ON_ISSUES`
-         * 
+         *
          * **[Permissions](#permissions) required:** Permission to access Jira.
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -22473,7 +22473,7 @@ export interface AtlassianV3 {
          * operationId: createPermissionScheme
          * sum: Create permission scheme
          * doc: Creates a new permission scheme. You can create a permission scheme with or without defining a set of permission grants.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the permission scheme is created.
          * 400: Returned if the request is invalid.
@@ -22492,7 +22492,7 @@ export interface AtlassianV3 {
            * operationId: getPermissionScheme
            * sum: Get permission scheme
            * doc: Returns a permission scheme.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -22504,7 +22504,7 @@ export interface AtlassianV3 {
            * operationId: deletePermissionScheme
            * sum: Delete permission scheme
            * doc: Deletes a permission scheme.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the permission scheme is deleted.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -22517,20 +22517,20 @@ export interface AtlassianV3 {
            * operationId: updatePermissionScheme
            * sum: Update permission scheme
            * doc: Updates a permission scheme. Below are some important things to note when using this resource:
-           * 
+           *
            *  *  If a permissions list is present in the request, then it is set in the permission scheme, overwriting *all existing* grants.
            *  *  If you want to update only the name and description, then do not send a permissions list in the request.
            *  *  Sending an empty list will remove all permission grants from the permission scheme.
-           * 
+           *
            * If you want to add or delete a permission grant instead of updating the whole list, see [Create permission grant](#api-rest-api-3-permissionscheme-schemeId-permission-post) or [Delete permission scheme entity](#api-rest-api-3-permissionscheme-schemeId-permission-permissionId-delete).
-           * 
+           *
            * See [About permission schemes and grants](../api-group-permission-schemes/#about-permission-schemes-and-grants) for more details.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the scheme is updated.
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if:
-           * 
+           *
            *  *  the user does not have the necessary permission to update permission schemes.
            *  *  the Jira instance is Jira Core Free or Jira Software Free. Permission schemes cannot be updated on free plans.
            * 404: Returned if the permission scheme is not found.
@@ -22547,7 +22547,7 @@ export interface AtlassianV3 {
              * operationId: getPermissionSchemeGrants
              * sum: Get permission scheme grants
              * doc: Returns all permission grants for a permission scheme.
-             * 
+             *
              * **[Permissions](#permissions) required:** Permission to access Jira.
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -22559,7 +22559,7 @@ export interface AtlassianV3 {
              * operationId: createPermissionGrant
              * sum: Create permission grant
              * doc: Creates a permission grant in a permission scheme.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 201: Returned if the scheme permission is created.
              * 400: Returned if the value for expand is invalid or the same permission grant is present.
@@ -22578,7 +22578,7 @@ export interface AtlassianV3 {
                * operationId: getPermissionSchemeGrant
                * sum: Get permission scheme grant
                * doc: Returns a permission grant.
-               * 
+               *
                * **[Permissions](#permissions) required:** Permission to access Jira.
                * 200: Returned if the request is successful.
                * 401: Returned if the authentication credentials are incorrect or missing.
@@ -22590,7 +22590,7 @@ export interface AtlassianV3 {
                * operationId: deletePermissionSchemeEntity
                * sum: Delete permission scheme grant
                * doc: Deletes a permission grant from a permission scheme. See [About permission schemes and grants](../api-group-permission-schemes/#about-permission-schemes-and-grants) for more details.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 204: Returned if the permission grant is deleted.
                * 400: Returned if permission grant with the provided ID is not found.
@@ -22613,7 +22613,7 @@ export interface AtlassianV3 {
          * operationId: getPriorities
          * sum: Get priorities
          * doc: Returns the list of all issue priorities.
-         * 
+         *
          * **[Permissions](#permissions) required:** Permission to access Jira.
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect.
@@ -22624,7 +22624,7 @@ export interface AtlassianV3 {
          * operationId: createPriority
          * sum: Create priority
          * doc: Creates an issue priority.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the request is successful.
          * 400: Returned if the request isn't valid.
@@ -22643,7 +22643,7 @@ export interface AtlassianV3 {
            * operationId: setDefaultPriority
            * sum: Set default priority
            * doc: Sets default issue priority.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request isn't valid.
@@ -22660,7 +22660,7 @@ export interface AtlassianV3 {
            * operationId: movePriorities
            * sum: Move priorities
            * doc: Changes the order of issue priorities.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request isn't valid.
@@ -22677,11 +22677,11 @@ export interface AtlassianV3 {
            * operationId: searchPriorities
            * sum: Search priorities
            * doc: Returns a [paginated](#pagination) list of priorities. The list can contain all priorities or a subset determined by any combination of these criteria:
-           * 
+           *
            *  *  a list of priority IDs. Any invalid priority IDs are ignored.
            *  *  a list of project IDs. Only priorities that are available in these projects will be returned. Any invalid project IDs are ignored.
            *  *  whether the field configuration is a default. This returns priorities from company-managed (classic) projects only, as there is no concept of default priorities in team-managed projects.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -22699,7 +22699,7 @@ export interface AtlassianV3 {
            * operationId: getPriority
            * sum: Get priority
            * doc: Returns an issue priority.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect.
@@ -22711,9 +22711,9 @@ export interface AtlassianV3 {
            * operationId: deletePriority
            * sum: Delete priority
            * doc: Deletes an issue priority.
-           * 
+           *
            * This operation is [asynchronous](#async). Follow the `location` link in the response to determine the status of the task and use [Get task](#api-rest-api-3-task-taskId-get) to obtain subsequent updates.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 303: Returned if the request is successful.
            * 400: Returned if the request isn't valid.
@@ -22728,7 +22728,7 @@ export interface AtlassianV3 {
            * operationId: updatePriority
            * sum: Update priority
            * doc: Updates an issue priority.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request isn't valid.
@@ -22750,7 +22750,7 @@ export interface AtlassianV3 {
          * operationId: getPrioritySchemes
          * sum: Get priority schemes
          * doc: Returns a [paginated](#pagination) list of priority schemes.
-         * 
+         *
          * **[Permissions](#permissions) required:** Permission to access Jira.
          * 200: Returned if the request is successful.
          * 400: Returned if the request isn't valid.
@@ -22762,7 +22762,7 @@ export interface AtlassianV3 {
          * operationId: createPriorityScheme
          * sum: Create priority scheme
          * doc: Creates a new priority scheme.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the request is completed.
          * 202: Returned if the request is accepted.
@@ -22783,7 +22783,7 @@ export interface AtlassianV3 {
            * operationId: suggestedPrioritiesForMappings
            * sum: Suggested priorities for mappings
            * doc: Returns a [paginated](#pagination) list of priorities that would require mapping, given a change in priorities or projects associated with a priority scheme.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira.
            * 200: Returned if the request is successful.
            * 400: Returned if the request isn't valid.
@@ -22800,7 +22800,7 @@ export interface AtlassianV3 {
              * operationId: getAvailablePrioritiesByPriorityScheme
              * sum: Get available priorities by priority scheme
              * doc: Returns a [paginated](#pagination) list of priorities available for adding to a priority scheme.
-             * 
+             *
              * **[Permissions](#permissions) required:** Permission to access Jira.
              * 200: Returned if the request is successful.
              * 400: Returned if the request isn't valid.
@@ -22820,9 +22820,9 @@ export interface AtlassianV3 {
            * operationId: deletePriorityScheme
            * sum: Delete priority scheme
            * doc: Deletes a priority scheme.
-           * 
+           *
            * This operation is only available for priority schemes without any associated projects. Any associated projects must be removed from the priority scheme before this operation can be performed.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request isn't valid.
@@ -22835,7 +22835,7 @@ export interface AtlassianV3 {
            * operationId: updatePriorityScheme
            * sum: Update priority scheme
            * doc: Updates a priority scheme. This includes its details, the lists of priorities and projects in it
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 202: Returned if the request is accepted.
            * 400: Returned if the request isn't valid.
@@ -22851,7 +22851,7 @@ export interface AtlassianV3 {
              * operationId: getPrioritiesByPriorityScheme
              * sum: Get priorities by priority scheme
              * doc: Returns a [paginated](#pagination) list of priorities by scheme.
-             * 
+             *
              * **[Permissions](#permissions) required:** Permission to access Jira.
              * 200: Returned if the request is successful.
              * 400: Returned if the request isn't valid.
@@ -22870,7 +22870,7 @@ export interface AtlassianV3 {
              * operationId: getProjectsByPriorityScheme
              * sum: Get projects by priority scheme
              * doc: Returns a [paginated](#pagination) list of projects by scheme.
-             * 
+             *
              * **[Permissions](#permissions) required:** Permission to access Jira.
              * 200: Returned if the request is successful.
              * 400: Returned if the request isn't valid.
@@ -22891,9 +22891,9 @@ export interface AtlassianV3 {
          * operationId: getAllProjects
          * sum: Get all projects
          * doc: Returns all projects visible to the user. Deprecated, use [ Get projects paginated](#api-rest-api-3-project-search-get) that supports search and pagination.
-         * 
+         *
          * This operation can be accessed anonymously.
-         * 
+         *
          * **[Permissions](#permissions) required:** Projects are returned only where the user has *Browse Projects* or *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -22904,20 +22904,20 @@ export interface AtlassianV3 {
          * operationId: createProject
          * sum: Create project
          * doc: Creates a project based on a project type template, as shown in the following table:
-         * 
-         * | Project Type Key | Project Template Key |  
-         * |--|--|  
-         * | `business` | `com.atlassian.jira-core-project-templates:jira-core-simplified-content-management`, `com.atlassian.jira-core-project-templates:jira-core-simplified-document-approval`, `com.atlassian.jira-core-project-templates:jira-core-simplified-lead-tracking`, `com.atlassian.jira-core-project-templates:jira-core-simplified-process-control`, `com.atlassian.jira-core-project-templates:jira-core-simplified-procurement`, `com.atlassian.jira-core-project-templates:jira-core-simplified-project-management`, `com.atlassian.jira-core-project-templates:jira-core-simplified-recruitment`, `com.atlassian.jira-core-project-templates:jira-core-simplified-task-tracking` |  
-         * | `service_desk` | `com.atlassian.servicedesk:simplified-it-service-management`, `com.atlassian.servicedesk:simplified-general-service-desk-it`, `com.atlassian.servicedesk:simplified-general-service-desk-business`, `com.atlassian.servicedesk:simplified-external-service-desk`, `com.atlassian.servicedesk:simplified-hr-service-desk`, `com.atlassian.servicedesk:simplified-facilities-service-desk`, `com.atlassian.servicedesk:simplified-legal-service-desk`, `com.atlassian.servicedesk:simplified-analytics-service-desk`, `com.atlassian.servicedesk:simplified-marketing-service-desk`, `com.atlassian.servicedesk:simplified-design-service-desk`, `com.atlassian.servicedesk:simplified-sales-service-desk`, `com.atlassian.servicedesk:simplified-blank-project-business`, `com.atlassian.servicedesk:simplified-blank-project-it`, `com.atlassian.servicedesk:simplified-finance-service-desk`, `com.atlassian.servicedesk:next-gen-it-service-desk`, `com.atlassian.servicedesk:next-gen-hr-service-desk`, `com.atlassian.servicedesk:next-gen-legal-service-desk`, `com.atlassian.servicedesk:next-gen-marketing-service-desk`, `com.atlassian.servicedesk:next-gen-facilities-service-desk`, `com.atlassian.servicedesk:next-gen-general-it-service-desk`, `com.atlassian.servicedesk:next-gen-general-business-service-desk`, `com.atlassian.servicedesk:next-gen-analytics-service-desk`, `com.atlassian.servicedesk:next-gen-finance-service-desk`, `com.atlassian.servicedesk:next-gen-design-service-desk`, `com.atlassian.servicedesk:next-gen-sales-service-desk` |  
-         * | `software` | `com.pyxis.greenhopper.jira:gh-simplified-agility-kanban`, `com.pyxis.greenhopper.jira:gh-simplified-agility-scrum`, `com.pyxis.greenhopper.jira:gh-simplified-basic`, `com.pyxis.greenhopper.jira:gh-simplified-kanban-classic`, `com.pyxis.greenhopper.jira:gh-simplified-scrum-classic` |  
+         *
+         * | Project Type Key | Project Template Key |
+         * |--|--|
+         * | `business` | `com.atlassian.jira-core-project-templates:jira-core-simplified-content-management`, `com.atlassian.jira-core-project-templates:jira-core-simplified-document-approval`, `com.atlassian.jira-core-project-templates:jira-core-simplified-lead-tracking`, `com.atlassian.jira-core-project-templates:jira-core-simplified-process-control`, `com.atlassian.jira-core-project-templates:jira-core-simplified-procurement`, `com.atlassian.jira-core-project-templates:jira-core-simplified-project-management`, `com.atlassian.jira-core-project-templates:jira-core-simplified-recruitment`, `com.atlassian.jira-core-project-templates:jira-core-simplified-task-tracking` |
+         * | `service_desk` | `com.atlassian.servicedesk:simplified-it-service-management`, `com.atlassian.servicedesk:simplified-general-service-desk-it`, `com.atlassian.servicedesk:simplified-general-service-desk-business`, `com.atlassian.servicedesk:simplified-external-service-desk`, `com.atlassian.servicedesk:simplified-hr-service-desk`, `com.atlassian.servicedesk:simplified-facilities-service-desk`, `com.atlassian.servicedesk:simplified-legal-service-desk`, `com.atlassian.servicedesk:simplified-analytics-service-desk`, `com.atlassian.servicedesk:simplified-marketing-service-desk`, `com.atlassian.servicedesk:simplified-design-service-desk`, `com.atlassian.servicedesk:simplified-sales-service-desk`, `com.atlassian.servicedesk:simplified-blank-project-business`, `com.atlassian.servicedesk:simplified-blank-project-it`, `com.atlassian.servicedesk:simplified-finance-service-desk`, `com.atlassian.servicedesk:next-gen-it-service-desk`, `com.atlassian.servicedesk:next-gen-hr-service-desk`, `com.atlassian.servicedesk:next-gen-legal-service-desk`, `com.atlassian.servicedesk:next-gen-marketing-service-desk`, `com.atlassian.servicedesk:next-gen-facilities-service-desk`, `com.atlassian.servicedesk:next-gen-general-it-service-desk`, `com.atlassian.servicedesk:next-gen-general-business-service-desk`, `com.atlassian.servicedesk:next-gen-analytics-service-desk`, `com.atlassian.servicedesk:next-gen-finance-service-desk`, `com.atlassian.servicedesk:next-gen-design-service-desk`, `com.atlassian.servicedesk:next-gen-sales-service-desk` |
+         * | `software` | `com.pyxis.greenhopper.jira:gh-simplified-agility-kanban`, `com.pyxis.greenhopper.jira:gh-simplified-agility-scrum`, `com.pyxis.greenhopper.jira:gh-simplified-basic`, `com.pyxis.greenhopper.jira:gh-simplified-kanban-classic`, `com.pyxis.greenhopper.jira:gh-simplified-scrum-classic` |
          * The project types are available according to the installed Jira features as follows:
-         * 
+         *
          *  *  Jira Core, the default, enables `business` projects.
          *  *  Jira Service Management enables `service_desk` projects.
          *  *  Jira Software enables `software` projects.
-         * 
+         *
          * To determine which features are installed, go to **Jira settings** > **Apps** > **Manage apps** and review the System Apps list. To add Jira Software or Jira Service Management into a JIRA instance, use **Jira settings** > **Apps** > **Finding new apps**. For more information, see [ Managing add-ons](https://confluence.atlassian.com/x/S31NLg).
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the project is created.
          * 400: Returned if the request is not valid and the project could not be created.
@@ -22936,11 +22936,11 @@ export interface AtlassianV3 {
            * operationId: getRecent
            * sum: Get recent projects
            * doc: Returns a list of up to 20 projects recently viewed by the user that are still visible to the user.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** Projects are returned only where the user has one of:
-           * 
+           *
            *  *  *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
            *  *  *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
            *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
@@ -22961,11 +22961,11 @@ export interface AtlassianV3 {
            * operationId: searchProjects
            * sum: Get projects paginated
            * doc: Returns a [paginated](#pagination) list of projects visible to the user.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** Projects are returned only where the user has one of:
-           * 
+           *
            *  *  *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
            *  *  *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
            *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
@@ -22987,9 +22987,9 @@ export interface AtlassianV3 {
            * operationId: getAllProjectTypes
            * sum: Get all project types
            * doc: Returns all [project types](https://confluence.atlassian.com/x/Var1Nw), whether or not the instance has a valid license for each type.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** None.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect.
@@ -23021,9 +23021,9 @@ export interface AtlassianV3 {
              * operationId: getProjectTypeByKey
              * sum: Get project type by key
              * doc: Returns a [project type](https://confluence.atlassian.com/x/Var1Nw).
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** None.
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect.
@@ -23041,7 +23041,7 @@ export interface AtlassianV3 {
                * operationId: getAccessibleProjectTypeByKey
                * sum: Get accessible project type by key
                * doc: Returns a [project type](https://confluence.atlassian.com/x/Var1Nw) if it is accessible to the user.
-               * 
+               *
                * **[Permissions](#permissions) required:** Permission to access Jira.
                * 200: Returned if the request is successful.
                * 401: Returned if the authentication credentials are incorrect or missing.
@@ -23062,9 +23062,9 @@ export interface AtlassianV3 {
            * operationId: getProject
            * sum: Get project
            * doc: Returns the [project details](https://confluence.atlassian.com/x/ahLpNw) for a project.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
            * 200: Returned if successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -23076,9 +23076,9 @@ export interface AtlassianV3 {
            * operationId: deleteProject
            * sum: Delete project
            * doc: Deletes a project.
-           * 
+           *
            * You can't delete a project if it's archived. To delete an archived project, restore the project and then delete it. To restore a project, use the Jira UI.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the project is deleted.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -23090,15 +23090,15 @@ export interface AtlassianV3 {
            * operationId: updateProject
            * sum: Update project
            * doc: Updates the [project details](https://confluence.atlassian.com/x/ahLpNw) of a project.
-           * 
+           *
            * All parameters are optional in the body of the request. Schemes will only be updated if they are included in the request, any omitted schemes will be left unchanged.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). is only needed when changing the schemes or project key. Otherwise you will only need *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg)
            * 200: Returned if the project is updated.
            * 400: Returned if the request is not valid.
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if:
-           * 
+           *
            *  *  the user does not have the necessary permission to update project details.
            *  *  the permission scheme is being changed and the Jira instance is Jira Core Free or Jira Software Free. Permission schemes cannot be changed on free plans.
            * 404: Returned if the project is not found.
@@ -23115,7 +23115,7 @@ export interface AtlassianV3 {
              * operationId: archiveProject
              * sum: Archive project
              * doc: Archives a project. You can't delete a project if it's archived. To delete an archived project, restore the project and then delete it. To restore a project, use the Jira UI.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 204: Returned if the request is successful.
              * 400: Returned if the request is not valid.
@@ -23132,9 +23132,9 @@ export interface AtlassianV3 {
              * operationId: updateProjectAvatar
              * sum: Set project avatar
              * doc: Sets the avatar displayed for a project.
-             * 
+             *
              * Use [Load project avatar](#api-rest-api-3-project-projectIdOrKey-avatar2-post) to store avatars against the project, before using this operation to set the displayed avatar.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg).
              * 204: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -23149,7 +23149,7 @@ export interface AtlassianV3 {
                * operationId: deleteProjectAvatar
                * sum: Delete project avatar
                * doc: Deletes a custom avatar from a project. Note that system avatars cannot be deleted.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg).
                * 204: Returned if the request is successful.
                * 401: Returned if the authentication credentials are incorrect or missing.
@@ -23166,35 +23166,35 @@ export interface AtlassianV3 {
              * operationId: createProjectAvatar
              * sum: Load project avatar
              * doc: Loads an avatar for a project.
-             * 
+             *
              * Specify the avatar's local file location in the body of the request. Also, include the following headers:
-             * 
+             *
              *  *  `X-Atlassian-Token: no-check` To prevent XSRF protection blocking the request, for more information see [Special Headers](#special-request-headers).
              *  *  `Content-Type: image/image type` Valid image types are JPEG, GIF, or PNG.
-             * 
-             * For example:  
+             *
+             * For example:
              * `curl --request POST `
-             * 
+             *
              * `--user email@example.com:<api_token> `
-             * 
+             *
              * `--header 'X-Atlassian-Token: no-check' `
-             * 
+             *
              * `--header 'Content-Type: image/< image_type>' `
-             * 
+             *
              * `--data-binary "<@/path/to/file/with/your/avatar>" `
-             * 
+             *
              * `--url 'https://your-domain.atlassian.net/rest/api/3/project/{projectIdOrKey}/avatar2'`
-             * 
+             *
              * The avatar is cropped to a square. If no crop parameters are specified, the square originates at the top left of the image. The length of the square's sides is set to the smaller of the height or width of the image.
-             * 
+             *
              * The cropped image is then used to create avatars of 16x16, 24x24, 32x32, and 48x48 in size.
-             * 
+             *
              * After creating the avatar use [Set project avatar](#api-rest-api-3-project-projectIdOrKey-avatar-put) to set it as the project's displayed avatar.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg).
              * 201: Returned if the request is successful.
              * 400: Returned if:
-             * 
+             *
              *  *  an image isn't included in the request.
              *  *  the image type is unsupported.
              *  *  the crop parameters extend the crop area beyond the edge of the image.
@@ -23211,9 +23211,9 @@ export interface AtlassianV3 {
              * operationId: getAllProjectAvatars
              * sum: Get all project avatars
              * doc: Returns all project avatars, grouped by system and custom avatars.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
              * 200: Returned if request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -23234,9 +23234,9 @@ export interface AtlassianV3 {
                * operationId: getDefaultProjectClassification
                * sum: Get the default data classification level of a project
                * doc: Returns the default data classification for a project.
-               * 
+               *
                * **[Permissions](#permissions) required:**
-               * 
+               *
                *  *  *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
                *  *  *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
                *  *  *Administer jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
@@ -23250,9 +23250,9 @@ export interface AtlassianV3 {
                * operationId: removeDefaultProjectClassification
                * sum: Remove the default data classification level from a project
                * doc: Remove the default data classification level for a project.
-               * 
+               *
                * **[Permissions](#permissions) required:**
-               * 
+               *
                *  *  *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
                *  *  *Administer jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 204: Returned if the request is successful.
@@ -23266,9 +23266,9 @@ export interface AtlassianV3 {
                * operationId: updateDefaultProjectClassification
                * sum: Update the default data classification level of a project
                * doc: Updates the default data classification level for a project.
-               * 
+               *
                * **[Permissions](#permissions) required:**
-               * 
+               *
                *  *  *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
                *  *  *Administer jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 204: Returned if the request is successful.
@@ -23290,11 +23290,11 @@ export interface AtlassianV3 {
              * operationId: getProjectComponentsPaginated
              * sum: Get project components paginated
              * doc: Returns a [paginated](#pagination) list of all components in a project. See the [Get project components](#api-rest-api-3-project-projectIdOrKey-components-get) resource if you want to get a full list of versions without pagination.
-             * 
+             *
              * If your project uses Compass components, this API will return a list of Compass components that are linked to issues in that project.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -23313,11 +23313,11 @@ export interface AtlassianV3 {
              * operationId: getProjectComponents
              * sum: Get project components
              * doc: Returns all components in a project. See the [Get project components paginated](#api-rest-api-3-project-projectIdOrKey-component-get) resource if you want to get a full list of components with pagination.
-             * 
+             *
              * If your project uses Compass components, this API will return a paginated list of Compass components that are linked to issues in that project.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -23336,12 +23336,12 @@ export interface AtlassianV3 {
              * operationId: deleteProjectAsynchronously
              * sum: Delete project asynchronously
              * doc: Deletes a project asynchronously.
-             * 
+             *
              * This operation is:
-             * 
+             *
              *  *  transactional, that is, if part of the delete fails the project is not deleted.
              *  *  [asynchronous](#async). Follow the `location` link in the response to determine the status of the task and use [Get task](#api-rest-api-3-task-taskId-get) to obtain subsequent updates.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 303: Returned if the request is successful.
              * 400: Returned if the request is not valid.
@@ -23391,9 +23391,9 @@ export interface AtlassianV3 {
              * operationId: getProjectPropertyKeys
              * sum: Get project property keys
              * doc: Returns all [project property](https://developer.atlassian.com/cloud/jira/platform/storing-data-without-a-database/#a-id-jira-entity-properties-a-jira-entity-properties) keys for the project.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
              * 200: Returned if the request is successful.
              * 400: Returned if the request is not valid.
@@ -23413,9 +23413,9 @@ export interface AtlassianV3 {
                * operationId: getProjectProperty
                * sum: Get project property
                * doc: Returns the value of a [project property](https://developer.atlassian.com/cloud/jira/platform/storing-data-without-a-database/#a-id-jira-entity-properties-a-jira-entity-properties).
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the property.
                * 200: Returned if the request is successful.
                * 400: Returned if the request is not valid.
@@ -23429,9 +23429,9 @@ export interface AtlassianV3 {
                * operationId: deleteProjectProperty
                * sum: Delete project property
                * doc: Deletes the [property](https://developer.atlassian.com/cloud/jira/platform/storing-data-without-a-database/#a-id-jira-entity-properties-a-jira-entity-properties) from a project.
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the property.
                * 204: Returned if the project property is deleted.
                * 400: Returned if the request is not valid.
@@ -23445,11 +23445,11 @@ export interface AtlassianV3 {
                * operationId: setProjectProperty
                * sum: Set project property
                * doc: Sets the value of the [project property](https://developer.atlassian.com/cloud/jira/platform/storing-data-without-a-database/#a-id-jira-entity-properties-a-jira-entity-properties). You can use project properties to store custom data against the project.
-               * 
+               *
                * The value of the request body must be a [valid](http://tools.ietf.org/html/rfc4627), non-empty JSON blob. The maximum length is 32768 characters.
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project in which the property is created.
                * 200: Returned if the project property is updated.
                * 201: Returned if the project property is created.
@@ -23472,9 +23472,9 @@ export interface AtlassianV3 {
              * operationId: restore
              * sum: Restore deleted or archived project
              * doc: Restores a project that has been archived or placed in the Jira recycle bin.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg)for Company managed projects.
              *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project for Team managed projects.
              * 200: Returned if the request is successful.
@@ -23491,11 +23491,11 @@ export interface AtlassianV3 {
              * operationId: getProjectRoles
              * sum: Get project roles for project
              * doc: Returns a list of [project roles](https://support.atlassian.com/jira-cloud-administration/docs/manage-project-roles/) for the project returning the name and self URL for each role.
-             * 
+             *
              * Note that all project roles are shared with all projects in Jira Cloud. See [Get all project roles](#api-rest-api-3-role-get) for more information.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for any project on the site or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing or if the user lacks administrative permissions for the project.
@@ -23513,17 +23513,17 @@ export interface AtlassianV3 {
                * operationId: getProjectRole
                * sum: Get project role for project
                * doc: Returns a project role's details and actors associated with the project. The list of actors is sorted by display name.
-               * 
+               *
                * To check whether a user belongs to a role based on their group memberships, use [Get user](#api-rest-api-3-user-get) with the `groups` expand parameter selected. Then check whether the user keys and groups match with the actors returned for the project.
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if the request is successful.
                * 400: Returned if the request is not valid.
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 404: Returned if:
-               * 
+               *
                *  *  the project or project role is not found.
                *  *  the user does not have administrative permission.
                */
@@ -23533,16 +23533,16 @@ export interface AtlassianV3 {
                * operationId: deleteActor
                * sum: Delete actors from project role
                * doc: Deletes actors from a project role for the project.
-               * 
+               *
                * To remove default actors from the project role, use [Delete default actors from project role](#api-rest-api-3-role-id-actors-delete).
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 204: Returned if the request is successful.
                * 400: Returned if the request is not valid.
                * 404: Returned if:
-               * 
+               *
                *  *  the project or project role is not found.
                *  *  the calling user does not have administrative permission.
                */
@@ -23552,19 +23552,19 @@ export interface AtlassianV3 {
                * operationId: addActorUsers
                * sum: Add actors to project role
                * doc: Adds actors to a project role for the project.
-               * 
+               *
                * To replace all actors for the project, use [Set actors for project role](#api-rest-api-3-project-projectIdOrKey-role-id-put).
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if the request is successful. The complete list of actors for the project is returned.
-               * 
+               *
                * For example, the cURL request above adds a group, *jira-developers*. For the response below to be returned as a result of that request, the user *Mia Krystof* would have previously been added as a `user` actor for this project.
                * 400: Returned if the request is not valid.
                * 401: Returned if the authentication credentials are incorrect or missing or if the calling user lacks administrative permissions for the project.
                * 404: Returned if:
-               * 
+               *
                *  *  the project is not found.
                *  *  the user or group is not found.
                *  *  the group or user is not active.
@@ -23575,15 +23575,15 @@ export interface AtlassianV3 {
                * operationId: setActors
                * sum: Set actors for project role
                * doc: Sets the actors for a project role for a project, replacing all existing actors.
-               * 
+               *
                * To add actors to the project without overwriting the existing list, use [Add actors to project role](#api-rest-api-3-project-projectIdOrKey-role-id-post).
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if the request is successful. The complete list of actors for the project is returned.
                * 400: Returned if the request is not valid.
                * 401: Returned if the authentication credentials are incorrect or missing or if the calling user lacks administrative permissions for the project.
                * 404: Returned if:
-               * 
+               *
                *  *  the project is not found.
                *  *  a user or group is not found.
                *  *  a group or user is not active.
@@ -23602,9 +23602,9 @@ export interface AtlassianV3 {
              * operationId: getProjectRoleDetails
              * sum: Get project role details
              * doc: Returns all [project roles](https://support.atlassian.com/jira-cloud-administration/docs/manage-project-roles/) and the details for each role. Note that the list of project roles is common to all projects.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -23623,9 +23623,9 @@ export interface AtlassianV3 {
              * operationId: getAllStatuses
              * sum: Get all statuses for project
              * doc: Returns the valid statuses for a project. The statuses are grouped by issue type, as each project has a set of valid issue types and each issue type has a set of valid statuses.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -23644,9 +23644,9 @@ export interface AtlassianV3 {
              * operationId: getProjectVersionsPaginated
              * sum: Get project versions paginated
              * doc: Returns a [paginated](#pagination) list of all versions in a project. See the [Get project versions](#api-rest-api-3-project-projectIdOrKey-versions-get) resource if you want to get a full list of versions without pagination.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
              * 200: Returned if the request is successful.
              * 404: Returned if the project is not found or the user does not have permission to view it.
@@ -23664,9 +23664,9 @@ export interface AtlassianV3 {
              * operationId: getProjectVersions
              * sum: Get project versions
              * doc: Returns all versions in a project. The response is not paginated. Use [Get project versions paginated](#api-rest-api-3-project-projectIdOrKey-version-get) if you want to get the versions in a project with pagination.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
              * 200: Returned if the request is successful.
              * 404: Returned if the project is not found or the user does not have permission to view it.
@@ -23687,7 +23687,7 @@ export interface AtlassianV3 {
              * operationId: getProjectEmail
              * sum: Get project's sender email
              * doc: Returns the [project's sender email address](https://confluence.atlassian.com/x/dolKLg).
-             * 
+             *
              * **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -23700,9 +23700,9 @@ export interface AtlassianV3 {
              * operationId: updateProjectEmail
              * sum: Set project's sender email
              * doc: Sets the [project's sender email address](https://confluence.atlassian.com/x/dolKLg).
-             * 
+             *
              * If `emailAddress` is an empty string, the default email address is restored.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission.](https://confluence.atlassian.com/x/yodKLg)
              * 204: Returned if the project's sender email address is successfully set.
              * 400: Returned if the request is not valid, if the email address is not valid.
@@ -23723,13 +23723,13 @@ export interface AtlassianV3 {
              * operationId: getHierarchy
              * sum: Get project issue type hierarchy
              * doc: Get the issue type hierarchy for a next-gen project.
-             * 
+             *
              * The issue type hierarchy for a project consists of:
-             * 
+             *
              *  *  *Epic* at level 1 (optional).
              *  *  One or more issue types at level 0 such as *Story*, *Task*, or *Bug*. Where the issue type *Epic* is defined, these issue types are used to break down the content of an epic.
              *  *  *Subtask* at level -1 (optional). This issue type enables level 0 issue types to be broken down into components. Issues based on a level -1 issue type must have a parent issue.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -23752,7 +23752,7 @@ export interface AtlassianV3 {
              * operationId: getProjectIssueSecurityScheme
              * sum: Get project issue security scheme
              * doc: Returns the [issue security scheme](https://confluence.atlassian.com/x/J4lKLg) associated with the project.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or the *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -23773,7 +23773,7 @@ export interface AtlassianV3 {
              * operationId: getNotificationSchemeForProject
              * sum: Get project notification scheme
              * doc: Gets a [notification scheme](https://confluence.atlassian.com/x/8YdKLg) associated with the project.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the request is not valid.
@@ -23793,7 +23793,7 @@ export interface AtlassianV3 {
              * operationId: getAssignedPermissionScheme
              * sum: Get assigned permission scheme
              * doc: Gets the [permission scheme](https://confluence.atlassian.com/x/yodKLg) associated with the project.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg).
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -23806,12 +23806,12 @@ export interface AtlassianV3 {
              * operationId: assignPermissionScheme
              * sum: Assign permission scheme
              * doc: Assigns a permission scheme with a project. See [Managing project permissions](https://confluence.atlassian.com/x/yodKLg) for more information about permission schemes.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg)
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if:
-             * 
+             *
              *  *  the user does not have the necessary permission to edit the project's configuration.
              *  *  the Jira instance is Jira Core Free or Jira Software Free. Permission schemes cannot be assigned to projects on free plans.
              * 404: Returned if the project or permission scheme is not found.
@@ -23829,9 +23829,9 @@ export interface AtlassianV3 {
              * operationId: getSecurityLevelsForProject
              * sum: Get project issue security levels
              * doc: Returns all [issue security](https://confluence.atlassian.com/x/J4lKLg) levels for the project that the user has access to.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Browse projects* [global permission](https://confluence.atlassian.com/x/x4dKLg) for the project, however, issue security levels are only returned for authenticated user with *Set Issue Security* [global permission](https://confluence.atlassian.com/x/x4dKLg) for the project.
              * 200: Returned if the request is successful.
              * 404: Returned if the project is not found or the user does not have permission to view it.
@@ -23851,7 +23851,7 @@ export interface AtlassianV3 {
          * operationId: getAllProjectCategories
          * sum: Get all project categories
          * doc: Returns all project categories.
-         * 
+         *
          * **[Permissions](#permissions) required:** Permission to access Jira.
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -23862,11 +23862,11 @@ export interface AtlassianV3 {
          * operationId: createProjectCategory
          * sum: Create project category
          * doc: Creates a project category.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the request is successful.
          * 400: Returned if:
-         * 
+         *
          *  *  `name` is not provided or exceeds 255 characters.
          *  *  `description` exceeds 1000 characters.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -23885,7 +23885,7 @@ export interface AtlassianV3 {
            * operationId: getProjectCategoryById
            * sum: Get project category by ID
            * doc: Returns a project category.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -23897,7 +23897,7 @@ export interface AtlassianV3 {
            * operationId: removeProjectCategory
            * sum: Delete project category
            * doc: Deletes a project category.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -23910,11 +23910,11 @@ export interface AtlassianV3 {
            * operationId: updateProjectCategory
            * sum: Update project category
            * doc: Updates a project category.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if:
-           * 
+           *
            *  *  `name` has been modified and exceeds 255 characters.
            *  *  `description` has been modified and exceeds 1000 characters.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -23937,7 +23937,7 @@ export interface AtlassianV3 {
            * operationId: validateProjectKey
            * sum: Validate project key
            * doc: Validates a project key by confirming the key is a valid string and not in use.
-           * 
+           *
            * **[Permissions](#permissions) required:** None.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect.
@@ -23955,7 +23955,7 @@ export interface AtlassianV3 {
            * operationId: getValidProjectKey
            * sum: Get valid project key
            * doc: Validates a project key and, if the key is invalid or in use, generates a valid random string for the project key.
-           * 
+           *
            * **[Permissions](#permissions) required:** None.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect.
@@ -23973,7 +23973,7 @@ export interface AtlassianV3 {
            * operationId: getValidProjectName
            * sum: Get valid project name
            * doc: Checks that a project name isn't in use. If the name isn't in use, the passed string is returned. If the name is in use, this operation attempts to generate a valid project name based on the one supplied, usually by adding a sequence number. If a valid project name cannot be generated, a 404 response is returned.
-           * 
+           *
            * **[Permissions](#permissions) required:** None.
            * 200: Returned if the request is successful.
            * 400: Returned if the request is invalid.
@@ -23994,7 +23994,7 @@ export interface AtlassianV3 {
          * operationId: getResolutions
          * sum: Get resolutions
          * doc: Returns a list of all issue resolution values.
-         * 
+         *
          * **[Permissions](#permissions) required:** Permission to access Jira.
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -24005,7 +24005,7 @@ export interface AtlassianV3 {
          * operationId: createResolution
          * sum: Create resolution
          * doc: Creates an issue resolution.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the request is successful.
          * 400: Returned if the request isn't valid.
@@ -24024,7 +24024,7 @@ export interface AtlassianV3 {
            * operationId: setDefaultResolution
            * sum: Set default resolution
            * doc: Sets default issue resolution.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request isn't valid.
@@ -24041,7 +24041,7 @@ export interface AtlassianV3 {
            * operationId: moveResolutions
            * sum: Move resolutions
            * doc: Changes the order of issue resolutions.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request isn't valid.
@@ -24058,10 +24058,10 @@ export interface AtlassianV3 {
            * operationId: searchResolutions
            * sum: Search resolutions
            * doc: Returns a [paginated](#pagination) list of resolutions. The list can contain all resolutions or a subset determined by any combination of these criteria:
-           * 
+           *
            *  *  a list of resolutions IDs.
            *  *  whether the field configuration is a default. This returns resolutions from company-managed (classic) projects only, as there is no concept of default resolutions in team-managed projects.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -24079,7 +24079,7 @@ export interface AtlassianV3 {
            * operationId: getResolution
            * sum: Get resolution
            * doc: Returns an issue resolution value.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -24091,9 +24091,9 @@ export interface AtlassianV3 {
            * operationId: deleteResolution
            * sum: Delete resolution
            * doc: Deletes an issue resolution.
-           * 
+           *
            * This operation is [asynchronous](#async). Follow the `location` link in the response to determine the status of the task and use [Get task](#api-rest-api-3-task-taskId-get) to obtain subsequent updates.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 303: Returned if the request is successful.
            * 400: Returned if the request isn't valid.
@@ -24108,7 +24108,7 @@ export interface AtlassianV3 {
            * operationId: updateResolution
            * sum: Update resolution
            * doc: Updates an issue resolution.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request isn't valid.
@@ -24130,22 +24130,22 @@ export interface AtlassianV3 {
          * operationId: getAllProjectRoles
          * sum: Get all project roles
          * doc: Gets a list of all project roles, complete with project role details and default actors.
-         * 
+         *
          * ### About project roles ###
-         * 
+         *
          * [Project roles](https://support.atlassian.com/jira-cloud-administration/docs/manage-project-roles/) are a flexible way to to associate users and groups with projects. In Jira Cloud, the list of project roles is shared globally with all projects, but each project can have a different set of actors associated with it (unlike groups, which have the same membership throughout all Jira applications).
-         * 
+         *
          * Project roles are used in [permission schemes](#api-rest-api-3-permissionscheme-get), [email notification schemes](#api-rest-api-3-notificationscheme-get), [issue security levels](#api-rest-api-3-issuesecurityschemes-get), [comment visibility](#api-rest-api-3-comment-list-post), and workflow conditions.
-         * 
+         *
          * #### Members and actors ####
-         * 
+         *
          * In the Jira REST API, a member of a project role is called an *actor*. An *actor* is a group or user associated with a project role.
-         * 
+         *
          * Actors may be set as [default members](https://support.atlassian.com/jira-cloud-administration/docs/manage-project-roles/#Specifying-'default-members'-for-a-project-role) of the project role or set at the project level:
-         * 
+         *
          *  *  Default actors: Users and groups that are assigned to the project role for all newly created projects. The default actors can be removed at the project level later if desired.
          *  *  Actors: Users and groups that are associated with a project role for a project, which may differ from the default actors. This enables you to assign a user to different roles in different projects.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -24157,9 +24157,9 @@ export interface AtlassianV3 {
          * operationId: createProjectRole
          * sum: Create project role
          * doc: Creates a new project role with no [default actors](#api-rest-api-3-resolution-get). You can use the [Add default actors to project role](#api-rest-api-3-role-id-actors-post) operation to add default actors to the project role after creating it.
-         * 
+         *
          * *Note that although a new project role is available to all projects upon creation, any default actors that are associated with the project role are not added to projects that existed prior to the role being created.*<
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
          * 400: Returned if the request is not valid. The `name` cannot be empty or start or end with whitespace.
@@ -24179,7 +24179,7 @@ export interface AtlassianV3 {
            * operationId: getProjectRoleById
            * sum: Get project role by ID
            * doc: Gets the project role details and the default actors associated with the role. The list of default actors is sorted by display name.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -24192,7 +24192,7 @@ export interface AtlassianV3 {
            * operationId: deleteProjectRole
            * sum: Delete project role
            * doc: Deletes a project role. You must specify a replacement project role if you wish to delete a project role that is in use.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request is invalid or if the replacement project role is not found.
@@ -24207,9 +24207,9 @@ export interface AtlassianV3 {
            * operationId: partialUpdateProjectRole
            * sum: Partial update project role
            * doc: Updates either the project role's name or its description.
-           * 
+           *
            * You cannot update both the name and description at the same time using this operation. If you send a request with a name and a description only the name is updated.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is invalid.
@@ -24223,7 +24223,7 @@ export interface AtlassianV3 {
            * operationId: fullyUpdateProjectRole
            * sum: Fully update project role
            * doc: Updates the project role's name and description. You must include both a name and a description in the request.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is not valid. The `name` cannot be empty or start or end with whitespace.
@@ -24243,7 +24243,7 @@ export interface AtlassianV3 {
              * operationId: getProjectRoleActorsForRole
              * sum: Get default actors for project role
              * doc: Returns the [default actors](#api-rest-api-3-resolution-get) for the project role.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -24257,9 +24257,9 @@ export interface AtlassianV3 {
              * operationId: deleteProjectRoleActorsFromRole
              * sum: Delete default actors from project role
              * doc: Deletes the [default actors](#api-rest-api-3-resolution-get) from a project role. You may delete a group or user, but you cannot delete a group and a user in the same request.
-             * 
+             *
              * Changing a project role's default actors does not affect project role members for projects already created.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -24273,9 +24273,9 @@ export interface AtlassianV3 {
              * operationId: addProjectRoleActorsToRole
              * sum: Add default actors to project role
              * doc: Adds [default actors](#api-rest-api-3-resolution-get) to a role. You may add groups or users, but you cannot add groups and users in the same request.
-             * 
+             *
              * Changing a project role's default actors does not affect project role members for projects already created.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -24298,7 +24298,7 @@ export interface AtlassianV3 {
          * operationId: getScreens
          * sum: Get screens
          * doc: Returns a [paginated](#pagination) list of all screens or those specified by one or more screen IDs.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -24310,7 +24310,7 @@ export interface AtlassianV3 {
          * operationId: createScreen
          * sum: Create screen
          * doc: Creates a screen with a default field tab.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the request is successful.
          * 400: Returned if the request is not valid.
@@ -24331,7 +24331,7 @@ export interface AtlassianV3 {
              * operationId: addFieldToDefaultScreen
              * sum: Add field to default screen
              * doc: Adds a field to the default tab of the default screen.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -24349,9 +24349,9 @@ export interface AtlassianV3 {
            * operationId: getBulkScreenTabs
            * sum: Get bulk screen tabs
            * doc: Returns the list of tabs for a bulk of screens.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the screen ID or the tab ID is empty.
@@ -24371,7 +24371,7 @@ export interface AtlassianV3 {
            * operationId: deleteScreen
            * sum: Delete screen
            * doc: Deletes a screen. A screen cannot be deleted if it is used in a screen scheme, workflow, or workflow draft.
-           * 
+           *
            * Only screens used in classic projects can be deleted.
            * 204: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -24385,7 +24385,7 @@ export interface AtlassianV3 {
            * operationId: updateScreen
            * sum: Update screen
            * doc: Updates a screen. Only screens used in classic projects can be updated.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -24401,7 +24401,7 @@ export interface AtlassianV3 {
              * operationId: getAvailableScreenFields
              * sum: Get available screen fields
              * doc: Returns the fields that can be added to a tab on a screen.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -24421,9 +24421,9 @@ export interface AtlassianV3 {
              * operationId: getAllScreenTabs
              * sum: Get all screen tabs
              * doc: Returns the list of tabs for a screen.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              *  *  *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) when the project key is specified, providing that the screen is associated with the project through a Screen Scheme and Issue Type Screen Scheme.
              * 200: Returned if the request is successful.
@@ -24438,7 +24438,7 @@ export interface AtlassianV3 {
              * operationId: addScreenTab
              * sum: Create screen tab
              * doc: Creates a tab for a screen.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -24458,7 +24458,7 @@ export interface AtlassianV3 {
                * operationId: deleteScreenTab
                * sum: Delete screen tab
                * doc: Deletes a screen tab.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 204: Returned if the request is successful.
                * 401: Returned if the authentication credentials are incorrect or missing.
@@ -24471,7 +24471,7 @@ export interface AtlassianV3 {
                * operationId: renameScreenTab
                * sum: Update screen tab
                * doc: Updates the name of a screen tab.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if the request is successful.
                * 400: Returned if the request is invalid.
@@ -24487,9 +24487,9 @@ export interface AtlassianV3 {
                  * operationId: getAllScreenTabFields
                  * sum: Get all screen tab fields
                  * doc: Returns all fields for a screen tab.
-                 * 
+                 *
                  * **[Permissions](#permissions) required:**
-                 * 
+                 *
                  *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                  *  *  *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) when the project key is specified, providing that the screen is associated with the project through a Screen Scheme and Issue Type Screen Scheme.
                  * 200: Returned if the request is successful.
@@ -24503,7 +24503,7 @@ export interface AtlassianV3 {
                  * operationId: addScreenTabField
                  * sum: Add screen tab field
                  * doc: Adds a field to a screen tab.
-                 * 
+                 *
                  * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                  * 200: Returned if the request is successful.
                  * 400: Returned if the request is invalid.
@@ -24523,7 +24523,7 @@ export interface AtlassianV3 {
                    * operationId: removeScreenTabField
                    * sum: Remove screen tab field
                    * doc: Removes a field from a screen tab.
-                   * 
+                   *
                    * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                    * 204: Returned if the request is successful.
                    * 400: Returned if the request is invalid.
@@ -24539,9 +24539,9 @@ export interface AtlassianV3 {
                      * operationId: moveScreenTabField
                      * sum: Move screen tab field
                      * doc: Moves a screen tab field.
-                     * 
+                     *
                      * If `after` and `position` are provided in the request, `position` is ignored.
-                     * 
+                     *
                      * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                      * 204: Returned if the request is successful.
                      * 400: Returned if the request is invalid.
@@ -24562,7 +24562,7 @@ export interface AtlassianV3 {
                    * operationId: moveScreenTab
                    * sum: Move screen tab
                    * doc: Moves a screen tab.
-                   * 
+                   *
                    * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                    * 204: Returned if the request is successful.
                    * 400: Returned if the request is invalid.
@@ -24584,9 +24584,9 @@ export interface AtlassianV3 {
          * operationId: getScreenSchemes
          * sum: Get screen schemes
          * doc: Returns a [paginated](#pagination) list of screen schemes.
-         * 
+         *
          * Only screen schemes used in classic projects are returned.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -24598,7 +24598,7 @@ export interface AtlassianV3 {
          * operationId: createScreenScheme
          * sum: Create screen scheme
          * doc: Creates a screen scheme.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the request is successful.
          * 400: Returned if the request is not valid.
@@ -24618,9 +24618,9 @@ export interface AtlassianV3 {
            * operationId: deleteScreenScheme
            * sum: Delete screen scheme
            * doc: Deletes a screen scheme. A screen scheme cannot be deleted if it is used in an issue type screen scheme.
-           * 
+           *
            * Only screens schemes used in classic projects can be deleted.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the screen scheme is deleted.
            * 400: Returned if the screen scheme is used in an issue type screen scheme.
@@ -24634,7 +24634,7 @@ export interface AtlassianV3 {
            * operationId: updateScreenScheme
            * sum: Update screen scheme
            * doc: Updates a screen scheme. Only screen schemes used in classic projects can be updated.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -24652,13 +24652,13 @@ export interface AtlassianV3 {
          * operationId: searchForIssuesUsingJql
          * sum: Search for issues using JQL (GET)
          * doc: Searches for issues using [JQL](https://confluence.atlassian.com/x/egORLQ).
-         * 
+         *
          * If the JQL query expression is too large to be encoded as a query parameter, use the [POST](#api-rest-api-3-search-post) version of this resource.
-         * 
+         *
          * This operation can be accessed anonymously.
-         * 
+         *
          * **[Permissions](#permissions) required:** Issues are included in the response where the user has:
-         * 
+         *
          *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue.
          *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
          * 200: Returned if the request is successful.
@@ -24671,13 +24671,13 @@ export interface AtlassianV3 {
          * operationId: searchForIssuesUsingJqlPost
          * sum: Search for issues using JQL (POST)
          * doc: Searches for issues using [JQL](https://confluence.atlassian.com/x/egORLQ).
-         * 
+         *
          * There is a [GET](#api-rest-api-3-search-get) version of this resource that can be used for smaller JQL query expressions.
-         * 
+         *
          * This operation can be accessed anonymously.
-         * 
+         *
          * **[Permissions](#permissions) required:** Issues are included in the response where the user has:
-         * 
+         *
          *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue.
          *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
          * 200: Returned if the request is successful.
@@ -24696,13 +24696,13 @@ export interface AtlassianV3 {
            * operationId: searchForIssuesIds
            * sum: Search issue IDs using JQL
            * doc: Searches for IDs of issues using [JQL](https://confluence.atlassian.com/x/egORLQ).
-           * 
+           *
            * Use the [Search](#api-rest-api-3-search-post) endpoint if you need to fetch more than just issue IDs. The Search endpoint returns more information, but may take much longer to respond to requests. This is because it uses a different mechanism for ordering results than this endpoint and doesn't provide the total number of results for your query.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** Issues are included in the response where the user has:
-           * 
+           *
            *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue.
            *  *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
            * 200: Returned if the request is successful.
@@ -24721,11 +24721,11 @@ export interface AtlassianV3 {
            * operationId: getIssueSecurityLevel
            * sum: Get issue security level
            * doc: Returns details of an issue security level.
-           * 
+           *
            * Use [Get issue security scheme](#api-rest-api-3-issuesecurityschemes-id-get) to obtain the IDs of issue security levels associated with the issue security scheme.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** None.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect.
@@ -24745,9 +24745,9 @@ export interface AtlassianV3 {
          * operationId: getServerInfo
          * sum: Get Jira instance info
          * doc: Returns information about the Jira instance.
-         * 
+         *
          * This operation can be accessed anonymously.
-         * 
+         *
          * **[Permissions](#permissions) required:** None.
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect.
@@ -24767,7 +24767,7 @@ export interface AtlassianV3 {
            * operationId: getIssueNavigatorDefaultColumns
            * sum: Get issue navigator default columns
            * doc: Returns the default issue navigator columns.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -24779,15 +24779,15 @@ export interface AtlassianV3 {
            * operationId: setIssueNavigatorDefaultColumns
            * sum: Set issue navigator default columns
            * doc: Sets the default issue navigator columns.
-           * 
+           *
            * The `columns` parameter accepts a navigable field value and is expressed as HTML form data. To specify multiple columns, pass multiple `columns` parameters. For example, in curl:
-           * 
+           *
            * `curl -X PUT -d columns=summary -d columns=description https://your-domain.atlassian.net/rest/api/3/settings/columns`
-           * 
+           *
            * If no column details are sent, then all default columns are removed.
-           * 
+           *
            * A navigable field is one that can be used as a column on the issue navigator. Find details of navigable issue columns using [Get fields](#api-rest-api-3-field-get).
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if invalid parameters are passed.
@@ -24809,9 +24809,9 @@ export interface AtlassianV3 {
          * operationId: getStatuses
          * sum: Get all statuses
          * doc: Returns a list of all statuses associated with active workflows.
-         * 
+         *
          * This operation can be accessed anonymously.
-         * 
+         *
          * **[Permissions](#permissions) required:** None.
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -24828,16 +24828,16 @@ export interface AtlassianV3 {
            * operationId: getStatus
            * sum: Get status
            * doc: Returns a status. The status must be associated with an active workflow to be returned.
-           * 
+           *
            * If a name is used on more than one status, only the status found first is returned. Therefore, identifying the status by its ID may be preferable.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * [Permissions](#permissions) required: None.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if:
-           * 
+           *
            *  *  the status is not found.
            *  *  the status is not associated with a workflow.
            *  *  the user does not have the required permissions.
@@ -24856,7 +24856,7 @@ export interface AtlassianV3 {
          * operationId: getStatusCategories
          * sum: Get all status categories
          * doc: Returns a list of all status categories.
-         * 
+         *
          * **[Permissions](#permissions) required:** Permission to access Jira.
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -24873,7 +24873,7 @@ export interface AtlassianV3 {
            * operationId: getStatusCategory
            * sum: Get status category
            * doc: Returns a status category. Status categories provided a mechanism for categorizing [statuses](#api-rest-api-3-status-idOrName-get).
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -24893,9 +24893,9 @@ export interface AtlassianV3 {
          * operationId: getStatusesById
          * sum: Bulk get statuses
          * doc: Returns a list of the statuses specified by one or more status IDs.
-         * 
+         *
          * **[Permissions](#permissions) required:**
-         * 
+         *
          *  *  *Administer projects* [project permission.](https://confluence.atlassian.com/x/yodKLg)
          *  *  *Administer Jira* [project permission.](https://confluence.atlassian.com/x/yodKLg)
          * 200: Returned if the request is successful.
@@ -24908,9 +24908,9 @@ export interface AtlassianV3 {
          * operationId: deleteStatusesById
          * sum: Bulk delete Statuses
          * doc: Deletes statuses by ID.
-         * 
+         *
          * **[Permissions](#permissions) required:**
-         * 
+         *
          *  *  *Administer projects* [project permission.](https://confluence.atlassian.com/x/yodKLg)
          *  *  *Administer Jira* [project permission.](https://confluence.atlassian.com/x/yodKLg)
          * 204: Returned if the request is successful.
@@ -24923,9 +24923,9 @@ export interface AtlassianV3 {
          * operationId: createStatuses
          * sum: Bulk create statuses
          * doc: Creates statuses for a global or project scope.
-         * 
+         *
          * **[Permissions](#permissions) required:**
-         * 
+         *
          *  *  *Administer projects* [project permission.](https://confluence.atlassian.com/x/yodKLg)
          *  *  *Administer Jira* [project permission.](https://confluence.atlassian.com/x/yodKLg)
          * 200: Returned if the request is successful.
@@ -24939,9 +24939,9 @@ export interface AtlassianV3 {
          * operationId: updateStatuses
          * sum: Bulk update statuses
          * doc: Updates statuses by ID.
-         * 
+         *
          * **[Permissions](#permissions) required:**
-         * 
+         *
          *  *  *Administer projects* [project permission.](https://confluence.atlassian.com/x/yodKLg)
          *  *  *Administer Jira* [project permission.](https://confluence.atlassian.com/x/yodKLg)
          * 204: Returned if the request is successful.
@@ -24961,9 +24961,9 @@ export interface AtlassianV3 {
            * operationId: search
            * sum: Search statuses paginated
            * doc: Returns a [paginated](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/#pagination) list of statuses that match a search on name or project.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Administer projects* [project permission.](https://confluence.atlassian.com/x/yodKLg)
            *  *  *Administer Jira* [project permission.](https://confluence.atlassian.com/x/yodKLg)
            * 200: Returned if the request is successful.
@@ -24986,15 +24986,15 @@ export interface AtlassianV3 {
            * operationId: getTask
            * sum: Get task
            * doc: Returns the status of a [long-running asynchronous task](#async).
-           * 
+           *
            * When a task has finished, this operation returns the JSON blob applicable to the task. See the documentation of the operation that created the task for details. Task details are not permanently retained. As of September 2019, details are retained for 14 days although this period may change without notice.
-           * 
+           *
            * **Deprecation notice:** The required OAuth 2.0 scopes will be updated on June 15, 2024.
-           * 
+           *
            *  *  `read:jira-work`
-           * 
+           *
            * **[Permissions](#permissions) required:** either of:
-           * 
+           *
            *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            *  *  Creator of the task.
            * 200: Returned if the request is successful.
@@ -25014,9 +25014,9 @@ export interface AtlassianV3 {
              * operationId: cancelTask
              * sum: Cancel task
              * doc: Cancels a task.
-             * 
+             *
              * **[Permissions](#permissions) required:** either of:
-             * 
+             *
              *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              *  *  Creator of the task.
              * 202: Returned if the request is successful.
@@ -25036,7 +25036,7 @@ export interface AtlassianV3 {
          * operationId: getUiModifications
          * sum: Get UI modifications
          * doc: Gets UI modifications. UI modifications can only be retrieved by Forge apps.
-         * 
+         *
          * **[Permissions](#permissions) required:** None.
          * 200: Returned if the request is successful.
          * 400: Returned if the request is not valid.
@@ -25049,11 +25049,11 @@ export interface AtlassianV3 {
          * operationId: createUiModification
          * sum: Create UI modification
          * doc: Creates a UI modification. UI modification can only be created by Forge apps.
-         * 
+         *
          * Each app can define up to 3000 UI modifications. Each UI modification can define up to 1000 contexts. The same context can be assigned to maximum 100 UI modifications.
-         * 
+         *
          * **[Permissions](#permissions) required:**
-         * 
+         *
          *  *  *None* if the UI modification is created without contexts.
          *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for one or more projects, if the UI modification is created with contexts.
          * 201: Returned if the UI modification is created.
@@ -25074,7 +25074,7 @@ export interface AtlassianV3 {
            * operationId: deleteUiModification
            * sum: Delete UI modification
            * doc: Deletes a UI modification. All the contexts that belong to the UI modification are deleted too. UI modification can only be deleted by Forge apps.
-           * 
+           *
            * **[Permissions](#permissions) required:** None.
            * 204: Returned if the UI modification is deleted.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -25087,11 +25087,11 @@ export interface AtlassianV3 {
            * operationId: updateUiModification
            * sum: Update UI modification
            * doc: Updates a UI modification. UI modification can only be updated by Forge apps.
-           * 
+           *
            * Each UI modification can define up to 1000 contexts. The same context can be assigned to maximum 100 UI modifications.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *None* if the UI modification is created without contexts.
            *  *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for one or more projects, if the UI modification is created with contexts.
            * 204: Returned if the UI modification is updated.
@@ -25118,11 +25118,11 @@ export interface AtlassianV3 {
                  * operationId: getAvatars
                  * sum: Get avatars
                  * doc: Returns the system and custom avatars for a project or issue type.
-                 * 
+                 *
                  * This operation can be accessed anonymously.
-                 * 
+                 *
                  * **[Permissions](#permissions) required:**
-                 * 
+                 *
                  *  *  for custom project avatars, *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project the avatar belongs to.
                  *  *  for custom issue type avatars, *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for at least one project the issue type is used in.
                  *  *  for system avatars, none.
@@ -25136,38 +25136,38 @@ export interface AtlassianV3 {
                  * operationId: storeAvatar
                  * sum: Load avatar
                  * doc: Loads a custom avatar for a project or issue type.
-                 * 
+                 *
                  * Specify the avatar's local file location in the body of the request. Also, include the following headers:
-                 * 
+                 *
                  *  *  `X-Atlassian-Token: no-check` To prevent XSRF protection blocking the request, for more information see [Special Headers](#special-request-headers).
                  *  *  `Content-Type: image/image type` Valid image types are JPEG, GIF, or PNG.
-                 * 
-                 * For example:  
+                 *
+                 * For example:
                  * `curl --request POST `
-                 * 
+                 *
                  * `--user email@example.com:<api_token> `
-                 * 
+                 *
                  * `--header 'X-Atlassian-Token: no-check' `
-                 * 
+                 *
                  * `--header 'Content-Type: image/< image_type>' `
-                 * 
+                 *
                  * `--data-binary "<@/path/to/file/with/your/avatar>" `
-                 * 
+                 *
                  * `--url 'https://your-domain.atlassian.net/rest/api/3/universal_avatar/type/{type}/owner/{entityId}'`
-                 * 
+                 *
                  * The avatar is cropped to a square. If no crop parameters are specified, the square originates at the top left of the image. The length of the square's sides is set to the smaller of the height or width of the image.
-                 * 
+                 *
                  * The cropped image is then used to create avatars of 16x16, 24x24, 32x32, and 48x48 in size.
-                 * 
+                 *
                  * After creating the avatar use:
-                 * 
+                 *
                  *  *  [Update issue type](#api-rest-api-3-issuetype-id-put) to set it as the issue type's displayed avatar.
                  *  *  [Set project avatar](#api-rest-api-3-project-projectIdOrKey-avatar-put) to set it as the project's displayed avatar.
-                 * 
+                 *
                  * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                  * 201: Returned if the request is successful.
                  * 400: Returned if:
-                 * 
+                 *
                  *  *  an image isn't included in the request.
                  *  *  the image type is unsupported.
                  *  *  the crop parameters extend the crop area beyond the edge of the image.
@@ -25192,7 +25192,7 @@ export interface AtlassianV3 {
                      * operationId: deleteAvatar
                      * sum: Delete avatar
                      * doc: Deletes an avatar from a project or issue type.
-                     * 
+                     *
                      * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                      * 204: Returned if the request is successful.
                      * 400: Returned if the request is invalid.
@@ -25217,9 +25217,9 @@ export interface AtlassianV3 {
                * operationId: getAvatarImageByType
                * sum: Get avatar image by type
                * doc: Returns the default project or issue type avatar image.
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:** None.
                * 200: Returned if the request is successful.
                * 401: Returned if the authentication credentials are incorrect.
@@ -25240,11 +25240,11 @@ export interface AtlassianV3 {
                    * operationId: getAvatarImageByID
                    * sum: Get avatar image by ID
                    * doc: Returns a project or issue type avatar image by ID.
-                   * 
+                   *
                    * This operation can be accessed anonymously.
-                   * 
+                   *
                    * **[Permissions](#permissions) required:**
-                   * 
+                   *
                    *  *  For system avatars, none.
                    *  *  For custom project avatars, *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project the avatar belongs to.
                    *  *  For custom issue type avatars, *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for at least one project the issue type is used in.
@@ -25270,11 +25270,11 @@ export interface AtlassianV3 {
                    * operationId: getAvatarImageByOwner
                    * sum: Get avatar image by owner
                    * doc: Returns the avatar image for a project or issue type.
-                   * 
+                   *
                    * This operation can be accessed anonymously.
-                   * 
+                   *
                    * **[Permissions](#permissions) required:**
-                   * 
+                   *
                    *  *  For system avatars, none.
                    *  *  For custom project avatars, *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project the avatar belongs to.
                    *  *  For custom issue type avatars, *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for at least one project the issue type is used in.
@@ -25302,9 +25302,9 @@ export interface AtlassianV3 {
          * operationId: getUser
          * sum: Get user
          * doc: Returns a user.
-         * 
+         *
          * Privacy controls are applied to the response based on the user's preferences. This could mean, for example, that the user's email address is hidden. See the [Profile visibility overview](https://developer.atlassian.com/cloud/jira/platform/profile-visibility/) for more details.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -25317,7 +25317,7 @@ export interface AtlassianV3 {
          * operationId: removeUser
          * sum: Delete user
          * doc: Deletes a user. If the operation completes successfully then the user is removed from Jira's user base. This operation does not delete the user's Atlassian account.
-         * 
+         *
          * **[Permissions](#permissions) required:** Site administration (that is, membership of the *site-admin* [group](https://confluence.atlassian.com/x/24xjL)).
          * 204: Returned if the request is successful.
          * 400: Returned if the user cannot be removed.
@@ -25331,9 +25331,9 @@ export interface AtlassianV3 {
          * operationId: createUser
          * sum: Create user
          * doc: Creates a user. This resource is retained for legacy compatibility. As soon as a more suitable alternative is available this resource will be deprecated.
-         * 
+         *
          * If the user exists and has access to Jira, the operation returns a 201 status. If the user exists but does not have access to Jira, the operation returns a 400 status.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the request is successful.
          * 400: Returned if the request is invalid or the number of licensed users is exceeded.
@@ -25354,17 +25354,17 @@ export interface AtlassianV3 {
              * operationId: findBulkAssignableUsers
              * sum: Find users assignable to projects
              * doc: Returns a list of users who can be assigned issues in one or more projects. The list may be restricted to users whose attributes match a string.
-             * 
+             *
              * This operation takes the users in the range defined by `startAt` and `maxResults`, up to the thousandth user, and then returns only the users from that range that can be assigned issues in the projects. This means the operation usually returns fewer users than specified in `maxResults`. To get all the users who can be assigned issues in the projects, use [Get all users](#api-rest-api-3-users-search-get) and filter the records in your code.
-             * 
+             *
              * Privacy controls are applied to the response based on the users' preferences. This could mean, for example, that the user's email address is hidden. See the [Profile visibility overview](https://developer.atlassian.com/cloud/jira/platform/profile-visibility/) for more details.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** None.
              * 200: Returned if the request is successful.
              * 400: Returned if:
-             * 
+             *
              *  *  `projectKeys` is missing.
              *  *  `query` or `accountId` is missing.
              *  *  `query` and `accountId` are provided.
@@ -25385,21 +25385,21 @@ export interface AtlassianV3 {
              * operationId: findAssignableUsers
              * sum: Find users assignable to issues
              * doc: Returns a list of users that can be assigned to an issue. Use this operation to find the list of users who can be assigned to:
-             * 
+             *
              *  *  a new issue, by providing the `projectKeyOrId`.
              *  *  an updated issue, by providing the `issueKey`.
              *  *  to an issue during a transition (workflow action), by providing the `issueKey` and the transition id in `actionDescriptorId`. You can obtain the IDs of an issue's valid transitions using the `transitions` option in the `expand` parameter of [ Get issue](#api-rest-api-3-issue-issueIdOrKey-get).
-             * 
+             *
              * In all these cases, you can pass an account ID to determine if a user can be assigned to an issue. The user is returned in the response if they can be assigned to the issue or issue transition.
-             * 
+             *
              * This operation takes the users in the range defined by `startAt` and `maxResults`, up to the thousandth user, and then returns only the users from that range that can be assigned the issue. This means the operation usually returns fewer users than specified in `maxResults`. To get all the users who can be assigned the issue, use [Get all users](#api-rest-api-3-users-search-get) and filter the records in your code.
-             * 
+             *
              * Privacy controls are applied to the response based on the users' preferences. This could mean, for example, that the user's email address is hidden. See the [Profile visibility overview](https://developer.atlassian.com/cloud/jira/platform/profile-visibility/) for more details.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Assign issues* [project permission](https://confluence.atlassian.com/x/yodKLg)
              * 200: Returned if the request is successful.
              * 400: Returned if:
-             * 
+             *
              *  *  `issueKey` or `project` is missing.
              *  *  `query` or `accountId` is missing.
              *  *  `query` and `accountId` are provided.
@@ -25421,7 +25421,7 @@ export interface AtlassianV3 {
            * operationId: bulkGetUsers
            * sum: Bulk get users
            * doc: Returns a [paginated](#pagination) list of the users specified by one or more account IDs.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira.
            * 200: Returned if the request is successful.
            * 400: Returned if `accountID` is missing.
@@ -25439,7 +25439,7 @@ export interface AtlassianV3 {
              * operationId: bulkGetUsersMigration
              * sum: Get account IDs for users
              * doc: Returns the account IDs for the users specified in the `key` or `username` parameters. Note that multiple `key` or `username` parameters can be specified.
-             * 
+             *
              * **[Permissions](#permissions) required:** Permission to access Jira.
              * 200: Returned if the request is successful.
              * 400: Returned if `key` or `username`
@@ -25459,9 +25459,9 @@ export interface AtlassianV3 {
            * operationId: getUserDefaultColumns
            * sum: Get user default columns
            * doc: Returns the default [issue table columns](https://confluence.atlassian.com/x/XYdKLg) for the user. If `accountId` is not passed in the request, the calling user's details are returned.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLgl), to get the column details for any user.
            *  *  Permission to access Jira, to get the calling user's column details.
            * 200: Returned if the request is successful.
@@ -25475,9 +25475,9 @@ export interface AtlassianV3 {
            * operationId: resetUserColumns
            * sum: Reset user default columns
            * doc: Resets the default [ issue table columns](https://confluence.atlassian.com/x/XYdKLg) for the user to the system default. If `accountId` is not passed, the calling user's default columns are reset.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), to set the columns on any user.
            *  *  Permission to access Jira, to set the calling user's columns.
            * 204: Returned if the request is successful.
@@ -25490,13 +25490,13 @@ export interface AtlassianV3 {
            * operationId: setUserColumns
            * sum: Set user default columns
            * doc: Sets the default [ issue table columns](https://confluence.atlassian.com/x/XYdKLg) for the user. If an account ID is not passed, the calling user's default columns are set. If no column details are sent, then all default columns are removed.
-           * 
+           *
            * The parameters for this resource are expressed as HTML form data. For example, in curl:
-           * 
+           *
            * `curl -X PUT -d columns=summary -d columns=description https://your-domain.atlassian.net/rest/api/3/user/columns?accountId=5b10ac8d82e05b22cc7d4ef5'`
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), to set the columns on any user.
            *  *  Permission to access Jira, to set the calling user's columns.
            * 200: Returned if the request is successful.
@@ -25556,7 +25556,7 @@ export interface AtlassianV3 {
            * operationId: getUserGroups
            * sum: Get user groups
            * doc: Returns the groups to which a user belongs.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -25578,25 +25578,25 @@ export interface AtlassianV3 {
              * operationId: findUsersWithAllPermissions
              * sum: Find users with permissions
              * doc: Returns a list of users who fulfill these criteria:
-             * 
+             *
              *  *  their user attributes match a search string.
              *  *  they have a set of permissions for a project or issue.
-             * 
+             *
              * If no search string is provided, a list of all users with the permissions is returned.
-             * 
+             *
              * This operation takes the users in the range defined by `startAt` and `maxResults`, up to the thousandth user, and then returns only the users from that range that match the search string and have permission for the project or issue. This means the operation usually returns fewer users than specified in `maxResults`. To get all the users who match the search string and have permission for the project or issue, use [Get all users](#api-rest-api-3-users-search-get) and filter the records in your code.
-             * 
+             *
              * Privacy controls are applied to the response based on the users' preferences. This could mean, for example, that the user's email address is hidden. See the [Profile visibility overview](https://developer.atlassian.com/cloud/jira/platform/profile-visibility/) for more details.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), to get users for any project.
              *  *  *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for a project, to get users for that project.
              * 200: Returned if the request is successful.
              * 400: Returned if:
-             * 
+             *
              *  *  `issueKey` or `projectKey` is missing.
              *  *  `query` or `accountId` is missing.
              *  *  `query` and `accountId` are provided.
@@ -25620,13 +25620,13 @@ export interface AtlassianV3 {
            * operationId: findUsersForPicker
            * sum: Find users for picker
            * doc: Returns a list of users whose attributes match the query term. The returned object includes the `html` field where the matched query term is highlighted with the HTML strong tag. A list of account IDs can be provided to exclude users from the results.
-           * 
+           *
            * This operation takes the users in the range defined by `maxResults`, up to the thousandth user, and then returns only the users from that range that match the query term. This means the operation usually returns fewer users than specified in `maxResults`. To get all the users who match the query term, use [Get all users](#api-rest-api-3-users-search-get) and filter the records in your code.
-           * 
+           *
            * Privacy controls are applied to the response based on the users' preferences. This could mean, for example, that the user's email address is hidden. See the [Profile visibility overview](https://developer.atlassian.com/cloud/jira/platform/profile-visibility/) for more details.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg). Anonymous calls and calls by users without the required permission return search results for an exact name match only.
            * 200: Returned if the request is successful.
            * 400: Returned if `exclude` and `excludeAccountIds` are provided.
@@ -25646,11 +25646,11 @@ export interface AtlassianV3 {
            * operationId: getUserPropertyKeys
            * sum: Get user property keys
            * doc: Returns the keys of all properties for a user.
-           * 
+           *
            * Note: This operation does not access the [user properties](https://confluence.atlassian.com/x/8YxjL) created and maintained in Jira.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), to access the property keys on any user.
            *  *  Access to Jira, to access the calling user's property keys.
            * 200: Returned if the request is successful.
@@ -25671,11 +25671,11 @@ export interface AtlassianV3 {
              * operationId: getUserProperty
              * sum: Get user property
              * doc: Returns the value of a user's property. If no property key is provided [Get user property keys](#api-rest-api-3-user-properties-get) is called.
-             * 
+             *
              * Note: This operation does not access the [user properties](https://confluence.atlassian.com/x/8YxjL) created and maintained in Jira.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), to get a property from any user.
              *  *  Access to Jira, to get a property from the calling user's record.
              * 200: Returned if the request is successful.
@@ -25690,11 +25690,11 @@ export interface AtlassianV3 {
              * operationId: deleteUserProperty
              * sum: Delete user property
              * doc: Deletes a property from a user.
-             * 
+             *
              * Note: This operation does not access the [user properties](https://confluence.atlassian.com/x/8YxjL) created and maintained in Jira.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), to delete a property from any user.
              *  *  Access to Jira, to delete a property from the calling user's record.
              * 204: Returned if the user property is deleted.
@@ -25709,11 +25709,11 @@ export interface AtlassianV3 {
              * operationId: setUserProperty
              * sum: Set user property
              * doc: Sets the value of a user's property. Use this resource to store custom data against a user.
-             * 
+             *
              * Note: This operation does not access the [user properties](https://confluence.atlassian.com/x/8YxjL) created and maintained in Jira.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), to set a property on any user.
              *  *  Access to Jira, to set a property on the calling user's record.
              * 200: Returned if the user property is updated.
@@ -25738,17 +25738,17 @@ export interface AtlassianV3 {
            * operationId: findUsers
            * sum: Find users
            * doc: Returns a list of active users that match the search string and property.
-           * 
+           *
            * This operation first applies a filter to match the search string and property, and then takes the filtered users in the range defined by `startAt` and `maxResults`, up to the thousandth user. To get all the users who match the search string and property, use [Get all users](#api-rest-api-3-users-search-get) and filter the records in your code.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * Privacy controls are applied to the response based on the users' preferences. This could mean, for example, that the user's email address is hidden. See the [Profile visibility overview](https://developer.atlassian.com/cloud/jira/platform/profile-visibility/) for more details.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg). Anonymous calls or calls by users without the required permission return empty search results.
            * 200: Returned if the request is successful.
            * 400: Returned if:
-           * 
+           *
            *  *  `accountId`, `query` or `property` is missing.
            *  *  `query` and `accountId` are provided.
            *  *  `property` parameter is not valid.
@@ -25767,13 +25767,13 @@ export interface AtlassianV3 {
              * operationId: findUsersByQuery
              * sum: Find users by query
              * doc: Finds users with a structured query and returns a [paginated](#pagination) list of user details.
-             * 
+             *
              * This operation takes the users in the range defined by `startAt` and `maxResults`, up to the thousandth user, and then returns only the users from that range that match the structured query. This means the operation usually returns fewer users than specified in `maxResults`. To get all the users who match the structured query, use [Get all users](#api-rest-api-3-users-search-get) and filter the records in your code.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg).
-             * 
+             *
              * The query statements are:
-             * 
+             *
              *  *  `is assignee of PROJ` Returns the users that are assignees of at least one issue in project *PROJ*.
              *  *  `is assignee of (PROJ-1, PROJ-2)` Returns users that are assignees on the issues *PROJ-1* or *PROJ-2*.
              *  *  `is reporter of (PROJ-1, PROJ-2)` Returns users that are reporters on the issues *PROJ-1* or *PROJ-2*.
@@ -25782,9 +25782,9 @@ export interface AtlassianV3 {
              *  *  `is commenter of (PROJ-1, PROJ-2)` Returns users that have posted a comment on the issues *PROJ-1* or *PROJ-2*.
              *  *  `is transitioner of (PROJ-1, PROJ-2)` Returns users that have performed a transition on issues *PROJ-1* or *PROJ-2*.
              *  *  `[propertyKey].entity.property.path is "property value"` Returns users with the entity property value.
-             * 
+             *
              * The list of issues can be extended as needed, as in *(PROJ-1, PROJ-2, ... PROJ-n)*. Statements can be combined using the `AND` and `OR` operators to form more complex queries. For example:
-             * 
+             *
              * `is assignee of PROJ AND [propertyKey].entity.property.path is "property value"`
              * 200: Returned if the request is successful.
              * 400: Returned if the query is invalid.
@@ -25804,13 +25804,13 @@ export interface AtlassianV3 {
                * operationId: findUserKeysByQuery
                * sum: Find user keys by query
                * doc: Finds users with a structured query and returns a [paginated](#pagination) list of user keys.
-               * 
+               *
                * This operation takes the users in the range defined by `startAt` and `maxResults`, up to the thousandth user, and then returns only the users from that range that match the structured query. This means the operation usually returns fewer users than specified in `maxResults`. To get all the users who match the structured query, use [Get all users](#api-rest-api-3-users-search-get) and filter the records in your code.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg).
-               * 
+               *
                * The query statements are:
-               * 
+               *
                *  *  `is assignee of PROJ` Returns the users that are assignees of at least one issue in project *PROJ*.
                *  *  `is assignee of (PROJ-1, PROJ-2)` Returns users that are assignees on the issues *PROJ-1* or *PROJ-2*.
                *  *  `is reporter of (PROJ-1, PROJ-2)` Returns users that are reporters on the issues *PROJ-1* or *PROJ-2*.
@@ -25819,9 +25819,9 @@ export interface AtlassianV3 {
                *  *  `is commenter of (PROJ-1, PROJ-2)` Returns users that have posted a comment on the issues *PROJ-1* or *PROJ-2*.
                *  *  `is transitioner of (PROJ-1, PROJ-2)` Returns users that have performed a transition on issues *PROJ-1* or *PROJ-2*.
                *  *  `[propertyKey].entity.property.path is "property value"` Returns users with the entity property value.
-               * 
+               *
                * The list of issues can be extended as needed, as in *(PROJ-1, PROJ-2, ... PROJ-n)*. Statements can be combined using the `AND` and `OR` operators to form more complex queries. For example:
-               * 
+               *
                * `is assignee of PROJ AND [propertyKey].entity.property.path is "property value"`
                * 200: Returned if the request is successful.
                * 400: Returned if the query is invalid.
@@ -25846,25 +25846,25 @@ export interface AtlassianV3 {
              * operationId: findUsersWithBrowsePermission
              * sum: Find users with browse permission
              * doc: Returns a list of users who fulfill these criteria:
-             * 
+             *
              *  *  their user attributes match a search string.
              *  *  they have permission to browse issues.
-             * 
+             *
              * Use this resource to find users who can browse:
-             * 
+             *
              *  *  an issue, by providing the `issueKey`.
              *  *  any issue in a project, by providing the `projectKey`.
-             * 
+             *
              * This operation takes the users in the range defined by `startAt` and `maxResults`, up to the thousandth user, and then returns only the users from that range that match the search string and have permission to browse issues. This means the operation usually returns fewer users than specified in `maxResults`. To get all the users who match the search string and have permission to browse issues, use [Get all users](#api-rest-api-3-users-search-get) and filter the records in your code.
-             * 
+             *
              * Privacy controls are applied to the response based on the users' preferences. This could mean, for example, that the user's email address is hidden. See the [Profile visibility overview](https://developer.atlassian.com/cloud/jira/platform/profile-visibility/) for more details.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg). Anonymous calls and calls by users without the required permission return empty search results.
              * 200: Returned if the request is successful.
              * 400: Returned if:
-             * 
+             *
              *  *  `issueKey` or `projectKey` is missing.
              *  *  `query` or `accountId` is missing.
              *  *  `query` and `accountId` are provided.
@@ -25887,9 +25887,9 @@ export interface AtlassianV3 {
          * operationId: getAllUsersDefault
          * sum: Get all users default
          * doc: Returns a list of all users, including active users, inactive users and previously deleted users that have an Atlassian account.
-         * 
+         *
          * Privacy controls are applied to the response based on the users' preferences. This could mean, for example, that the user's email address is hidden. See the [Profile visibility overview](https://developer.atlassian.com/cloud/jira/platform/profile-visibility/) for more details.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
          * 400: Returned if the request is invalid.
@@ -25908,9 +25908,9 @@ export interface AtlassianV3 {
            * operationId: getAllUsers
            * sum: Get all users
            * doc: Returns a list of all users, including active users, inactive users and previously deleted users that have an Atlassian account.
-           * 
+           *
            * Privacy controls are applied to the response based on the users' preferences. This could mean, for example, that the user's email address is hidden. See the [Profile visibility overview](https://developer.atlassian.com/cloud/jira/platform/profile-visibility/) for more details.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is invalid.
@@ -25931,15 +25931,15 @@ export interface AtlassianV3 {
          * operationId: createVersion
          * sum: Create version
          * doc: Creates a project version.
-         * 
+         *
          * This operation can be accessed anonymously.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project the version is added to.
          * 201: Returned if the request is successful.
          * 400: Returned if the request is invalid.
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 404: Returned if:
-         * 
+         *
          *  *  the project is not found.
          *  *  the user does not have the required permissions.
          */
@@ -25951,9 +25951,9 @@ export interface AtlassianV3 {
            * operationId: getVersion
            * sum: Get version
            * doc: Returns a project version.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the version.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -25965,18 +25965,18 @@ export interface AtlassianV3 {
            * operationId: deleteVersion
            * sum: Delete version
            * doc: Deletes a project version.
-           * 
+           *
            * Deprecated, use [ Delete and replace version](#api-rest-api-3-version-id-removeAndSwap-post) that supports swapping version values in custom fields, in addition to the swapping for `fixVersion` and `affectedVersion` provided in this resource.
-           * 
+           *
            * Alternative versions can be provided to update issues that use the deleted version in `fixVersion` or `affectedVersion`. If alternatives are not provided, occurrences of `fixVersion` and `affectedVersion` that contain the deleted version are cleared.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that contains the version.
            * 204: Returned if the version is deleted.
            * 400: Returned if the request is invalid.
            * 401: Returned if:
-           * 
+           *
            *  *  the authentication credentials are incorrect.
            *  *  the user does not have the required permissions.
            * 404: Returned if the version is not found.
@@ -25987,13 +25987,13 @@ export interface AtlassianV3 {
            * operationId: updateVersion
            * sum: Update version
            * doc: Updates a project version.
-           * 
+           *
            * This operation can be accessed anonymously.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that contains the version.
            * 200: Returned if the request is successful.
            * 400: Returned if:
-           * 
+           *
            *  *  the request is invalid.
            *  *  the user does not have the required permissions.
            * 401: Returned if the authentication credentials are incorrect.
@@ -26013,16 +26013,16 @@ export interface AtlassianV3 {
                * operationId: mergeVersions
                * sum: Merge versions
                * doc: Merges two project versions. The merge is completed by deleting the version specified in `id` and replacing any occurrences of its ID in `fixVersion` with the version ID specified in `moveIssuesTo`.
-               * 
+               *
                * Consider using [ Delete and replace version](#api-rest-api-3-version-id-removeAndSwap-post) instead. This resource supports swapping version values in `fixVersion`, `affectedVersion`, and custom fields.
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that contains the version.
                * 204: Returned if the version is deleted.
                * 400: Returned if the request is invalid.
                * 401: Returned if:
-               * 
+               *
                *  *  the authentication credentials are incorrect or missing.
                *  *  the user does not have the required permissions.
                * 404: Returned if the version to be deleted or the version to merge to are not found.
@@ -26037,18 +26037,18 @@ export interface AtlassianV3 {
              * operationId: moveVersion
              * sum: Move version
              * doc: Modifies the version's sequence within the project, which affects the display order of the versions in Jira.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Browse projects* project permission for the project that contains the version.
              * 200: Returned if the request is successful.
              * 400: Returned if:
-             * 
+             *
              *  *  no body parameters are provided.
              *  *  `after` and `position` are provided.
              *  *  `position` is invalid.
              * 401: Returned if:
-             * 
+             *
              *  *  the authentication credentials are incorrect or missing
              *  *  the user does not have the required commissions.
              * 404: Returned if the version or move after version are not found.
@@ -26062,18 +26062,18 @@ export interface AtlassianV3 {
              * operationId: getVersionRelatedIssues
              * sum: Get version's related issues count
              * doc: Returns the following counts for a version:
-             * 
+             *
              *  *  Number of issues where the `fixVersion` is set to the version.
              *  *  Number of issues where the `affectedVersion` is set to the version.
              *  *  Number of issues where a version custom field is set to the version.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Browse projects* project permission for the project that contains the version.
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect.
              * 404: Returned if:
-             * 
+             *
              *  *  the version is not found.
              *  *  the user does not have the required permissions.
              */
@@ -26090,9 +26090,9 @@ export interface AtlassianV3 {
              * operationId: getRelatedWork
              * sum: Get related work
              * doc: Returns related work items for the given version id.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the version.
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -26105,9 +26105,9 @@ export interface AtlassianV3 {
              * operationId: createRelatedWork
              * sum: Create related work
              * doc: Creates a related work for the given version. You can only create a generic link type of related works via this API. relatedWorkId will be auto-generated UUID, that does not need to be provided.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Resolve issues:* and *Edit issues* [Managing project permissions](https://confluence.atlassian.com/adminjiraserver/managing-project-permissions-938847145.html) for the project that contains the version.
              * 201: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -26121,9 +26121,9 @@ export interface AtlassianV3 {
              * operationId: updateRelatedWork
              * sum: Update related work
              * doc: Updates the given related work. You can only update generic link related works via Rest APIs. Any archived version related works can't be edited.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Resolve issues:* and *Edit issues* [Managing project permissions](https://confluence.atlassian.com/adminjiraserver/managing-project-permissions-938847145.html) for the project that contains the version.
              * 200: Returned if the request is successful together with updated related work.
              * 400: Returned if the request data is invalid
@@ -26144,17 +26144,17 @@ export interface AtlassianV3 {
              * operationId: deleteAndReplaceVersion
              * sum: Delete and replace version
              * doc: Deletes a project version.
-             * 
+             *
              * Alternative versions can be provided to update issues that use the deleted version in `fixVersion`, `affectedVersion`, or any version picker custom fields. If alternatives are not provided, occurrences of `fixVersion`, `affectedVersion`, and any version picker custom field, that contain the deleted version, are cleared. Any replacement version must be in the same project as the version being deleted and cannot be the version being deleted.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that contains the version.
              * 204: Returned if the version is deleted.
              * 400: Returned if the request is invalid.
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if:
-             * 
+             *
              *  *  the version to delete is not found.
              *  *  the user does not have the required permissions.
              */
@@ -26167,14 +26167,14 @@ export interface AtlassianV3 {
              * operationId: getVersionUnresolvedIssues
              * sum: Get version's unresolved issues count
              * doc: Returns counts of the issues and unresolved issues for the project version.
-             * 
+             *
              * This operation can be accessed anonymously.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Browse projects* project permission for the project that contains the version.
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if:
-             * 
+             *
              *  *  the version is not found.
              *  *  the user does not have the required permissions.
              */
@@ -26196,14 +26196,14 @@ export interface AtlassianV3 {
                * operationId: deleteRelatedWork
                * sum: Delete related work
                * doc: Deletes the given related work for the given version.
-               * 
+               *
                * This operation can be accessed anonymously.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Resolve issues:* and *Edit issues* [Managing project permissions](https://confluence.atlassian.com/adminjiraserver/managing-project-permissions-938847145.html) for the project that contains the version.
                * 204: Returned if the related work is deleted.
                * 400: Returned if the request is invalid.
                * 401: Returned if
-               * 
+               *
                * the authentication credentials are incorrect.
                * 403: Returned if the user does not have the required permissions.
                * 404: Returned if the version/related work is not found.
@@ -26220,7 +26220,7 @@ export interface AtlassianV3 {
          * operationId: getDynamicWebhooksForApp
          * sum: Get dynamic webhooks for app
          * doc: Returns a [paginated](#pagination) list of the webhooks registered by the calling app.
-         * 
+         *
          * **[Permissions](#permissions) required:** Only [Connect](https://developer.atlassian.com/cloud/jira/platform/#connect-apps) and [OAuth 2.0](https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps) apps can use this operation.
          * 200: Returned if the request is successful.
          * 400: Returned if the request is invalid.
@@ -26232,7 +26232,7 @@ export interface AtlassianV3 {
          * operationId: deleteWebhookById
          * sum: Delete webhooks by ID
          * doc: Removes webhooks by ID. Only webhooks registered by the calling app are removed. If webhooks created by other apps are specified, they are ignored.
-         * 
+         *
          * **[Permissions](#permissions) required:** Only [Connect](https://developer.atlassian.com/cloud/jira/platform/#connect-apps) and [OAuth 2.0](https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps) apps can use this operation.
          * 202: Returned if the request is successful.
          * 400: Returned if the list of webhook IDs is missing.
@@ -26244,9 +26244,9 @@ export interface AtlassianV3 {
          * operationId: registerDynamicWebhooks
          * sum: Register dynamic webhooks
          * doc: Registers webhooks.
-         * 
+         *
          * **NOTE:** for non-public OAuth apps, webhooks are delivered only if there is a match between the app owner and the user who registered a dynamic webhook.
-         * 
+         *
          * **[Permissions](#permissions) required:** Only [Connect](https://developer.atlassian.com/cloud/jira/platform/#connect-apps) and [OAuth 2.0](https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps) apps can use this operation.
          * 200: Returned if the request is successful.
          * 400: Returned if the request is invalid.
@@ -26264,13 +26264,13 @@ export interface AtlassianV3 {
            * operationId: getFailedWebhooks
            * sum: Get failed webhooks
            * doc: Returns webhooks that have recently failed to be delivered to the requesting app after the maximum number of retries.
-           * 
+           *
            * After 72 hours the failure may no longer be returned by this operation.
-           * 
+           *
            * The oldest failure is returned first.
-           * 
+           *
            * This method uses a cursor-based pagination. To request the next page use the failure time of the last webhook on the list as the `failedAfter` value or use the URL provided in `next`.
-           * 
+           *
            * **[Permissions](#permissions) required:** Only [Connect apps](https://developer.atlassian.com/cloud/jira/platform/index/#connect-apps) can use this operation.
            * 200: Returned if the request is successful.
            * 400: 400 response
@@ -26289,9 +26289,9 @@ export interface AtlassianV3 {
            * operationId: refreshWebhooks
            * sum: Extend webhook life
            * doc: Extends the life of webhook. Webhooks registered through the REST API expire after 30 days. Call this operation to keep them alive.
-           * 
+           *
            * Unrecognized webhook IDs (those that are not found or belong to other apps) are ignored.
-           * 
+           *
            * **[Permissions](#permissions) required:** Only [Connect](https://developer.atlassian.com/cloud/jira/platform/#connect-apps) and [OAuth 2.0](https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps) apps can use this operation.
            * 200: Returned if the request is successful.
            * 400: Returned if the request is invalid.
@@ -26307,9 +26307,9 @@ export interface AtlassianV3 {
          * operationId: getAllWorkflows
          * sum: Get all workflows
          * doc: Returns all workflows in Jira or a workflow. Deprecated, use [Get workflows paginated](#api-rest-api-3-workflow-search-get).
-         * 
+         *
          * If the `workflowName` parameter is specified, the workflow is returned as an object (not in an array). Otherwise, an array of workflow objects is returned.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
          * 401: Returned if the user does not have the necessary permission.
@@ -26320,31 +26320,31 @@ export interface AtlassianV3 {
          * operationId: createWorkflow
          * sum: Create workflow
          * doc: Creates a workflow. You can define transition rules using the shapes detailed in the following sections. If no transitional rules are specified the default system transition rules are used. Note: This only applies to company-managed scoped workflows. Use [bulk create workflows](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-workflows/#api-rest-api-3-workflows-create-post) to create both team and company-managed scoped workflows.
-         * 
+         *
          * #### Conditions ####
-         * 
+         *
          * Conditions enable workflow rules that govern whether a transition can execute.
-         * 
+         *
          * ##### Always false condition #####
-         * 
+         *
          * A condition that always fails.
-         * 
+         *
          *     {
          *        "type": "AlwaysFalseCondition"
          *      }
-         * 
+         *
          * ##### Block transition until approval #####
-         * 
+         *
          * A condition that blocks issue transition if there is a pending approval.
-         * 
+         *
          *     {
          *        "type": "BlockInProgressApprovalCondition"
          *      }
-         * 
+         *
          * ##### Compare number custom field condition #####
-         * 
+         *
          * A condition that allows transition if a comparison between a number custom field and a value is true.
-         * 
+         *
          *     {
          *        "type": "CompareNumberCFCondition",
          *        "configuration": {
@@ -26353,63 +26353,63 @@ export interface AtlassianV3 {
          *          "fieldValue": 2
          *        }
          *      }
-         * 
+         *
          *  *  `comparator` One of the supported comparator: `=`, `>`, and `<`.
          *  *  `fieldId` The custom numeric field ID. Allowed field types:
-         *     
+         *
          *      *  `com.atlassian.jira.plugin.system.customfieldtypes:float`
          *      *  `com.pyxis.greenhopper.jira:jsw-story-points`
          *  *  `fieldValue` The value for comparison.
-         * 
+         *
          * ##### Hide from user condition #####
-         * 
+         *
          * A condition that hides a transition from users. The transition can only be triggered from a workflow function or REST API operation.
-         * 
+         *
          *     {
          *        "type": "RemoteOnlyCondition"
          *      }
-         * 
+         *
          * ##### Only assignee condition #####
-         * 
+         *
          * A condition that allows only the assignee to execute a transition.
-         * 
+         *
          *     {
          *        "type": "AllowOnlyAssignee"
          *      }
-         * 
+         *
          * ##### Only Bamboo notifications workflow condition (deprecated) #####
-         * 
+         *
          * A condition that makes the transition available only to Bamboo build notifications.
-         * 
+         *
          *     {
          *        "type": "OnlyBambooNotificationsCondition"
          *      }
-         * 
+         *
          * ##### Only reporter condition #####
-         * 
+         *
          * A condition that allows only the reporter to execute a transition.
-         * 
+         *
          *     {
          *        "type": "AllowOnlyReporter"
          *      }
-         * 
+         *
          * ##### Permission condition #####
-         * 
+         *
          * A condition that allows only users with a permission to execute a transition.
-         * 
+         *
          *     {
          *        "type": "PermissionCondition",
          *        "configuration": {
          *            "permissionKey": "BROWSE_PROJECTS"
          *        }
          *      }
-         * 
+         *
          *  *  `permissionKey` The permission required to perform the transition. Allowed values: [built-in](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-permission-schemes/#built-in-permissions) or app defined permissions.
-         * 
+         *
          * ##### Previous status condition #####
-         * 
+         *
          * A condition that allows a transition based on whether an issue has or has not transitioned through a status.
-         * 
+         *
          *     {
          *        "type": "PreviousStatusCondition",
          *        "configuration": {
@@ -26422,18 +26422,18 @@ export interface AtlassianV3 {
          *          }
          *        }
          *      }
-         * 
+         *
          * By default this condition allows the transition if the status, as defined by its ID in the `previousStatus` object, matches any previous issue status, unless:
-         * 
+         *
          *  *  `ignoreLoopTransitions` is `true`, then loop transitions (from and to the same status) are ignored.
          *  *  `includeCurrentStatus` is `true`, then the current issue status is also checked.
          *  *  `mostRecentStatusOnly` is `true`, then only the issue's preceding status (the one immediately before the current status) is checked.
          *  *  `reverseCondition` is `true`, then the status must not be present.
-         * 
+         *
          * ##### Separation of duties condition #####
-         * 
+         *
          * A condition that prevents a user to perform the transition, if the user has already performed a transition on the issue.
-         * 
+         *
          *     {
          *        "type": "SeparationOfDutiesCondition",
          *        "configuration": {
@@ -26445,14 +26445,14 @@ export interface AtlassianV3 {
          *          }
          *        }
          *      }
-         * 
+         *
          *  *  `fromStatus` OPTIONAL. An object containing the ID of the source status of the transition that is blocked. If omitted any transition to `toStatus` is blocked.
          *  *  `toStatus` An object containing the ID of the target status of the transition that is blocked.
-         * 
+         *
          * ##### Subtask blocking condition #####
-         * 
+         *
          * A condition that blocks transition on a parent issue if any of its subtasks are in any of one or more statuses.
-         * 
+         *
          *     {
          *        "type": "SubTaskBlockingCondition",
          *        "configuration": {
@@ -26466,13 +26466,13 @@ export interface AtlassianV3 {
          *          ]
          *        }
          *      }
-         * 
+         *
          *  *  `statuses` A list of objects containing status IDs.
-         * 
+         *
          * ##### User is in any group condition #####
-         * 
+         *
          * A condition that allows users belonging to any group from a list of groups to execute a transition.
-         * 
+         *
          *     {
          *        "type": "UserInAnyGroupCondition",
          *        "configuration": {
@@ -26482,13 +26482,13 @@ export interface AtlassianV3 {
          *          ]
          *        }
          *      }
-         * 
+         *
          *  *  `groups` A list of group names.
-         * 
+         *
          * ##### User is in any project role condition #####
-         * 
+         *
          * A condition that allows only users with at least one project roles from a list of project roles to execute a transition.
-         * 
+         *
          *     {
          *        "type": "InAnyProjectRoleCondition",
          *        "configuration": {
@@ -26508,13 +26508,13 @@ export interface AtlassianV3 {
          *          ]
          *        }
          *      }
-         * 
+         *
          *  *  `projectRoles` A list of objects containing project role IDs.
-         * 
+         *
          * ##### User is in custom field condition #####
-         * 
+         *
          * A condition that allows only users listed in a given custom field to execute the transition.
-         * 
+         *
          *     {
          *        "type": "UserIsInCustomFieldCondition",
          *        "configuration": {
@@ -26522,36 +26522,36 @@ export interface AtlassianV3 {
          *          "fieldId": "customfield_10010"
          *        }
          *      }
-         * 
+         *
          *  *  `allowUserInField` If `true` only a user who is listed in `fieldId` can perform the transition, otherwise, only a user who is not listed in `fieldId` can perform the transition.
          *  *  `fieldId` The ID of the field containing the list of users.
-         * 
+         *
          * ##### User is in group condition #####
-         * 
+         *
          * A condition that allows users belonging to a group to execute a transition.
-         * 
+         *
          *     {
          *        "type": "UserInGroupCondition",
          *        "configuration": {
          *          "group": "administrators"
          *        }
          *      }
-         * 
+         *
          *  *  `group` The name of the group.
-         * 
+         *
          * ##### User is in group custom field condition #####
-         * 
+         *
          * A condition that allows users belonging to a group specified in a custom field to execute a transition.
-         * 
+         *
          *     {
          *        "type": "InGroupCFCondition",
          *        "configuration": {
          *          "fieldId": "customfield_10012"
          *        }
          *      }
-         * 
+         *
          *  *  `fieldId` The ID of the field. Allowed field types:
-         *     
+         *
          *      *  `com.atlassian.jira.plugin.system.customfieldtypes:multigrouppicker`
          *      *  `com.atlassian.jira.plugin.system.customfieldtypes:grouppicker`
          *      *  `com.atlassian.jira.plugin.system.customfieldtypes:select`
@@ -26559,11 +26559,11 @@ export interface AtlassianV3 {
          *      *  `com.atlassian.jira.plugin.system.customfieldtypes:radiobuttons`
          *      *  `com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes`
          *      *  `com.pyxis.greenhopper.jira:gh-epic-status`
-         * 
+         *
          * ##### User is in project role condition #####
-         * 
+         *
          * A condition that allows users with a project role to execute a transition.
-         * 
+         *
          *     {
          *        "type": "InProjectRoleCondition",
          *        "configuration": {
@@ -26572,13 +26572,13 @@ export interface AtlassianV3 {
          *          }
          *        }
          *      }
-         * 
+         *
          *  *  `projectRole` An object containing the ID of a project role.
-         * 
+         *
          * ##### Value field condition #####
-         * 
+         *
          * A conditions that allows a transition to execute if the value of a field is equal to a constant value or simply set.
-         * 
+         *
          *     {
          *        "type": "ValueFieldCondition",
          *        "configuration": {
@@ -26588,26 +26588,26 @@ export interface AtlassianV3 {
          *          "comparator": "="
          *        }
          *      }
-         * 
+         *
          *  *  `fieldId` The ID of a field used in the comparison.
          *  *  `fieldValue` The expected value of the field.
          *  *  `comparisonType` The type of the comparison. Allowed values: `STRING`, `NUMBER`, `DATE`, `DATE_WITHOUT_TIME`, or `OPTIONID`.
          *  *  `comparator` One of the supported comparator: `>`, `>=`, `=`, `<=`, `<`, `!=`.
-         * 
+         *
          * **Notes:**
-         * 
+         *
          *  *  If you choose the comparison type `STRING`, only `=` and `!=` are valid options.
          *  *  You may leave `fieldValue` empty when comparison type is `!=` to indicate that a value is required in the field.
          *  *  For date fields without time format values as `yyyy-MM-dd`, and for those with time as `yyyy-MM-dd HH:mm`. For example, for July 16 2021 use `2021-07-16`, for 8:05 AM use `2021-07-16 08:05`, and for 4 PM: `2021-07-16 16:00`.
-         * 
+         *
          * #### Validators ####
-         * 
+         *
          * Validators check that any input made to the transition is valid before the transition is performed.
-         * 
+         *
          * ##### Date field validator #####
-         * 
+         *
          * A validator that compares two dates.
-         * 
+         *
          *     {
          *        "type": "DateFieldValidator",
          *        "configuration": {
@@ -26618,10 +26618,10 @@ export interface AtlassianV3 {
          *            "includeTime": true
          *          }
          *      }
-         * 
+         *
          *  *  `comparator` One of the supported comparator: `>`, `>=`, `=`, `<=`, `<`, or `!=`.
          *  *  `date1` The date field to validate. Allowed field types:
-         *     
+         *
          *      *  `com.atlassian.jira.plugin.system.customfieldtypes:datepicker`
          *      *  `com.atlassian.jira.plugin.system.customfieldtypes:datetime`
          *      *  `com.atlassian.jpo:jpo-custom-field-baseline-end`
@@ -26631,7 +26631,7 @@ export interface AtlassianV3 {
          *      *  `updated`
          *      *  `resolutiondate`
          *  *  `date2` The second date field. Required, if `expression` is not passed. Allowed field types:
-         *     
+         *
          *      *  `com.atlassian.jira.plugin.system.customfieldtypes:datepicker`
          *      *  `com.atlassian.jira.plugin.system.customfieldtypes:datetime`
          *      *  `com.atlassian.jpo:jpo-custom-field-baseline-end`
@@ -26642,11 +26642,11 @@ export interface AtlassianV3 {
          *      *  `resolutiondate`
          *  *  `expression` An expression specifying an offset. Required, if `date2` is not passed. Offsets are built with a number, with `-` as prefix for the past, and one of these time units: `d` for day, `w` for week, `m` for month, or `y` for year. For example, -2d means two days into the past and 1w means one week into the future. The `now` keyword enables a comparison with the current date.
          *  *  `includeTime` If `true`, then the time part of the data is included for the comparison. If the field doesn't have a time part, 00:00:00 is used.
-         * 
+         *
          * ##### Windows date validator #####
-         * 
+         *
          * A validator that checks that a date falls on or after a reference date and before or on the reference date plus a number of days.
-         * 
+         *
          *     {
          *        "type": "WindowsDateValidator",
          *        "configuration": {
@@ -26655,9 +26655,9 @@ export interface AtlassianV3 {
          *            "windowsDays": 5
          *          }
          *      }
-         * 
+         *
          *  *  `date1` The date field to validate. Allowed field types:
-         *     
+         *
          *      *  `com.atlassian.jira.plugin.system.customfieldtypes:datepicker`
          *      *  `com.atlassian.jira.plugin.system.customfieldtypes:datetime`
          *      *  `com.atlassian.jpo:jpo-custom-field-baseline-end`
@@ -26667,7 +26667,7 @@ export interface AtlassianV3 {
          *      *  `updated`
          *      *  `resolutiondate`
          *  *  `date2` The reference date. Allowed field types:
-         *     
+         *
          *      *  `com.atlassian.jira.plugin.system.customfieldtypes:datepicker`
          *      *  `com.atlassian.jira.plugin.system.customfieldtypes:datetime`
          *      *  `com.atlassian.jpo:jpo-custom-field-baseline-end`
@@ -26677,11 +26677,11 @@ export interface AtlassianV3 {
          *      *  `updated`
          *      *  `resolutiondate`
          *  *  `windowsDays` A positive integer indicating a number of days.
-         * 
+         *
          * ##### Field required validator #####
-         * 
+         *
          * A validator that checks fields are not empty. By default, if a field is not included in the current context it's ignored and not validated.
-         * 
+         *
          *     {
          *          "type": "FieldRequiredValidator",
          *          "configuration": {
@@ -26694,15 +26694,15 @@ export interface AtlassianV3 {
          *              ]
          *          }
          *      }
-         * 
+         *
          *  *  `ignoreContext` If `true`, then the context is ignored and all the fields are validated.
          *  *  `errorMessage` OPTIONAL. The error message displayed when one or more fields are empty. A default error message is shown if an error message is not provided.
          *  *  `fieldIds` The list of fields to validate.
-         * 
+         *
          * ##### Field changed validator #####
-         * 
+         *
          * A validator that checks that a field value is changed. However, this validation can be ignored for users from a list of groups.
-         * 
+         *
          *     {
          *          "type": "FieldChangedValidator",
          *          "configuration": {
@@ -26714,15 +26714,15 @@ export interface AtlassianV3 {
          *              ]
          *          }
          *      }
-         * 
+         *
          *  *  `fieldId` The ID of a field.
          *  *  `errorMessage` OPTIONAL. The error message displayed if the field is not changed. A default error message is shown if the error message is not provided.
          *  *  `exemptedGroups` OPTIONAL. The list of groups.
-         * 
+         *
          * ##### Field has single value validator #####
-         * 
+         *
          * A validator that checks that a multi-select field has only one value. Optionally, the validation can ignore values copied from subtasks.
-         * 
+         *
          *     {
          *          "type": "FieldHasSingleValueValidator",
          *          "configuration": {
@@ -26730,14 +26730,14 @@ export interface AtlassianV3 {
          *              "excludeSubtasks": true
          *          }
          *      }
-         * 
+         *
          *  *  `fieldId` The ID of a field.
          *  *  `excludeSubtasks` If `true`, then values copied from subtasks are ignored.
-         * 
+         *
          * ##### Parent status validator #####
-         * 
+         *
          * A validator that checks the status of the parent issue of a subtask. Ìf the issue is not a subtask, no validation is performed.
-         * 
+         *
          *     {
          *          "type": "ParentStatusValidator",
          *          "configuration": {
@@ -26751,26 +26751,26 @@ export interface AtlassianV3 {
          *              ]
          *          }
          *      }
-         * 
+         *
          *  *  `parentStatus` The list of required parent issue statuses.
-         * 
+         *
          * ##### Permission validator #####
-         * 
+         *
          * A validator that checks the user has a permission.
-         * 
+         *
          *     {
          *        "type": "PermissionValidator",
          *        "configuration": {
          *            "permissionKey": "ADMINISTER_PROJECTS"
          *        }
          *      }
-         * 
+         *
          *  *  `permissionKey` The permission required to perform the transition. Allowed values: [built-in](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-permission-schemes/#built-in-permissions) or app defined permissions.
-         * 
+         *
          * ##### Previous status validator #####
-         * 
+         *
          * A validator that checks if the issue has held a status.
-         * 
+         *
          *     {
          *        "type": "PreviousStatusValidator",
          *        "configuration": {
@@ -26780,14 +26780,14 @@ export interface AtlassianV3 {
          *            }
          *        }
          *      }
-         * 
+         *
          *  *  `mostRecentStatusOnly` If `true`, then only the issue's preceding status (the one immediately before the current status) is checked.
          *  *  `previousStatus` An object containing the ID of an issue status.
-         * 
+         *
          * ##### Regular expression validator #####
-         * 
+         *
          * A validator that checks the content of a field against a regular expression.
-         * 
+         *
          *     {
          *        "type": "RegexpFieldValidator",
          *        "configuration": {
@@ -26795,10 +26795,10 @@ export interface AtlassianV3 {
          *            "fieldId": "customfield_10029"
          *        }
          *      }
-         * 
+         *
          *  *  `regExp`A regular expression.
          *  *  `fieldId` The ID of a field. Allowed field types:
-         *     
+         *
          *      *  `com.atlassian.jira.plugin.system.customfieldtypes:select`
          *      *  `com.atlassian.jira.plugin.system.customfieldtypes:multiselect`
          *      *  `com.atlassian.jira.plugin.system.customfieldtypes:radiobuttons`
@@ -26811,11 +26811,11 @@ export interface AtlassianV3 {
          *      *  `com.pyxis.greenhopper.jira:gh-epic-status`
          *      *  `description`
          *      *  `summary`
-         * 
+         *
          * ##### User permission validator #####
-         * 
+         *
          * A validator that checks if a user has a permission. Obsolete. You may encounter this validator when getting transition rules and can pass it when updating or creating rules, for example, when you want to duplicate the rules from a workflow on a new workflow.
-         * 
+         *
          *     {
          *          "type": "UserPermissionValidator",
          *          "configuration": {
@@ -26824,19 +26824,19 @@ export interface AtlassianV3 {
          *              "username": "TestUser"
          *          }
          *      }
-         * 
+         *
          *  *  `permissionKey` The permission to be validated. Allowed values: [built-in](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-permission-schemes/#built-in-permissions) or app defined permissions.
          *  *  `nullAllowed` If `true`, allows the transition when `username` is empty.
          *  *  `username` The username to validate against the `permissionKey`.
-         * 
+         *
          * #### Post functions ####
-         * 
+         *
          * Post functions carry out any additional processing required after a Jira workflow transition is executed.
-         * 
+         *
          * ##### Fire issue event function #####
-         * 
+         *
          * A post function that fires an event that is processed by the listeners.
-         * 
+         *
          *     {
          *        "type": "FireIssueEventFunction",
          *        "configuration": {
@@ -26845,88 +26845,88 @@ export interface AtlassianV3 {
          *          }
          *        }
          *      }
-         * 
+         *
          * **Note:** If provided, this post function overrides the default `FireIssueEventFunction`. Can be included once in a transition.
-         * 
+         *
          *  *  `event` An object containing the ID of the issue event.
-         * 
+         *
          * ##### Update issue status #####
-         * 
+         *
          * A post function that sets issue status to the linked status of the destination workflow status.
-         * 
+         *
          *     {
          *        "type": "UpdateIssueStatusFunction"
          *      }
-         * 
+         *
          * **Note:** This post function is a default function in global and directed transitions. It can only be added to the initial transition and can only be added once.
-         * 
+         *
          * ##### Create comment #####
-         * 
+         *
          * A post function that adds a comment entered during the transition to an issue.
-         * 
+         *
          *     {
          *        "type": "CreateCommentFunction"
          *      }
-         * 
+         *
          * **Note:** This post function is a default function in global and directed transitions. It can only be added to the initial transition and can only be added once.
-         * 
+         *
          * ##### Store issue #####
-         * 
+         *
          * A post function that stores updates to an issue.
-         * 
+         *
          *     {
          *        "type": "IssueStoreFunction"
          *      }
-         * 
+         *
          * **Note:** This post function can only be added to the initial transition and can only be added once.
-         * 
+         *
          * ##### Assign to current user function #####
-         * 
+         *
          * A post function that assigns the issue to the current user if the current user has the `ASSIGNABLE_USER` permission.
-         * 
+         *
          *     {
          *          "type": "AssignToCurrentUserFunction"
          *      }
-         * 
+         *
          * **Note:** This post function can be included once in a transition.
-         * 
+         *
          * ##### Assign to lead function #####
-         * 
+         *
          * A post function that assigns the issue to the project or component lead developer.
-         * 
+         *
          *     {
          *          "type": "AssignToLeadFunction"
          *      }
-         * 
+         *
          * **Note:** This post function can be included once in a transition.
-         * 
+         *
          * ##### Assign to reporter function #####
-         * 
+         *
          * A post function that assigns the issue to the reporter.
-         * 
+         *
          *     {
          *          "type": "AssignToReporterFunction"
          *      }
-         * 
+         *
          * **Note:** This post function can be included once in a transition.
-         * 
+         *
          * ##### Clear field value function #####
-         * 
+         *
          * A post function that clears the value from a field.
-         * 
+         *
          *     {
          *        "type": "ClearFieldValuePostFunction",
          *        "configuration": {
          *          "fieldId": "assignee"
          *        }
          *      }
-         * 
+         *
          *  *  `fieldId` The ID of the field.
-         * 
+         *
          * ##### Copy value from other field function #####
-         * 
+         *
          * A post function that copies the value of one field to another, either within an issue or from parent to subtask.
-         * 
+         *
          *     {
          *        "type": "CopyValueFromOtherFieldPostFunction",
          *        "configuration": {
@@ -26935,25 +26935,25 @@ export interface AtlassianV3 {
          *          "copyType": "same"
          *        }
          *      }
-         * 
+         *
          *  *  `sourceFieldId` The ID of the source field.
          *  *  `destinationFieldId` The ID of the destination field.
          *  *  `copyType` Use `same` to copy the value from a field inside the issue, or `parent` to copy the value from the parent issue.
-         * 
+         *
          * ##### Create Crucible review workflow function (deprecated) #####
-         * 
+         *
          * A post function that creates a Crucible review for all unreviewed code for the issue.
-         * 
+         *
          *     {
          *          "type": "CreateCrucibleReviewWorkflowFunction"
          *      }
-         * 
+         *
          * **Note:** This post function can be included once in a transition.
-         * 
+         *
          * ##### Set issue security level based on user's project role function #####
-         * 
+         *
          * A post function that sets the issue's security level if the current user has a project role.
-         * 
+         *
          *     {
          *        "type": "SetIssueSecurityFromRoleFunction",
          *        "configuration": {
@@ -26965,14 +26965,14 @@ export interface AtlassianV3 {
          *          }
          *        }
          *      }
-         * 
+         *
          *  *  `projectRole` An object containing the ID of the project role.
          *  *  `issueSecurityLevel` OPTIONAL. The object containing the ID of the security level. If not passed, then the security level is set to `none`.
-         * 
+         *
          * ##### Trigger a webhook function #####
-         * 
+         *
          * A post function that triggers a webhook.
-         * 
+         *
          *     {
          *        "type": "TriggerWebhookFunction",
          *        "configuration": {
@@ -26981,13 +26981,13 @@ export interface AtlassianV3 {
          *          }
          *        }
          *      }
-         * 
+         *
          *  *  `webhook` An object containing the ID of the webhook listener to trigger.
-         * 
+         *
          * ##### Update issue custom field function #####
-         * 
+         *
          * A post function that updates the content of an issue custom field.
-         * 
+         *
          *     {
          *        "type": "UpdateIssueCustomFieldPostFunction",
          *        "configuration": {
@@ -26996,15 +26996,15 @@ export interface AtlassianV3 {
          *          "fieldValue": "yikes"
          *        }
          *      }
-         * 
+         *
          *  *  `mode` Use `replace` to override the field content with `fieldValue` or `append` to add `fieldValue` to the end of the field content.
          *  *  `fieldId` The ID of the field.
          *  *  `fieldValue` The update content.
-         * 
+         *
          * ##### Update issue field function #####
-         * 
+         *
          * A post function that updates a simple issue field.
-         * 
+         *
          *     {
          *        "type": "UpdateIssueFieldFunction",
          *        "configuration": {
@@ -27012,9 +27012,9 @@ export interface AtlassianV3 {
          *          "fieldValue": "5f0c277e70b8a90025a00776"
          *        }
          *      }
-         * 
+         *
          *  *  `fieldId` The ID of the field. Allowed field types:
-         *     
+         *
          *      *  `assignee`
          *      *  `description`
          *      *  `environment`
@@ -27026,29 +27026,29 @@ export interface AtlassianV3 {
          *      *  `timespent`
          *  *  `fieldValue` The update value.
          *  *  If the `fieldId` is `assignee`, the `fieldValue` should be one of these values:
-         *     
+         *
          *      *  an account ID.
          *      *  `automatic`.
          *      *  a blank string, which sets the value to `unassigned`.
-         * 
+         *
          * #### Connect rules ####
-         * 
+         *
          * Connect rules are conditions, validators, and post functions of a transition that are registered by Connect apps. To create a rule registered by the app, the app must be enabled and the rule's module must exist.
-         * 
+         *
          *     {
          *        "type": "appKey__moduleKey",
          *        "configuration": {
          *          "value":"{\"isValid\":\"true\"}"
          *        }
          *      }
-         * 
+         *
          *  *  `type` A Connect rule key in a form of `appKey__moduleKey`.
          *  *  `value` The stringified JSON configuration of a Connect rule.
-         * 
+         *
          * #### Forge rules ####
-         * 
+         *
          * Forge transition rules are not yet supported.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the workflow is created.
          * 400: Returned if the request is not valid.
@@ -27070,14 +27070,14 @@ export interface AtlassianV3 {
              * operationId: getWorkflowTransitionRuleConfigurations
              * sum: Get workflow transition rule configurations
              * doc: Returns a [paginated](#pagination) list of workflows with transition rules. The workflows can be filtered to return only those containing workflow transition rules:
-             * 
+             *
              *  *  of one or more transition rule types, such as [workflow post functions](https://developer.atlassian.com/cloud/jira/platform/modules/workflow-post-function/).
              *  *  matching one or more transition rule keys.
-             * 
+             *
              * Only workflows containing transition rules created by the calling [Connect](https://developer.atlassian.com/cloud/jira/platform/index/#connect-apps) or [Forge](https://developer.atlassian.com/cloud/jira/platform/index/#forge-apps) app are returned.
-             * 
+             *
              * Due to server-side optimizations, workflows with an empty list of rules may be returned; these workflows can be ignored.
-             * 
+             *
              * **[Permissions](#permissions) required:** Only [Connect](https://developer.atlassian.com/cloud/jira/platform/index/#connect-apps) or [Forge](https://developer.atlassian.com/cloud/jira/platform/index/#forge-apps) apps can use this operation.
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -27091,20 +27091,20 @@ export interface AtlassianV3 {
              * operationId: updateWorkflowTransitionRuleConfigurations
              * sum: Update workflow transition rule configurations
              * doc: Updates configuration of workflow transition rules. The following rule types are supported:
-             * 
+             *
              *  *  [post functions](https://developer.atlassian.com/cloud/jira/platform/modules/workflow-post-function/)
              *  *  [conditions](https://developer.atlassian.com/cloud/jira/platform/modules/workflow-condition/)
              *  *  [validators](https://developer.atlassian.com/cloud/jira/platform/modules/workflow-validator/)
-             * 
+             *
              * Only rules created by the calling [Connect](https://developer.atlassian.com/cloud/jira/platform/index/#connect-apps) or [Forge](https://developer.atlassian.com/cloud/jira/platform/index/#forge-apps) app can be updated.
-             * 
+             *
              * To assist with app migration, this operation can be used to:
-             * 
+             *
              *  *  Disable a rule.
              *  *  Add a `tag`. Use this to filter rules in the [Get workflow transition rule configurations](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-workflow-transition-rules/#api-rest-api-3-workflow-rule-config-get).
-             * 
+             *
              * Rules are enabled if the `disabled` parameter is not provided.
-             * 
+             *
              * **[Permissions](#permissions) required:** Only [Connect](https://developer.atlassian.com/cloud/jira/platform/index/#connect-apps) or [Forge](https://developer.atlassian.com/cloud/jira/platform/index/#forge-apps) apps can use this operation.
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -27123,13 +27123,13 @@ export interface AtlassianV3 {
                * operationId: deleteWorkflowTransitionRuleConfigurations
                * sum: Delete workflow transition rule configurations
                * doc: Deletes workflow transition rules from one or more workflows. These rule types are supported:
-               * 
+               *
                *  *  [post functions](https://developer.atlassian.com/cloud/jira/platform/modules/workflow-post-function/)
                *  *  [conditions](https://developer.atlassian.com/cloud/jira/platform/modules/workflow-condition/)
                *  *  [validators](https://developer.atlassian.com/cloud/jira/platform/modules/workflow-validator/)
-               * 
+               *
                * Only rules created by the calling Connect app can be deleted.
-               * 
+               *
                * **[Permissions](#permissions) required:** Only Connect apps can use this operation.
                * 200: Returned if the request is successful.
                * 400: Returned if the request is invalid.
@@ -27146,9 +27146,9 @@ export interface AtlassianV3 {
            * operationId: getWorkflowsPaginated
            * sum: Get workflows paginated
            * doc: Returns a [paginated](#pagination) list of published classic workflows. When workflow names are specified, details of those workflows are returned. Otherwise, all published classic workflows are returned.
-           * 
+           *
            * This operation does not return next-gen workflows.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -27171,7 +27171,7 @@ export interface AtlassianV3 {
                * operationId: getWorkflowTransitionProperties
                * sum: Get workflow transition properties
                * doc: Returns the properties on a workflow transition. Transition properties are used to change the behavior of a transition. For more information, see [Transition properties](https://confluence.atlassian.com/x/zIhKLg#Advancedworkflowconfiguration-transitionproperties) and [Workflow properties](https://confluence.atlassian.com/x/JYlKLg).
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: 200 response
                * 400: Returned if the request is invalid.
@@ -27185,7 +27185,7 @@ export interface AtlassianV3 {
                * operationId: deleteWorkflowTransitionProperty
                * sum: Delete workflow transition property
                * doc: Deletes a property from a workflow transition. Transition properties are used to change the behavior of a transition. For more information, see [Transition properties](https://confluence.atlassian.com/x/zIhKLg#Advancedworkflowconfiguration-transitionproperties) and [Workflow properties](https://confluence.atlassian.com/x/JYlKLg).
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: 200 response
                * 304: Returned if no changes were made by the request. For example, trying to delete a property that cannot be found.
@@ -27200,7 +27200,7 @@ export interface AtlassianV3 {
                * operationId: createWorkflowTransitionProperty
                * sum: Create workflow transition property
                * doc: Adds a property to a workflow transition. Transition properties are used to change the behavior of a transition. For more information, see [Transition properties](https://confluence.atlassian.com/x/zIhKLg#Advancedworkflowconfiguration-transitionproperties) and [Workflow properties](https://confluence.atlassian.com/x/JYlKLg).
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: 200 response
                * 400: Returned if a workflow property with the same key is present on the transition.
@@ -27214,7 +27214,7 @@ export interface AtlassianV3 {
                * operationId: updateWorkflowTransitionProperty
                * sum: Update workflow transition property
                * doc: Updates a workflow transition by changing the property value. Trying to update a property that does not exist results in a new property being added to the transition. Transition properties are used to change the behavior of a transition. For more information, see [Transition properties](https://confluence.atlassian.com/x/zIhKLg#Advancedworkflowconfiguration-transitionproperties) and [Workflow properties](https://confluence.atlassian.com/x/JYlKLg).
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: 200 response
                * 304: Returned if no changes were made by the request. For example, attempting to update a property with its current value.
@@ -27238,14 +27238,14 @@ export interface AtlassianV3 {
            * operationId: deleteInactiveWorkflow
            * sum: Delete inactive workflow
            * doc: Deletes a workflow.
-           * 
+           *
            * The workflow cannot be deleted if it is:
-           * 
+           *
            *  *  an active workflow.
            *  *  a system workflow.
            *  *  associated with any workflow scheme.
            *  *  associated with any draft workflow scheme.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the workflow is deleted.
            * 400: Returned if the request is not valid.
@@ -27263,9 +27263,9 @@ export interface AtlassianV3 {
          * operationId: readWorkflows
          * sum: Bulk get workflows
          * doc: Returns a list of workflows and related statuses by providing workflow names, workflow IDs, or project and issue types.
-         * 
+         *
          * **[Permissions](#permissions) required:**
-         * 
+         *
          *  *  *Administer Jira* global permission to access all, including project-scoped, workflows
          *  *  At least one of the *Administer projects* and *View (read-only) workflow* project permissions to access project-scoped workflows
          * 200: Returned if the request is successful.
@@ -27280,37 +27280,37 @@ export interface AtlassianV3 {
            * operationId: workflowCapabilities
            * sum: Get available workflow capabilities
            * doc: Get the list of workflow capabilities for a specific workflow using either the workflow ID, or the project and issue type ID pair. The response includes the scope of the workflow, defined as global/project-based, and a list of project types that the workflow is scoped to. It also includes all rules organised into their broad categories (conditions, validators, actions, triggers, screens) as well as the source location (Atlassian-provided, Connect, Forge).
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Administer Jira* project permission to access all, including global-scoped, workflows
            *  *  *Administer projects* project permissions to access project-scoped workflows
-           * 
+           *
            * The current list of Atlassian-provided rules:
-           * 
+           *
            * #### Validators ####
-           * 
+           *
            * A validator rule that checks if a user has the required permissions to execute the transition in the workflow.
-           * 
+           *
            * ##### Permission validator #####
-           * 
+           *
            * A validator rule that checks if a user has the required permissions to execute the transition in the workflow.
-           * 
+           *
            *     {
            *        "ruleKey": "system:check-permission-validator",
            *        "parameters": {
            *          "permissionKey": "ADMINISTER_PROJECTS"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `permissionKey` The permission required to perform the transition. Allowed values: [built-in Jira permissions](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-permission-schemes/#built-in-permissions).
-           * 
+           *
            * ##### Parent or child blocking validator #####
-           * 
+           *
            * A validator to block the child issue\\u2019s transition depending on the parent issue\\u2019s status.
-           * 
+           *
            *     {
            *        "ruleKey" : "system:parent-or-child-blocking-validator"
            *        "parameters" : {
@@ -27318,16 +27318,16 @@ export interface AtlassianV3 {
            *          "statusIds" : "1,2,3"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `blocker` currently only supports `PARENT`.
            *  *  `statusIds` a comma-separated list of status IDs.
-           * 
+           *
            * ##### Previous status validator #####
-           * 
+           *
            * A validator that checks if an issue has transitioned through specified previous status(es) before allowing the current transition to occur.
-           * 
+           *
            *     {
            *        "ruleKey": "system:previous-status-validator",
            *        "parameters": {
@@ -27335,20 +27335,20 @@ export interface AtlassianV3 {
            *          "mostRecentStatusOnly": "true"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `previousStatusIds` a comma-separated list of status IDs, currently only support one ID.
            *  *  `mostRecentStatusOnly` when `true` only considers the most recent status for the condition evaluation. Allowed values: `true`, `false`.
-           * 
+           *
            * ##### Validate a field value #####
-           * 
+           *
            * A validation that ensures a specific field's value meets the defined criteria before allowing an issue to transition in the workflow.
-           * 
+           *
            * Depending on the rule type, the result will vary:
-           * 
+           *
            * ###### Field required ######
-           * 
+           *
            *     {
            *        "ruleKey": "system:validate-field-value",
            *        "parameters": {
@@ -27358,15 +27358,15 @@ export interface AtlassianV3 {
            *          "errorMessage": "An assignee must be set!"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `fieldsRequired` the ID of the field that is required. For a custom field, it would look like `customfield_123`.
            *  *  `ignoreContext` controls the impact of context settings on field validation. When set to `true`, the validator doesn't check a required field if its context isn't configured for the current issue. When set to `false`, the validator requires a field even if its context is invalid. Allowed values: `true`, `false`.
            *  *  `errorMessage` is the error message to display if the user does not provide a value during the transition. A default error message will be shown if you don't provide one (Optional).
-           * 
+           *
            * ###### Field changed ######
-           * 
+           *
            *     {
            *        "ruleKey": "system:validate-field-value",
            *        "parameters": {
@@ -27376,15 +27376,15 @@ export interface AtlassianV3 {
            *          "errorMessage": "Affect versions must be modified before transition"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `groupsExemptFromValidation` a comma-separated list of group IDs to be exempt from the validation.
            *  *  `fieldKey` the ID of the field that has changed. For a custom field, it would look like `customfield_123`.
            *  *  `errorMessage` the error message to display if the user does not provide a value during the transition. A default error message will be shown if you don't provide one (Optional).
-           * 
+           *
            * ###### Field has a single value ######
-           * 
+           *
            *     {
            *        "ruleKey": "system:validate-field-value",
            *        "parameters": {
@@ -27393,14 +27393,14 @@ export interface AtlassianV3 {
            *          "excludeSubtasks": "true"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `fieldKey` the ID of the field to validate. For a custom field, it would look like `customfield_123`.
            *  *  `excludeSubtasks` Option to exclude values copied from sub-tasks. Allowed values: `true`, `false`.
-           * 
+           *
            * ###### Field matches regular expression ######
-           * 
+           *
            *     {
            *        "ruleKey": "system:validate-field-value",
            *        "parameters": {
@@ -27409,14 +27409,14 @@ export interface AtlassianV3 {
            *          "fieldKey": "description"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `regexp` the regular expression used to validate the field\\u2019s content.
            *  *  `fieldKey` the ID of the field to validate. For a custom field, it would look like `customfield_123`.
-           * 
+           *
            * ###### Date field comparison ######
-           * 
+           *
            *     {
            *        "ruleKey": "system:validate-field-value",
            *        "parameters": {
@@ -27427,16 +27427,16 @@ export interface AtlassianV3 {
            *          "conditionSelected": ">="
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `date1FieldKey` the ID of the first field to compare. For a custom field, it would look like `customfield_123`.
            *  *  `date2FieldKey` the ID of the second field to compare. For a custom field, it would look like `customfield_123`.
            *  *  `includeTime` if `true`, compares both date and time. Allowed values: `true`, `false`.
            *  *  `conditionSelected` the condition to compare with. Allowed values: `>`, `>=`, `=`, `<=`, `<`, `!=`.
-           * 
+           *
            * ###### Date range comparison ######
-           * 
+           *
            *     {
            *        "ruleKey": "system:validate-field-value",
            *        "parameters": {
@@ -27446,48 +27446,48 @@ export interface AtlassianV3 {
            *          "numberOfDays": "3"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `date1FieldKey` the ID of the first field to compare. For a custom field, it would look like `customfield_123`.
            *  *  `date2FieldKey` the ID of the second field to compare. For a custom field, it would look like `customfield_123`.
            *  *  `numberOfDays` maximum number of days past the reference date (`date2FieldKey`) to pass validation.
-           * 
+           *
            * This rule is composed by aggregating the following legacy rules:
-           * 
+           *
            *  *  FieldRequiredValidator
            *  *  FieldChangedValidator
            *  *  FieldHasSingleValueValidator
            *  *  RegexpFieldValidator
            *  *  DateFieldValidator
            *  *  WindowsDateValidator
-           * 
+           *
            * ##### Proforma: Forms attached validator #####
-           * 
+           *
            * Validates that one or more forms are attached to the issue.
-           * 
+           *
            *     {
            *        "ruleKey" : "system:proforma-forms-attached"
            *        "parameters" : {}
            *      }
-           * 
+           *
            * ##### Proforma: Forms submitted validator #####
-           * 
+           *
            * Validates that all forms attached to the issue have been submitted.
-           * 
+           *
            *     {
            *        "ruleKey" : "system:proforma-forms-submitted"
            *        "parameters" : {}
            *      }
-           * 
+           *
            * #### Conditions ####
-           * 
+           *
            * Conditions enable workflow rules that govern whether a transition can execute.
-           * 
+           *
            * ##### Check field value #####
-           * 
+           *
            * A condition rule evaluates as true if a specific field's value meets the defined criteria. This rule ensures that an issue can only transition to the next step in the workflow if the field's value matches the desired condition.
-           * 
+           *
            *     {
            *        "ruleKey": "system:check-field-value",
            *        "parameters": {
@@ -27497,18 +27497,18 @@ export interface AtlassianV3 {
            *          "comparisonType": "STRING"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `fieldId` The ID of the field to check the value of. For non-system fields, it will look like `customfield_123`. Note: `fieldId` is used interchangeably with the idea of `fieldKey` here, they refer to the same field.
            *  *  `fieldValue` the list of values to check against the field\\u2019s value.
            *  *  `comparator` The comparison logic. Allowed values: `>`, `>=`, `=`, `<=`, `<`, `!=`.
            *  *  `comparisonType` The type of data being compared. Allowed values: `STRING`, `NUMBER`, `DATE`, `DATE_WITHOUT_TIME`, `OPTIONID`.
-           * 
+           *
            * ##### Restrict issue transition #####
-           * 
+           *
            * This rule ensures that issue transitions are restricted based on user accounts, roles, group memberships, and permissions, maintaining control over who can transition an issue. This condition evaluates as `true` if any of the following criteria is met.
-           * 
+           *
            *     {
            *        "ruleKey": "system:restrict-issue-transition",
            *        "parameters": {
@@ -27521,9 +27521,9 @@ export interface AtlassianV3 {
            *          "denyUserCustomFields": "customfield_10107"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `accountIds` a comma-separated list of the user account IDs. It also allows generic values like: `allow-assignee`, `allow-reporter`, and `accountIds` Note: This is only supported in team-managed projects
            *  *  `roleIds` a comma-separated list of role IDs.
            *  *  `groupIds` a comma-separated list of group IDs.
@@ -27531,9 +27531,9 @@ export interface AtlassianV3 {
            *  *  `groupCustomFields` a comma-separated list of group custom field IDs.
            *  *  `allowUserCustomFields` a comma-separated list of user custom field IDs to allow for issue transition.
            *  *  `denyUserCustomFields` a comma-separated list of user custom field IDs to deny for issue transition.
-           * 
+           *
            * This rule is composed by aggregating the following legacy rules:
-           * 
+           *
            *  *  AllowOnlyAssignee
            *  *  AllowOnlyReporter
            *  *  InAnyProjectRoleCondition
@@ -27543,11 +27543,11 @@ export interface AtlassianV3 {
            *  *  PermissionCondtion
            *  *  InGroupCFCondition
            *  *  UserIsInCustomFieldCondition
-           * 
+           *
            * ##### Previous status condition #####
-           * 
+           *
            * A condition that evaluates based on an issue's previous status(es) and specific criteria.
-           * 
+           *
            *     {
            *        "ruleKey" : "system:previous-status-condition"
            *        "parameters" : {
@@ -27558,19 +27558,19 @@ export interface AtlassianV3 {
            *          "ignoreLoopTransitions": "true"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `previousStatusIds` a comma-separated list of status IDs, current only support one ID.
            *  *  `not` indicates if the condition should be reversed. When `true` it checks that the issue has not been in the selected statuses. Allowed values: `true`, `false`.
            *  *  `mostRecentStatusOnly` when true only considers the most recent status for the condition evaluation. Allowed values: `true`, `false`.
            *  *  `includeCurrentStatus` includes the current status when evaluating if the issue has been through the selected statuses. Allowed values: `true`, `false`.
            *  *  `ignoreLoopTransitions` ignore loop transitions. Allowed values: `true`, `false`.
-           * 
+           *
            * ##### Parent or child blocking condition #####
-           * 
+           *
            * A condition to block the parent\\u2019s issue transition depending on the child\\u2019s issue status.
-           * 
+           *
            *     {
            *        "ruleKey" : "system:parent-or-child-blocking-condition"
            *        "parameters" : {
@@ -27578,16 +27578,16 @@ export interface AtlassianV3 {
            *          "statusIds" : "1,2,3"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `blocker` currently only supports `CHILD`.
            *  *  `statusIds` a comma-separated list of status IDs.
-           * 
+           *
            * ##### Separation of duties #####
-           * 
+           *
            * A condition preventing the user from performing, if the user has already performed a transition on the issue.
-           * 
+           *
            *     {
            *        "ruleKey": "system:separation-of-duties",
            *        "parameters": {
@@ -27595,74 +27595,74 @@ export interface AtlassianV3 {
            *          "toStatusId": "10160"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `fromStatusId` represents the status ID from which the issue is transitioning. It ensures that the user performing the current transition has not performed any actions when the issue was in the specified status.
            *  *  `toStatusId` represents the status ID to which the issue is transitioning. It ensures that the user performing the current transition is not the same user who has previously transitioned the issue.
-           * 
+           *
            * ##### Restrict transitions #####
-           * 
+           *
            * A condition preventing all users from transitioning the issue can also optionally include APIs as well.
-           * 
+           *
            *     {
            *        "ruleKey": "system:restrict-from-all-users",
            *        "parameters": {
            *          "restrictMode": "users"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `restrictMode` restricts the issue transition including/excluding APIs. Allowed values: `"users"`, `"usersAndAPI"`.
-           * 
+           *
            * ##### Jira Service Management block until approved #####
-           * 
+           *
            * Block an issue transition until approval. Note: This is only supported in team-managed projects.
-           * 
+           *
            *     {
            *        "ruleKey": "system:jsd-approvals-block-until-approved",
            *        "parameters": {
            *          "approvalConfigurationJson": "{"statusExternalUuid...}"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `approvalConfigurationJson` a stringified JSON holding the Jira Service Management approval configuration.
-           * 
+           *
            * ##### Jira Service Management block until rejected #####
-           * 
+           *
            * Block an issue transition until rejected. Note: This is only supported in team-managed projects.
-           * 
+           *
            *     {
            *        "ruleKey": "system:jsd-approvals-block-until-rejected",
            *        "parameters": {
            *          "approvalConfigurationJson": "{"statusExternalUuid...}"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `approvalConfigurationJson` a stringified JSON holding the Jira Service Management approval configuration.
-           * 
+           *
            * ##### Block in progress approval #####
-           * 
+           *
            * Condition to block issue transition if there is pending approval. Note: This is only supported in company-managed projects.
-           * 
+           *
            *     {
            *        "ruleKey": "system:block-in-progress-approval",
            *        "parameters": {}
            *      }
-           * 
+           *
            * #### Post functions ####
-           * 
+           *
            * Post functions carry out any additional processing required after a workflow transition is executed.
-           * 
+           *
            * ##### Change assignee #####
-           * 
+           *
            * A post function rule that changes the assignee of an issue after a transition.
-           * 
+           *
            *     {
            *        "ruleKey": "system:change-assignee",
            *        "parameters": {
@@ -27670,16 +27670,16 @@ export interface AtlassianV3 {
            *          "accountId": "example-account-id"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `type` the parameter used to determine the new assignee. Allowed values: `to-selected-user`, `to-unassigned`, `to-current-user`, `to-current-user`, `to-default-user`, `to-default-user`
            *  *  `accountId` the account ID of the user to assign the issue to. This parameter is required only when the type is `"to-selected-user"`.
-           * 
+           *
            * ##### Copy field value #####
-           * 
+           *
            * A post function that automates the process of copying values between fields during a specific transition, ensuring data consistency and reducing manual effort.
-           * 
+           *
            *     {
            *        "ruleKey": "system:copy-value-from-other-field",
            *        "parameters": {
@@ -27688,17 +27688,17 @@ export interface AtlassianV3 {
            *          "issueSource": "SAME"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `sourceFieldKey` the field key to copy from. For a custom field, it would look like `customfield_123`
            *  *  `targetFieldKey` the field key to copy to. For a custom field, it would look like `customfield_123`
            *  *  `issueSource` `SAME` or `PARENT`. Defaults to `SAME` if no value is provided.
-           * 
+           *
            * ##### Update field #####
-           * 
+           *
            * A post function that updates or appends a specific field with the given value.
-           * 
+           *
            *     {
            *        "ruleKey": "system:update-field",
            *        "parameters": {
@@ -27707,34 +27707,34 @@ export interface AtlassianV3 {
            *          "mode": "append"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `field` the ID of the field to update. For a custom field, it would look like `customfield_123`
            *  *  `value` the value to update the field with.
            *  *  `mode` `append` or `replace`. Determines if a value will be appended to the current value, or if the current value will be replaced.
-           * 
+           *
            * ##### Trigger webhook #####
-           * 
+           *
            * A post function that automatically triggers a predefined webhook when a transition occurs in the workflow.
-           * 
+           *
            *     {
            *        "ruleKey": "system:trigger-webhook",
            *        "parameters": {
            *          "webhookId": "1"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `webhookId` the ID of the webhook.
-           * 
+           *
            * #### Screen ####
-           * 
+           *
            * ##### Remind people to update fields #####
-           * 
+           *
            * A screen rule that prompts users to update a specific field when they interact with an issue screen during a transition. This rule is useful for ensuring that users provide or modify necessary information before moving an issue to the next step in the workflow.
-           * 
+           *
            *     {
            *        "ruleKey": "system:remind-people-to-update-fields",
            *        "params": {
@@ -27743,34 +27743,34 @@ export interface AtlassianV3 {
            *          "remindingAlwaysAsk": "true"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `remindingFieldIds` a comma-separated list of field IDs. Note: `fieldId` is used interchangeably with the idea of `fieldKey` here, they refer to the same field.
            *  *  `remindingMessage` the message to display when prompting the users to update the fields.
            *  *  `remindingAlwaysAsk` always remind to update fields. Allowed values: `true`, `false`.
-           * 
+           *
            * ##### Shared transition screen #####
-           * 
+           *
            * A common screen that is shared between transitions in a workflow.
-           * 
+           *
            *     {
            *        "ruleKey": "system:transition-screen",
            *        "params": {
            *          "screenId": "3"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `screenId` the ID of the screen.
-           * 
+           *
            * #### Connect & Forge ####
-           * 
+           *
            * ##### Connect rules #####
-           * 
+           *
            * Validator/Condition/Post function for Connect app.
-           * 
+           *
            *     {
            *        "ruleKey": "connect:expression-validator",
            *        "parameters": {
@@ -27781,20 +27781,20 @@ export interface AtlassianV3 {
            *          "tag": ""
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `ruleKey` Validator: `connect:expression-validator`, Condition: `connect:expression-condition`, and Post function: `connect:remote-workflow-function`
            *  *  `appKey` the reference to the Connect app
            *  *  `config` a JSON payload string describing the configuration
            *  *  `id` the ID of the rule
            *  *  `disabled` determine if the Connect app is disabled. Allowed values: `true`, `false`.
            *  *  `tag` additional tags for the Connect app
-           * 
+           *
            * ##### Forge rules #####
-           * 
+           *
            * Validator/Condition/Post function for Forge app.
-           * 
+           *
            *     {
            *        "ruleKey": "forge:expression-validator",
            *        "parameters": {
@@ -27803,9 +27803,9 @@ export interface AtlassianV3 {
            *          "id": "a865ddf6-bb3f-4a7b-9540-c2f8b3f9f6c2"
            *        }
            *      }
-           * 
+           *
            * Parameters:
-           * 
+           *
            *  *  `ruleKey` Validator: `forge:expression-validator`, Condition: `forge:expression-condition`, and Post function: `forge:workflow-post-function`
            *  *  `key` the identifier for the Forge app
            *  *  `config` the persistent stringified JSON configuration for the Forge rule
@@ -27827,9 +27827,9 @@ export interface AtlassianV3 {
            * operationId: createWorkflows
            * sum: Bulk create workflows
            * doc: Create workflows and related statuses.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Administer Jira* project permission to create all, including global-scoped, workflows
            *  *  *Administer projects* project permissions to create project-scoped workflows
            * 200: Returned if the request is successful.
@@ -27844,9 +27844,9 @@ export interface AtlassianV3 {
              * operationId: validateCreateWorkflows
              * sum: Validate create workflows
              * doc: Validate the payload for bulk create workflows.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Administer Jira* project permission to create all, including global-scoped, workflows
              *  *  *Administer projects* project permissions to create project-scoped workflows
              * 200: Returned if the request is successful.
@@ -27863,9 +27863,9 @@ export interface AtlassianV3 {
            * operationId: updateWorkflows
            * sum: Bulk update workflows
            * doc: Update workflows and related statuses.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Administer Jira* project permission to create all, including global-scoped, workflows
            *  *  *Administer projects* project permissions to create project-scoped workflows
            * 200: Returned if the request is successful.
@@ -27880,9 +27880,9 @@ export interface AtlassianV3 {
              * operationId: validateUpdateWorkflows
              * sum: Validate update workflows
              * doc: Validate the payload for bulk update workflows.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Administer Jira* project permission to create all, including global-scoped, workflows
              *  *  *Administer projects* project permissions to create project-scoped workflows
              * 200: Returned if the request is successful.
@@ -27900,7 +27900,7 @@ export interface AtlassianV3 {
          * operationId: getAllWorkflowSchemes
          * sum: Get all workflow schemes
          * doc: Returns a [paginated](#pagination) list of all workflow schemes, not including draft workflow schemes.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
@@ -27912,7 +27912,7 @@ export interface AtlassianV3 {
          * operationId: createWorkflowScheme
          * sum: Create workflow scheme
          * doc: Creates a workflow scheme.
-         * 
+         *
          * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
          * 201: Returned if the request is successful.
          * 400: Returned if the request is invalid.
@@ -27931,9 +27931,9 @@ export interface AtlassianV3 {
            * operationId: getWorkflowSchemeProjectAssociations
            * sum: Get workflow scheme project associations
            * doc: Returns a list of the workflow schemes associated with a list of projects. Each returned workflow scheme includes a list of the requested projects associated with it. Any team-managed or non-existent projects in the request are ignored and no errors are returned.
-           * 
+           *
            * If the project is associated with the `Default Workflow Scheme` no ID is returned. This is because the way the `Default Workflow Scheme` is stored means it has no ID.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is invalid.
@@ -27946,9 +27946,9 @@ export interface AtlassianV3 {
            * operationId: assignSchemeToProject
            * sum: Assign workflow scheme to project
            * doc: Assigns a workflow scheme to a project. This operation is performed only when there are no issues in the project.
-           * 
+           *
            * Workflow schemes can only be assigned to classic projects.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the request is not valid.
@@ -27969,9 +27969,9 @@ export interface AtlassianV3 {
            * operationId: readWorkflowSchemes
            * sum: Bulk get workflow schemes
            * doc: Returns a list of workflow schemes by providing workflow scheme IDs or project IDs.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Administer Jira* global permission to access all, including project-scoped, workflow schemes
            *  *  *Administer projects* project permissions to access project-scoped workflow schemes
            * 200: Returned if the request is successful.
@@ -27987,9 +27987,9 @@ export interface AtlassianV3 {
            * operationId: updateSchemes
            * sum: Update workflow scheme
            * doc: Updates company-managed and team-managed project workflow schemes. This API doesn't have a concept of draft, so any changes made to a workflow scheme are immediately available. When changing the available statuses for issue types, an [asynchronous task](#async) migrates the issues as defined in the provided mappings.
-           * 
+           *
            * **[Permissions](#permissions) required:**
-           * 
+           *
            *  *  *Administer Jira* project permission to update all, including global-scoped, workflow schemes.
            *  *  *Administer projects* project permission to update project-scoped workflow schemes.
            * 200: Returned if the request is successful and there is no asynchronous task.
@@ -28005,9 +28005,9 @@ export interface AtlassianV3 {
              * operationId: updateWorkflowSchemeMappings
              * sum: Get required status mappings for workflow scheme update
              * doc: Gets the required status mappings for the desired changes to a workflow scheme. The results are provided per issue type and workflow. When updating a workflow scheme, status mappings can be provided per issue type, per workflow, or both.
-             * 
+             *
              * **[Permissions](#permissions) required:**
-             * 
+             *
              *  *  *Administer Jira* permission to update all, including global-scoped, workflow schemes.
              *  *  *Administer projects* project permission to update project-scoped workflow schemes.
              * 200: Returned if the request is successful.
@@ -28024,7 +28024,7 @@ export interface AtlassianV3 {
            * operationId: getWorkflowScheme
            * sum: Get workflow scheme
            * doc: Returns a workflow scheme.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -28037,7 +28037,7 @@ export interface AtlassianV3 {
            * operationId: deleteWorkflowScheme
            * sum: Delete workflow scheme
            * doc: Deletes a workflow scheme. Note that a workflow scheme cannot be deleted if it is active (that is, being used by at least one project).
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 204: Returned if the request is successful.
            * 400: Returned if the scheme is active.
@@ -28051,7 +28051,7 @@ export interface AtlassianV3 {
            * operationId: updateWorkflowScheme
            * sum: Classic update workflow scheme
            * doc: Updates a company-manged project workflow scheme, including the name, default workflow, issue type to project mappings, and more. If the workflow scheme is active (that is, being used by at least one project), then a draft workflow scheme is created or updated instead, provided that `updateDraftIfNeeded` is set to `true`.
-           * 
+           *
            * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
            * 200: Returned if the request is successful.
            * 400: Returned if the request is invalid.
@@ -28071,7 +28071,7 @@ export interface AtlassianV3 {
              * operationId: createWorkflowSchemeDraftFromParent
              * sum: Create draft workflow scheme
              * doc: Create a draft workflow scheme from an active workflow scheme, by copying the active workflow scheme. Note that an active workflow scheme can only have one draft workflow scheme.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 201: Returned if the request is successful.
              * 400: Returned if the request is invalid.
@@ -28087,7 +28087,7 @@ export interface AtlassianV3 {
              * operationId: getDefaultWorkflow
              * sum: Get default workflow
              * doc: Returns the default workflow for a workflow scheme. The default workflow is the workflow that is assigned any issue types that have not been mapped to any other workflow. The default workflow has *All Unassigned Issue Types* listed in its issue types for the workflow scheme in Jira.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -28100,9 +28100,9 @@ export interface AtlassianV3 {
              * operationId: deleteDefaultWorkflow
              * sum: Delete default workflow
              * doc: Resets the default workflow for a workflow scheme. That is, the default workflow is set to Jira's system workflow (the *jira* workflow).
-             * 
+             *
              * Note that active workflow schemes cannot be edited. If the workflow scheme is active, set `updateDraftIfNeeded` to `true` and a draft workflow scheme is created or updated with the default workflow reset. The draft workflow scheme can be published in Jira.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the workflow scheme cannot be edited and `updateDraftIfNeeded` is not `true`.
@@ -28116,9 +28116,9 @@ export interface AtlassianV3 {
              * operationId: updateDefaultWorkflow
              * sum: Update default workflow
              * doc: Sets the default workflow for a workflow scheme.
-             * 
+             *
              * Note that active workflow schemes cannot be edited. If the workflow scheme is active, set `updateDraftIfNeeded` to `true` in the request object and a draft workflow scheme is created or updated with the new default workflow. The draft workflow scheme can be published in Jira.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the workflow scheme cannot be edited and `updateDraftIfNeeded` is not `true`.
@@ -28138,18 +28138,18 @@ export interface AtlassianV3 {
              * Method: get /rest/api/3/workflowscheme/{id}/draft
              * operationId: getWorkflowSchemeDraft
              * sum: Get draft workflow scheme
-             * doc: Returns the draft workflow scheme for an active workflow scheme. Draft workflow schemes allow changes to be made to the active workflow schemes: When an active workflow scheme is updated, a draft copy is created. The draft is modified, then the changes in the draft are copied back to the active workflow scheme. See [Configuring workflow schemes](https://confluence.atlassian.com/x/tohKLg) for more information.  
+             * doc: Returns the draft workflow scheme for an active workflow scheme. Draft workflow schemes allow changes to be made to the active workflow schemes: When an active workflow scheme is updated, a draft copy is created. The draft is modified, then the changes in the draft are copied back to the active workflow scheme. See [Configuring workflow schemes](https://confluence.atlassian.com/x/tohKLg) for more information.
              * Note that:
-             * 
+             *
              *  *  Only active workflow schemes can have draft workflow schemes.
              *  *  An active workflow scheme can only have one draft workflow scheme.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if:
-             * 
+             *
              *  *  the original active workflow scheme is not found.
              *  *  the original active workflow scheme does not have a draft.
              */
@@ -28159,13 +28159,13 @@ export interface AtlassianV3 {
              * operationId: deleteWorkflowSchemeDraft
              * sum: Delete draft workflow scheme
              * doc: Deletes a draft workflow scheme.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 204: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if the user does not have the necessary permission..
              * 404: Returned if:
-             * 
+             *
              *  *  the original active workflow scheme is not found.
              *  *  the original active workflow scheme does not have a draft.
              */
@@ -28175,14 +28175,14 @@ export interface AtlassianV3 {
              * operationId: updateWorkflowSchemeDraft
              * sum: Update draft workflow scheme
              * doc: Updates a draft workflow scheme. If a draft workflow scheme does not exist for the active workflow scheme, then a draft is created. Note that an active workflow scheme can only have one draft workflow scheme.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid.
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if:
-             * 
+             *
              *  *  the original active workflow scheme is not found.
              *  *  the original active workflow scheme does not have a draft.
              */
@@ -28198,13 +28198,13 @@ export interface AtlassianV3 {
                * operationId: getDraftDefaultWorkflow
                * sum: Get draft default workflow
                * doc: Returns the default workflow for a workflow scheme's draft. The default workflow is the workflow that is assigned any issue types that have not been mapped to any other workflow. The default workflow has *All Unassigned Issue Types* listed in its issue types for the workflow scheme in Jira.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if the request is successful.
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 403: Returned if the user does not have the necessary permission..
                * 404: Returned if any of the following is true:
-               * 
+               *
                *  *  The workflow scheme is not found.
                *  *  The workflow scheme does not have a draft.
                */
@@ -28214,13 +28214,13 @@ export interface AtlassianV3 {
                * operationId: deleteDraftDefaultWorkflow
                * sum: Delete draft default workflow
                * doc: Resets the default workflow for a workflow scheme's draft. That is, the default workflow is set to Jira's system workflow (the *jira* workflow).
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if the request is successful.
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if any of the following is true:
-               * 
+               *
                *  *  The workflow scheme is not found.
                *  *  The workflow scheme does not have a draft.
                */
@@ -28230,14 +28230,14 @@ export interface AtlassianV3 {
                * operationId: updateDraftDefaultWorkflow
                * sum: Update draft default workflow
                * doc: Sets the default workflow for a workflow scheme's draft.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if the request is successful.
                * 400: Returned if the request is invalid.
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if any of the following is true:
-               * 
+               *
                *  *  The workflow scheme is not found.
                *  *  The workflow scheme does not have a draft.
                */
@@ -28256,7 +28256,7 @@ export interface AtlassianV3 {
                  * operationId: getWorkflowSchemeDraftIssueType
                  * sum: Get workflow for issue type in draft workflow scheme
                  * doc: Returns the issue type-workflow mapping for an issue type in a workflow scheme's draft.
-                 * 
+                 *
                  * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                  * 200: Returned if the request is successful.
                  * 401: Returned if the authentication credentials are incorrect or missing.
@@ -28269,7 +28269,7 @@ export interface AtlassianV3 {
                  * operationId: deleteWorkflowSchemeDraftIssueType
                  * sum: Delete workflow for issue type in draft workflow scheme
                  * doc: Deletes the issue type-workflow mapping for an issue type in a workflow scheme's draft.
-                 * 
+                 *
                  * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                  * 200: Returned if the request is successful.
                  * 401: Returned if the authentication credentials are incorrect or missing.
@@ -28282,7 +28282,7 @@ export interface AtlassianV3 {
                  * operationId: setWorkflowSchemeDraftIssueType
                  * sum: Set workflow for issue type in draft workflow scheme
                  * doc: Sets the workflow for an issue type in a workflow scheme's draft.
-                 * 
+                 *
                  * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                  * 200: Returned if the request is successful.
                  * 400: Returned if the request is invalid.
@@ -28304,11 +28304,11 @@ export interface AtlassianV3 {
                * operationId: publishDraftWorkflowScheme
                * sum: Publish draft workflow scheme
                * doc: Publishes a draft workflow scheme.
-               * 
+               *
                * Where the draft workflow includes new workflow statuses for an issue type, mappings are provided to update issues with the original workflow status to the new workflow status.
-               * 
+               *
                * This operation is [asynchronous](#async). Follow the `location` link in the response to determine the status of the task and use [Get task](#api-rest-api-3-task-taskId-get) to obtain updates.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 204: Returned if the request is only for validation and is successful.
                * 303: Returned if the request is successful.
@@ -28316,7 +28316,7 @@ export interface AtlassianV3 {
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if any of these are true:
-               * 
+               *
                *  *  The workflow scheme is not found.
                *  *  The workflow scheme does not have a draft.
                *  *  A new status in the draft workflow scheme is not found.
@@ -28330,7 +28330,7 @@ export interface AtlassianV3 {
                * operationId: getDraftWorkflow
                * sum: Get issue types for workflows in draft workflow scheme
                * doc: Returns the workflow-issue type mappings for a workflow scheme's draft.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if the request is successful.
                * 401: Returned if the authentication credentials are incorrect or missing.
@@ -28343,13 +28343,13 @@ export interface AtlassianV3 {
                * operationId: deleteDraftWorkflowMapping
                * sum: Delete issue types for workflow in draft workflow scheme
                * doc: Deletes the workflow-issue type mapping for a workflow in a workflow scheme's draft.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if the request is successful.
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if any of the following is true:
-               * 
+               *
                *  *  The workflow scheme is not found.
                *  *  The workflow scheme does not have a draft.
                *  *  The workflow is not found.
@@ -28361,14 +28361,14 @@ export interface AtlassianV3 {
                * operationId: updateDraftWorkflowMapping
                * sum: Set issue types for workflow in workflow scheme
                * doc: Sets the issue types for a workflow in a workflow scheme's draft. The workflow can also be set as the default workflow for the draft workflow scheme. Unmapped issues types are mapped to the default workflow.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if the request is successful.
                * 400: Returned if the request is invalid.
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if any of the following is true:
-               * 
+               *
                *  *  The workflow scheme is not found.
                *  *  The workflow scheme does not have a draft.
                *  *  The workflow is not found.
@@ -28390,7 +28390,7 @@ export interface AtlassianV3 {
                * operationId: getWorkflowSchemeIssueType
                * sum: Get workflow for issue type in workflow scheme
                * doc: Returns the issue type-workflow mapping for an issue type in a workflow scheme.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if the request is successful.
                * 401: Returned if the authentication credentials are incorrect or missing.
@@ -28403,9 +28403,9 @@ export interface AtlassianV3 {
                * operationId: deleteWorkflowSchemeIssueType
                * sum: Delete workflow for issue type in workflow scheme
                * doc: Deletes the issue type-workflow mapping for an issue type in a workflow scheme.
-               * 
+               *
                * Note that active workflow schemes cannot be edited. If the workflow scheme is active, set `updateDraftIfNeeded` to `true` and a draft workflow scheme is created or updated with the issue type-workflow mapping deleted. The draft workflow scheme can be published in Jira.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if the request is successful.
                * 400: Returned if the workflow cannot be edited and `updateDraftIfNeeded` is false.
@@ -28419,9 +28419,9 @@ export interface AtlassianV3 {
                * operationId: setWorkflowSchemeIssueType
                * sum: Set workflow for issue type in workflow scheme
                * doc: Sets the workflow for an issue type in a workflow scheme.
-               * 
+               *
                * Note that active workflow schemes cannot be edited. If the workflow scheme is active, set `updateDraftIfNeeded` to `true` in the request body and a draft workflow scheme is created or updated with the new issue type-workflow mapping. The draft workflow scheme can be published in Jira.
-               * 
+               *
                * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
                * 200: Returned if the request is successful.
                * 400: Returned if the workflow cannot be edited and `updateDraftIfNeeded` is false.
@@ -28443,7 +28443,7 @@ export interface AtlassianV3 {
              * operationId: getWorkflow
              * sum: Get issue types for workflows in workflow scheme
              * doc: Returns the workflow-issue type mappings for a workflow scheme.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 401: Returned if the authentication credentials are incorrect or missing.
@@ -28456,16 +28456,16 @@ export interface AtlassianV3 {
              * operationId: deleteWorkflowMapping
              * sum: Delete issue types for workflow in workflow scheme
              * doc: Deletes the workflow-issue type mapping for a workflow in a workflow scheme.
-             * 
+             *
              * Note that active workflow schemes cannot be edited. If the workflow scheme is active, set `updateDraftIfNeeded` to `true` and a draft workflow scheme is created or updated with the workflow-issue type mapping deleted. The draft workflow scheme can be published in Jira.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the workflow cannot be edited and `updateDraftIfNeeded` is not true.
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if any of the following is true:
-             * 
+             *
              *  *  The workflow scheme is not found.
              *  *  The workflow is not found.
              *  *  The workflow is not specified.
@@ -28476,16 +28476,16 @@ export interface AtlassianV3 {
              * operationId: updateWorkflowMapping
              * sum: Set issue types for workflow in workflow scheme
              * doc: Sets the issue types for a workflow in a workflow scheme. The workflow can also be set as the default workflow for the workflow scheme. Unmapped issues types are mapped to the default workflow.
-             * 
+             *
              * Note that active workflow schemes cannot be edited. If the workflow scheme is active, set `updateDraftIfNeeded` to `true` in the request body and a draft workflow scheme is created or updated with the new workflow-issue types mappings. The draft workflow scheme can be published in Jira.
-             * 
+             *
              * **[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
              * 200: Returned if the request is successful.
              * 400: Returned if the request is invalid.
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if any of the following is true:
-             * 
+             *
              *  *  The workflow scheme is not found.
              *  *  The workflow is not found.
              *  *  The workflow is not specified.
@@ -28507,11 +28507,11 @@ export interface AtlassianV3 {
            * operationId: getIdsOfWorklogsDeletedSince
            * sum: Get IDs of deleted worklogs
            * doc: Returns a list of IDs and delete timestamps for worklogs deleted after a date and time.
-           * 
+           *
            * This resource is paginated, with a limit of 1000 worklogs per page. Each page lists worklogs from oldest to youngest. If the number of items in the date range exceeds 1000, `until` indicates the timestamp of the youngest item on the page. Also, `nextPage` provides the URL for the next page of worklogs. The `lastPage` parameter is set to true on the last page of worklogs.
-           * 
+           *
            * This resource does not return worklogs deleted during the minute preceding the request.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira.
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
@@ -28529,11 +28529,11 @@ export interface AtlassianV3 {
            * operationId: getWorklogsForIds
            * sum: Get worklogs
            * doc: Returns worklog details for a list of worklog IDs.
-           * 
+           *
            * The returned list of worklogs is limited to 1000 items.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira, however, worklogs are only returned where either of the following is true:
-           * 
+           *
            *  *  the worklog is set as *Viewable by All Users*.
            *  *  the user is a member of a project role or group with permission to view the worklog.
            * 200: Returned if the request is successful.
@@ -28549,13 +28549,13 @@ export interface AtlassianV3 {
            * operationId: getIdsOfWorklogsModifiedSince
            * sum: Get IDs of updated worklogs
            * doc: Returns a list of IDs and update timestamps for worklogs updated after a date and time.
-           * 
+           *
            * This resource is paginated, with a limit of 1000 worklogs per page. Each page lists worklogs from oldest to youngest. If the number of items in the date range exceeds 1000, `until` indicates the timestamp of the youngest item on the page. Also, `nextPage` provides the URL for the next page of worklogs. The `lastPage` parameter is set to true on the last page of worklogs.
-           * 
+           *
            * This resource does not return worklogs updated during the minute preceding the request.
-           * 
+           *
            * **[Permissions](#permissions) required:** Permission to access Jira, however, worklogs are only returned where either of the following is true:
-           * 
+           *
            *  *  the worklog is set as *Viewable by All Users*.
            *  *  the user is a member of a project role or group with permission to view the worklog.
            * 200: Returned if the request is successful.
@@ -28585,7 +28585,7 @@ export interface AtlassianV3 {
              * operationId: AddonPropertiesResource.getAddonProperties_get
              * sum: Get app properties
              * doc: Gets all the properties of an app.
-             * 
+             *
              * **[Permissions](#permissions) required:** Only a Connect app whose key matches `addonKey` can make this request.
              * Additionally, Forge apps can access Connect app properties (stored against the same `app.connect.key`).
              * 200: Returned if the request is successful.
@@ -28603,7 +28603,7 @@ export interface AtlassianV3 {
                * operationId: AddonPropertiesResource.getAddonProperty_get
                * sum: Get app property
                * doc: Returns the key and value of an app's property.
-               * 
+               *
                * **[Permissions](#permissions) required:** Only a Connect app whose key matches `addonKey` can make this request.
                * Additionally, Forge apps can access Connect app properties (stored against the same `app.connect.key`).
                * 200: Returned if the request is successful.
@@ -28617,7 +28617,7 @@ export interface AtlassianV3 {
                * operationId: AddonPropertiesResource.deleteAddonProperty_delete
                * sum: Delete app property
                * doc: Deletes an app's property.
-               * 
+               *
                * **[Permissions](#permissions) required:** Only a Connect app whose key matches `addonKey` can make this request.
                * Additionally, Forge apps can access Connect app properties (stored against the same `app.connect.key`).
                * 204: Returned if the request is successful.
@@ -28631,9 +28631,9 @@ export interface AtlassianV3 {
                * operationId: AddonPropertiesResource.putAddonProperty_put
                * sum: Set app property
                * doc: Sets the value of an app's property. Use this resource to store custom data for your app.
-               * 
+               *
                * The value of the request body must be a [valid](http://tools.ietf.org/html/rfc4627), non-empty JSON blob. The maximum length is 32768 characters.
-               * 
+               *
                * **[Permissions](#permissions) required:** Only a Connect app whose key matches `addonKey` can make this request.
                * Additionally, Forge apps can access Connect app properties (stored against the same `app.connect.key`).
                * 200: Returned if the property is updated.
@@ -28664,7 +28664,7 @@ export interface AtlassianV3 {
              * operationId: DynamicModulesResource.getModules_get
              * sum: Get modules
              * doc: Returns all modules registered dynamically by the calling app.
-             * 
+             *
              * **[Permissions](#permissions) required:** Only Connect apps can make this request.
              * 200: Returned if the request is successful.
              * 401: Returned if the call is not from a Connect app.
@@ -28675,7 +28675,7 @@ export interface AtlassianV3 {
              * operationId: DynamicModulesResource.removeModules_delete
              * sum: Remove modules
              * doc: Remove all or a list of modules registered by the calling app.
-             * 
+             *
              * **[Permissions](#permissions) required:** Only Connect apps can make this request.
              * 204: Returned if the request is successful.
              * 401: Returned if the call is not from a Connect app.
@@ -28686,13 +28686,13 @@ export interface AtlassianV3 {
              * operationId: DynamicModulesResource.registerModules_post
              * sum: Register modules
              * doc: Registers a list of modules.
-             * 
+             *
              * **[Permissions](#permissions) required:** Only Connect apps can make this request.
              * 200: Returned if the request is successful.
              * 400: Returned if:
              * * any of the provided modules is invalid. For example, required properties are missing.
              * * any of the modules conflict with registered dynamic modules or modules defined in the app descriptor. For example, there are duplicate keys.
-             * 
+             *
              * Details of the issues encountered are included in the error message.
              * 401: Returned if the call is not from a Connect app.
              */
@@ -28714,7 +28714,7 @@ export interface AtlassianV3 {
            * sum: Bulk update custom field value
            * doc: Updates the value of a custom field added by Connect apps on one or more issues.
            * The values of up to 200 custom fields can be updated.
-           * 
+           *
            * **[Permissions](#permissions) required:** Only Connect apps can make this request
            * 200: Returned if the request is successful.
            * 400: Returned if the request is invalid.
@@ -28767,7 +28767,7 @@ export interface AtlassianV3 {
          * operationId: ServiceRegistryResource.services_get
          * sum: Retrieve the attributes of service registries
          * doc: Retrieve the attributes of given service registries.
-         * 
+         *
          * **[Permissions](#permissions) required:** Only Connect apps can make this request and the servicesIds belong to the tenant you are requesting
          * 200: Returned if the request is successful.
          * 400: Returned if the request is invalid.
@@ -28800,7 +28800,7 @@ export interface AtlassianV3 {
              * operationId: deleteForgeAppProperty
              * sum: Delete app property (Forge)
              * doc: Deletes a Forge app's property.
-             * 
+             *
              * **[Permissions](#permissions) required:** Only Forge apps can make this request.
              * 204: Returned if the request is successful.
              * 400: Returned if the property key is longer than 127 characters.
@@ -28816,11 +28816,11 @@ export interface AtlassianV3 {
              * doc: Sets the value of a Forge app's property.
              * These values can be retrieved in [Jira expressions](https://developer.atlassian.com/cloud/jira/platform/jira-expressions/)
              * through the `app` [context variable](https://developer.atlassian.com/cloud/jira/platform/jira-expressions/#context-variables).
-             * 
+             *
              * For other use cases, use the [Storage API](https://developer.atlassian.com/platform/forge/runtime-reference/storage-api/).
-             * 
+             *
              * The value of the request body must be a [valid](http://tools.ietf.org/html/rfc4627), non-empty JSON blob. The maximum length is 32768 characters.
-             * 
+             *
              * **[Permissions](#permissions) required:** Only Forge apps can make this request.
              * 200: Returned if the property is updated.
              * 201: Returned is the property is created.

@@ -5,7 +5,17 @@ import type { ApiParamsType, ICacheSilot } from "./common.ts";
 import type { CacheAction, ICacheOptions, SlotConstructor } from "./common.ts";
 
 /**
- * This class is used to call Atlassian API
+ * Main class is used to call Atlassian API
+ * 
+ * example:
+ * ```ts
+ * const jira = new JiraClient("yourdomain.atlassian.net", { 
+ *  user: "youruser",
+ *  token: "yourtoken"
+ * });
+ * const issues = await jira.apiV3.search.$get({ jql: "project = MPRJ" });
+ * console.log(issues.issues);
+ * ```
  */
 export class JiraClient {
   /**
@@ -18,16 +28,33 @@ export class JiraClient {
   private queryCache: APICache | null = null;
 
   /**
+   * singleton root object
+   */
+  private cachedRoot: AtlassianV3 | null = null;
+
+  /**
    * Slot class to use for cache
    * by default use: CacheSilotMemory
    */
   public slotClass: SlotConstructor | undefined;
 
+  /**
+   * JiraClient constructor
+   * 
+   * @param domain your atlassian domain yourdomain.atlassian.net
+   * @param opt user and token for basic auth
+   */
   constructor(
     domain: string,
     private opt: { user: string; token: string },
   ) {
-    this.baseUrl = `https://${domain}.atlassian.net/rest`;
+    if (!domain.endsWith(".atlassian.net")) {
+      domain += ".atlassian.net";
+    }
+    if (!domain.startsWith("https://")) {
+      domain += "https://" + domain;
+    }
+    this.baseUrl = `${domain}/rest`;
   }
 
   /**
@@ -37,10 +64,25 @@ export class JiraClient {
     return `Basic ${btoa(`${this.opt.user}:${this.opt.token}`)}`;
   }
 
+  public get apiV3(): AtlassianV3["api"][3] {
+    return this.root.api[3];
+  }
+
+  public get forge(): AtlassianV3["forge"] {
+    return this.root.forge;
+  }
+
+  public get atlassianConnect(): AtlassianV3["atlassian-connect"] {
+    return this.root["atlassian-connect"];
+  }
+
   /**
    * get REST API typed root entry point
    */
   public get root(): AtlassianV3 {
+    if (this.cachedRoot) {
+      return this.cachedRoot;
+    }
     const { baseUrl, auth } = this;
     /**
      * this is the main function to call the API, you can use it directly, but you will lose the type checking
@@ -179,7 +221,7 @@ export class JiraClient {
       }
     };
 
-    const proxy = proxyAtlassianV3({ cache, doRequest });
-    return proxy;
+    this.cachedRoot = proxyAtlassianV3({ cache, doRequest });
+    return this.cachedRoot;
   }
 }

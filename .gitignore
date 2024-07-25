@@ -1,1 +1,4 @@
 .env
+benchmarks/*/vendor/
+benchmarks/*/node_modules/
+benchmarks/*/package-lock.json
