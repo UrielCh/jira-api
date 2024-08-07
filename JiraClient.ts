@@ -1,8 +1,13 @@
 import proxyAtlassianV3 from "./api-atlassianV3.ts";
 import type { AtlassianV3 } from "./api-atlassianV3.ts";
 import { APICache } from "./APICache.ts";
-import type { ApiParamsType, ICacheSilot } from "./common.ts";
-import type { CacheAction, ICacheOptions, SlotConstructor } from "./common.ts";
+import type {
+  ApiParamsType,
+  CacheAction,
+  ICacheOptions,
+  ICacheSilot,
+  SlotConstructor,
+} from "./common.ts";
 
 /**
  * Main class is used to call Atlassian API
@@ -158,10 +163,6 @@ export class JiraClient {
             }
             option.body = formData;
             headers.push(["Content-Type", "multipart/form-data"]);
-            headers.push([
-              "Content-Length",
-              formData.toString().length.toString(),
-            ]);
           } else if (encoding === "x-www-form-urlencoded") {
             const body = new URLSearchParams();
             for (const [key, value] of Object.entries(params)) {

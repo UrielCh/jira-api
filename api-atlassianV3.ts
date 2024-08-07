@@ -19869,7 +19869,7 @@ export interface AtlassianV3 {
              *
              * See [Configuring file attachments](https://confluence.atlassian.com/x/wIXKM) for details.
              */
-            $postF(body: Array<MultipartFile>): Promise<Array<Attachment>>;
+            $postF(body: Array<MultipartFile> | FormData): Promise<Array<Attachment>>;
           };
           /* Endpoint path: /rest/api/3/issue/{issueIdOrKey}/changelog */
           changelog: {
