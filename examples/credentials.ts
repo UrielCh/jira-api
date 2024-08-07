@@ -1,5 +1,5 @@
 import { load } from "@std/dotenv";
-import JiraClient, { AtlassianV3 } from "@u4/jira";
+import JiraClient from "@u4/jira";
 
 const env = await load();
 export const host = env.JRA_DOMAIN as string;
@@ -14,6 +14,6 @@ if (!host) {
   throw new Error("Please specify apiToken in JRA_DOMAIN environment variable");
 }
 
-export function createJiraClient(): AtlassianV3["api"][3] {
-  return new JiraClient(host, { user: email, token: apiToken }).apiV3;
+export function createJiraClient(): JiraClient {
+  return new JiraClient(host, { user: email, token: apiToken });
 }

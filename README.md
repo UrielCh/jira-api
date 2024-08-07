@@ -62,6 +62,14 @@ const dashboards = await client.dashboard.$get({ startAt: 0 });
 console.log("dashboards", dashboards);
 ```
 
+### use ACCESS_TOKEN auth
+
+```ts
+import JiraClient from "@u4/jira";
+
+const jira = new JiraClient("yourdomain", { ACCESS_TOKEN: "ACCESS_TOKEN" });
+```
+
 ### use memory cache
 
 ```ts

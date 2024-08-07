@@ -2,7 +2,7 @@ import { createIssue } from "./utils/createIssue.ts";
 import { createJiraClient } from "./credentials.ts";
 
 async function addFixVersion() {
-  const client = createJiraClient();
+  const client = createJiraClient().apiV3;
 
   const { id } = await createIssue(client);
   if (!id) {

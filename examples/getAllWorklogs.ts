@@ -3,7 +3,7 @@ import { addWorklog } from "./utils/addWorklog.ts";
 import { createIssue } from "./utils/createIssue.ts";
 
 async function getAllWorklogs() {
-  const client = createJiraClient();
+  const client = createJiraClient().apiV3;
 
   // Used to reduce the amount of code that is not directly related to getting a worklogs
   const issue = await createIssue(client);

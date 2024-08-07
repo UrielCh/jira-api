@@ -46,7 +46,7 @@ export class JiraClient {
    */
   constructor(
     domain: string,
-    private opt: { user: string; token: string },
+    private opt: { user: string; token: string } | { ACCESS_TOKEN: string },
   ) {
     if (!domain.endsWith(".atlassian.net")) {
       domain += ".atlassian.net";
@@ -61,7 +61,11 @@ export class JiraClient {
    * private auth builder
    */
   private get auth(): string {
-    return `Basic ${btoa(`${this.opt.user}:${this.opt.token}`)}`;
+    if ("user" in this.opt)
+      return `Basic ${btoa(`${this.opt.user}:${this.opt.token}`)}`;
+    if ("ACCESS_TOKEN" in this.opt)
+      return `Bearer ${this.opt.ACCESS_TOKEN}`;
+    return "";
   }
 
   public get apiV3(): AtlassianV3["api"][3] {

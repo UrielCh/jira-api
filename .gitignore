@@ -2,3 +2,5 @@
 benchmarks/*/vendor/
 benchmarks/*/node_modules/
 benchmarks/*/package-lock.json
+benchmarks/@u4-jira/.clinic/
+benchmarks/npm-jira.js/.clinic/

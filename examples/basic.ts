@@ -1,7 +1,7 @@
 import { CacheSilotDenoKV } from "@u4/jira";
 import { createJiraClient } from "./credentials.ts";
 
-const client = createJiraClient();
+const client = createJiraClient().apiV3;
 
 async function main() {
   const projects = await client.project.$get();
