@@ -129,7 +129,8 @@ export class JiraClient {
         method,
         headers,
       };
-      if (typeof params === "object" && Object.keys(params).length > 0) {
+      //  && Object.keys(params).length > 0
+      if (typeof params === "object") {
         for (const [key, value] of Object.entries(params)) {
           if (key === "Atlassian-Transfer-Id") { // special case for file upload
             delete (params as { [key: string]: string })[key];
@@ -137,6 +138,8 @@ export class JiraClient {
           }
         }
         if (method === "PUT" || method === "POST") {
+          // jira only
+          headers.push(["X-Atlassian-Token", "no-check"]);
           // Escape unicode
           if (encoding === "json") {
             const reqBody = JSON.stringify(params).replace(
@@ -162,7 +165,8 @@ export class JiraClient {
               }
             }
             option.body = formData;
-            headers.push(["Content-Type", "multipart/form-data"]);
+            // headers.push(["Content-Type", "multipart/form-data"]);
+            // headers.push(["Content-Length", formData.length.toString()]);
           } else if (encoding === "x-www-form-urlencoded") {
             const body = new URLSearchParams();
             for (const [key, value] of Object.entries(params)) {
@@ -194,8 +198,14 @@ export class JiraClient {
       const { status } = req;
       if (status < 200 || status >= 300) {
         const error = await req.text(); // {errorMessages:string[], errors:{}}
+        // throw Error(
+        //   `Request ${method} ${url} failed: ${status} ${req.statusText}\n ${error}`,
+        // );
+        // TODO throws less data.
         throw Error(
-          `Request ${method} ${url} failed: ${status} ${req.statusText}\n ${error}`,
+          `\nfetch(${JSON.stringify(url)}, ${
+            JSON.stringify(option, null, 2)
+          });\n\n// failed: ${status} ${req.statusText}\n ${error}`,
         );
       }
       const contentType = req.headers.get("content-type");
