@@ -1,4 +1,9 @@
-import type { ApiParamsType, ApiRequestable } from "./common.ts";
+import type {
+  ApiParamsType,
+  ApiRequestable,
+  CacheAction,
+  ICacheOptions,
+} from "./common.ts";
 
 type ObjectKeys = "toString" | "valueOf" | "toLocaleString";
 
@@ -49,7 +54,7 @@ const commonGet = (key: string, target: GenericProxyApi) => {
     }
     switch (key) {
       case "$cache": {
-        const fnc = (params: ApiParamsType) => {
+        const fnc = (params: ICacheOptions | CacheAction) => {
           return target._apiEngine.cache(target._model, params);
         };
         return fnc.bind(target._apiEngine);
@@ -59,7 +64,7 @@ const commonGet = (key: string, target: GenericProxyApi) => {
       case "$delete":
       case "$put":
       case "$patch":
-      case "$option":
+      case "$options":
       case "$head": {
         const fnc = (params: ApiParamsType) => {
           const mtd = key.substring(1);
@@ -68,10 +73,38 @@ const commonGet = (key: string, target: GenericProxyApi) => {
             target._path,
             target._model,
             params,
+            "json",
           );
         };
         return fnc.bind(target._apiEngine);
       }
+      // application/x-www-form-urlencoded encoded
+      case "$postX": {
+        const fnc = (params: ApiParamsType) => {
+          return target._apiEngine.doRequest(
+            "post",
+            target._path,
+            target._model,
+            params,
+            "x-www-form-urlencoded",
+          );
+        };
+        return fnc.bind(target._apiEngine);
+      }
+      // multipart/form-data
+      case "$postF": {
+        const fnc = (params: ApiParamsType) => {
+          return target._apiEngine.doRequest(
+            "post",
+            target._path,
+            target._model,
+            params,
+            "form-data",
+          );
+        };
+        return fnc.bind(target._apiEngine);
+      }
+
       default:
         return (id: string | number) => {
           const idStr = encodeURIComponent(String(id));

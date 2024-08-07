@@ -15654,15 +15654,17 @@ export interface AtlassianV3 {
                  * 403: Returned if the user is not a Jira admin or the request is not authenticated as from the app that provided the field.
                  * 404: Returned if the custom field is not found.
                  */
-                $get(args?: {
-                  id?: Array<number>;
-                  fieldContextId?: Array<number>;
-                  issueId?: number;
-                  projectKeyOrId?: string;
-                  issueTypeId?: string;
-                  startAt?: number;
-                  maxResults?: number;
-                }): Promise<PageBeanContextualConfiguration>;
+                $get(
+                  args?: {
+                    id?: Array<number>;
+                    fieldContextId?: Array<number>;
+                    issueId?: number;
+                    projectKeyOrId?: string;
+                    issueTypeId?: string;
+                    startAt?: number;
+                    maxResults?: number;
+                  },
+                ): Promise<PageBeanContextualConfiguration>;
                 /**
                  * Method: put /rest/api/3/app/field/{fieldIdOrKey}/context/configuration
                  * operationId: updateCustomFieldConfiguration
@@ -15723,11 +15725,9 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 404: Returned if the application property is not found or the user does not have permission to view it.
          */
-        $get(args?: {
-          key?: string;
-          permissionLevel?: string;
-          keyFilter?: string;
-        }): Promise<Array<ApplicationProperty>>;
+        $get(
+          args?: { key?: string; permissionLevel?: string; keyFilter?: string },
+        ): Promise<Array<ApplicationProperty>>;
         /**
          * Controle cache
          */
@@ -15888,9 +15888,9 @@ export interface AtlassianV3 {
              *  *  attachments are disabled in the Jira settings.
              * 416: Returned if the server is unable to satisfy the range of bytes provided.
              */
-            $get(args?: {
-              redirect?: boolean;
-            }): Promise<Array<unknown /* 105 */>>;
+            $get(
+              args?: { redirect?: boolean },
+            ): Promise<Array<unknown /* 105 */>>;
             /**
              * Controle cache
              */
@@ -15948,12 +15948,14 @@ export interface AtlassianV3 {
              *  *  attachments are disabled in the Jira settings.
              *  *  `fallbackToDefault` is `false` and the request thumbnail cannot be downloaded.
              */
-            $get(args?: {
-              redirect?: boolean;
-              fallbackToDefault?: boolean;
-              width?: number;
-              height?: number;
-            }): Promise<Array<unknown /* 105 */>>;
+            $get(
+              args?: {
+                redirect?: boolean;
+                fallbackToDefault?: boolean;
+                width?: number;
+                height?: number;
+              },
+            ): Promise<Array<unknown /* 105 */>>;
             /**
              * Controle cache
              */
@@ -16002,7 +16004,9 @@ export interface AtlassianV3 {
            *  *  the attachment is not found.
            *  *  attachments are disabled in the Jira settings.
            */
-          $delete(): Promise<unknown /* no content */>;
+          $delete(): Promise<
+            unknown /* no content Returned if the request is successful. */
+          >;
           /**
            * Controle cache
            */
@@ -16108,13 +16112,15 @@ export interface AtlassianV3 {
            *  *  the user does not have the required permissions.
            *  *  all Jira products are on free plans. Audit logs are available when at least one Jira product is on a paid plan.
            */
-          $get(args?: {
-            offset?: number;
-            limit?: number;
-            filter?: string;
-            from?: string;
-            to?: string;
-          }): Promise<AuditRecords>;
+          $get(
+            args?: {
+              offset?: number;
+              limit?: number;
+              filter?: string;
+              from?: string;
+              to?: string;
+            },
+          ): Promise<AuditRecords>;
           /**
            * Controle cache
            */
@@ -16172,12 +16178,14 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if no editable fields are found for the provided issue IDs.
              */
-            $get(args: {
-              issueIdsOrKeys: string;
-              searchText?: string;
-              endingBefore?: string;
-              startingAfter?: string;
-            }): Promise<BulkEditGetFields>;
+            $get(
+              args: {
+                issueIdsOrKeys: string;
+                searchText?: string;
+                endingBefore?: string;
+                startingAfter?: string;
+              },
+            ): Promise<BulkEditGetFields>;
             /**
              * Method: post /rest/api/3/bulk/issues/fields
              * operationId: submitBulkEdit
@@ -16285,10 +16293,9 @@ export interface AtlassianV3 {
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
          */
-        $get(args?: {
-          status?: Array<string>;
-          orderBy?: string;
-        }): Promise<DataClassificationLevelsBean>;
+        $get(
+          args?: { status?: Array<string>; orderBy?: string },
+        ): Promise<DataClassificationLevelsBean>;
         /**
          * Controle cache
          */
@@ -16384,7 +16391,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if the comment or the property is not found or the user has the necessary project permissions but isn't a member of the role or group visibility of the comment is restricted to.
                */
-              $delete(): Promise<unknown /* no content */>;
+              $delete(): Promise<
+                unknown /* no content Returned if the request is successful. */
+              >;
               /**
                * Method: put /rest/api/3/comment/{commentId}/properties/{propertyKey}
                * operationId: setCommentProperty
@@ -16430,13 +16439,15 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 404: Returned if the project is not found or the user does not have permission to view it.
          */
-        $get(args?: {
-          projectIdsOrKeys?: Array<string>;
-          startAt?: number;
-          maxResults?: number;
-          orderBy?: string;
-          query?: string;
-        }): Promise<PageBean2ComponentJsonBean>;
+        $get(
+          args?: {
+            projectIdsOrKeys?: Array<string>;
+            startAt?: number;
+            maxResults?: number;
+            orderBy?: string;
+            query?: string;
+          },
+        ): Promise<PageBean2ComponentJsonBean>;
         /**
          * Method: post /rest/api/3/component
          * operationId: createComponent
@@ -16497,9 +16508,9 @@ export interface AtlassianV3 {
            *  *  the replacement component is not found.
            *  *  the user does not have permission to browse the project containing the component.
            */
-          $delete(args?: {
-            moveIssuesTo?: string;
-          }): Promise<unknown /* no content */>;
+          $delete(): Promise<
+            unknown /* no content Returned if the request is successful. */
+          >;
           /**
            * Method: put /rest/api/3/component/{id}
            * operationId: updateComponent
@@ -16703,11 +16714,9 @@ export interface AtlassianV3 {
          * 400: Returned if the request is invalid.
          * 401: Returned if the authentication credentials are incorrect or missing.
          */
-        $get(args?: {
-          filter?: string;
-          startAt?: number;
-          maxResults?: number;
-        }): Promise<PageOfDashboards>;
+        $get(
+          args?: { filter?: string; startAt?: number; maxResults?: number },
+        ): Promise<PageOfDashboards>;
         /**
          * Method: post /rest/api/3/dashboard
          * operationId: createDashboard
@@ -16791,19 +16800,21 @@ export interface AtlassianV3 {
            *  *  `groupname` and `groupId` are provided.
            * 401: 401 response
            */
-          $get(args?: {
-            dashboardName?: string;
-            accountId?: string;
-            owner?: string;
-            groupname?: string;
-            groupId?: string;
-            projectId?: number;
-            orderBy?: string;
-            startAt?: number;
-            maxResults?: number;
-            status?: string;
-            expand?: string;
-          }): Promise<PageBeanDashboard>;
+          $get(
+            args?: {
+              dashboardName?: string;
+              accountId?: string;
+              owner?: string;
+              groupname?: string;
+              groupId?: string;
+              projectId?: number;
+              orderBy?: string;
+              startAt?: number;
+              maxResults?: number;
+              status?: string;
+              expand?: string;
+            },
+          ): Promise<PageBeanDashboard>;
           /**
            * Controle cache
            */
@@ -16833,11 +16844,13 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect.
              * 404: Returned if the dashboard is not found.
              */
-            $get(args?: {
-              moduleKey?: Array<string>;
-              uri?: Array<string>;
-              gadgetId?: Array<number>;
-            }): Promise<DashboardGadgetResponse>;
+            $get(
+              args?: {
+                moduleKey?: Array<string>;
+                uri?: Array<string>;
+                gadgetId?: Array<number>;
+              },
+            ): Promise<DashboardGadgetResponse>;
             /**
              * Method: post /rest/api/3/dashboard/{dashboardId}/gadget
              * operationId: addGadget
@@ -17023,7 +17036,9 @@ export interface AtlassianV3 {
            * 400: 400 response
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $delete(): Promise<unknown /* no content */>;
+          $delete(): Promise<
+            unknown /* no content Returned if the dashboard is deleted. */
+          >;
           /**
            * Method: put /rest/api/3/dashboard/{id}
            * operationId: updateDashboard
@@ -17251,15 +17266,17 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the necessary permission.
            */
-          $get(args?: {
-            startAt?: number;
-            maxResults?: number;
-            type?: Array<string>;
-            id?: Array<string>;
-            query?: string;
-            orderBy?: string;
-            expand?: string;
-          }): Promise<PageBeanField>;
+          $get(
+            args?: {
+              startAt?: number;
+              maxResults?: number;
+              type?: Array<string>;
+              id?: Array<string>;
+              query?: string;
+              orderBy?: string;
+              expand?: string;
+            },
+          ): Promise<PageBeanField>;
           /**
            * Controle cache
            */
@@ -17280,14 +17297,16 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if the user does not have the necessary permission.
              */
-            $get(args?: {
-              startAt?: number;
-              maxResults?: number;
-              id?: Array<string>;
-              query?: string;
-              expand?: string;
-              orderBy?: string;
-            }): Promise<PageBeanField>;
+            $get(
+              args?: {
+                startAt?: number;
+                maxResults?: number;
+                id?: Array<string>;
+                query?: string;
+                expand?: string;
+                orderBy?: string;
+              },
+            ): Promise<PageBeanField>;
             /**
              * Controle cache
              */
@@ -17329,13 +17348,15 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the required permissions.
              * 404: Returned if the custom field was not found.
              */
-            $get(args?: {
-              isAnyIssueType?: boolean;
-              isGlobalContext?: boolean;
-              contextId?: Array<number>;
-              startAt?: number;
-              maxResults?: number;
-            }): Promise<PageBeanCustomFieldContext>;
+            $get(
+              args?: {
+                isAnyIssueType?: boolean;
+                isGlobalContext?: boolean;
+                contextId?: Array<number>;
+                startAt?: number;
+                maxResults?: number;
+              },
+            ): Promise<PageBeanCustomFieldContext>;
             /**
              * Method: post /rest/api/3/field/{fieldId}/context
              * operationId: createCustomFieldContext
@@ -17404,11 +17425,13 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the required permissions.
                * 404: Returned if the custom field is not found.
                */
-              $get(args?: {
-                contextId?: Array<number>;
-                startAt?: number;
-                maxResults?: number;
-              }): Promise<PageBeanCustomFieldContextDefaultValue>;
+              $get(
+                args?: {
+                  contextId?: Array<number>;
+                  startAt?: number;
+                  maxResults?: number;
+                },
+              ): Promise<PageBeanCustomFieldContextDefaultValue>;
               /**
                * Method: put /rest/api/3/field/{fieldId}/context/defaultValue
                * operationId: setDefaultValues
@@ -17476,11 +17499,13 @@ export interface AtlassianV3 {
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 403: Returned if the user does not have the required permissions.
                */
-              $get(args?: {
-                contextId?: Array<number>;
-                startAt?: number;
-                maxResults?: number;
-              }): Promise<PageBeanIssueTypeToContextMapping>;
+              $get(
+                args?: {
+                  contextId?: Array<number>;
+                  startAt?: number;
+                  maxResults?: number;
+                },
+              ): Promise<PageBeanIssueTypeToContextMapping>;
               /**
                * Controle cache
                */
@@ -17525,11 +17550,13 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the required permissions.
                * 404: Returned if the custom field is not found.
                */
-              $get(args?: {
-                contextId?: Array<number>;
-                startAt?: number;
-                maxResults?: number;
-              }): Promise<PageBeanCustomFieldContextProjectMapping>;
+              $get(
+                args?: {
+                  contextId?: Array<number>;
+                  startAt?: number;
+                  maxResults?: number;
+                },
+              ): Promise<PageBeanCustomFieldContextProjectMapping>;
               /**
                * Controle cache
                */
@@ -17625,12 +17652,14 @@ export interface AtlassianV3 {
                  * 403: Returned if the user does not have the necessary permission.
                  * 404: Returned if the custom field is not found or the context doesn't match the custom field.
                  */
-                $get(args?: {
-                  optionId?: number;
-                  onlyOptions?: boolean;
-                  startAt?: number;
-                  maxResults?: number;
-                }): Promise<PageBeanCustomFieldContextOption>;
+                $get(
+                  args?: {
+                    optionId?: number;
+                    onlyOptions?: boolean;
+                    startAt?: number;
+                    maxResults?: number;
+                  },
+                ): Promise<PageBeanCustomFieldContextOption>;
                 /**
                  * Method: post /rest/api/3/field/{fieldId}/context/{contextId}/option
                  * operationId: createCustomFieldOption
@@ -17715,7 +17744,9 @@ export interface AtlassianV3 {
                    * 403: Returned if the user does not have the necessary permission.
                    * 404: Returned if the field, the context, or the option is not found.
                    */
-                  $delete(): Promise<unknown /* no content */>;
+                  $delete(): Promise<
+                    unknown /* no content Returned if the option is deleted. */
+                  >;
                   /* Endpoint path: /rest/api/3/field/{fieldId}/context/{contextId}/option/{optionId}/issue */
                   issue: {
                     /**
@@ -17732,10 +17763,7 @@ export interface AtlassianV3 {
                      * 403: Returned if the user does not have the necessary permission.
                      * 404: Returned if the field is not found or does not support options, or the options to be replaced are not found.
                      */
-                    $delete(args?: {
-                      replaceWith?: number;
-                      jql?: string;
-                    }): Promise<void>;
+                    $delete(): Promise<unknown /* default */>;
                   };
                 };
               };
@@ -17794,10 +17822,9 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if the user does not have the necessary permission.
              */
-            $get(args?: {
-              startAt?: number;
-              maxResults?: number;
-            }): Promise<PageBeanContext>;
+            $get(
+              args?: { startAt?: number; maxResults?: number },
+            ): Promise<PageBeanContext>;
             /**
              * Controle cache
              */
@@ -17816,11 +17843,9 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if the user does not have the necessary permission.
              */
-            $get(args?: {
-              startAt?: number;
-              maxResults?: number;
-              expand?: string;
-            }): Promise<PageBeanScreenWithTab>;
+            $get(
+              args?: { startAt?: number; maxResults?: number; expand?: string },
+            ): Promise<PageBeanScreenWithTab>;
             /**
              * Controle cache
              */
@@ -17844,10 +17869,9 @@ export interface AtlassianV3 {
              * 400: Returned if the field is not found or does not support options.
              * 403: Returned if the request is not authenticated as a Jira administrator or the app that provided the field.
              */
-            $get(args?: {
-              startAt?: number;
-              maxResults?: number;
-            }): Promise<PageBeanIssueFieldOption>;
+            $get(
+              args?: { startAt?: number; maxResults?: number },
+            ): Promise<PageBeanIssueFieldOption>;
             /**
              * Method: post /rest/api/3/field/{fieldKey}/option
              * operationId: createIssueFieldOption
@@ -17886,11 +17910,13 @@ export interface AtlassianV3 {
                  * 401: Returned if the authentication credentials are incorrect or missing.
                  * 404: Returned if the field is not found or does not support options.
                  */
-                $get(args?: {
-                  startAt?: number;
-                  maxResults?: number;
-                  projectId?: number;
-                }): Promise<PageBeanIssueFieldOption>;
+                $get(
+                  args?: {
+                    startAt?: number;
+                    maxResults?: number;
+                    projectId?: number;
+                  },
+                ): Promise<PageBeanIssueFieldOption>;
                 /**
                  * Controle cache
                  */
@@ -17911,11 +17937,13 @@ export interface AtlassianV3 {
                  * 401: Returned if the authentication credentials are incorrect or missing.
                  * 404: Returned if the field is not found or does not support options.
                  */
-                $get(args?: {
-                  startAt?: number;
-                  maxResults?: number;
-                  projectId?: number;
-                }): Promise<PageBeanIssueFieldOption>;
+                $get(
+                  args?: {
+                    startAt?: number;
+                    maxResults?: number;
+                    projectId?: number;
+                  },
+                ): Promise<PageBeanIssueFieldOption>;
                 /**
                  * Controle cache
                  */
@@ -17993,12 +18021,7 @@ export interface AtlassianV3 {
                  * 403: Returned if the user does not have the necessary permission.
                  * 404: Returned if the field is not found or does not support options, or the options to be replaced are not found.
                  */
-                $delete(args?: {
-                  replaceWith?: number;
-                  jql?: string;
-                  overrideScreenSecurity?: boolean;
-                  overrideEditableFlag?: boolean;
-                }): Promise<void>;
+                $delete(): Promise<unknown /* default */>;
               };
             };
           };
@@ -18025,7 +18048,7 @@ export interface AtlassianV3 {
            * 404: Returned if the custom field is not found.
            * 409: Returned if a task to delete the custom field is running.
            */
-          $delete(): Promise<void>;
+          $delete(): Promise<unknown /* default */>;
           /* Endpoint path: /rest/api/3/field/{id}/restore */
           restore: {
             /**
@@ -18081,13 +18104,15 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the user does not have the necessary permission.
          */
-        $get(args?: {
-          startAt?: number;
-          maxResults?: number;
-          id?: Array<number>;
-          isDefault?: boolean;
-          query?: string;
-        }): Promise<PageBeanFieldConfigurationDetails>;
+        $get(
+          args?: {
+            startAt?: number;
+            maxResults?: number;
+            id?: Array<number>;
+            isDefault?: boolean;
+            query?: string;
+          },
+        ): Promise<PageBeanFieldConfigurationDetails>;
         /**
          * Method: post /rest/api/3/fieldconfiguration
          * operationId: createFieldConfiguration
@@ -18157,10 +18182,9 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if the field configuration is not found.
              */
-            $get(args?: {
-              startAt?: number;
-              maxResults?: number;
-            }): Promise<PageBeanFieldConfigurationItem>;
+            $get(
+              args?: { startAt?: number; maxResults?: number },
+            ): Promise<PageBeanFieldConfigurationItem>;
             /**
              * Method: put /rest/api/3/fieldconfiguration/{id}/fields
              * operationId: updateFieldConfigurationItems
@@ -18204,11 +18228,9 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the user does not have the necessary permissions.
          */
-        $get(args?: {
-          startAt?: number;
-          maxResults?: number;
-          id?: Array<number>;
-        }): Promise<PageBeanFieldConfigurationScheme>;
+        $get(
+          args?: { startAt?: number; maxResults?: number; id?: Array<number> },
+        ): Promise<PageBeanFieldConfigurationScheme>;
         /**
          * Method: post /rest/api/3/fieldconfigurationscheme
          * operationId: createFieldConfigurationScheme
@@ -18247,11 +18269,13 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permission.
            * 404: Returned if no field configuration schemes are found.
            */
-          $get(args?: {
-            startAt?: number;
-            maxResults?: number;
-            fieldConfigurationSchemeId?: Array<number>;
-          }): Promise<PageBeanFieldConfigurationIssueTypeItem>;
+          $get(
+            args?: {
+              startAt?: number;
+              maxResults?: number;
+              fieldConfigurationSchemeId?: Array<number>;
+            },
+          ): Promise<PageBeanFieldConfigurationIssueTypeItem>;
           /**
            * Controle cache
            */
@@ -18275,11 +18299,13 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the necessary permission.
            */
-          $get(args: {
-            startAt?: number;
-            maxResults?: number;
-            projectId: Array<number>;
-          }): Promise<PageBeanFieldConfigurationSchemeProjects>;
+          $get(
+            args: {
+              startAt?: number;
+              maxResults?: number;
+              projectId: Array<number>;
+            },
+          ): Promise<PageBeanFieldConfigurationSchemeProjects>;
           /**
            * Method: put /rest/api/3/fieldconfigurationscheme/project
            * operationId: assignFieldConfigurationSchemeToProject
@@ -18473,10 +18499,9 @@ export interface AtlassianV3 {
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {
-            expand?: string;
-            includeFavourites?: boolean;
-          }): Promise<Array<Filter>>;
+          $get(
+            args?: { expand?: string; includeFavourites?: boolean },
+          ): Promise<Array<Filter>>;
           /**
            * Controle cache
            */
@@ -18511,20 +18536,22 @@ export interface AtlassianV3 {
            *  *  `id` identifies more than 200 filter IDs.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {
-            filterName?: string;
-            accountId?: string;
-            owner?: string;
-            groupname?: string;
-            groupId?: string;
-            projectId?: number;
-            id?: Array<number>;
-            orderBy?: string;
-            startAt?: number;
-            maxResults?: number;
-            expand?: string;
-            overrideSharePermissions?: boolean;
-          }): Promise<PageBeanFilterDetails>;
+          $get(
+            args?: {
+              filterName?: string;
+              accountId?: string;
+              owner?: string;
+              groupname?: string;
+              groupId?: string;
+              projectId?: number;
+              id?: Array<number>;
+              orderBy?: string;
+              startAt?: number;
+              maxResults?: number;
+              expand?: string;
+              overrideSharePermissions?: boolean;
+            },
+          ): Promise<PageBeanFilterDetails>;
           /**
            * Controle cache
            */
@@ -18551,10 +18578,9 @@ export interface AtlassianV3 {
            * 400: Returned if the filter is not found or the user does not have permission to view it.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {
-            expand?: string;
-            overrideSharePermissions?: boolean;
-          }): Promise<Filter>;
+          $get(
+            args?: { expand?: string; overrideSharePermissions?: boolean },
+          ): Promise<Filter>;
           /**
            * Method: delete /rest/api/3/filter/{id}
            * operationId: deleteFilter
@@ -18566,7 +18592,9 @@ export interface AtlassianV3 {
            * 400: Returned if the filter is not found.
            * 401: Returned if the user does not have permission to delete the filter.
            */
-          $delete(): Promise<unknown /* no content */>;
+          $delete(): Promise<
+            unknown /* no content Returned if the request is successful. */
+          >;
           /**
            * Method: put /rest/api/3/filter/{id}
            * operationId: updateFilter
@@ -18626,7 +18654,9 @@ export interface AtlassianV3 {
              *  *  the user does not have permission to view the filter.
              * 401: Returned if the authentication credentials are incorrect or missing.
              */
-            $delete(): Promise<unknown /* no content */>;
+            $delete(): Promise<
+              unknown /* no content Returned if the request is successful. */
+            >;
             /**
              * Method: put /rest/api/3/filter/{id}/columns
              * operationId: setColumns
@@ -18672,7 +18702,7 @@ export interface AtlassianV3 {
              *  *  the filter is not found.
              *  *  the user does not have permission to view the filter.
              */
-            $delete(args?: { expand?: string }): Promise<Filter>;
+            $delete(): Promise<Filter>;
             /**
              * Method: put /rest/api/3/filter/{id}/favourite
              * operationId: setFavouriteForFilter
@@ -18806,7 +18836,9 @@ export interface AtlassianV3 {
                *  *  the filter is not found.
                *  *  the user does not own the filter.
                */
-              $delete(): Promise<unknown /* no content */>;
+              $delete(): Promise<
+                unknown /* no content Returned if the request is successful. */
+              >;
               /**
                * Controle cache
                */
@@ -18835,11 +18867,9 @@ export interface AtlassianV3 {
          * 403: Returned if the calling user does not have the Administer Jira global permission.
          * 404: Returned if the group is not found.
          */
-        $get(args?: {
-          groupname?: string;
-          groupId?: string;
-          expand?: string;
-        }): Promise<Group>;
+        $get(
+          args?: { groupname?: string; groupId?: string; expand?: string },
+        ): Promise<Group>;
         /**
          * Method: delete /rest/api/3/group
          * operationId: removeGroup
@@ -18853,12 +18883,9 @@ export interface AtlassianV3 {
          * 403: Returned if the user does not have the necessary permission.
          * 404: Returned if the group is not found.
          */
-        $delete(args?: {
-          groupname?: string;
-          groupId?: string;
-          swapGroup?: string;
-          swapGroupId?: string;
-        }): Promise<unknown /* no content */>;
+        $delete(): Promise<
+          unknown /* no content Returned if the request is successful. */
+        >;
         /**
          * Method: post /rest/api/3/group
          * operationId: createGroup
@@ -18891,14 +18918,16 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permission.
            * 500: Returned if the group with the given access level can't be retrieved.
            */
-          $get(args?: {
-            startAt?: number;
-            maxResults?: number;
-            groupId?: Array<string>;
-            groupName?: Array<string>;
-            accessType?: string;
-            applicationKey?: string;
-          }): Promise<PageBeanGroupDetails>;
+          $get(
+            args?: {
+              startAt?: number;
+              maxResults?: number;
+              groupId?: Array<string>;
+              groupName?: Array<string>;
+              accessType?: string;
+              applicationKey?: string;
+            },
+          ): Promise<PageBeanGroupDetails>;
           /**
            * Controle cache
            */
@@ -18924,13 +18953,15 @@ export interface AtlassianV3 {
            * 403: Returned if the calling user does not have the Administer Jira global permission.
            * 404: Returned if the group is not found.
            */
-          $get(args?: {
-            groupname?: string;
-            groupId?: string;
-            includeInactiveUsers?: boolean;
-            startAt?: number;
-            maxResults?: number;
-          }): Promise<PageBeanUserDetails>;
+          $get(
+            args?: {
+              groupname?: string;
+              groupId?: string;
+              includeInactiveUsers?: boolean;
+              startAt?: number;
+              maxResults?: number;
+            },
+          ): Promise<PageBeanUserDetails>;
           /**
            * Controle cache
            */
@@ -18954,12 +18985,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permission.
            * 404: Returned if the group or user are not found.
            */
-          $delete(args: {
-            groupname?: string;
-            groupId?: string;
-            username?: string;
-            accountId: string;
-          }): Promise<unknown /* no content */>;
+          $delete(): Promise<
+            unknown /* no content Returned if the request is successful. */
+          >;
           /**
            * Method: post /rest/api/3/group/user
            * operationId: addUserToGroup
@@ -19000,15 +19028,17 @@ export interface AtlassianV3 {
            * *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg). Without this permission, calls where query is not an exact match to an existing group will return an empty list.
            * 200: Returned if the request is successful.
            */
-          $get(args?: {
-            accountId?: string;
-            query?: string;
-            exclude?: Array<string>;
-            excludeId?: Array<string>;
-            maxResults?: number;
-            caseInsensitive?: boolean;
-            userName?: string;
-          }): Promise<FoundGroups>;
+          $get(
+            args?: {
+              accountId?: string;
+              query?: string;
+              exclude?: Array<string>;
+              excludeId?: Array<string>;
+              maxResults?: number;
+              caseInsensitive?: boolean;
+              userName?: string;
+            },
+          ): Promise<FoundGroups>;
           /**
            * Controle cache
            */
@@ -19050,17 +19080,19 @@ export interface AtlassianV3 {
          * 403: Returned if the user does not have the necessary permission.
          * 429: Returned if the rate limit is exceeded. User search endpoints share a collective rate limit for the tenant, in addition to Jira's normal rate limiting you may receive a rate limit for user search. Please respect the Retry-After header.
          */
-        $get(args: {
-          query: string;
-          maxResults?: number;
-          showAvatar?: boolean;
-          fieldId?: string;
-          projectId?: Array<string>;
-          issueTypeId?: Array<string>;
-          avatarSize?: string;
-          caseInsensitive?: boolean;
-          excludeConnectAddons?: boolean;
-        }): Promise<FoundUsersAndGroups>;
+        $get(
+          args: {
+            query: string;
+            maxResults?: number;
+            showAvatar?: boolean;
+            fieldId?: string;
+            projectId?: Array<string>;
+            issueTypeId?: Array<string>;
+            avatarSize?: string;
+            caseInsensitive?: boolean;
+            excludeConnectAddons?: boolean;
+          },
+        ): Promise<FoundUsersAndGroups>;
         /**
          * Controle cache
          */
@@ -19238,13 +19270,15 @@ export interface AtlassianV3 {
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {
-            projectIds?: Array<string>;
-            projectKeys?: Array<string>;
-            issuetypeIds?: Array<string>;
-            issuetypeNames?: Array<string>;
-            expand?: string;
-          }): Promise<IssueCreateMetadata>;
+          $get(
+            args?: {
+              projectIds?: Array<string>;
+              projectKeys?: Array<string>;
+              issuetypeIds?: Array<string>;
+              issuetypeNames?: Array<string>;
+              expand?: string;
+            },
+          ): Promise<IssueCreateMetadata>;
           /**
            * Controle cache
            */
@@ -19266,10 +19300,9 @@ export interface AtlassianV3 {
                * 400: Returned if the request is invalid.
                * 401: Returned if the authentication credentials are incorrect or missing.
                */
-              $get(args?: {
-                startAt?: number;
-                maxResults?: number;
-              }): Promise<PageOfCreateMetaIssueTypes>;
+              $get(
+                args?: { startAt?: number; maxResults?: number },
+              ): Promise<PageOfCreateMetaIssueTypes>;
               /**
                * Controle cache
                */
@@ -19289,10 +19322,9 @@ export interface AtlassianV3 {
                  * 400: Returned if the request is invalid.
                  * 401: Returned if the authentication credentials are incorrect or missing.
                  */
-                $get(args?: {
-                  startAt?: number;
-                  maxResults?: number;
-                }): Promise<PageOfCreateMetaIssueTypeWithField>;
+                $get(
+                  args?: { startAt?: number; maxResults?: number },
+                ): Promise<PageOfCreateMetaIssueTypeWithField>;
                 /**
                  * Controle cache
                  */
@@ -19323,9 +19355,9 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if the user does not have permission to complete this request.
              */
-            $get(args?: {
-              isReturningKeys?: boolean;
-            }): Promise<IssueLimitReportResponseBean>;
+            $get(
+              args?: { isReturningKeys?: boolean },
+            ): Promise<IssueLimitReportResponseBean>;
             /**
              * Controle cache
              */
@@ -19351,14 +19383,16 @@ export interface AtlassianV3 {
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {
-            query?: string;
-            currentJQL?: string;
-            currentIssueKey?: string;
-            currentProjectId?: string;
-            showSubTasks?: boolean;
-            showSubTaskParent?: boolean;
-          }): Promise<IssuePickerSuggestions>;
+          $get(
+            args?: {
+              query?: string;
+              currentJQL?: string;
+              currentIssueKey?: string;
+              currentProjectId?: string;
+              showSubTasks?: boolean;
+              showSubTaskParent?: boolean;
+            },
+          ): Promise<IssuePickerSuggestions>;
           /**
            * Controle cache
            */
@@ -19447,7 +19481,9 @@ export interface AtlassianV3 {
              * 400: Returned if the request is invalid.
              * 401: Returned if the authentication credentials are incorrect or missing.
              */
-            $delete(): Promise<void>;
+            $delete(
+              body: IssueFilterForBulkPropertyDelete,
+            ): Promise<unknown /* default */>;
             /**
              * Method: put /rest/api/3/issue/properties/{propertyKey}
              * operationId: bulkSetIssueProperty
@@ -19564,14 +19600,16 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if the issue is not found or the user does not have permission to view it.
            */
-          $get(args?: {
-            fields?: Array<string>;
-            fieldsByKeys?: boolean;
-            expand?: string;
-            properties?: Array<string>;
-            updateHistory?: boolean;
-            failFast?: boolean;
-          }): Promise<IssueBean>;
+          $get(
+            args?: {
+              fields?: Array<string>;
+              fieldsByKeys?: boolean;
+              expand?: string;
+              properties?: Array<string>;
+              updateHistory?: boolean;
+              failFast?: boolean;
+            },
+          ): Promise<IssueBean>;
           /**
            * Method: delete /rest/api/3/issue/{issueIdOrKey}
            * operationId: deleteIssue
@@ -19592,9 +19630,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have permission to delete the issue.
            * 404: Returned if the issue is not found or the user does not have permission to view the issue.
            */
-          $delete(args?: {
-            deleteSubtasks?: string;
-          }): Promise<unknown /* no content */>;
+          $delete(): Promise<
+            unknown /* no content Returned if the request is successful. */
+          >;
           /**
            * Method: put /rest/api/3/issue/{issueIdOrKey}
            * operationId: editIssue
@@ -19831,7 +19869,7 @@ export interface AtlassianV3 {
              *
              * See [Configuring file attachments](https://confluence.atlassian.com/x/wIXKM) for details.
              */
-            $post(): Promise<Array<Attachment>>;
+            $postF(body: Array<MultipartFile>): Promise<Array<Attachment>>;
           };
           /* Endpoint path: /rest/api/3/issue/{issueIdOrKey}/changelog */
           changelog: {
@@ -19850,10 +19888,9 @@ export interface AtlassianV3 {
              * 200: Returned if the request is successful.
              * 404: Returned if the issue is not found or the user does not have permission to view it.
              */
-            $get(args?: {
-              startAt?: number;
-              maxResults?: number;
-            }): Promise<PageBeanChangelog>;
+            $get(
+              args?: { startAt?: number; maxResults?: number },
+            ): Promise<PageBeanChangelog>;
             /**
              * Controle cache
              */
@@ -19899,12 +19936,14 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if the issue is not found or the user does not have permission to view it.
              */
-            $get(args?: {
-              startAt?: number;
-              maxResults?: number;
-              orderBy?: string;
-              expand?: string;
-            }): Promise<PageOfComments>;
+            $get(
+              args?: {
+                startAt?: number;
+                maxResults?: number;
+                orderBy?: string;
+                expand?: string;
+              },
+            ): Promise<PageOfComments>;
             /**
              * Method: post /rest/api/3/issue/{issueIdOrKey}/comment
              * operationId: addComment
@@ -19969,7 +20008,9 @@ export interface AtlassianV3 {
                * 404: Returned if the issue or comment is not found or the user does not have permission to view the issue or comment.
                * 405: Returned if an anonymous call is made to the operation.
                */
-              $delete(): Promise<unknown /* no content */>;
+              $delete(): Promise<
+                unknown /* no content Returned if the request is successful. */
+              >;
               /**
                * Method: put /rest/api/3/issue/{issueIdOrKey}/comment/{id}
                * operationId: updateComment
@@ -20036,10 +20077,12 @@ export interface AtlassianV3 {
              * 403: Returned if the user uses an override parameter but doesn't have permission to do so.
              * 404: Returned if the issue is not found or the user does not have permission to view it.
              */
-            $get(args?: {
-              overrideScreenSecurity?: boolean;
-              overrideEditableFlag?: boolean;
-            }): Promise<IssueUpdateMetadata>;
+            $get(
+              args?: {
+                overrideScreenSecurity?: boolean;
+                overrideEditableFlag?: boolean;
+              },
+            ): Promise<IssueUpdateMetadata>;
             /**
              * Controle cache
              */
@@ -20128,7 +20171,9 @@ export interface AtlassianV3 {
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 404: Returned if the issue or property is not found, or the user does not have permission to edit the issue.
                */
-              $delete(): Promise<unknown /* no content */>;
+              $delete(): Promise<
+                unknown /* no content Returned if the request is successful. */
+              >;
               /**
                * Method: put /rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey}
                * operationId: setIssueProperty
@@ -20201,9 +20246,9 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have permission to link issues.
              * 404: Returned if the issue or remote issue link is not found or the user does not have permission to view the issue.
              */
-            $delete(args: {
-              globalId: string;
-            }): Promise<unknown /* no content */>;
+            $delete(): Promise<
+              unknown /* no content Returned if the request is successful. */
+            >;
             /**
              * Method: post /rest/api/3/issue/{issueIdOrKey}/remotelink
              * operationId: createOrUpdateRemoteIssueLink
@@ -20277,7 +20322,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have permission to link issues.
                * 404: Returned if the issue or remote issue link is not found or the user does not have permission to view the issue.
                */
-              $delete(): Promise<unknown /* no content */>;
+              $delete(): Promise<
+                unknown /* no content Returned if the request is successful. */
+              >;
               /**
                * Method: put /rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId}
                * operationId: updateRemoteIssueLink
@@ -20333,13 +20380,15 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if the issue is not found or the user does not have permission to view it.
              */
-            $get(args?: {
-              expand?: string;
-              transitionId?: string;
-              skipRemoteOnlyCondition?: boolean;
-              includeUnavailableTransitions?: boolean;
-              sortByOpsBarAndStatus?: boolean;
-            }): Promise<Transitions>;
+            $get(
+              args?: {
+                expand?: string;
+                transitionId?: string;
+                skipRemoteOnlyCondition?: boolean;
+                includeUnavailableTransitions?: boolean;
+                sortByOpsBarAndStatus?: boolean;
+              },
+            ): Promise<Transitions>;
             /**
              * Method: post /rest/api/3/issue/{issueIdOrKey}/transitions
              * operationId: doTransition
@@ -20427,7 +20476,9 @@ export interface AtlassianV3 {
              *  *  the user has not voted on the issue.
              *  *  the issue is not found.
              */
-            $delete(): Promise<unknown /* no content */>;
+            $delete(): Promise<
+              unknown /* no content Returned if the request is successful. */
+            >;
             /**
              * Method: post /rest/api/3/issue/{issueIdOrKey}/votes
              * operationId: addVote
@@ -20495,10 +20546,9 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the permission to manage the watcher list.
              * 404: Returned if the issue or the user is not found or the user does not have permission to view the issue.
              */
-            $delete(args?: {
-              username?: string;
-              accountId?: string;
-            }): Promise<unknown /* no content */>;
+            $delete(): Promise<
+              unknown /* no content Returned if the request is successful. */
+            >;
             /**
              * Method: post /rest/api/3/issue/{issueIdOrKey}/watchers
              * operationId: addWatcher
@@ -20549,13 +20599,15 @@ export interface AtlassianV3 {
              *  *  `startAt` or `maxResults` has non-numeric values.
              *  *  time tracking is disabled.
              */
-            $get(args?: {
-              startAt?: number;
-              maxResults?: number;
-              startedAfter?: number;
-              startedBefore?: number;
-              expand?: string;
-            }): Promise<PageOfWorklogs>;
+            $get(
+              args?: {
+                startAt?: number;
+                maxResults?: number;
+                startedAfter?: number;
+                startedBefore?: number;
+                expand?: string;
+              },
+            ): Promise<PageOfWorklogs>;
             /**
              * Method: post /rest/api/3/issue/{issueIdOrKey}/worklog
              * operationId: addWorklog
@@ -20646,13 +20698,9 @@ export interface AtlassianV3 {
                *  *  the worklog is not found or the user does not have permission to view it.
                *  *  time tracking is disabled.
                */
-              $delete(args?: {
-                notifyUsers?: boolean;
-                adjustEstimate?: string;
-                newEstimate?: string;
-                increaseBy?: string;
-                overrideEditableFlag?: boolean;
-              }): Promise<unknown /* no content */>;
+              $delete(): Promise<
+                unknown /* no content Returned if the request is successful. */
+              >;
               /**
                * Method: put /rest/api/3/issue/{issueIdOrKey}/worklog/{id}
                * operationId: updateWorklog
@@ -20764,7 +20812,9 @@ export interface AtlassianV3 {
                    *  *  the issue, worklog, or property is not found.
                    *  *  the user does not have permission to view the issue or worklog.
                    */
-                  $delete(): Promise<unknown /* no content */>;
+                  $delete(): Promise<
+                    unknown /* no content Returned if the worklog property is removed. */
+                  >;
                   /**
                    * Method: put /rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey}
                    * operationId: setWorklogProperty
@@ -20882,7 +20932,7 @@ export interface AtlassianV3 {
            *  *  the issue link is not found.
            *  *  the user doesn't have the required permissions.
            */
-          $delete(): Promise<unknown /* no content */>;
+          $delete(): Promise<unknown /* no content 200 response */>;
           /**
            * Controle cache
            */
@@ -20971,7 +21021,9 @@ export interface AtlassianV3 {
            *  *  the issue link type is not found.
            *  *  the user does not have the required permissions.
            */
-          $delete(): Promise<unknown /* no content */>;
+          $delete(): Promise<
+            unknown /* no content Returned if the request is successful. */
+          >;
           /**
            * Method: put /rest/api/3/issueLinkType/{issueLinkTypeId}
            * operationId: updateIssueLinkType
@@ -21085,13 +21137,15 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user doesn't have the necessary permission.
            */
-          $get(args?: {
-            startAt?: string;
-            maxResults?: string;
-            id?: Array<string>;
-            schemeId?: Array<string>;
-            onlyDefault?: boolean;
-          }): Promise<PageBeanSecurityLevel>;
+          $get(
+            args?: {
+              startAt?: string;
+              maxResults?: string;
+              id?: Array<string>;
+              schemeId?: Array<string>;
+              onlyDefault?: boolean;
+            },
+          ): Promise<PageBeanSecurityLevel>;
           /**
            * Controle cache
            */
@@ -21131,14 +21185,16 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if the user doesn't have the necessary permission.
              */
-            $get(args?: {
-              startAt?: string;
-              maxResults?: string;
-              id?: Array<string>;
-              schemeId?: Array<string>;
-              levelId?: Array<string>;
-              expand?: string;
-            }): Promise<PageBeanSecurityLevelMember>;
+            $get(
+              args?: {
+                startAt?: string;
+                maxResults?: string;
+                id?: Array<string>;
+                schemeId?: Array<string>;
+                levelId?: Array<string>;
+                expand?: string;
+              },
+            ): Promise<PageBeanSecurityLevelMember>;
             /**
              * Controle cache
              */
@@ -21157,12 +21213,14 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user doesn't have the necessary permission.
            */
-          $get(args?: {
-            startAt?: string;
-            maxResults?: string;
-            issueSecuritySchemeId?: Array<string>;
-            projectId?: Array<string>;
-          }): Promise<PageBeanIssueSecuritySchemeToProjectMapping>;
+          $get(
+            args?: {
+              startAt?: string;
+              maxResults?: string;
+              issueSecuritySchemeId?: Array<string>;
+              projectId?: Array<string>;
+            },
+          ): Promise<PageBeanIssueSecuritySchemeToProjectMapping>;
           /**
            * Method: put /rest/api/3/issuesecurityschemes/project
            * operationId: associateSchemesToProjects
@@ -21204,12 +21262,14 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user doesn't have the necessary permission.
            */
-          $get(args?: {
-            startAt?: string;
-            maxResults?: string;
-            id?: Array<string>;
-            projectId?: Array<string>;
-          }): Promise<PageBeanSecuritySchemeWithProjects>;
+          $get(
+            args?: {
+              startAt?: string;
+              maxResults?: string;
+              id?: Array<string>;
+              projectId?: Array<string>;
+            },
+          ): Promise<PageBeanSecuritySchemeWithProjects>;
           /**
            * Controle cache
            */
@@ -21272,12 +21332,14 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if no issue security level members are found.
              */
-            $get(args?: {
-              startAt?: number;
-              maxResults?: number;
-              issueSecurityLevelId?: Array<string>;
-              expand?: string;
-            }): Promise<PageBeanIssueSecurityLevelMember>;
+            $get(
+              args?: {
+                startAt?: number;
+                maxResults?: number;
+                issueSecurityLevelId?: Array<string>;
+                expand?: string;
+              },
+            ): Promise<PageBeanIssueSecurityLevelMember>;
             /**
              * Controle cache
              */
@@ -21336,7 +21398,7 @@ export interface AtlassianV3 {
                * 404: Returned if the issue security level isn't found.
                * 409: Returned if a task to remove the issue security level is already running.
                */
-              $delete(args?: { replaceWith?: string }): Promise<void>;
+              $delete(): Promise<unknown /* default */>;
               /**
                * Method: put /rest/api/3/issuesecurityschemes/{schemeId}/level/{levelId}
                * operationId: updateSecurityLevel
@@ -21452,10 +21514,9 @@ export interface AtlassianV3 {
            *  *  the project is not found.
            *  *  the user does not have the necessary permission.
            */
-          $get(args: {
-            projectId: number;
-            level?: number;
-          }): Promise<Array<IssueTypeDetails>>;
+          $get(
+            args: { projectId: number; level?: number },
+          ): Promise<Array<IssueTypeDetails>>;
           /**
            * Controle cache
            */
@@ -21501,9 +21562,9 @@ export interface AtlassianV3 {
            *  *  also specified as the alternative issue type.
            *  *  is a *standard* issue type and the alternative issue type is a *subtask*.
            */
-          $delete(args?: {
-            alternativeIssueTypeId?: string;
-          }): Promise<unknown /* no content */>;
+          $delete(): Promise<
+            unknown /* no content Returned if the request is successful. */
+          >;
           /**
            * Method: put /rest/api/3/issuetype/{id}
            * operationId: updateIssueType
@@ -21650,7 +21711,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if the issue type or property is not found.
                */
-              $delete(): Promise<unknown /* no content */>;
+              $delete(): Promise<
+                unknown /* no content Returned if the issue type property is deleted. */
+              >;
               /**
                * Method: put /rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey}
                * operationId: setIssueTypeProperty
@@ -21699,14 +21762,16 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the user does not have the required permissions.
          */
-        $get(args?: {
-          startAt?: number;
-          maxResults?: number;
-          id?: Array<number>;
-          orderBy?: string;
-          expand?: string;
-          queryString?: string;
-        }): Promise<PageBeanIssueTypeScheme>;
+        $get(
+          args?: {
+            startAt?: number;
+            maxResults?: number;
+            id?: Array<number>;
+            orderBy?: string;
+            expand?: string;
+            queryString?: string;
+          },
+        ): Promise<PageBeanIssueTypeScheme>;
         /**
          * Method: post /rest/api/3/issuetypescheme
          * operationId: createIssueTypeScheme
@@ -21741,11 +21806,13 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the required permissions.
            */
-          $get(args?: {
-            startAt?: number;
-            maxResults?: number;
-            issueTypeSchemeId?: Array<number>;
-          }): Promise<PageBeanIssueTypeSchemeMapping>;
+          $get(
+            args?: {
+              startAt?: number;
+              maxResults?: number;
+              issueTypeSchemeId?: Array<number>;
+            },
+          ): Promise<PageBeanIssueTypeSchemeMapping>;
           /**
            * Controle cache
            */
@@ -21767,11 +21834,13 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the required permissions.
            */
-          $get(args: {
-            startAt?: number;
-            maxResults?: number;
-            projectId: Array<number>;
-          }): Promise<PageBeanIssueTypeSchemeProjects>;
+          $get(
+            args: {
+              startAt?: number;
+              maxResults?: number;
+              projectId: Array<number>;
+            },
+          ): Promise<PageBeanIssueTypeSchemeProjects>;
           /**
            * Method: put /rest/api/3/issuetypescheme/project
            * operationId: assignIssueTypeSchemeToProject
@@ -21918,14 +21987,16 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the user does not have the required permissions.
          */
-        $get(args?: {
-          startAt?: number;
-          maxResults?: number;
-          id?: Array<number>;
-          queryString?: string;
-          orderBy?: string;
-          expand?: string;
-        }): Promise<PageBeanIssueTypeScreenScheme>;
+        $get(
+          args?: {
+            startAt?: number;
+            maxResults?: number;
+            id?: Array<number>;
+            queryString?: string;
+            orderBy?: string;
+            expand?: string;
+          },
+        ): Promise<PageBeanIssueTypeScreenScheme>;
         /**
          * Method: post /rest/api/3/issuetypescreenscheme
          * operationId: createIssueTypeScreenScheme
@@ -21963,11 +22034,13 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the required permissions.
            */
-          $get(args?: {
-            startAt?: number;
-            maxResults?: number;
-            issueTypeScreenSchemeId?: Array<number>;
-          }): Promise<PageBeanIssueTypeScreenSchemeItem>;
+          $get(
+            args?: {
+              startAt?: number;
+              maxResults?: number;
+              issueTypeScreenSchemeId?: Array<number>;
+            },
+          ): Promise<PageBeanIssueTypeScreenSchemeItem>;
           /**
            * Controle cache
            */
@@ -21989,11 +22062,13 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the required permissions.
            */
-          $get(args: {
-            startAt?: number;
-            maxResults?: number;
-            projectId: Array<number>;
-          }): Promise<PageBeanIssueTypeScreenSchemesProjects>;
+          $get(
+            args: {
+              startAt?: number;
+              maxResults?: number;
+              projectId: Array<number>;
+            },
+          ): Promise<PageBeanIssueTypeScreenSchemesProjects>;
           /**
            * Method: put /rest/api/3/issuetypescreenscheme/project
            * operationId: assignIssueTypeScreenSchemeToProject
@@ -22125,11 +22200,9 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 403: Returned if the user does not have the required permissions.
              */
-            $get(args?: {
-              startAt?: number;
-              maxResults?: number;
-              query?: string;
-            }): Promise<PageBeanProjectDetails>;
+            $get(
+              args?: { startAt?: number; maxResults?: number; query?: string },
+            ): Promise<PageBeanProjectDetails>;
             /**
              * Controle cache
              */
@@ -22198,12 +22271,14 @@ export interface AtlassianV3 {
              * 400: Returned if an invalid combination of parameters is passed.
              * 401: Returned if the authentication credentials are incorrect.
              */
-            $get(args?: {
-              fieldName?: string;
-              fieldValue?: string;
-              predicateName?: string;
-              predicateValue?: string;
-            }): Promise<AutoCompleteSuggestions>;
+            $get(
+              args?: {
+                fieldName?: string;
+                fieldValue?: string;
+                predicateName?: string;
+                predicateValue?: string;
+              },
+            ): Promise<AutoCompleteSuggestions>;
             /**
              * Controle cache
              */
@@ -22227,12 +22302,14 @@ export interface AtlassianV3 {
              * 403: Returned if the request is not authenticated as the app that provided the function.
              * 404: Returned if the function is not found.
              */
-            $get(args?: {
-              functionKey?: Array<string>;
-              startAt?: number;
-              maxResults?: number;
-              orderBy?: string;
-            }): Promise<PageBeanJqlFunctionPrecomputationBean>;
+            $get(
+              args?: {
+                functionKey?: Array<string>;
+                startAt?: number;
+                maxResults?: number;
+                orderBy?: string;
+              },
+            ): Promise<PageBeanJqlFunctionPrecomputationBean>;
             /**
              * Method: post /rest/api/3/jql/function/computation
              * operationId: updatePrecomputations
@@ -22341,10 +22418,9 @@ export interface AtlassianV3 {
          * doc: Returns a [paginated](#pagination) list of labels.
          * 200: Returned if the request is successful.
          */
-        $get(args?: {
-          startAt?: number;
-          maxResults?: number;
-        }): Promise<PageBeanString>;
+        $get(
+          args?: { startAt?: number; maxResults?: number },
+        ): Promise<PageBeanString>;
         /**
          * Controle cache
          */
@@ -22423,16 +22499,18 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 404: Returned if the project or issue is not found or the user does not have permission to view the project or issue.
          */
-        $get(args?: {
-          projectKey?: string;
-          projectId?: string;
-          issueKey?: string;
-          issueId?: string;
-          permissions?: string;
-          projectUuid?: string;
-          projectConfigurationUuid?: string;
-          commentId?: string;
-        }): Promise<Permissions>;
+        $get(
+          args?: {
+            projectKey?: string;
+            projectId?: string;
+            issueKey?: string;
+            issueId?: string;
+            permissions?: string;
+            projectUuid?: string;
+            projectConfigurationUuid?: string;
+            commentId?: string;
+          },
+        ): Promise<Permissions>;
         /**
          * Controle cache
          */
@@ -22484,7 +22562,9 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 404: Returned if the key is not provided or not found.
          */
-        $delete(args: { key: string }): Promise<unknown /* no content */>;
+        $delete(): Promise<
+          unknown /* no content Returned if the request is successful. */
+        >;
         /**
          * Method: put /rest/api/3/mypreferences
          * operationId: setPreference
@@ -22604,14 +22684,16 @@ export interface AtlassianV3 {
          * 400: Returned if the request isn't valid.
          * 401: Returned if the authentication credentials are incorrect or missing.
          */
-        $get(args?: {
-          startAt?: string;
-          maxResults?: string;
-          id?: Array<string>;
-          projectId?: Array<string>;
-          onlyDefault?: boolean;
-          expand?: string;
-        }): Promise<PageBeanNotificationScheme>;
+        $get(
+          args?: {
+            startAt?: string;
+            maxResults?: string;
+            id?: Array<string>;
+            projectId?: Array<string>;
+            onlyDefault?: boolean;
+            expand?: string;
+          },
+        ): Promise<PageBeanNotificationScheme>;
         /**
          * Method: post /rest/api/3/notificationscheme
          * operationId: createNotificationScheme
@@ -22644,12 +22726,14 @@ export interface AtlassianV3 {
            * 400: Returned if search criteria are invalid, strings vs numbers for projectId, notificationSchemeId, startAt and maxResult
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {
-            startAt?: string;
-            maxResults?: string;
-            notificationSchemeId?: Array<string>;
-            projectId?: Array<string>;
-          }): Promise<PageBeanNotificationSchemeAndProjectMappingJsonBean>;
+          $get(
+            args?: {
+              startAt?: string;
+              maxResults?: string;
+              notificationSchemeId?: Array<string>;
+              projectId?: Array<string>;
+            },
+          ): Promise<PageBeanNotificationSchemeAndProjectMappingJsonBean>;
           /**
            * Controle cache
            */
@@ -22972,7 +23056,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permission.
            * 404: Returned if the permission scheme is not found.
            */
-          $delete(): Promise<unknown /* no content */>;
+          $delete(): Promise<
+            unknown /* no content Returned if the permission scheme is deleted. */
+          >;
           /**
            * Method: put /rest/api/3/permissionscheme/{schemeId}
            * operationId: updatePermissionScheme
@@ -23058,7 +23144,9 @@ export interface AtlassianV3 {
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 403: Returned if the user does not have the necessary permission.
                */
-              $delete(): Promise<unknown /* no content */>;
+              $delete(): Promise<
+                unknown /* no content Returned if the permission grant is deleted. */
+              >;
               /**
                * Controle cache
                */
@@ -23147,15 +23235,17 @@ export interface AtlassianV3 {
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {
-            startAt?: string;
-            maxResults?: string;
-            id?: Array<string>;
-            projectId?: Array<string>;
-            priorityName?: string;
-            onlyDefault?: boolean;
-            expand?: string;
-          }): Promise<PageBeanPriority>;
+          $get(
+            args?: {
+              startAt?: string;
+              maxResults?: string;
+              id?: Array<string>;
+              projectId?: Array<string>;
+              priorityName?: string;
+              onlyDefault?: boolean;
+              expand?: string;
+            },
+          ): Promise<PageBeanPriority>;
           /**
            * Controle cache
            */
@@ -23191,7 +23281,7 @@ export interface AtlassianV3 {
            * 404: Returned if the issue priority isn't found.
            * 409: Returned if a task to delete the issue priority is already running.
            */
-          $delete(): Promise<void>;
+          $delete(): Promise<unknown /* default */>;
           /**
            * Method: put /rest/api/3/priority/{id}
            * operationId: updatePriority
@@ -23225,16 +23315,18 @@ export interface AtlassianV3 {
          * 400: Returned if the request isn't valid.
          * 401: Returned if the authentication credentials are incorrect.
          */
-        $get(args?: {
-          startAt?: string;
-          maxResults?: string;
-          priorityId?: Array<number>;
-          schemeId?: Array<number>;
-          schemeName?: string;
-          onlyDefault?: boolean;
-          orderBy?: string;
-          expand?: string;
-        }): Promise<PageBeanPrioritySchemeWithPaginatedPrioritiesAndProjects>;
+        $get(
+          args?: {
+            startAt?: string;
+            maxResults?: string;
+            priorityId?: Array<number>;
+            schemeId?: Array<number>;
+            schemeName?: string;
+            onlyDefault?: boolean;
+            orderBy?: string;
+            expand?: string;
+          },
+        ): Promise<PageBeanPrioritySchemeWithPaginatedPrioritiesAndProjects>;
         /**
          * Method: post /rest/api/3/priorityscheme
          * operationId: createPriorityScheme
@@ -23286,13 +23378,15 @@ export interface AtlassianV3 {
              * 400: Returned if the request isn't valid.
              * 401: Returned if the authentication credentials are incorrect.
              */
-            $get(args: {
-              startAt?: string;
-              maxResults?: string;
-              query?: string;
-              schemeId: string;
-              exclude?: Array<string>;
-            }): Promise<PageBeanPriorityWithSequence>;
+            $get(
+              args: {
+                startAt?: string;
+                maxResults?: string;
+                query?: string;
+                schemeId: string;
+                exclude?: Array<string>;
+              },
+            ): Promise<PageBeanPriorityWithSequence>;
             /**
              * Controle cache
              */
@@ -23345,10 +23439,9 @@ export interface AtlassianV3 {
              * 400: Returned if the request isn't valid.
              * 401: Returned if the authentication credentials are incorrect.
              */
-            $get(args?: {
-              startAt?: string;
-              maxResults?: string;
-            }): Promise<PageBeanPriorityWithSequence>;
+            $get(
+              args?: { startAt?: string; maxResults?: string },
+            ): Promise<PageBeanPriorityWithSequence>;
             /**
              * Controle cache
              */
@@ -23367,12 +23460,14 @@ export interface AtlassianV3 {
              * 400: Returned if the request isn't valid.
              * 401: Returned if the authentication credentials are incorrect.
              */
-            $get(args?: {
-              startAt?: string;
-              maxResults?: string;
-              projectId?: Array<number>;
-              query?: string;
-            }): Promise<PageBeanProject>;
+            $get(
+              args?: {
+                startAt?: string;
+                maxResults?: string;
+                projectId?: Array<number>;
+                query?: string;
+              },
+            ): Promise<PageBeanProject>;
             /**
              * Controle cache
              */
@@ -23394,11 +23489,13 @@ export interface AtlassianV3 {
          * 200: Returned if the request is successful.
          * 401: Returned if the authentication credentials are incorrect or missing.
          */
-        $get(args?: {
-          expand?: string;
-          recent?: number;
-          properties?: Array<string>;
-        }): Promise<Array<Project>>;
+        $get(
+          args?: {
+            expand?: string;
+            recent?: number;
+            properties?: Array<string>;
+          },
+        ): Promise<Array<Project>>;
         /**
          * Method: post /rest/api/3/project
          * operationId: createProject
@@ -23448,10 +23545,9 @@ export interface AtlassianV3 {
            * 400: Returned if the request is not valid.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {
-            expand?: string;
-            properties?: Array<StringList>;
-          }): Promise<Array<Project>>;
+          $get(
+            args?: { expand?: string; properties?: Array<StringList> },
+          ): Promise<Array<Project>>;
           /**
            * Controle cache
            */
@@ -23477,21 +23573,23 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if no projects matching the search criteria are found.
            */
-          $get(args?: {
-            startAt?: number;
-            maxResults?: number;
-            orderBy?: string;
-            id?: Array<number>;
-            keys?: Array<string>;
-            query?: string;
-            typeKey?: string;
-            categoryId?: number;
-            action?: string;
-            expand?: string;
-            status?: Array<string>;
-            properties?: Array<StringList>;
-            propertyQuery?: string;
-          }): Promise<PageBeanProject>;
+          $get(
+            args?: {
+              startAt?: number;
+              maxResults?: number;
+              orderBy?: string;
+              id?: Array<number>;
+              keys?: Array<string>;
+              query?: string;
+              typeKey?: string;
+              categoryId?: number;
+              action?: string;
+              expand?: string;
+              status?: Array<string>;
+              properties?: Array<StringList>;
+              propertyQuery?: string;
+            },
+          ): Promise<PageBeanProject>;
           /**
            * Controle cache
            */
@@ -23587,10 +23685,9 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if the project is not found or the user does not have permission to view it.
            */
-          $get(args?: {
-            expand?: string;
-            properties?: Array<string>;
-          }): Promise<Project>;
+          $get(
+            args?: { expand?: string; properties?: Array<string> },
+          ): Promise<Project>;
           /**
            * Method: delete /rest/api/3/project/{projectIdOrKey}
            * operationId: deleteProject
@@ -23604,9 +23701,9 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 404: Returned if the project is not found or the user does not have permission to delete it.
            */
-          $delete(args?: {
-            enableUndo?: boolean;
-          }): Promise<unknown /* no content */>;
+          $delete(): Promise<
+            unknown /* no content Returned if the project is deleted. */
+          >;
           /**
            * Method: put /rest/api/3/project/{projectIdOrKey}
            * operationId: updateProject
@@ -23678,7 +23775,9 @@ export interface AtlassianV3 {
                * 403: Returned if the avatar is a system avatar or the user does not have permission to administer the project.
                * 404: Returned if the project or avatar is not found or the user does not have permission to view the project.
                */
-              $delete(): Promise<unknown /* no content */>;
+              $delete(): Promise<
+                unknown /* no content Returned if the request is successful. */
+              >;
             };
           };
           /* Endpoint path: /rest/api/3/project/{projectIdOrKey}/avatar2 */
@@ -23824,13 +23923,15 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if the project is not found or the user does not have permission to view it.
              */
-            $get(args?: {
-              startAt?: number;
-              maxResults?: number;
-              orderBy?: string;
-              componentSource?: string;
-              query?: string;
-            }): Promise<PageBeanComponentWithIssueCount>;
+            $get(
+              args?: {
+                startAt?: number;
+                maxResults?: number;
+                orderBy?: string;
+                componentSource?: string;
+                query?: string;
+              },
+            ): Promise<PageBeanComponentWithIssueCount>;
             /**
              * Controle cache
              */
@@ -23853,9 +23954,9 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if the project is not found or the user does not have permission to view it.
              */
-            $get(args?: {
-              componentSource?: string;
-            }): Promise<Array<ProjectComponent>>;
+            $get(
+              args?: { componentSource?: string },
+            ): Promise<Array<ProjectComponent>>;
             /**
              * Controle cache
              */
@@ -23973,7 +24074,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have permission to administer the project.
                * 404: Returned if the project or property is not found.
                */
-              $delete(): Promise<unknown /* no content */>;
+              $delete(): Promise<
+                unknown /* no content Returned if the project property is deleted. */
+              >;
               /**
                * Method: put /rest/api/3/project/{projectIdOrKey}/properties/{propertyKey}
                * operationId: setProjectProperty
@@ -24061,9 +24164,9 @@ export interface AtlassianV3 {
                *  *  the project or project role is not found.
                *  *  the user does not have administrative permission.
                */
-              $get(args?: {
-                excludeInactiveUsers?: boolean;
-              }): Promise<ProjectRole>;
+              $get(
+                args?: { excludeInactiveUsers?: boolean },
+              ): Promise<ProjectRole>;
               /**
                * Method: delete /rest/api/3/project/{projectIdOrKey}/role/{id}
                * operationId: deleteActor
@@ -24082,11 +24185,9 @@ export interface AtlassianV3 {
                *  *  the project or project role is not found.
                *  *  the calling user does not have administrative permission.
                */
-              $delete(args?: {
-                user?: string;
-                group?: string;
-                groupId?: string;
-              }): Promise<unknown /* no content */>;
+              $delete(): Promise<
+                unknown /* no content Returned if the request is successful. */
+              >;
               /**
                * Method: post /rest/api/3/project/{projectIdOrKey}/role/{id}
                * operationId: addActorUsers
@@ -24150,10 +24251,12 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect or missing.
              * 404: Returned if the project is not found or if the user does not have the necessary permissions for the project.
              */
-            $get(args?: {
-              currentMember?: boolean;
-              excludeConnectAddons?: boolean;
-            }): Promise<Array<ProjectRoleDetails>>;
+            $get(
+              args?: {
+                currentMember?: boolean;
+                excludeConnectAddons?: boolean;
+              },
+            ): Promise<Array<ProjectRoleDetails>>;
             /**
              * Controle cache
              */
@@ -24194,14 +24297,16 @@ export interface AtlassianV3 {
              * 200: Returned if the request is successful.
              * 404: Returned if the project is not found or the user does not have permission to view it.
              */
-            $get(args?: {
-              startAt?: number;
-              maxResults?: number;
-              orderBy?: string;
-              query?: string;
-              status?: string;
-              expand?: string;
-            }): Promise<PageBeanVersion>;
+            $get(
+              args?: {
+                startAt?: number;
+                maxResults?: number;
+                orderBy?: string;
+                query?: string;
+                status?: string;
+                expand?: string;
+              },
+            ): Promise<PageBeanVersion>;
             /**
              * Controle cache
              */
@@ -24454,7 +24559,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permission.
            * 404: Returned if the project category is not found.
            */
-          $delete(): Promise<unknown /* no content */>;
+          $delete(): Promise<
+            unknown /* no content Returned if the request is successful. */
+          >;
           /**
            * Method: put /rest/api/3/projectCategory/{id}
            * operationId: updateProjectCategory
@@ -24618,12 +24725,14 @@ export interface AtlassianV3 {
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {
-            startAt?: string;
-            maxResults?: string;
-            id?: Array<string>;
-            onlyDefault?: boolean;
-          }): Promise<PageBeanResolutionJsonBean>;
+          $get(
+            args?: {
+              startAt?: string;
+              maxResults?: string;
+              id?: Array<string>;
+              onlyDefault?: boolean;
+            },
+          ): Promise<PageBeanResolutionJsonBean>;
           /**
            * Controle cache
            */
@@ -24659,7 +24768,7 @@ export interface AtlassianV3 {
            * 404: Returned if the issue resolution isn't found.
            * 409: Returned if a task to delete the issue resolution is already running.
            */
-          $delete(args: { replaceWith: string }): Promise<void>;
+          $delete(): Promise<unknown /* default */>;
           /**
            * Method: put /rest/api/3/resolution/{id}
            * operationId: updateResolution
@@ -24758,7 +24867,9 @@ export interface AtlassianV3 {
            * 404: Returned if the project role being deleted is not found.
            * 409: Returned if the project role being deleted is in use and a replacement project role is not specified in the request.
            */
-          $delete(args?: { swap?: number }): Promise<unknown /* no content */>;
+          $delete(): Promise<
+            unknown /* no content Returned if the request is successful. */
+          >;
           /**
            * Method: post /rest/api/3/role/{id}
            * operationId: partialUpdateProjectRole
@@ -24824,11 +24935,7 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have administrative permissions.
              * 404: Returned if the project role is not found.
              */
-            $delete(args?: {
-              user?: string;
-              groupId?: string;
-              group?: string;
-            }): Promise<ProjectRole>;
+            $delete(): Promise<ProjectRole>;
             /**
              * Method: post /rest/api/3/role/{id}/actors
              * operationId: addProjectRoleActorsToRole
@@ -24865,14 +24972,16 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the user does not have the necessary permission.
          */
-        $get(args?: {
-          startAt?: number;
-          maxResults?: number;
-          id?: Array<number>;
-          queryString?: string;
-          scope?: Array<string>;
-          orderBy?: string;
-        }): Promise<PageBeanScreen>;
+        $get(
+          args?: {
+            startAt?: number;
+            maxResults?: number;
+            id?: Array<number>;
+            queryString?: string;
+            scope?: Array<string>;
+            orderBy?: string;
+          },
+        ): Promise<PageBeanScreen>;
         /**
          * Method: post /rest/api/3/screens
          * operationId: createScreen
@@ -24926,12 +25035,14 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the necessary permission.
            */
-          $get(args?: {
-            screenId?: Array<number>;
-            tabId?: Array<number>;
-            startAt?: number;
-            maxResult?: number;
-          }): Promise<unknown /* no schema 81 */>;
+          $get(
+            args?: {
+              screenId?: Array<number>;
+              tabId?: Array<number>;
+              startAt?: number;
+              maxResult?: number;
+            },
+          ): Promise<unknown /* no schema 81 */>;
           /**
            * Controle cache
            */
@@ -24952,7 +25063,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permission.
            * 404: Returned if the screen is not found.
            */
-          $delete(): Promise<unknown /* no content */>;
+          $delete(): Promise<
+            unknown /* no content Returned if the request is successful. */
+          >;
           /**
            * Method: put /rest/api/3/screens/{screenId}
            * operationId: updateScreen
@@ -25038,7 +25151,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if the screen or screen tab is not found.
                */
-              $delete(): Promise<unknown /* no content */>;
+              $delete(): Promise<
+                unknown /* no content Returned if the request is successful. */
+              >;
               /**
                * Method: put /rest/api/3/screens/{screenId}/tabs/{tabId}
                * operationId: renameScreenTab
@@ -25070,9 +25185,9 @@ export interface AtlassianV3 {
                  * 403: Returned if the user does not have the necessary permission.
                  * 404: Returned if the screen or screen tab is not found.
                  */
-                $get(args?: {
-                  projectKey?: string;
-                }): Promise<Array<ScreenableField>>;
+                $get(
+                  args?: { projectKey?: string },
+                ): Promise<Array<ScreenableField>>;
                 /**
                  * Method: post /rest/api/3/screens/{screenId}/tabs/{tabId}/fields
                  * operationId: addScreenTabField
@@ -25106,7 +25221,9 @@ export interface AtlassianV3 {
                    * 403: Returned if the user does not have the necessary permission.
                    * 404: Returned if the screen, screen tab, or field is not found.
                    */
-                  $delete(): Promise<unknown /* no content */>;
+                  $delete(): Promise<
+                    unknown /* no content Returned if the request is successful. */
+                  >;
                   /* Endpoint path: /rest/api/3/screens/{screenId}/tabs/{tabId}/fields/{id}/move */
                   move: {
                     /**
@@ -25167,14 +25284,16 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the user does not have the necessary permission.
          */
-        $get(args?: {
-          startAt?: number;
-          maxResults?: number;
-          id?: Array<number>;
-          expand?: string;
-          queryString?: string;
-          orderBy?: string;
-        }): Promise<PageBeanScreenScheme>;
+        $get(
+          args?: {
+            startAt?: number;
+            maxResults?: number;
+            id?: Array<number>;
+            expand?: string;
+            queryString?: string;
+            orderBy?: string;
+          },
+        ): Promise<PageBeanScreenScheme>;
         /**
          * Method: post /rest/api/3/screenscheme
          * operationId: createScreenScheme
@@ -25210,7 +25329,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permission.
            * 404: Returned if the screen scheme is not found.
            */
-          $delete(): Promise<unknown /* no content */>;
+          $delete(): Promise<
+            unknown /* no content Returned if the screen scheme is deleted. */
+          >;
           /**
            * Method: put /rest/api/3/screenscheme/{screenSchemeId}
            * operationId: updateScreenScheme
@@ -25247,17 +25368,19 @@ export interface AtlassianV3 {
          * 400: Returned if the JQL query is invalid.
          * 401: Returned if the authentication credentials are incorrect or missing.
          */
-        $get(args?: {
-          jql?: string;
-          startAt?: number;
-          maxResults?: number;
-          validateQuery?: string;
-          fields?: Array<string>;
-          expand?: string;
-          properties?: Array<string>;
-          fieldsByKeys?: boolean;
-          failFast?: boolean;
-        }): Promise<SearchResults>;
+        $get(
+          args?: {
+            jql?: string;
+            startAt?: number;
+            maxResults?: number;
+            validateQuery?: string;
+            fields?: Array<string>;
+            expand?: string;
+            properties?: Array<string>;
+            fieldsByKeys?: boolean;
+            failFast?: boolean;
+          },
+        ): Promise<SearchResults>;
         /**
          * Method: post /rest/api/3/search
          * operationId: searchForIssuesUsingJqlPost
@@ -25387,7 +25510,11 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permission.
            * 404: Returned if a navigable field value is not found.
            */
-          $put(): Promise<unknown /* no content */>;
+          $putF(
+            body: ColumnRequestBody,
+          ): Promise<
+            unknown /* no content Returned if the request is successful. */
+          >;
           /**
            * Controle cache
            */
@@ -25494,10 +25621,9 @@ export interface AtlassianV3 {
          * 400: Returned if the request is not valid.
          * 401: Returned if the authentication credentials are incorrect or missing, or the caller doesn't have permissions to perform the operation.
          */
-        $get(args: {
-          expand?: string;
-          id: Array<string>;
-        }): Promise<Array<JiraStatus>>;
+        $get(
+          args: { expand?: string; id: Array<string> },
+        ): Promise<Array<JiraStatus>>;
         /**
          * Method: delete /rest/api/3/statuses
          * operationId: deleteStatusesById
@@ -25512,7 +25638,7 @@ export interface AtlassianV3 {
          * 400: Returned if the request is not valid.
          * 401: Returned if the authentication credentials are incorrect or missing, or the caller doesn't have permissions to perform the operation.
          */
-        $delete(args: { id: Array<string> }): Promise<unknown /* other */>;
+        $delete(): Promise<unknown /* other */>;
         /**
          * Method: post /rest/api/3/statuses
          * operationId: createStatuses
@@ -25565,14 +25691,16 @@ export interface AtlassianV3 {
            * 400: Returned if the request is not valid.
            * 401: Returned if the authentication credentials are incorrect or missing, or the caller doesn't have permissions to perform the operation.
            */
-          $get(args?: {
-            expand?: string;
-            projectId?: string;
-            startAt?: number;
-            maxResults?: number;
-            searchString?: string;
-            statusCategory?: string;
-          }): Promise<PageOfStatuses>;
+          $get(
+            args?: {
+              expand?: string;
+              projectId?: string;
+              startAt?: number;
+              maxResults?: number;
+              searchString?: string;
+              statusCategory?: string;
+            },
+          ): Promise<PageOfStatuses>;
           /**
            * Controle cache
            */
@@ -25645,11 +25773,9 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the request is not from a Forge app.
          */
-        $get(args?: {
-          startAt?: number;
-          maxResults?: number;
-          expand?: string;
-        }): Promise<PageBeanUiModificationDetails>;
+        $get(
+          args?: { startAt?: number; maxResults?: number; expand?: string },
+        ): Promise<PageBeanUiModificationDetails>;
         /**
          * Method: post /rest/api/3/uiModifications
          * operationId: createUiModification
@@ -25807,7 +25933,9 @@ export interface AtlassianV3 {
                      * 403: Returned if the user does not have permission to delete the avatar, the avatar is not deletable.
                      * 404: Returned if the avatar type, associated item ID, or avatar ID is invalid.
                      */
-                    $delete(): Promise<unknown /* no content */>;
+                    $delete(): Promise<
+                      unknown /* no content Returned if the request is successful. */
+                    >;
                   };
                 };
               };
@@ -25834,10 +25962,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if an avatar is not found or an avatar matching the requested size is not found.
                */
-              $get(args?: {
-                size?: string;
-                format?: string;
-              }): Promise<StreamingResponseBody>;
+              $get(
+                args?: { size?: string; format?: string },
+              ): Promise<StreamingResponseBody>;
               /**
                * Controle cache
                */
@@ -25865,10 +25992,9 @@ export interface AtlassianV3 {
                    * 403: Returned if the user does not have the necessary permission.
                    * 404: Returned if an avatar is not found or an avatar matching the requested size is not found.
                    */
-                  $get(args?: {
-                    size?: string;
-                    format?: string;
-                  }): Promise<StreamingResponseBody>;
+                  $get(
+                    args?: { size?: string; format?: string },
+                  ): Promise<StreamingResponseBody>;
                   /**
                    * Controle cache
                    */
@@ -25898,10 +26024,9 @@ export interface AtlassianV3 {
                    * 403: Returned if the user does not have the necessary permission.
                    * 404: Returned if an avatar is not found or an avatar matching the requested size is not found.
                    */
-                  $get(args?: {
-                    size?: string;
-                    format?: string;
-                  }): Promise<StreamingResponseBody>;
+                  $get(
+                    args?: { size?: string; format?: string },
+                  ): Promise<StreamingResponseBody>;
                   /**
                    * Controle cache
                    */
@@ -25928,12 +26053,14 @@ export interface AtlassianV3 {
          * 403: Returned if the calling user does not have the *Browse users and groups* global permission.
          * 404: Returned if the user is not found.
          */
-        $get(args?: {
-          accountId?: string;
-          username?: string;
-          key?: string;
-          expand?: string;
-        }): Promise<User>;
+        $get(
+          args?: {
+            accountId?: string;
+            username?: string;
+            key?: string;
+            expand?: string;
+          },
+        ): Promise<User>;
         /**
          * Method: delete /rest/api/3/user
          * operationId: removeUser
@@ -25947,11 +26074,9 @@ export interface AtlassianV3 {
          * 403: Returned if the user does not have the necessary permission.
          * 404: Returned if the user is not found.
          */
-        $delete(args: {
-          accountId: string;
-          username?: string;
-          key?: string;
-        }): Promise<unknown /* no content */>;
+        $delete(): Promise<
+          unknown /* no content Returned if the request is successful. */
+        >;
         /**
          * Method: post /rest/api/3/user
          * operationId: createUser
@@ -25998,14 +26123,16 @@ export interface AtlassianV3 {
              * 404: Returned if one or more of the projects is not found.
              * 429: Returned if the rate limit is exceeded. User search endpoints share a collective rate limit for the tenant, in addition to Jira's normal rate limiting you may receive a rate limit for user search. Please respect the Retry-After header.
              */
-            $get(args: {
-              query?: string;
-              username?: string;
-              accountId?: string;
-              projectKeys: string;
-              startAt?: number;
-              maxResults?: number;
-            }): Promise<Array<User>>;
+            $get(
+              args: {
+                query?: string;
+                username?: string;
+                accountId?: string;
+                projectKeys: string;
+                startAt?: number;
+                maxResults?: number;
+              },
+            ): Promise<Array<User>>;
             /**
              * Controle cache
              */
@@ -26040,18 +26167,20 @@ export interface AtlassianV3 {
              * 404: Returned if the project, issue, or transition is not found.
              * 429: Returned if the rate limit is exceeded. User search endpoints share a collective rate limit for the tenant, in addition to Jira's normal rate limiting you may receive a rate limit for user search. Please respect the Retry-After header.
              */
-            $get(args?: {
-              query?: string;
-              sessionId?: string;
-              username?: string;
-              accountId?: string;
-              project?: string;
-              issueKey?: string;
-              startAt?: number;
-              maxResults?: number;
-              actionDescriptorId?: number;
-              recommend?: boolean;
-            }): Promise<Array<User>>;
+            $get(
+              args?: {
+                query?: string;
+                sessionId?: string;
+                username?: string;
+                accountId?: string;
+                project?: string;
+                issueKey?: string;
+                startAt?: number;
+                maxResults?: number;
+                actionDescriptorId?: number;
+                recommend?: boolean;
+              },
+            ): Promise<Array<User>>;
             /**
              * Controle cache
              */
@@ -26071,13 +26200,15 @@ export interface AtlassianV3 {
            * 400: Returned if `accountID` is missing.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args: {
-            startAt?: number;
-            maxResults?: number;
-            username?: Array<string>;
-            key?: Array<string>;
-            accountId: Array<string>;
-          }): Promise<PageBeanUser>;
+          $get(
+            args: {
+              startAt?: number;
+              maxResults?: number;
+              username?: Array<string>;
+              key?: Array<string>;
+              accountId: Array<string>;
+            },
+          ): Promise<PageBeanUser>;
           /**
            * Controle cache
            */
@@ -26095,12 +26226,14 @@ export interface AtlassianV3 {
              * 400: Returned if `key` or `username`
              * 401: Returned if the authentication credentials are incorrect or missing.
              */
-            $get(args?: {
-              startAt?: number;
-              maxResults?: number;
-              username?: Array<string>;
-              key?: Array<string>;
-            }): Promise<Array<UserMigrationBean>>;
+            $get(
+              args?: {
+                startAt?: number;
+                maxResults?: number;
+                username?: Array<string>;
+                key?: Array<string>;
+              },
+            ): Promise<Array<UserMigrationBean>>;
             /**
              * Controle cache
              */
@@ -26124,10 +26257,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permission or is not accessing their user record.
            * 404: Returned if the requested user is not found.
            */
-          $get(args?: {
-            accountId?: string;
-            username?: string;
-          }): Promise<Array<ColumnItem>>;
+          $get(
+            args?: { accountId?: string; username?: string },
+          ): Promise<Array<ColumnItem>>;
           /**
            * Method: delete /rest/api/3/user/columns
            * operationId: resetUserColumns
@@ -26142,10 +26274,9 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the necessary permission or is not accessing their user record.
            */
-          $delete(args?: {
-            accountId?: string;
-            username?: string;
-          }): Promise<unknown /* no content */>;
+          $delete(): Promise<
+            unknown /* no content Returned if the request is successful. */
+          >;
           /**
            * Method: put /rest/api/3/user/columns
            * operationId: setUserColumns
@@ -26167,7 +26298,7 @@ export interface AtlassianV3 {
            * 429: Returned if the rate limit is exceeded. User search endpoints share a collective rate limit for the tenant, in addition to Jira's normal rate limiting you may receive a rate limit for user search. Please respect the Retry-After header.
            * 500: Returned if an invalid issue table column ID is sent.
            */
-          $put(): Promise<unknown /* other */>;
+          $putF(body: UserColumnRequestBody): Promise<unknown /* other */>;
           /**
            * Controle cache
            */
@@ -26203,9 +26334,9 @@ export interface AtlassianV3 {
              * 401: Returned if the authentication credentials are incorrect, or missing from the request (for example if a user is trying to access this API).
              * 503: Indicates the API is not currently enabled.
              */
-            $get(args: {
-              accountId: Array<string>;
-            }): Promise<UnrestrictedUserEmail>;
+            $get(
+              args: { accountId: Array<string> },
+            ): Promise<UnrestrictedUserEmail>;
             /**
              * Controle cache
              */
@@ -26226,11 +26357,9 @@ export interface AtlassianV3 {
            * 403: Returned if the calling user does not have the *Browse users and groups* global permission.
            * 404: Returned if the user is not found.
            */
-          $get(args: {
-            accountId: string;
-            username?: string;
-            key?: string;
-          }): Promise<Array<GroupName>>;
+          $get(
+            args: { accountId: string; username?: string; key?: string },
+          ): Promise<Array<GroupName>>;
           /**
            * Controle cache
            */
@@ -26273,16 +26402,18 @@ export interface AtlassianV3 {
              * 404: Returned if the issue or project is not found.
              * 429: Returned if the rate limit is exceeded. User search endpoints share a collective rate limit for the tenant, in addition to Jira's normal rate limiting you may receive a rate limit for user search. Please respect the Retry-After header.
              */
-            $get(args: {
-              query?: string;
-              username?: string;
-              accountId?: string;
-              permissions: string;
-              issueKey?: string;
-              projectKey?: string;
-              startAt?: number;
-              maxResults?: number;
-            }): Promise<Array<User>>;
+            $get(
+              args: {
+                query?: string;
+                username?: string;
+                accountId?: string;
+                permissions: string;
+                issueKey?: string;
+                projectKey?: string;
+                startAt?: number;
+                maxResults?: number;
+              },
+            ): Promise<Array<User>>;
             /**
              * Controle cache
              */
@@ -26309,15 +26440,17 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 429: Returned if the rate limit is exceeded. User search endpoints share a collective rate limit for the tenant, in addition to Jira's normal rate limiting you may receive a rate limit for user search. Please respect the Retry-After header.
            */
-          $get(args: {
-            query: string;
-            maxResults?: number;
-            showAvatar?: boolean;
-            exclude?: Array<string>;
-            excludeAccountIds?: Array<string>;
-            avatarSize?: string;
-            excludeConnectUsers?: boolean;
-          }): Promise<FoundUsers>;
+          $get(
+            args: {
+              query: string;
+              maxResults?: number;
+              showAvatar?: boolean;
+              exclude?: Array<string>;
+              excludeAccountIds?: Array<string>;
+              avatarSize?: string;
+              excludeConnectUsers?: boolean;
+            },
+          ): Promise<FoundUsers>;
           /**
            * Controle cache
            */
@@ -26343,11 +26476,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permission or is not accessing their user record.
            * 404: Returned if the user is not found.
            */
-          $get(args?: {
-            accountId?: string;
-            userKey?: string;
-            username?: string;
-          }): Promise<PropertyKeys>;
+          $get(
+            args?: { accountId?: string; userKey?: string; username?: string },
+          ): Promise<PropertyKeys>;
           /**
            * Controle cache
            */
@@ -26372,11 +26503,13 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission or is not accessing their user record.
              * 404: Returned if the user is not found.
              */
-            $get(args?: {
-              accountId?: string;
-              userKey?: string;
-              username?: string;
-            }): Promise<EntityProperty>;
+            $get(
+              args?: {
+                accountId?: string;
+                userKey?: string;
+                username?: string;
+              },
+            ): Promise<EntityProperty>;
             /**
              * Method: delete /rest/api/3/user/properties/{propertyKey}
              * operationId: deleteUserProperty
@@ -26395,11 +26528,9 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission or is not accessing their user record.
              * 404: Returned if the user or the property is not found.
              */
-            $delete(args?: {
-              accountId?: string;
-              userKey?: string;
-              username?: string;
-            }): Promise<unknown /* no content */>;
+            $delete(): Promise<
+              unknown /* no content Returned if the user property is deleted. */
+            >;
             /**
              * Method: put /rest/api/3/user/properties/{propertyKey}
              * operationId: setUserProperty
@@ -26451,14 +26582,16 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 429: Returned if the rate limit is exceeded. User search endpoints share a collective rate limit for the tenant, in addition to Jira's normal rate limiting you may receive a rate limit for user search. Please respect the Retry-After header.
            */
-          $get(args?: {
-            query?: string;
-            username?: string;
-            accountId?: string;
-            startAt?: number;
-            maxResults?: number;
-            property?: string;
-          }): Promise<Array<User>>;
+          $get(
+            args?: {
+              query?: string;
+              username?: string;
+              accountId?: string;
+              startAt?: number;
+              maxResults?: number;
+              property?: string;
+            },
+          ): Promise<Array<User>>;
           /**
            * Controle cache
            */
@@ -26495,11 +26628,9 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              * 408: Returned if the search is timed out.
              */
-            $get(args: {
-              query: string;
-              startAt?: number;
-              maxResults?: number;
-            }): Promise<PageBeanUser>;
+            $get(
+              args: { query: string; startAt?: number; maxResults?: number },
+            ): Promise<PageBeanUser>;
             /**
              * Controle cache
              */
@@ -26536,11 +26667,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the necessary permission.
                * 408: Returned if the search is timed out.
                */
-              $get(args: {
-                query: string;
-                startAt?: number;
-                maxResult?: number;
-              }): Promise<PageBeanUserKey>;
+              $get(
+                args: { query: string; startAt?: number; maxResult?: number },
+              ): Promise<PageBeanUserKey>;
               /**
                * Controle cache
                */
@@ -26583,15 +26712,17 @@ export interface AtlassianV3 {
              * 404: Returned if the issue or project is not found.
              * 429: Returned if the rate limit is exceeded. User search endpoints share a collective rate limit for the tenant, in addition to Jira's normal rate limiting you may receive a rate limit for user search. Please respect the Retry-After header.
              */
-            $get(args?: {
-              query?: string;
-              username?: string;
-              accountId?: string;
-              issueKey?: string;
-              projectKey?: string;
-              startAt?: number;
-              maxResults?: number;
-            }): Promise<Array<User>>;
+            $get(
+              args?: {
+                query?: string;
+                username?: string;
+                accountId?: string;
+                issueKey?: string;
+                projectKey?: string;
+                startAt?: number;
+                maxResults?: number;
+              },
+            ): Promise<Array<User>>;
             /**
              * Controle cache
              */
@@ -26615,10 +26746,9 @@ export interface AtlassianV3 {
          * 403: Returned if the user doesn't have the necessary permission.
          * 409: Returned if the request takes longer than 10 seconds or is interrupted.
          */
-        $get(args?: {
-          startAt?: number;
-          maxResults?: number;
-        }): Promise<Array<User>>;
+        $get(
+          args?: { startAt?: number; maxResults?: number },
+        ): Promise<Array<User>>;
         /**
          * Controle cache
          */
@@ -26639,10 +26769,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user doesn't have the necessary permission.
            * 409: Returned if the request takes longer than 10 seconds or is interrupted.
            */
-          $get(args?: {
-            startAt?: number;
-            maxResults?: number;
-          }): Promise<Array<User>>;
+          $get(
+            args?: { startAt?: number; maxResults?: number },
+          ): Promise<Array<User>>;
           /**
            * Controle cache
            */
@@ -26706,10 +26835,9 @@ export interface AtlassianV3 {
            *  *  the user does not have the required permissions.
            * 404: Returned if the version is not found.
            */
-          $delete(args?: {
-            moveFixIssuesTo?: string;
-            moveAffectedIssuesTo?: string;
-          }): Promise<unknown /* no content */>;
+          $delete(): Promise<
+            unknown /* no content Returned if the version is deleted. */
+          >;
           /**
            * Method: put /rest/api/3/version/{id}
            * operationId: updateVersion
@@ -26938,7 +27066,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the required permissions.
                * 404: Returned if the version/related work is not found.
                */
-              $delete(): Promise<unknown /* no content */>;
+              $delete(): Promise<
+                unknown /* no content Returned if the related work is deleted. */
+              >;
             };
           };
         };
@@ -26956,10 +27086,9 @@ export interface AtlassianV3 {
          * 400: Returned if the request is invalid.
          * 403: Returned if the caller isn't an app.
          */
-        $get(args?: {
-          startAt?: number;
-          maxResults?: number;
-        }): Promise<PageBeanWebhook>;
+        $get(
+          args?: { startAt?: number; maxResults?: number },
+        ): Promise<PageBeanWebhook>;
         /**
          * Method: delete /rest/api/3/webhook
          * operationId: deleteWebhookById
@@ -26971,7 +27100,11 @@ export interface AtlassianV3 {
          * 400: Returned if the list of webhook IDs is missing.
          * 403: Returned if the caller isn't an app.
          */
-        $delete(): Promise<unknown /* no content */>;
+        $delete(
+          body: ContainerForWebhookIDs,
+        ): Promise<
+          unknown /* no content Returned if the request is successful. */
+        >;
         /**
          * Method: post /rest/api/3/webhook
          * operationId: registerDynamicWebhooks
@@ -27011,10 +27144,9 @@ export interface AtlassianV3 {
            * 400: 400 response
            * 403: Returned if the caller is not a Connect app.
            */
-          $get(args?: {
-            maxResults?: number;
-            after?: number;
-          }): Promise<FailedWebhooks>;
+          $get(
+            args?: { maxResults?: number; after?: number },
+          ): Promise<FailedWebhooks>;
           /**
            * Controle cache
            */
@@ -27052,9 +27184,9 @@ export interface AtlassianV3 {
          * 200: Returned if the request is successful.
          * 401: Returned if the user does not have the necessary permission.
          */
-        $get(args?: {
-          workflowName?: string;
-        }): Promise<Array<DeprecatedWorkflow>>;
+        $get(
+          args?: { workflowName?: string },
+        ): Promise<Array<DeprecatedWorkflow>>;
         /**
          * Method: post /rest/api/3/workflow
          * operationId: createWorkflow
@@ -27825,16 +27957,18 @@ export interface AtlassianV3 {
              * 404: Returned if any transition rule type is not supported.
              * 503: Returned if we encounter a problem while trying to access the required data.
              */
-            $get(args: {
-              startAt?: number;
-              maxResults?: number;
-              types: Array<string>;
-              keys?: Array<string>;
-              workflowNames?: Array<string>;
-              withTags?: Array<string>;
-              draft?: boolean;
-              expand?: string;
-            }): Promise<PageBeanWorkflowTransitionRules>;
+            $get(
+              args: {
+                startAt?: number;
+                maxResults?: number;
+                types: Array<string>;
+                keys?: Array<string>;
+                workflowNames?: Array<string>;
+                withTags?: Array<string>;
+                draft?: boolean;
+                expand?: string;
+              },
+            ): Promise<PageBeanWorkflowTransitionRules>;
             /**
              * Method: put /rest/api/3/workflow/rule/config
              * operationId: updateWorkflowTransitionRuleConfigurations
@@ -27907,15 +28041,17 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the necessary permission.
            */
-          $get(args?: {
-            startAt?: number;
-            maxResults?: number;
-            workflowName?: Array<string>;
-            expand?: string;
-            queryString?: string;
-            orderBy?: string;
-            isActive?: boolean;
-          }): Promise<PageBeanWorkflow>;
+          $get(
+            args?: {
+              startAt?: number;
+              maxResults?: number;
+              workflowName?: Array<string>;
+              expand?: string;
+              queryString?: string;
+              orderBy?: string;
+              isActive?: boolean;
+            },
+          ): Promise<PageBeanWorkflow>;
           /**
            * Controle cache
            */
@@ -27940,12 +28076,14 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have admin permission
                * 404: Returned if the workflow transition or property is not found.
                */
-              $get(args: {
-                includeReservedKeys?: boolean;
-                key?: string;
-                workflowName: string;
-                workflowMode?: string;
-              }): Promise<WorkflowTransitionProperty>;
+              $get(
+                args: {
+                  includeReservedKeys?: boolean;
+                  key?: string;
+                  workflowName: string;
+                  workflowMode?: string;
+                },
+              ): Promise<WorkflowTransitionProperty>;
               /**
                * Method: delete /rest/api/3/workflow/transitions/{transitionId}/properties
                * operationId: deleteWorkflowTransitionProperty
@@ -27960,11 +28098,7 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if the workflow transition is not found.
                */
-              $delete(args: {
-                key: string;
-                workflowName: string;
-                workflowMode?: string;
-              }): Promise<unknown /* no content */>;
+              $delete(): Promise<unknown /* no content 200 response */>;
               /**
                * Method: post /rest/api/3/workflow/transitions/{transitionId}/properties
                * operationId: createWorkflowTransitionProperty
@@ -28027,7 +28161,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the required permissions.
            * 404: Returned if the workflow is not found.
            */
-          $delete(): Promise<unknown /* no content */>;
+          $delete(): Promise<
+            unknown /* no content Returned if the workflow is deleted. */
+          >;
         };
       };
       /* Endpoint path: /rest/api/3/workflows */
@@ -28588,11 +28724,13 @@ export interface AtlassianV3 {
            * 400: Returned if the request is not valid.
            * 401: Returned if the authentication credentials are incorrect or missing, or the caller doesn't have permissions to perform the operation.
            */
-          $get(args?: {
-            workflowId?: string;
-            projectId?: string;
-            issueTypeId?: string;
-          }): Promise<WorkflowCapabilities>;
+          $get(
+            args?: {
+              workflowId?: string;
+              projectId?: string;
+              issueTypeId?: string;
+            },
+          ): Promise<WorkflowCapabilities>;
           /**
            * Controle cache
            */
@@ -28688,10 +28826,9 @@ export interface AtlassianV3 {
          * 401: Returned if the authentication credentials are incorrect or missing.
          * 403: Returned if the user does not have the necessary permission.
          */
-        $get(args?: {
-          startAt?: number;
-          maxResults?: number;
-        }): Promise<PageBeanWorkflowScheme>;
+        $get(
+          args?: { startAt?: number; maxResults?: number },
+        ): Promise<PageBeanWorkflowScheme>;
         /**
          * Method: post /rest/api/3/workflowscheme
          * operationId: createWorkflowScheme
@@ -28725,9 +28862,9 @@ export interface AtlassianV3 {
            * 401: Returned if the authentication credentials are incorrect or missing.
            * 403: Returned if the user does not have the necessary permission.
            */
-          $get(args: {
-            projectId: Array<number>;
-          }): Promise<ContainerOfWorkflowSchemeAssociations>;
+          $get(
+            args: { projectId: Array<number> },
+          ): Promise<ContainerOfWorkflowSchemeAssociations>;
           /**
            * Method: put /rest/api/3/workflowscheme/project
            * operationId: assignSchemeToProject
@@ -28826,9 +28963,9 @@ export interface AtlassianV3 {
            * 403: Returned if the user does not have the necessary permission.
            * 404: Returned if the workflow scheme is not found.
            */
-          $get(args?: {
-            returnDraftIfExists?: boolean;
-          }): Promise<WorkflowScheme>;
+          $get(
+            args?: { returnDraftIfExists?: boolean },
+          ): Promise<WorkflowScheme>;
           /**
            * Method: delete /rest/api/3/workflowscheme/{id}
            * operationId: deleteWorkflowScheme
@@ -28891,9 +29028,9 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if the workflow scheme is not found.
              */
-            $get(args?: {
-              returnDraftIfExists?: boolean;
-            }): Promise<DefaultWorkflow>;
+            $get(
+              args?: { returnDraftIfExists?: boolean },
+            ): Promise<DefaultWorkflow>;
             /**
              * Method: delete /rest/api/3/workflowscheme/{id}/default
              * operationId: deleteDefaultWorkflow
@@ -28909,9 +29046,7 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if the workflow scheme is not found.
              */
-            $delete(args?: {
-              updateDraftIfNeeded?: boolean;
-            }): Promise<WorkflowScheme>;
+            $delete(): Promise<WorkflowScheme>;
             /**
              * Method: put /rest/api/3/workflowscheme/{id}/default
              * operationId: updateDefaultWorkflow
@@ -28970,7 +29105,9 @@ export interface AtlassianV3 {
              *  *  the original active workflow scheme is not found.
              *  *  the original active workflow scheme does not have a draft.
              */
-            $delete(): Promise<unknown /* no content */>;
+            $delete(): Promise<
+              unknown /* no content Returned if the request is successful. */
+            >;
             /**
              * Method: put /rest/api/3/workflowscheme/{id}/draft
              * operationId: updateWorkflowSchemeDraft
@@ -29124,7 +29261,9 @@ export interface AtlassianV3 {
                */
               $post(
                 body: PublishDraftWorkflowScheme,
-              ): Promise<unknown /* no content */>;
+              ): Promise<
+                unknown /* no content Returned if the request is only for validation and is successful. */
+              >;
             };
             /* Endpoint path: /rest/api/3/workflowscheme/{id}/draft/workflow */
             workflow: {
@@ -29140,9 +29279,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if either the workflow scheme or workflow (if specified) is not found. session.
                */
-              $get(args?: {
-                workflowName?: string;
-              }): Promise<IssueTypesWorkflowMapping>;
+              $get(
+                args?: { workflowName?: string },
+              ): Promise<IssueTypesWorkflowMapping>;
               /**
                * Method: delete /rest/api/3/workflowscheme/{id}/draft/workflow
                * operationId: deleteDraftWorkflowMapping
@@ -29160,9 +29299,9 @@ export interface AtlassianV3 {
                *  *  The workflow is not found.
                *  *  The workflow is not specified.
                */
-              $delete(args: {
-                workflowName: string;
-              }): Promise<unknown /* no content */>;
+              $delete(): Promise<
+                unknown /* no content Returned if the request is successful. */
+              >;
               /**
                * Method: put /rest/api/3/workflowscheme/{id}/draft/workflow
                * operationId: updateDraftWorkflowMapping
@@ -29204,9 +29343,9 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if the workflow scheme or issue type is not found.
                */
-              $get(args?: {
-                returnDraftIfExists?: boolean;
-              }): Promise<IssueTypeWorkflowMapping>;
+              $get(
+                args?: { returnDraftIfExists?: boolean },
+              ): Promise<IssueTypeWorkflowMapping>;
               /**
                * Method: delete /rest/api/3/workflowscheme/{id}/issuetype/{issueType}
                * operationId: deleteWorkflowSchemeIssueType
@@ -29222,9 +29361,7 @@ export interface AtlassianV3 {
                * 403: Returned if the user does not have the necessary permission.
                * 404: Returned if the workflow scheme or issue type is not found.
                */
-              $delete(args?: {
-                updateDraftIfNeeded?: boolean;
-              }): Promise<WorkflowScheme>;
+              $delete(): Promise<WorkflowScheme>;
               /**
                * Method: put /rest/api/3/workflowscheme/{id}/issuetype/{issueType}
                * operationId: setWorkflowSchemeIssueType
@@ -29261,10 +29398,9 @@ export interface AtlassianV3 {
              * 403: Returned if the user does not have the necessary permission.
              * 404: Returned if either the workflow scheme or workflow is not found.
              */
-            $get(args?: {
-              workflowName?: string;
-              returnDraftIfExists?: boolean;
-            }): Promise<IssueTypesWorkflowMapping>;
+            $get(
+              args?: { workflowName?: string; returnDraftIfExists?: boolean },
+            ): Promise<IssueTypesWorkflowMapping>;
             /**
              * Method: delete /rest/api/3/workflowscheme/{id}/workflow
              * operationId: deleteWorkflowMapping
@@ -29284,10 +29420,9 @@ export interface AtlassianV3 {
              *  *  The workflow is not found.
              *  *  The workflow is not specified.
              */
-            $delete(args: {
-              workflowName: string;
-              updateDraftIfNeeded?: boolean;
-            }): Promise<unknown /* no content */>;
+            $delete(): Promise<
+              unknown /* no content Returned if the request is successful. */
+            >;
             /**
              * Method: put /rest/api/3/workflowscheme/{id}/workflow
              * operationId: updateWorkflowMapping
@@ -29378,10 +29513,9 @@ export interface AtlassianV3 {
            * 200: Returned if the request is successful.
            * 401: Returned if the authentication credentials are incorrect or missing.
            */
-          $get(args?: {
-            since?: number;
-            expand?: string;
-          }): Promise<ChangedWorklogs>;
+          $get(
+            args?: { since?: number; expand?: string },
+          ): Promise<ChangedWorklogs>;
           /**
            * Controle cache
            */
@@ -29445,7 +29579,9 @@ export interface AtlassianV3 {
                * 401: Returned if the authentication credentials are incorrect or missing.
                * 404: Returned if the property is not found or doesn't belong to the app.
                */
-              $delete(): Promise<unknown /* no content */>;
+              $delete(): Promise<
+                unknown /* no content Returned if the request is successful. */
+              >;
               /**
                * Method: put /rest/atlassian-connect/1/addons/{addonKey}/properties/{propertyKey}
                * operationId: AddonPropertiesResource.putAddonProperty_put
@@ -29500,9 +29636,9 @@ export interface AtlassianV3 {
              * 204: Returned if the request is successful.
              * 401: Returned if the call is not from a Connect app.
              */
-            $delete(args?: {
-              moduleKey?: Array<string>;
-            }): Promise<unknown /* no content */>;
+            $delete(): Promise<
+              unknown /* no content Returned if the request is successful. */
+            >;
             /**
              * Method: post /rest/atlassian-connect/1/app/module/dynamic
              * operationId: DynamicModulesResource.registerModules_post
@@ -29518,7 +29654,11 @@ export interface AtlassianV3 {
              * Details of the issues encountered are included in the error message.
              * 401: Returned if the call is not from a Connect app.
              */
-            $post(body: ConnectModules): Promise<unknown /* no content */>;
+            $post(
+              body: ConnectModules,
+            ): Promise<
+              unknown /* no content Returned if the request is successful. */
+            >;
             /**
              * Controle cache
              */
@@ -29561,7 +29701,9 @@ export interface AtlassianV3 {
              */
             $put(
               body: Array<EntityPropertyDetails>,
-            ): Promise<unknown /* no content */>;
+            ): Promise<
+              unknown /* no content Returned if the request is successful. */
+            >;
           };
         };
         /* Endpoint path: /rest/atlassian-connect/1/migration/workflow */
@@ -29603,9 +29745,9 @@ export interface AtlassianV3 {
          * 501: The endpoint isn't ready for receiving requests.
          * 504: The upstream service is busy.
          */
-        $get(args: {
-          serviceIds: Array<string>;
-        }): Promise<Array<ServiceRegistry>>;
+        $get(
+          args: { serviceIds: Array<string> },
+        ): Promise<Array<ServiceRegistry>>;
         /**
          * Controle cache
          */
@@ -29636,7 +29778,9 @@ export interface AtlassianV3 {
              * 403: Returned if the request isn't made directly by an app or if it's an impersonated request.
              * 404: Returned if the property isn't found or doesn't belong to the app.
              */
-            $delete(): Promise<unknown /* no content */>;
+            $delete(): Promise<
+              unknown /* no content Returned if the request is successful. */
+            >;
             /**
              * Method: put /rest/forge/1/app/properties/{propertyKey}
              * operationId: putForgeAppProperty

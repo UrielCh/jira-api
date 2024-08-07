@@ -22,6 +22,7 @@ export class JiraClient {
    * base URL for the API like https://yourdomain.atlassian.net/rest
    */
   public readonly baseUrl: string;
+
   /**
    * caching object
    */
@@ -61,10 +62,12 @@ export class JiraClient {
    * private auth builder
    */
   private get auth(): string {
-    if ("user" in this.opt)
+    if ("user" in this.opt) {
       return `Basic ${btoa(`${this.opt.user}:${this.opt.token}`)}`;
-    if ("ACCESS_TOKEN" in this.opt)
+    }
+    if ("ACCESS_TOKEN" in this.opt) {
       return `Bearer ${this.opt.ACCESS_TOKEN}`;
+    }
     return "";
   }
 
@@ -103,6 +106,7 @@ export class JiraClient {
       path: string,
       pathTemplate: string,
       params?: ApiParamsType,
+      encoding: "json" | "form-data" | "x-www-form-urlencoded" = "json",
     ): Promise<T> => {
       method = method.toUpperCase();
 
@@ -123,19 +127,50 @@ export class JiraClient {
       if (typeof params === "object" && Object.keys(params).length > 0) {
         for (const [key, value] of Object.entries(params)) {
           if (key === "Atlassian-Transfer-Id") { // special case for file upload
-            delete params[key];
+            delete (params as { [key: string]: string })[key];
             headers.push([key, value]);
           }
         }
         if (method === "PUT" || method === "POST") {
           // Escape unicode
-          const reqBody = JSON.stringify(params).replace(
-            /[\u0080-\uFFFF]/g,
-            (m) => "\\u" + ("0000" + m.charCodeAt(0).toString(16)).slice(-4),
-          );
-          headers.push(["Content-Type", "application/json"]);
-          headers.push(["Content-Length", reqBody.length.toString()]);
-          option.body = reqBody;
+          if (encoding === "json") {
+            const reqBody = JSON.stringify(params).replace(
+              /[\u0080-\uFFFF]/g,
+              (m) => "\\u" + ("0000" + m.charCodeAt(0).toString(16)).slice(-4),
+            );
+            headers.push(["Content-Type", "application/json"]);
+            headers.push(["Content-Length", reqBody.length.toString()]);
+            option.body = reqBody;
+          } else if (encoding === "form-data") {
+            let formData = new FormData();
+            if (params instanceof FormData) {
+              formData = params;
+            } else if (Array.isArray(params)) {
+              for (const entry of params) {
+                for (const [key, value] of entry) {
+                  formData.append(key, value);
+                }
+              }
+            } else {
+              for (const [key, value] of Object.entries(params)) {
+                formData.append(key, value);
+              }
+            }
+            option.body = formData;
+            headers.push(["Content-Type", "multipart/form-data"]);
+            headers.push([
+              "Content-Length",
+              formData.toString().length.toString(),
+            ]);
+          } else if (encoding === "x-www-form-urlencoded") {
+            const body = new URLSearchParams();
+            for (const [key, value] of Object.entries(params)) {
+              body.append(key, value);
+            }
+            option.body = body.toString();
+            headers.push(["Content-Type", "application/x-www-form-urlencoded"]);
+            headers.push(["Content-Length", option.body.length.toString()]);
+          }
         } else {
           url += `?${new URLSearchParams(params).toString()}`;
         }

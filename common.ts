@@ -49,7 +49,7 @@ export interface ICacheOptions {
  * all type that should be sent as parameter to Api calls
  */
 // deno-lint-ignore no-explicit-any
-export type ApiParamsType = { [key: string]: any };
+export type ApiParamsType = { [key: string]: any } | Array<any>;
 
 /**
  * Common interface used to call API server
@@ -68,6 +68,7 @@ export interface ApiRequestable {
     path: string,
     pathTemplate: string,
     params?: ApiParamsType,
+    encoding?: "json" | "form-data" | "x-www-form-urlencoded",
   ): Promise<T>;
 
   /**
